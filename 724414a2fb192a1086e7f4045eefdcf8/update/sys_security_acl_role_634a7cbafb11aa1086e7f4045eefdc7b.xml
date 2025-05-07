@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-07 17:26:30</sys_created_on>
+        <sys_id>634a7cbafb11aa1086e7f4045eefdc7b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_sded9_portal_t_0_u_resultado_primario.x_sded9_portal_t_0.receita_e_despesa_prim_ria_user</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_security_acl display_value="x_sded9_portal_t_0_u_resultado_primario">6f4a7cbafb11aa1086e7f4045eefdc77</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_634a7cbafb11aa1086e7f4045eefdc7b</sys_update_name>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-07 17:26:30</sys_updated_on>
+        <sys_user_role display_value="x_sded9_portal_t_0.receita_e_despesa_prim_ria_user" name="x_sded9_portal_t_0.receita_e_despesa_prim_ria_user">534a7cbafb11aa1086e7f4045eefdc4b</sys_user_role>
+    </sys_security_acl_role>
+</record_update>

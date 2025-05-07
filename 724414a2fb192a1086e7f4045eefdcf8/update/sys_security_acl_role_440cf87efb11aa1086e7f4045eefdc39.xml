@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-07 17:33:55</sys_created_on>
+        <sys_id>440cf87efb11aa1086e7f4045eefdc39</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_sded9_portal_t_0_u_rreo.x_sded9_portal_t_0.rreo_relat_rio_resumido_da_execu_o_or_ament_ria_user</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_security_acl display_value="x_sded9_portal_t_0_u_rreo">c80cf87efb11aa1086e7f4045eefdc35</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_440cf87efb11aa1086e7f4045eefdc39</sys_update_name>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-07 17:33:55</sys_updated_on>
+        <sys_user_role display_value="x_sded9_portal_t_0.rreo_relat_rio_resumido_da_execu_o_or_ament_ria_user" name="x_sded9_portal_t_0.rreo_relat_rio_resumido_da_execu_o_or_ament_ria_user">f3fb347efb11aa1086e7f4045eefdc87</sys_user_role>
+    </sys_security_acl_role>
+</record_update>

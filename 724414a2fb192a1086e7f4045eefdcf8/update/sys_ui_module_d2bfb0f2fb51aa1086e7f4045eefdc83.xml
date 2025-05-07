@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_module">
+    <sys_ui_module action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <application display_value="RCL (Receita Corrente Líquida)">92bff8b2fb51aa1086e7f4045eefdce6</application>
+        <filter/>
+        <name>RCL (Receita Corrente Líquida)</name>
+        <order/>
+        <path/>
+        <path_relative_to_root>false</path_relative_to_root>
+        <roles>x_sded9_portal_t_0.rcl_receita_corrente_l_quida_user</roles>
+        <sys_class_name>sys_ui_module</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-07 17:50:11</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>d2bfb0f2fb51aa1086e7f4045eefdc83</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>RCL (Receita Corrente Líquida)</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sys_ui_module_d2bfb0f2fb51aa1086e7f4045eefdc83</sys_update_name>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-07 17:50:11</sys_updated_on>
+        <table>x_sded9_portal_t_0_u_rcl_basica</table>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+    </sys_ui_module>
+</record_update>
