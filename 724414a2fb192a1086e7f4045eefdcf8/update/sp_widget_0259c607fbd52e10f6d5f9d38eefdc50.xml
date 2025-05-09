@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function($scope, $window, $http, spUtil) {
+    var c = this;
+    var highContrastEnabled = false;
+
+    // Funcionalidade de login
+    c.checkUserLoggedIn = function() {
+        if ($scope.user && $scope.user.logged_in) {
+            c.loginButtonText = $scope.user.name;
+            $scope.dropdownOpen = false;
+
+            $scope.toggleDropdown = function() {
+                $scope.dropdownOpen = !$scope.dropdownOpen;
+            };
+
+            // Função de logout ajustada para desconexão e permanência na mesma página
+            $scope.logout = function() {
+                // Executa o logout via GET (isso pode ser modificado dependendo da sua configuração)
+                var logoutRequest = new XMLHttpRequest();
+                logoutRequest.open("GET", "/logout", true);
+                logoutRequest.onload = function() {
+                    // Após a requisição de logout, redireciona para a página /gfo
+                    $window.location.href = '/gfo';
+                };
+                logoutRequest.send();
+            };
+
+            $scope.avatarProfile = {
+                initials: $scope.user.first_name[0] + $scope.user.last_name[0]
+            };
+        } else {
+            c.loginButtonText = 'Entrar';
+            c.redirect = function() {
+                $window.location.href = '/login_with_sso.do?glide_sso_id=13e4f3d2fb2bca10f6d5f9d38eefdcce';
+            };
+        }
+    };
+	
+	 // Função para redirecionar para "Meus Pedidos" com verificação de login
+    c.goToPedidos = function() {
+        if ($scope.user && $scope.user.logged_in) {
+            // Se estiver logado, redireciona para "Meus Pedidos"
+            $window.location.href = '?id=gfo_minhas_solicitacoes';
+        } else {
+            // Se não estiver logado, redireciona para o login SSO
+            $window.location.href = '/login_with_sso.do?glide_sso_id=13e4f3d2fb2bca10f6d5f9d38eefdcce';
+        }
+    };
+
+    // Ajuste de fonte
+    $scope.adjustFontSize = function(factor) {
+        var elements = document.querySelectorAll('body, body *');
+        elements.forEach(function(element) {
+            if (element.tagName !== 'IMG' && element.children.length === 0) {
+                var currentSize = window.getComputedStyle(element).fontSize;
+                var newSize = parseFloat(currentSize) * factor;
+                element.style.fontSize = newSize + 'px';
+            }
+        });
+    };
+
+    // Função para alternar contraste
+    $scope.toggleContrast = function(event) {
+        event.preventDefault(); // Evitar qualquer comportamento padrão do link
+        highContrastEnabled = !highContrastEnabled;
+        var elements = document.querySelectorAll('body, body *');
+
+        // Seleciona o botão do widget
+        var acessoGFOButton = document.querySelector('.acessoGFO-widget a');
+
+        // Seleciona os elementos com a classe 'servicos-line'
+        var servicosLineElements = document.querySelectorAll('.servicos-line');
+
+        elements.forEach(function(element) {
+            if (highContrastEnabled) {
+                element.style.backgroundColor = "#000000"; // fundo preto
+                element.style.color = "#FFFFFF"; // texto branco
+            } else {
+                element.style.backgroundColor = ""; // reset fundo
+                element.style.color = ""; // reset texto
+            }
+        });
+
+        // Ajustando o fundo de '.servicos-line'
+        servicosLineElements.forEach(function(element) {
+            element.style.backgroundColor = highContrastEnabled ? "#FFFFFF" : "#2F2F2F"; // Muda a cor para branco ou reseta
+        });
+
+        // Estilizando o botão do widget
+        if (acessoGFOButton) {
+            acessoGFOButton.style.backgroundColor = highContrastEnabled ? "#FFFFFF" : "#FD5F06"; // Muda a cor de fundo
+            acessoGFOButton.style.color = highContrastEnabled ? "#000000" : "#FFFFFF"; // Muda a cor do texto
+        }
+
+        // Estilizando botões com as classes 'btn-download' e 'btn-access'
+        var btnsDownload = document.getElementsByClassName('btn-download');
+        var btnsAccess = document.getElementsByClassName('btn-access');
+
+        for (var i = 0; i < btnsDownload.length; i++) {
+            btnsDownload[i].style.color = highContrastEnabled ? "#FFFFFF" : ""; // Cor do texto do botão
+            btnsDownload[i].style.border = highContrastEnabled ? "1px solid #FFFFFF" : ""; // Assegura que não tenha borda
+        }
+        for (var j = 0; j < btnsAccess.length; j++) {
+            btnsAccess[j].style.color = highContrastEnabled ? "#FFFFFF" : ""; // Cor do texto do botão
+            btnsAccess[j].style.border = highContrastEnabled ? "1px solid #FFFFFF" : ""; // Assegura que não tenha borda
+        }
+
+        // Mudando o fundo da classe 'carousel-controls-articles' para transparente
+        var carouselControls = document.getElementsByClassName('carousel-controls-articles');
+        var carouselItems = document.getElementsByClassName('carousel-item-articles');
+
+        for (var k = 0; k < carouselControls.length; k++) {
+            carouselControls[k].style.backgroundColor = highContrastEnabled ? "transparent" : ""; // Fundo transparente ou reset
+        }
+
+        for (var l = 0; l < carouselItems.length; l++) {
+            carouselItems[l].style.border = highContrastEnabled ? "1px solid #FFFFFF" : ""; // Borda branca ou reset
+        }
+    };
+
+
+    // Chama a função para verificar o estado de login inicialmente
+    c.checkUserLoggedIn();
+};
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>@font-face {
+     font-family: 'Uni Neue-Trial';
+     src: url('fonts/UniNeueTrial-Regular.woff2') format('woff2'), url('fonts/UniNeueTrial-Regular.woff') format('woff'), url('fonts/UniNeueTrial-Regular.ttf') format('truetype');
+     font-weight: normal;
+     font-style: normal;
+}
+
+/* Ajuste para remover o espaço extra destacado */
+.header-menu {
+  background-color: #FFFFFF;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding-left: 1em;
+  //box-shadow: 0 1px 2px rgba(0,0,0,0.05); /* Reduzi o sombreamento */
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.header-menu .menu-list li a:hover {
+  background-color: #f0f0f0; 
+  //box-shadow: 0 2px 4px rgba(0,0,0,0.08); /* Reduzi o sombreamento do hover */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Adicione essa linha para garantir que não haja margem ou padding extra */
+.header-container, .navbar, .header-menu {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Nova div para os itens de menu abaixo do header */
+.header-menu {
+  background-color: #FFFFFF; /* Ou use outra cor conforme o design */
+  height: 50px; /* Altura fixa, por exemplo 100px */
+  display: flex;
+  align-items: center;
+  padding-left: 1em;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+/* Lista dos itens de menu */
+.header-menu .menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 2em; /* Espaço entre os itens, ajuste conforme necessário */
+  margin-left: 30px;
+}
+
+/* Itens individuais do menu */
+.header-menu .menu-list li {
+  position: relative; /* Necessário para posicionar dropdowns */
+}
+
+/* Links dos itens de menu */
+.header-menu .menu-list li a {
+  color: #101A5C;
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
+  text-decoration: none;
+  padding: 0.5em;
+}
+
+/* Dropdown do menu: oculto por padrão */
+.header-menu .menu-list li.dropdown ul.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%; /* Logo abaixo do item */
+  left: 0;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  list-style: none;
+  padding: 0.5em 0;
+  margin: 0;
+  z-index: 1000;
+}
+
+/* Exibe o dropdown quando o item tem a classe 'dropdown' e o mouse passa sobre ele */
+.header-menu .menu-list li.dropdown:hover ul.dropdown-menu {
+  display: block;
+}
+
+/* Estilo para links dentro do dropdown */
+.header-menu .menu-list li.dropdown ul.dropdown-menu li a {
+  color: #101A5C;
+  font-size: 16px;
+}
+
+/* Adicione regras adicionais de @font-face se houver outras variações, como bold, italic, etc. */
+/* Estilo para o item de Logout no dropdown */
+ .dropdown-content a {
+     color: #ffffff;
+    /* Cor branca para os links no dropdown */
+     text-decoration: none;
+    /* Remove o sublinhado dos links */
+     padding: 12px 16px;
+     display: block;
+     border-radius: 5px;
+}
+ .dropdown-content a:hover {
+     background-color: #FD5F06;
+    /* Cor de fundo ao passar o mouse */
+     color: #000000;
+    /* Cor do texto ao passar o mouse */
+}
+/* Estilo específico para Logout */
+ .dropdown-content a[href*="logout"] {
+     color: #ffffff;
+    /* Define a cor do texto de Logout como vermelho */
+}
+ .dropdown-content a[href*="logout"]:hover {
+     color: #ffffff;
+    /* Define a cor do texto de Logout como branca ao passar o mouse */
+     background-color: #ff0000;
+    /* Define o fundo vermelho ao passar o mouse em Logout */
+}
+ .dropdown-content{
+     font-family: Roboto;
+     color: white;
+}
+ .user-avatar {
+     display: flex;
+     align-items: center;
+     cursor: pointer;
+}
+ .user-initials {
+     font-family: Roboto;
+     width: 35px;
+    /* Tamanho do círculo */
+     height: 35px;
+    /* Tamanho do círculo */
+     border-radius: 50%;
+    /* Torna o avatar circular */
+     background: #FD5F06;
+    /* Cor de fundo para o círculo */
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     font-weight: bold;
+     color: #ffffff;
+    /* Cor das iniciais */
+     margin-right: 10px;
+}
+/* Define o nome do usuário na cor branca */
+ .user-name {
+     color: white;
+    /* Cor branca para o nome do usuário */
+     font-size: 16px;
+     font-family: Roboto;
+     font-size: 16px;
+}
+ .header-container {
+     display: flex;
+     flex-direction: column;
+     width: 100%;
+}
+ .row {
+     display: flex;
+     width: 100%;
+     align-items: center;
+}
+ .logo {
+     display: flex;
+     justify-content: flex-start;
+     align-items: center;
+     width: 100%;
+     max-width: 25%;
+}
+ .welcome-message {
+     display: flex;
+     justify-content: flex-start;
+     align-items: center;
+     text-align: center;
+     width: 100%;
+     padding-left: 10%;
+    /* Ajuste conforme necessário para manter o design responsivo */
+}
+ .welcome-message h1 {
+     color: #293273;
+     text-align: center;
+     text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
+     font-family: Helvetica;
+     font-size: 56px;
+     font-style: normal;
+     font-weight: 300;
+     line-height: normal;
+}
+ .navbar {
+     background: linear-gradient(to right, #FFFFFF 0%, #1DA2B4 50%, #293273 100%);
+     min-height: 3em;
+     width: 100%;
+     transition: all 0.3s ease;
+}
+ .navbar-content {
+     display: flex;
+     justify-content: flex-end;
+     align-items: center;
+     padding: 0 1em;
+     width: 100%;
+     box-sizing: border-box;
+     flex-wrap: wrap;
+     gap: 1em;
+     margin-top: .22em;
+}
+ .accessibility {
+     display: flex;
+     gap: 1em;
+     color: #FFF;
+}
+ .accessibility a {
+     color: white;
+     display: inline-flex;
+     align-items: center;
+     gap: 0.5em;
+}
+ .accessibility svg {
+     width: 1.5em;
+     height: 1.5em;
+     vertical-align: middle;
+}
+ .login {
+     display: flex;
+     gap: 1em;
+}
+ .login button {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     background-color: #FD5F06;
+     color: white;
+     border: none;
+     cursor: pointer;
+     border-radius: 20px;
+     padding: 0.5em 1em;
+     font-size: 1em;
+    /* Controla o tamanho do SVG baseado no font-size do elemento pai */
+     transition: all 0.3s ease;
+}
+ .login button svg {
+     margin-right: 0.5em;
+     width: 1.2em;
+     height: 1.2em;
+     vertical-align: middle;
+}
+ .bi {
+     width: 1em;
+    /* Faz o ícone escalar com o font-size do elemento pai */
+     height: 1em;
+     vertical-align: middle;
+}
+/* Media Queries para Responsividade */
+ @media (max-width: 768px) {
+     .navbar-content {
+         flex-wrap: wrap;
+         justify-content: space-between;
+    }
+}
+ @media (max-width: 480px) {
+     .navbar-content {
+         padding: 0.5em;
+        /* Espaçamento interno na navbar */
+    }
+     .accessibility a {
+         font-size: 0.9em;
+        /* Reduz o tamanho da fonte dos links de acessibilidade */
+    }
+     .welcome-message h1 {
+         font-size: 1.8em;
+        /* Tamanho menor para dispositivos móveis */
+         margin: 5px 0;
+        /* Margem superior e inferior ajustada */
+    }
+}
+/* Media Queries para Responsividade */
+ @media (max-width: 768px) {
+     .row {
+         flex-direction: column;
+        /* Muda a direção para coluna em telas menores */
+         align-items: center;
+        /* Centraliza os itens em tela pequena */
+    }
+     .logo {
+         max-width: 100%;
+        /* Logo ocupa a largura total */
+         justify-content: center;
+        /* Centraliza logo */
+         padding-bottom: 10px;
+        /* Adiciona espaço abaixo do logo */
+    }
+     .welcome-message {
+         padding-left: 0;
+        /* Remove o padding à esquerda */
+         justify-content: center;
+        /* Centraliza o conteúdo */
+         text-align: center;
+        /* Centraliza o título */
+         margin-top: 10px;
+        /* Adiciona margem acima do título */
+    }
+     .welcome-message h1 {
+         font-size: 2.5em;
+        /* Tamanho moderado para tablet */
+         margin: 10px 0;
+        /* Margem acima e abaixo */
+    }
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>sefaz_header</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Sefaz Header</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-05-08 17:50:19</sys_created_on>
+        <sys_id>0259c607fbd52e10f6d5f9d38eefdc50</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Sefaz Header</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_0259c607fbd52e10f6d5f9d38eefdc50</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-08 17:50:19</sys_updated_on>
+        <template><![CDATA[<div class="header-container">
+  <div class="row">
+    <div class="logo col-md-3">
+      <a href="javascript:void(0);" onclick="navigateToHome()">
+        <img src="gfo_logo_portal.svg" />
+      </a>
+    </div>
+    <div class="welcome-message col-md-9">
+      <h1>Bem-vindo ao portal GFO!</h1>
+    </div>
+  </div>
+  <div class="navbar">
+    <div class="navbar-content">
+      <div class="accessibility">
+        <a href="" aria-label="Acessibilidade">
+          <b>ACESSIBILIDADE</b>
+        </a>
+        <a href="" aria-label="Aumentar Fonte" ng-click="adjustFontSize(1.05)">
+          <b>+A</b>
+        </a>
+        <a href="" aria-label="Diminuir Fonte" ng-click="adjustFontSize(0.95)">
+          <b>-A</b>
+        </a>
+        <a href="" ng-click="toggleContrast($event)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-half" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 0 8 1zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16"/>
+          </svg>
+        </a>
+      </div>
+      <!-- Exibe se o usuário está logado -->
+      <div class="user-logged" ng-if="user.logged_in">
+        <div class="dropdown" ng-click="toggleDropdown()">
+          <div class="user-avatar">
+            <span class="user-initials">{{ user.first_name[0] }}{{ user.last_name[0] }}</span>
+            <span class="user-name">{{ user.name }}</span>
+          </div>
+          <ul class="dropdown-content" ng-show="dropdownOpen">
+            <li>
+              <a href="#" ng-click="logout()">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Caso o usuário não esteja logado -->
+      <div class="login" ng-if="!user.logged_in">
+        <button ng-click="c.redirect()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+          </svg>
+          <span style="margin-left: 5px;">Entrar</span>
+        </button>
+      </div>
+      
+      <!-- Aqui você pode manter o extra-widget se desejar, ou removê-lo -->
+      <div class="extra-widget">
+         <widget id="Menu portal GFO"></widget>
+      </div>
+    </div>
+  </div>
+  
+  <!-- NOVA DIV COM ITENS DE MENU -->
+  <div class="header-menu">
+    <ul class="menu-list">
+      <li><a href="/gfo"><i class="fa fa-home"></i> Início</a></li>
+      <li><a href="" ng-click="c.goToPedidos()">Meus Pedidos</a></li>
+      <li class="dropdown">
+        <a href="#">Serviços <i class="fa fa-caret-down"></i></a>
+       	<ul class="dropdown-menu">
+    			<li><a href="?id=sc_cat_item_gfo&sys_id=2e11d163fbc45210f6d5f9d38eefdcda"><i class="fa fa-user"></i> Alteração de perfil GFO</a></li>
+  				<li><a href="?id=sc_cat_item_gfo&sys_id=4fa6dfdffb8c525086e7f4045eefdc6c"><i class="fa fa-user"></i> Inclusão de usuário GFO</a></li>
+  				<li><a href="?id=sc_cat_item_gfo&sys_id=70521da3fbc45210f6d5f9d38eefdcff"><i class="fa fa-user"></i> Ativação de usuário GFO</a></li>
+ 			 		<li><a href="?id=sc_cat_item_gfo&sys_id=15a31489fbfc1e10f6d5f9d38eefdcb8"><i class="fa fa-info-circle"></i> Sugestões</a></li>
+ 			  	<li><a href="?id=sc_cat_item_gfo&sys_id=52d69c4dfbfc1e10f6d5f9d38eefdce6"><i class="fa fa-times-circle-o"></i> Erros e Falhas</a></li>
+ 			 		<li><a href="?id=sc_cat_item_gfo&sys_id=80af8004fb98165086e7f4045eefdc42"><i class="fa fa-pencil"></i> Capacitações</a></li>
+ 			 	  <li><a href="?id=gfo_bem_publico"><i class="fa fa-pencil-square-o"></i> Cadastros</a></li>
+				</ul>
+      </li>
+      <li><a href="?id=gfo_kb_home">Base de conhecimento</a></li>
+      <li class="dropdown">
+       <a href="#">Sistemas <i class="fa fa-caret-down"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="https://fiplan-gfo.mt.gov.br/fiplangfo/" target="_blank"><i class="fa fa-external-link"></i> FIPLAN</a></li>
+          <li><a href="https://www.sigadoc.mt.gov.br/" target="_blank"><i class="fa fa-external-link"></i> SIGADOC</a></li>
+          <li><a href="https://servicos.tce.mt.gov.br/" target="_blank"><i class="fa fa-external-link"></i> GEO-OBRAS</a></li>
+          <li><a href="https://www.sefaz.mt.gov.br/sifimt/" target="_blank"><i class="fa fa-external-link"></i> SIFI</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  
+</div>
+<script>
+  function navigateToHome() {
+    var pathArray = window.location.pathname.split('/');
+    var portalSegment = pathArray[1]; // Segunda parte do URL após o host
+    var portalHomeUrl = window.location.origin + '/' + portalSegment;
+    console.log("Portal segment:", portalSegment);
+    console.log("Redirecting to portal home:", portalHomeUrl);
+    window.location.href = portalHomeUrl;
+  }
+</script>
+]]></template>
+    </sp_widget>
+</record_update>

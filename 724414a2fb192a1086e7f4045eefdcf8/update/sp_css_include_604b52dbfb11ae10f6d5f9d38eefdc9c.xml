@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_css_include">
+    <sp_css_include action="INSERT_OR_UPDATE">
+        <lazy_load>false</lazy_load>
+        <name>Montserrat CSS</name>
+        <rtl_css_file_url/>
+        <source>local</source>
+        <sp_css display_value="Montserrat css">5f4b5e9bfb11ae10f6d5f9d38eefdc48</sp_css>
+        <sys_class_name>sp_css_include</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-05-09 13:47:13</sys_created_on>
+        <sys_id>604b52dbfb11ae10f6d5f9d38eefdc9c</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Montserrat CSS</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_css_include_604b52dbfb11ae10f6d5f9d38eefdc9c</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-09 13:48:10</sys_updated_on>
+        <url/>
+    </sp_css_include>
+</record_update>

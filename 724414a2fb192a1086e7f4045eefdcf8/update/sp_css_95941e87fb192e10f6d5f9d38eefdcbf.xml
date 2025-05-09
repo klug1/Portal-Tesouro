@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_css">
+    <sp_css action="INSERT_OR_UPDATE">
+        <css>@font-face {&#13;
+    font-family: 'Verdana';&#13;
+     src: url('/sys_attachment.do?sys_id=6a44d287fb192e10f6d5f9d38eefdc5e');&#13;
+     font-weight: normal;&#13;
+     font-style: normal;&#13;
+}&#13;
+&#13;
+.header-container .navbar {&#13;
+	font-family: 'Verdana';&#13;
+}&#13;
+&#13;
+.header-menu .menu-list li a{&#13;
+	font-family: 'Verdana';&#13;
+}&#13;
+&#13;
+div{&#13;
+	font-family:'Verdana'  !important;&#13;
+}&#13;
+.tesouroHeader{&#13;
+	font-family:'Verdana';&#13;
+}&#13;
+&#13;
+/* Change Homepage Header Font */&#13;
+#homepage-search &gt; div &gt; h1 {&#13;
+  font-family:'Verdana';&#13;
+}&#13;
+/* Change H2 Font */&#13;
+div.panel-heading &gt; h2 {&#13;
+  font-family:'Verdana';&#13;
+}&#13;
+/* Change H3 Font */&#13;
+h3,h2,h1 {&#13;
+ &#13;
+}&#13;
+.panel-heading&#13;
+{&#13;
+font-family:'Verdana';&#13;
+}&#13;
+ul,li&#13;
+{&#13;
+font-family:'Verdana';&#13;
+}&#13;
+.panel-body&#13;
+{&#13;
+font-family:'Verdana';&#13;
+}&#13;
+p&#13;
+{&#13;
+ font-family:'Verdana';&#13;
+}&#13;
+body&#13;
+{&#13;
+ font-family:'Verdana' !important;&#13;
+}&#13;
+li&#13;
+{&#13;
+ font-family:'Verdana' !important;&#13;
+}</css>
+        <name>verdana CSS</name>
+        <sys_class_name>sp_css</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-05-08 18:42:16</sys_created_on>
+        <sys_id>95941e87fb192e10f6d5f9d38eefdcbf</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>verdana CSS</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_css_95941e87fb192e10f6d5f9d38eefdcbf</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-09 13:34:04</sys_updated_on>
+        <turn_off_scss_compilation>false</turn_off_scss_compilation>
+    </sp_css>
+</record_update>
