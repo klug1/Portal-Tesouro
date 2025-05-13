@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_page">
+    <sp_page action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <css>.container_grafico1row {
+  display: flex;
+  justify-content: center; /* Alinha o conteúdo no meio */
+  align-items: flex-start;     /* Alinha ao topo da página */
+  padding: 24px 40px 24px 24px; /* Espaçamento interno: mais à direita */
+  box-sizing: border-box;
+  width: 100%;
+}
+</css>
+        <draft>false</draft>
+        <dynamic_title_structure/>
+        <human_readable_url_structure/>
+        <id>indicadores_fiscais</id>
+        <internal>false</internal>
+        <omit_watcher>false</omit_watcher>
+        <public>true</public>
+        <roles/>
+        <seo_script/>
+        <short_description/>
+        <sys_class_name>sp_page</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-05-13 00:40:32</sys_created_on>
+        <sys_id>e97d4428fb6da25086e7f4045eefdcfb</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>indicadores_fiscais</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_page_e97d4428fb6da25086e7f4045eefdcfb</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-13 02:07:31</sys_updated_on>
+        <title>Indicadores Fiscais</title>
+        <use_seo_script>false</use_seo_script>
+    </sp_page>
+    <sys_translated_text action="delete_multiple" query="documentkey=e97d4428fb6da25086e7f4045eefdcfb"/>
+</record_update>
