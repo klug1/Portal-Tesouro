@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="io_set_item">
+    <io_set_item action="INSERT_OR_UPDATE">
+        <order>100</order>
+        <sc_cat_item display_value="RCL (Receita Corrente Líquida)">1b4e3b6cfb21265086e7f4045eefdc73</sc_cat_item>
+        <sys_class_name>io_set_item</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-13 18:19:47</sys_created_on>
+        <sys_id>9e008c30fb61265086e7f4045eefdc39</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>RCL (Receita Corrente Líquida).RCL (Receita Corrente Líquida)</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>io_set_item_9e008c30fb61265086e7f4045eefdc39</sys_update_name>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-13 18:19:47</sys_updated_on>
+        <variable_set display_value="RCL (Receita Corrente Líquida)">79efb360fb61265086e7f4045eefdc7a</variable_set>
+    </io_set_item>
+</record_update>

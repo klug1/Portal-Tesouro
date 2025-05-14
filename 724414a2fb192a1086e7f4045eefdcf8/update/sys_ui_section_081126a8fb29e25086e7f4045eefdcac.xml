@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="" section_id="081126a8fb29e25086e7f4045eefdcac" sys_domain="global" table="x_sded9_portal_t_0_registro_de_cargas_tesouro" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_numero</element>
+            <position>0</position>
+            <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-14 14:56:00</sys_created_on>
+            <sys_id>cbfad041fbe5665086e7f4045eefdc9e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_sded9_portal_t_0_registro_de_cargas_tesouro" sys_domain="global" view="Default view">081126a8fb29e25086e7f4045eefdcac</sys_ui_section>
+            <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-14 14:56:00</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_tabela</element>
+            <position>1</position>
+            <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-14 14:56:00</sys_created_on>
+            <sys_id>87fad041fbe5665086e7f4045eefdc9f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_sded9_portal_t_0_registro_de_cargas_tesouro" sys_domain="global" view="Default view">081126a8fb29e25086e7f4045eefdcac</sys_ui_section>
+            <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-14 14:56:00</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>sys_created_on</element>
+            <position>2</position>
+            <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-14 14:56:00</sys_created_on>
+            <sys_id>dbfad041fbe5665086e7f4045eefdc9f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_sded9_portal_t_0_registro_de_cargas_tesouro" sys_domain="global" view="Default view">081126a8fb29e25086e7f4045eefdcac</sys_ui_section>
+            <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-14 14:56:00</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>sys_created_by</element>
+            <position>3</position>
+            <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-14 14:56:00</sys_created_on>
+            <sys_id>13fad041fbe5665086e7f4045eefdca0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_sded9_portal_t_0_registro_de_cargas_tesouro" sys_domain="global" view="Default view">081126a8fb29e25086e7f4045eefdcac</sys_ui_section>
+            <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-14 14:56:00</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>number</element>
+            <position>4</position>
+            <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-14 19:30:49</sys_created_on>
+            <sys_id>bce91dc9fb2d665086e7f4045eefdcdf</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_sded9_portal_t_0_registro_de_cargas_tesouro" sys_domain="global" view="Default view">081126a8fb29e25086e7f4045eefdcac</sys_ui_section>
+            <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-14 19:30:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption/>
+            <header>false</header>
+            <name>x_sded9_portal_t_0_registro_de_cargas_tesouro</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-13 11:24:49</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>081126a8fb29e25086e7f4045eefdcac</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_sded9_portal_t_0_registro_de_cargas_tesouro</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+            <sys_update_name>sys_ui_section_081126a8fb29e25086e7f4045eefdcac</sys_update_name>
+            <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-13 11:24:49</sys_updated_on>
+            <sys_user/>
+            <title>true</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

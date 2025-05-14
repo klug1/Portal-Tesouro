@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="catalog_ui_policy_action">
+    <catalog_ui_policy_action action="INSERT_OR_UPDATE">
+        <catalog_item/>
+        <catalog_variable>IO:983fb3b8fb25665086e7f4045eefdc42</catalog_variable>
+        <cleared>false</cleared>
+        <disabled>ignore</disabled>
+        <field/>
+        <field_message/>
+        <field_message_type>none</field_message_type>
+        <mandatory>true</mandatory>
+        <order>100</order>
+        <sys_class_name>catalog_ui_policy_action</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-14 12:57:09</sys_created_on>
+        <sys_id>9dcff3f8fb25665086e7f4045eefdce6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>v_deducoes_entre_rcl_normal_e_ajustada</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>catalog_ui_policy_action_9dcff3f8fb25665086e7f4045eefdce6</sys_update_name>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-14 12:57:09</sys_updated_on>
+        <table/>
+        <ui_policy display_value="Mandatory Fields">25aff3b8fb25665086e7f4045eefdcaa</ui_policy>
+        <value/>
+        <value_action>ignore</value_action>
+        <variable>v_deducoes_entre_rcl_normal_e_ajustada</variable>
+        <variable_set display_value="RCL com Deduções">348ebf38fb25665086e7f4045eefdc2a</variable_set>
+        <visible>ignore</visible>
+    </catalog_ui_policy_action>
+    <sys_translated_text action="delete_multiple" query="documentkey=9dcff3f8fb25665086e7f4045eefdce6"/>
+</record_update>
