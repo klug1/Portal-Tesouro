@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script/>
+        <controller_as>c</controller_as>
+        <css>.title-global {
+  position: absolute;
+  top: 20px;
+  left: 26rem;
+  z-index: 10;
+  color: white;
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.7);
+  font-size: 1.5rem;
+  text-align: left;
+  padding: 0 1rem;
+}
+.title-banner {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+  color: white;
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.7);
+  font-family: 'Arial Black', Arial, sans-serif;
+}
+
+.linha-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.estado {
+  font-size: 4.5rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.lado-direito {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.lado-esquerdo {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.categoria {
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+ 	margin-top: 1.2rem;
+}
+
+.nota {
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.subtitulo {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: bold;
+  transform: translateX(-10px);
+}
+
+@media (max-width: 549px) {
+  .title-banner {
+    font-size: 18px; /* Tamanho menor para telas pequenas */
+    margin-top: 10rem;
+  }
+  .estado{
+    font-size: 18px;
+  }
+  .subtitulo{
+  	 font-size: 10px;
+  }
+  
+  .categoria{
+     font-size: 10px;
+  }
+  
+  .nota{
+  	 font-size: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .title-banner {
+    font-size: 12px; /* Tamanho menor para telas pequenas */
+    margin-top: 13rem;
+  }
+  .estado{
+    font-size: 12px;
+  }
+  .subtitulo{
+  	 font-size: 8px;
+  }
+  
+  .categoria{
+     font-size: 8px;
+     transform: translateX(-14px);
+  }
+  
+  .nota{
+  	 font-size: 8px;
+  }
+}
+
+
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>banner_sefaz</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+
+}]]></link>
+        <name>Banner Sefaz</name>
+        <option_schema>[{"displayValue":"Carousel Slide","hint":"Select the slides to be displayed. Configure slide background image, title and URL on sp_carousel_slide table","name":"slides","display_value_list":[],"section":"Data","default_value":"7f6a3df2437cb110c27380a7fab8f25b,d38bf176437cb110c27380a7fab8f28d,be9b7976437cb110c27380a7fab8f2ad","label":"Slides","type":"glide_list","value":"sp_carousel_slide","ed":{"reference":"sp_carousel_slide"}},{"hint":"Title colour will be same for all slides","name":"title_colour","section":"Presentation","default_value":"#FFFFFF","label":"Title Colour","type":"string"},{"hint":"Alignment will be same for all slides","name":"alignment","section":"Presentation","default_value":"left","label":"Alignment","type":"choice","choices":[{"label":"left","value":"left"},{"label":"center","value":"center"}]}]</option_schema>
+        <public>true</public>
+        <roles/>
+        <script/>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-05-14 23:56:40</sys_created_on>
+        <sys_id>87b65209fb61a65086e7f4045eefdc26</sys_id>
+        <sys_mod_count>54</sys_mod_count>
+        <sys_name>Banner Sefaz</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_87b65209fb61a65086e7f4045eefdc26</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-16 02:14:19</sys_updated_on>
+        <template><![CDATA[<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    
+    h1 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    
+    .instructions {
+      max-width: 800px;
+      margin: 0 auto 30px;
+      padding: 15px;
+      background-color: #f5f5f5;
+      border-radius: 5px;
+      border-left: 4px solid #0066cc;
+    }
+    
+    
+    .banner-sefaz-container * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    .banner-sefaz-container main {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+      overflow: hidden;
+    }
+    
+    .banner-sefaz-container .slider {
+      height: 100%;
+      width: 100%;
+      position: relative;
+    }
+    
+    .banner-sefaz-container .item {
+      width: 200px;
+      height: 300px;
+      list-style-type: none;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1;
+      background-position: center;
+      background-size: cover;
+      border-radius: 20px;
+      box-shadow: 0 20px 30px rgba(255,255,255,0.3) inset;
+      transition: transform 0.1s, left 0.75s, top 0.75s, width 0.75s, height 0.75s;
+    }
+    
+    /* Imagem principal em destaque */
+    .banner-sefaz-container .item:nth-child(1),
+    .banner-sefaz-container .item:nth-child(2) {
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      transform: none;
+      border-radius: 0;
+      box-shadow: none;
+      opacity: 1;
+    }
+    
+    /* Posicionamento das miniaturas laterais */
+    .banner-sefaz-container .item:nth-child(3) { left: 70%; top: 22%; width: 180px; height: 120px; }
+    .banner-sefaz-container .item:nth-child(4) { left: 70%; top: 52%; width: 180px; height: 120px; }
+    .banner-sefaz-container .item:nth-child(5) { left: 70%; top: 82%; width: 180px; height: 120px; }
+    .banner-sefaz-container .item:nth-child(6) { left: 85%; opacity: 0; }
+    
+    .banner-sefaz-container .content {
+      width: min(30vw,400px);
+      position: absolute;
+      top: 50%;
+      left: 3rem;
+      transform: translateY(-50%);
+      font-family: Arial, sans-serif;
+      font-size: 0.85rem;
+      color: white;
+      text-shadow: 0 3px 8px rgba(0,0,0,0.5);
+      opacity: 0;
+      display: none;
+    }
+    
+    .banner-sefaz-container .content .title {
+      font-family: 'Arial Black', Arial, sans-serif;
+      font-weight: bold;
+      text-transform: uppercase;
+      transform: translateY(4rem);
+    }
+    
+    .banner-sefaz-container .content .description {
+      line-height: 1.7;
+      margin: 1rem 0 1.5rem;
+      font-size: 0.8rem;
+      transform: translateY(4rem);
+    }
+    
+    .banner-sefaz-container .content button {
+      width: auto;
+      background-color: rgba(0,0,0,0.1);
+      color: white;
+      border: 2px solid white;
+      border-radius: 0.25rem;
+      padding: 0.75rem;
+      cursor: pointer;
+    }
+    
+    .banner-sefaz-container .item:nth-of-type(2) .content {
+      display: block;
+      animation: show 0.75s ease-in-out 0.3s forwards;
+    }
+    
+    @keyframes show {
+      0% {
+        filter: blur(5px);
+        transform: translateY(calc(-50% + 75px));
+      }
+      100% {
+        opacity: 1;
+        filter: blur(0);
+      }
+    }
+    
+    .banner-sefaz-container .nav {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 5;
+      user-select: none;
+    }
+    
+    .banner-sefaz-container .btn {
+      display: inline-block;
+      background-color: rgba(255,255,255,0.5);
+      color: rgba(0,0,0,0.7);
+      border: 2px solid rgba(0,0,0,0.6);
+      margin: 0 0.25rem;
+      padding: 0.75rem;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    
+    .banner-sefaz-container .btn:hover {
+      background-color: rgba(255,255,255,0.3);
+    }
+    
+    @media (max-width: 900px) {
+      .banner-sefaz-container .content .title { font-size: 1rem; }
+      .banner-sefaz-container .content .description { font-size: 0.7rem; }
+      .banner-sefaz-container .content button { font-size: 0.7rem; }
+      
+      .banner-sefaz-container .item:nth-child(3),
+      .banner-sefaz-container .item:nth-child(4),
+      .banner-sefaz-container .item:nth-child(5) {
+        width: 150px;
+        height: 100px;
+      }
+    }
+    
+    @media (max-width: 650px) {
+      .banner-sefaz-container .content .title { font-size: 0.9rem; }
+      .banner-sefaz-container .content .description { font-size: 0.65rem; }
+      .banner-sefaz-container .content button { font-size: 0.65rem; }
+      
+      .banner-sefaz-container .item:nth-child(3),
+      .banner-sefaz-container .item:nth-child(4),
+      .banner-sefaz-container .item:nth-child(5) {
+        width: 120px;
+        height: 80px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  
+  <div class="banner-sefaz-container">
+    <main>
+             
+      <h1 class="title-banner">
+  <div class="linha-topo">
+    <div class="lado-esquerdo">
+      <span class="estado">MATO GROSSO</span>
+      <span class="subtitulo">NO TESOURO NACIONAL EM GESTÃO FISCAL</span>
+    </div>
+    <div class="lado-direito">
+      <span class="categoria">CATEGORIA</span>
+      <span class="nota">A+</span>
+    </div>
+  </div>
+</h1>
+
+
+
+      <ul class='slider'>
+        <li class='item' style="background-image: url('https://sefazmtdev.service-now.com/x_sded9_portal_t_0.banner1.jpg')">
+          <div class='content'>
+            <h2 class='title'>Escola Estadual Leovegildo de Melo</h2>
+            <p class='description'> 
+              Créditos da Foto: Michel Alvim / SECOM MT  </p>
+            <!--button>Read More</button-->
+          </div>
+        </li>
+        <li class='item' style="background-image: url('https://sefazmtdev.service-now.com/x_sded9_portal_t_0.banner2.jpg')">
+          <div class='content'>
+            <h2 class='title'>Escola Estadual Leovegildo de Melo</h2>
+            <p class='description'>Créditos da Foto: Michel Alvim / SECOM MT  </p>
+            <!--button>Read More</button-->
+          </div>
+        </li>
+        <li class='item' style="background-image: url('https://sefazmtdev.service-now.com/x_sded9_portal_t_0.banner3.jpg')">
+          <div class='content'>
+            <h2 class='title'>Ponte sobre o Rio das Mortes em Cocalinho</h2>
+            <p class='description'>  Crédito da Foto: Drone: Foto: Antônio Pinheiro/Secom-MT </p>
+            <!--button>Read More</button-->
+          </div>
+        </li>
+        <li class='item' style=" background-image: url('https://sefazmtdev.service-now.com/x_sded9_portal_t_0.banner4.jpg');">
+          <div class='content'>
+            <h2 class='title'>Batalhão de de Operações Policiais Especiais - BOPE</h2>
+            <p class='description'>
+            Créditos da Foto: Christiano Antonucci - Secom - MT
+            </p>
+            <!--button>Read More</button-->
+          </div>
+        </li>
+        <li class='item' style="background-image: url('https://sefazmtdev.service-now.com/x_sded9_portal_t_0.banner5.jpg')">
+          <div class='content'>
+            <h2 class='title'>Infraestrutura moderna e recursos tecnológicos transformam escolas estaduais na volta às aulas</h2>
+            <p class='description'>
+             Créditos da Foto: Christiano Antonucci - Secom - MT
+            </p>
+            <!--button>Read More</button-->
+          </div>
+        </li>
+        <li class='item' style="background-image: url('https://sefazmtdev.service-now.com/x_sded9_portal_t_0.banner6.jpg')">
+          <div class='content'>
+            <h2 class='title'>Parque Novo Mato Grosso - Espaço shows</h2>
+            <p class='description'>  Créditos da Foto: Christiano Antonucci - Secom - MT Drone: Rodolfo Perdigão - Secom - MT  </p>
+            <!--button>Read More</button-->
+          </div>
+        </li>
+      </ul>
+      <nav class='nav'>
+        <!--span class='btn prev'>&#8592;</span-->
+        <!--span class='btn next'>&#8594;</span-->
+      </nav>
+    </main>
+  </div>
+  
+  <script>
+(function() {
+  var slider = document.querySelector('.banner-sefaz-container .slider');
+  var prevBtn = document.querySelector('.banner-sefaz-container .prev');
+  var nextBtn = document.querySelector('.banner-sefaz-container .next');
+  var autoRotateTimeout;
+
+  function rotateNext() {
+    var items = document.querySelectorAll('.banner-sefaz-container .item');
+    slider.appendChild(items[0]);
+  }
+
+  function autoRotate() {
+    autoRotateTimeout = setTimeout(function() {
+      rotateNext();
+      autoRotate();
+    }, 5000);
+  }
+
+  function resetAutoRotate() {
+    clearTimeout(autoRotateTimeout);
+    autoRotate();
+  }
+
+  if (prevBtn) {
+    prevBtn.onclick = function(e) {
+      var items = document.querySelectorAll('.banner-sefaz-container .item');
+      slider.insertBefore(items[items.length - 1], slider.firstChild);
+      resetAutoRotate();
+    };
+  }
+
+  if (nextBtn) {
+    nextBtn.onclick = function(e) {
+      rotateNext();
+      resetAutoRotate();
+    };
+  }
+
+  // Swipe em dispositivos móveis
+  var touchStartX = 0;
+  var touchEndX = 0;
+
+  slider.addEventListener('touchstart', function(e) {
+    touchStartX = e.changedTouches[0].screenX;
+  }, false);
+
+  slider.addEventListener('touchend', function(e) {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+  }, false);
+
+  function handleSwipe() {
+    if (touchEndX < touchStartX) {
+      nextBtn.onclick();
+    } else if (touchEndX > touchStartX) {
+      prevBtn.onclick();
+    }
+  }
+
+  // Inicia rotação automática ao carregar a página
+  autoRotate();
+})();
+
+
+  </script>
+</body>
+</html>]]></template>
+    </sp_widget>
+</record_update>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_icon_image">
+    <sys_sg_icon_image action="INSERT_OR_UPDATE">
+        <image>f86c4ae1fba92210f6d5f9d38eefdc42</image>
+        <image_family/>
+        <name>testeIcon</name>
+        <sys_class_name>sys_sg_icon_image</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-05-16 12:28:12</sys_created_on>
+        <sys_id>c85c4aa1fba92210f6d5f9d38eefdc05</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>testeIcon</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sys_sg_icon_image_c85c4aa1fba92210f6d5f9d38eefdc05</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-16 12:28:25</sys_updated_on>
+    </sys_sg_icon_image>
+    <sys_attachment action="INSERT_OR_UPDATE">
+        <average_image_color/>
+        <chunk_size_bytes>700000</chunk_size_bytes>
+        <compressed>true</compressed>
+        <content_type>image/svg+xml</content_type>
+        <encryption_context/>
+        <file_name>image</file_name>
+        <hash>88e0a61f8c9efd86ce82031bf8ee12028f6131cc1fbd1e9be92467f007494b52</hash>
+        <image_height/>
+        <image_width/>
+        <size_bytes>470</size_bytes>
+        <size_compressed>315</size_compressed>
+        <state>pending</state>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-05-16 12:28:25</sys_created_on>
+        <sys_id>f86c4ae1fba92210f6d5f9d38eefdc42</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-16 12:28:25</sys_updated_on>
+        <table_name>ZZ_YYsys_sg_icon_image</table_name>
+        <table_sys_id>c85c4aa1fba92210f6d5f9d38eefdc05</table_sys_id>
+    </sys_attachment>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>H4sIAAAAAAAA/w==</data>
+        <length>16</length>
+        <position>0</position>
+        <sys_attachment display_value="image" sys_id="f86c4ae1fba92210f6d5f9d38eefdc42">f86c4ae1fba92210f6d5f9d38eefdc42</sys_attachment>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-05-16 12:28:25</sys_created_on>
+        <sys_id>3c6c4ae1fba92210f6d5f9d38eefdc42</sys_id>
+    </sys_attachment_doc>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>fZHbbsIwDIZfxfR6dhMnbZOpVNuQkCZtD8FKgUrQIFJR2NPPUYe0q104Pv3xpzh1vO7hdjoOcZkdxvH8nOfTNNFkKFz2OSulclFkcO276S3clpkCBcZZKDRnTb1AXKzDMMLr1MVw6mB96TooqSKGrzu87KS3+W0hJEAUwp8qteEEH33bDfEfRX6cFfkujV+F8/3S7w8jsOICEr9vwxCf4H1oCbGpz5vxANtl9sm6BDbkW4XiHBpFFRqWyFpi1GZlHWivyQOzlXlq9s618syCSmRPGkpLBcrhJUIpM6bciJe2m6PUvqIrqEgwLRwuRSUwRqvJopZ0xRU5YC0XZI9cajJpn6wEp1UhAFcKT3t+WBTDRxHFZLquFBmZ5ySfPXtRfGd5U6fvan4Aj2wVsdYBAAA=</data>
+        <length>408</length>
+        <position>1</position>
+        <sys_attachment display_value="image" sys_id="f86c4ae1fba92210f6d5f9d38eefdc42">f86c4ae1fba92210f6d5f9d38eefdc42</sys_attachment>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-05-16 12:28:25</sys_created_on>
+        <sys_id>bc6c4ae1fba92210f6d5f9d38eefdc42</sys_id>
+    </sys_attachment_doc>
+</record_update>
