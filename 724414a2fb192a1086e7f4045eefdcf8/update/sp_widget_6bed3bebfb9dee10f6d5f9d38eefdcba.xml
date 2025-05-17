@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($scope) {
+  /* widget controller */
+  var c = this;
+	// Estado inicial (pode ser null, true ou false)
+$scope.isLowercase = null;
+
+// Escuta evento do rootScope para atualizar o estado
+$scope.$root.$on('toggleCaseEvent', function(event, isLowercase) {
+  $scope.isLowercase = isLowercase;
+});
+
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.servicos-widget {
+  font-family: 'Roboto Flex', sans-serif !important;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%; /* Faz o container ocupar toda a largura */
+  padding: 0 20px; /* Espaçamento interno opcional */
+  box-sizing: border-box;
+}
+
+.blue-bar {
+  width: 5px;
+  height: 24px;
+  background-color:  #ffa500;
+  margin-right: 10px;
+}
+
+.fa.fa-map-marker{
+	margin-left: 10px;
+  color: #6CB4EE;
+  font-size: 15px;
+}
+
+.servicos-text {
+  font-size: 15px;
+  color: black;
+  padding: 10px;
+  
+}
+
+.servicos-line {
+  flex-grow: 1;
+  height: 1px;
+  background-color:  black;
+  font-weight: bold;
+}
+
+.lowercase-text {
+  text-transform: lowercase;
+}
+
+.uppercase-text {
+  text-transform: uppercase;
+}
+
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>navega_por_financas_sefaz</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Navega Por Financas Sefaz</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-05-10 15:36:39</sys_created_on>
+        <sys_id>6bed3bebfb9dee10f6d5f9d38eefdcba</sys_id>
+        <sys_mod_count>17</sys_mod_count>
+        <sys_name>Navega Por Financas Sefaz</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_6bed3bebfb9dee10f6d5f9d38eefdcba</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-16 23:26:25</sys_updated_on>
+        <template><![CDATA[<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+</style>
+<div class="servicos-widget">
+  <!--div class="blue-bar"></div-->
+  <div class="servicos-line"></div>
+  <i class="fa fa-map-marker" aria-hidden="true"></i>
+  <span class="servicos-text"  ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">NAVEGUE POR FINANÇAS DO ESTADO</span>
+  <div class="servicos-line"></div>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

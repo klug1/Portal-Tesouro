@@ -1,0 +1,829 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($scope) {
+  /* widget controller */
+  var c = this;
+	
+	// Estado inicial (pode ser null, true ou false)
+$scope.isLowercase = null;
+
+// Escuta evento do rootScope para atualizar o estado
+$scope.$root.$on('toggleCaseEvent', function(event, isLowercase) {
+  $scope.isLowercase = isLowercase;
+});
+
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>/* Base Styles */
+
+
+html, body {
+  	font-family: 'Roboto Flex', sans-serif !important;
+  	font-weight: 400;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.portal-footer {
+  	font-family: 'Roboto Flex', sans-serif !important;
+  	font-weight: 400;
+    background-color: #293273;
+    width: 100%;
+    min-height: 175px; 
+    padding: 20px 0;
+    color: white;
+    text-align: center;
+    margin-top: auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footer-container {
+  font-family: 'Roboto Flex', sans-serif !important;
+  font-weight: 400;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.footer-left {
+    font-family: 'Roboto Flex', sans-serif !important;
+  font-weight: 400;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.center-img {
+    display: block;
+    height: auto;
+    margin-top: 0;
+    max-width: 100%;
+    width: 320px;
+}
+
+.footer-column {
+    margin-left: 0;
+    padding: 0 10px;
+}
+
+.footer-column h3 {
+    font-family: 'Roboto Flex', sans-serif !important;
+    font-weight: 400;
+    font-size: 22px;
+    letter-spacing: 1px;
+    line-height: 100%;
+    color: white;
+    margin-bottom: 12px;
+    white-space: pre-line;
+    margin-top: 0;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 5px;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.footer-column ul li a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: white;
+    text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+    text-decoration: underline;
+}
+
+.right {
+    margin-left: auto;
+    text-align: left;
+}
+
+.right h4 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #F9F9F9;
+}
+
+.right p {
+    margin: 2px 0;
+    font-size: 14px;
+    color: #CBCBCB;
+}
+
+.right a {
+    color: white;
+    text-decoration: none;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.contact-item i {
+    margin-right: 10px;
+}
+
+.contact-item a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Specific Device Media Queries */
+
+/* Surface Duo (540 x 720) */
+@media screen and (width: 540px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .center-img {
+        width: 220px;
+        margin: 10px auto;
+    }
+    
+    .footer-left {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .footer-column {
+        margin: 10px 0;
+        text-align: center;
+    }
+    
+    .right {
+        margin-left: 0;
+        text-align: center;
+    }
+}
+
+.lowercase-text {
+  text-transform: lowercase;
+}
+
+.uppercase-text {
+  text-transform: uppercase;
+}
+
+
+/* iPhone SE (375 x 667) */
+@media screen and (width: 375px) {
+    .portal-footer {
+        padding: 15px 0;
+    }
+    
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .center-img {
+        width: 180px;
+        margin: 10px auto;
+    }
+    
+    .footer-left {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .footer-column h3 {
+        font-size: 16px;
+        margin-top: 10px;
+    }
+    
+    .footer-column ul li,
+    .footer-column ul li a {
+        font-size: 11px;
+    }
+    
+    .right {
+        margin: 15px 0 0 0;
+        text-align: center;
+    }
+    
+    .right h4 {
+        font-size: 20px;
+    }
+    
+    .contact-item {
+        justify-content: center;
+    }
+}
+
+/* iPhone XR (414 x 896) */
+@media screen and (width: 414px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .center-img {
+        width: 200px;
+    }
+    
+    .footer-left {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .footer-column h3 {
+        font-size: 18px;
+    }
+    
+    .right {
+        margin: 20px 0 0 0;
+        text-align: center;
+    }
+    
+    .contact-item {
+        justify-content: center;
+    }
+}
+
+/* iPhone 12 Pro (390 x 844) */
+@media screen and (width: 390px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .center-img {
+        width: 190px;
+    }
+    
+    .footer-left {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .footer-column h3 {
+        font-size: 17px;
+    }
+    
+    .right {
+        margin: 20px 0 0 0;
+        text-align: center;
+    }
+}
+
+/* iPhone 14 Pro Max (430 x 932) */
+@media screen and (width: 430px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .center-img {
+        width: 210px;
+    }
+    
+    .footer-left {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .footer-column h3 {
+        font-size: 18px;
+    }
+    
+    .right {
+        margin: 20px 0 0 0;
+        text-align: center;
+    }
+}
+
+/* Pixel 7 (412 x 915) &amp; Galaxy S20 Ultra (412 x 915) */
+@media screen and (width: 412px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .center-img {
+        width: 200px;
+    }
+    
+    .footer-left {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .footer-column h3 {
+        font-size: 18px;
+    }
+    
+    .right {
+        margin: 20px 0 0 0;
+        text-align: center;
+    }
+}
+
+/* Galaxy S8+ (360 x 740) */
+@media screen and (width: 360px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .center-img {
+        width: 180px;
+    }
+    
+    .footer-left {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .footer-column h3 {
+        font-size: 16px;
+    }
+    
+    .footer-column ul li,
+    .footer-column ul li a {
+        font-size: 11px;
+    }
+    
+    .right {
+        margin: 15px 0 0 0;
+        text-align: center;
+    }
+    
+    .right h4 {
+        font-size: 22px;
+    }
+}
+
+/* iPad Mini (768 x 1024) */
+@media screen and (width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 30px;
+    }
+    
+    .center-img {
+        width: 250px;
+        margin: 20px auto;
+    }
+    
+    .footer-left {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        margin-bottom: 20px;
+    }
+    
+    .footer-column {
+        text-align: center;
+        min-width: 200px;
+    }
+    
+    .right {
+        margin: 10px 0 0 0;
+        text-align: center;
+    }
+    
+    .contact-item {
+        justify-content: center;
+    }
+}
+
+/* iPad Air (820 x 1180) */
+@media screen and (width: 820px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 40px;
+    }
+    
+    .center-img {
+        width: 270px;
+        margin: 20px auto;
+    }
+    
+    .footer-left {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+        margin-bottom: 25px;
+    }
+    
+    .footer-column {
+        text-align: center;
+        min-width: 220px;
+    }
+    
+    .right {
+        margin: 15px 0 0 0;
+        text-align: center;
+    }
+}
+
+/* Surface Pro 7 (912 x 1368) */
+@media screen and (width: 912px) {
+    .footer-container {
+        flex-direction: row;
+        align-items: center;
+        padding: 0 40px;
+    }
+    
+    .center-img {
+        width: 280px;
+        margin: 0;
+    }
+    
+    .footer-left {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        width: 60%;
+        gap: 20px;
+    }
+    
+    .footer-column {
+        text-align: left;
+        min-width: 160px;
+    }
+    
+    .right {
+        width: 30%;
+        margin-left: auto;
+        text-align: left;
+    }
+}
+
+/* Asus Zenbook Fold (853 x 1280) */
+@media screen and (width: 853px) {
+    .footer-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 0 30px;
+    }
+    
+    .center-img {
+        width: 250px;
+        margin: 0;
+    }
+    
+    .footer-left {
+        flex: 1;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 20px;
+    }
+    
+    .footer-column {
+        min-width: 150px;
+        text-align: left;
+    }
+    
+    .right {
+        width: 30%;
+        margin-left: auto;
+        text-align: left;
+    }
+}
+
+/* Range-based media queries for better coverage */
+
+/* Extra Small Devices (phones) */
+@media screen and (max-width: 480px) {
+    .portal-footer {
+        min-height: auto;
+        padding: 15px 0;
+    }
+    
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .center-img {
+        max-width: 180px;
+    }
+    
+    .footer-left {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .footer-column {
+        margin: 10px 0;
+        text-align: center;
+    }
+    
+    .footer-column h3 {
+        font-size: 16px;
+    }
+    
+    .footer-column ul li,
+    .footer-column ul li a {
+        font-size: 11px;
+    }
+    
+    .right {
+        margin: 15px 0 0 0;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .right h4 {
+        font-size: 20px;
+    }
+    
+    .contact-item {
+        justify-content: center;
+    }
+}
+
+/* Small Devices (large phones, small tablets) */
+@media screen and (min-width: 481px) and (max-width: 767px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .center-img {
+        max-width: 220px;
+        margin: 10px auto;
+    }
+    
+    .footer-left {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .footer-column {
+        margin: 10px 0;
+        text-align: center;
+    }
+    
+    .right {
+        margin: 20px 0 0 0;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .contact-item {
+        justify-content: center;
+    }
+}
+
+/* Medium Devices (tablets) */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .center-img {
+        max-width: 260px;
+        margin: 20px auto;
+    }
+    
+    .footer-left {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        margin-bottom: 20px;
+    }
+    
+    .footer-column {
+        text-align: center;
+        min-width: 200px;
+    }
+    
+    .right {
+        margin: 15px 0 0 0;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .contact-item {
+        justify-content: center;
+    }
+}
+
+/* Large Devices (desktops, laptops) */
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+    .footer-container {
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 0 30px;
+    }
+    
+    .center-img {
+        width: 260px;
+        margin: 0;
+    }
+    
+    .footer-left {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 20px;
+        width: 60%;
+    }
+    
+    .footer-column {
+        min-width: 150px;
+    }
+    
+    .right {
+        width: 30%;
+        margin-left: auto;
+        text-align: left;
+    }
+}
+
+/* Extra Large Devices (large desktops) */
+@media screen and (min-width: 1200px) {
+    .footer-container {
+        padding: 0 40px;
+    }
+    
+    .center-img {
+        width: 320px;
+    }
+    
+    .footer-left {
+        gap: 2rem;
+    }
+    
+    .footer-column {
+        min-width: 180px;
+    }
+    
+    .right {
+        width: 25%;
+    }
+}
+
+/* Extra Extra Large Devices */
+@media screen and (min-width: 1700px) {
+    .footer-column {
+        flex: 1;
+        margin-left: 0px;
+        margin-bottom: -18px;
+    }
+
+    .footer-left {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin: 0;
+        padding: 2rem 0;
+      	transform: translate(105px, 34px);
+    }
+
+    .right {
+        margin-left: auto;
+        text-align: left;
+        width: 25%;
+    }
+
+    .center-img {
+        display: block;
+        height: auto;
+        margin-top: -0.8rem;
+        max-width: 100%;
+    }
+    .contact-info{
+    transform: translateX(380px);
+  }
+  .right h4{
+    transform: translateX(380px);
+  }
+  
+}
+
+/* High Density Displays */
+@media (min-resolution: 1.25dppx), (min-scale: 1.25) {
+    .footer-container {
+        max-width: 100%;
+    }
+    
+    .center-img {
+        max-width: 300px;
+    }
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>tesouro_footer</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Tesouro Footer</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-05-11 14:18:05</sys_created_on>
+        <sys_id>d6853000fbe5225086e7f4045eefdc84</sys_id>
+        <sys_mod_count>60</sys_mod_count>
+        <sys_name>Tesouro Footer</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_d6853000fbe5225086e7f4045eefdc84</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-17 00:46:35</sys_updated_on>
+        <template><![CDATA[<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+</style>
+
+<footer class="portal-footer">
+  <div class="footer-container">
+    
+    <div class="footer-left">
+      <img src="logo_sefaz_footer.svg" width="350" alt="Logo Governo de Mato Grosso" class="center-img" />
+      <div class="footer-column" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">
+        <h3 ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">Secretaria de Estado de Fazenda – SEFAZ</h3>
+        <ul>
+          <li ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">Av. Historiador Rubens de Mendonça nº 3415</li>
+          <li ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">Centro Político Administrativo – Complexo I - Ala D</li>
+          <li ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">Cuiabá-MT CEP: 78049-936</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- MOVER AQUI PARA DENTRO -->
+    <div class="right">
+      <h4 ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">Contatos</h4>
+      <div class="contact-info">
+        <div class="contact-item">
+          <i class="fa fa-phone"></i><p>(65) 3617 - 2518</p>
+        </div>
+        <div class="contact-item">
+          <i class="fa fa-envelope-o"></i><p><a target="_blank" href="mailto:gabinete.sate@sefaz.mt.gov.br" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">gabinete.sate@sefaz.mt.gov.br</a></p>
+        </div>
+        <div class="contact-item">
+          <i class="fa fa-instagram"></i><p><a target="_blank" href="https://www.instagram.com/sefazmt/">@sefazmt</a></p>
+        </div>
+        <div class="contact-item">
+          <i class="fa fa-linkedin-square"></i><p><a target="_blank" href="https://www.linkedin.com/company/sefazmt/">@sefazmt</a></p>
+        </div>
+        <div class="contact-item">
+          <i class="fa fa-youtube-play"></i><p><a target="_blank" href="https://www.youtube.com/@SefazMatoGrosso_MT">@sefazmt</a></p>
+        </div>
+      </div>
+    </div>
+
+  </div> <!-- fecha footer-container -->
+</footer>
+]]></template>
+    </sp_widget>
+</record_update>

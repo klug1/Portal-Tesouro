@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $location) {
+  $scope.goTo = function(url) {
+    // Abre o link em uma nova aba
+    window.location.href = url;
+  };
+	
+	// Estado inicial (pode ser null, true ou false)
+$scope.isLowercase = null;
+
+// Escuta evento do rootScope para atualizar o estado
+$scope.$root.$on('toggleCaseEvent', function(event, isLowercase) {
+  $scope.isLowercase = isLowercase;
+});
+
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&amp;display=swap');
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto Flex', sans-serif;
+  background: #fff;
+  text-align: center;
+}
+
+.center-widget {
+   font-family: 'Roboto Flex', sans-serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 30%); /* desce o bloco visualmente */
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+}
+
+.center-widget .back-link {
+  display: inline-block;
+  margin-bottom: 2rem; /* afasta o link do título */
+  font-size: 2rem;
+  color: #293273;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+  text-decoration: underline;
+  transform: translateY(-30px);
+  cursor: pointer;
+}
+
+
+.center-widget .back-link:hover {
+  color: #0056b3;
+ // text-decoration: underline;
+}
+
+
+.center-widget .title {
+   font-family: 'Roboto Flex', sans-serif;
+  font-weight: 300;
+  font-size: 2.8rem;
+   margin-top: -1rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.center-widget img {
+  max-width: 500px;
+  max-height: 500px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.center-widget .error-text {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #293273;
+   font-family: 'Roboto Flex', sans-serif;
+}
+
+.lowercase-text {
+  text-transform: lowercase;
+}
+
+.uppercase-text {
+  text-transform: uppercase;
+}
+
+
+/* Responsivo */
+@media (max-width: 600px) {
+  .center-widget .title {
+    font-size: 1.5rem;
+  }
+  .center-widget .error-text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .center-widget {
+    transform: translate(-50%, 60%);
+  }
+
+  .center-widget .title {
+    font-size: 1.4rem;
+  }
+
+  .center-widget .error-text {
+    font-size: 1rem;
+  }
+
+  .center-widget img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+@media (max-width: 440px) {
+  .center-widget {
+    transform: translate(-50%, 80%);
+  }
+
+  .center-widget .title {
+    font-size: 1.4rem;
+  }
+
+  .center-widget .error-text {
+    font-size: 1rem;
+  }
+
+  .center-widget img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 350px) {
+  .center-widget {
+    transform: translate(-50%, 100%);
+  }
+
+  .center-widget .title {
+    font-size: 1.4rem;
+  }
+
+  .center-widget .error-text {
+    font-size: 1rem;
+  }
+
+  .center-widget img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>404_sefaz_widget</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>404_sefaz_widget</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-05-15 23:41:24</sys_created_on>
+        <sys_id>0ddc9b1dfb6de65086e7f4045eefdc34</sys_id>
+        <sys_mod_count>46</sys_mod_count>
+        <sys_name>404_sefaz_widget</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_0ddc9b1dfb6de65086e7f4045eefdc34</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-16 23:36:11</sys_updated_on>
+        <template><![CDATA[<div class="center-widget">
+   <a  ng-click="goTo('https://sefazmtdev.service-now.com/sefaz')" class="back-link" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">Voltar para o portal</a>
+  <div class="title" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">Ops! Estamos em construção...</div>
+  <img src="x_sded9_portal_t_0.404Image.png" alt="404" />
+  <div class="error-text" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">404 PÁGINA NÃO ENCONTRADA</div>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

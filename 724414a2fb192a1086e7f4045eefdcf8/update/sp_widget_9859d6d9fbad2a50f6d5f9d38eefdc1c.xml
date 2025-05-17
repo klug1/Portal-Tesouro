@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $element) {
+  function renderTree(node) {
+    var container = document.createElement("div");
+    container.className = "org-node";
+
+    var box = document.createElement("div");
+    box.className = "org-box";
+
+   // Tooltip estilizado
+var tooltip = document.createElement("div");
+tooltip.className = "tooltip";
+tooltip.textContent = node.users.length > 0 ? node.users.join('\n') : "Sem membros";
+box.appendChild(tooltip);
+
+
+    // Título do departamento
+    var title = document.createElement("strong");
+    title.textContent = node.name;
+    box.appendChild(title);
+
+    // Lista visível de usuários (opcional)
+    /*if (node.users.length > 0) {
+      var ul = document.createElement("ul");
+      node.users.forEach(function(user) {
+        var li = document.createElement("li");
+        li.textContent = user;
+        ul.appendChild(li);
+      });
+      box.appendChild(ul);
+    }
+*/
+    container.appendChild(box);
+
+    if (node.children && node.children.length > 0) {
+      var line = document.createElement("div");
+      line.className = "org-line-down";
+      container.appendChild(line);
+
+      var childrenContainer = document.createElement("div");
+      childrenContainer.className = "org-children";
+
+      node.children.forEach(function(child) {
+        childrenContainer.appendChild(renderTree(child));
+      });
+
+      container.appendChild(childrenContainer);
+    }
+
+    return container;
+  }
+
+  // Renderiza árvore
+  var root = document.getElementById("org-container");
+  root.innerHTML = ""; // Limpa
+  if ($scope.data.tree && $scope.data.tree.length > 0) {
+    $scope.data.tree.forEach(function(rootNode) {
+      root.appendChild(renderTree(rootNode));
+    });
+  }
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>#org-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f0f4fa;
+  padding: 60px 20px;
+  font-family: "Segoe UI", sans-serif;
+  overflow-x: auto;
+}
+
+/* Cada nó do organograma */
+.org-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 20px 10px;
+}
+
+/* Caixa visual do departamento */
+.org-box {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  min-width: 260px;
+  max-width: 300px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  border-top: 6px solid #0070cc;
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s;
+}
+
+.org-box:hover {
+  transform: scale(1.02);
+}
+
+/* Título do departamento */
+.org-box strong {
+  display: block;
+  font-size: 18px;
+  color: #003366;
+  margin-bottom: 10px;
+}
+
+/* Lista de usuários */
+.org-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  font-size: 14px;
+  color: #333;
+}
+
+.org-box li {
+  margin: 4px 0;
+  padding-left: 16px;
+  position: relative;
+}
+
+.org-box li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #0070cc;
+}
+
+/* Conector vertical para filhos */
+.org-line-down {
+  width: 2px;
+  height: 30px;
+  background: #0070cc;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Container horizontal dos filhos */
+.org-children {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 20px;
+  position: relative;
+  padding-top: 30px;
+}
+
+/* Linha horizontal conectando filhos */
+.org-children::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50px;
+  right: 50px;
+  height: 2px;
+  background: #0070cc;
+  z-index: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .org-children {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .org-children::before {
+    display: none;
+  }
+}
+/* Tooltip customizado */
+.tooltip {
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #003366;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  white-space: pre-line;
+  text-align: left;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  z-index: 10;
+  width: max-content;
+  max-width: 280px;
+}
+
+/* Mostra o tooltip ao passar o mouse */
+.org-box:hover .tooltip {
+  opacity: 1;
+}
+
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>organograma_tesouro</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+angular.module('sn.$sp').directive('orgChart', function($compile) {
+  return {
+    scope: {
+      node: '='
+    },
+    templateUrl: 'org-chart-template',
+    link: function(scope, element) {
+      $compile(element.contents())(scope);
+    }
+  };
+});
+
+}]]></link>
+        <name>Organograma tesouro</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  function buildTree(departments, users, parentId) {
+    var tree = [];
+
+    for (var i = 0; i < departments.length; i++) {
+      var dept = departments[i];
+      if ((dept.parent || '') == (parentId || '')) {
+        var deptUsers = [];
+
+        for (var j = 0; j < users.length; j++) {
+          if (users[j].department == dept.sys_id) {
+            deptUsers.push(users[j].name);
+          }
+        }
+
+        tree.push({
+          name: dept.name,
+          sys_id: dept.sys_id,
+          users: deptUsers,
+          children: buildTree(departments, users, dept.sys_id)
+        });
+      }
+    }
+
+    return tree;
+  }
+
+  var deptGR = new GlideRecord('cmn_department');
+deptGR.AddEncodedQuery('');
+	deptGR.query();
+
+  var departments = [];
+  while (deptGR.next()) {
+    departments.push({
+      sys_id: deptGR.getUniqueValue(),
+      name: deptGR.getValue('name'),
+      parent: deptGR.getValue('u_nome_unidade_superior')
+    });
+  }
+
+  var userGR = new GlideRecord('sys_user');
+  userGR.query();
+
+  var users = [];
+  while (userGR.next()) {
+    users.push({
+      name: userGR.getValue('name'),
+      department: userGR.getValue('department')
+    });
+  }
+
+  data.tree = buildTree(departments, users, '');
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>estevao.gabriel@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-15 18:47:48</sys_created_on>
+        <sys_id>9859d6d9fbad2a50f6d5f9d38eefdc1c</sys_id>
+        <sys_mod_count>25</sys_mod_count>
+        <sys_name>Organograma tesouro</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_9859d6d9fbad2a50f6d5f9d38eefdc1c</sys_update_name>
+        <sys_updated_by>estevao.gabriel@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-15 20:06:08</sys_updated_on>
+        <template><![CDATA[<div id="org-container"></div>
+]]></template>
+    </sp_widget>
+</record_update>

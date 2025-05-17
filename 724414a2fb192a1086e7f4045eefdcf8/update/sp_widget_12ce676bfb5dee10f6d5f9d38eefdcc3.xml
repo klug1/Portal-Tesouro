@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $location) {
+ $scope.goTo = function(url) {
+    // Abre o link em uma nova aba
+    window.open(url, '_blank');
+  };
+	
+	  $scope.goToPage = function(id) {
+    $location.url("?id=" + id);
+  };
+	
+	  var c = this;
+	
+	// Estado inicial (pode ser null, true ou false)
+$scope.isLowercase = null;
+
+// Escuta evento do rootScope para atualizar o estado
+$scope.$root.$on('toggleCaseEvent', function(event, isLowercase) {
+  $scope.isLowercase = isLowercase;
+});
+
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>body { /* Para preview */
+            background-color: #f4f6f9;
+            padding: 20px;
+            font-family: 'Roboto Flex', sans-serif !important;
+  					font-weight: 400;
+        }
+
+.card-title-internal.capag-title-exact {
+  	font-family: 'Roboto Flex', sans-serif !important;
+  	font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-title-internal.capag-title-exact i {
+    margin-left: 10px;
+  	margin-top: 2px;
+}
+
+.fa.fa-info-circle {
+	color: #6CB4EE;
+}
+
+        .servicos-widget {
+          font-family: 'Roboto Flex', sans-serif !important;
+  				font-weight: 400;
+            display: flex;
+            align-items: center;
+            position: static;
+            font-family: inherit;
+            max-width: 1200px; 
+            margin: 20px auto;
+        }
+        .blue-bar {
+            width: 4px; 
+            height: 22px; 
+            margin-right: 8px;
+        }
+        .servicos-text {
+          font-family: 'Roboto Flex', sans-serif !important;
+  				font-weight: 400;
+            font-size: 22px; 
+            color: #333; 
+            padding: 10px 0;
+            font-weight: 600; 
+        }
+        .servicos-line {
+            flex-grow: 1;
+            height: 1px;
+            margin-left: 10px;
+        }
+        .destaques-main-container {
+            //display: flex;
+            //gap: 25px; /* Espaçamento entre cards */
+            /*padding-top: 15px; 
+            font-family: inherit;
+            max-width: 1200px; 
+            margin: 0 auto;
+          	margin-left: 9rem;
+      			padding: 3rem;*/
+          font-family: 'Roboto Flex', sans-serif !important;
+  				font-weight: 400; 
+          display: flex;
+          gap: 25px;
+          width: 100%;
+          padding: 3rem;
+          margin-left: 9rem;
+          width: calc(100% - 9rem);
+          
+          
+        }
+        .destaques-section {
+          font-family: 'Roboto Flex', sans-serif !important;
+  				font-weight: 400;
+            flex: 1;
+            min-height: 300px; 
+            display: flex;
+            flex-direction: column;
+        }
+        .destaques-section-title {
+          font-family: 'Roboto Flex', sans-serif !important;
+  				font-weight: 400;
+            font-size: 20px; 
+            color: #4A4A4A; /* Cinza escuro */
+            margin-bottom: 8px; 
+            font-weight: 600;
+            margin-top: -6px;
+        }
+        .destaque-card { /* Estilo base para os cards */
+          font-family: 'Roboto Flex', sans-serif !important;
+  				font-weight: 400;
+            background-color: #fff;
+            border: 1px solid #EAEAEA; /* Borda mais clara */
+            border-radius: 3px; /* Arredondamento sutil */
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04); /* Sombra bem sutil */
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        /* --- CARD CAPAG --- */
+        .capag-card-exact {
+            padding: 15px; /* Padding geral do card */
+            min-height: 280px; 
+        }
+        .capag-title-exact {
+            font-size: 13px; 
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+        .capag-icon-bullet-exact {
+            color: #0071BC; 
+            margin-right: 6px;
+            font-size: 18px; /* Tamanho do bullet */
+            line-height: 1;
+        }
+        .capag-content-exact {
+          font-family: 'Roboto Flex', sans-serif !important;
+  				font-weight: 400;
+            display: flex;
+            gap: 15px;
+            flex-grow: 1;
+            align-items: stretch; 
+        }
+        .capag-left-exact {
+          font-family: 'Roboto Flex', sans-serif !important;
+  				font-weight: 400;
+            background-color: #243c14;
+            color: white;
+            padding: 8px 10px 5px 10px; 
+            border-radius: 2px; /* Arredondamento sutil */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; 
+            align-items: stretch; /* Permite que os filhos estiquem na largura */
+            min-width: 90px; 
+            position: relative; /* Para o checkmark */
+            box-sizing: border-box;
+            align-self: stretch;
+            margin-right: 10px;
+            margin-left: 10px;
+            padding-left: 50px;
+            margin-top: -1px;
+            margin-bottom: 23px;
+        }
+        .capag-top-checkmark {
+            font-size: 10px;
+            font-weight: bold;
+            color: white;
+            position: absolute;
+            top: 5px;
+            left: 7px;
+        }
+        .capag-nota-text-exact {
+            font-size: 9px;
+            font-weight: normal;
+            opacity: 0.9;
+            display: block;
+            margin-bottom: 2px; 
+            text-align: left; /* Alinha o texto à esquerda */
+            padding-left: 17px; /* Alinha com o checkmark */
+            transform: translateY(-14px); 
+            margin-top: 15px; 
+        }
+        .capag-nota-letra-exact {
+            font-size: 71px;
+            font-weight: 600; 
+            line-height: 1;
+            display: block;
+            margin-top: 0px; 
+            transform: translateX(6px);
+        }
+        .capag-left-text-block-exact { 
+            text-align: right; 
+            margin-bottom: 53px; 
+        }
+        .capag-right-exact {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 13px; 
+        }
+        .capag-indicator-item-exact {
+            background-color: #243c14; 
+            color: white;
+            padding: 20px 8px 8px 3px; 
+            border-radius: 2px;
+            position: relative; /* Para o checkmark e descrição */
+            font-size: 11px; 
+        }
+        .capag-indicator-item-exact .indicator-checkmark {
+            top: 7px; 
+            left: 7px;
+            font-size: 9px;
+        }
+        .capag-indicator-description-exact {
+            font-size: 9px;
+            color: #E0E0E0; /* Cinza bem claro, quase branco */
+            margin-bottom: 2px;
+            display: block;
+            font-weight: normal;
+            text-align: right;
+            margin-top: 2px;
+            transform: translateY(-9px);
+        }
+        .capag-indicator-main-exact {
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
+            font-weight: 500;
+        }
+        .indicator-name-exact {
+             font-size: 10.5px; 
+        }
+        .indicator-value-exact {
+            font-size: 10.5px;
+            font-weight: 600;
+        }
+        .capag-footer-exact {
+            font-size: 10px;
+            color: #777; 
+            margin-top: 12px;
+            text-align: center;
+        }
+
+       /* --- CARD RANKING CLP EXACT --- */
+        .ranking-clp-card-exact {
+          font-family: 'Roboto Flex', sans-serif !important;
+  				font-weight: 400;
+            background-color: #fff; /* Fundo base */
+            padding: 0; 
+            background-image: radial-gradient(circle, #FBF4E0 0.7px, transparent 0.8px);
+            background-size: 7px 7px; 
+            overflow: hidden; 
+            min-height: auto;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .ranking-clp-title-exact {
+          font-family: 'Roboto Flex', sans-serif !important;
+  				font-weight: 400;
+            font-size: 2.25rem; /* Reduzido para melhor responsividade */
+            font-weight: bold;
+            color: #1E4B77; 
+            padding: 1rem 0.5rem;
+            text-align: center;
+            margin: 0;
+        }
+        
+        .ranking-clp-content-wrapper-exact {
+          font-family: 'Roboto Flex', sans-serif !important;
+  				font-weight: 400;
+            display: flex;
+            padding: 0.5rem;
+            gap: 10px;
+            position: relative;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .ranking-clp-info-panel-exact {
+          font-family: 'Roboto Flex', sans-serif !important;
+  				font-weight: 400;
+            background-color: #FFFFFF;
+            border-radius: 3px;
+            padding: 0.875rem;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+            z-index: 1;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 300px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .ranking-main-metric-exact {
+          font-family: 'Roboto Flex', sans-serif !important;
+  				font-weight: 400;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: nowrap;
+            width: 100%;
+        }
+        
+        .ranking-percentage-symbol-exact {
+            font-size: 2.0rem;
+            font-weight: 600;
+            color: #727a8a; 
+        }
+        
+        .ranking-position-exact {
+          font-family: 'Roboto Flex', sans-serif !important;
+  				font-weight: 400;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #59A57C; 
+            line-height: 1;
+        }
+        
+        .ranking-description-exact {
+          font-family: 'Roboto Flex', sans-serif !important;
+  				font-weight: 400;
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: #4A4A4A;
+            margin-bottom: 3px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .ranking-plus-one-exact { 
+            font-weight: normal; 
+            color: red;
+            margin-left: 0.25rem;
+        }
+        
+        .ranking-subtext-exact {
+					font-family: 'Roboto Flex', sans-serif !important;
+  				font-weight: 400;
+            font-size: 0.925rem;
+            color: #777; 
+            line-height: 1.3;
+            margin-top: 0.5rem;
+            text-align: center;
+        }
+        
+        .ranking-clp-map-container-exact {
+            display: flex;
+            align-items: center; 
+            justify-content: center; 
+            width: 100%;
+            margin: 0 auto;
+            padding: 0.5rem 0;
+        }
+        
+        .ranking-clp-map-container-exact img {
+            width: auto;
+            max-width: 100%;
+            height: auto;
+            max-height: 180px;
+            object-fit: contain;
+        }
+
+.lowercase-text {
+  text-transform: lowercase;
+}
+
+.uppercase-text {
+  text-transform: uppercase;
+}
+
+
+        /* --- RESPONSIVENESS --- */
+        @media (max-width: 1200px) {
+            .destaques-main-container {
+                padding: 1rem;
+            }
+            
+            .ranking-clp-title-exact {
+                margin-left: 0.5rem;
+                padding: 1.5rem 1rem 0.5rem 0.5rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .destaques-main-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 2rem;
+            }
+            
+            .destaques-section {
+                width: 100%; 
+                max-width: 600px; 
+            }
+            
+            .capag-nota-letra-exact {
+                font-size: 3.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .destaques-main-container {
+                padding: 1rem 0.5rem;
+            }
+            
+            .capag-content-exact {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            .capag-left-exact {
+                width: auto;
+                min-width: 0;
+                padding: 0.5rem 0.5rem 0.5rem 3rem;
+                margin: 0 0 1rem 0;
+                height: auto;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+            }
+            
+            .capag-left-text-block-exact {
+                margin-bottom: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .capag-nota-letra-exact {
+                font-size: 2.5rem;
+                transform: translateX(35px);
+            }
+            
+            .capag-nota-text-exact {
+                transform: none;
+                margin-top: 0;
+            }
+            
+            .ranking-clp-title-exact {
+                font-size: 1.25rem;
+                text-align: center;
+                padding: 1rem 0.5rem;
+                margin-left: 0;
+            }
+            
+            .ranking-position-exact {
+                font-size: 2.0rem;
+            }
+            
+            .ranking-description-exact {
+                font-size: 1.75rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .destaques-section-title {
+                text-align: center;
+            }
+            
+            .capag-right-exact {
+                width: 100%;
+                min-width: 0;
+            }
+            
+            .capag-indicator-item-exact {
+                padding: 1rem 0.5rem 0.5rem 0.5rem;
+            }
+            
+            .capag-indicator-description-exact {
+                text-align: left;
+                padding-left: 1.5rem;
+            }
+            
+            .capag-indicator-main-exact {
+                flex-direction: column;
+                align-items: flex-start;
+                padding-left: 1.5rem;
+            }
+            
+            .indicator-value-exact {
+                margin-top: 0.25rem;
+            }
+        }</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>resultados_capag_sefaz</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Resultados CAPAG SEFAZ</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>pk.aba</sys_created_by>
+        <sys_created_on>2025-05-10 14:30:29</sys_created_on>
+        <sys_id>12ce676bfb5dee10f6d5f9d38eefdcc3</sys_id>
+        <sys_mod_count>64</sys_mod_count>
+        <sys_name>Resultados CAPAG SEFAZ</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_12ce676bfb5dee10f6d5f9d38eefdcc3</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-16 23:25:57</sys_updated_on>
+        <template><![CDATA[<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preview Destaques - Detalhado</title>
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+</style>
+</head>
+<body>
+
+<!-- container para o conteúdo de Destaques -->
+<div class="destaques-main-container">
+    <div class="destaques-section">
+        <h3 class="destaques-section-title"  ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">Resultados CAPAG</h3>
+        <a ng-click="goTo('https://www.tesourotransparente.gov.br/temas/estados-e-municipios/capacidade-de-pagamento-capag')" style="text-decoration: none; color: inherit; cursor:pointer;">
+            <div class="destaque-card capag-card-exact">
+                <div class="card-title-internal capag-title-exact"  ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">
+                    CAPAG - Capacidade de Pagamento <i class="fa fa-info-circle" aria-hidden="true"></i>
+                </div>
+                <div class="capag-content-exact">
+                    <div class="capag-left-exact">
+                        <span class="capag-top-checkmark">&#10003;</span>
+                        <div class="capag-left-text-block-exact">
+                            <div class="capag-nota-text-exact"  ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">Nota CAPAG</div>
+                            <div class="capag-nota-letra-exact"  ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">A</div>
+                        </div>
+                    </div>
+                    <div class="capag-right-exact">
+                        <div class="capag-indicator-item-exact">
+                            <span class="capag-top-checkmark indicator-checkmark">&#10003;</span>
+                            <div class="capag-indicator-description-exact"  ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">Dívida Consolidada/Receita Corrente Líquida</div>
+                            <div class="capag-indicator-main-exact">
+                                <span class="indicator-name-exact"  ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">Indicador I - Endividamento</span>
+                                <span class="indicator-value-exact" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">17,07%</span>
+                            </div>
+                        </div>
+                        <div class="capag-indicator-item-exact">
+                            <span class="capag-top-checkmark indicator-checkmark">&#10003;</span>
+                            <div class="capag-indicator-description-exact"  ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">Despesa Corrente/Receita Corrente Ajustada</div>
+                            <div class="capag-indicator-main-exact">
+                                <span class="indicator-name-exact"  ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">Indicador II - Poupança Corrente</span>
+                                <span class="indicator-value-exact" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">70,18%</span>
+                            </div>
+                        </div>
+                        <div class="capag-indicator-item-exact">
+                            <span class="capag-top-checkmark indicator-checkmark">&#10003;</span>
+                            <div class="capag-indicator-description-exact" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">Obrigações Financeiras/Disponibilidade de Caixa Líquida</div>
+                            <div class="capag-indicator-main-exact">
+                                <span class="indicator-name-exact" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">Indicador III - Liquidez</span>
+                                <span class="indicator-value-exact" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">0,73%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="capag-footer-exact"  ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">
+                    Fonte: SICONFI <!--span style="margin-left:10px;">Data: 30/07/2021</span-->
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="destaques-section">
+        <h3 class="destaques-section-title" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">RANKING CLP</h3>
+        <a ng-click="goTo('https://rankingdecompetitividade.org.br/centro-oeste/mt/ranking-geral/nota-do-pilar?year=2024')"  style="text-decoration: none; color: inherit; cursor:pointer;">
+            <div class="destaque-card ranking-clp-card-exact">
+                <div class="ranking-clp-title-exact" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">MATO GROSSO</div>
+                <div class="ranking-clp-content-wrapper-exact">
+                    <div class="ranking-clp-map-container-exact">
+                        <img src="https://rankingdecompetitividade.org.br/media/mapas/mt.png" alt="Mapa do Mato Grosso pontilhado">
+                    </div>
+                    <div class="ranking-clp-info-panel-exact">
+                        <div class="ranking-main-metric-exact">
+                            <span class="ranking-percentage-symbol-exact">%</span>
+                            <span class="ranking-position-exact" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">2º</span>
+                            <span class="ranking-description-exact" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">SOLIDEZ FISCAL <span class="ranking-plus-one-exact">+1</span></span>
+                        </div>
+                        <div class="ranking-subtext-exact" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">Regra de Ouro; Solvência Fiscal</div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+</body>
+</html>
+</html>
+]]></template>
+    </sp_widget>
+</record_update>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($scope) {
+  /* widget controller */
+  var c = this;
+	
+	// Estado inicial (pode ser null, true ou false)
+$scope.isLowercase = null;
+
+// Escuta evento do rootScope para atualizar o estado
+$scope.$root.$on('toggleCaseEvent', function(event, isLowercase) {
+  $scope.isLowercase = isLowercase;
+});
+
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css> .sobre-nos-widget {
+    font-family: 'Roboto Flex', sans-serif;
+    color: #293273;
+    max-width: 800px;
+    margin: 5rem auto;
+    padding: 0 20px;
+  }
+
+  .sobre-nos-titulo {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #6CB4EE;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .sobre-nos-headline {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #293273;
+    margin-bottom: 1rem;
+  }
+
+  .sobre-nos-descricao {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+  }
+
+  .sobre-nos-info-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .sobre-nos-contato,
+  .sobre-nos-redes {
+    flex: 1;
+    min-width: 250px;
+  }
+
+  .sobre-nos-contato h4,
+  .sobre-nos-redes h4 {
+    font-size: 0.9rem;
+    color: #6CB4EE;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+  }
+
+  .sobre-nos-contato p,
+  .sobre-nos-contato a {
+    font-size: 0.95rem;
+    color: #333;
+    margin: 0.3rem 0;
+    text-decoration: none;
+  }
+
+  .sobre-nos-redes .icon-container {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .sobre-nos-redes .icon-container a {
+    font-size: 1.2rem;
+    color: #293273;
+    text-decoration: none;
+  }
+
+  /* Ícones simples com fontes como FontAwesome */
+  .fa {
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900;
+  }
+
+  /* Responsivo */
+  @media (max-width: 600px) {
+    .sobre-nos-info-container {
+      flex-direction: column;
+    }
+  }</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>sobre_nos_image_sefaz</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>sobre nos image Sefaz</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-05-17 00:12:28</sys_created_on>
+        <sys_id>028decb5fb2d6a5086e7f4045eefdcdc</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>sobre nos image Sefaz</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_028decb5fb2d6a5086e7f4045eefdcdc</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-17 00:12:53</sys_updated_on>
+        <template><![CDATA[<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+</style>
+
+<div class="sobre-nos-widget">
+ <img src="x_sded9_portal_t_0.sobrenos.png">
+</div>]]></template>
+    </sp_widget>
+</record_update>

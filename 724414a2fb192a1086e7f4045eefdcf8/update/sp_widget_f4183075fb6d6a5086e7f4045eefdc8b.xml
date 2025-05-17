@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope) {
+  var c = this;
+  
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css> .tree-horizontal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px;
+    position: relative;
+  }
+
+  .children-list-horizontal {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+    position: relative;
+  }
+
+  /* Linha horizontal que conecta filhos */
+  .children-list-horizontal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #555;
+    z-index: 0;
+  }
+
+  /* Pai */
+  .parent-node {
+    min-width: 140px;
+    height: 70px;
+    background-color: #e0e0e0;
+    border: 2px solid #555;
+    border-radius: 6px;
+    font-weight: bold;
+    font-family: 'Roboto Flex', sans-serif;
+    text-align: center;
+    line-height: 70px;
+    padding: 0 15px;
+    white-space: nowrap;
+    overflow: visible !important;
+    text-overflow: ellipsis;
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Linha vertical saindo do pai */
+  .parent-node::after {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    width: 2px;
+    height: 30px;
+    background: #555;
+    transform: translateX(-50%);
+    z-index: 10;
+  }
+
+  /* Filho */
+  .child-node {
+    min-width: 110px;
+    height: 55px;
+    background-color: #f8f8f8;
+    border: 1px solid #888;
+    border-radius: 6px;
+    font-family: 'Roboto Flex', sans-serif;
+    text-align: center;
+    line-height: 55px;
+    font-size: 14px;
+    padding: 0 10px;
+    white-space: nowrap;
+    overflow: visible !important;
+    text-overflow: ellipsis;
+    display: inline-block;
+    position: relative;
+  }
+
+  /* Linha vertical saindo do filho até a linha horizontal */
+  .child-node::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    width: 2px;
+    height: 30px;
+    background: #555;
+    transform: translateX(-50%);
+    z-index: 10;
+  }
+
+  /* Tooltip geral */
+  .tooltip-container {
+    position: relative;
+    display: inline-block;
+    cursor: help;
+    overflow: visible;
+  }
+
+  .tooltip-text {
+    visibility: hidden;
+    width: max-content;
+    max-width: 300px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 8px;
+    position: absolute;
+    z-index: 1000;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 12px;
+    white-space: normal;
+  }
+
+  .tooltip-container:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  /* Tooltip usuários (balão à direita) */
+  .tooltip-users {
+   	line-height: 2;
+  	padding: 6px 8px;
+  	font-size: 10px;
+    visibility: hidden;
+    background-color: #293273;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 6px;
+    position: absolute;
+    top: 60%;
+    left: 105%;
+    transform: translateY(-50%);
+    box-shadow: 0 0 8px rgba(0,0,0,0.7);
+    font-size: 10px;
+    white-space: nowrap;
+    z-index: 1100;
+    opacity: 0;
+    transition: opacity 0.3s;
+    text-align: left;
+    pointer-events: none;
+    /* largura automática para evitar quebra */
+    max-width: none;
+    overflow: visible;
+    /* removida altura e overflow-y para eliminar barra */
+  }
+
+  .tooltip-container:hover .tooltip-users {
+    visibility: visible;
+    opacity: 1;
+  }</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>organograma_tesouro_clone</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+angular.module('sn.$sp').directive('orgChart', function($compile) {
+  return {
+    scope: {
+      node: '='
+    },
+    templateUrl: 'org-chart-template',
+    link: function(scope, element) {
+      $compile(element.contents())(scope);
+    }
+  };
+});
+
+}]]></link>
+        <name>Organograma Tesouro Clone</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[ (function() {
+    var departments = [];
+    var gr = new GlideRecord('cmn_department');
+    gr.query();
+
+    while (gr.next()) {
+      departments.push({
+        sys_id: gr.sys_id.toString(),
+        name: gr.name.toString(),
+        sigla: gr.getValue('u_sigla_unidade') || '',
+        parent_sys_id: gr.getValue('u_nome_unidade_superior') ? gr.getValue('u_nome_unidade_superior').trim() : '',
+        parentName: gr.getDisplayValue('u_nome_unidade_superior'),
+        users: [] // Inicializa array para usuários
+      });
+    }
+
+    // Buscar usuários por departamento
+    var userGR = new GlideRecord('sys_user');
+    userGR.query();
+
+    var usersByDepartment = {};
+    while(userGR.next()) {
+      var dep = userGR.getValue('department');
+      if(dep) {
+        if(!usersByDepartment[dep])
+          usersByDepartment[dep] = [];
+        usersByDepartment[dep].push(userGR.getDisplayValue('name'));
+      }
+    }
+
+    // Montar mapa e árvore
+    var map = {};
+    departments.forEach(function(dep) {
+      map[dep.sys_id] = Object.assign({}, dep, { children: [], users: [] });
+    });
+
+    departments.forEach(function(dep) {
+      // adiciona usuários do departamento se existirem
+      if(usersByDepartment[dep.sys_id]) {
+        map[dep.sys_id].users = usersByDepartment[dep.sys_id];
+      }
+    });
+
+    var roots = [];
+
+    departments.forEach(function(dep) {
+      if(dep.parent_sys_id && map[dep.parent_sys_id]) {
+        map[dep.parent_sys_id].children.push(map[dep.sys_id]);
+      } else {
+        roots.push(map[dep.sys_id]);
+      }
+    });
+
+    // Filtrar roots para mostrar só nós com pai ou filhos
+    roots = roots.filter(function(node) {
+      var hasParent = !!node.parent_sys_id;
+      var hasChildren = node.children && node.children.length > 0;
+      return hasParent || hasChildren;
+    });
+
+    // Ordenar filhos por nome
+    Object.values(map).forEach(function(node) {
+      node.children.sort(function(a,b){
+        return a.name.localeCompare(b.name);
+      });
+    });
+
+    data.roots = roots;
+  })();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-05-17 00:58:32</sys_created_on>
+        <sys_id>f4183075fb6d6a5086e7f4045eefdc8b</sys_id>
+        <sys_mod_count>96</sys_mod_count>
+        <sys_name>Organograma Tesouro Clone</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_f4183075fb6d6a5086e7f4045eefdc8b</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-17 03:12:37</sys_updated_on>
+        <template><![CDATA[<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+</style>
+<div ng-repeat="root in c.data.roots"
+     ng-include="'node_template.html'"
+     ng-init="node = root">
+</div>
+
+<!-- Template recursivo para cada nó -->
+<script type="text/ng-template" id="node_template.html">
+  <div class="tree-horizontal">
+    <div class="node-box tooltip-container"
+         ng-class="{ 'parent-node': !node.parent_sys_id, 'child-node': !!node.parent_sys_id }">
+      {{ node.sigla || node.name }}
+      <span class="tooltip-text" ng-if="node.sigla">{{ node.name }}</span>
+
+      <!-- Tooltip usuários -->
+    <span class="tooltip-users" ng-if="node.users && node.users.length > 0">
+  <b>Usuários:</b><br>
+ <div ng-repeat="user in node.users | limitTo:10 track by $index" style="margin: 0; padding: 0; line-height: 2;">{{ user }}</div>
+  <span ng-if="node.users.length > 10">...e mais {{node.users.length - 10}} usuários</span>
+</span>
+    </div>
+
+    <div class="children-list-horizontal" ng-if="node.children.length">
+      <div ng-repeat="child in node.children"
+           ng-include="'node_template.html'"
+           ng-init="node = child">
+      </div>
+    </div>
+  </div>
+</script>]]></template>
+    </sp_widget>
+</record_update>
