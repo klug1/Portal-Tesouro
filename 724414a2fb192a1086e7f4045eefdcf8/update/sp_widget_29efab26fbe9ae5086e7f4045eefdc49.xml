@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $rootScope) {
+  // Inicializa sem seleção
+  $scope.anoSelecionado = "";
+
+  // Quando o ano mudar, emite evento global
+  $scope.anoChanged = function() {
+    $rootScope.$broadcast('anoSelecionado', $scope.anoSelecionado);
+  };
+  console.log('Ano enviado para filtro:', $scope.anoSelecionado);
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>canvas {
+  margin: 0 auto;
+  display: block;
+}
+label{
+margin-top:200px;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>widget_limite_com_despesas_filtro</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>WIdget Limite com Despesas Filtro</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  var anos = [];
+  var gr = new GlideRecord('x_sded9_portal_t_0_u_despesa_pessoal');
+  gr.orderByDesc('u_ano');
+  gr.query();
+
+  var anosUnicos = {};
+  while (gr.next()) {
+    var ano = gr.getValue('u_ano');
+    if (!anosUnicos[ano]) {
+      anos.push(ano);
+      anosUnicos[ano] = true;
+    }
+  }
+
+  data.anos = anos;
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-05-19 22:17:07</sys_created_on>
+        <sys_id>29efab26fbe9ae5086e7f4045eefdc49</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>WIdget Limite com Despesas Filtro</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_29efab26fbe9ae5086e7f4045eefdc49</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-20 02:41:55</sys_updated_on>
+        <template><![CDATA[<label for="ano">Selecione o Ano:</label>
+<select id="ano" ng-model="anoSelecionado" ng-options="ano for ano in data.anos" ng-change="anoChanged()">
+  <option value="">Todos os anos</option>
+</select>
+]]></template>
+    </sp_widget>
+</record_update>
