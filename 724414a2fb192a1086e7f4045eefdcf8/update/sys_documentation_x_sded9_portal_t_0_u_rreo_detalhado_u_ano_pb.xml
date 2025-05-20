@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="u_ano" label="Ano de Referencia" language="pb" table="x_sded9_portal_t_0_u_rreo_detalhado">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>u_ano</element>
+            <help/>
+            <hint/>
+            <label>Ano de Referencia</label>
+            <language>pb</language>
+            <name>x_sded9_portal_t_0_u_rreo_detalhado</name>
+            <plural>Ano de Referencia</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-20 15:23:46</sys_created_on>
+            <sys_id>90ea9b72fb29e610f6d5f9d38eefdc24</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Ano de Referencia</sys_name>
+            <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+            <sys_update_name>sys_documentation_x_sded9_portal_t_0_u_rreo_detalhado_u_ano_pb</sys_update_name>
+            <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-20 15:23:46</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

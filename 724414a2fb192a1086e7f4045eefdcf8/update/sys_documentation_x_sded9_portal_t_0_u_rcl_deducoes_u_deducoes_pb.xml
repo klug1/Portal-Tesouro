@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="u_deducoes" label="Deduções entre RCL normal e ajustada" language="pb" table="x_sded9_portal_t_0_u_rcl_deducoes">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>u_deducoes</element>
+            <help/>
+            <hint/>
+            <label>Deduções entre RCL normal e ajustada</label>
+            <language>pb</language>
+            <name>x_sded9_portal_t_0_u_rcl_deducoes</name>
+            <plural>Deduções entre RCL normal e ajustada</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-20 15:17:25</sys_created_on>
+            <sys_id>67691bbefbe5e610f6d5f9d38eefdc8d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Deduções entre RCL normal e ajustada</sys_name>
+            <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+            <sys_update_name>sys_documentation_x_sded9_portal_t_0_u_rcl_deducoes_u_deducoes_pb</sys_update_name>
+            <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-20 15:17:25</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

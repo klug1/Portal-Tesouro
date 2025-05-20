@@ -11,7 +11,7 @@
         <delete_access>false</delete_access>
         <filter_extension/>
         <is_extendable>false</is_extendable>
-        <label>Registro de Cargas Tesouro</label>
+        <label>Registro de Carga del Tesoro</label>
         <live_feed_enabled>false</live_feed_enabled>
         <name>x_sded9_portal_t_0_registro_de_cargas_tesouro</name>
         <number_ref display_value="RCT">a0a9d5c9fb2d665086e7f4045eefdc74</number_ref>
@@ -23,14 +23,14 @@
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-13 11:18:46</sys_created_on>
         <sys_id>2a9f5628fb29e25086e7f4045eefdc9d</sys_id>
-        <sys_mod_count>1</sys_mod_count>
-        <sys_name>Registro de Cargas Tesouro</sys_name>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Registro de Carga del Tesoro</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sys_db_object_2a9f5628fb29e25086e7f4045eefdc9d</sys_update_name>
         <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-14 19:30:48</sys_updated_on>
+        <sys_updated_on>2025-05-20 15:26:53</sys_updated_on>
         <update_access>false</update_access>
         <user_role display_value="x_sded9_portal_t_0.registro_de_cargas_tesouro_user" name="x_sded9_portal_t_0.registro_de_cargas_tesouro_user">53afda24fb29e25086e7f4045eefdce6</user_role>
         <ws_access>true</ws_access>
