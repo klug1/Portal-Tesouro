@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $rootScope, spUtil, $timeout) {
+  $scope.dadosVisiveis = null;
+  $scope.isFading = false;
+
+  function carregarDados(ano) {
+    $scope.isFading = true;
+    $timeout(function() {
+      if (ano === '' || ano == null) {
+        $scope.dadosVisiveis = null;
+        $scope.isFading = false;
+        return;
+      }
+      
+      spUtil.get('widget_despesas_porcentagem_ano', { filtro_ano: ano }).then(function(response) {
+        if (response.data && response.data.dados && response.data.dados.length > 0) {
+          $scope.dadosVisiveis = response.data.dados[0];
+        } else {
+          $scope.dadosVisiveis = null;
+        }
+        $scope.isFading = false;
+      });
+    }, 500);
+  }
+
+  $rootScope.$on('anoSelecionado', function(evt, ano) {
+    carregarDados(ano);
+  });
+
+  carregarDados(new Date().getFullYear());
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.report-widget {
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    background-color: #fff;
+    margin-top: 24px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto Flex', sans-serif;
+    /* Transição para o fade + movimento vertical */
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  }
+
+  .report-widget.panel.fade-out {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+  }
+
+  .panel-heading {
+    font-family: 'Roboto Flex', sans-serif;
+    background-color: #e0e0e0; /* fundo cinza claro */
+    padding: 12px 16px;
+    border-bottom: 1px solid #ccc;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+
+  .panel-title {
+    font-family: 'Roboto Flex', sans-serif;
+   	margin: 0;
+    font-size: 1.8rem;
+    color: #333;
+    text-align: center;
+    font-size: 1.2em;
+  }
+
+  .panel-body {
+    font-family: 'Roboto Flex', sans-serif;
+    padding: 16px;
+    flex: 1;
+    width: 100%;
+    /* text-align e fontes definidas inline para facilitar ajuste */
+  }
+
+  /* Transição da mensagem "Nenhum dado" */
+  .mensagem {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out, transform 0.5s ease-in-out;
+    height: 0;
+    overflow: hidden;
+  }
+
+  .mensagem.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    height: auto;
+  }</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>widget_despesa_comprometimento</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>widget despesa comprometimento</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  function formatarNumero(valor, divisor, sufixo) {
+    var resultado = (valor / divisor).toFixed(3); // fixa 3 casas
+    // insere separador de milhar com expressão regular
+    resultado = resultado.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    return resultado + ' ' + sufixo;
+  }
+
+  var anoFiltrado = (typeof input !== 'undefined' && input.filtro_ano) ? input.filtro_ano : '';
+  var gr = new GlideRecord('x_sded9_portal_t_0_u_despesa_pessoal');
+
+  if (anoFiltrado) {
+    gr.addQuery('u_ano', anoFiltrado);
+  }
+
+  gr.orderByDesc('u_ano');
+  gr.query();
+
+  var dados = [];
+  while (gr.next()) {
+    var despesaLiquida = parseFloat(gr.getValue('u_despesa_liquida_pedidos')) || 0;
+
+    var valorFormatado;
+    if (despesaLiquida >= 1000000000) {
+      valorFormatado = formatarNumero(despesaLiquida, 1000000000, 'BI');
+    } else {
+      valorFormatado = formatarNumero(despesaLiquida, 1000000, 'MI');
+    }
+
+    dados.push({
+      ano: gr.getValue('u_ano'),
+      despesaLiquida: despesaLiquida,
+      receitaCorrente: parseFloat(gr.getValue('u_receita_corrente_liquida')) || 0,
+      comprometimento: parseFloat(gr.getValue('u_comprometimento_rcl')) || 0,
+      limiteAlerta: parseFloat(gr.getValue('u_limite_de_alerta')) || 0,
+      limitePrudencial: parseFloat(gr.getValue('u_limite_prudencial')) || 0,
+      limiteMaximo: parseFloat(gr.getValue('u_limite_maximo')) || 0,
+      valorDespesaFormatado: valorFormatado
+    });
+  }
+	
+	//gs.addInfoMessage(JSON.stringify(dados))
+
+  data.dados = dados;
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-05-20 00:10:45</sys_created_on>
+        <sys_id>4ae9c876fb6dae5086e7f4045eefdc0c</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_name>widget despesa comprometimento</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_4ae9c876fb6dae5086e7f4045eefdc0c</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-21 00:05:59</sys_updated_on>
+        <template><![CDATA[<!-- Fonte -->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+</style>
+
+<!-- Com dado -->
+<div class="report-widget panel" 
+     ng-show="dadosVisiveis" 
+     ng-class="{'fade-out': isFading}">
+  <div class="panel-heading">
+    <h2 class="panel-title">
+      <i class="fa fa-handshake-o" aria-hidden="true"></i> Comprometimento
+    </h2>
+  </div>
+  <div class="panel-body" style="text-align: center; font-size: 2.5em; font-weight: bold;">
+    {{dadosVisiveis.comprometimento}}%
+  </div>
+</div>
+
+<!-- Sem dado -->
+<div class="report-widget panel mensagem" 
+     ng-show="!dadosVisiveis" 
+     ng-class="{'show': !dadosVisiveis}">
+  <div class="panel-heading">
+    <h2 class="panel-title">
+      <i class="fa fa-handshake-o" aria-hidden="true"></i> Comprometimento
+    </h2>
+  </div>
+  <div class="panel-body" style="text-align: center; font-size: 1.2em;">
+    Nenhum dado disponível para o ano selecionado.
+  </div>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

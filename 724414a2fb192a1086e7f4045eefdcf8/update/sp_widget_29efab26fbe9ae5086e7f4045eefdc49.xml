@@ -17,15 +17,110 @@
   margin: 0 auto;
   display: block;
 }
-label{
-margin-top:200px;
+label {
+  margin-top: 161px;
+}
+
+.ano-selector {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.ano-selector label {
+  display: inline-block;
+  margin-right: 10px;
+  font-weight: 500;
+  color: #333;
+}
+
+.select-wrapper {
+  position: relative;
+  display: inline-block;
+  min-width: 150px;
+}
+
+.governo-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 8px 40px 8px 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  min-width: 150px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  margin-top: 155px;
+  text-align: center;
+  position: relative;
+  font-weight: 500;
+}
+
+.governo-select option {
+  padding: 8px;
+  background-color: #fff;
+}
+
+.select-wrapper:after {
+  content: '';
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #1e3a8a;
+  pointer-events: none;
+  opacity: 1;
+  z-index: 1;
+  margin-top: 78px;
+}
+
+.governo-select:hover {
+  border-color: #1e3a8a;
+}
+
+.governo-select:focus {
+  outline: none;
+  border-color: #1e3a8a;
+  box-shadow: 0 0 0 2px rgba(30, 58, 138, 0.2);
+}
+
+/* Estilo para combinar com o cabeçalho do Governo de Mato Grosso */
+.ano-selector {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.ano-selector label {
+  font-weight: 600;
+  color: #333;
+  margin-right: 15px;
+}
+
+/* Estilização adicional para combinar com o portal */
+select.governo-select:focus {
+  border-color: #1e3a8a;
+}
+
+select.governo-select option:hover,
+select.governo-select option:checked {
+  background-color: #e6eaf2;
+  color: #1e3a8a;
 }</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
         <docs/>
         <field_list/>
-        <has_preview>false</has_preview>
+        <has_preview>true</has_preview>
         <id>widget_limite_com_despesas_filtro</id>
         <internal>false</internal>
         <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
@@ -56,18 +151,22 @@ margin-top:200px;
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-19 22:17:07</sys_created_on>
         <sys_id>29efab26fbe9ae5086e7f4045eefdc49</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>17</sys_mod_count>
         <sys_name>WIdget Limite com Despesas Filtro</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_29efab26fbe9ae5086e7f4045eefdc49</sys_update_name>
-        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-20 02:41:55</sys_updated_on>
-        <template><![CDATA[<label for="ano">Selecione o Ano:</label>
-<select id="ano" ng-model="anoSelecionado" ng-options="ano for ano in data.anos" ng-change="anoChanged()">
-  <option value="">Todos os anos</option>
-</select>
+        <sys_updated_by>pk.aba</sys_updated_by>
+        <sys_updated_on>2025-05-20 23:18:23</sys_updated_on>
+        <template><![CDATA[<div class="ano-selector">
+  <label for="ano">Selecione o Ano:</label>
+  <div class="select-wrapper">
+    <select id="ano" class="governo-select" ng-model="anoSelecionado" ng-options="ano for ano in data.anos" ng-change="anoChanged()">
+      <option value="">Todos os anos</option>
+    </select>
+  </div>
+</div>
 ]]></template>
     </sp_widget>
 </record_update>

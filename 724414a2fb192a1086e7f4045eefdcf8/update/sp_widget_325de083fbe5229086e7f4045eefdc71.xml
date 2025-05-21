@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function(spUtil) {
+
+	var c = this;
+
+	spUtil.get("widget_gauge").then(function(response) {
+			c.widget_gauge = response;
+	});
+
+	spUtil.get("widget-cool-clock").then(function(response) {
+            c.myClockWidget = response;
+    });
+
+
+	// Widgets individuais
+	spUtil.get("widget_limite_com_despesas_filtro").then(function (response) {
+		c.widget_gauge_filtro = response;
+	});
+	spUtil.get("widget_limite_com_despesas_semidonut").then(function (response) {
+		c.widget_semidonut = response;
+	});
+	spUtil.get("widget_despesa_comprometimento").then(function (response) {
+		c.widget_comprometimento = response;
+	});
+	spUtil.get("widget_despesas_porcentagem_ano").then(function (response) {
+		c.widget_porcentagem = response;
+	});
+	spUtil.get("widget_despesa_line_bar_v2").then(function (response) {
+		c.widget_grafico_barra = response;
+	});
+
+
+
+
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.container2 {
+  background-color: white;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  padding: 1rem;
+  //max-width: 1200px;
+  //margin: auto;
+  
+  margin-top: 20rem;
+}
+
+.top-row {
+  display: flex;
+  gap: 1rem;
+  max-height: 500px;
+  height: 500px;
+  overflow: hidden; /* ou auto se quiser rolagem */
+  margin-bottom: 1rem;
+}
+
+
+.top-row .widget,
+.top-row .col-vertical {
+  flex: 1;
+  height: 100%;
+  box-sizing: border-box;
+}
+.col-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 100%;
+}
+.col-vertical {
+    max-width: 19rem;
+}
+
+.col-vertical .widget {
+  flex: 1;
+}
+
+.container2 {
+  background-color: white;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  padding: 1rem;
+  overflow: hidden; /* Impede estouros do container */
+}
+
+.top-row {
+  display: flex;
+  gap: 1rem;
+  max-height: 500px;
+  height: 500px;
+  overflow: hidden; /* Garante que nada ultrapasse */
+  margin-bottom: 1rem;
+}
+
+.top-row .widget,
+.top-row .col-vertical {
+  flex: 1;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.col-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 100%;
+}
+
+.col-vertical .widget {
+  flex: 1;
+  overflow: hidden;
+}
+
+.widget {
+  background-color: #e0ffe0;
+  border: 1px solid #aaa;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  box-sizing: border-box;
+  height: 100%; /* ajuda a controlar o crescimento */
+}
+
+.widget.wide {
+  width: 100%;
+  margin-top: 1rem;
+  background-color: #fff0c2;
+}
+
+
+/* 📱 Responsivo para telas menores */
+@media (max-width: 768px) {
+  .top-row {
+    flex-direction: column;
+    height: auto;
+    max-height: none;
+  }
+
+  .col-vertical {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .col-vertical .widget {
+    flex: 1 1 100%;
+  }
+
+  .header {
+    flex-direction: column;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+
+
+
+.widget.wide {
+  max-height: 400px;
+  overflow: auto; /* permite rolagem se o conteúdo ultrapassar */
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>reports_container</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Reports Container</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-05-20 21:24:07</sys_created_on>
+        <sys_id>325de083fbe5229086e7f4045eefdc71</sys_id>
+        <sys_mod_count>20</sys_mod_count>
+        <sys_name>Reports Container</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_325de083fbe5229086e7f4045eefdc71</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-20 22:09:58</sys_updated_on>
+        <template><![CDATA[<div class="container2">
+  <div class="header">
+    <div class="title">Despesas com o pessoal</div>
+     <sp-widget widget="c.widget_gauge_filtro"></sp-widget>
+  </div>
+
+  <div class="top-row">
+    <div class="widget">LIMITES DE DESPESAS DE PESSOAL
+      <sp-widget widget="c.widget_semidonut"></sp-widget>
+      <!--img src="https://i.pinimg.com/736x/86/72/a2/8672a23feb6bc3ffc2673e95c62b3af7.jpg"-->
+    </div>
+
+    <div class="col-vertical">
+      <div class="widget">% DESPESA 2024
+        <sp-widget widget="c.widget_comprometimento"></sp-widget>
+
+      </div>
+      <div class="widget">...
+        <sp-widget widget="c.widget_porcentagem"></sp-widget>
+      </div>
+    </div>
+
+    <div class="widget">Widget 4
+      <sp-widget widget="c.widget_grafico_barra"></sp-widget>
+      <!--img src="https://i.pinimg.com/736x/86/72/a2/8672a23feb6bc3ffc2673e95c62b3af7.jpg"-->
+    </div>
+  </div>
+
+  <div class="widget wide">Widget 5
+    <!--<sp-widget widget="c.myClockWidget"></sp-widget>-->
+  </div>
+  <div class="widget wide">Widget 6
+    <!--<sp-widget widget="c.myClockWidget"></sp-widget>-->
+    <!--img src="https://images.twinkl.co.uk/tw1n/image/private/t_630/u/ux/graph-wiki_ver_1.png"-->
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

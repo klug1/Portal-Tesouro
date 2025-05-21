@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $rootScope, spUtil, $timeout) {
+  $scope.anoSelecionado = "";
+  $scope.latestYear = null;
+  $scope.dadosVisiveis = null; // controla se dados existem
+  $scope.isFading = false;
+  var currentAngle = 0;
+  var animationFrameId = null;
+
+  function loadChartJs() {
+    return new Promise(function(resolve) {
+      if (window.Chart) {
+        resolve();
+        return;
+      }
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/chart.js';
+      script.onload = resolve;
+      document.head.appendChild(script);
+    });
+  }
+
+  function mapValueToAngle(realValue) {
+    var relativeAngleDeg = 0;
+    if (realValue <= 57) {
+      relativeAngleDeg = (realValue / 57) * 60;
+    } else if (realValue <= 60) {
+      relativeAngleDeg = 60 + ((realValue - 57) / 3) * 60;
+    } else {
+      relativeAngleDeg = 120 + ((realValue - 60) / 40) * 60;
+    }
+    return (relativeAngleDeg * Math.PI) / 180;
+  }
+
+  function syncPointerCanvasSize() {
+    var chartCanvas = document.getElementById('gaugeChart');
+    var pointerCanvas = document.getElementById('gaugePointer');
+    if (!chartCanvas || !pointerCanvas) return;
+    pointerCanvas.width = chartCanvas.offsetWidth;
+    pointerCanvas.height = chartCanvas.offsetHeight;
+  }
+
+  function drawPointerAtAngle(angle) {
+    var canvas = document.getElementById('gaugePointer');
+    var ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    var width = canvas.width;
+    var height = canvas.height;
+    var cx = width / 2;
+    var cy = height;
+    var length = height * 0.75;
+
+    var tipX = cx + length * Math.cos(Math.PI - angle);
+    var tipY = cy - length * Math.sin(Math.PI - angle);
+
+    ctx.beginPath();
+    ctx.moveTo(cx, cy);
+    ctx.lineTo(tipX, tipY);
+    ctx.strokeStyle = '#333';
+    ctx.lineWidth = 3;
+    ctx.stroke();
+
+    var arrowHeadLength = height * 0.08;
+    var arrowHeadWidth = height * 0.05;
+
+    var ux = Math.cos(Math.PI - angle);
+    var uy = -Math.sin(Math.PI - angle);
+
+    var baseX = tipX - arrowHeadLength * ux;
+    var baseY = tipY - arrowHeadLength * uy;
+
+    var leftX = baseX + (arrowHeadWidth / 2) * uy;
+    var leftY = baseY + (arrowHeadWidth / 2) * -ux;
+
+    var rightX = baseX - (arrowHeadWidth / 2) * uy;
+    var rightY = baseY - (arrowHeadWidth / 2) * -ux;
+
+    ctx.beginPath();
+    ctx.moveTo(tipX, tipY);
+    ctx.lineTo(leftX, leftY);
+    ctx.lineTo(rightX, rightY);
+    ctx.closePath();
+    ctx.fillStyle = '#333';
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.arc(cx, cy, 5, 0, 2 * Math.PI);
+    ctx.fill();
+  }
+
+  function animatePointer(toAngle) {
+    if (animationFrameId) cancelAnimationFrame(animationFrameId);
+
+    var duration = 600;
+    var startAngle = currentAngle;
+    var delta = toAngle - startAngle;
+    var startTime = performance.now();
+
+    function step(now) {
+      var elapsed = now - startTime;
+      var progress = Math.min(elapsed / duration, 1);
+      currentAngle = startAngle + delta * (1 - Math.pow(1 - progress, 3));
+      drawPointerAtAngle(currentAngle);
+      if (progress < 1) {
+        animationFrameId = requestAnimationFrame(step);
+      }
+    }
+
+    requestAnimationFrame(step);
+  }
+
+  function renderGauge(comprometimento) {
+    var ctx = document.getElementById('gaugeChart').getContext('2d');
+
+    if (window.myGaugeChart) {
+      window.myGaugeChart.destroy();
+    }
+
+    window.myGaugeChart = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Limite de alerta', 'Limite prudencial', 'Limite máximo'],
+        datasets: [{
+          data: [33.33, 33.33, 33.34],
+          backgroundColor: ['#8BC34A', '#FFEB3B', '#F44336'],
+          borderWidth: 0,
+          circumference: 180,
+          rotation: 270,
+          cutout: '70%'
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            enabled: true,
+            callbacks: {
+              label: function(context) {
+                return context.chart.data.labels[context.dataIndex] || '';
+              }
+            }
+          }
+        }
+      }
+    });
+
+    $timeout(function() {
+      syncPointerCanvasSize();
+      var targetAngle = mapValueToAngle(comprometimento);
+      animatePointer(targetAngle);
+    }, 200);
+  }
+
+  function atualizarDados(ano) {
+    $scope.isFading = true;
+
+    $timeout(function() {
+      if (!ano) {
+        $scope.latestYear = null;
+        $scope.dadosVisiveis = null;
+        if (window.myGaugeChart) {
+          window.myGaugeChart.destroy();
+          window.myGaugeChart = null;
+        }
+        var ctxPointer = document.getElementById('gaugePointer');
+        if (ctxPointer) {
+          var ctx = ctxPointer.getContext('2d');
+          ctx.clearRect(0, 0, ctxPointer.width, ctxPointer.height);
+        }
+      } else {
+        spUtil.get('widget_limite_com_despesas_semidonut', { filtro_ano: ano }).then(function(response) {
+          if (response.data && response.data.dados && response.data.dados.length > 0) {
+            $scope.dadosVisiveis = response.data.dados[0];
+            $scope.latestYear = ano;
+            renderGauge($scope.dadosVisiveis.comprometimento);
+          } else {
+            $scope.dadosVisiveis = null;
+            $scope.latestYear = null;
+            if (window.myGaugeChart) {
+              window.myGaugeChart.destroy();
+              window.myGaugeChart = null;
+            }
+            var ctxPointer = document.getElementById('gaugePointer');
+            if (ctxPointer) {
+              var ctx = ctxPointer.getContext('2d');
+              ctx.clearRect(0, 0, ctxPointer.width, ctxPointer.height);
+            }
+          }
+        });
+      }
+
+      $scope.isFading = false;
+    }, 500);
+  }
+
+  $scope.anoChanged = function() {
+    if ($scope.anoSelecionado && ($scope.anoSelecionado < 2000 || $scope.anoSelecionado > new Date().getFullYear())) {
+      console.warn("Ano fora do intervalo permitido.");
+      return;
+    }
+    $rootScope.$broadcast('anoSelecionado', $scope.anoSelecionado);
+  };
+
+  loadChartJs().then(function() {
+    $rootScope.$on('anoSelecionado', function(evt, ano) {
+      $scope.anoSelecionado = ano;
+      atualizarDados(ano);
+    });
+
+    window.addEventListener('resize', function() {
+      if ($scope.dadosVisiveis && $scope.dadosVisiveis.comprometimento != null) {
+        syncPointerCanvasSize();
+        var angle = mapValueToAngle($scope.dadosVisiveis.comprometimento);
+        drawPointerAtAngle(angle);
+      }
+    });
+  });
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.report-widget {
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  background-color: #fff;
+  margin-top: 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Roboto Flex', sans-serif;
+  
+  /* estado normal */
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+/* fade-out para dado */
+.report-widget.panel.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+}
+
+.panel-heading {
+  background-color: #e0e0e0; /* fundo cinza */
+  padding: 12px 16px;
+  border-bottom: 1px solid #ccc;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.panel-title {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+  text-align: center;
+    font-size: 1.2em;
+}
+
+.panel-body {
+  padding: 16px;
+  flex: 1;
+  width: 100%;
+  text-align: center;
+    font-size: 1.2em;
+}
+
+.chart-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* limita largura máxima */
+  height: 250px;
+}
+
+canvas {
+  display: block;
+  margin: 0;
+  max-width: none;
+}
+
+body, h5, ol, li, a, div, h2, h1, p {
+  font-family: 'Roboto Flex', sans-serif !important;
+  color: #333;
+}
+
+/* Mensagem sem dado - transição igual */
+.mensagem {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out, transform 0.5s ease-in-out;
+  height: 0;
+  overflow: hidden;
+}
+
+.mensagem.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  height: auto;
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>widget_limite_com_despesas_semidonut</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Widget Limite com Despesas SemiDonut</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  var anoFiltrado = (typeof input !== 'undefined' && input.filtro_ano) ? input.filtro_ano : '';
+  var gr = new GlideRecord('x_sded9_portal_t_0_u_despesa_pessoal');
+
+  if (anoFiltrado) {
+    gr.addQuery('u_ano', anoFiltrado);
+  }
+
+  gr.orderByDesc('u_ano');
+  gr.query();
+
+  var dados = [];
+  while (gr.next()) {
+    dados.push({
+      ano: gr.getValue('u_ano'),
+      comprometimento: parseFloat(gr.getValue('u_comprometimento_rcl')) || 0
+    });
+  }
+	
+	//gs.addInfoMessage(JSON.stringify(dados));
+
+  data.dados = dados;
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-05-19 21:32:00</sys_created_on>
+        <sys_id>e4952766fba9ae5086e7f4045eefdc4c</sys_id>
+        <sys_mod_count>134</sys_mod_count>
+        <sys_name>Widget Limite com Despesas SemiDonut</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_e4952766fba9ae5086e7f4045eefdc4c</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-20 23:56:24</sys_updated_on>
+        <template><![CDATA[<!-- Fonte -->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+</style>
+
+<!-- Com ano selecionado e dados visíveis -->
+<div class="report-widget panel" 
+     ng-show="anoSelecionado !== '' && anoSelecionado != null && dadosVisiveis"
+     ng-class="{'fade-out': isFading}">
+  <div class="panel-heading">
+    <h2 class="panel-title">
+      <i class="fa fa-tachometer m-r"></i>
+      {{::c.options.title || 'Limites com Despesas de Pessoal'}}
+    </h2>
+  </div>
+
+  <div class="panel-body">
+    <div class="chart-container" style="position: relative;">
+      <canvas id="gaugeChart" width="800" height="250"></canvas>
+      <canvas id="gaugePointer" width="800" height="250" style="position: absolute; top: 0; left: 0;"></canvas>
+    </div>
+
+    <div style="margin-top: 12px; text-align: center;">
+      <strong>{{latestYear}}</strong> - Comprometimento RCL com Pessoal: <strong>{{dadosVisiveis.comprometimento}}%</strong>
+    </div>
+  </div>
+</div>
+
+<!-- Sem ano selecionado ou sem dado -->
+<div class="report-widget panel mensagem" 
+     ng-show="anoSelecionado == '' || anoSelecionado == null || !dadosVisiveis" 
+     ng-class="{'show': anoSelecionado == '' || anoSelecionado == null || !dadosVisiveis}">
+  <div class="panel-heading">
+    <h2 class="panel-title">
+      <i class="fa fa-tachometer m-r"></i>
+      {{::c.options.title || 'Limites com Despesas de Pessoal'}}
+    </h2>
+  </div>
+  <div class="panel-body">
+    <p>Nenhum dado disponível para o ano selecionado.</p>
+  </div>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>
