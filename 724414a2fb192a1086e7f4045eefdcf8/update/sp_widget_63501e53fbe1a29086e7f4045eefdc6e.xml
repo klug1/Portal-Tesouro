@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $rootScope, $timeout) {
+    var graficoLinha = null;
+    var dadosOriginais = $scope.data.series || [];
+
+    $scope.exibirLinha = dadosOriginais.length > 0;
+	
+function arredondarParaCimaMultiplo5Milhoes(num) {
+    var base = 5000000; // 5 milhões
+    return Math.ceil(num / base) * base;
+}
+
+
+
+
+    function montarGraficoLinha(listaDados) {
+        if (!listaDados || listaDados.length === 0) {
+            if (graficoLinha) {
+                graficoLinha.destroy();
+                graficoLinha = null;
+            }
+            $scope.exibirLinha = false;
+            $scope.$applyAsync();
+            return;
+        }
+
+        $scope.exibirLinha = true;
+        $scope.$applyAsync();
+
+        var listaAnos = listaDados.map(function(item) { return item.ano; });
+        var valoresDespesa = listaDados.map(function(item) { return item.valor; });
+
+        // Calcula o valor máximo da despesa e força mínimo 20 para o eixo Y
+        var maxValor = Math.max.apply(null, valoresDespesa);
+      var maxEixoY = maxValor < 20000000 ? 20000000 : arredondarParaCimaMultiplo5Milhoes(maxValor * 1.25);
+
+        var contexto = document.getElementById('graficoLinha').getContext('2d');
+
+        if (graficoLinha) {
+            graficoLinha.destroy();
+        }
+
+        graficoLinha = new Chart(contexto, {
+            type: 'line',
+            data: {
+                labels: listaAnos,
+                datasets: [{
+                    label: 'Despesa Bruta com Pessoal',
+                    data: valoresDespesa,
+                    borderColor: '#0074D9',
+                    backgroundColor: '#0074D9',
+                    borderWidth: 3,
+                    tension: 0.2,
+                    fill: false,
+                    pointRadius: 5,
+                    pointBackgroundColor: '#163599'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        offset: true,
+                        title: { display: true, text: 'Ano' }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        max: maxEixoY,
+                        title: { display: true, text: 'Valores em Milhões (R$)' },
+                        ticks: {
+                            callback: function(value) {
+                                return value.toLocaleString('pt-BR') + ' mi';
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: { position: 'top' },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.dataset.label + ': ' + context.parsed.y.toLocaleString('pt-BR') + ' mi';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    function obterDadosPorAno(ano) {
+        if (!ano) {
+            return dadosOriginais;
+        }
+        return dadosOriginais.filter(function(item) {
+            return item.ano == ano;
+        });
+    }
+
+    $rootScope.$on('anoSelecionado', function(evento, anoSelecionado) {
+        var dadosFiltrados = obterDadosPorAno(anoSelecionado);
+        montarGraficoLinha(dadosFiltrados);
+    });
+
+    $timeout(function() {
+        montarGraficoLinha(obterDadosPorAno(null));
+    }, 300);
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.chart-wrapper {
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    margin-top: 40px; /* Mesmo espaçamento superior */
+}
+
+.chart-container {
+    position: relative;
+    width: 100%;
+    height: 500px;
+}
+
+canvas {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .chart-container {
+        height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .chart-container {
+        height: 300px;
+    }
+}
+
+h2, h3, div {
+  font-family: 'Roboto Flex', sans-serif;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>despesa_bruta_com_pessoal_grafico</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Despesa Bruta com Pessoal Grafico</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    var dados = [];
+    var gr = new GlideRecord('x_sded9_portal_t_0_u_despesa_pessoal');
+    gr.orderBy('u_ano');
+    gr.query();
+
+    while (gr.next()) {
+        dados.push({
+            ano: gr.getValue('u_ano'),
+            valor: parseFloat(gr.getValue('u_despesa_bruta_pessoal'))
+        });
+    }
+
+    data.series = dados;
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-05-21 23:15:10</sys_created_on>
+        <sys_id>63501e53fbe1a29086e7f4045eefdc6e</sys_id>
+        <sys_mod_count>22</sys_mod_count>
+        <sys_name>Despesa Bruta com Pessoal Grafico</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_63501e53fbe1a29086e7f4045eefdc6e</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-21 23:44:42</sys_updated_on>
+        <template><![CDATA[<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+
+  .linha-wrapper {
+    font-family: 'Roboto Flex', sans-serif;
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    margin-top: 4rem;
+  }
+
+  .linha-container {
+    position: relative;
+    width: 100%;
+    height: 580px;
+  }
+
+  canvas {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+  }
+
+  @media (max-width: 768px) {
+    .linha-container {
+      height: 400px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .linha-container {
+      height: 300px;
+    }
+  }
+
+  .report-widget.panel.msg-sem-dados {
+    text-align: center;
+    font-size: 1.2em;
+    padding: 20px;
+    background: #f8f8f8;
+    border-radius: 8px;
+    margin-top: 20px;
+  }
+</style>
+
+<div class="linha-wrapper">
+  <h3 style="text-align:center; font-weight:600; margin-bottom:16px;">
+    Despesa Bruta com Pessoal
+  </h3>
+
+  <!-- Gráfico -->
+  <div class="linha-container" ng-show="exibirLinha">
+    <canvas id="graficoLinha"></canvas>
+  </div>
+
+  <!-- Mensagem sem dados -->
+  <div class="report-widget panel msg-sem-dados" ng-show="!exibirLinha">
+    <div class="panel-heading">
+      <h2 class="panel-title">
+        <i class="fa fa-line-chart" aria-hidden="true"></i>
+      </h2>
+    </div>
+    <div class="panel-body">
+      Nenhum dado disponível para o ano selecionado.
+    </div>
+  </div>
+</div>
+
+
+]]></template>
+    </sp_widget>
+</record_update>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope) {
+    window.chartData = $scope.data.series;
+	window.addEventListener('load', function() {
+    setTimeout(function() {
+        if (window.chartData && Array.isArray(window.chartData)) {
+            var anos = [];
+            var valores = [];
+
+            for (var i = 0; i < window.chartData.length; i++) {
+                anos.push(window.chartData[i].ano);
+                valores.push(window.chartData[i].valor);
+            }
+
+            var ctx = document.getElementById('grafico').getContext('2d');
+
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: anos,
+                    datasets: [{
+                        label: 'Despesa Bruta (milhões)',
+                        data: valores,
+                        borderColor: '#007bff',
+                        backgroundColor: 'rgba(0, 123, 255, 0.1)',
+                        pointBackgroundColor: '#007bff',
+                        pointRadius: 4,
+                        borderWidth: 2,
+                        tension: 0.3,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.parsed.y.toLocaleString('pt-BR') + ' mi';
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) {
+                                    return value.toLocaleString('pt-BR') + ' mi';
+                                }
+                            },
+                            title: {
+                                display: true,
+                                text: 'Milhões (R$)'
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Ano'
+                            }
+                        }
+                    }
+                }
+            });
+        } else {
+            console.warn("Sem dados para o gráfico.");
+        }
+    }, 500);
+});
+
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.chart-wrapper {
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    margin-top: 40px; /* Mesmo espaçamento superior */
+}
+
+.chart-container {
+    position: relative;
+    width: 100%;
+    height: 500px;
+}
+
+canvas {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .chart-container {
+        height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .chart-container {
+        height: 300px;
+    }
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id/>
+        <internal>false</internal>
+        <link/>
+        <name>Widget Histograma</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    var dados = [];
+    var gr = new GlideRecord('x_sded9_portal_t_0_u_despesa_pessoal');
+    gr.orderBy('u_ano');
+    gr.query();
+
+    while (gr.next()) {
+        dados.push({
+            ano: gr.getValue('u_ano'),
+            valor: parseFloat(gr.getValue('u_despesa_bruta_pessoal'))
+        });
+    }
+
+    data.series = dados;
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>estevao.gabriel@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-19 19:32:17</sys_created_on>
+        <sys_id>360ac3eefbed6610f6d5f9d38eefdcb5</sys_id>
+        <sys_mod_count>18</sys_mod_count>
+        <sys_name>Widget Histograma</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_360ac3eefbed6610f6d5f9d38eefdcb5</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-21 23:14:52</sys_updated_on>
+        <template><![CDATA[<div class="chart-wrapper">
+    <h3 style="text-align:center; font-weight: 600; margin-bottom: 24px;">
+        Despesa Bruta com Pessoal
+    </h3>
+    <div class="chart-container">
+        <canvas id="grafico"></canvas>
+    </div>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>
