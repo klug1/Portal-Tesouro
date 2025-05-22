@@ -233,18 +233,98 @@
   flex-direction: column;
   font-family: 'Roboto Flex', sans-serif;
   
-  /* estado normal */
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out, visibility 0.5s ease-in-out;
 }
 
-/* fade-out para dado */
 .report-widget.panel.fade-out {
   opacity: 0;
   visibility: hidden;
   transform: translateY(20px);
+
+/* --- Media Queries para Responsividade --- */
+
+/* Telas Pequenas (Mobile S, M, L - até 767px) */
+@media (max-width: 767px) {
+  .report-widget {
+    margin-top: 1rem;
+  }
+  .panel-title {
+    font-size: 1.5rem;
+  }
+  .panel-body {
+    padding: 8px;
+  }
+  .chart-container {
+    height: 200px; /* Ajustar altura do gráfico */
+  }
+}
+
+/* Tablets (iPad Mini, iPad Air, Surface Duo, Galaxy Z Fold 5 - 768px até 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .report-widget {
+    margin-top: 1.5rem;
+  }
+  .panel-title {
+    font-size: 1.1rem;
+  }
+  .chart-container {
+    height: 220px; /* Ajustar altura do gráfico */
+  }
+}
+
+/* Laptops e Telas Maiores (iPad Pro, Surface Pro 7, Laptops, 4K - 1024px em diante) */
+@media (min-width: 1024px) {
+  .report-widget {
+    margin-top: 24px;
+  }
+  .panel-title {
+    font-size: 1.6rem;
+  }
+  .chart-container {
+    height: 250px;
+  }
+}
+
+/* Ajustes específicos para dispositivos muito largos como Nest Hub Max ou telas 4K */
+@media (min-width: 1280px) {
+    .panel-heading {
+       padding: 14px 18px;
+       font-size: 1.5rem;
+    }
+    .panel-body {
+        padding: 20px;
+    }
+}
+
+/* Ajustes para o Surface Duo (540x720) */
+@media (width: 540px) and (height: 720px) {
+    .report-widget {
+        margin-top: 1.2rem;
+    }
+    .panel-title {
+        font-size: 1rem;
+    }
+    .chart-container {
+        height: 210px;
+    }
+}
+
+/* Ajustes para Galaxy Z Fold 5 (max-width: 350px) */
+@media (max-width: 350px) {
+    .panel-title {
+        font-size: 0.9rem;
+    }
+    .panel-body {
+        padding: 6px;
+    }
+    .chart-container {
+        height: 180px;
+    }
+}
+
 }
 
 .panel-heading {
@@ -294,6 +374,87 @@ body, h5, ol, li, a, div, h2, h1, p {
   opacity: 0;
   visibility: hidden;
   transform: translateY(20px);
+
+/* --- Media Queries para Responsividade --- */
+
+/* Telas Pequenas (Mobile S, M, L - até 767px) */
+@media (max-width: 767px) {
+  .report-widget {
+    margin-top: 1rem;
+  }
+  .panel-title {
+    font-size: 1.5rem;
+  }
+  .panel-body {
+    padding: 8px;
+  }
+  .chart-container {
+    height: 200px; /* Ajustar altura do gráfico */
+  }
+}
+
+/* Tablets (iPad Mini, iPad Air, Surface Duo, Galaxy Z Fold 5 - 768px até 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .report-widget {
+    margin-top: 1.5rem;
+  }
+  .panel-title {
+    font-size: 1.1rem;
+  }
+  .chart-container {
+    height: 220px; /* Ajustar altura do gráfico */
+  }
+}
+
+/* Laptops e Telas Maiores (iPad Pro, Surface Pro 7, Laptops, 4K - 1024px em diante) */
+@media (min-width: 1024px) {
+  .report-widget {
+    margin-top: 24px; /* Valor original */
+  }
+  .panel-title {
+    font-size: 1.6rem; /* Valor original */
+  }
+  .chart-container {
+    height: 250px; /* Valor original */
+  }
+}
+
+/* Ajustes específicos para dispositivos muito largos como Nest Hub Max ou telas 4K */
+@media (min-width: 1280px) {
+    .panel-heading {
+        padding: 14px 18px;
+    }
+    .panel-body {
+        padding: 20px;
+    }
+}
+
+/* Ajustes para o Surface Duo (540x720) */
+@media (width: 540px) and (height: 720px) {
+    .report-widget {
+        margin-top: 1.2rem;
+    }
+    .panel-title {
+        font-size: 1rem;
+    }
+    .chart-container {
+        height: 210px;
+    }
+}
+
+/* Ajustes para Galaxy Z Fold 5 (max-width: 350px) */
+@media (max-width: 350px) {
+    .panel-title {
+        font-size: 0.9rem;
+    }
+    .panel-body {
+        padding: 6px;
+    }
+    .chart-container {
+        height: 180px;
+    }
+}
+
   transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out, transform 0.5s ease-in-out;
   height: 0;
   overflow: hidden;
@@ -311,13 +472,13 @@ body, h5, ol, li, a, div, h2, h1, p {
         <description/>
         <docs/>
         <field_list/>
-        <has_preview>false</has_preview>
+        <has_preview>true</has_preview>
         <id>widget_limite_com_despesas_semidonut</id>
         <internal>false</internal>
         <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
         <name>Widget Limite com Despesas SemiDonut</name>
         <option_schema/>
-        <public>false</public>
+        <public>true</public>
         <roles/>
         <script><![CDATA[(function() {
   var anoFiltrado = (typeof input !== 'undefined' && input.filtro_ano) ? input.filtro_ano : '';
@@ -348,14 +509,14 @@ body, h5, ol, li, a, div, h2, h1, p {
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-19 21:32:00</sys_created_on>
         <sys_id>e4952766fba9ae5086e7f4045eefdc4c</sys_id>
-        <sys_mod_count>134</sys_mod_count>
+        <sys_mod_count>146</sys_mod_count>
         <sys_name>Widget Limite com Despesas SemiDonut</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_e4952766fba9ae5086e7f4045eefdc4c</sys_update_name>
-        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-20 23:56:24</sys_updated_on>
+        <sys_updated_by>pk.aba</sys_updated_by>
+        <sys_updated_on>2025-05-22 12:34:57</sys_updated_on>
         <template><![CDATA[<!-- Fonte -->
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
