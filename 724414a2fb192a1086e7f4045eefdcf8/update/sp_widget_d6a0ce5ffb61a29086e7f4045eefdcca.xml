@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $rootScope, $timeout) {
+    var chartInstance = null;
+    var dadosGraficos = $scope.data.dadosGraficoPessoal || [];
+
+    $scope.exibirGrafico = dadosGraficos.length > 0;
+
+    function inicializarGrafico(listaDados) {
+        if (!listaDados || listaDados.length === 0) {
+            if (chartInstance) {
+                chartInstance.destroy();
+                chartInstance = null;
+            }
+            $scope.exibirGrafico = false;
+            $scope.$applyAsync();
+            return;
+        }
+
+        $scope.exibirGrafico = true;
+        $scope.$applyAsync();
+
+        var listaAnos = listaDados.map(function(item) { return item.ano; });
+        var despesasPessoal = listaDados.map(function(item) { return item.valorDespesa; });
+        var receitasRCL = listaDados.map(function(item) { return item.valorReceita; });
+
+        var contexto = document.getElementById('graficoLimitePessoal').getContext('2d');
+
+        if (chartInstance) {
+            chartInstance.destroy();
+        }
+
+        chartInstance = new Chart(contexto, {
+            type: 'bar',
+            data: {
+                labels: listaAnos,
+                datasets: [
+                    {
+                        label: 'Despesa Líquida com Pessoal',
+                        data: despesasPessoal,
+                        backgroundColor: '#4052D6',
+                        yAxisID: 'eixoEsquerdo'
+                    },
+                    {
+                        label: 'Receita Corrente Líquida - RCL - Para Fins de % Pessoal',
+                        data: receitasRCL,
+                        backgroundColor: '#60E1EB',
+                        yAxisID: 'eixoEsquerdo'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                layout: {
+                    padding: {
+                        left: 20,
+                        right: 20
+                    }
+                },
+                scales: {
+                    x: {
+                        title: { display: true, text: 'Ano' },
+                        offset: true
+                    },
+                    eixoEsquerdo: {
+                        type: 'linear',
+                        position: 'left',
+                        beginAtZero: true,
+                        title: { display: true, text: 'Valores em Milhões (R$)' },
+                        ticks: {
+                            padding: 15,
+                            callback: function(value) {
+                                return value.toLocaleString('pt-BR') + ' mi';
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'top'
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.dataset.label + ': ' + context.parsed.y.toLocaleString('pt-BR') + ' mi';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    function obterDadosPorAno(ano) {
+        if (!ano) {
+            return dadosGraficos;
+        }
+        return dadosGraficos.filter(function(item) {
+            return item.ano == ano;
+        });
+    }
+
+    $rootScope.$on('anoSelecionado', function(evento, anoSelecionado) {
+        var dadosFiltrados = obterDadosPorAno(anoSelecionado);
+        inicializarGrafico(dadosFiltrados);
+    });
+
+    $timeout(function() {
+        inicializarGrafico(obterDadosPorAno(null));
+    }, 300);
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>canvas {
+  display: block;
+  margin: 0 auto;
+}
+
+h3, div {
+ font-family: 'Roboto Flex', sans-serif;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>receita_corrente_x_despesa_liquida</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Receita Corrente x Despesa Liquida - Dee</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    var gr = new GlideRecord('x_sded9_portal_t_0_u_despesa_pessoal');
+    gr.addQuery('u_ano', '>=', 2019);
+    gr.addQuery('u_ano', '<=', 2024);
+    gr.orderBy('u_ano');
+    gr.query();
+
+    var listaDados = [];
+    while (gr.next()) {
+        listaDados.push({
+            ano: gr.getValue('u_ano'),
+            valorDespesa: parseFloat(gr.getValue('u_despesa_liquida_pedidos')) / 1000000,
+            valorReceita: parseFloat(gr.getValue('u_receita_corrente_liquida')) / 1000000,
+            percentualComprometimento: parseFloat(gr.getValue('u_comprometimento_rcl')) || 0
+        });
+    }
+
+    data.dadosGraficoPessoal = listaDados;
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-05-21 22:06:33</sys_created_on>
+        <sys_id>d6a0ce5ffb61a29086e7f4045eefdcca</sys_id>
+        <sys_mod_count>16</sys_mod_count>
+        <sys_name>Receita Corrente x Despesa Liquida - Dee</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_d6a0ce5ffb61a29086e7f4045eefdcca</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-22 00:00:55</sys_updated_on>
+        <template><![CDATA[<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+
+.chart-wrapper {
+    font-family: 'Roboto Flex', sans-serif;
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.chart-container {
+    position: relative;
+    width: 100%;
+    height: 588px;
+}
+
+canvas {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .chart-container {
+        height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .chart-container {
+        height: 300px;
+    }
+}
+
+.report-widget.panel.mensagem {
+    text-align: center;
+    font-size: 1.2em;
+    padding: 20px;
+    background: #f8f8f8;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+</style>
+
+<div class="chart-wrapper">
+    <h3 style="text-align:center; font-weight: 600; margin-bottom: 16px;">
+        Receita Corrente Líquida X Despesa Líquida com Pessoal
+    </h3>
+
+    <!-- Mostrar o gráfico -->
+    <div class="chart-container" ng-show="exibirGrafico">
+        <canvas id="graficoLimitePessoal"></canvas>
+    </div>
+
+    <!-- Mensagem se não houver dados -->
+    <div class="report-widget panel mensagem" ng-show="!exibirGrafico">
+        <div class="panel-heading">
+            <h2 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i></h2>
+        </div>
+        <div class="panel-body">
+            Nenhum dado disponível para o ano selecionado.
+        </div>
+    </div>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>
