@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Unmasking Monetary Fields</name>
+        <order/>
+        <script><![CDATA[function onSubmit() {
+    cleanCurrency('u_despesa_bruta_pessoal');
+    cleanCurrency('u_despesa_pessoal_ativo');
+    cleanCurrency('u_despesa_inativos_pensionistas');
+    cleanCurrency('u_despesa_pessoal_terceirizado');
+    cleanCurrency('u_despesa_deducoes');
+    cleanCurrency('u_despesa_indenizacoes_demissoes');
+    cleanCurrency('u_despesa_decisao_judicial');
+    cleanCurrency('u_despesas_exercicio_anteriores');
+    cleanCurrency('u_despesa_inativos_pensionistas_vinculados');
+    cleanCurrency('u_despesa_liquida_pedidos');
+    cleanCurrency('u_receita_corrente_liquida');
+    cleanCurrency('u_limite_maximo');
+    cleanCurrency('u_comprometimento_rcl');
+    cleanCurrency('u_limite_prudencial');
+    cleanCurrency('u_limite_de_alerta');
+    return true;
+}
+
+function cleanCurrency(variableName) {
+    let value = g_form.getValue(variableName);
+    if (!value) return;
+    value = value.replace(/[R$\s\.]/g, '').replace(',', '.');
+    g_form.setValue(variableName, value);
+}
+]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-21 15:01:26</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>2162905bfb656a10f6d5f9d38eefdc11</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Unmasking Monetary Fields</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sys_script_client_2162905bfb656a10f6d5f9d38eefdc11</sys_update_name>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-22 14:19:02</sys_updated_on>
+        <table>x_sded9_portal_t_0_u_despesa_pessoal</table>
+        <type>onSubmit</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

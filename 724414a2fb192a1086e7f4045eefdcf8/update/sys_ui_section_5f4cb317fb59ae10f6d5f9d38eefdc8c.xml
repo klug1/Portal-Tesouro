@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="" section_id="5f4cb317fb59ae10f6d5f9d38eefdc8c" sys_domain="global" table="x_sded9_portal_t_0_u_rreo" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_rreo_lrf</element>
+            <position>0</position>
+            <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-09 20:51:03</sys_created_on>
+            <sys_id>5b4cb317fb59ae10f6d5f9d38eefdc92</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_sded9_portal_t_0_u_rreo" sys_domain="global" view="Default view">5f4cb317fb59ae10f6d5f9d38eefdc8c</sys_ui_section>
+            <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-09 20:51:03</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_rreo_ajustada</element>
+            <position>1</position>
+            <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-09 20:51:03</sys_created_on>
+            <sys_id>df4cb317fb59ae10f6d5f9d38eefdc92</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_sded9_portal_t_0_u_rreo" sys_domain="global" view="Default view">5f4cb317fb59ae10f6d5f9d38eefdc8c</sys_ui_section>
+            <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-09 20:51:03</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.begin_split</element>
+            <position>2</position>
+            <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-09 20:51:03</sys_created_on>
+            <sys_id>df4c3717fb59ae10f6d5f9d38eefdc6b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_sded9_portal_t_0_u_rreo" sys_domain="global" view="Default view">5f4cb317fb59ae10f6d5f9d38eefdc8c</sys_ui_section>
+            <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-09 20:51:03</sys_updated_on>
+            <sys_user/>
+            <type>.begin_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_ano</element>
+            <position>3</position>
+            <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-09 20:51:03</sys_created_on>
+            <sys_id>574c3717fb59ae10f6d5f9d38eefdc6c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_sded9_portal_t_0_u_rreo" sys_domain="global" view="Default view">5f4cb317fb59ae10f6d5f9d38eefdc8c</sys_ui_section>
+            <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-09 20:51:03</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>4</position>
+            <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-09 20:51:03</sys_created_on>
+            <sys_id>db4c3717fb59ae10f6d5f9d38eefdc6c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_sded9_portal_t_0_u_rreo" sys_domain="global" view="Default view">5f4cb317fb59ae10f6d5f9d38eefdc8c</sys_ui_section>
+            <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-09 20:51:03</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_mes</element>
+            <position>5</position>
+            <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-09 20:51:03</sys_created_on>
+            <sys_id>534c3717fb59ae10f6d5f9d38eefdc6d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_sded9_portal_t_0_u_rreo" sys_domain="global" view="Default view">5f4cb317fb59ae10f6d5f9d38eefdc8c</sys_ui_section>
+            <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-09 20:51:03</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.end_split</element>
+            <position>6</position>
+            <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-09 20:51:03</sys_created_on>
+            <sys_id>d74c3717fb59ae10f6d5f9d38eefdc6d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_sded9_portal_t_0_u_rreo" sys_domain="global" view="Default view">5f4cb317fb59ae10f6d5f9d38eefdc8c</sys_ui_section>
+            <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-09 20:51:03</sys_updated_on>
+            <sys_user/>
+            <type>.end_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>adjusted_rreo_fiscal_management_report_2</element>
+            <position>7</position>
+            <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-22 14:36:20</sys_created_on>
+            <sys_id>89336daffb69221086e7f4045eefdcdc</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_sded9_portal_t_0_u_rreo" sys_domain="global" view="Default view">5f4cb317fb59ae10f6d5f9d38eefdc8c</sys_ui_section>
+            <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-22 14:36:20</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>rreo_according_to_lrf_fiscal_responsibility_law_2</element>
+            <position>8</position>
+            <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-22 14:42:47</sys_created_on>
+            <sys_id>afa421a3fba9221086e7f4045eefdcab</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_sded9_portal_t_0_u_rreo" sys_domain="global" view="Default view">5f4cb317fb59ae10f6d5f9d38eefdc8c</sys_ui_section>
+            <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-22 14:42:47</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption/>
+            <header>false</header>
+            <name>x_sded9_portal_t_0_u_rreo</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-09 20:51:03</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>5f4cb317fb59ae10f6d5f9d38eefdc8c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_sded9_portal_t_0_u_rreo</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+            <sys_update_name>sys_ui_section_5f4cb317fb59ae10f6d5f9d38eefdc8c</sys_update_name>
+            <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-09 20:51:03</sys_updated_on>
+            <sys_user/>
+            <title>true</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>
