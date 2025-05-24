@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $rootScope, $timeout) {
+    var chartInstance = null;
+
+    $scope.anoSelecionado = "";
+    $scope.bimestreSelecionado = "";
+    $scope.exibirGrafico = false;
+
+    function carregarDadosDoServer() {
+        var filtros = {
+            ano: $scope.anoSelecionado || "",
+            bimestre: $scope.bimestreSelecionado || ""
+        };
+
+        $scope.server.get(filtros).then(function(response) {
+            var listaDados = response.data.dadosGraficoPrimario || [];
+            inicializarGrafico(listaDados);
+        });
+    }
+
+    $rootScope.$on('filtroAnoSelecionado', function(event, ano) {
+        $scope.anoSelecionado = ano;
+        carregarDadosDoServer();
+    });
+
+    $rootScope.$on('filtroBimestreSelecionado', function(event, bimestre) {
+        $scope.bimestreSelecionado = bimestre;
+        carregarDadosDoServer();
+    });
+
+    carregarDadosDoServer();
+
+    function inicializarGrafico(listaDados) {
+        if (!listaDados || listaDados.length === 0) {
+            if (chartInstance) {
+                chartInstance.destroy();
+                chartInstance = null;
+            }
+            $scope.exibirGrafico = false;
+            $scope.$applyAsync();
+            return;
+        }
+
+        $scope.exibirGrafico = true;
+        $scope.$applyAsync();
+
+        var labels = [];
+        var receitaData = [];
+        var despesaData = [];
+
+        for (var i = 0; i < listaDados.length; i++) {
+            labels.push(listaDados[i].ano);
+            receitaData.push(listaDados[i].receita / 1000000);
+            despesaData.push(listaDados[i].despesa / 1000000);
+        }
+
+        var contexto = document.getElementById('graficoResultadoPrimario').getContext('2d');
+
+        if (chartInstance) {
+            chartInstance.destroy();
+        }
+
+        chartInstance = new Chart(contexto, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [
+                    {
+                        label: 'Receita Primária Total',
+                        data: receitaData,
+                        backgroundColor: '#36A2EB',
+                        borderColor: '#36A2EB',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Despesa Primária Total',
+                        data: despesaData,
+                        backgroundColor: '#00ced1',
+                        borderColor: '#00ced1',
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Ano'
+                        }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Valor em Milhões de R$'
+                        },
+                        ticks: {
+                            callback: function(value) {
+                                return 'R$ ' + value.toLocaleString('pt-BR') + ' mi';
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'top'
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.dataset.label + ': R$ ' + context.parsed.y.toLocaleString('pt-BR') + ' mi';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>canvas {
+  display: block;
+  margin: 0 auto;
+}
+
+h3, div, span {
+ font-family: 'Roboto Flex', sans-serif;
+}
+
+/* --- Media Queries para Responsividade --- */
+
+/* Telas Pequenas (Mobile S, M, L - até 767px) */
+@media (max-width: 767px) {
+  canvas {
+    max-width: 90%; /* Ajustar a largura máxima do canvas */
+  }
+  h3 {
+    font-size: 1rem; /* Ajustar o tamanho da fonte do título */
+  }
+}
+
+/* Tablets (iPad Mini, iPad Air, Surface Duo, Galaxy Z Fold 5 - 768px até 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  canvas {
+    max-width: 80%;
+  }
+  h3 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Laptops e Telas Maiores (iPad Pro, Surface Pro 7, Laptops, 4K - 1024px em diante) */
+@media (min-width: 1024px) {
+  canvas {
+    max-width: none;
+  }
+  h3 {
+  }
+}
+
+/* Ajustes para o Surface Duo (540x720) */
+@media (width: 540px) and (height: 720px) {
+    canvas {
+        max-width: 95%;
+    }
+}
+
+/* Ajustes para Galaxy Z Fold 5 (max-width: 350px) */
+@media (max-width: 350px) {
+    h3 {
+        font-size: 0.9rem;
+    }
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>receita_primaria_x_despesa_grafico</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Receita Primaria x Despesa Grafico</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    input = input || {};
+
+    var anoFiltro = input.ano || "";
+    var bimestreFiltro = input.bimestre || "";
+
+    var gr = new GlideRecord('x_sded9_portal_t_0_u_resultado_primario');
+
+    if (anoFiltro !== "") {
+        gr.addQuery('u_ano', anoFiltro);
+    }
+
+    if (bimestreFiltro !== "") {
+        gr.addQuery('u_bimestre', bimestreFiltro);
+    }
+
+    gr.orderBy('u_ano');
+    gr.query();
+
+    var dadosAgrupados = {};
+
+    while (gr.next()) {
+        var ano = gr.getValue('u_ano');
+        var bimestre = gr.getValue('u_bimestre');
+        var receitaRaw = gr.getValue('u_receita_primaria_total') || "0";
+        var despesaRaw = gr.getValue('u_despesa_primaria_total') || "0";
+
+        // Convertendo valores formatados "4.092.955.668,73" -> 4092955668.73
+        function parseValor(valorStr) {
+            return parseFloat(valorStr.trim().replace(/\./g, '').replace(',', '.')) || 0;
+        }
+
+        var receita = parseValor(receitaRaw);
+        var despesa = parseValor(despesaRaw);
+
+        if (bimestreFiltro !== "") {
+            // Se filtro de bimestre existe, não soma, lista normal
+            dadosAgrupados[ano + '-' + bimestre + '-' + Math.random()] = {
+                ano: ano,
+                bimestre: bimestre,
+                receita: receita,
+                despesa: despesa
+            };
+        } else {
+            // Se não tem filtro de bimestre, agrupa por ano somando receita e despesa
+            if (!dadosAgrupados[ano]) {
+                dadosAgrupados[ano] = {
+                    ano: ano,
+                    receita: 0,
+                    despesa: 0
+                };
+            }
+            dadosAgrupados[ano].receita += receita;
+            dadosAgrupados[ano].despesa += despesa;
+        }
+    }
+
+    var listaDados = [];
+    for (var key in dadosAgrupados) {
+        listaDados.push(dadosAgrupados[key]);
+    }
+
+    // Ordena por ano
+    listaDados.sort(function(a, b) {
+        return a.ano.localeCompare(b.ano);
+    });
+
+    data.dadosGraficoPrimario = listaDados;
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-05-24 02:04:05</sys_created_on>
+        <sys_id>513a4d44fb396e10f6d5f9d38eefdcc2</sys_id>
+        <sys_mod_count>19</sys_mod_count>
+        <sys_name>Receita Primaria x Despesa Grafico</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_513a4d44fb396e10f6d5f9d38eefdcc2</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-24 16:20:36</sys_updated_on>
+        <template><![CDATA[<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+
+  .chart-wrapper {
+      font-family: 'Roboto Flex', sans-serif;
+      width: 100%;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+  }
+  .chart-container {
+      position: relative;
+      width: 100%;
+      height: 588px;
+  }
+  canvas {
+      width: 100% !important;
+      height: 100% !important;
+      display: block;
+  }
+  @media (max-width: 768px) {
+      .chart-container {
+          height: 400px;
+      }
+  }
+  @media (max-width: 480px) {
+      .chart-container {
+          height: 300px;
+      }
+  }
+  .report-widget.panel.mensagem {
+      text-align: center;
+      font-size: 1.2em;
+      padding: 20px;
+      background: #f8f8f8;
+      border-radius: 8px;
+      margin-top: 20px;
+  }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<div class="chart-wrapper">
+<h3 style="text-align:center; font-weight: 600; margin-bottom: 16px;">
+  Resultado Primário - Receita vs Despesa (em R$)
+  <span style="font-weight: 600; color: #333;">
+    {{anoSelecionado ? ' - Ano: ' + anoSelecionado : ''}}
+    {{bimestreSelecionado ? ' - ' + bimestreSelecionado + 'º Bimestre' : ''}}
+  </span>
+</h3>
+
+
+  <div class="chart-container" ng-show="data.dadosGraficoPrimario.length > 0">
+      <canvas id="graficoResultadoPrimario"></canvas>
+  </div>
+
+  <div class="report-widget panel mensagem" ng-show="data.dadosGraficoPrimario.length == 0">
+      <div class="panel-heading">
+          <h2 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i></h2>
+      </div>
+      <div class="panel-body">
+          Nenhum dado disponível.
+      </div>
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

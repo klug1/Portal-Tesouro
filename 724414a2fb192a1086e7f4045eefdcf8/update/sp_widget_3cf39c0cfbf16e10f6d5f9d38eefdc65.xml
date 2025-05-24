@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $rootScope, spUtil, $timeout) {
+
+  function atualizarIsAnoTodos() {
+    $scope.isAnoTodos = !$scope.anoSelecionado || $scope.anoSelecionado === 'Todos';
+  }
+
+  $scope.mesPorExtenso = function(mes) {
+    var mesesPT = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+    var mesesEN = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
+
+    if (!mes) return '';
+    mes = mes.toString().toLowerCase();
+
+    var mesNumero = parseInt(mes, 10);
+    if (!isNaN(mesNumero) && mesNumero >= 1 && mesNumero <= 12) {
+      return mesesPT[mesNumero - 1];
+    }
+
+    var indice = mesesEN.indexOf(mes);
+    if (indice >= 0) {
+      return mesesPT[indice];
+    }
+
+    return mes;
+  }
+
+  $scope.anoSelecionado = null;
+  $scope.mesSelecionadoWidget = null;
+  $scope.dadosVisiveisMes = null;
+  $scope.isFadingMes = false;
+  atualizarIsAnoTodos(); // inicializa
+
+  function carregarDados(ano, mes) {
+    $scope.isFadingMes = true;
+
+    $timeout(function() {
+      var params = {};
+      if (ano) params.filtro_ano = ano;
+      if (mes) params.filtro_mes = mes;
+
+      if (!mes) {
+        $scope.dadosVisiveisMes = null;
+        $scope.mesSelecionadoWidget = null;
+        $scope.isFadingMes = false;
+        return;
+      }
+
+      spUtil.get('rcl_ajustado_card_4_mes_ano_anterior', params).then(function(response) {
+        if (response.data && response.data.dadosAdj && response.data.dadosAdj.length > 0) {
+          $scope.dadosVisiveisMes = response.data.dadosAdj[0];
+          $scope.mesSelecionadoWidget = mes;
+          $scope.anoSelecionado = response.data.dadosAdj[0].ano;
+        } else {
+          $scope.dadosVisiveisMes = null;
+          $scope.mesSelecionadoWidget = mes;
+        }
+
+        $timeout(function() {
+          $scope.isFadingMes = false;
+        }, 50);
+      });
+    }, 500);
+  }
+
+  carregarDados(null, null);
+
+  $rootScope.$on('anoSelecionado', function(evt, ano) {
+    $scope.anoSelecionado = ano;
+    atualizarIsAnoTodos(); // <<< atualiza aqui!
+    carregarDados(ano, $scope.mesSelecionadoWidget);
+  });
+
+  $rootScope.$on('mesSelecionado', function(evt, mes) {
+    $scope.mesSelecionadoWidget = mes;
+    carregarDados($scope.anoSelecionado, mes);
+  });
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css> div, h2 {
+    font-family: 'Roboto Flex', sans-serif;
+  }
+
+  .report-widget {
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    background-color: #fff;
+    margin-top: 24px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto Flex', sans-serif;
+    /* Transição para o fade + movimento vertical */
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  }
+
+  .report-widget.panel.fade-out {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+  }
+
+  /* --- Media Queries para Responsividade --- */
+
+  /* Telas Pequenas (Mobile S, M, L - até 767px) */
+  @media (max-width: 767px) {
+    .report-widget {
+      margin-top: 1rem;
+    }
+    .panel-title {
+      font-size: 1.5rem;
+    }
+    .panel-body {
+      padding: 8px;
+    }
+  }
+
+  /* Tablets (768px até 1023px) */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .report-widget {
+      margin-top: 1.5rem;
+    }
+    .panel-title {
+      font-size: 1.1rem;
+    }
+  }
+
+  /* Laptops e Telas Maiores (1024px em diante) */
+  @media (min-width: 1024px) {
+    .report-widget {
+      margin-top: 24px; /* Valor original */
+    }
+    .panel-title {
+      font-size: 1.5em; /* Valor original */
+    }
+  }
+
+  /* Ajustes para dispositivos muito largos (1280px em diante) */
+  @media (min-width: 1280px) {
+    .panel-heading {
+      padding: 14px 18px;
+    }
+    .panel-body {
+      padding: 20px;
+    }
+  }
+
+  /* Ajustes Surface Duo (540x720) */
+  @media (width: 540px) and (height: 720px) {
+    .report-widget {
+      margin-top: 1.2rem;
+    }
+    .panel-title {
+      font-size: 1rem;
+    }
+  }
+
+  /* Ajustes Galaxy Z Fold 5 (max-width: 350px) */
+  @media (max-width: 350px) {
+    .panel-title {
+      font-size: 0.9rem;
+    }
+    .panel-body {
+      padding: 6px;
+    }
+  }
+
+  .panel-heading {
+    font-family: 'Roboto Flex', sans-serif;
+    background-color: #e0e0e0; /* fundo cinza claro */
+    padding: 12px 16px;
+    border-bottom: 1px solid #ccc;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+
+  .panel-title {
+    font-family: 'Roboto Flex', sans-serif;
+    margin: 0;
+    font-size: 1.2em;
+    color: #333;
+    text-align: center;
+  }
+
+  .panel-body {
+    font-family: 'Roboto Flex', sans-serif;
+    padding: 16px;
+    flex: 1;
+    width: 100%;
+  }
+
+  /* Transição da mensagem "Nenhum dado" */
+  .mensagem {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out, transform 0.5s ease-in-out;
+    height: 0;
+    overflow: hidden;
+  }
+
+  .mensagem.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    height: auto;
+  }</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>rcl_ajustado_card_4_mes_ano_anterior</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>rcl ajustado card 4 mes/ano anterior</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	
+	
+  function formatarNumero(valor, divisor, sufixo) {
+    var resultado = (valor / divisor).toFixed(2);
+    resultado = resultado.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    return resultado + ' ' + sufixo;
+  }
+
+  // Captura mês e ano do input
+  var anoFiltrado = input && input.filtro_ano ? parseInt(input.filtro_ano, 10) : null;
+  var mesFiltrado = input && input.filtro_mes ? input.filtro_mes : null;
+
+  // Busca o último ano da base
+  var grAno = new GlideRecord('x_sded9_portal_t_0_u_rreo');
+  grAno.orderByDesc('u_ano');
+  grAno.setLimit(1);
+  grAno.query();
+
+  var ultimoAno = null;
+  if (grAno.next()) {
+    ultimoAno = parseInt(grAno.getValue('u_ano'), 10);
+  }
+
+  // Se não tem ano selecionado, usa (últimoAno -1)
+  var anoConsulta = anoFiltrado !== null ? anoFiltrado : (ultimoAno !== null ? ultimoAno - 1 : null);
+
+  var gr = new GlideRecord('x_sded9_portal_t_0_u_rreo');
+  if (anoConsulta !== null)
+    gr.addQuery('u_ano', anoConsulta);
+  if (mesFiltrado)
+    gr.addQuery('u_mes', mesFiltrado);
+  gr.setLimit(1);
+  gr.query();
+
+  if (gr.next()) {
+    var valor = parseFloat(gr.getValue('adjusted_rreo_fiscal_management_report_2')) || 0;
+    var valorFormatado = (valor >= 1000000000) ? formatarNumero(valor, 1000000000, 'BI') : formatarNumero(valor, 1000000, 'MI');
+	
+    data.dadosAdj = [{
+      ano: anoConsulta,
+      mes: mesFiltrado,
+      valorSomaAdj: valor,
+      valorSomaFormatadoAdj: valorFormatado,
+      temDadoAdj: true
+    }];
+  } else {
+    data.dadosAdj = [{
+      ano: anoConsulta,
+      mes: mesFiltrado,
+      valorSomaAdj: 0,
+      valorSomaFormatadoAdj: '0',
+      temDadoAdj: false
+    }];
+  }
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-05-23 22:07:01</sys_created_on>
+        <sys_id>3cf39c0cfbf16e10f6d5f9d38eefdc65</sys_id>
+        <sys_mod_count>18</sys_mod_count>
+        <sys_name>rcl ajustado card 4 mes/ano anterior</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_3cf39c0cfbf16e10f6d5f9d38eefdc65</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-23 22:33:07</sys_updated_on>
+        <template><![CDATA[<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+</style>
+
+<div ng-if="isAnoTodos">
+
+  <div class="report-widget panel"
+       ng-show="dadosVisiveisMes && dadosVisiveisMes.temDadoAdj"
+       ng-class="{'fade-out': isFadingMes}">
+    <div class="panel-heading">
+      <h2 class="panel-title">
+        <i class="fa fa-line-chart"></i> Soma Receita Ajustada Mês {{ mesPorExtenso(mesSelecionadoWidget) || '—' }} {{ anoSelecionado || '' }}
+      </h2>
+    </div>
+    <div class="panel-body" style="text-align: center; font-size: 2.5em; font-weight: bold;">
+      {{dadosVisiveisMes.valorSomaFormatadoAdj}}
+    </div>
+  </div>
+
+  <div class="report-widget panel mensagem"
+       ng-show="!dadosVisiveisMes || !dadosVisiveisMes.temDadoAdj"
+       ng-class="{'show': !dadosVisiveisMes}">
+    <div class="panel-heading">
+      <h2 class="panel-title">
+        <i class="fa fa-line-chart"></i> Soma Receita Ajustada Ano Anterior
+      </h2>
+    </div>
+    <div class="panel-body" style="text-align: center; font-size: 1.2em;">
+      <span ng-if="!mesSelecionadoWidget">Selecione um mês para exibir os dados.</span>
+      <span ng-if="mesSelecionadoWidget && (!dadosVisiveisMes || !dadosVisiveisMes.temDadoAdj)">
+        Nenhum dado disponível para o filtro selecionado.
+      </span>
+    </div>
+  </div>
+
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

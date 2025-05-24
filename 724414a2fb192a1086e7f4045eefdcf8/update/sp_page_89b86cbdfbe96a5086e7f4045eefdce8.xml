@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_page">
     <sp_page action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <css/>
+        <css>.card2{
+	//transform: translateY(4rem);
+  margin-top: 4rem;
+}
+.card-info-resultado{
+	 margin-bottom: 4rem;
+}</css>
         <draft>false</draft>
         <dynamic_title_structure/>
         <human_readable_url_structure/>
@@ -16,16 +22,55 @@
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-16 23:51:30</sys_created_on>
         <sys_id>89b86cbdfbe96a5086e7f4045eefdce8</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>resultado_primario</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_page_89b86cbdfbe96a5086e7f4045eefdce8</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-17 00:03:22</sys_updated_on>
+        <sys_updated_on>2025-05-24 18:17:02</sys_updated_on>
         <title>Resultados Primários </title>
         <use_seo_script>false</use_seo_script>
     </sp_page>
     <sys_translated_text action="delete_multiple" query="documentkey=89b86cbdfbe96a5086e7f4045eefdce8"/>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>89b86cbdfbe96a5086e7f4045eefdce8</documentkey>
+        <fieldname>dynamic_title_structure</fieldname>
+        <language>pb</language>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-05-24 16:24:31</sys_created_on>
+        <sys_id>992f84dcfb79ae10f6d5f9d38eefdca7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-24 16:24:31</sys_updated_on>
+        <tablename>sp_page</tablename>
+        <value/>
+    </sys_translated_text>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>89b86cbdfbe96a5086e7f4045eefdce8</documentkey>
+        <fieldname>short_description</fieldname>
+        <language>pb</language>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-05-24 16:24:31</sys_created_on>
+        <sys_id>192f84dcfb79ae10f6d5f9d38eefdca4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-24 16:24:31</sys_updated_on>
+        <tablename>sp_page</tablename>
+        <value/>
+    </sys_translated_text>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>89b86cbdfbe96a5086e7f4045eefdce8</documentkey>
+        <fieldname>title</fieldname>
+        <language>pb</language>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-05-24 16:24:31</sys_created_on>
+        <sys_id>952f84dcfb79ae10f6d5f9d38eefdca6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-24 16:24:31</sys_updated_on>
+        <tablename>sp_page</tablename>
+        <value>Resultados Primários </value>
+    </sys_translated_text>
 </record_update>

@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function ($scope, $rootScope) {
+    var chartDividaPublicaTotalInstance = null;
+
+    $scope.anoSelecionadoDividaPublicaTotal = "";
+    $scope.exibirGraficoDividaPublicaTotal = false;
+    $scope.dadosDividaPublicaTotal = [];
+
+    function carregarDadosDividaPublicaTotal() {
+        var filtros = {
+            ano: $scope.anoSelecionadoDividaPublicaTotal || ""
+        };
+
+        $scope.server.get(filtros).then(function (response) {
+            $scope.dadosDividaPublicaTotal = response.data.dadosDividaPublicaTotal || [];
+            inicializarGraficoDividaPublicaTotal($scope.dadosDividaPublicaTotal);
+        });
+    }
+
+    $rootScope.$on('filtroAnoIndicadoresSelecionado', function (event, ano) {
+        $scope.anoSelecionadoDividaPublicaTotal = ano;
+        carregarDadosDividaPublicaTotal();
+    });
+
+    carregarDadosDividaPublicaTotal();
+
+    function inicializarGraficoDividaPublicaTotal(listaDividaPublicaTotal) {
+        if (!listaDividaPublicaTotal || listaDividaPublicaTotal.length === 0) {
+            if (chartDividaPublicaTotalInstance) {
+                chartDividaPublicaTotalInstance.destroy();
+                chartDividaPublicaTotalInstance = null;
+            }
+            $scope.exibirGraficoDividaPublicaTotal = false;
+            $scope.$applyAsync();
+            return;
+        }
+
+        $scope.exibirGraficoDividaPublicaTotal = true;
+        $scope.$applyAsync();
+
+        var labels = [];
+        var estoqueTotalData = [];
+
+        listaDividaPublicaTotal.forEach(function (item) {
+            labels.push(item.ano);
+            estoqueTotalData.push(item.estoqueTotal);
+        });
+
+        var canvas = document.getElementById('graficoDividaPublicaTotal');
+        if (!canvas) {
+            console.error("Elemento canvas 'graficoDividaPublicaTotal' não encontrado.");
+            return;
+        }
+
+        var ctx = canvas.getContext('2d');
+
+        if (chartDividaPublicaTotalInstance) {
+            chartDividaPublicaTotalInstance.destroy();
+        }
+
+        chartDividaPublicaTotalInstance = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [
+                    {
+                        label: 'Estoque Total',
+                        data: estoqueTotalData,
+                        backgroundColor: '#00FAED',
+                        borderColor: '#00FAED',
+                        borderWidth: 1,
+                        yAxisID: 'y'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Ano'
+                        }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Valores (milhões)'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top'
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function (context) {
+                                return context.dataset.label + ': ' + context.parsed.y.toFixed(2) + ' M';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>canvas {
+  display: block;
+  margin: 0 auto;
+}
+
+h3, div, span {
+ font-family: 'Roboto Flex', sans-serif;
+}
+
+/* --- Media Queries para Responsividade --- */
+
+/* Telas Pequenas (Mobile S, M, L - até 767px) */
+@media (max-width: 767px) {
+  canvas {
+    max-width: 90%; /* Ajustar a largura máxima do canvas */
+  }
+  h3 {
+    font-size: 1rem; /* Ajustar o tamanho da fonte do título */
+  }
+}
+
+/* Tablets (iPad Mini, iPad Air, Surface Duo, Galaxy Z Fold 5 - 768px até 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  canvas {
+    max-width: 80%;
+  }
+  h3 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Laptops e Telas Maiores (iPad Pro, Surface Pro 7, Laptops, 4K - 1024px em diante) */
+@media (min-width: 1024px) {
+  canvas {
+    max-width: none;
+  }
+  h3 {
+  }
+}
+
+/* Ajustes para o Surface Duo (540x720) */
+@media (width: 540px) and (height: 720px) {
+    canvas {
+        max-width: 95%;
+    }
+}
+
+/* Ajustes para Galaxy Z Fold 5 (max-width: 350px) */
+@media (max-width: 350px) {
+    h3 {
+        font-size: 0.9rem;
+    }
+}
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&amp;display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+.report-widget {
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  background-color: #fff;
+  margin-top: 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Roboto Flex', sans-serif;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+.panel-heading {
+  background-color: #e0e0e0;
+  padding: 12px 16px;
+  border-bottom: 1px solid #ccc;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.panel-title {
+  margin: 0;
+  font-size: 1.6rem;
+  color: #333;
+  text-align: center;
+}
+
+.panel-body {
+  padding: 16px;
+  flex: 1;
+  width: 100%;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+/* Animação de entrada e saída */
+.mensagem {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  height: 0;
+  overflow: hidden;
+}
+
+.mensagem.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  height: auto;
+}
+
+/* Responsividade */
+@media (max-width: 767px) {
+  .report-widget {
+    margin-top: 1rem;
+  }
+  .panel-title {
+    font-size: 1.4rem;
+  }
+  .panel-body {
+    padding: 8px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .panel-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .panel-title {
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .panel-heading {
+    padding: 14px 18px;
+  }
+  .panel-body {
+    padding: 20px;
+  }
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>evolucao_do_estoque_total_grafico</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Evolucao do Estoque Total Grafico</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    input = input || {};
+    var anoFiltro = input.ano || "";
+
+    var gr = new GlideRecord('x_sded9_portal_t_0_u_divida_publica');
+    if (anoFiltro !== "") {
+        gr.addQuery('u_ano', anoFiltro);
+    }
+    gr.orderBy('u_ano');
+    gr.query();
+
+    var listaDividaPublicaTotal = [];
+
+    while (gr.next()) {
+        listaDividaPublicaTotal.push({
+            ano: gr.getValue('u_ano'),
+            estoqueTotal: parseFloat(gr.getValue('u_estoque_divida_publica_total')) / 1000000 || 0
+        });
+    }
+
+    data.dadosDividaPublicaTotal = listaDividaPublicaTotal;
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-05-24 21:16:18</sys_created_on>
+        <sys_id>e3e15d94fbfdae10f6d5f9d38eefdc96</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>Evolucao do Estoque Total Grafico</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_e3e15d94fbfdae10f6d5f9d38eefdc96</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-24 21:24:23</sys_updated_on>
+        <template><![CDATA[<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+
+  .chart-wrapper-total {
+    font-family: 'Roboto Flex', sans-serif;
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+  }
+
+  .chart-container-total {
+    position: relative;
+    width: 100%;
+    height: 588px;
+  }
+
+  canvas {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+  }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<div class="chart-wrapper-total">
+  <h3 style="text-align:center; font-weight: 600; margin-bottom: 16px;">
+   Evolução do Estoque Total da Dívida Pública
+    <span style="font-weight: 600; color: #333;">
+      {{anoSelecionadoDividaPublicaTotal ? ' - Ano: ' + anoSelecionadoDividaPublicaTotal : ' - Todos os anos'}}
+    </span>
+  </h3>
+
+  <div class="chart-container-total" ng-show="exibirGraficoDividaPublicaTotal">
+    <canvas id="graficoDividaPublicaTotal"></canvas>
+  </div>
+
+  <div class="report-widget panel mensagem" ng-class="{'show': !exibirGraficoDividaPublicaTotal && dadosDividaPublicaTotal.length === 0}">
+    <div class="panel-body" style="text-align: center; font-size: 1.2em;">
+      Nenhum dado disponível para o ano selecionado.
+    </div>
+  </div>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

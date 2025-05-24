@@ -3,27 +3,27 @@
         <background_color/>
         <background_image/>
         <background_style>default</background_style>
-        <bootstrap_alt>true</bootstrap_alt>
+        <bootstrap_alt>false</bootstrap_alt>
         <class_name/>
         <container_class_name/>
-        <name>Resultados Primários  - Container 8</name>
-        <order>8</order>
+        <name>Receita Corrente Líquida - Container 9</name>
+        <order>9</order>
         <semantic_tag/>
-        <sp_page display_value="resultado_primario">89b86cbdfbe96a5086e7f4045eefdce8</sp_page>
+        <sp_page display_value="receita_corrente">1268a8fdfbe96a5086e7f4045eefdc53</sp_page>
         <subheader>false</subheader>
         <sys_class_name>sp_container</sys_class_name>
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
-        <sys_created_on>2025-05-16 23:53:58</sys_created_on>
-        <sys_id>0b49ac31fb2d6a5086e7f4045eefdccf</sys_id>
-        <sys_mod_count>8</sys_mod_count>
-        <sys_name>Resultados Primários  - Container 8</sys_name>
+        <sys_created_on>2025-05-23 22:40:26</sys_created_on>
+        <sys_id>529b94c4fb356e10f6d5f9d38eefdcf7</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Receita Corrente Líquida - Container 9</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_update_name>sp_container_0b49ac31fb2d6a5086e7f4045eefdccf</sys_update_name>
+        <sys_update_name>sp_container_529b94c4fb356e10f6d5f9d38eefdcf7</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-24 18:15:55</sys_updated_on>
+        <sys_updated_on>2025-05-23 22:40:42</sys_updated_on>
         <title/>
-        <width>container</width>
+        <width>container-fluid</width>
     </sp_container>
 </record_update>

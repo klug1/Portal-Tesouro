@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <controller_as>c</controller_as>
+        <css> .info-title {
+    background-color: #e0e0e0;
+    color: #000;
+    padding: 8px 12px;
+    border-radius: 4px 4px 0 0;
+    margin: 16px 0 0 0;
+    font-size: 18px;
+    font-family: 'Roboto Flex', sans-serif;
+ }
+
+
+h4, h3, h2, div, p{
+	  font-family: 'Roboto Flex', sans-serif;
+}
+
+ /* Caixa principal */
+ .info-box {
+    font-family: 'Roboto Flex', sans-serif;
+    border: 1px solid #ccc;
+    padding: 10px 14px;
+    background-color: #f9f9f9;
+    border-radius: 0 0 4px 4px;
+    margin: 0;
+    font-size: 13px;
+    color: #333;
+    line-height: 1.4;
+    max-width: 100%;
+    box-sizing: border-box;
+ }
+
+ /* Layout das colunas internas */
+ .info-rows {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+ }
+
+ .info-column {
+    flex: 1 1 300px;
+    box-sizing: border-box;
+ }
+
+ /* Títulos internos */
+ .info-column h4 {
+    margin-bottom: 8px;
+    color: #000;
+    font-size: 15px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 4px;
+    font-weight: 600;
+ }
+
+ /* Itens */
+ .info-column p {
+    margin: 4px 0;
+ }
+
+ .sub-info {
+    color: #0066cc;
+    font-weight: 500;
+ }
+
+ /* --- Responsividade --- */
+ @media (max-width: 767px) {
+   .info-rows {
+      flex-direction: column;
+   }
+   .info-title {
+      font-size: 1rem;
+      padding: 6px 10px;
+      margin-top: 1rem;
+   }
+   .info-box {
+      font-size: 0.85rem;
+      padding: 8px 10px;
+      line-height: 1.3;
+   }
+   .info-column h4 {
+      font-size: 0.95rem;
+   }
+ }</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>info_normal_x_ajustada_x_serie</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Info normal x ajustada x serie</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-05-23 23:23:35</sys_created_on>
+        <sys_id>d275e444fb756e10f6d5f9d38eefdccb</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>Info normal x ajustada x serie</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_d275e444fb756e10f6d5f9d38eefdccb</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-23 23:33:18</sys_updated_on>
+        <template><![CDATA[<style>
+ @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+</style>
+
+<h3 class="info-title">Informações</h3>
+<div class="info-box">
+  <div class="info-rows">
+
+    <!-- Coluna Nomenclaturas -->
+    <div class="info-column">
+      <h4>Nomenclaturas</h4>
+      <p><strong>LRF</strong> > Lei de Responsabilidade Fiscal</p>
+      <p><strong>LC</strong> > Lei Complementar</p>
+      <p><strong>RREO</strong> > Relatório Resumido da Execução Orçamentária</p>
+    </div>
+
+    <!-- Coluna Metodologia -->
+    <div class="info-column">
+      <h4>Metodologia</h4>
+      <p><strong>NORMAL</strong> > Se refere à metodologia contida na <span class="sub-info">LRF, Art. 53, Inciso I</span>.</p>
+      <p><strong>AJUSTADA</strong> > Se refere à metodologia contida na <span class="sub-info">LC 614/2019, do Estado de MT</span>.</p>
+    </div>
+
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

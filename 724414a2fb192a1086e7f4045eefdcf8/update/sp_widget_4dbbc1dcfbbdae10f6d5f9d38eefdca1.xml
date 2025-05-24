@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function ($scope, $rootScope) {
+    var chartDividaPublicaInstance = null;
+
+    $scope.anoSelecionadoDividaPublica = "";
+    $scope.exibirGraficoDividaPublica = false;
+    $scope.tipoGraficoDividaPublica = 'line';
+    $scope.dadosDividaPublica = [];
+
+    function carregarDadosDividaPublica() {
+        var filtros = {
+            ano: $scope.anoSelecionadoDividaPublica || ""
+        };
+
+        $scope.server.get(filtros).then(function (response) {
+            $scope.dadosDividaPublica = response.data.dadosDividaPublica || [];
+            inicializarGraficoDividaPublica($scope.dadosDividaPublica);
+        });
+    }
+
+    $rootScope.$on('filtroAnoIndicadoresSelecionado', function (event, ano) {
+        $scope.anoSelecionadoDividaPublica = ano;
+        $scope.tipoGraficoDividaPublica = ano ? 'bar' : 'line';
+        carregarDadosDividaPublica();
+    });
+
+    carregarDadosDividaPublica();
+
+    function inicializarGraficoDividaPublica(listaDividaPublica) {
+        if (!listaDividaPublica || listaDividaPublica.length === 0) {
+            if (chartDividaPublicaInstance) {
+                chartDividaPublicaInstance.destroy();
+                chartDividaPublicaInstance = null;
+            }
+            $scope.exibirGraficoDividaPublica = false;
+            $scope.$applyAsync();
+            return;
+        }
+
+        $scope.exibirGraficoDividaPublica = true;
+        $scope.$applyAsync();
+
+        var labels = [];
+        var estoqueExternaData = [];
+        var estoqueInternaData = [];
+        var estoqueTotalData = [];
+
+        listaDividaPublica.forEach(function (item) {
+            labels.push(item.ano);
+            estoqueExternaData.push(item.estoqueExterna);
+            estoqueInternaData.push(item.estoqueInterna);
+            estoqueTotalData.push(item.estoqueTotal);
+        });
+
+        var canvas = document.getElementById('graficoDividaPublica');
+        if (!canvas) {
+            console.error("Elemento canvas 'graficoDividaPublica' não encontrado.");
+            return;
+        }
+
+        var ctx = canvas.getContext('2d');
+
+        if (chartDividaPublicaInstance) {
+            chartDividaPublicaInstance.destroy();
+        }
+
+        chartDividaPublicaInstance = new Chart(ctx, {
+            type: $scope.tipoGraficoDividaPublica,
+            data: {
+                labels: labels,
+                datasets: [
+                    {
+                        label: 'Externa',
+                        data: estoqueExternaData,
+                        borderColor: '#685DFA',
+                        backgroundColor: $scope.tipoGraficoDividaPublica === 'bar' ? '#685DFA' : 'transparent',
+                        borderWidth: 2,
+                        //borderDash: $scope.tipoGraficoDividaPublica === 'line' ? [6, 4] : [],
+                        fill: false,
+                        tension: 0.4,
+                        pointRadius: 3,
+                        yAxisID: 'y'
+                    },
+                    {
+                        label: 'Interna',
+                        data: estoqueInternaData,
+                        borderColor: '#00FAED',
+                        backgroundColor: $scope.tipoGraficoDividaPublica === 'bar' ? '#00FAED' : 'transparent',
+                        borderWidth: 2,
+                        fill: false,
+                        tension: 0.4,
+                        pointRadius: 3,
+                        yAxisID: 'y'
+                    },
+                    {
+                        label: 'Total',
+                        data: estoqueTotalData,
+                        borderColor: '#FF0000',
+                        backgroundColor: $scope.tipoGraficoDividaPublica === 'bar' ? '#FF0000' : 'transparent',
+                        borderWidth: 2,
+                        fill: false,
+                        tension: 0.4,
+                        pointRadius: 3,
+                        yAxisID: 'y'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Ano'
+                        },
+                        offset: true
+                    },
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Valores (milhões)'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'top'
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function (context) {
+                                return context.dataset.label + ': ' + context.parsed.y.toFixed(2) + ' M';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>canvas {
+  display: block;
+  margin: 0 auto;
+}
+
+h3, div, span {
+ font-family: 'Roboto Flex', sans-serif;
+}
+
+/* --- Media Queries para Responsividade --- */
+
+/* Telas Pequenas (Mobile S, M, L - até 767px) */
+@media (max-width: 767px) {
+  canvas {
+    max-width: 90%; /* Ajustar a largura máxima do canvas */
+  }
+  h3 {
+    font-size: 1rem; /* Ajustar o tamanho da fonte do título */
+  }
+}
+
+/* Tablets (iPad Mini, iPad Air, Surface Duo, Galaxy Z Fold 5 - 768px até 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  canvas {
+    max-width: 80%;
+  }
+  h3 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Laptops e Telas Maiores (iPad Pro, Surface Pro 7, Laptops, 4K - 1024px em diante) */
+@media (min-width: 1024px) {
+  canvas {
+    max-width: none;
+  }
+  h3 {
+  }
+}
+
+/* Ajustes para o Surface Duo (540x720) */
+@media (width: 540px) and (height: 720px) {
+    canvas {
+        max-width: 95%;
+    }
+}
+
+/* Ajustes para Galaxy Z Fold 5 (max-width: 350px) */
+@media (max-width: 350px) {
+    h3 {
+        font-size: 0.9rem;
+    }
+}
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&amp;display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+.report-widget {
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  background-color: #fff;
+  margin-top: 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Roboto Flex', sans-serif;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+.panel-heading {
+  background-color: #e0e0e0;
+  padding: 12px 16px;
+  border-bottom: 1px solid #ccc;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.panel-title {
+  margin: 0;
+  font-size: 1.6rem;
+  color: #333;
+  text-align: center;
+}
+
+.panel-body {
+  padding: 16px;
+  flex: 1;
+  width: 100%;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+/* Animação de entrada e saída */
+.mensagem {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  height: 0;
+  overflow: hidden;
+}
+
+.mensagem.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  height: auto;
+}
+
+/* Responsividade */
+@media (max-width: 767px) {
+  .report-widget {
+    margin-top: 1rem;
+  }
+  .panel-title {
+    font-size: 1.4rem;
+  }
+  .panel-body {
+    padding: 8px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .panel-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .panel-title {
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .panel-heading {
+    padding: 14px 18px;
+  }
+  .panel-body {
+    padding: 20px;
+  }
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>estoque_da_divida_publica_grafico</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Estoque da Divida Publica Grafico</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    input = input || {};
+    var anoFiltro = input.ano || "";
+
+    var gr = new GlideRecord('x_sded9_portal_t_0_u_divida_publica');
+    if (anoFiltro !== "") {
+        gr.addQuery('u_ano', anoFiltro);
+    }
+    gr.orderBy('u_ano');
+    gr.query();
+
+    var listaDividaPublica = [];
+
+    while (gr.next()) {
+        listaDividaPublica.push({
+            ano: gr.getValue('u_ano'),
+            estoqueExterna: parseFloat(gr.getValue('u_estoque_divida_publica_externa')) / 1000000 || 0,
+            estoqueInterna: parseFloat(gr.getValue('u_estoque_divida_publica_interna')) / 1000000 || 0,
+            estoqueTotal: parseFloat(gr.getValue('u_estoque_divida_publica_total')) / 1000000 || 0
+        });
+    }
+
+    data.dadosDividaPublica = listaDividaPublica;
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-05-24 20:49:06</sys_created_on>
+        <sys_id>4dbbc1dcfbbdae10f6d5f9d38eefdca1</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>Estoque da Divida Publica Grafico</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_4dbbc1dcfbbdae10f6d5f9d38eefdca1</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-24 21:09:33</sys_updated_on>
+        <template><![CDATA[<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+
+  .chart-wrapper {
+      font-family: 'Roboto Flex', sans-serif;
+      width: 100%;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+  }
+
+  .chart-container {
+      position: relative;
+      width: 100%;
+      height: 588px;
+  }
+
+  canvas {
+      width: 100% !important;
+      height: 100% !important;
+      display: block;
+  }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<div class="chart-wrapper">
+  <h3 style="text-align:center; font-weight: 600; margin-bottom: 16px;">
+    Estoque da Dívida Pública
+    <span style="font-weight: 600; color: #333;">
+      {{anoSelecionadoDividaPublica ? ' - Ano: ' + anoSelecionadoDividaPublica : ' - Todos os anos'}}
+    </span>
+  </h3>
+
+  <div class="chart-container" ng-show="exibirGraficoDividaPublica">
+    <canvas id="graficoDividaPublica"></canvas>
+  </div>
+
+  <div class="report-widget panel mensagem" ng-class="{'show': !exibirGraficoDividaPublica && dadosDividaPublica.length === 0}">
+  <!--div class="panel-heading">
+    <h2 class="panel-title">
+      <i class="fa fa-bar-chart" aria-hidden="true"></i> Estoque da Dívida Pública
+    </h2>
+  </div-->
+  <div class="panel-body" style="text-align: center; font-size: 1.2em;">
+    Nenhum dado disponível para o ano selecionado.
+  </div>
+</div>
+
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

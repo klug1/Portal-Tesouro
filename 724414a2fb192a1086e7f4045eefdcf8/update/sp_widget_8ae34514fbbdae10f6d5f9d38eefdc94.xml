@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $rootScope) {
+    var chartAmortizacaoInstance = null;
+
+    $scope.anoSelecionadoAmortizacao = "";
+    $scope.exibirGraficoAmortizacao = false;
+    $scope.tipoGrafico = 'line'; // padrão: linha
+
+    function carregarDadosAmortizacao() {
+        var filtros = {
+            ano: $scope.anoSelecionadoAmortizacao || ""
+        };
+
+        $scope.server.get(filtros).then(function(response) {
+            var listaAmortizacao = response.data.dadosAmortizacao || [];
+            inicializarGraficoAmortizacao(listaAmortizacao);
+        });
+    }
+
+    $rootScope.$on('filtroAnoIndicadoresSelecionado', function(event, ano) {
+        $scope.anoSelecionadoAmortizacao = ano;
+
+        // Se um ano foi selecionado, muda para gráfico de barra, senão volta para linha
+        if (ano) {
+            $scope.tipoGrafico = 'bar';
+        } else {
+            $scope.tipoGrafico = 'line';
+        }
+
+        carregarDadosAmortizacao();
+    });
+
+    carregarDadosAmortizacao();
+
+    function inicializarGraficoAmortizacao(listaAmortizacao) {
+        if (!listaAmortizacao || listaAmortizacao.length === 0) {
+            if (chartAmortizacaoInstance) {
+                chartAmortizacaoInstance.destroy();
+                chartAmortizacaoInstance = null;
+            }
+            $scope.exibirGraficoAmortizacao = false;
+            $scope.$applyAsync();
+            return;
+        }
+
+        $scope.exibirGraficoAmortizacao = true;
+        $scope.$applyAsync();
+
+        var labels = [];
+        var amortizacaoExternaData = [];
+        var amortizacaoInternaData = [];
+        var jurosEncargosExternaData = [];
+        var jurosEncargosInternaData = [];
+
+        for (var i = 0; i < listaAmortizacao.length; i++) {
+            labels.push(listaAmortizacao[i].ano);
+            amortizacaoExternaData.push(listaAmortizacao[i].amortizacaoExterna);
+            amortizacaoInternaData.push(listaAmortizacao[i].amortizacaoInterna);
+            jurosEncargosExternaData.push(listaAmortizacao[i].jurosEncargosExterna);
+            jurosEncargosInternaData.push(listaAmortizacao[i].jurosEncargosInterna);
+        }
+
+        var canvas = document.getElementById('graficoAmortizacao');
+        if (!canvas) {
+            console.error("Elemento canvas 'graficoAmortizacao' não encontrado.");
+            return;
+        }
+
+        var ctx = canvas.getContext('2d');
+
+        if (chartAmortizacaoInstance) {
+            chartAmortizacaoInstance.destroy();
+        }
+
+        chartAmortizacaoInstance = new Chart(ctx, {
+            type: $scope.tipoGrafico,  // usa a variável para tipo
+            data: {
+                labels: labels,
+                datasets: [
+                    {
+                        label: 'Amortização Externa (milhões)',
+                        data: amortizacaoExternaData,
+                        borderColor: '#0A46FA',
+                        backgroundColor: $scope.tipoGrafico === 'bar' ? '#0A46FA' : 'transparent',
+                        borderWidth: 2,
+                        borderDash: $scope.tipoGrafico === 'line' ? [6, 4] : [],
+                        fill: false,
+                        tension: 0.4,
+                        pointRadius: 3,
+                        yAxisID: 'y'
+                    },
+                    {
+                        label: 'Amortização Interna (milhões)',
+                        data: amortizacaoInternaData,
+                        borderColor: '#1A0AFA',
+                        backgroundColor: $scope.tipoGrafico === 'bar' ? '#1A0AFA' : 'transparent',
+                        borderWidth: 2,
+                        fill: false,
+                        tension: 0.4,
+                        pointRadius: 3,
+                        yAxisID: 'y'
+                    },
+                    {
+                        label: 'Juros e Encargos Externa (milhões)',
+                        data: jurosEncargosExternaData,
+                        borderColor: '#0A92FA',
+                        backgroundColor: $scope.tipoGrafico === 'bar' ? '#0A92FA' : 'transparent',
+                        borderWidth: 2,
+                        borderDash: $scope.tipoGrafico === 'line' ? [6, 4] : [],
+                        fill: false,
+                        tension: 0.4,
+                        pointRadius: 3,
+                        yAxisID: 'y'
+                    },
+                    {
+                        label: 'Juros e Encargos Interna (milhões)',
+                        data: jurosEncargosInternaData,
+                        borderColor: '#685DFA',
+                        backgroundColor: $scope.tipoGrafico === 'bar' ? '#685DFA' : 'transparent',
+                        borderWidth: 2,
+                        fill: false,
+                        tension: 0.4,
+                        pointRadius: 3,
+                        yAxisID: 'y'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Ano'
+                        }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Valores (milhões)'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'top'
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.dataset.label + ': ' + context.parsed.y.toFixed(2) + ' M';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>canvas {
+  display: block;
+  margin: 0 auto;
+}
+
+h3, div, span {
+ font-family: 'Roboto Flex', sans-serif;
+}
+
+/* --- Media Queries para Responsividade --- */
+
+/* Telas Pequenas (Mobile S, M, L - até 767px) */
+@media (max-width: 767px) {
+  canvas {
+    max-width: 90%; /* Ajustar a largura máxima do canvas */
+  }
+  h3 {
+    font-size: 1rem; /* Ajustar o tamanho da fonte do título */
+  }
+}
+
+/* Tablets (iPad Mini, iPad Air, Surface Duo, Galaxy Z Fold 5 - 768px até 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  canvas {
+    max-width: 80%;
+  }
+  h3 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Laptops e Telas Maiores (iPad Pro, Surface Pro 7, Laptops, 4K - 1024px em diante) */
+@media (min-width: 1024px) {
+  canvas {
+    max-width: none;
+  }
+  h3 {
+  }
+}
+
+/* Ajustes para o Surface Duo (540x720) */
+@media (width: 540px) and (height: 720px) {
+    canvas {
+        max-width: 95%;
+    }
+}
+
+/* Ajustes para Galaxy Z Fold 5 (max-width: 350px) */
+@media (max-width: 350px) {
+    h3 {
+        font-size: 0.9rem;
+    }
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>servi_o_divida_publica_grafico</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Serviço Divida Publica Grafico</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+		 input = input || {};
+    var anoFiltro = input.ano || "";
+
+    var gr = new GlideRecord('x_sded9_portal_t_0_u_amortizacao_juros');
+    if (anoFiltro !== "") {
+        gr.addQuery('u_ano', anoFiltro);
+    }
+    gr.orderBy('u_ano');
+    gr.query();
+
+    var listaAmortizacao = [];
+
+    while (gr.next()) {
+        listaAmortizacao.push({
+            ano: gr.getValue('u_ano'),
+            amortizacaoExterna: parseFloat(gr.getValue('u_amortizacao_externa')) / 1000000 || 0,
+            amortizacaoInterna: parseFloat(gr.getValue('u_amortizacao_interna')) / 1000000 || 0,
+            jurosEncargosExterna: parseFloat(gr.getValue('u_juros_encargos_externa')) / 1000000 || 0,
+            jurosEncargosInterna: parseFloat(gr.getValue('u_juros_encargos_interna')) / 1000000 || 0
+        });
+    }
+
+    data.dadosAmortizacao = listaAmortizacao;
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-05-24 20:15:02</sys_created_on>
+        <sys_id>8ae34514fbbdae10f6d5f9d38eefdc94</sys_id>
+        <sys_mod_count>17</sys_mod_count>
+        <sys_name>Serviço Divida Publica Grafico</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_8ae34514fbbdae10f6d5f9d38eefdc94</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-24 20:43:29</sys_updated_on>
+        <template><![CDATA[<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+
+  .chart-wrapper {
+      font-family: 'Roboto Flex', sans-serif;
+      width: 100%;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+  }
+  .chart-container {
+      position: relative;
+      width: 100%;
+      height: 588px;
+  }
+  canvas {
+      width: 100% !important;
+      height: 100% !important;
+      display: block;
+  }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<div class="chart-wrapper">
+<h3 style="text-align:center; font-weight: 600; margin-bottom: 16px;">
+  Serviço da Dívida Pública
+  <span style="font-weight: 600; color: #333;">
+    {{anoSelecionadoAmortizacao ? ' - Ano: ' + anoSelecionadoAmortizacao : ' - Todos os anos'}}
+  </span>
+</h3>
+
+<div class="chart-container" ng-show="exibirGraficoAmortizacao">
+    <canvas id="graficoAmortizacao"></canvas>
+</div>
+
+
+<div class="report-widget panel mensagem" ng-show="data.dadosGrafico.length == 0">
+    <div class="panel-heading">
+        <h2 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i></h2>
+    </div>
+    <div class="panel-body">
+        Nenhum dado disponível.
+    </div>
+</div>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

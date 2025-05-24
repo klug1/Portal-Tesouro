@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $rootScope) {
+    var chart = null;
+
+    $scope.anoSelecionado = "";
+    $scope.mesSelecionado = "";
+    $scope.exibirGrafico = false;
+
+    // Converte mês em inglês para número
+    function nomeMesParaNumero(mesNome) {
+        var meses = {
+            'january': 1,
+            'february': 2,
+            'march': 3,
+            'april': 4,
+            'may': 5,
+            'june': 6,
+            'july': 7,
+            'august': 8,
+            'september': 9,
+            'october': 10,
+            'november': 11,
+            'december': 12
+        };
+        if (!mesNome) return null;
+        return meses[mesNome.toLowerCase()] || null;
+    }
+
+    function carregarDados() {
+        var filtros = {};
+
+        if ($scope.anoSelecionado && !isNaN(parseInt($scope.anoSelecionado, 10))) {
+            filtros.ano = parseInt($scope.anoSelecionado, 10);
+        }
+
+        if ($scope.mesSelecionado) {
+            filtros.mes = nomeMesParaNumero($scope.mesSelecionado);
+        }
+
+        $scope.server.get(filtros).then(function(response) {
+            var dados = response.data.dadosGrafico || [];
+            montarGrafico(dados);
+        });
+    }
+
+    $rootScope.$on('anoSelecionado', function(event, ano) {
+        $scope.anoSelecionado = ano;
+        carregarDados();
+    });
+
+    $rootScope.$on('mesSelecionado', function(event, mes) {
+        $scope.mesSelecionado = mes;
+        carregarDados();
+    });
+
+    carregarDados();
+
+    function montarGrafico(listaDados) {
+        if (!listaDados || listaDados.length === 0) {
+            if (chart) {
+                chart.destroy();
+                chart = null;
+            }
+            $scope.exibirGrafico = false;
+            $scope.$applyAsync();
+            return;
+        }
+
+        $scope.exibirGrafico = true;
+        $scope.$applyAsync();
+
+        // Ordena por ano e bimestre
+        listaDados.sort(function(a, b) {
+            var anoA = parseInt(a.label.slice(-4), 10);
+            var anoB = parseInt(b.label.slice(-4), 10);
+
+            if (anoA !== anoB) {
+                return anoA - anoB;
+            }
+
+            var ordemBimestres = ['JAN/FEV', 'MAR/ABR', 'MAI/JUN', 'JUL/AGO', 'SET/OUT', 'NOV/DEZ'];
+            var bimA = ordemBimestres.indexOf(a.label.slice(0, 7));
+            var bimB = ordemBimestres.indexOf(b.label.slice(0, 7));
+
+            return bimA - bimB;
+        });
+
+        var labels = listaDados.map(function(item) {
+            return item.label;
+        });
+
+        var valores = listaDados.map(function(item) {
+            return (item.valor / 1000000).toFixed(2); // milhões
+        });
+
+        var ctx = document.getElementById('graficoRCLBarra').getContext('2d');
+
+        if (chart) {
+            chart.destroy();
+        }
+
+        chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'RCL Normal (em milhões)',
+                    data: valores,
+                    backgroundColor: valores.map(function(v) {
+                        return parseFloat(v) < 0 ? 'rgba(172, 27, 19, 0.7)' : 'rgba(65, 105, 225, 0.7)';
+                    }),
+                    borderColor: valores.map(function(v) {
+                        return parseFloat(v) < 0 ? '#ac1b13' : '#4169e1';
+                    }),
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Bimestre/Ano'
+                        },
+                        offset: true
+                    },
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Valor (Milhões)'
+                        },
+                        ticks: {
+                            callback: function(value) {
+                                return 'R$ ' + value.toLocaleString('pt-BR');
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'top'
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.dataset.label + ': R$ ' + context.parsed.y.toLocaleString('pt-BR') + ' mi';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>canvas {
+  display: block;
+  margin: 0 auto;
+}
+
+h3, div {
+ font-family: 'Roboto Flex', sans-serif;
+}
+
+/* --- Media Queries para Responsividade --- */
+
+/* Telas Pequenas (Mobile S, M, L - até 767px) */
+@media (max-width: 767px) {
+  canvas {
+    max-width: 90%; /* Ajustar a largura máxima do canvas */
+  }
+  h3 {
+    font-size: 1rem; /* Ajustar o tamanho da fonte do título */
+  }
+}
+
+/* Tablets (iPad Mini, iPad Air, Surface Duo, Galaxy Z Fold 5 - 768px até 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  canvas {
+    max-width: 80%;
+  }
+  h3 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Laptops e Telas Maiores (iPad Pro, Surface Pro 7, Laptops, 4K - 1024px em diante) */
+@media (min-width: 1024px) {
+  canvas {
+    max-width: none;
+  }
+  h3 {
+  }
+}
+
+/* Ajustes para o Surface Duo (540x720) */
+@media (width: 540px) and (height: 720px) {
+    canvas {
+        max-width: 95%;
+    }
+}
+
+/* Ajustes para Galaxy Z Fold 5 (max-width: 350px) */
+@media (max-width: 350px) {
+    h3 {
+        font-size: 0.9rem;
+    }
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>rcl_modelo_normal_grafico</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>rcl modelo normal grafico</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    input = input || {};
+
+    var mesMap = {
+        'january': 1,
+        'february': 2,
+        'march': 3,
+        'april': 4,
+        'may': 5,
+        'june': 6,
+        'july': 7,
+        'august': 8,
+        'september': 9,
+        'october': 10,
+        'november': 11,
+        'december': 12
+    };
+
+    // Se receber o mês como texto, converte para número
+    var mesSelecionado = input.mes;
+    if (typeof mesSelecionado === 'string') {
+        mesSelecionado = mesMap[mesSelecionado.toLowerCase()] || null;
+    } else if (typeof mesSelecionado === 'number') {
+        // se já for número, mantem
+        mesSelecionado = mesSelecionado;
+    } else {
+        mesSelecionado = null;
+    }
+
+    var anoSelecionado = input.ano ? parseInt(input.ano, 10) : null;
+    if (isNaN(anoSelecionado)) anoSelecionado = null;
+
+    var bimestreSelecionado = obterBimestrePorMes(mesSelecionado);
+
+    var gr = new GlideAggregate('x_sded9_portal_t_0_u_rcl_basica');
+
+    if (anoSelecionado) {
+        gr.addQuery('u_ano', anoSelecionado);
+    }
+
+    if (bimestreSelecionado) {
+        gr.addQuery('u_bimestre', bimestreSelecionado);
+    }
+
+    gr.addAggregate('SUM', 'u_rcl_normal');
+    gr.groupBy('u_ano');
+    gr.groupBy('u_bimestre');
+    gr.orderBy('u_ano');
+    gr.orderBy('u_bimestre');
+    gr.query();
+
+    var dados = [];
+
+    while (gr.next()) {
+        var ano = gr.getValue('u_ano');
+        var bimestre = gr.getValue('u_bimestre');
+        var valor = parseFloat(gr.getAggregate('SUM', 'u_rcl_normal')) || 0;
+
+        dados.push({
+            label: gerarLabelBimestre(bimestre) + '/' + ano,
+            valor: valor
+        });
+    }
+
+    data.dadosGrafico = dados;
+
+    // Funções auxiliares
+    function obterBimestrePorMes(mes) {
+        if (mes === 1 || mes === 2) return 1;
+        if (mes === 3 || mes === 4) return 2;
+        if (mes === 5 || mes === 6) return 3;
+        if (mes === 7 || mes === 8) return 4;
+        if (mes === 9 || mes === 10) return 5;
+        if (mes === 11 || mes === 12) return 6;
+        return null;
+    }
+
+    function gerarLabelBimestre(bimestre) {
+        var mapa = {
+            1: 'JAN/FEV',
+            2: 'MAR/ABR',
+            3: 'MAI/JUN',
+            4: 'JUL/AGO',
+            5: 'SET/OUT',
+            6: 'NOV/DEZ'
+        };
+        return mapa[bimestre] || '';
+    }
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-05-23 23:46:57</sys_created_on>
+        <sys_id>60da240cfb756e10f6d5f9d38eefdc1a</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>rcl modelo normal grafico</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_60da240cfb756e10f6d5f9d38eefdc1a</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-24 00:03:07</sys_updated_on>
+        <template><![CDATA[<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+
+  .chart-wrapper {
+      font-family: 'Roboto Flex', sans-serif;
+      width: 100%;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+      margin-top: 4rem;
+  }
+  .chart-container {
+      position: relative;
+      width: 100%;
+      height: 588px;
+  }
+  canvas {
+      width: 100% !important;
+      height: 100% !important;
+      display: block;
+  }
+  @media (max-width: 768px) {
+      .chart-container {
+          height: 400px;
+      }
+  }
+  @media (max-width: 480px) {
+      .chart-container {
+          height: 300px;
+      }
+  }
+  .report-widget.panel.mensagem {
+      text-align: center;
+      font-size: 1.2em;
+      padding: 20px;
+      background: #f8f8f8;
+      border-radius: 8px;
+      margin-top: 20px;
+  }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<div class="chart-wrapper">
+  <h3 style="text-align:center; font-weight: 600; margin-bottom: 16px;">
+   <i class="fa fa-bar-chart" aria-hidden="true"></i> Receita Corrente Líquida (RCL) - Normal
+  </h3>
+
+  <div class="chart-container" ng-show="exibirGrafico">
+    <canvas id="graficoRCLBarra"></canvas>
+  </div>
+
+  <div class="report-widget panel mensagem" ng-show="!exibirGrafico">
+    <div class="panel-heading">
+      <h2 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i></h2>
+    </div>
+    <div class="panel-body">
+      Nenhum dado disponível para o filtro selecionado.
+    </div>
+  </div>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

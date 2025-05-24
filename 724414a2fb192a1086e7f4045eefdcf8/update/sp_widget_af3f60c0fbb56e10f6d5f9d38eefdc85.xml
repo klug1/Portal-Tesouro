@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $rootScope) {
+    var chartAjustada = null;
+
+    $scope.anoSelecionadoAjustada = "";
+    $scope.mesSelecionadoAjustada = "";
+    $scope.exibirGraficoAjustada = false;
+
+    // Converte mês em inglês para número
+    function nomeMesParaNumeroAjustada(mesNome) {
+        var meses = {
+            'january': 1,
+            'february': 2,
+            'march': 3,
+            'april': 4,
+            'may': 5,
+            'june': 6,
+            'july': 7,
+            'august': 8,
+            'september': 9,
+            'october': 10,
+            'november': 11,
+            'december': 12
+        };
+        if (!mesNome) return null;
+        return meses[mesNome.toLowerCase()] || null;
+    }
+
+    function carregarDadosAjustada() {
+        var filtros = {};
+
+        if ($scope.anoSelecionadoAjustada && !isNaN(parseInt($scope.anoSelecionadoAjustada, 10))) {
+            filtros.ano = parseInt($scope.anoSelecionadoAjustada, 10);
+        }
+
+        if ($scope.mesSelecionadoAjustada) {
+            filtros.mes = nomeMesParaNumeroAjustada($scope.mesSelecionadoAjustada);
+        }
+
+        $scope.server.get(filtros).then(function(response) {
+            var dados = response.data.dadosGraficoAjustada || [];
+            montarGraficoAjustada(dados);
+        });
+    }
+
+    $rootScope.$on('anoSelecionado', function(event, ano) {
+        $scope.anoSelecionadoAjustada = ano;
+        carregarDadosAjustada();
+    });
+
+    $rootScope.$on('mesSelecionado', function(event, mes) {
+        $scope.mesSelecionadoAjustada = mes;
+        carregarDadosAjustada();
+    });
+
+    carregarDadosAjustada();
+
+    function montarGraficoAjustada(listaDados) {
+        if (!listaDados || listaDados.length === 0) {
+            if (chartAjustada) {
+                chartAjustada.destroy();
+                chartAjustada = null;
+            }
+            $scope.exibirGraficoAjustada = false;
+            $scope.$applyAsync();
+            return;
+        }
+
+        $scope.exibirGraficoAjustada = true;
+        $scope.$applyAsync();
+
+        // Ordena por ano e bimestre
+        listaDados.sort(function(a, b) {
+            var anoA = parseInt(a.label.slice(-4), 10);
+            var anoB = parseInt(b.label.slice(-4), 10);
+
+            if (anoA !== anoB) {
+                return anoA - anoB;
+            }
+
+            var ordemBimestres = ['JAN/FEV', 'MAR/ABR', 'MAI/JUN', 'JUL/AGO', 'SET/OUT', 'NOV/DEZ'];
+            var bimA = ordemBimestres.indexOf(a.label.slice(0, 7));
+            var bimB = ordemBimestres.indexOf(b.label.slice(0, 7));
+
+            return bimA - bimB;
+        });
+
+        var labels = listaDados.map(function(item) {
+            return item.label;
+        });
+
+        var valores = listaDados.map(function(item) {
+            return (item.valor / 1000000).toFixed(2); // milhões
+        });
+
+        var ctx = document.getElementById('graficoRCLAjustada').getContext('2d');
+
+        if (chartAjustada) {
+            chartAjustada.destroy();
+        }
+
+        chartAjustada = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'RCL Ajustada (em milhões)',
+                    data: valores,
+                    backgroundColor: valores.map(function(v) {
+                       return parseFloat(v) < 0 ? 'rgba(172, 27, 19, 0.7)' : 'rgba(0, 206, 209, 0.7)';
+                    }),
+                    borderColor: valores.map(function(v) {
+                        return parseFloat(v) < 0 ? '#ac1b13' : '#00ced1';
+                    }),
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Bimestre/Ano'
+                        },
+                        offset: true
+                    },
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Valor (Milhões)'
+                        },
+                        ticks: {
+                            callback: function(value) {
+                                return 'R$ ' + value.toLocaleString('pt-BR');
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'top'
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.dataset.label + ': R$ ' + context.parsed.y.toLocaleString('pt-BR') + ' mi';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>canvas {
+  display: block;
+  margin: 0 auto;
+}
+
+h3, div {
+ font-family: 'Roboto Flex', sans-serif;
+}
+
+/* --- Media Queries para Responsividade --- */
+
+/* Telas Pequenas (Mobile S, M, L - até 767px) */
+@media (max-width: 767px) {
+  canvas {
+    max-width: 90%; /* Ajustar a largura máxima do canvas */
+  }
+  h3 {
+    font-size: 1rem; /* Ajustar o tamanho da fonte do título */
+  }
+}
+
+/* Tablets (iPad Mini, iPad Air, Surface Duo, Galaxy Z Fold 5 - 768px até 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  canvas {
+    max-width: 80%;
+  }
+  h3 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Laptops e Telas Maiores (iPad Pro, Surface Pro 7, Laptops, 4K - 1024px em diante) */
+@media (min-width: 1024px) {
+  canvas {
+    max-width: none;
+  }
+  h3 {
+  }
+}
+
+/* Ajustes para o Surface Duo (540x720) */
+@media (width: 540px) and (height: 720px) {
+    canvas {
+        max-width: 95%;
+    }
+}
+
+/* Ajustes para Galaxy Z Fold 5 (max-width: 350px) */
+@media (max-width: 350px) {
+    h3 {
+        font-size: 0.9rem;
+    }
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>rcl_modelo_ajustado_grafico</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>rcl modelo ajustado grafico</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    input = input || {};
+
+    var mesMapAjustada = {
+        'january': 1,
+        'february': 2,
+        'march': 3,
+        'april': 4,
+        'may': 5,
+        'june': 6,
+        'july': 7,
+        'august': 8,
+        'september': 9,
+        'october': 10,
+        'november': 11,
+        'december': 12
+    };
+
+    var mesSelecionadoAjustada = input.mes;
+    if (typeof mesSelecionadoAjustada === 'string') {
+        mesSelecionadoAjustada = mesMapAjustada[mesSelecionadoAjustada.toLowerCase()] || null;
+    } else if (typeof mesSelecionadoAjustada === 'number') {
+        mesSelecionadoAjustada = mesSelecionadoAjustada;
+    } else {
+        mesSelecionadoAjustada = null;
+    }
+
+    var anoSelecionadoAjustada = input.ano ? parseInt(input.ano, 10) : null;
+    if (isNaN(anoSelecionadoAjustada)) anoSelecionadoAjustada = null;
+
+    var bimestreSelecionadoAjustada = obterBimestrePorMesAjustada(mesSelecionadoAjustada);
+
+    var grAjustada = new GlideAggregate('x_sded9_portal_t_0_u_rcl_basica');
+
+    if (anoSelecionadoAjustada) {
+        grAjustada.addQuery('u_ano', anoSelecionadoAjustada);
+    }
+
+    if (bimestreSelecionadoAjustada) {
+        grAjustada.addQuery('u_bimestre', bimestreSelecionadoAjustada);
+    }
+
+    grAjustada.addAggregate('SUM', 'u_rcl_ajustada');
+    grAjustada.groupBy('u_ano');
+    grAjustada.groupBy('u_bimestre');
+    grAjustada.orderBy('u_ano');
+    grAjustada.orderBy('u_bimestre');
+    grAjustada.query();
+
+    var dadosAjustada = [];
+
+    while (grAjustada.next()) {
+        var ano = grAjustada.getValue('u_ano');
+        var bimestre = grAjustada.getValue('u_bimestre');
+        var valor = parseFloat(grAjustada.getAggregate('SUM', 'u_rcl_ajustada')) || 0;
+
+        dadosAjustada.push({
+            label: gerarLabelBimestreAjustada(bimestre) + '/' + ano,
+            valor: valor
+        });
+    }
+
+    data.dadosGraficoAjustada = dadosAjustada;
+
+    // Funções auxiliares
+    function obterBimestrePorMesAjustada(mes) {
+        if (mes === 1 || mes === 2) return 1;
+        if (mes === 3 || mes === 4) return 2;
+        if (mes === 5 || mes === 6) return 3;
+        if (mes === 7 || mes === 8) return 4;
+        if (mes === 9 || mes === 10) return 5;
+        if (mes === 11 || mes === 12) return 6;
+        return null;
+    }
+
+    function gerarLabelBimestreAjustada(bimestre) {
+        var mapa = {
+            1: 'JAN/FEV',
+            2: 'MAR/ABR',
+            3: 'MAI/JUN',
+            4: 'JUL/AGO',
+            5: 'SET/OUT',
+            6: 'NOV/DEZ'
+        };
+        return mapa[bimestre] || '';
+    }
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-05-24 00:06:16</sys_created_on>
+        <sys_id>af3f60c0fbb56e10f6d5f9d38eefdc85</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>rcl modelo ajustado grafico</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_af3f60c0fbb56e10f6d5f9d38eefdc85</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-24 00:16:44</sys_updated_on>
+        <template><![CDATA[<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+
+  .chart-wrapper-ajustada {
+      font-family: 'Roboto Flex', sans-serif;
+      width: 100%;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+      margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
+  .chart-container-ajustada {
+      position: relative;
+      width: 100%;
+      height: 588px;
+  }
+  canvas {
+      width: 100% !important;
+      height: 100% !important;
+      display: block;
+  }
+  @media (max-width: 768px) {
+      .chart-container-ajustada {
+          height: 400px;
+      }
+  }
+  @media (max-width: 480px) {
+      .chart-container-ajustada {
+          height: 300px;
+      }
+  }
+  .report-widget-ajustada.panel.mensagem {
+      text-align: center;
+      font-size: 1.2em;
+      padding: 20px;
+      background: #f8f8f8;
+      border-radius: 8px;
+      margin-top: 20px;
+  }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<div class="chart-wrapper-ajustada">
+  <h3 style="text-align:center; font-weight: 600; margin-bottom: 16px;">
+   <i class="fa fa-bar-chart" aria-hidden="true"></i> Receita Corrente Líquida (RCL) - Ajustada
+  </h3>
+
+  <div class="chart-container-ajustada" ng-show="exibirGraficoAjustada">
+    <canvas id="graficoRCLAjustada"></canvas>
+  </div>
+
+  <div class="report-widget-ajustada panel mensagem" ng-show="!exibirGraficoAjustada">
+    <div class="panel-heading">
+      <h2 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i></h2>
+    </div>
+    <div class="panel-body">
+      Nenhum dado disponível para o filtro selecionado.
+    </div>
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

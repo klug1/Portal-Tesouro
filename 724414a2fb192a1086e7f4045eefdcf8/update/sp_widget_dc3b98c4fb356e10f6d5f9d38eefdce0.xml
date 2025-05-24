@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>/* Título da caixa */
+.info-title {
+    background-color: #e0e0e0;
+    color: #000;
+    padding: 8px 12px;
+    border-radius: 4px 4px 0 0;
+    margin: 16px 0 0 0;
+    font-size: 18px;
+    //font-weight: bold;
+   font-family: 'Roboto Flex', sans-serif;
+}
+
+/* Caixa de informações */
+.info-box {
+   font-family: 'Roboto Flex', sans-serif;
+    border: 1px solid #ccc;
+    padding: 10px 14px;
+    background-color: #f9f9f9;
+    border-radius: 0 0 4px 4px;
+    margin: 0;
+    font-size: 13px;
+    color: #333;
+    line-height: 1.4;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.info-box p {
+    margin: 4px 0;
+}
+
+/* Títulos internos */
+.info-box strong {
+   font-family: 'Roboto Flex', sans-serif;
+    display: block;
+    margin-bottom: 2px;
+    color: #000;
+    font-size: 14px;
+}
+
+/* Destaques */
+.info-box .sub-info {
+   font-family: 'Roboto Flex', sans-serif;
+    color: #0066cc;
+    font-weight: 500;
+}
+
+/* --- Media Queries para Responsividade --- */
+
+/* Telas Pequenas (Mobile S, M, L - até 767px) */
+@media (max-width: 767px) {
+  .info-title {
+    font-size: 1rem;
+    padding: 6px 10px;
+    margin-top: 1rem;
+  }
+  .info-box {
+    font-size: 0.85rem;
+    padding: 8px 10px;
+    line-height: 1.3;
+  }
+  .info-box strong {
+    font-size: 0.9rem;
+  }
+}
+
+/* Tablets (iPad Mini, iPad Air, Surface Duo, Galaxy Z Fold 5 - 768px até 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .info-title {
+    font-size: 1.05rem;
+    margin-top: 1.2rem;
+  }
+  .info-box {
+    font-size: 0.9rem;
+  }
+  .info-box strong {
+    font-size: 0.95rem;
+  }
+}
+
+/* Laptops e Telas Maiores (iPad Pro, Surface Pro 7, Laptops, 4K - 1024px em diante) */
+@media (min-width: 1024px) {
+  .info-title {
+    font-size: 18px; /* Valor original */
+    margin: 16px 0 0 0; /* Valor original */
+  }
+  .info-box {
+    font-size: 13px; /* Valor original */
+  }
+  .info-box strong {
+    font-size: 14px; /* Valor original */
+  }
+}
+
+/* Ajustes específicos para dispositivos muito largos como Nest Hub Max ou telas 4K */
+@media (min-width: 1280px) {
+    .info-title {
+        padding: 10px 14px;
+    }
+    .info-box {
+        padding: 12px 16px;
+    }
+}
+
+/* Ajustes para o Surface Duo (540x720) */
+@media (width: 540px) and (height: 720px) {
+    .info-title {
+        font-size: 1rem;
+        margin-top: 1.1rem;
+    }
+    .info-box {
+        font-size: 0.87rem;
+    }
+}
+
+/* Ajustes para Galaxy Z Fold 5 (max-width: 350px) */
+@media (max-width: 350px) {
+    .info-title {
+        font-size: 0.9rem;
+    }
+    .info-box {
+        font-size: 0.8rem;
+    }
+    .info-box strong {
+        font-size: 0.85rem;
+    }
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>rcl_info_grafico_3</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>rcl info grafico 3</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-05-23 22:38:40</sys_created_on>
+        <sys_id>dc3b98c4fb356e10f6d5f9d38eefdce0</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>rcl info grafico 3</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_dc3b98c4fb356e10f6d5f9d38eefdce0</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-23 22:41:10</sys_updated_on>
+        <template><![CDATA[<style>
+ @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+</style>
+
+<h3 class="info-title">Informações</h3>
+<div class="info-box">
+  <p><strong>Descrição:</strong> </p>
+  <br>
+  <p><strong>Fonte:</strong> CGDP/SOFT/SATE/SEFAZ.
+  <p><strong>Atualização:</strong>  </p>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

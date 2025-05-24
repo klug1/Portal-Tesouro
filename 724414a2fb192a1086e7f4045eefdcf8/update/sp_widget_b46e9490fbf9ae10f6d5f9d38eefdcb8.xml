@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $rootScope, $timeout) {
+    var chartInstanceBimestre = null;
+
+    $scope.anoSelecionadoBimestre = "";
+    $scope.bimestreSelecionadoBimestre = "";
+    $scope.exibirGraficoBimestre = false;
+
+    function carregarDadosDoServer() {
+        var filtros = {
+            ano: $scope.anoSelecionadoBimestre || "",
+            bimestre: $scope.bimestreSelecionadoBimestre || ""
+        };
+
+        $scope.server.get(filtros).then(function(response) {
+            var listaDados = response.data.dadosGraficoBarras || [];
+            inicializarGrafico(listaDados);
+        });
+    }
+
+    $rootScope.$on('filtroAnoSelecionado', function(event, ano) {
+        $scope.anoSelecionadoBimestre = ano;
+        carregarDadosDoServer();
+    });
+
+    $rootScope.$on('filtroBimestreSelecionado', function(event, bimestre) {
+        $scope.bimestreSelecionadoBimestre = bimestre;
+        carregarDadosDoServer();
+    });
+
+    carregarDadosDoServer();
+
+    function inicializarGrafico(listaDados) {
+        if (!listaDados || listaDados.length === 0) {
+            if (chartInstanceBimestre) {
+                chartInstanceBimestre.destroy();
+                chartInstanceBimestre = null;
+            }
+            $scope.exibirGraficoBimestre = false;
+            $scope.$applyAsync();
+            return;
+        }
+
+        $scope.exibirGraficoBimestre = true;
+        $scope.$applyAsync();
+
+        var labels = [];
+        var resultadoData = [];
+
+        for (var i = 0; i < listaDados.length; i++) {
+            var label = '';
+            if ($scope.anoSelecionadoBimestre) {
+                label = listaDados[i].bimestre + 'º Bim';
+            } else {
+                label = listaDados[i].ano;
+            }
+            labels.push(label);
+            resultadoData.push(listaDados[i].resultado / 1000000);
+        }
+
+        // Dois datasets: positivo e negativo
+        var dataPositivo = resultadoData.map(v => (v >= 0 ? v : null));
+        var dataNegativo = resultadoData.map(v => (v < 0 ? v : null));
+
+        var contexto = document.getElementById('graficoResultadoBimestre').getContext('2d');
+
+        if (chartInstanceBimestre) {
+            chartInstanceBimestre.destroy();
+        }
+
+        chartInstanceBimestre = new Chart(contexto, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [
+                    {
+                        label: 'Positivo',
+                        data: dataPositivo,
+                        backgroundColor: '#00CED1',
+                        borderColor: '#00CED1',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Negativo',
+                        data: dataNegativo,
+                        backgroundColor: '#FF4C4C',
+                        borderColor: '#FF4C4C',
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        stacked: true,
+                        title: {
+                            display: true,
+                            text: $scope.anoSelecionadoBimestre ? 'Bimestre' : 'Ano'
+                        },
+                        barPercentage: 1.0,
+                        categoryPercentage: 1.0
+                    },
+                    y: {
+                        stacked: true,
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Valor em Milhões de R$'
+                        },
+                        ticks: {
+                            callback: function(value) {
+                                return 'R$ ' + value.toLocaleString('pt-BR') + ' mi';
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'top'
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.dataset.label + ': R$ ' + context.parsed.y.toLocaleString('pt-BR') + ' mi';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>canvas {
+  display: block;
+  margin: 0 auto;
+}
+
+h3, div, span {
+ font-family: 'Roboto Flex', sans-serif;
+}
+
+/* --- Media Queries para Responsividade --- */
+
+/* Telas Pequenas (Mobile S, M, L - até 767px) */
+@media (max-width: 767px) {
+  canvas {
+    max-width: 90%; /* Ajustar a largura máxima do canvas */
+  }
+  h3 {
+    font-size: 1rem; /* Ajustar o tamanho da fonte do título */
+  }
+}
+
+/* Tablets (iPad Mini, iPad Air, Surface Duo, Galaxy Z Fold 5 - 768px até 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  canvas {
+    max-width: 80%;
+  }
+  h3 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Laptops e Telas Maiores (iPad Pro, Surface Pro 7, Laptops, 4K - 1024px em diante) */
+@media (min-width: 1024px) {
+  canvas {
+    max-width: none;
+  }
+  h3 {
+  }
+}
+
+/* Ajustes para o Surface Duo (540x720) */
+@media (width: 540px) and (height: 720px) {
+    canvas {
+        max-width: 95%;
+    }
+}
+
+/* Ajustes para Galaxy Z Fold 5 (max-width: 350px) */
+@media (max-width: 350px) {
+    h3 {
+        font-size: 0.9rem;
+    }
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>resultado_primario_consolidado_grafico</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Resultado Primario Consolidado Grafico</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    input = input || {};
+
+    var anoFiltro = input.ano || "";
+    var bimestreFiltro = input.bimestre || "";
+
+    var gr = new GlideRecord('x_sded9_portal_t_0_u_resultado_primario');
+
+    if (anoFiltro !== "") {
+        gr.addQuery('u_ano', anoFiltro);
+    }
+
+    if (bimestreFiltro !== "") {
+        gr.addQuery('u_bimestre', bimestreFiltro);
+    }
+
+    gr.query();
+
+    var dadosAgrupados = {};
+    while (gr.next()) {
+        var ano = gr.getValue('u_ano');
+        var bimestre = gr.getValue('u_bimestre');
+        var rawValor = gr.getValue('u_resultado_primario') || "0";
+        var valorSemPontuacao = rawValor.trim().replace(/\./g, '').replace(',', '.');
+        var resultado = parseFloat(valorSemPontuacao) || 0;
+
+        if (anoFiltro !== "") {
+            var chave = bimestre;
+            if (!dadosAgrupados[chave]) {
+                dadosAgrupados[chave] = {
+                    ano: ano,
+                    bimestre: bimestre,
+                    resultado: 0
+                };
+            }
+            dadosAgrupados[chave].resultado += resultado;
+        } else {
+            var chaveAno = ano;
+            if (!dadosAgrupados[chaveAno]) {
+                dadosAgrupados[chaveAno] = {
+                    ano: ano,
+                    resultado: 0
+                };
+            }
+            dadosAgrupados[chaveAno].resultado += resultado;
+        }
+    }
+
+    var listaDados = [];
+    for (var key in dadosAgrupados) {
+        listaDados.push(dadosAgrupados[key]);
+    }
+
+    listaDados.sort(function(a, b) {
+        if (a.ano !== b.ano) {
+            return a.ano.localeCompare(b.ano);
+        }
+        if (a.bimestre && b.bimestre) {
+            return parseInt(a.bimestre) - parseInt(b.bimestre);
+        }
+        return 0;
+    });
+
+    data.dadosGraficoBarras = listaDados;
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-05-24 17:31:07</sys_created_on>
+        <sys_id>b46e9490fbf9ae10f6d5f9d38eefdcb8</sys_id>
+        <sys_mod_count>28</sys_mod_count>
+        <sys_name>Resultado Primario Consolidado Grafico</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_b46e9490fbf9ae10f6d5f9d38eefdcb8</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-24 18:03:47</sys_updated_on>
+        <template><![CDATA[<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;600&display=swap');
+
+  .chart-wrapper-barras {
+      font-family: 'Roboto Flex', sans-serif;
+      width: 100%;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      box-sizing: border-box;
+  }
+  .chart-container-barras {
+      position: relative;
+      width: 100%;
+      height: 600px;
+  }
+  canvas {
+      width: 100% !important;
+      height: 100% !important;
+      display: block;
+  }
+  @media (max-width: 768px) {
+      .chart-container-barras {
+          height: 400px;
+      }
+  }
+  @media (max-width: 480px) {
+      .chart-container-barras {
+          height: 300px;
+      }
+  }
+  .report-widget.panel.mensagem {
+      text-align: center;
+      font-size: 1.2em;
+      padding: 20px;
+      background: #f8f8f8;
+      border-radius: 8px;
+      margin-top: 20px;
+  }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<div class="chart-wrapper-barras">
+  <h3 style="text-align:center; font-weight:600; margin-bottom: 16px;">
+    Resultado Primário Consolidado sem RRPS (em R$)
+    <span style="font-weight:600; color:#333;">
+      {{anoSelecionadoBimestre ? ' - Ano: ' + anoSelecionadoBimestre : ''}}
+      {{bimestreSelecionadoBimestre ? ' - ' + bimestreSelecionadoBimestre + 'º Bimestre' : ''}}
+    </span>
+  </h3>
+
+  <div class="chart-container-barras" ng-show="exibirGraficoBimestre">
+      <canvas id="graficoResultadoBimestre"></canvas>
+  </div>
+
+  <div class="report-widget panel mensagem" ng-show="!exibirGraficoBimestre">
+      <div class="panel-heading">
+          <h2 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i></h2>
+      </div>
+      <div class="panel-body">
+          Nenhum dado disponível.
+      </div>
+  </div>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>
