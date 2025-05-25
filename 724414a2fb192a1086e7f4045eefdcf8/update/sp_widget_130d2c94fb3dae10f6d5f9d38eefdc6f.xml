@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $rootScope, $timeout) {
+  $scope.filtroAnoIndicadores = "";
+
+  $scope.filtroAnoIndicadoresChanged = function() {
+    $rootScope.$broadcast('filtroAnoIndicadoresSelecionado', $scope.filtroAnoIndicadores);
+    console.log('Ano selecionado Indicadores:', $scope.filtroAnoIndicadores);
+  };
+
+  $timeout(function() {
+    $scope.filtroAnoIndicadoresChanged();
+  });
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.filter-header {
+  border-radius: 8px;
+  background-color: #f0f0f0;
+  padding: 0.5rem 1rem; 
+  margin-bottom: 1rem;
+  margin-top: 20rem;
+  font-family: 'Roboto Flex', sans-serif;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+  transform: translate(0px, -26px);
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between;
+  flex-wrap: wrap; 
+  
+}
+
+.input-with-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.filter-header:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filter-header .label-ano {
+  display: block;
+  margin-bottom: 0.25rem; 
+  font-weight: 600; 
+  font-family: 'Roboto Flex', sans-serif;
+  color: #3b82f6; 
+  font-size: 1.2rem;
+  align-self: flex-start; 
+}
+
+.filter-container {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+   gap: 1rem; /* espaço entre filtros */
+  flex-wrap: wrap; /* para quebrar em telas pequenas */
+  max-width: 100%;
+}
+
+.filter-input-group {
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-start; 
+  position: relative; 
+  
+  /* transform: translate(1523px); */
+}
+
+.input-with-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.form-control {
+  padding: 0.6rem; 
+  padding-left: 1.8rem; 
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-family: 'Roboto Flex', sans-serif;
+  width: 120px; 
+  transition: border-color 0.2s ease;
+  font-size: 1.3rem; 
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.filter-icon-left {
+  position: absolute;
+  left: 8px; 
+  top: 50%;
+  transform: translateY(-50%);
+  color: #3b82f6;
+  font-size: 14px;
+  pointer-events: none; 
+}
+
+.sugestoes-container {
+  position: absolute;
+  top: calc(100% + 4px); 
+  left: 0;
+  width: 100%; 
+  background-color: white;
+  border-radius: 4px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.sugestao-item {
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.sugestao-item:hover {
+  background-color: #f3f4f6;
+}
+
+/* --- Media Queries para Responsividade --- */
+
+/* Telas Pequenas (Mobile S, M, L - até 767px) */
+@media (max-width: 767px) {
+  .filter-header {
+    margin-top: 31rem;
+    padding: 0.5rem;
+    flex-direction: column;
+    align-items: stretch; 
+    transform: translate(0px, 0px); 
+  }
+
+  .filter-header h2 { 
+    margin-bottom: 0.5rem; 
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .filter-container {
+    justify-content: center; 
+    width: 100%;
+  }
+
+  .filter-input-group {
+    align-items: stretch; 
+    width: 90%; 
+    margin: 0 auto; 
+  }
+
+  .filter-header .label-ano {
+    font-size: 1rem;
+    align-self: flex-start; 
+    margin-bottom: 0.2rem;
+  }
+
+  .form-control {
+    width: 100%; 
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    padding-left: 2rem; 
+  }
+
+  .filter-icon-left {
+    font-size: 12px;
+    left: 6px;
+  }
+
+  .sugestoes-container {
+    font-size: 0.9rem;
+  }
+}
+
+/* Tablets (iPad Mini, iPad Air, Surface Duo, Galaxy Z Fold 5 - 768px até 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .filter-header {
+    margin-top: 15rem;
+    transform: translate(0px, -10px);
+    padding: 0.75rem 1rem;
+  }
+
+  .filter-header h2 {
+    font-size: 1.3rem;
+  }
+
+  .filter-input-group {
+    
+  }
+
+  .form-control {
+    width: 150px; 
+    font-size: 1.1rem;
+  }
+}
+
+/* Laptops e Telas Maiores (iPad Pro, Surface Pro 7, Laptops, 4K - 1024px em diante) */
+@media (min-width: 1024px) {
+  .filter-header {
+    margin-top: 20rem;
+    /* transform: translate(0px, -26px); */
+  }
+  
+  
+  .form-control {
+    width: 120px; /
+    font-size: 1.3rem; 
+  }
+}
+
+/* Ajustes específicos para dispositivos muito largos como Nest Hub Max ou telas 4K */
+@media (min-width: 1280px) {
+    .filter-header {
+        padding: 1rem 1.5rem;
+    }
+    .filter-input-group {
+        
+    }
+}
+
+/* Ajustes para o Surface Duo (540x720) - pode precisar de tratamento especial se o layout quebrar */
+@media (width: 540px) and (height: 720px) {
+    .filter-header {
+        margin-top: 3rem;
+    }
+}
+
+/* Ajustes para Galaxy Z Fold 5 (344x882) - tela estreita e alta */
+@media (max-width: 350px) {
+    .filter-header h2 {
+        font-size: 1rem;
+    }
+    .form-control {
+        font-size: 0.9rem;
+    }
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>divida_publica_filtro</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Divida Publica Filtro</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  var anos = [];
+  var gr = new GlideRecord('x_sded9_portal_t_0_u_indicadores_economicos');
+  gr.query();
+
+  var anosUnicos = {};
+
+  while (gr.next()) {
+    var ano = gr.getValue('u_ano');
+    if (ano && !anosUnicos[ano]) {
+      anos.push(ano);
+      anosUnicos[ano] = true;
+    }
+  }
+
+  anos.sort(function(a, b) {
+    return b - a;
+  });
+
+  data.anos = anos;
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-05-24 18:35:10</sys_created_on>
+        <sys_id>130d2c94fb3dae10f6d5f9d38eefdc6f</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Divida Publica Filtro</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_130d2c94fb3dae10f6d5f9d38eefdc6f</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-25 19:26:15</sys_updated_on>
+        <template><![CDATA[<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+</style>
+
+<div class="filter-header flex items-center justify-between p-4 bg-gray-200 rounded-lg shadow-sm">
+  <h2 class="text-lg font-semibold text-gray-800">Estoque com a Dívida Pública</h2>
+
+  <div class="filter-container flex gap-4">
+
+    <!-- Filtro Ano -->
+    <div class="filter-input-group">
+      <label class="text-sm text-gray-600 label-ano">ANO:</label>
+            <div class="input-with-icon">
+         <i class="fa fa-filter filter-icon-left"></i>
+      <select class="form-control" ng-model="filtroAnoIndicadores" ng-change="filtroAnoIndicadoresChanged()">
+        <option value="">Todos</option>
+        <option ng-repeat="ano in data.anos" value="{{ano}}">{{ano}}</option>
+      </select>
+        </div>
+    </div>
+
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

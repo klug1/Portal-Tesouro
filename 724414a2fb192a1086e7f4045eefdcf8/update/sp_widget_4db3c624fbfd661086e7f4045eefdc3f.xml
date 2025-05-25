@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($scope) {
+  /* widget controller */
+  var c = this;
+	
+	// Estado inicial (pode ser null, true ou false)
+$scope.isLowercase = null;
+
+// Escuta evento do rootScope para atualizar o estado
+$scope.$root.$on('toggleCaseEvent', function(event, isLowercase) {
+  $scope.isLowercase = isLowercase;
+});
+
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>/* Container que deixa o link centralizado vertical e horizontalmente */
+  .centered-link-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 14vh; /* ocupa a altura total da viewport */
+    background-color: #f9f9f9; /* opcional, para destacar */
+    margin-bottom: 4rem;
+  }
+
+  /* Estilo do link arredondado */
+  .rounded-link {
+    font-family: 'Roboto Flex', sans-serif;
+    font-weight: 300;
+    font-size: 2rem;
+    color: white;
+    background: #293273;
+    padding: 20px 60px;
+    border-radius: 50px; /* bastante arredondado */
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .rounded-link:hover {
+    background-color: #1e2451;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    cursor: pointer;
+    text-decoration: underline;
+    
+  }
+
+.lowercase-text {
+    text-transform: lowercase;
+}
+
+.uppercase-text {
+    text-transform: uppercase;
+}
+
+  /* Responsivo para telas pequenas */
+  @media (max-width: 600px) {
+    .rounded-link {
+      font-size: 2rem;
+      padding: 15px 40px;
+      border-radius: 40px;
+    }
+  }</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>mapa_estrategico</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Mapa Estrategico</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-05-25 19:32:15</sys_created_on>
+        <sys_id>4db3c624fbfd661086e7f4045eefdc3f</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>Mapa Estrategico</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_4db3c624fbfd661086e7f4045eefdc3f</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-25 19:40:41</sys_updated_on>
+        <template><![CDATA[<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+</style>
+
+<div class="centered-link-container"  ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">
+  <a href="https://www5.sefaz.mt.gov.br/mapas-estrategicos1" target="_blank" class="rounded-link">
+    Mapa Estratégico da Sefaz-MT
+  </a>
+</div>]]></template>
+    </sp_widget>
+</record_update>
