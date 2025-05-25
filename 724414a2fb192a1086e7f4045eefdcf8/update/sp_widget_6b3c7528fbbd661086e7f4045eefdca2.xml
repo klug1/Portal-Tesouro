@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($scope) {
+  /* widget controller */
+  var c = this;
+	
+	// Estado inicial (pode ser null, true ou false)
+$scope.isLowercase = null;
+
+// Escuta evento do rootScope para atualizar o estado
+$scope.$root.$on('toggleCaseEvent', function(event, isLowercase) {
+  $scope.isLowercase = isLowercase;
+});
+
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.servicos-widget {
+  font-family: 'Roboto Flex', sans-serif !important;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Alinha à esquerda */
+  max-width: 80%;
+  margin: 25px auto 2rem 0; /* margem esquerda zero para colar na esquerda */
+  position: static;
+  text-align: left; /* texto alinhado à esquerda */
+ 		margin-top: 0px;
+    margin-right: 0px;
+}
+
+
+.servicos-text {
+  font-size: 3.4rem;
+  color: #293273;
+  padding: 10px;
+}
+.lowercase-text {
+  text-transform: lowercase;
+}
+
+.uppercase-text {
+  text-transform: uppercase;
+}
+
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .servicos-widget {
+    max-width: 90%;
+  }
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>organograma_divisor</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Organograma Divisor</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-05-25 18:59:39</sys_created_on>
+        <sys_id>6b3c7528fbbd661086e7f4045eefdca2</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Organograma Divisor</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_6b3c7528fbbd661086e7f4045eefdca2</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-25 19:02:17</sys_updated_on>
+        <template><![CDATA[<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+</style>
+
+<div class="servicos-widget">
+  <!--div class="blue-bar"></div-->
+  <span class="servicos-text" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">Organograma</span>
+  <!--div class="servicos-line"></di-->
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

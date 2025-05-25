@@ -468,6 +468,9 @@ $scope.$root.$on('toggleCaseEvent', function(event, isLowercase) {
             .ranking-description-exact {
                 font-size: 1.75rem;
             }
+          .destaques-main-container {
+            	transform: translateX(-43px);
+          }
         }
 
         @media (max-width: 480px) {
@@ -498,6 +501,15 @@ $scope.$root.$on('toggleCaseEvent', function(event, isLowercase) {
             .indicator-value-exact {
                 margin-top: 0.25rem;
             }
+            .destaques-main-container {
+            	transform: translateX(-43px);
+          }
+        }
+
+  @media (max-width: 400px) {
+    .destaques-main-container {
+      transform: translateX(-43px);
+    }
         }</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
@@ -518,14 +530,14 @@ $scope.$root.$on('toggleCaseEvent', function(event, isLowercase) {
         <sys_created_by>pk.aba</sys_created_by>
         <sys_created_on>2025-05-10 14:30:29</sys_created_on>
         <sys_id>12ce676bfb5dee10f6d5f9d38eefdcc3</sys_id>
-        <sys_mod_count>64</sys_mod_count>
+        <sys_mod_count>67</sys_mod_count>
         <sys_name>Resultados CAPAG SEFAZ</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_12ce676bfb5dee10f6d5f9d38eefdcc3</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-16 23:25:57</sys_updated_on>
+        <sys_updated_on>2025-05-25 15:47:42</sys_updated_on>
         <template><![CDATA[<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
