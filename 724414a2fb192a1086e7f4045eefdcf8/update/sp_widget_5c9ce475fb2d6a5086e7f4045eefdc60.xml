@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($scope) {
+  /* widget controller */
+  var c = this;
+	
+	// Estado inicial (pode ser null, true ou false)
+$scope.isLowercase = null;
+
+// Escuta evento do rootScope para atualizar o estado
+$scope.$root.$on('toggleCaseEvent', function(event, isLowercase) {
+  $scope.isLowercase = isLowercase;
+});
+
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.sobre-nos-widget {
+    font-family: 'Roboto Flex', sans-serif;
+    color: #293273;
+    //max-width: 1200px;
+    margin: 5rem auto;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+}
+
+div, h1, h2, h3, h4, span, figcaption, p, a{
+	 font-family: 'Roboto Flex', sans-serif;
+}
+
+.titulo-superior {
+  margin-top: 15rem;
+  flex-basis: 100%;      /* ocupa toda largura do flex container */
+  font-family: 'Roboto Flex', sans-serif;
+  font-size: 3.4rem;
+  font-weight: 600;
+  color: #293273;
+  margin-bottom: 2rem;
+  text-align: center; /* ou left */
+  padding: 10px;
+}
+
+
+
+.sobre-nos-texto {
+    flex: 1 1 500px;
+}
+
+.sobre-nos-titulo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #6CB4EE;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.sobre-nos-headline {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #293273;
+    margin-bottom: 1rem;
+}
+
+.sobre-nos-descricao {
+    font-size: 1.5rem;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.sobre-nos-info-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.sobre-nos-contato,
+.sobre-nos-redes {
+    flex: 1;
+    min-width: 220px;
+}
+
+.sobre-nos-contato h4,
+.sobre-nos-redes h4 {
+    font-size: 1.1rem;
+    color: #6CB4EE;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.sobre-nos-contato span,
+.sobre-nos-redes span {
+    font-size: 1.1rem;
+    color: #6CB4EE;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.sobre-nos-contato p,
+.sobre-nos-contato a {
+    font-size: 1.5rem;
+    color: #293273;
+    margin: 0.3rem 0;
+    text-decoration: none;
+    font-weight: 300;
+}
+
+.sobre-nos-redes {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.sobre-nos-redes h4 {
+    text-align: right;
+}
+
+.sobre-nos-redes .icon-container {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.sobre-nos-redes .icon-container a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 2px solid #293273;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #293273;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sobre-nos-redes .icon-container a:hover {
+    background-color: #293273;
+    color: white;
+}
+
+.sobre-nos-img {
+    flex: 1 1 400px;
+    max-width: 708px;
+}
+
+.sobre-nos-img img {
+    width: 100%;
+    max-width: 708px;
+    height: auto;
+    object-fit: cover;
+}
+
+.imagem-legenda {
+    font-size: 8px;
+    color: #555;
+    margin-top: 8px;
+    max-width: 708px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.4;
+}
+
+.lowercase-text {
+    text-transform: lowercase;
+}
+
+.uppercase-text {
+    text-transform: uppercase;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .sobre-nos-widget {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sobre-nos-info-container {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .sobre-nos-redes {
+        align-items: center;
+    }
+
+    .sobre-nos-redes h4 {
+        text-align: center;
+    }
+
+    .sobre-nos-redes .icon-container {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .sobre-nos-headline {
+        font-size: 2rem;
+    }
+
+    .sobre-nos-descricao {
+        font-size: 1.2rem;
+    }
+
+    .sobre-nos-contato p,
+    .sobre-nos-contato a {
+        font-size: 1.2rem;
+    }
+}
+
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>sobre_nos_text_sefaz</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Sobre Nos Text SEFAZ</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-05-17 00:08:15</sys_created_on>
+        <sys_id>5c9ce475fb2d6a5086e7f4045eefdc60</sys_id>
+        <sys_mod_count>54</sys_mod_count>
+        <sys_name>Sobre Nos Text SEFAZ</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_5c9ce475fb2d6a5086e7f4045eefdc60</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-25 19:13:23</sys_updated_on>
+        <template><![CDATA[<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+</style>
+
+<div class="sobre-nos-widget">
+  
+  <div class="titulo-superior">Tesouro Estadual</div>
+  
+  <div class="sobre-nos-texto">
+    <div class="sobre-nos-titulo" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">Sobre nós</div>
+    <div class="sobre-nos-headline" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">
+      Transparência e Equilíbrio<br>
+      Gerindo Recursos, Construindo Confiança!
+    </div>
+    <div class="sobre-nos-descricao" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">
+      A Secretaria Adjunta do Tesouro Estadual (SATE) tem como missão assegurar o equilíbrio e liquidez do tesouro estadual e controlar a aplicação do gasto público.
+    </div>
+
+    <div class="sobre-nos-info-container">
+      <div class="sobre-nos-contato">
+        <h4 ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">Nossos contatos</h4>
+        <p><i class="fa fa-phone"></i> (65) 3617-2518</p>
+        <p><i class="fa fa-envelope"></i> <a href="mailto:gabinete.sate@sefaz.mt.gov.br">gabinete.sate@sefaz.mt.gov.br</a></p>
+      </div>
+      <div class="sobre-nos-redes" id="divDireita">
+        <h4 class="h4Direita" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">Nossas redes sociais</h4>
+        <div class="icon-container">
+          <a target="_blank" href="https://www.linkedin.com/company/sefazmt/"><i class="fa fa-linkedin-square"></i></a>
+          <a target="_blank" href="https://www.instagram.com/sefazmt/"><i class="fa fa-instagram"></i></a>
+          <a target="_blank" href="https://www.youtube.com/@SefazMatoGrosso_MT"><i class="fa fa-youtube-play"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <figure class="sobre-nos-img">
+    <img src="x_sded9_portal_t_0.sobrenos.png" alt="Imagem Sobre Nós" width="708" height="473">
+    <figcaption class="imagem-legenda" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">
+      Equipe SATE SEFAZ-MT, Secretário, Superintendentes e Coordenadores das unidades que compõem nosso time. <br>
+      <strong>Créditos da Foto:</strong> Testerson/Secom-MT
+    </figcaption>
+  </figure>
+
+</div>
+]]></template>
+    </sp_widget>
+</record_update>
