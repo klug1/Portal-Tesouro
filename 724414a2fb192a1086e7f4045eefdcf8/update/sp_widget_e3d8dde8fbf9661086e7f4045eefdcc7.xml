@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $http, $timeout) {
+    function loadScript(src) {
+        return new Promise(function(resolve, reject) {
+            var script = document.createElement('script');
+            script.src = src;
+            script.onload = resolve;
+            script.onerror = reject;
+            document.head.appendChild(script);
+        });
+    }
+
+    async function loadAllScripts() {
+        var scripts = [
+            'https://code.highcharts.com/highcharts.js',
+            'https://code.highcharts.com/modules/sankey.js',
+            'https://code.highcharts.com/modules/organization.js',
+            'https://code.highcharts.com/modules/exporting.js',
+            'https://code.highcharts.com/modules/accessibility.js'
+        ];
+
+        for (var i = 0; i < scripts.length; i++) {
+            await loadScript(scripts[i]);
+        }
+    }
+
+    async function initChart() {
+        try {
+            await loadAllScripts();
+
+            // Aqui você deve garantir que $scope.data esteja carregado
+            if (!$scope.data || !$scope.data.nodes || !$scope.data.links) {
+                console.warn('Dados não carregados ainda!');
+                return;
+            }
+
+            Highcharts.setOptions({
+                chart: {
+                    style: {
+                        fontFamily: 'Roboto Flex, sans-serif'
+                    }
+                }
+            });
+
+            Highcharts.chart('container', {
+                // suas configurações...
+                chart: {
+                    height: 800,
+                    inverted: true
+                },
+                title: {
+                    text: 'Organograma da Empresa'
+                },
+                series: [{
+                    type: 'organization',
+                    name: 'Organograma',
+                    keys: ['from', 'to'],
+                    data: $scope.data.links,
+                    nodes: $scope.data.nodes,
+                    colorByPoint: false,
+                    color: '#293273',
+                    borderColor: 'white',
+                    nodeWidth: 100,
+                    dataLabels: {
+                        color: 'white',
+                        style: {
+                            textOutline: 'none',
+                            fontWeight: 'bold'
+                        },
+                        formatter: function() {
+                            return this.point.desc || this.point.title || this.point.name;
+                        }
+                    }
+                }],
+                tooltip: {
+                    outside: true,
+                    style: {
+                        fontSize: '16px',
+                        fontWeight: 'bold',
+                        fontFamily: 'Roboto Flex, sans-serif'
+                    },
+                    formatter: function() {
+                        var node = this.point;
+                        return '<b>' + node.name + '</b><br/>' +
+                               (node.desc ? node.desc + '<br/>' : '') +
+                               (node.users ? '<b>Usuários:</b> ' + node.users : '<i>Sem usuários neste departamento</i>');
+                    }
+                },
+                exporting: {
+                    enabled: true,
+                    allowHTML: true,
+                    sourceWidth: 1000,
+                    sourceHeight: 800,
+                    buttons: {
+                        contextButton: {
+                            menuItems: ['printChart', 'viewFullscreen']
+                        }
+                    }
+                }
+            });
+
+            // Faz os cantos arredondados
+            var rects = document.querySelectorAll('#container svg rect.highcharts-point');
+            for (var i = 0; i < rects.length; i++) {
+                rects[i].setAttribute('rx', '15');
+                rects[i].setAttribute('ry', '15');
+            }
+        } catch (e) {
+            console.error('Erro ao carregar ou inicializar gráfico:', e);
+        }
+    }
+
+    // Agora, execute após o $scope.data estar pronto. Se você obtém dados async, chame initChart depois.
+    // Se os dados forem carregados pelo servidor async, chame initChart após a resposta.
+    
+    $timeout(function() {
+        initChart();
+    }, 1000); // 1 segundo só para garantir que $scope.data esteja pronto
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>div, h3, h2, h1, h4 {
+	 font-family: 'Roboto Flex', sans-serif;
+}
+
+
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>organograma_tesouro_clone_v2</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+angular.module('sn.$sp').directive('orgChart', function($compile) {
+  return {
+    scope: {
+      node: '='
+    },
+    templateUrl: 'org-chart-template',
+    link: function(scope, element) {
+      $compile(element.contents())(scope);
+    }
+  };
+});
+	
+
+}]]></link>
+        <name>Organograma Tesouro Clone v2</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    var nodes = [];
+    var links = [];
+
+    // Função recursiva para buscar filhos com controle de nível
+    function fetchChildren(parentSysId, level) {
+        var gr = new GlideRecord('cmn_department');
+        gr.addQuery('u_nome_unidade_superior', parentSysId);
+        gr.query();
+
+        while (gr.next()) {
+            var childSysId = gr.sys_id.toString();
+
+            // Buscar usuários desse departamento
+            var userGr = new GlideRecord('sys_user');
+            userGr.addQuery('department', childSysId);
+            userGr.query();
+
+            var users = [];
+            while (userGr.next()) {
+                users.push(userGr.name.toString() + ' (' + (userGr.title.toString() || 'Sem função') + ')');
+            }
+
+            // Definir cor com base no nível
+            var color = '#293273'; // Azul escuro para netos e além
+            if (level === 0) color = '#808080'; // Cinza para o pai (root)
+            else if (level === 1) color = '#6CB4EE'; // Azul claro para os filhos diretos
+
+            // Adiciona o nó (node)
+            nodes.push({
+                id: childSysId,
+                title: gr.getValue('u_sigla_unidade') || '',
+                name: gr.name.toString(),
+                desc: gr.getValue('description') || '',
+                users: users.join(', '),
+                color: color
+            });
+
+            // Adiciona a ligação (link) com o pai
+            links.push([parentSysId, childSysId]);
+
+            // Busca filhos desse filho (netos, bisnetos…) com nível incrementado
+            fetchChildren(childSysId, level + 1);
+        }
+    }
+
+    // Começa pelo root
+    var rootSysId = '60ef95a4fb3d661086e7f4045eefdcb4';
+    var root = new GlideRecord('cmn_department');
+    if (root.get(rootSysId)) {
+        // Buscar usuários do root também
+        var userGr = new GlideRecord('sys_user');
+        userGr.addQuery('department', rootSysId);
+        userGr.query();
+
+        var users = [];
+        while (userGr.next()) {
+            users.push(userGr.name.toString() + ' (' + (userGr.title.toString() || 'Sem função') + ')');
+        }
+
+        nodes.push({
+            id: rootSysId,
+            title: root.getValue('u_sigla_unidade') || '',
+            name: root.name.toString(),
+            desc: root.getValue('description') || '',
+            users: users.join(', '),
+            color: '#808080'  // Cor do root (pai) cinza
+        });
+    }
+
+    fetchChildren(rootSysId, 1);  // chama com nível 1 para os filhos diretos
+
+    data.links = links;
+    data.nodes = nodes;
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-05-25 16:25:06</sys_created_on>
+        <sys_id>e3d8dde8fbf9661086e7f4045eefdcc7</sys_id>
+        <sys_mod_count>79</sys_mod_count>
+        <sys_name>Organograma Tesouro Clone v2</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_e3d8dde8fbf9661086e7f4045eefdcc7</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 14:55:15</sys_updated_on>
+        <template><![CDATA[<style>
+ #container .highcharts-point {
+    filter: drop-shadow(0 0 0 white) drop-shadow(0 0 0 white);
+    stroke-linejoin: round !important;
+    stroke-linecap: round !important;
+  }
+
+  #container .highcharts-data-label text {
+    font-family: 'Roboto Flex', sans-serif;
+  }
+    .highcharts-menu {
+    font-size: 18px !important;
+  }
+  
+  .highcharts-a11y-proxy-element .highcharts-no-tooltip{
+  	font-size: 18px !important;
+  	}
+ 
+  
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+</style>
+
+<div class='containerOrg' id="container" style="min-width: 310px; max-width: 100%; height: 800px; margin: 0 auto"></div>
+]]></template>
+    </sp_widget>
+</record_update>
