@@ -150,24 +150,24 @@
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-23 22:38:40</sys_created_on>
         <sys_id>dc3b98c4fb356e10f6d5f9d38eefdce0</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>rcl info grafico 3</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_dc3b98c4fb356e10f6d5f9d38eefdce0</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-23 22:41:10</sys_updated_on>
+        <sys_updated_on>2025-05-26 22:52:13</sys_updated_on>
         <template><![CDATA[<style>
  @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 </style>
 
 <h3 class="info-title">Informações</h3>
 <div class="info-box">
-  <p><strong>Descrição:</strong> </p>
+  <p class="dadosInfo" ><strong>Descrição:</strong> </p>
   <br>
-  <p><strong>Fonte:</strong> CGDP/SOFT/SATE/SEFAZ.
-  <p><strong>Atualização:</strong>  </p>
+  <p class="dadosInfo" ><strong>Fonte:</strong> CGDP/SOFT/SATE/SEFAZ.
+  <p class="dadosInfo" ><strong>Atualização:</strong>  </p>
 </div>
 ]]></template>
     </sp_widget>

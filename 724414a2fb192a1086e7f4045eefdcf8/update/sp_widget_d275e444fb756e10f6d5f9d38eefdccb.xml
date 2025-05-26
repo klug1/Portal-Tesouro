@@ -103,14 +103,14 @@ h4, h3, h2, div, p{
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-23 23:23:35</sys_created_on>
         <sys_id>d275e444fb756e10f6d5f9d38eefdccb</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name>Info normal x ajustada x serie</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_d275e444fb756e10f6d5f9d38eefdccb</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-23 23:33:18</sys_updated_on>
+        <sys_updated_on>2025-05-26 22:52:58</sys_updated_on>
         <template><![CDATA[<style>
  @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 </style>
@@ -121,17 +121,17 @@ h4, h3, h2, div, p{
 
     <!-- Coluna Nomenclaturas -->
     <div class="info-column">
-      <h4>Nomenclaturas</h4>
-      <p><strong>LRF</strong> > Lei de Responsabilidade Fiscal</p>
-      <p><strong>LC</strong> > Lei Complementar</p>
-      <p><strong>RREO</strong> > Relatório Resumido da Execução Orçamentária</p>
+      <h4 class="dadosInfo" >Nomenclaturas</h4>
+      <p class="dadosInfo" ><strong>LRF</strong> > Lei de Responsabilidade Fiscal</p>
+      <p class="dadosInfo" ><strong>LC</strong> > Lei Complementar</p>
+      <p class="dadosInfo" ><strong>RREO</strong> > Relatório Resumido da Execução Orçamentária</p>
     </div>
 
     <!-- Coluna Metodologia -->
     <div class="info-column">
-      <h4>Metodologia</h4>
-      <p><strong>NORMAL</strong> > Se refere à metodologia contida na <span class="sub-info">LRF, Art. 53, Inciso I</span>.</p>
-      <p><strong>AJUSTADA</strong> > Se refere à metodologia contida na <span class="sub-info">LC 614/2019, do Estado de MT</span>.</p>
+      <h4 class="dadosInfo" >Metodologia</h4>
+      <p class="dadosInfo" ><strong>NORMAL</strong> > Se refere à metodologia contida na <span class="sub-info">LRF, Art. 53, Inciso I</span>.</p>
+      <p class="dadosInfo" ><strong>AJUSTADA</strong> > Se refere à metodologia contida na <span class="sub-info">LC 614/2019, do Estado de MT</span>.</p>
     </div>
 
   </div>
