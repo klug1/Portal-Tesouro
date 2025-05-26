@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $location) {
+  $scope.goTo = function(id) {
+    //$location.url("?id=" + id);
+		window.open("?id=" + id, '_blank');
+  };
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.imgIndicador {
+  font-family: 'Roboto Flex', sans-serif !important;
+  position: relative;
+  padding: 0 2rem; /* espaço lateral */
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  height: 500px;
+}
+
+.imgIndicador img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  display: block;
+  position: relative; /* para overlay se posicionar relativo a essa imagem */
+  z-index: 0;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 2rem;    /* começa após o padding esquerdo */
+  right: 2rem;   /* termina antes do padding direito */
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.textoSobreImagem {
+  font-family: 'Roboto Flex', sans-serif !important;
+  position: absolute;
+  top: 17rem;
+  left: 9rem; /* alinhado com o padding */
+  color: white;
+  z-index: 2;
+  max-width: calc(100% - 4rem); /* para respeitar os 2rem de cada lado */
+}
+
+  @media (max-width: 600px) {
+    .textoSobreImagem {
+    	    transform: translateX(-47px) translateY(101px);
+      		font-size: 13px;
+    }
+        }</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>indicadores_img</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>indicadores_img</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-05-13 00:52:37</sys_created_on>
+        <sys_id>83501ce8fb6da25086e7f4045eefdcbc</sys_id>
+        <sys_mod_count>40</sys_mod_count>
+        <sys_name>indicadores_img</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_83501ce8fb6da25086e7f4045eefdcbc</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 22:17:35</sys_updated_on>
+        <template><![CDATA[<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+</style>
+
+
+<div class="imgIndicador">
+  <img src="x_sded9_portal_t_0.indicadoresBanner.png" alt="Banner Indicadores Fiscais">
+  <div class="overlay"></div>
+  <div class="textoSobreImagem">
+    <h1 class="tituloIndicador">Indicadores Fiscais</h1>
+    <p class="textoIndicador">Números da saúde financeira do Estado que ajudam a planejar e acompanhar as contas públicas</p>
+  </div>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

@@ -90,7 +90,19 @@
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 650px) {
+			
+  .linha-topo{
+  	transform: translateY(21px);
+  }
+  
+  .lado-direito{
+  	transform: translateX(-127px) translateY(14px);
+  }
+  
+  .banner-sefaz-container .content {
+  	 transform: translateY(0%) !important;
+  }
   .title-banner {
     font-size: 12px; /* Tamanho menor para telas pequenas */
     margin-top: 13rem;
@@ -112,6 +124,42 @@
   }
 }
 
+
+@media (max-width: 400px) {
+  .title-banner {
+    font-size: 12px; /* Tamanho menor para telas pequenas */
+    margin-top: 13rem;
+  }
+  .estado{
+    font-size: 12px;
+  }
+  .subtitulo{
+  	 font-size: 8px;
+  }
+  
+  .categoria{
+     font-size: 8px;
+     transform: translateX(-14px);
+  }
+  
+  .nota{
+  	 font-size: 8px;
+  }
+}
+@media (max-width: 350px) {
+			
+  .linha-topo{
+  	transform: translateY(21px);
+  }
+  
+  .lado-direito{
+  	transform: translateX(-127px) translateY(14px);
+  }
+  
+  .banner-sefaz-container .content {
+  	 transform: translateY(0%) !important;
+  }
+}
 
 </css>
         <data_table>sp_instance</data_table>
@@ -135,14 +183,14 @@
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-14 23:56:40</sys_created_on>
         <sys_id>87b65209fb61a65086e7f4045eefdc26</sys_id>
-        <sys_mod_count>54</sys_mod_count>
+        <sys_mod_count>63</sys_mod_count>
         <sys_name>Banner Sefaz</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_87b65209fb61a65086e7f4045eefdc26</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-16 02:14:19</sys_updated_on>
+        <sys_updated_on>2025-05-26 21:36:26</sys_updated_on>
         <template><![CDATA[<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
