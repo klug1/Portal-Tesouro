@@ -1,0 +1,4027 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_action_type_definition">
+    <sys_hub_action_type_definition action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <action_status/>
+        <action_template/>
+        <active>true</active>
+        <annotation/>
+        <attributes>{labelCacheCleanUpExecuted=true}</attributes>
+        <authored_on_release_version>27000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <flow_priority/>
+        <ih_action>false</ih_action>
+        <internal_name>get_mrvs_values_rcl_with_dedutions</internal_name>
+        <label_cache>[{"name":"{{action.trigger}}","label":"action➛Trigger","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.multirow_record}}","label":"action➛Row Index","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"reference","uiUniqueId":"335b46ea-2c7b-47b6-8b12-fb89f5a9d93c"}},{"name":"{{action.parent_sys_id}}","label":"action➛Parent Sys ID","type":"action","ref":"","reference_display":"Treasury Cargo Registration","base_type":"reference","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.parent_sys_id.sys_id}}","label":"action➛Parent Sys ID➛Sys ID","type":"action","ref":"","reference_display":"Sys ID","base_type":"GUID","parent_table_name":"x_sded9_portal_t_0_registro_de_cargas_tesouro","column_name":"sys_id","choices":null,"attributes":{}},{"name":"{{step[556f5502-8f3f-4f87-a394-577b1a1dcb42].ano}}","label":"step➛Script step➛Ano","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"sourceId":"","sourceUiUniqueId":"","sourceType":""}},{"name":"{{step[556f5502-8f3f-4f87-a394-577b1a1dcb42].variacoes}}","label":"step➛Script step➛Variacoes","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"sourceId":"","sourceUiUniqueId":"","sourceType":""}},{"name":"{{step[556f5502-8f3f-4f87-a394-577b1a1dcb42].deducoes}}","label":"step➛Script step➛Deducoes","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"sourceId":"","sourceUiUniqueId":"","sourceType":""}},{"name":"{{step[556f5502-8f3f-4f87-a394-577b1a1dcb42].rcl_ajustada}}","label":"step➛Script step➛RCL Ajustada","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"sourceId":"","sourceUiUniqueId":"","sourceType":""}},{"name":"{{step[556f5502-8f3f-4f87-a394-577b1a1dcb42].rcl_normal}}","label":"step➛Script step➛RCL Normal","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"sourceId":"","sourceUiUniqueId":"","sourceType":""}}]</label_cache>
+        <master_snapshot>fa751f74fb79e61086e7f4045eefdcd4</master_snapshot>
+        <master_snapshot_digest/>
+        <name>Get MRVS Values (RCL With Dedutions)</name>
+        <natlang/>
+        <outputs/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <state>published</state>
+        <sys_class_name>sys_hub_action_type_definition</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 18:56:19</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>6815877cfbf5e61086e7f4045eefdcb5</sys_id>
+        <sys_mod_count>40</sys_mod_count>
+        <sys_name>Get MRVS Values (RCL With Dedutions)</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sys_hub_action_type_definition_6815877cfbf5e61086e7f4045eefdcb5</sys_update_name>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-27 14:17:36</sys_updated_on>
+        <system_level>false</system_level>
+        <type/>
+    </sys_hub_action_type_definition>
+    <sys_translated_text action="delete_multiple" query="documentkey=6815877cfbf5e61086e7f4045eefdcb5"/>
+    <sys_variable_value action="delete_multiple" query="document_key=6815877cfbf5e61086e7f4045eefdcb5"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_type_definition</document>
+        <document_key>6815877cfbf5e61086e7f4045eefdcb5</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 19:01:53</sys_created_on>
+        <sys_id>465607b0fb39e61086e7f4045eefdc7a</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-27 13:13:55</sys_updated_on>
+        <value>{"version":"1.0","complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":""}},"message":{"$cv":{"$c":"java.lang.String","$v":""}}},"complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"794bc342-9c9d-444b-a3f2-dd4b6a5a0173\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}},"serializationFormat":"JSON"}</value>
+        <variable display_value="Action Status">f15607b0fb39e61086e7f4045eefdc4f</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_type_definition</document>
+        <document_key>6815877cfbf5e61086e7f4045eefdcb5</document_key>
+        <order>3</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 19:01:53</sys_created_on>
+        <sys_id>425607b0fb39e61086e7f4045eefdc7a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 19:01:53</sys_updated_on>
+        <value>0</value>
+        <variable display_value="Don't Treat as Error">025607b0fb39e61086e7f4045eefdc63</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=6815877cfbf5e61086e7f4045eefdcb5"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ano</field>
+        <id>6815877cfbf5e61086e7f4045eefdcb5</id>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:07:56</sys_created_on>
+        <sys_id>a1751f74fb79e61086e7f4045eefdc4d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:07:56</sys_updated_on>
+        <table>var__m_sys_hub_action_output_6815877cfbf5e61086e7f4045eefdcb5</table>
+        <value>{{step[556f5502-8f3f-4f87-a394-577b1a1dcb42].ano}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>deducoes</field>
+        <id>6815877cfbf5e61086e7f4045eefdcb5</id>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:07:56</sys_created_on>
+        <sys_id>21751f74fb79e61086e7f4045eefdc4d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:07:56</sys_updated_on>
+        <table>var__m_sys_hub_action_output_6815877cfbf5e61086e7f4045eefdcb5</table>
+        <value>{{step[556f5502-8f3f-4f87-a394-577b1a1dcb42].deducoes}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>rcl_ajustada</field>
+        <id>6815877cfbf5e61086e7f4045eefdcb5</id>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:07:56</sys_created_on>
+        <sys_id>ad751f74fb79e61086e7f4045eefdc4c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:07:56</sys_updated_on>
+        <table>var__m_sys_hub_action_output_6815877cfbf5e61086e7f4045eefdcb5</table>
+        <value>{{step[556f5502-8f3f-4f87-a394-577b1a1dcb42].rcl_ajustada}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>rcl_normal</field>
+        <id>6815877cfbf5e61086e7f4045eefdcb5</id>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:07:56</sys_created_on>
+        <sys_id>25751f74fb79e61086e7f4045eefdc4d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:07:56</sys_updated_on>
+        <table>var__m_sys_hub_action_output_6815877cfbf5e61086e7f4045eefdcb5</table>
+        <value>{{step[556f5502-8f3f-4f87-a394-577b1a1dcb42].rcl_normal}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>variacoes</field>
+        <id>6815877cfbf5e61086e7f4045eefdcb5</id>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:07:56</sys_created_on>
+        <sys_id>a5751f74fb79e61086e7f4045eefdc4d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:07:56</sys_updated_on>
+        <table>var__m_sys_hub_action_output_6815877cfbf5e61086e7f4045eefdcb5</table>
+        <value>{{step[556f5502-8f3f-4f87-a394-577b1a1dcb42].variacoes}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>__action_status__</field>
+        <id>6815877cfbf5e61086e7f4045eefdcb5</id>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 19:01:53</sys_created_on>
+        <sys_id>ce5607b0fb39e61086e7f4045eefdc79</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 19:01:53</sys_updated_on>
+        <table>var__m_sys_hub_action_output_6815877cfbf5e61086e7f4045eefdcb5</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>__dont_treat_as_error__</field>
+        <id>6815877cfbf5e61086e7f4045eefdcb5</id>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 19:01:53</sys_created_on>
+        <sys_id>0e5607b0fb39e61086e7f4045eefdc79</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 19:01:53</sys_updated_on>
+        <table>var__m_sys_hub_action_output_6815877cfbf5e61086e7f4045eefdcb5</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_step_instance action="delete_multiple" query="action=6815877cfbf5e61086e7f4045eefdcb5^sys_idNOT IN2caecf3cfb39e61086e7f4045eefdca9"/>
+    <sys_hub_step_instance action="INSERT_OR_UPDATE">
+        <action display_value="Get MRVS Values (RCL With Dedutions)">6815877cfbf5e61086e7f4045eefdcb5</action>
+        <cid>556f5502-8f3f-4f87-a394-577b1a1dcb42</cid>
+        <error_handling_type>1</error_handling_type>
+        <extended_inputs/>
+        <extended_inputs/>
+        <extended_outputs/>
+        <icon/>
+        <inputs/>
+        <label>Script step</label>
+        <order>1</order>
+        <outputs/>
+        <section/>
+        <step_type display_value="Script">106afb6647032200b4fad7527c9a71e7</step_type>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 19:38:06</sys_created_on>
+        <sys_id>2caecf3cfb39e61086e7f4045eefdca9</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-27 14:02:59</sys_updated_on>
+    </sys_hub_step_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=2caecf3cfb39e61086e7f4045eefdca9"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>2caecf3cfb39e61086e7f4045eefdca9</document_key>
+        <order>400</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 19:38:06</sys_created_on>
+        <sys_id>a0aecf3cfb39e61086e7f4045eefdcaf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 19:38:06</sys_updated_on>
+        <value>35aa573fd7802200bdbaee5b5e610375</value>
+        <variable display_value="MID Application">f5e56d79b3101300176b051a16a8dce4</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>2caecf3cfb39e61086e7f4045eefdca9</document_key>
+        <order>600</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 19:38:06</sys_created_on>
+        <sys_id>64aecf3cfb39e61086e7f4045eefdcaf</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-27 14:02:59</sys_updated_on>
+        <value>(function execute(inputs, outputs) {&#13;
+   var fieldMapping = {&#13;
+       "v_ano": "ano",&#13;
+       "v_rcl_normal": "rcl_normal",&#13;
+       "v_rcl_ajustada": "rcl_ajustada",&#13;
+       "v_deducoes_entre_rcl_normal_e_ajustada": "deducoes",&#13;
+       "v_variacao": "variacoes"&#13;
+   };&#13;
+&#13;
+&#13;
+   var grMultiRow = new GlideRecord('sc_multi_row_question_answer');&#13;
+   grMultiRow.addEncodedQuery('row_index=' + inputs.row_index + '^parent_id=' + inputs.parent_id);&#13;
+   grMultiRow.query();&#13;
+&#13;
+   while (grMultiRow.next()) {&#13;
+       var questionName = grMultiRow.item_option_new.name;&#13;
+       var value = grMultiRow.getValue('value');&#13;
+&#13;
+       if (fieldMapping[questionName]) {&#13;
+           fieldMapping[questionName] = value;&#13;
+       }&#13;
+   }&#13;
+&#13;
+outputs.ano = fieldMapping['v_ano'];&#13;
+outputs.rcl_normal = fieldMapping['v_rcl_normal'];&#13;
+outputs.rcl_ajustada = fieldMapping['v_rcl_ajustada'];&#13;
+outputs.deducoes = fieldMapping['v_deducoes_entre_rcl_normal_e_ajustada'];&#13;
+outputs.variacoes = fieldMapping['v_variacao'];&#13;
+&#13;
+})(inputs, outputs);</value>
+        <variable display_value="Script">71aa7f6647032200b4fad7527c9a719b</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=2caecf3cfb39e61086e7f4045eefdca9"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>application</field>
+        <id>2caecf3cfb39e61086e7f4045eefdca9</id>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 19:38:06</sys_created_on>
+        <sys_id>acaecf3cfb39e61086e7f4045eefdcae</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 19:38:06</sys_updated_on>
+        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>parent_id</field>
+        <id>2caecf3cfb39e61086e7f4045eefdca9</id>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-27 14:00:44</sys_created_on>
+        <sys_id>100b0309fb3d221086e7f4045eefdce8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-27 14:00:44</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_2caecf3cfb39e61086e7f4045eefdca9</table>
+        <value>{{action.parent_sys_id.sys_id}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>row_index</field>
+        <id>2caecf3cfb39e61086e7f4045eefdca9</id>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-27 14:00:44</sys_created_on>
+        <sys_id>9c0b0309fb3d221086e7f4045eefdce7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-27 14:00:44</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_2caecf3cfb39e61086e7f4045eefdca9</table>
+        <value>{{action.multirow_record}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>script</field>
+        <id>2caecf3cfb39e61086e7f4045eefdca9</id>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 19:38:06</sys_created_on>
+        <sys_id>20aecf3cfb39e61086e7f4045eefdcaf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 19:38:06</sys_updated_on>
+        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_step_ext_output_2caecf3cfb39e61086e7f4045eefdca9^id=2caecf3cfb39e61086e7f4045eefdca9"/>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7^id=2caecf3cfb39e61086e7f4045eefdca9"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=2caecf3cfb39e61086e7f4045eefdca9"/>
+    <sys_hub_step_ext_input action="delete_multiple" query="model=2caecf3cfb39e61086e7f4045eefdca9^sys_idNOT IN500b0309fb3d221086e7f4045eefdcdf,800b0309fb3d221086e7f4045eefdcdd"/>
+    <sys_hub_step_ext_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>row_index</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label/>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Script step">2caecf3cfb39e61086e7f4045eefdca9</model>
+        <model_id>2caecf3cfb39e61086e7f4045eefdca9</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_input_2caecf3cfb39e61086e7f4045eefdca9</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_input</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-27 14:00:44</sys_created_on>
+        <sys_id>500b0309fb3d221086e7f4045eefdcdf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-27 14:00:44</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_input>
+    <sys_hub_step_ext_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=GUID,uiTypeLabel=Sys ID (GUID)</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>parent_id</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">GUID</internal_type>
+        <label/>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Script step">2caecf3cfb39e61086e7f4045eefdca9</model>
+        <model_id>2caecf3cfb39e61086e7f4045eefdca9</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_input_2caecf3cfb39e61086e7f4045eefdca9</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_input</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-27 14:00:43</sys_created_on>
+        <sys_id>800b0309fb3d221086e7f4045eefdcdd</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-27 14:02:59</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_input>
+    <sys_hub_step_ext_output action="delete_multiple" query="model=2caecf3cfb39e61086e7f4045eefdca9^sys_idNOT IN91751f74fb79e61086e7f4045eefdc07,91751f74fb79e61086e7f4045eefdc0f,99751f74fb79e61086e7f4045eefdc0c,9d751f74fb79e61086e7f4045eefdc03,9d751f74fb79e61086e7f4045eefdc09"/>
+    <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=67d5f573-7eb3-4258-bdc3-a739f2505662</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>rcl_normal</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>RCL Normal</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Script step">2caecf3cfb39e61086e7f4045eefdca9</model>
+        <model_id>2caecf3cfb39e61086e7f4045eefdca9</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_output_2caecf3cfb39e61086e7f4045eefdca9</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_output</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:07:55</sys_created_on>
+        <sys_id>91751f74fb79e61086e7f4045eefdc07</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:07:55</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_output>
+    <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=e216de1a-499a-4990-bf98-1a08b00e8b84</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>variacoes</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Variacoes</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Script step">2caecf3cfb39e61086e7f4045eefdca9</model>
+        <model_id>2caecf3cfb39e61086e7f4045eefdca9</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_output_2caecf3cfb39e61086e7f4045eefdca9</name>
+        <next_element/>
+        <order>5</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_output</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:07:55</sys_created_on>
+        <sys_id>91751f74fb79e61086e7f4045eefdc0f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:07:55</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_output>
+    <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=ebece25b-f899-4227-b3f0-4f5757349a90</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>deducoes</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Deducoes</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Script step">2caecf3cfb39e61086e7f4045eefdca9</model>
+        <model_id>2caecf3cfb39e61086e7f4045eefdca9</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_output_2caecf3cfb39e61086e7f4045eefdca9</name>
+        <next_element/>
+        <order>4</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_output</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:07:55</sys_created_on>
+        <sys_id>99751f74fb79e61086e7f4045eefdc0c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:07:55</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_output>
+    <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=799df154-f559-4999-bb03-d85597392e47</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>ano</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Ano</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Script step">2caecf3cfb39e61086e7f4045eefdca9</model>
+        <model_id>2caecf3cfb39e61086e7f4045eefdca9</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_output_2caecf3cfb39e61086e7f4045eefdca9</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_output</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:07:55</sys_created_on>
+        <sys_id>9d751f74fb79e61086e7f4045eefdc03</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:07:55</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_output>
+    <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=28e5d9e8-01fe-4f25-82bc-01d2b64870bd</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>rcl_ajustada</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>RCL Ajustada</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Script step">2caecf3cfb39e61086e7f4045eefdca9</model>
+        <model_id>2caecf3cfb39e61086e7f4045eefdca9</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_output_2caecf3cfb39e61086e7f4045eefdca9</name>
+        <next_element/>
+        <order>3</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_output</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:07:55</sys_created_on>
+        <sys_id>9d751f74fb79e61086e7f4045eefdc09</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:07:55</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_output>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=2caecf3cfb39e61086e7f4045eefdca9"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>rcl_normal</element>
+        <help/>
+        <hint/>
+        <label>RCL Normal</label>
+        <language>en</language>
+        <name>var__m_sys_hub_step_ext_output_2caecf3cfb39e61086e7f4045eefdca9</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:07:55</sys_created_on>
+        <sys_id>91751f74fb79e61086e7f4045eefdc09</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:07:55</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>ano</element>
+        <help/>
+        <hint/>
+        <label>Ano</label>
+        <language>en</language>
+        <name>var__m_sys_hub_step_ext_output_2caecf3cfb39e61086e7f4045eefdca9</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:07:55</sys_created_on>
+        <sys_id>95751f74fb79e61086e7f4045eefdc06</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:07:55</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>deducoes</element>
+        <help/>
+        <hint/>
+        <label>Deducoes</label>
+        <language>en</language>
+        <name>var__m_sys_hub_step_ext_output_2caecf3cfb39e61086e7f4045eefdca9</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:07:55</sys_created_on>
+        <sys_id>95751f74fb79e61086e7f4045eefdc0e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:07:55</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>rcl_ajustada</element>
+        <help/>
+        <hint/>
+        <label>RCL Ajustada</label>
+        <language>en</language>
+        <name>var__m_sys_hub_step_ext_output_2caecf3cfb39e61086e7f4045eefdca9</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:07:55</sys_created_on>
+        <sys_id>9d751f74fb79e61086e7f4045eefdc0b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:07:55</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>variacoes</element>
+        <help/>
+        <hint/>
+        <label>Variacoes</label>
+        <language>en</language>
+        <name>var__m_sys_hub_step_ext_output_2caecf3cfb39e61086e7f4045eefdca9</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:07:55</sys_created_on>
+        <sys_id>9d751f74fb79e61086e7f4045eefdc10</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:07:55</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_hub_action_input action="delete_multiple" query="model=6815877cfbf5e61086e7f4045eefdcb5^sys_idNOT IN305ad33cfb79e61086e7f4045eefdc44,305ad33cfb79e61086e7f4045eefdc49"/>
+    <sys_hub_action_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=335b46ea-2c7b-47b6-8b12-fb89f5a9d93c</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>multirow_record</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Row Index</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Get MRVS Values (RCL With Dedutions)">6815877cfbf5e61086e7f4045eefdcb5</model>
+        <model_id>6815877cfbf5e61086e7f4045eefdcb5</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_input_6815877cfbf5e61086e7f4045eefdcb5</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_input</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:29:11</sys_created_on>
+        <sys_id>305ad33cfb79e61086e7f4045eefdc44</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:29:11</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=305ad33cfb79e61086e7f4045eefdc44"/>
+    <sys_hub_action_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference,uiUniqueId=37c5137a-00d9-4345-b12c-551bfc35f3f7</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table>x_sded9_portal_t_0_registro_de_cargas_tesouro</choice_table>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>parent_sys_id</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>Parent Sys ID</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Get MRVS Values (RCL With Dedutions)">6815877cfbf5e61086e7f4045eefdcb5</model>
+        <model_id>6815877cfbf5e61086e7f4045eefdcb5</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_input_6815877cfbf5e61086e7f4045eefdcb5</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="x_sded9_portal_t_0_registro_de_cargas_tesouro">x_sded9_portal_t_0_registro_de_cargas_tesouro</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_input</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:29:11</sys_created_on>
+        <sys_id>305ad33cfb79e61086e7f4045eefdc49</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:29:11</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=305ad33cfb79e61086e7f4045eefdc49"/>
+    <sys_hub_action_output action="delete_multiple" query="model=6815877cfbf5e61086e7f4045eefdcb5^sys_idNOT IN025607b0fb39e61086e7f4045eefdc63,0a5607b0fb39e61086e7f4045eefdc6f,425607b0fb39e61086e7f4045eefdc6c,8a5607b0fb39e61086e7f4045eefdc68,c25607b0fb39e61086e7f4045eefdc53,ce5607b0fb39e61086e7f4045eefdc72,f15607b0fb39e61086e7f4045eefdc4f"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>action_error_output=true,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=boolean,uiTypeLabel=True/False,uiUniqueId=a90d1a57-1497-4c0c-b2a5-917ff5797f85,visible_in_ui=false</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value>true</default_value>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>__dont_treat_as_error__</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="">boolean</internal_type>
+        <label>Don't Treat as Error</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Get MRVS Values (RCL With Dedutions)">6815877cfbf5e61086e7f4045eefdcb5</model>
+        <model_id>6815877cfbf5e61086e7f4045eefdcb5</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_output_6815877cfbf5e61086e7f4045eefdcb5</name>
+        <next_element/>
+        <order>3</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 19:01:53</sys_created_on>
+        <sys_id>025607b0fb39e61086e7f4045eefdc63</sys_id>
+        <sys_mod_count>39</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-27 14:17:33</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=025607b0fb39e61086e7f4045eefdc63"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=025607b0fb39e61086e7f4045eefdc63"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=string,uiTypeLabel=String,uiUniqueId=62d2bddf-b05a-4aaf-bd96-760aedfcb3f3</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>variacoes</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Variações</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Get MRVS Values (RCL With Dedutions)">6815877cfbf5e61086e7f4045eefdcb5</model>
+        <model_id>6815877cfbf5e61086e7f4045eefdcb5</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_output_6815877cfbf5e61086e7f4045eefdcb5</name>
+        <next_element/>
+        <order>6</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 19:01:53</sys_created_on>
+        <sys_id>0a5607b0fb39e61086e7f4045eefdc6f</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:07:56</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=0a5607b0fb39e61086e7f4045eefdc6f"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=0a5607b0fb39e61086e7f4045eefdc6f"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=string,uiTypeLabel=String,uiUniqueId=6543e54a-7ea4-42d6-85d5-17f9fee65ec1</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>deducoes</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Deduções</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Get MRVS Values (RCL With Dedutions)">6815877cfbf5e61086e7f4045eefdcb5</model>
+        <model_id>6815877cfbf5e61086e7f4045eefdcb5</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_output_6815877cfbf5e61086e7f4045eefdcb5</name>
+        <next_element/>
+        <order>5</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 19:01:53</sys_created_on>
+        <sys_id>425607b0fb39e61086e7f4045eefdc6c</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:07:56</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=425607b0fb39e61086e7f4045eefdc6c"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=425607b0fb39e61086e7f4045eefdc6c"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=string,uiTypeLabel=String,uiUniqueId=d3a105ec-4b93-4c47-8482-6a8d0d31718d</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>rcl_ajustada</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>RCL Ajustada</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Get MRVS Values (RCL With Dedutions)">6815877cfbf5e61086e7f4045eefdcb5</model>
+        <model_id>6815877cfbf5e61086e7f4045eefdcb5</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_output_6815877cfbf5e61086e7f4045eefdcb5</name>
+        <next_element/>
+        <order>4</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 19:01:53</sys_created_on>
+        <sys_id>8a5607b0fb39e61086e7f4045eefdc68</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:07:56</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=8a5607b0fb39e61086e7f4045eefdc68"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=8a5607b0fb39e61086e7f4045eefdc68"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=string,uiTypeLabel=String,uiUniqueId=ceb0d7f9-377e-4cf7-8f35-2e813f780653</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>rcl_normal</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>RCL Normal</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Get MRVS Values (RCL With Dedutions)">6815877cfbf5e61086e7f4045eefdcb5</model>
+        <model_id>6815877cfbf5e61086e7f4045eefdcb5</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_output_6815877cfbf5e61086e7f4045eefdcb5</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 19:01:53</sys_created_on>
+        <sys_id>c25607b0fb39e61086e7f4045eefdc53</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:07:56</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=c25607b0fb39e61086e7f4045eefdc53"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=c25607b0fb39e61086e7f4045eefdc53^sys_idNOT INff115330fb79e61086e7f4045eefdc0d"/>
+    <sys_hub_input_scripts action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <input_name>rcl_normal</input_name>
+        <instance>c25607b0fb39e61086e7f4045eefdc53</instance>
+        <referenced_table>sys_hub_action_output</referenced_table>
+        <script>{"rcl_normal":{"scriptActive":false}}</script>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 19:48:58</sys_created_on>
+        <sys_id>ff115330fb79e61086e7f4045eefdc0d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 19:48:58</sys_updated_on>
+    </sys_hub_input_scripts>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=string,uiTypeLabel=String,uiUniqueId=44f85ead-13cb-492f-aa0f-0a41bfb9a310</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>ano</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Ano</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Get MRVS Values (RCL With Dedutions)">6815877cfbf5e61086e7f4045eefdcb5</model>
+        <model_id>6815877cfbf5e61086e7f4045eefdcb5</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_output_6815877cfbf5e61086e7f4045eefdcb5</name>
+        <next_element/>
+        <order>7</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 19:01:53</sys_created_on>
+        <sys_id>ce5607b0fb39e61086e7f4045eefdc72</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:07:56</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=ce5607b0fb39e61086e7f4045eefdc72"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=ce5607b0fb39e61086e7f4045eefdc72"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>action_error_output=true,co_type_name=FDACTIONSTATUS,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=object,uiTypeLabel=Object,uiUniqueId=403db1a6-af96-4755-ae1a-b7fcf96036b0</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>__action_status__</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Action Status</label>
+        <mandatory>false</mandatory>
+        <max_length>65000</max_length>
+        <model display_value="Get MRVS Values (RCL With Dedutions)">6815877cfbf5e61086e7f4045eefdcb5</model>
+        <model_id>6815877cfbf5e61086e7f4045eefdcb5</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_output_6815877cfbf5e61086e7f4045eefdcb5</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 19:01:53</sys_created_on>
+        <sys_id>f15607b0fb39e61086e7f4045eefdc4f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 19:01:53</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=f15607b0fb39e61086e7f4045eefdc4f"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=f15607b0fb39e61086e7f4045eefdc4f"/>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=6815877cfbf5e61086e7f4045eefdcb5"/>
+    <sys_hub_action_status_metadata action="delete_multiple" query="action_type_id=6815877cfbf5e61086e7f4045eefdcb5^sys_idNOT IN825607b0fb39e61086e7f4045eefdc7c"/>
+    <sys_hub_action_status_metadata action="INSERT_OR_UPDATE">
+        <action_type_id display_value="Get MRVS Values (RCL With Dedutions)">6815877cfbf5e61086e7f4045eefdcb5</action_type_id>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 19:01:53</sys_created_on>
+        <sys_id>825607b0fb39e61086e7f4045eefdc7c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 19:01:53</sys_updated_on>
+    </sys_hub_action_status_metadata>
+    <sys_hub_status_condition action="delete_multiple" query="action_status_metadata_id=825607b0fb39e61086e7f4045eefdc7c"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>multirow_record</element>
+        <help/>
+        <hint/>
+        <label>Row Index</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_input_6815877cfbf5e61086e7f4045eefdcb5</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:29:11</sys_created_on>
+        <sys_id>345ad33cfb79e61086e7f4045eefdc48</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:29:11</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>parent_sys_id</element>
+        <help/>
+        <hint/>
+        <label>Parent Sys ID</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_input_6815877cfbf5e61086e7f4045eefdcb5</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:29:11</sys_created_on>
+        <sys_id>745ad33cfb79e61086e7f4045eefdc4b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:29:11</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_input_6815877cfbf5e61086e7f4045eefdcb5"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>rcl_normal</element>
+        <help/>
+        <hint/>
+        <label>RCL Normal</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_6815877cfbf5e61086e7f4045eefdcb5</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 19:01:53</sys_created_on>
+        <sys_id>065607b0fb39e61086e7f4045eefdc62</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 19:01:53</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>deducoes</element>
+        <help/>
+        <hint/>
+        <label>Deduções</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_6815877cfbf5e61086e7f4045eefdcb5</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 19:01:53</sys_created_on>
+        <sys_id>0e5607b0fb39e61086e7f4045eefdc6e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 19:01:53</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>rcl_ajustada</element>
+        <help/>
+        <hint/>
+        <label>RCL Ajustada</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_6815877cfbf5e61086e7f4045eefdcb5</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 19:01:53</sys_created_on>
+        <sys_id>465607b0fb39e61086e7f4045eefdc6b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 19:01:53</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>ano</element>
+        <help/>
+        <hint/>
+        <label>Ano</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_6815877cfbf5e61086e7f4045eefdcb5</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 19:01:53</sys_created_on>
+        <sys_id>8a5607b0fb39e61086e7f4045eefdc75</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 19:01:53</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>__dont_treat_as_error__</element>
+        <help/>
+        <hint/>
+        <label>Don't Treat as Error</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_6815877cfbf5e61086e7f4045eefdcb5</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 19:01:53</sys_created_on>
+        <sys_id>8e5607b0fb39e61086e7f4045eefdc67</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 19:01:53</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>variacoes</element>
+        <help/>
+        <hint/>
+        <label>Variações</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_6815877cfbf5e61086e7f4045eefdcb5</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 19:01:53</sys_created_on>
+        <sys_id>c25607b0fb39e61086e7f4045eefdc72</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 19:01:53</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>__action_status__</element>
+        <help/>
+        <hint/>
+        <label>Action Status</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_6815877cfbf5e61086e7f4045eefdcb5</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 19:01:53</sys_created_on>
+        <sys_id>f55607b0fb39e61086e7f4045eefdc52</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 19:01:53</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_output_6815877cfbf5e61086e7f4045eefdcb5"/>
+    <sys_hub_action_plan action="delete_multiple" query="action_id=6815877cfbf5e61086e7f4045eefdcb5^sys_idNOT INa3755f74fb79e61086e7f4045eefdc44"/>
+    <sys_hub_action_plan action="INSERT_OR_UPDATE">
+        <action_id display_value="Get MRVS Values (RCL With Dedutions)">6815877cfbf5e61086e7f4045eefdcb5</action_id>
+        <plan>{"type":"PlanProxy","persistor":{"@class":".ChunkingPlanPersistor","table":"sys_hub_action_plan","id":"a3755f74fb79e61086e7f4045eefdc44","name":"plan","plan_signature":null}}</plan>
+        <snapshot>665a173cfb79e61086e7f4045eefdc4a</snapshot>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:08:04</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>a3755f74fb79e61086e7f4045eefdc44</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:29:19</sys_updated_on>
+    </sys_hub_action_plan>
+    <sys_hub_action_type_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <action_status/>
+        <action_template/>
+        <annotation/>
+        <attributes>{labelCacheCleanUpExecuted=true}</attributes>
+        <authored_on_release_version>27000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <flow_priority/>
+        <internal_name>get_mrvs_values_rcl_with_dedutions</internal_name>
+        <label_cache>[{"name":"{{action.trigger}}","label":"action➛Trigger","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.multirow_record}}","label":"action➛Row Index","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"reference","uiUniqueId":"335b46ea-2c7b-47b6-8b12-fb89f5a9d93c"}},{"name":"{{action.parent_sys_id}}","label":"action➛Parent Sys ID","type":"action","ref":"","reference_display":"Treasury Cargo Registration","base_type":"reference","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.parent_sys_id.sys_id}}","label":"action➛Parent Sys ID➛Sys ID","type":"action","ref":"","reference_display":"Sys ID","base_type":"GUID","parent_table_name":"x_sded9_portal_t_0_registro_de_cargas_tesouro","column_name":"sys_id","choices":null,"attributes":{}},{"name":"{{step[556f5502-8f3f-4f87-a394-577b1a1dcb42].ano}}","label":"step➛Script step➛Ano","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"sourceId":"","sourceUiUniqueId":"","sourceType":""}},{"name":"{{step[556f5502-8f3f-4f87-a394-577b1a1dcb42].variacoes}}","label":"step➛Script step➛Variacoes","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"sourceId":"","sourceUiUniqueId":"","sourceType":""}},{"name":"{{step[556f5502-8f3f-4f87-a394-577b1a1dcb42].deducoes}}","label":"step➛Script step➛Deducoes","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"sourceId":"","sourceUiUniqueId":"","sourceType":""}},{"name":"{{step[556f5502-8f3f-4f87-a394-577b1a1dcb42].rcl_ajustada}}","label":"step➛Script step➛RCL Ajustada","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"sourceId":"","sourceUiUniqueId":"","sourceType":""}},{"name":"{{step[556f5502-8f3f-4f87-a394-577b1a1dcb42].rcl_normal}}","label":"step➛Script step➛RCL Normal","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"sourceId":"","sourceUiUniqueId":"","sourceType":""}}]</label_cache>
+        <master>true</master>
+        <name>Get MRVS Values (RCL With Dedutions)</name>
+        <natlang/>
+        <outputs/>
+        <outputs/>
+        <parent_action display_value="Get MRVS Values (RCL With Dedutions)">6815877cfbf5e61086e7f4045eefdcb5</parent_action>
+        <sys_class_name>sys_hub_action_type_snapshot</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:08:01</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>fa751f74fb79e61086e7f4045eefdcd4</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-27 14:17:35</sys_updated_on>
+        <system_level>false</system_level>
+        <type/>
+    </sys_hub_action_type_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=fa751f74fb79e61086e7f4045eefdcd4"/>
+    <sys_variable_value action="delete_multiple" query="document_key=fa751f74fb79e61086e7f4045eefdcd4"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_type_snapshot</document>
+        <document_key>fa751f74fb79e61086e7f4045eefdcd4</document_key>
+        <order>3</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:08:02</sys_created_on>
+        <sys_id>cb755f74fb79e61086e7f4045eefdc2e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:08:02</sys_updated_on>
+        <value>0</value>
+        <variable display_value="Don't Treat as Error">43755f74fb79e61086e7f4045eefdc13</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_type_snapshot</document>
+        <document_key>fa751f74fb79e61086e7f4045eefdcd4</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:08:02</sys_created_on>
+        <sys_id>8f755f74fb79e61086e7f4045eefdc2e</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-27 14:17:36</sys_updated_on>
+        <value>{"version":"1.0","complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":""}},"message":{"$cv":{"$c":"java.lang.String","$v":""}}},"complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"794bc342-9c9d-444b-a3f2-dd4b6a5a0173\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}},"serializationFormat":"JSON"}</value>
+        <variable display_value="Action Status">72751f74fb79e61086e7f4045eefdcf6</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=fa751f74fb79e61086e7f4045eefdcd4"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ano</field>
+        <id>fa751f74fb79e61086e7f4045eefdcd4</id>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:08:02</sys_created_on>
+        <sys_id>43755f74fb79e61086e7f4045eefdc2e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:08:02</sys_updated_on>
+        <table>var__m_sys_hub_action_output_fa751f74fb79e61086e7f4045eefdcd4</table>
+        <value>{{step[556f5502-8f3f-4f87-a394-577b1a1dcb42].ano}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>deducoes</field>
+        <id>fa751f74fb79e61086e7f4045eefdcd4</id>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:08:02</sys_created_on>
+        <sys_id>cf755f74fb79e61086e7f4045eefdc2d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:08:02</sys_updated_on>
+        <table>var__m_sys_hub_action_output_fa751f74fb79e61086e7f4045eefdcd4</table>
+        <value>{{step[556f5502-8f3f-4f87-a394-577b1a1dcb42].deducoes}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>rcl_ajustada</field>
+        <id>fa751f74fb79e61086e7f4045eefdcd4</id>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:08:02</sys_created_on>
+        <sys_id>4f755f74fb79e61086e7f4045eefdc2d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:08:02</sys_updated_on>
+        <table>var__m_sys_hub_action_output_fa751f74fb79e61086e7f4045eefdcd4</table>
+        <value>{{step[556f5502-8f3f-4f87-a394-577b1a1dcb42].rcl_ajustada}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>rcl_normal</field>
+        <id>fa751f74fb79e61086e7f4045eefdcd4</id>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:08:02</sys_created_on>
+        <sys_id>47755f74fb79e61086e7f4045eefdc2e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:08:02</sys_updated_on>
+        <table>var__m_sys_hub_action_output_fa751f74fb79e61086e7f4045eefdcd4</table>
+        <value>{{step[556f5502-8f3f-4f87-a394-577b1a1dcb42].rcl_normal}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>variacoes</field>
+        <id>fa751f74fb79e61086e7f4045eefdcd4</id>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:08:02</sys_created_on>
+        <sys_id>c7755f74fb79e61086e7f4045eefdc2e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:08:02</sys_updated_on>
+        <table>var__m_sys_hub_action_output_fa751f74fb79e61086e7f4045eefdcd4</table>
+        <value>{{step[556f5502-8f3f-4f87-a394-577b1a1dcb42].variacoes}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>__action_status__</field>
+        <id>fa751f74fb79e61086e7f4045eefdcd4</id>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:08:02</sys_created_on>
+        <sys_id>4b755f74fb79e61086e7f4045eefdc2e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:08:02</sys_updated_on>
+        <table>var__m_sys_hub_action_output_fa751f74fb79e61086e7f4045eefdcd4</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>__dont_treat_as_error__</field>
+        <id>fa751f74fb79e61086e7f4045eefdcd4</id>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:08:02</sys_created_on>
+        <sys_id>c3755f74fb79e61086e7f4045eefdc2e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:08:02</sys_updated_on>
+        <table>var__m_sys_hub_action_output_fa751f74fb79e61086e7f4045eefdcd4</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_step_instance action="delete_multiple" query="action=fa751f74fb79e61086e7f4045eefdcd4^sys_idNOT INb6751f74fb79e61086e7f4045eefdcdd"/>
+    <sys_hub_step_instance action="INSERT_OR_UPDATE">
+        <action display_value="Get MRVS Values (RCL With Dedutions)">fa751f74fb79e61086e7f4045eefdcd4</action>
+        <cid>556f5502-8f3f-4f87-a394-577b1a1dcb42</cid>
+        <error_handling_type>1</error_handling_type>
+        <extended_inputs/>
+        <extended_inputs/>
+        <extended_outputs/>
+        <icon/>
+        <inputs/>
+        <label>Script step</label>
+        <order>1</order>
+        <outputs/>
+        <section/>
+        <step_type display_value="Script">106afb6647032200b4fad7527c9a71e7</step_type>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:08:01</sys_created_on>
+        <sys_id>b6751f74fb79e61086e7f4045eefdcdd</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-27 14:17:35</sys_updated_on>
+    </sys_hub_step_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=b6751f74fb79e61086e7f4045eefdcdd"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>b6751f74fb79e61086e7f4045eefdcdd</document_key>
+        <order>400</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:08:02</sys_created_on>
+        <sys_id>72751f74fb79e61086e7f4045eefdcf5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:08:02</sys_updated_on>
+        <value>35aa573fd7802200bdbaee5b5e610375</value>
+        <variable display_value="MID Application">f5e56d79b3101300176b051a16a8dce4</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>b6751f74fb79e61086e7f4045eefdcdd</document_key>
+        <order>600</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:08:02</sys_created_on>
+        <sys_id>36751f74fb79e61086e7f4045eefdcf5</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-27 14:17:35</sys_updated_on>
+        <value>(function execute(inputs, outputs) {&#13;
+   var fieldMapping = {&#13;
+       "v_ano": "ano",&#13;
+       "v_rcl_normal": "rcl_normal",&#13;
+       "v_rcl_ajustada": "rcl_ajustada",&#13;
+       "v_deducoes_entre_rcl_normal_e_ajustada": "deducoes",&#13;
+       "v_variacao": "variacoes"&#13;
+   };&#13;
+&#13;
+&#13;
+   var grMultiRow = new GlideRecord('sc_multi_row_question_answer');&#13;
+   grMultiRow.addEncodedQuery('row_index=' + inputs.row_index + '^parent_id=' + inputs.parent_id);&#13;
+   grMultiRow.query();&#13;
+&#13;
+   while (grMultiRow.next()) {&#13;
+       var questionName = grMultiRow.item_option_new.name;&#13;
+       var value = grMultiRow.getValue('value');&#13;
+&#13;
+       if (fieldMapping[questionName]) {&#13;
+           fieldMapping[questionName] = value;&#13;
+       }&#13;
+   }&#13;
+&#13;
+outputs.ano = fieldMapping['v_ano'];&#13;
+outputs.rcl_normal = fieldMapping['v_rcl_normal'];&#13;
+outputs.rcl_ajustada = fieldMapping['v_rcl_ajustada'];&#13;
+outputs.deducoes = fieldMapping['v_deducoes_entre_rcl_normal_e_ajustada'];&#13;
+outputs.variacoes = fieldMapping['v_variacao'];&#13;
+&#13;
+})(inputs, outputs);</value>
+        <variable display_value="Script">71aa7f6647032200b4fad7527c9a719b</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=b6751f74fb79e61086e7f4045eefdcdd"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>application</field>
+        <id>b6751f74fb79e61086e7f4045eefdcdd</id>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:08:02</sys_created_on>
+        <sys_id>7e751f74fb79e61086e7f4045eefdcf4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:08:02</sys_updated_on>
+        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>parent_id</field>
+        <id>b6751f74fb79e61086e7f4045eefdcdd</id>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-27 14:17:35</sys_created_on>
+        <sys_id>07de838dfb3d221086e7f4045eefdc0d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-27 14:17:35</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_b6751f74fb79e61086e7f4045eefdcdd</table>
+        <value>{{action.parent_sys_id.sys_id}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>row_index</field>
+        <id>b6751f74fb79e61086e7f4045eefdcdd</id>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-27 14:17:35</sys_created_on>
+        <sys_id>83de838dfb3d221086e7f4045eefdc0d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-27 14:17:35</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_b6751f74fb79e61086e7f4045eefdcdd</table>
+        <value>{{action.multirow_record}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>script</field>
+        <id>b6751f74fb79e61086e7f4045eefdcdd</id>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:08:02</sys_created_on>
+        <sys_id>fe751f74fb79e61086e7f4045eefdcf4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:08:02</sys_updated_on>
+        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_step_ext_output_b6751f74fb79e61086e7f4045eefdcdd^id=b6751f74fb79e61086e7f4045eefdcdd"/>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7^id=b6751f74fb79e61086e7f4045eefdcdd"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=b6751f74fb79e61086e7f4045eefdcdd"/>
+    <sys_hub_step_ext_input action="delete_multiple" query="model=b6751f74fb79e61086e7f4045eefdcdd^sys_idNOT IN47de838dfb3d221086e7f4045eefdc07,4bde438dfb3d221086e7f4045eefdcba"/>
+    <sys_hub_step_ext_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>row_index</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>row_index</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Script step">b6751f74fb79e61086e7f4045eefdcdd</model>
+        <model_id>b6751f74fb79e61086e7f4045eefdcdd</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_input_b6751f74fb79e61086e7f4045eefdcdd</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_input</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-27 14:17:35</sys_created_on>
+        <sys_id>47de838dfb3d221086e7f4045eefdc07</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-27 14:17:35</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_input>
+    <sys_hub_step_ext_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=GUID,uiTypeLabel=Sys ID (GUID)</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>parent_id</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">GUID</internal_type>
+        <label>parent_id</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Script step">b6751f74fb79e61086e7f4045eefdcdd</model>
+        <model_id>b6751f74fb79e61086e7f4045eefdcdd</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_input_b6751f74fb79e61086e7f4045eefdcdd</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_input</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-27 14:17:35</sys_created_on>
+        <sys_id>4bde438dfb3d221086e7f4045eefdcba</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-27 14:17:35</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_input>
+    <sys_hub_step_ext_output action="delete_multiple" query="model=b6751f74fb79e61086e7f4045eefdcdd^sys_idNOT IN3e751f74fb79e61086e7f4045eefdcef,76751f74fb79e61086e7f4045eefdcee,b2751f74fb79e61086e7f4045eefdcf1,be751f74fb79e61086e7f4045eefdcde,be751f74fb79e61086e7f4045eefdcec"/>
+    <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=ebece25b-f899-4227-b3f0-4f5757349a90</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>deducoes</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Deducoes</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Script step">b6751f74fb79e61086e7f4045eefdcdd</model>
+        <model_id>b6751f74fb79e61086e7f4045eefdcdd</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_output_b6751f74fb79e61086e7f4045eefdcdd</name>
+        <next_element/>
+        <order>4</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_output</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:08:01</sys_created_on>
+        <sys_id>3e751f74fb79e61086e7f4045eefdcef</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:08:01</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_output>
+    <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=28e5d9e8-01fe-4f25-82bc-01d2b64870bd</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>rcl_ajustada</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>RCL Ajustada</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Script step">b6751f74fb79e61086e7f4045eefdcdd</model>
+        <model_id>b6751f74fb79e61086e7f4045eefdcdd</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_output_b6751f74fb79e61086e7f4045eefdcdd</name>
+        <next_element/>
+        <order>3</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_output</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:08:01</sys_created_on>
+        <sys_id>76751f74fb79e61086e7f4045eefdcee</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:08:01</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_output>
+    <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=e216de1a-499a-4990-bf98-1a08b00e8b84</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>variacoes</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Variacoes</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Script step">b6751f74fb79e61086e7f4045eefdcdd</model>
+        <model_id>b6751f74fb79e61086e7f4045eefdcdd</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_output_b6751f74fb79e61086e7f4045eefdcdd</name>
+        <next_element/>
+        <order>5</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_output</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:08:01</sys_created_on>
+        <sys_id>b2751f74fb79e61086e7f4045eefdcf1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:08:01</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_output>
+    <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=799df154-f559-4999-bb03-d85597392e47</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>ano</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Ano</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Script step">b6751f74fb79e61086e7f4045eefdcdd</model>
+        <model_id>b6751f74fb79e61086e7f4045eefdcdd</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_output_b6751f74fb79e61086e7f4045eefdcdd</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_output</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:08:01</sys_created_on>
+        <sys_id>be751f74fb79e61086e7f4045eefdcde</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:08:01</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_output>
+    <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=67d5f573-7eb3-4258-bdc3-a739f2505662</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>rcl_normal</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>RCL Normal</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Script step">b6751f74fb79e61086e7f4045eefdcdd</model>
+        <model_id>b6751f74fb79e61086e7f4045eefdcdd</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_output_b6751f74fb79e61086e7f4045eefdcdd</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_output</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:08:01</sys_created_on>
+        <sys_id>be751f74fb79e61086e7f4045eefdcec</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:08:01</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_output>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=b6751f74fb79e61086e7f4045eefdcdd"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>rcl_normal</element>
+        <help/>
+        <hint/>
+        <label>RCL Normal</label>
+        <language>en</language>
+        <name>var__m_sys_hub_step_ext_output_b6751f74fb79e61086e7f4045eefdcdd</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:08:01</sys_created_on>
+        <sys_id>3e751f74fb79e61086e7f4045eefdced</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:08:01</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>deducoes</element>
+        <help/>
+        <hint/>
+        <label>Deducoes</label>
+        <language>en</language>
+        <name>var__m_sys_hub_step_ext_output_b6751f74fb79e61086e7f4045eefdcdd</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:08:01</sys_created_on>
+        <sys_id>7a751f74fb79e61086e7f4045eefdcf0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:08:01</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>ano</element>
+        <help/>
+        <hint/>
+        <label>Ano</label>
+        <language>en</language>
+        <name>var__m_sys_hub_step_ext_output_b6751f74fb79e61086e7f4045eefdcdd</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:08:01</sys_created_on>
+        <sys_id>be751f74fb79e61086e7f4045eefdcdf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:08:01</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>rcl_ajustada</element>
+        <help/>
+        <hint/>
+        <label>RCL Ajustada</label>
+        <language>en</language>
+        <name>var__m_sys_hub_step_ext_output_b6751f74fb79e61086e7f4045eefdcdd</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:08:01</sys_created_on>
+        <sys_id>f2751f74fb79e61086e7f4045eefdcef</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:08:01</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>variacoes</element>
+        <help/>
+        <hint/>
+        <label>Variacoes</label>
+        <language>en</language>
+        <name>var__m_sys_hub_step_ext_output_b6751f74fb79e61086e7f4045eefdcdd</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:08:02</sys_created_on>
+        <sys_id>fe751f74fb79e61086e7f4045eefdcf1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:08:02</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_hub_action_input action="delete_multiple" query="model=fa751f74fb79e61086e7f4045eefdcd4^sys_idNOT INd65a173cfb79e61086e7f4045eefdc18,d65a173cfb79e61086e7f4045eefdc1c"/>
+    <sys_hub_action_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=335b46ea-2c7b-47b6-8b12-fb89f5a9d93c</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>multirow_record</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Row Index</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Get MRVS Values (RCL With Dedutions)">fa751f74fb79e61086e7f4045eefdcd4</model>
+        <model_id>fa751f74fb79e61086e7f4045eefdcd4</model_id>
+        <model_table>sys_hub_action_type_snapshot</model_table>
+        <name>var__m_sys_hub_action_input_fa751f74fb79e61086e7f4045eefdcd4</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_input</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:29:17</sys_created_on>
+        <sys_id>d65a173cfb79e61086e7f4045eefdc18</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:29:17</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=d65a173cfb79e61086e7f4045eefdc18"/>
+    <sys_hub_action_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference,uiUniqueId=37c5137a-00d9-4345-b12c-551bfc35f3f7</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table>x_sded9_portal_t_0_registro_de_cargas_tesouro</choice_table>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>parent_sys_id</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>Parent Sys ID</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Get MRVS Values (RCL With Dedutions)">fa751f74fb79e61086e7f4045eefdcd4</model>
+        <model_id>fa751f74fb79e61086e7f4045eefdcd4</model_id>
+        <model_table>sys_hub_action_type_snapshot</model_table>
+        <name>var__m_sys_hub_action_input_fa751f74fb79e61086e7f4045eefdcd4</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="x_sded9_portal_t_0_registro_de_cargas_tesouro">x_sded9_portal_t_0_registro_de_cargas_tesouro</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_input</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:29:17</sys_created_on>
+        <sys_id>d65a173cfb79e61086e7f4045eefdc1c</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:29:17</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=d65a173cfb79e61086e7f4045eefdc1c"/>
+    <sys_hub_action_output action="delete_multiple" query="model=fa751f74fb79e61086e7f4045eefdcd4^sys_idNOT IN43755f74fb79e61086e7f4045eefdc13,72751f74fb79e61086e7f4045eefdcf6,c7755f74fb79e61086e7f4045eefdc16,c7755f74fb79e61086e7f4045eefdc18,c7755f74fb79e61086e7f4045eefdc1a,c7755f74fb79e61086e7f4045eefdc1c,f2751f74fb79e61086e7f4045eefdcf8"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>action_error_output=true,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=boolean,uiTypeLabel=True/False,uiUniqueId=a90d1a57-1497-4c0c-b2a5-917ff5797f85,visible_in_ui=false</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value>true</default_value>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>__dont_treat_as_error__</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="">boolean</internal_type>
+        <label>Don't Treat as Error</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Get MRVS Values (RCL With Dedutions)">fa751f74fb79e61086e7f4045eefdcd4</model>
+        <model_id>fa751f74fb79e61086e7f4045eefdcd4</model_id>
+        <model_table>sys_hub_action_type_snapshot</model_table>
+        <name>var__m_sys_hub_action_output_fa751f74fb79e61086e7f4045eefdcd4</name>
+        <next_element/>
+        <order>3</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:08:02</sys_created_on>
+        <sys_id>43755f74fb79e61086e7f4045eefdc13</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-27 14:17:35</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=43755f74fb79e61086e7f4045eefdc13"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=43755f74fb79e61086e7f4045eefdc13"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>action_error_output=true,co_type_name=FDACTIONSTATUS,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=object,uiTypeLabel=Object,uiUniqueId=403db1a6-af96-4755-ae1a-b7fcf96036b0</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>__action_status__</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Action Status</label>
+        <mandatory>false</mandatory>
+        <max_length>65000</max_length>
+        <model display_value="Get MRVS Values (RCL With Dedutions)">fa751f74fb79e61086e7f4045eefdcd4</model>
+        <model_id>fa751f74fb79e61086e7f4045eefdcd4</model_id>
+        <model_table>sys_hub_action_type_snapshot</model_table>
+        <name>var__m_sys_hub_action_output_fa751f74fb79e61086e7f4045eefdcd4</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:08:02</sys_created_on>
+        <sys_id>72751f74fb79e61086e7f4045eefdcf6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:08:02</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=72751f74fb79e61086e7f4045eefdcf6"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=72751f74fb79e61086e7f4045eefdcf6"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=string,uiTypeLabel=String,uiUniqueId=d3a105ec-4b93-4c47-8482-6a8d0d31718d</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>rcl_ajustada</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>RCL Ajustada</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Get MRVS Values (RCL With Dedutions)">fa751f74fb79e61086e7f4045eefdcd4</model>
+        <model_id>fa751f74fb79e61086e7f4045eefdcd4</model_id>
+        <model_table>sys_hub_action_type_snapshot</model_table>
+        <name>var__m_sys_hub_action_output_fa751f74fb79e61086e7f4045eefdcd4</name>
+        <next_element/>
+        <order>4</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:08:02</sys_created_on>
+        <sys_id>c7755f74fb79e61086e7f4045eefdc16</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:08:02</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=c7755f74fb79e61086e7f4045eefdc16"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=c7755f74fb79e61086e7f4045eefdc16"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=string,uiTypeLabel=String,uiUniqueId=6543e54a-7ea4-42d6-85d5-17f9fee65ec1</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>deducoes</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Deduções</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Get MRVS Values (RCL With Dedutions)">fa751f74fb79e61086e7f4045eefdcd4</model>
+        <model_id>fa751f74fb79e61086e7f4045eefdcd4</model_id>
+        <model_table>sys_hub_action_type_snapshot</model_table>
+        <name>var__m_sys_hub_action_output_fa751f74fb79e61086e7f4045eefdcd4</name>
+        <next_element/>
+        <order>5</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:08:02</sys_created_on>
+        <sys_id>c7755f74fb79e61086e7f4045eefdc18</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:08:02</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=c7755f74fb79e61086e7f4045eefdc18"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=c7755f74fb79e61086e7f4045eefdc18"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=string,uiTypeLabel=String,uiUniqueId=62d2bddf-b05a-4aaf-bd96-760aedfcb3f3</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>variacoes</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Variações</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Get MRVS Values (RCL With Dedutions)">fa751f74fb79e61086e7f4045eefdcd4</model>
+        <model_id>fa751f74fb79e61086e7f4045eefdcd4</model_id>
+        <model_table>sys_hub_action_type_snapshot</model_table>
+        <name>var__m_sys_hub_action_output_fa751f74fb79e61086e7f4045eefdcd4</name>
+        <next_element/>
+        <order>6</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:08:02</sys_created_on>
+        <sys_id>c7755f74fb79e61086e7f4045eefdc1a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:08:02</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=c7755f74fb79e61086e7f4045eefdc1a"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=c7755f74fb79e61086e7f4045eefdc1a"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=string,uiTypeLabel=String,uiUniqueId=44f85ead-13cb-492f-aa0f-0a41bfb9a310</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>ano</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Ano</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Get MRVS Values (RCL With Dedutions)">fa751f74fb79e61086e7f4045eefdcd4</model>
+        <model_id>fa751f74fb79e61086e7f4045eefdcd4</model_id>
+        <model_table>sys_hub_action_type_snapshot</model_table>
+        <name>var__m_sys_hub_action_output_fa751f74fb79e61086e7f4045eefdcd4</name>
+        <next_element/>
+        <order>7</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:08:02</sys_created_on>
+        <sys_id>c7755f74fb79e61086e7f4045eefdc1c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:08:02</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=c7755f74fb79e61086e7f4045eefdc1c"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=c7755f74fb79e61086e7f4045eefdc1c"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=string,uiTypeLabel=String,uiUniqueId=ceb0d7f9-377e-4cf7-8f35-2e813f780653</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>rcl_normal</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>RCL Normal</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Get MRVS Values (RCL With Dedutions)">fa751f74fb79e61086e7f4045eefdcd4</model>
+        <model_id>fa751f74fb79e61086e7f4045eefdcd4</model_id>
+        <model_table>sys_hub_action_type_snapshot</model_table>
+        <name>var__m_sys_hub_action_output_fa751f74fb79e61086e7f4045eefdcd4</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:08:02</sys_created_on>
+        <sys_id>f2751f74fb79e61086e7f4045eefdcf8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:08:02</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=f2751f74fb79e61086e7f4045eefdcf8"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=f2751f74fb79e61086e7f4045eefdcf8^sys_idNOT INc7755f74fb79e61086e7f4045eefdc2d"/>
+    <sys_hub_input_scripts action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <input_name>rcl_normal</input_name>
+        <instance>f2751f74fb79e61086e7f4045eefdcf8</instance>
+        <referenced_table>sys_hub_action_output</referenced_table>
+        <script>{"rcl_normal":{"scriptActive":false}}</script>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:08:02</sys_created_on>
+        <sys_id>c7755f74fb79e61086e7f4045eefdc2d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:08:02</sys_updated_on>
+    </sys_hub_input_scripts>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=fa751f74fb79e61086e7f4045eefdcd4"/>
+    <sys_hub_action_status_metadata action="delete_multiple" query="action_type_id=fa751f74fb79e61086e7f4045eefdcd4^sys_idNOT IN47755f74fb79e61086e7f4045eefdc2f"/>
+    <sys_hub_action_status_metadata action="INSERT_OR_UPDATE">
+        <action_type_id display_value="Get MRVS Values (RCL With Dedutions)">fa751f74fb79e61086e7f4045eefdcd4</action_type_id>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:08:03</sys_created_on>
+        <sys_id>47755f74fb79e61086e7f4045eefdc2f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:08:03</sys_updated_on>
+    </sys_hub_action_status_metadata>
+    <sys_hub_status_condition action="delete_multiple" query="action_status_metadata_id=47755f74fb79e61086e7f4045eefdc2f"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>parent_sys_id</element>
+        <help/>
+        <hint/>
+        <label>Parent Sys ID</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_input_fa751f74fb79e61086e7f4045eefdcd4</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:29:18</sys_created_on>
+        <sys_id>125a173cfb79e61086e7f4045eefdc1f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:29:18</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>multirow_record</element>
+        <help/>
+        <hint/>
+        <label>Row Index</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_input_fa751f74fb79e61086e7f4045eefdcd4</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:29:17</sys_created_on>
+        <sys_id>5e5a173cfb79e61086e7f4045eefdc1b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:29:17</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_input_fa751f74fb79e61086e7f4045eefdcd4"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>rcl_normal</element>
+        <help/>
+        <hint/>
+        <label>RCL Normal</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_fa751f74fb79e61086e7f4045eefdcd4</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:08:02</sys_created_on>
+        <sys_id>0b755f74fb79e61086e7f4045eefdc12</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:08:02</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>__dont_treat_as_error__</element>
+        <help/>
+        <hint/>
+        <label>Don't Treat as Error</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_fa751f74fb79e61086e7f4045eefdcd4</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:08:02</sys_created_on>
+        <sys_id>8f755f74fb79e61086e7f4045eefdc15</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:08:02</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>rcl_ajustada</element>
+        <help/>
+        <hint/>
+        <label>RCL Ajustada</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_fa751f74fb79e61086e7f4045eefdcd4</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:08:02</sys_created_on>
+        <sys_id>8f755f74fb79e61086e7f4045eefdc17</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:08:02</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>deducoes</element>
+        <help/>
+        <hint/>
+        <label>Deduções</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_fa751f74fb79e61086e7f4045eefdcd4</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:08:02</sys_created_on>
+        <sys_id>8f755f74fb79e61086e7f4045eefdc19</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:08:02</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>variacoes</element>
+        <help/>
+        <hint/>
+        <label>Variações</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_fa751f74fb79e61086e7f4045eefdcd4</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:08:02</sys_created_on>
+        <sys_id>8f755f74fb79e61086e7f4045eefdc1b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:08:02</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>ano</element>
+        <help/>
+        <hint/>
+        <label>Ano</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_fa751f74fb79e61086e7f4045eefdcd4</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:08:02</sys_created_on>
+        <sys_id>8f755f74fb79e61086e7f4045eefdc1d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:08:02</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>__action_status__</element>
+        <help/>
+        <hint/>
+        <label>Action Status</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_fa751f74fb79e61086e7f4045eefdcd4</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-26 20:08:02</sys_created_on>
+        <sys_id>ba751f74fb79e61086e7f4045eefdcf7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-26 20:08:02</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_output_fa751f74fb79e61086e7f4045eefdcd4"/>
+    <sys_hub_action_type_definition action="UPDATE">
+        <sys_id>6815877cfbf5e61086e7f4045eefdcb5</sys_id>
+        <latest_snapshot>fa751f74fb79e61086e7f4045eefdcd4</latest_snapshot>
+        <compiler_build>glide-yokohama-12-18-2024__patch1a-03-25-2025_04-10-2025_1007.zip</compiler_build>
+    </sys_hub_action_type_definition>
+</record_update>

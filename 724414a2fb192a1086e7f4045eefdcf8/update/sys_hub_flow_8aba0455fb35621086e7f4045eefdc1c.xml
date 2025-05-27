@@ -1,0 +1,853 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=3224000,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>27000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from>4c553341fb71621086e7f4045eefdc07</copied_from>
+        <copied_from_name>RCL with Deductions</copied_from_name>
+        <description/>
+        <display_name_after_preview/>
+        <flow_priority>MEDIUM</flow_priority>
+        <generation_source/>
+        <internal_name>personal_expenses</internal_name>
+        <label_cache>[{"name":"48a26039-251b-4103-aa0d-2be922aac49b.porcentagem_comprometimento","label":"5 - Get MRVS Values (Personal Expenses)➛Porcentagem Comprometimento","reference_display":"Porcentagem Comprometimento","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_comprometimento_rcl"],"29b4a660-7fd0-4dc7-8800-b8c43a56f5c6":["values"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_comprometimento_rcl"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"a074ac15-5092-41fc-aa1f-2e70af270599"}},{"name":"subflow.record","label":"Input➛Record","reference":"x_sded9_portal_t_0_registro_de_cargas_tesouro","reference_display":"Registro de Cargas Tesouro","type":"reference","base_type":"reference","column_name":"","usedInstances":{"b1c3d1ce-831a-4bfb-b59b-fac37677e4f9":["conditions"],"0a53884c-6d3f-4926-b143-7aebb7b97d97":["conditions"],"39268173-2ed3-4659-805a-84b15f1045a3":["parent_sys_id"],"48a26039-251b-4103-aa0d-2be922aac49b":["parent_sys_id"]},"attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"f4b7b973-3190-4871-8403-baaef11efe7b","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"b1c3d1ce-831a-4bfb-b59b-fac37677e4f9.Records","label":"1 - Pesquisar registros➛Multi Row Question Answer Records","reference":"sc_multi_row_question_answer","reference_display":"Resposta para a pergunta de várias linhas","type":"records","base_type":"records","usedInstances":{"20fde648-3ced-4596-b1ac-b39b687a2a96":["items"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.value","label":"2 - For Each➛Multi Row Question Answer Record➛Value","reference":"","reference_display":"Value","type":"string","base_type":"string","parent_table_name":"sc_multi_row_question_answer","column_name":"value","usedInstances":{"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf":["conditions"]}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.row_index","label":"2 - For Each➛Multi Row Question Answer Record➛Row index","reference":"","reference_display":"Row index","type":"long","base_type":"long","parent_table_name":"sc_multi_row_question_answer","column_name":"row_index","usedInstances":{"0a53884c-6d3f-4926-b143-7aebb7b97d97":["conditions"]}},{"name":"0a53884c-6d3f-4926-b143-7aebb7b97d97.Record.row_index","label":"4 - Pesquisar registro➛Multi Row Question Answer Record➛Row index","reference":"","reference_display":"Row index","type":"long","base_type":"long","parent_table_name":"sc_multi_row_question_answer","column_name":"row_index","usedInstances":{"39268173-2ed3-4659-805a-84b15f1045a3":["multirow_record"],"48a26039-251b-4103-aa0d-2be922aac49b":["multirow_record"]}},{"name":"0a53884c-6d3f-4926-b143-7aebb7b97d97.status","label":"4 - Pesquisar registro➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Erro","value":"1","order":0.0},{"label":"Êxito","value":"0","order":1.0}],"usedInstances":{},"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"0a53884c-6d3f-4926-b143-7aebb7b97d97.Record","label":"4 - Pesquisar registro➛Multi Row Question Answer Record","reference":"sc_multi_row_question_answer","reference_display":"Resposta para a pergunta de várias linhas","type":"reference","base_type":"reference","usedInstances":{},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf.Record","label":"3 - Pesquisar registro➛Personal Expenses Record","reference":"x_sded9_portal_t_0_u_despesa_pessoal","reference_display":"Despesa Pessoal","type":"reference","base_type":"reference","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["record"],"29b4a660-7fd0-4dc7-8800-b8c43a56f5c6":["record"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf.status","label":"3 - Pesquisar registro➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Erro","value":"1","order":0.0},{"label":"Êxito","value":"0","order":1.0}],"usedInstances":{"cc765906-5769-430a-b4ae-373f078cb540":["condition"]},"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"48a26039-251b-4103-aa0d-2be922aac49b.ano","label":"5 - Get MRVS Values (Personal Expenses)➛Ano","reference_display":"Ano","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_ano"],"29b4a660-7fd0-4dc7-8800-b8c43a56f5c6":["values"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_ano"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"09d61920-9917-488b-82f8-dd58be528456"}},{"name":"48a26039-251b-4103-aa0d-2be922aac49b.despesa_dedu_es","label":"5 - Get MRVS Values (Personal Expenses)➛Despesa Deduções","reference_display":"Despesa Deduções","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_despesa_deducoes"],"29b4a660-7fd0-4dc7-8800-b8c43a56f5c6":["values"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_despesa_deducoes"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"ced86fa9-3352-436d-8d7d-44d6085144d1"}},{"name":"48a26039-251b-4103-aa0d-2be922aac49b.despesa_pessoal_ativo","label":"5 - Get MRVS Values (Personal Expenses)➛Despesa Pessoal Ativo","reference_display":"Despesa Pessoal Ativo","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_despesa_pessoal_ativo"],"29b4a660-7fd0-4dc7-8800-b8c43a56f5c6":["values"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_despesa_pessoal_ativo"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"02feba09-57f4-4137-8623-bfdd3f58874b"}},{"name":"48a26039-251b-4103-aa0d-2be922aac49b.porcentagem_limite_m_ximo","label":"5 - Get MRVS Values (Personal Expenses)➛Porcentagem Limite Máximo","reference_display":"Porcentagem Limite Máximo","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_limite_maximo"],"29b4a660-7fd0-4dc7-8800-b8c43a56f5c6":["values"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_limite_maximo"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"38b85632-3a37-436c-b8b5-1685c1818b12"}},{"name":"48a26039-251b-4103-aa0d-2be922aac49b.porcentagem_limite_prudencial","label":"5 - Get MRVS Values (Personal Expenses)➛Porcentagem Limite Prudencial","reference_display":"Porcentagem Limite Prudencial","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_limite_prudencial","u_comprometimento_rcl"],"29b4a660-7fd0-4dc7-8800-b8c43a56f5c6":["values"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_limite_prudencial"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"cfc2fe25-62dd-4c8a-a97c-6f2cfbb92a0d"}},{"name":"48a26039-251b-4103-aa0d-2be922aac49b.porcentagem_alerta","label":"5 - Get MRVS Values (Personal Expenses)➛Porcentagem Alerta","reference_display":"Porcentagem Alerta","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_limite_de_alerta"],"29b4a660-7fd0-4dc7-8800-b8c43a56f5c6":["values"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_limite_de_alerta"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"eedd41b7-17f3-4f6a-9292-038f071f8406"}},{"name":"48a26039-251b-4103-aa0d-2be922aac49b.despesa_inativo_pensionistas","label":"5 - Get MRVS Values (Personal Expenses)➛Despesa Inativo Pensionistas","reference_display":"Despesa Inativo Pensionistas","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_despesa_inativos_pensionistas"],"29b4a660-7fd0-4dc7-8800-b8c43a56f5c6":["values"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_despesa_inativos_pensionistas"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"80635c1c-a391-489c-8166-53411ed0f2b9"}},{"name":"48a26039-251b-4103-aa0d-2be922aac49b.rcl","label":"5 - Get MRVS Values (Personal Expenses)➛RCL","reference_display":"RCL","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_receita_corrente_liquida"],"29b4a660-7fd0-4dc7-8800-b8c43a56f5c6":["values"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_receita_corrente_liquida"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"eb9dbf87-1dff-4cc7-ba0a-28e495840b24"}},{"name":"48a26039-251b-4103-aa0d-2be922aac49b.interface_pensionistas","label":"5 - Get MRVS Values (Personal Expenses)➛Interface Pensionistas","reference_display":"Interface Pensionistas","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_despesa_inativos_pensionistas_vinculados"],"29b4a660-7fd0-4dc7-8800-b8c43a56f5c6":["values"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_despesa_inativos_pensionistas_vinculados"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"898374ac-663e-432a-9053-1effb4c5ffa9"}},{"name":"48a26039-251b-4103-aa0d-2be922aac49b.indeniza_es_judiciais","label":"5 - Get MRVS Values (Personal Expenses)➛Indenizações Judiciais","reference_display":"Indenizações Judiciais","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_despesa_decisao_judicial"],"29b4a660-7fd0-4dc7-8800-b8c43a56f5c6":["values"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_despesa_decisao_judicial"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"76fbf7dd-8329-47b3-8957-bd37ec9937b3"}},{"name":"48a26039-251b-4103-aa0d-2be922aac49b.exerc_cios_anteriores","label":"5 - Get MRVS Values (Personal Expenses)➛Exercícios Anteriores","reference_display":"Exercícios Anteriores","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_despesas_exercicio_anteriores"],"29b4a660-7fd0-4dc7-8800-b8c43a56f5c6":["values"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_despesas_exercicio_anteriores"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"01f911f2-0605-44da-a516-0b51523e8414"}},{"name":"48a26039-251b-4103-aa0d-2be922aac49b.despesa_bruta","label":"5 - Get MRVS Values (Personal Expenses)➛Despesa Bruta","reference_display":"Despesa Bruta","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_despesa_bruta_pessoal"],"29b4a660-7fd0-4dc7-8800-b8c43a56f5c6":["values"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_despesa_bruta_pessoal"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"ba1a11fe-5f58-4cb0-8143-57fb188e33df"}},{"name":"48a26039-251b-4103-aa0d-2be922aac49b.despesa_l_quida","label":"5 - Get MRVS Values (Personal Expenses)➛Despesa Líquida","reference_display":"Despesa Líquida","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_despesa_liquida_pedidos"],"29b4a660-7fd0-4dc7-8800-b8c43a56f5c6":["values"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_despesa_liquida_pedidos"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"37d6dc19-db26-4c60-99ba-d12b2c969a8a"}},{"name":"48a26039-251b-4103-aa0d-2be922aac49b.despesa_terceirizados","label":"5 - Get MRVS Values (Personal Expenses)➛Despesa Terceirizados","reference_display":"Despesa Terceirizados","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_despesa_pessoal_terceirizado"],"29b4a660-7fd0-4dc7-8800-b8c43a56f5c6":["values"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_despesa_pessoal_terceirizado"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"9b3f6d96-1e2c-4fc9-8c7f-44295696d410"}},{"name":"48a26039-251b-4103-aa0d-2be922aac49b.demiss_o_volunt_ria","label":"5 - Get MRVS Values (Personal Expenses)➛Demissão Voluntária","reference_display":"Demissão Voluntária","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_despesa_indenizacoes_demissoes"],"29b4a660-7fd0-4dc7-8800-b8c43a56f5c6":["values"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_despesa_inativos_pensionistas_vinculados","u_despesa_indenizacoes_demissoes"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"ba9f7b5a-df69-4c08-bf6e-bb1662497de4"}}]</label_cache>
+        <master_snapshot>65071019fb75621086e7f4045eefdcc5</master_snapshot>
+        <master_snapshot_digest/>
+        <name>Personal Expenses</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>published</status>
+        <substatus/>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-27 18:39:07</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>8aba0455fb35621086e7f4045eefdc1c</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>Personal Expenses</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sys_hub_flow_8aba0455fb35621086e7f4045eefdc1c</sys_update_name>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-27 19:32:53</sys_updated_on>
+        <type>subflow</type>
+        <version>2</version>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=8aba0455fb35621086e7f4045eefdc1c"/>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>8aba0455fb35621086e7f4045eefdc1c</documentkey>
+        <fieldname>annotation</fieldname>
+        <language>pb</language>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-27 19:32:44</sys_created_on>
+        <sys_id>ebf61019fb75621086e7f4045eefdc18</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-27 19:32:44</sys_updated_on>
+        <tablename>sys_hub_flow</tablename>
+        <value/>
+    </sys_translated_text>
+    <sys_variable_value action="delete_multiple" query="document_key=8aba0455fb35621086e7f4045eefdc1c"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=8aba0455fb35621086e7f4045eefdc1c"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=8aba0455fb35621086e7f4045eefdc1c^sys_idNOT IN46ba0455fb35621086e7f4045eefdc1d"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>8aba0455fb35621086e7f4045eefdc1c</id>
+        <name>Personal Expenses</name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-27 18:39:07</sys_created_on>
+        <sys_id>46ba0455fb35621086e7f4045eefdc1d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-27 18:39:07</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=46ba0455fb35621086e7f4045eefdc1d"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=8aba0455fb35621086e7f4045eefdc1c^sys_idNOT IN06ba4455fb35621086e7f4045eefdcbc"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference,uiUniqueId=f4b7b973-3190-4871-8403-baaef11efe7b</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table>x_sded9_portal_t_0_registro_de_cargas_tesouro</choice_table>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>record</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Referência">reference</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Personal Expenses">8aba0455fb35621086e7f4045eefdc1c</model>
+        <model_id>8aba0455fb35621086e7f4045eefdc1c</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_8aba0455fb35621086e7f4045eefdc1c</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="x_sded9_portal_t_0_registro_de_cargas_tesouro">x_sded9_portal_t_0_registro_de_cargas_tesouro</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-27 18:39:07</sys_created_on>
+        <sys_id>06ba4455fb35621086e7f4045eefdcbc</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-27 18:39:07</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=06ba4455fb35621086e7f4045eefdcbc"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=8aba0455fb35621086e7f4045eefdc1c"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=8aba0455fb35621086e7f4045eefdc1c"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=8aba0455fb35621086e7f4045eefdc1c"/>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=8aba0455fb35621086e7f4045eefdc1c^sys_idNOT IN92ba8455fb35621086e7f4045eefdc05,5aba8455fb35621086e7f4045eefdc05,1eba8455fb35621086e7f4045eefdc05,1aba8455fb35621086e7f4045eefdc06,5eba8455fb35621086e7f4045eefdc06,e8c45c15fb75621086e7f4045eefdc2f"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Pesquisar registros">43400a1587003300663ca1bb36cb0b4b</action_type>
+        <action_type_parent display_value="Pesquisar registros">d1c56ec50b30030085c083eb37673a50</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>43400a1587003300663ca1bb36cb0b4b</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Personal Expenses">8aba0455fb35621086e7f4045eefdc1c</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-27 18:39:07</sys_created_on>
+        <sys_id>92ba8455fb35621086e7f4045eefdc05</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-27 19:32:43</sys_updated_on>
+        <ui_id>b1c3d1ce-831a-4bfb-b59b-fac37677e4f9</ui_id>
+        <values>H4sIAAAAAAAA/9VX3U7bMBR+lSjXVZTQUhh3CIS0C0Bj024Ys5zYaa05dmY7LVD1YaZdTHuAPUFfbMdxkob+QOm6DS59fP7P95041xOfEf/IP0x7YYij/cODMOx2w7Df7yY4iuNuP4nDuBf7HV/gjIKmwTGncBxhXtizTlBWcMOQkmP0taDaMCkQFnpMFagRpnOO7z5W2udW1buSY+9dpeod16rJkHGiqPCPrm86fo4VBDRwczRZuDJ3OUUcx5SDxw82H+/CJtfZuJaWMeV4uTgboT4i4XxLRWwyYcent4YKQiFWirmmHT/DgmAj1V0jURSTS8HngiETBjz6VvlWs3twfxhavZRCXQl1d80RVX1z4mQoWUIvc9svJ3GJukvJi0xcuAJsx2mKoct1x0FSaPBHc5uzTaLKKH0/lOOrOuAZE2V51SWXCebNCRujWFwYqu0wKKcZOEIZznMmBihXcsRKY8glCwYcDkHKAQ6EajYQAU5s4gG0CAdnID8txR+xYraKc3BTzj9lHMaNXNO1LFTZlRFKeKHLCwWocr78adkrwJvN0lVd1Ydci0BBJ4rl5hgMRrQqZdrZCO/74RwSiRSE2Zi6BXpmaIZkOQ8k6Diwup8KcEVGAH35GcBrU2HECScTXcS2I4GiCeBoOl1mxi5cbsegk3aFm3bngfHsx+wX1Wt6VnHpgaziUrQzLkG+/4lNRhUvj0xP0cMV/ARHkoNHUbA/n7eWyiDXuRZJ7AfBNuJ2Geztq+1Ae8YoJw/W/gbp1saXAD+BlZdLta6ICrWpDbPwBdh79V+AF4lZSIgg128mOBPlBxgS3Q2Yw8dX2psFHJTjbz1yrAzrZBnJ2MNm9tO73377lpOtQbxBms3bheXSI9Q74VhrlrIEwxr+LlcXUi/hOlgF5e7OoNzdex6UAUjXk6aWVhdXtLx+edlh1hb3zgIvWgDiWibR9Kahw8m2caPnx92zcRc4230WaduIczena4G34/fdGhp2/ibvh2BaxUOOxmjMyICaefRai0gzxvzLqvsKZw23yvL++K3Ye5ST/WjOOGADUlTDsNqPxQjeJsuLIwqceLut8VYYOiibt2mKteX57Nsty8rNcVWmionU60qo1gZrolX47u3w4fYvPoH1CFYyqZ7Eq/hN2hbMN78ByRgUpeoPAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Pesquisar registro">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Pesquisar registro">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Personal Expenses">8aba0455fb35621086e7f4045eefdc1c</flow>
+        <generation_source/>
+        <order>3</order>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-27 18:39:08</sys_created_on>
+        <sys_id>5aba8455fb35621086e7f4045eefdc05</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-27 19:32:43</sys_updated_on>
+        <ui_id>f55fbb1c-5a9e-441e-ba14-6cf57444d9bf</ui_id>
+        <values>H4sIAAAAAAAA/9VY227jNhD9FUHPtiv5rrwV2QYo0CbF7nZf0oAYiaOYKE1qSclJNsjHFH0o+gH9gvxYh7rYju1kFcfBZl8C8DIzZ2bOHNE5v/UF9498HgVRGkWj6SQIBoMgGI8HCYRxPBgncRDD0O/4CuZIN3OIJdJyAbJw62tmOfKIZdrkIFnOAlYwjjZDC4z+WA2SrnNhMwk3n2qr39BYrUB6P11nqCxaupLMhOQGlX90ftHxMzAUMEfjH91uHOU3GTIJMUry9NHh8U4duE7rXNaMUcJ2ci5Cs2Sq8q0Nd2CCjo/XOSpK2j9KQVrs+HNQHHJtbpY7BoGfKbnamAmVk0ffXb624gu5nwbuXoqUV4LV2XLJ6npV28lMiwTPslxoVe1UQKtDLYu5Oq0ScJXGFAqZN5WmncKSP8wcZgeiRpR+mOmr903AE6HK9OpDqRNqW7OCPDciLnJqEzUDJc7JEZtDlgl1yTKjF6I0Jizz3qWkRS+V+srRQFyqHiQOeI9KBL0T2n9Xbn8CI1wWv5IbMiZAQlK7WVV0qwtTVmXBElnY8sCAspUv/66sFftcOJRV1nV+rCoRXbCJEVn+IxkssE7lrtPwffQkR6IVJRKtuHAx7RrpCwZK/1GQLb+97Qcpx/Fw2h0kyLvDUTTuxiEk3XgQxePpBPoQjXsix3mvNL+72x6HF/vbb3aO13NrW5cHxvf/3P9XDu+uatVT9GCvnqLwYFM0DIJvNEe5Kd7eGH1tMKqEvzIdIX+SBXzVb0uqz6rKrY3HNsH3puiJQMkfyHsLcI3xGZFNgfHo2/QY5JqjqQuzofT9717p3yRDCRBnVb2FkkKVH1oCehjqjp5kRxxu8KBs/4q45R7YZJvA4EF+/6/3ZX+tLTvbkLgFzOUbRWTa4+gdS7BWpCIBEt2/9e5EGsltgtVUHhyMyoP+86hMRDq/XeayVsUdJW9eWK6ZjcWXygI2LYhxaybh3cVyHI73jRs+P27fxd2Y2cGzhnadcdXJu0eJd+B33CNj2HnNuZ+RaR2PVWPMrgS/xHwVvbnFdX4F8s9d5zXPlrNVpvfiN2H45O+GeO1NKFI2p06JjB6qBhMig2VgkKW6UJzVT9S11yL1LRXG5vXlbXV5jzSI7ktltas8etrLjJijMNozeClsbvSBlKdFlo3hB/QW938Zoe0ShPVSbXDubWpQy4o8Ik/DA74GXyJPJyBn4HHwMIdsffTRmPIJsUuhWvbuCTK0FLG26MJXQfdyqds1BjslryXm7+Jn7UtFKUGIh30YTwZhGARhwCfBdDIJp+M4HcNkmK5GkDGrElJN8pyCkOSeNcRouhtuK88CDQfuSrv/f2BIl384KSW40xp0Y3xKMuKlJbNJVhzgVhnVQhJrLRHUiqWjb6Ykb+W/M4X4uFmbauuXXe16rU99IX5X4nOBPzs6TDHoT0OedKeTcNIdpnzcjTiMuhDFo8mAYzJM9/96X/wPr2Sz4MMUAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Pesquisar registro">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Pesquisar registro">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Personal Expenses">8aba0455fb35621086e7f4045eefdc1c</flow>
+        <generation_source/>
+        <order>4</order>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-27 18:39:08</sys_created_on>
+        <sys_id>1eba8455fb35621086e7f4045eefdc05</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-27 19:32:43</sys_updated_on>
+        <ui_id>0a53884c-6d3f-4926-b143-7aebb7b97d97</ui_id>
+        <values>H4sIAAAAAAAA/9VY227bOBD9FUHPtleyfM1bkSLAAtsEm2b7kmaJkTiKiaVFlZTiXOCPKfZhsR+wX5Af61AX27GdVHGcbfpIcoZzO2c40vmdK7h74PKxN47H4/5o6HlB4HmDQRCBH4bBIAq9EHpuy01giiSZQSiRllcgc7s2EZvmMhNMqxn7kqPJhEoYJGaGmsS4MKmEm0+V9Acr6pyqmfN7Jeq8q0WjiZBcY+IenF+03BQ0Gczo5OBu7Si7SZFJCFHSjWfWH+fYOtdqHMuKMkrYDM5aqJcsKe9WmltnvJaL1xkmHMlWDNJgy51CwiFT+maxoxH4SSKXGxORZHSja4Wvjbil60eelYuR4oqwPFssWZW3cjuaKBHhSWrzVe6UjpaHSubT5LgMwGYcY6As1xmnndzQfZhan60TlUfxx4mandYGj0RShFcdShWBXKwgy7QI8wyNLQZKnNJFbAppKpJLlmp1JQpl8mXauZS06MSS4MDRiMukA5F1vEMpgs4R7b8vtj+BFjaKD3RNUf9YSCo3K5NuVK6LrFyxSOamONCEqvIud17kivBmvSyjruJjZYpIwERapNk7UrjCKpR5q8Z7/0mMjJeQiFTChbVpVkBP4LSmBP+ckz6/uzN5aCPuaIwIJ/P5n5YNNqXXtUTXizkOeqN2ECFv9/rjQTv0IWqHwTgcjIbQhfGgIzKcdhaq8/kmgf5Hy7vx8XA1X01z/UD5/p/7/9A8UoGKmQ/2Kmb6e2Nmz/N+EDcznb89an6PbGXA32Gcz59EAV/W2yidsTJzK5TbpMLOED0SKPmDJ6OBc7XyCYEtAe2kSj/mcoXR2JpZez26P/3r8SYRSg5xVuZbJFIkxeNNju4Huv0n0RH6azgoyr8yINk9MNEmgMGB7P5f53b3XltUtgZxAzcXc49IlcPROZRgjIhFBNR0/1bbA6lbbm2sgnKwNygH3edBmYB0freIZSWLW1JeT222mLXGbakB6xqEuBUVf36xoMPhrnb959vtWrtrnA2eRdpVxJUn7x8F3p5nw0do2HpN3k9ItbLHShqzmeCXmC2t11JcZTOQf207r3C24FYR3ovnTP/Jb5FwZc4UcfkdldLwW85yhtGsx2KVJ5xVY+8SOLZusdAmq4Q3u8spEhHtS2WUzTw6ykm1mKLQytF4KUym1Z46T4Moa8WP6Fzdf9VCmYUTxomVxqmz3oMaZuSR9tTb4zT4kvZ0BHICDgcHM0hXqY9aFyPEtg7VsHZPgKFhE2vqnf8q3r281W2jwdaW19Dnn+JT+aVNKUIIe10YDAPf9zzf40NvNBz6o0EYD2DYi5cUZMwkEXVNujkGIel6VgOjrq632Xmstd1byxm15F+Oiu7bauxvrXxMHcSJC1BTR7G+Ngqm6iGhUhIhWQK0/8OayFv52ZOLs/XclFu/bSvXa73yufgjEV9y/NXCYYRed+TzqD0a+sN2L+aD9phDvw3jsD8MOEa9ePeH++IbCymLchIVAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Atualizar registro">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Atualizar registro">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Personal Expenses">8aba0455fb35621086e7f4045eefdc1c</flow>
+        <generation_source/>
+        <order>7</order>
+        <parent_ui_id>cc765906-5769-430a-b4ae-373f078cb540</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-27 18:39:08</sys_created_on>
+        <sys_id>1aba8455fb35621086e7f4045eefdc06</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-27 19:32:43</sys_updated_on>
+        <ui_id>30bd6918-a95f-4a24-b688-772ee9e9bf9e</ui_id>
+        <values>H4sIAAAAAAAA/+2YXY/aOBSG/8oo14CSENhh7qrOVurFtqvZVW/6YZ3YJ4wrx05thzJF/Pc9DgmEKW0naKRVJbhAsvF5zodfH5O830RSRDdRhiJOFsmcT5PpNI3j9DpL8vk0T1IxBcQkGkUaSqSVFrmxgsYrUHWY2GyK2azI84SPZ7DAcZYlOM4hycZzXsz+yLJMLPJictfYbbdkKaSrFDy8awE0w++lEhZ1dPP+4yiqwJIvjza62Tz6yT9UyBTkqMjw1vC6RO2vXt8S46l5dNZ3uJTOW3MiteCFxqLlMxkm6acQURKPIlx71ALJYQHK4SgqQQvwxj5EN97WNGERxFutHvYr7qX2u1xLWDv5jfhZHNYVSMnxtg77IWtr1JXHSI5vKy+N3s14yFVXO6PqUr/ZpRCqiwXUyveqWzviYRVCDkHsIiz+uTdf7zp/r6RusmujVYaD2o/Aeyvz2qMLG4IKm6KUUFVSL1llzUo2xhRKOVkqGkwKZb6STyeXegI8xD2hAsHkFc3fNtPvwMqQxF+EIeNtkzz7Uge/uzTagFmTc5MwazaKljpuZeVfEHiFbZjbUSvlfPYzCfDFYb97zIOc18zRzi5YZawHxTyLWR0yqdABoy9nKMLvNPw3Wmc0qKs/1xS2o0qdK+p/Q1BXb3ZBPTWhnjEq+EGGraqP5lpRz55N1Nf/k6jbiH4zVf9Ky3H603aGh51u5Ot6Oj6Ilva05gbdhzqOp2Kzya4hncfTxTidJfk4S+LpGCAW4zTHRZoC8GyRT/rGDN12+2kPdAzXaLnk0jDQpGhp7EB6A2AEcD1C30d30hhQWcxZkR8RjtgCuXRg2OdaUBKgBuGDpLT8BlSUDiCPQ89t7ffuzwq9IRwxpW7ScCx0F9Id3Vy0Dyupea1AmGHVl6HkBdCB7NOO/Cn5pZYiZCHkUPyewRpGw6WrFSVVhS5YOpkeOweDwJarkxqhbIhuaVPEeVLpA9yv636Wj5b0fcmVLKUPvYyBQrpzBtHpluJUT1hi2Zo3TGpZ1MDoupGhqRlGlTsb+4jVj5m6viyHlbxP7igsUPrcytZ0yAYfzRPsA6nhgx4WLa1/JIfd4Q/tlCZLSQIc3FiDFTNsRVcc3QN0X5z6U3xp35f2fWnfl/Z9ad+/R/s+82EPS2r6Hq92bX/05H/9HeAllJVxJx4Duoe91gFbtQ72bzGe7YkvmcfN5/Iy4xlfZnz8DzC+YbOZEwAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Criar registro">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent display_value="Criar registro">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Personal Expenses">8aba0455fb35621086e7f4045eefdc1c</flow>
+        <generation_source/>
+        <order>9</order>
+        <parent_ui_id>bbf158a1-4051-412a-803b-c34c3913e71b</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-27 18:39:08</sys_created_on>
+        <sys_id>5eba8455fb35621086e7f4045eefdc06</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-27 19:32:43</sys_updated_on>
+        <ui_id>070c3028-da05-4dc4-afc6-b2410b50b51a</ui_id>
+        <values>H4sIAAAAAAAA/+1X3W/aMBD/V6o8A0qAosLbtKpva6dt6kvXWRf7gJucOLUd+oH433dOAgXaag2aNFWCBySfz7/73YfPuZtlRCqaRKME49NxMpKDZDDox3H/bJiko0Ga9NUAEIdRJ8ohQ9b0kGoU1aITLUCXQfggnEI1FoWxHrTwIhalUOgKdCD4zxnQrK7IFRoer5tT57XCydeNgpyTVhbzaHJz24kKsGzGo40my70t/1ig0JCiZpwfgdLJZU3pve5sHUYNb/gXzOzLjFWBUdyJ8MFjzn5Hkyloh50og1yBN/YxmnhbssAiqKtcP2405pR7BoyC7oOjJ0Y/i4PeFNk3ifXeZimaiNViOTck8arwZPJaUhFrNo0us/yydiLEGqdQar+ONUtKx3hYBMqBRMNo+n1u7r+tDV5QXnnXbGojOS/rFXhvKS09upAQ1JgxkMigKCificKaBVWHmUvWm2le9Kba3IdCoFneAxmI9zhC0Ltg+XklvgZLwYsvDMOHV5X34q4Mdms/GsaidpoVnLRU+E8Mt8CG3KqzLmSF8fjNzCfpc6Kr2nVbRVwKyM3PMo4HarkcnkF/FA/G3f5pknaHSTzoAsSq209x3O8DyOE47bH+avXrudJTW/pNvbdC2kHYwWzQBLC37di9irCDzbVbSoPuINhwWKB7lSzfWYlk6QnUYZy3AXZNUF754dhW7rieyHk4zIEGaQdox5Smu5JU8EoR0zjIiBYVxl7YJTkw4nepSFLLSgkXNOe4cOjXALRD2wl84OjxhuGC5kCSsS1TXAEIBnBbCHtZqFmE6mFhRpz31nUUTgkjFty5+HpzG/h7osWCcllqaJsOCm5MgTvqi2xzs+LWxe8MhXZmhJXtEsJvnuSDMMNsH6vC15SRD51XgEZ+Hg8Gr49vY/IbQlm7C7YNuEYRAWUbt7Alp7d1ab6C/YxU4VvkW80tUhrLzw3vN1eslRlO0Gr18mvi2L6P7fvYvo/t+9i+P0b7PnDWw4ybvseTuu133v3Vvwb4DFlh3CtjwHrWawyIRWOgmfeSfzXvJaO4+v2fqa/m+cGGvq35+43x7/YPjTnebMkQAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Get MRVS Values (Personal Expenses)">9632d0ddfb35621086e7f4045eefdc7e</action_type>
+        <action_type_parent display_value="Get MRVS Values (Personal Expenses)">8d7b8495fb35621086e7f4045eefdc95</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Personal Expenses">8aba0455fb35621086e7f4045eefdc1c</flow>
+        <generation_source/>
+        <order>5</order>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-27 19:22:59</sys_created_on>
+        <sys_id>e8c45c15fb75621086e7f4045eefdc2f</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-27 19:32:43</sys_updated_on>
+        <ui_id>48a26039-251b-4103-aa0d-2be922aac49b</ui_id>
+        <values>H4sIAAAAAAAA/8VUwW6bQBD9FYuzQRiwAd+qRpEitU3lpLlE0WpgB3ulhSW7S2LX8r931mA3jpoojaL2yMzOvJk373G79QT35l4OccRDzqsins6iSZjNMK2SMJkiVrxMK2/sNVAjvaw7aYVWj0xjqTSnxAPIzmW22xCmcZYlpT/jceUneTTzi0kS+ylgUaRFnvI8DRb7usC1EA3H9W5HPbgwrYTNzQe0KldCco2NN7+9G3staJrbovbm22cpu2mRSShQEuKV1aJZUvlb6TgULtTj6MKBv0aRg6KEOYBQ1E00GXu4tkjVBFqBNDj2amg4WKU33tzqjgIagV82cnN8sRKNpWaee7s24id1zsIwdC8rpO1K7LPHTzaw24fLlRIlXrZWqKaPWCjkUFMq2dXNt34PdxesgLY53IUinaF+2Lqh3RjDTNXVSj0uDoDn7hr6mJSqBHn8AkssFJ1F407Sietn3PSRL8/vghJrQmQ1tC1FWKvVg9ij0NB1sJT0EVSSWOdoxLIJoHQbBkQmBOcUP9uHb0ALt+5XakPFDu5HI+47vHB359kkS6I89mdJCn6SJomfxyH4WcaBFBDPoiz0dntq2X3nlupJGuhgPaP0wJRatPYTjfCAw+a78eC1Kb4mriz6LSQSr+tqNoaJU6eZrnC7Br3C/mShdzvheMWDGd4w76H2+37g0dXGjC7OXt5jsIN+gjQ4IvooR8TRqR/WzFDPnLVKW5DMspDcuRSkOkWCYSXoJRhGolSdVi+YZzEUjDiOPu8LRtfHgpdt9bfQ/8+DTw9yasOnovgnTpzGcTGZVoWfZ2HmJxilPiDGfpbTvz8k8QHG73bi3S/YNn9u9wYAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=8aba0455fb35621086e7f4045eefdc1c"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=8aba0455fb35621086e7f4045eefdc1c^sys_idNOT IN1eba8455fb35621086e7f4045eefdc03,96ba8455fb35621086e7f4045eefdc04,1eba8455fb35621086e7f4045eefdc04"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">212b3741fbf1621086e7f4045eefdcdc</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Personal Expenses">8aba0455fb35621086e7f4045eefdc1c</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Para cada">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-27 18:39:07</sys_created_on>
+        <sys_id>1eba8455fb35621086e7f4045eefdc03</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-27 19:32:50</sys_updated_on>
+        <ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</ui_id>
+        <values>H4sIAAAAAAAA/51STW/bMAz9Lzonhj+ypM6twFCgh61AV/QyFAYl0YkwWdIkOaln+L+Pip106HEnm498j48iR2b76PoYXux9COpg2P7n24opkzD6H5mBDtmeqYhdYCt2At2neBx5ISpZCFzfVQWsN7zla/6l5usWRLXb7na4aevsGYX1MkwTUaUKTsPw+v8K4qi09LiYdODJW0TP9uOnVBwcNho4amq0KBBfSQqLWrZ1kdeiKrdVmefl3abg24oXpawA5ZbqrszHiCbxPr1BUqfQ33Tpk1yU+YrhO3EkUqMWdMAV68BIiNYPbB99T4BHkE9GD7eKozKR5FiqfQ/qD2kXeZ4KW6SJBM7JW9gsDznD4miVwCcXlTUzEoHrhSOs7jvzfbafVoAt9DpeV0BIH0gPXfKcXCyW2h9He36+NnxQ5jLfktRWgL5FEKNXvI8Y0hpQY0dCTQfOKXNonLcndSGTly47aAqyVtszNU3nloFIxjN6IsgeCP96gV/BqzTFN5Ih8nSZvvndp77zHIvjZh6aCoLwysV7kjvhYm56S/c6K4X5MCQKFajhS8Ier1eeEgMtWYl/obP1v5LVD2z6C+JmBEcvAwAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">612b3741fbf1621086e7f4045eefdcde</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Personal Expenses">8aba0455fb35621086e7f4045eefdc1c</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Se">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>6</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-27 18:39:07</sys_created_on>
+        <sys_id>96ba8455fb35621086e7f4045eefdc04</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-27 19:32:50</sys_updated_on>
+        <ui_id>cc765906-5769-430a-b4ae-373f078cb540</ui_id>
+        <values>H4sIAAAAAAAA/+1Uy27TQBT9FcvrJPIzkOwioBILqNRG2UBlXc8jGTGeMTPjpCHK17DgA/iE/Fjv+NFGlPKoWLLznPs6594jH0LduLpxdqkX1oq1CucfbkahUB7D70OooGLhPCRaUeGEVkULjMItyMYHViC1CSgLFkoHbxTmOQNUBwqCJZRMQnAhFEisoMLWEvarvy4kGyGpYT23GgwycMyE88MPIbevWSF9Mfa/dkaoNZYLii8eAY9nJCZpMk2TKEpeZnE5Tcs4oSkwSDFvKLw6fXeN1AGFoFV9+nb6qjH+1Cb8VMTtME8b6snF0Shkt44pypAAB2nZKKxAUXDa7O8Rw4BeKvkAbIRy2C70ybdWfMHeSZ77RM5QKWFd8P5Z9HvtYLLRgrDL2hPsEAel7GuIlk2l3nc6/EUYh0a64SKINBb7sdqT9ix6Svx6o3dXw0A8SyuwD0pN8ErDCxyuoWwcs/48TLIKGxUV1DUup6iN3oq2GLlUk7XEx4RLvcOh3n0TIJ74BHcEkwvEX7fwCozwKt5hGyzuaJZgBSlap2I7Z1DCsV1L8bnxhDqBvZSi2wYmWGJE7RY4Z8t61sfRY5ufOfxw4HnOyzIm4xxmbJxlMRuXEGfjKeH5iyzL6KzkE+vANfZ4/NhEUUqjx4Z/dp9/4f8Z5DyPo/zn/s+mZ/5/9SvTP+335Dd+9xf6Q7tHUfTf7+d+F7bofNtra4c/2+433tvdBNsZhzIiLBJZeuzt8PP3gT0aQJBzaKfNJy/hATveAf3ikJVGBgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">f7ee3f85fbf1621086e7f4045eefdc51</block>
+        <comment/>
+        <connected_to>cc765906-5769-430a-b4ae-373f078cb540</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Personal Expenses">8aba0455fb35621086e7f4045eefdc1c</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Outro">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>8</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-27 18:39:07</sys_created_on>
+        <sys_id>1eba8455fb35621086e7f4045eefdc04</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-27 19:32:50</sys_updated_on>
+        <ui_id>bbf158a1-4051-412a-803b-c34c3913e71b</ui_id>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=8aba0455fb35621086e7f4045eefdc1c"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=8aba0455fb35621086e7f4045eefdc1c"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>record</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_8aba0455fb35621086e7f4045eefdc1c</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-27 18:39:07</sys_created_on>
+        <sys_id>d6ba4455fb35621086e7f4045eefdcbf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-27 18:39:07</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>record</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>pb</language>
+        <name>var__m_sys_hub_flow_input_8aba0455fb35621086e7f4045eefdc1c</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-27 19:32:43</sys_created_on>
+        <sys_id>d7f690d5fb75621086e7f4045eefdcc4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-27 19:32:43</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_8aba0455fb35621086e7f4045eefdc1c"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_8aba0455fb35621086e7f4045eefdc1c"/>
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=2527000,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>27000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from>4c553341fb71621086e7f4045eefdc07</copied_from>
+        <copied_from_name/>
+        <description/>
+        <flow_priority>MEDIUM</flow_priority>
+        <internal_name>personal_expenses</internal_name>
+        <label_cache>[{"name":"48a26039-251b-4103-aa0d-2be922aac49b.porcentagem_comprometimento","label":"5 - Get MRVS Values (Personal Expenses)➛Porcentagem Comprometimento","reference_display":"Porcentagem Comprometimento","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_comprometimento_rcl"],"29b4a660-7fd0-4dc7-8800-b8c43a56f5c6":["values"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_comprometimento_rcl"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"a074ac15-5092-41fc-aa1f-2e70af270599"}},{"name":"subflow.record","label":"Input➛Record","reference":"x_sded9_portal_t_0_registro_de_cargas_tesouro","reference_display":"Registro de Cargas Tesouro","type":"reference","base_type":"reference","column_name":"","usedInstances":{"b1c3d1ce-831a-4bfb-b59b-fac37677e4f9":["conditions"],"0a53884c-6d3f-4926-b143-7aebb7b97d97":["conditions"],"39268173-2ed3-4659-805a-84b15f1045a3":["parent_sys_id"],"48a26039-251b-4103-aa0d-2be922aac49b":["parent_sys_id"]},"attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"f4b7b973-3190-4871-8403-baaef11efe7b","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"b1c3d1ce-831a-4bfb-b59b-fac37677e4f9.Records","label":"1 - Pesquisar registros➛Multi Row Question Answer Records","reference":"sc_multi_row_question_answer","reference_display":"Resposta para a pergunta de várias linhas","type":"records","base_type":"records","usedInstances":{"20fde648-3ced-4596-b1ac-b39b687a2a96":["items"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.value","label":"2 - For Each➛Multi Row Question Answer Record➛Value","reference":"","reference_display":"Value","type":"string","base_type":"string","parent_table_name":"sc_multi_row_question_answer","column_name":"value","usedInstances":{"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf":["conditions"]}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.row_index","label":"2 - For Each➛Multi Row Question Answer Record➛Row index","reference":"","reference_display":"Row index","type":"long","base_type":"long","parent_table_name":"sc_multi_row_question_answer","column_name":"row_index","usedInstances":{"0a53884c-6d3f-4926-b143-7aebb7b97d97":["conditions"]}},{"name":"0a53884c-6d3f-4926-b143-7aebb7b97d97.Record.row_index","label":"4 - Pesquisar registro➛Multi Row Question Answer Record➛Row index","reference":"","reference_display":"Row index","type":"long","base_type":"long","parent_table_name":"sc_multi_row_question_answer","column_name":"row_index","usedInstances":{"39268173-2ed3-4659-805a-84b15f1045a3":["multirow_record"],"48a26039-251b-4103-aa0d-2be922aac49b":["multirow_record"]}},{"name":"0a53884c-6d3f-4926-b143-7aebb7b97d97.status","label":"4 - Pesquisar registro➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Erro","value":"1","order":0.0},{"label":"Êxito","value":"0","order":1.0}],"usedInstances":{},"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"0a53884c-6d3f-4926-b143-7aebb7b97d97.Record","label":"4 - Pesquisar registro➛Multi Row Question Answer Record","reference":"sc_multi_row_question_answer","reference_display":"Resposta para a pergunta de várias linhas","type":"reference","base_type":"reference","usedInstances":{},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf.Record","label":"3 - Pesquisar registro➛Personal Expenses Record","reference":"x_sded9_portal_t_0_u_despesa_pessoal","reference_display":"Despesa Pessoal","type":"reference","base_type":"reference","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["record"],"29b4a660-7fd0-4dc7-8800-b8c43a56f5c6":["record"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf.status","label":"3 - Pesquisar registro➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Erro","value":"1","order":0.0},{"label":"Êxito","value":"0","order":1.0}],"usedInstances":{"cc765906-5769-430a-b4ae-373f078cb540":["condition"]},"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"48a26039-251b-4103-aa0d-2be922aac49b.ano","label":"5 - Get MRVS Values (Personal Expenses)➛Ano","reference_display":"Ano","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_ano"],"29b4a660-7fd0-4dc7-8800-b8c43a56f5c6":["values"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_ano"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"09d61920-9917-488b-82f8-dd58be528456"}},{"name":"48a26039-251b-4103-aa0d-2be922aac49b.despesa_dedu_es","label":"5 - Get MRVS Values (Personal Expenses)➛Despesa Deduções","reference_display":"Despesa Deduções","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_despesa_deducoes"],"29b4a660-7fd0-4dc7-8800-b8c43a56f5c6":["values"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_despesa_deducoes"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"ced86fa9-3352-436d-8d7d-44d6085144d1"}},{"name":"48a26039-251b-4103-aa0d-2be922aac49b.despesa_pessoal_ativo","label":"5 - Get MRVS Values (Personal Expenses)➛Despesa Pessoal Ativo","reference_display":"Despesa Pessoal Ativo","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_despesa_pessoal_ativo"],"29b4a660-7fd0-4dc7-8800-b8c43a56f5c6":["values"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_despesa_pessoal_ativo"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"02feba09-57f4-4137-8623-bfdd3f58874b"}},{"name":"48a26039-251b-4103-aa0d-2be922aac49b.porcentagem_limite_m_ximo","label":"5 - Get MRVS Values (Personal Expenses)➛Porcentagem Limite Máximo","reference_display":"Porcentagem Limite Máximo","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_limite_maximo"],"29b4a660-7fd0-4dc7-8800-b8c43a56f5c6":["values"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_limite_maximo"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"38b85632-3a37-436c-b8b5-1685c1818b12"}},{"name":"48a26039-251b-4103-aa0d-2be922aac49b.porcentagem_limite_prudencial","label":"5 - Get MRVS Values (Personal Expenses)➛Porcentagem Limite Prudencial","reference_display":"Porcentagem Limite Prudencial","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_limite_prudencial","u_comprometimento_rcl"],"29b4a660-7fd0-4dc7-8800-b8c43a56f5c6":["values"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_limite_prudencial"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"cfc2fe25-62dd-4c8a-a97c-6f2cfbb92a0d"}},{"name":"48a26039-251b-4103-aa0d-2be922aac49b.porcentagem_alerta","label":"5 - Get MRVS Values (Personal Expenses)➛Porcentagem Alerta","reference_display":"Porcentagem Alerta","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_limite_de_alerta"],"29b4a660-7fd0-4dc7-8800-b8c43a56f5c6":["values"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_limite_de_alerta"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"eedd41b7-17f3-4f6a-9292-038f071f8406"}},{"name":"48a26039-251b-4103-aa0d-2be922aac49b.despesa_inativo_pensionistas","label":"5 - Get MRVS Values (Personal Expenses)➛Despesa Inativo Pensionistas","reference_display":"Despesa Inativo Pensionistas","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_despesa_inativos_pensionistas"],"29b4a660-7fd0-4dc7-8800-b8c43a56f5c6":["values"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_despesa_inativos_pensionistas"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"80635c1c-a391-489c-8166-53411ed0f2b9"}},{"name":"48a26039-251b-4103-aa0d-2be922aac49b.rcl","label":"5 - Get MRVS Values (Personal Expenses)➛RCL","reference_display":"RCL","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_receita_corrente_liquida"],"29b4a660-7fd0-4dc7-8800-b8c43a56f5c6":["values"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_receita_corrente_liquida"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"eb9dbf87-1dff-4cc7-ba0a-28e495840b24"}},{"name":"48a26039-251b-4103-aa0d-2be922aac49b.interface_pensionistas","label":"5 - Get MRVS Values (Personal Expenses)➛Interface Pensionistas","reference_display":"Interface Pensionistas","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_despesa_inativos_pensionistas_vinculados"],"29b4a660-7fd0-4dc7-8800-b8c43a56f5c6":["values"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_despesa_inativos_pensionistas_vinculados"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"898374ac-663e-432a-9053-1effb4c5ffa9"}},{"name":"48a26039-251b-4103-aa0d-2be922aac49b.indeniza_es_judiciais","label":"5 - Get MRVS Values (Personal Expenses)➛Indenizações Judiciais","reference_display":"Indenizações Judiciais","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_despesa_decisao_judicial"],"29b4a660-7fd0-4dc7-8800-b8c43a56f5c6":["values"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_despesa_decisao_judicial"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"76fbf7dd-8329-47b3-8957-bd37ec9937b3"}},{"name":"48a26039-251b-4103-aa0d-2be922aac49b.exerc_cios_anteriores","label":"5 - Get MRVS Values (Personal Expenses)➛Exercícios Anteriores","reference_display":"Exercícios Anteriores","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_despesas_exercicio_anteriores"],"29b4a660-7fd0-4dc7-8800-b8c43a56f5c6":["values"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_despesas_exercicio_anteriores"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"01f911f2-0605-44da-a516-0b51523e8414"}},{"name":"48a26039-251b-4103-aa0d-2be922aac49b.despesa_bruta","label":"5 - Get MRVS Values (Personal Expenses)➛Despesa Bruta","reference_display":"Despesa Bruta","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_despesa_bruta_pessoal"],"29b4a660-7fd0-4dc7-8800-b8c43a56f5c6":["values"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_despesa_bruta_pessoal"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"ba1a11fe-5f58-4cb0-8143-57fb188e33df"}},{"name":"48a26039-251b-4103-aa0d-2be922aac49b.despesa_l_quida","label":"5 - Get MRVS Values (Personal Expenses)➛Despesa Líquida","reference_display":"Despesa Líquida","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_despesa_liquida_pedidos"],"29b4a660-7fd0-4dc7-8800-b8c43a56f5c6":["values"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_despesa_liquida_pedidos"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"37d6dc19-db26-4c60-99ba-d12b2c969a8a"}},{"name":"48a26039-251b-4103-aa0d-2be922aac49b.despesa_terceirizados","label":"5 - Get MRVS Values (Personal Expenses)➛Despesa Terceirizados","reference_display":"Despesa Terceirizados","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_despesa_pessoal_terceirizado"],"29b4a660-7fd0-4dc7-8800-b8c43a56f5c6":["values"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_despesa_pessoal_terceirizado"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"9b3f6d96-1e2c-4fc9-8c7f-44295696d410"}},{"name":"48a26039-251b-4103-aa0d-2be922aac49b.demiss_o_volunt_ria","label":"5 - Get MRVS Values (Personal Expenses)➛Demissão Voluntária","reference_display":"Demissão Voluntária","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_despesa_indenizacoes_demissoes"],"29b4a660-7fd0-4dc7-8800-b8c43a56f5c6":["values"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_despesa_inativos_pensionistas_vinculados","u_despesa_indenizacoes_demissoes"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"ba9f7b5a-df69-4c08-bf6e-bb1662497de4"}}]</label_cache>
+        <master>true</master>
+        <name>Personal Expenses</name>
+        <natlang/>
+        <outputs/>
+        <parent_flow display_value="Personal Expenses">8aba0455fb35621086e7f4045eefdc1c</parent_flow>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-27 19:32:52</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>65071019fb75621086e7f4045eefdcc5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-27 19:32:52</sys_updated_on>
+        <type>subflow</type>
+        <version>2</version>
+    </sys_hub_flow_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=65071019fb75621086e7f4045eefdcc5"/>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>65071019fb75621086e7f4045eefdcc5</documentkey>
+        <fieldname>annotation</fieldname>
+        <language>pb</language>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-27 19:32:52</sys_created_on>
+        <sys_id>a9071019fb75621086e7f4045eefdcc5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-27 19:32:52</sys_updated_on>
+        <tablename>sys_hub_flow_snapshot</tablename>
+        <value/>
+    </sys_translated_text>
+    <sys_variable_value action="delete_multiple" query="document_key=65071019fb75621086e7f4045eefdcc5"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=65071019fb75621086e7f4045eefdcc5"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=65071019fb75621086e7f4045eefdcc5^sys_idNOT INed071019fb75621086e7f4045eefdcc5"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>65071019fb75621086e7f4045eefdcc5</id>
+        <name>Personal Expenses</name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-27 19:32:52</sys_created_on>
+        <sys_id>ed071019fb75621086e7f4045eefdcc5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-27 19:32:52</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=ed071019fb75621086e7f4045eefdcc5"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=65071019fb75621086e7f4045eefdcc5^sys_idNOT IN2d071019fb75621086e7f4045eefdcc6"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference,uiUniqueId=f4b7b973-3190-4871-8403-baaef11efe7b</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table>x_sded9_portal_t_0_registro_de_cargas_tesouro</choice_table>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>record</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Referência">reference</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Personal Expenses">65071019fb75621086e7f4045eefdcc5</model>
+        <model_id>65071019fb75621086e7f4045eefdcc5</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_65071019fb75621086e7f4045eefdcc5</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="x_sded9_portal_t_0_registro_de_cargas_tesouro">x_sded9_portal_t_0_registro_de_cargas_tesouro</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-27 19:32:52</sys_created_on>
+        <sys_id>2d071019fb75621086e7f4045eefdcc6</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-27 19:32:52</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=2d071019fb75621086e7f4045eefdcc6"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=65071019fb75621086e7f4045eefdcc5"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=65071019fb75621086e7f4045eefdcc5"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=65071019fb75621086e7f4045eefdcc5"/>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=65071019fb75621086e7f4045eefdcc5^sys_idNOT INa5071019fb75621086e7f4045eefdcf4,69071019fb75621086e7f4045eefdcf4,2d071019fb75621086e7f4045eefdcf4,21071019fb75621086e7f4045eefdcf5,e1071019fb75621086e7f4045eefdcf5,a5071019fb75621086e7f4045eefdcf5"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Pesquisar registros">43400a1587003300663ca1bb36cb0b4b</action_type>
+        <action_type_parent display_value="Pesquisar registros">d1c56ec50b30030085c083eb37673a50</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>43400a1587003300663ca1bb36cb0b4b</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Personal Expenses">65071019fb75621086e7f4045eefdcc5</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-27 19:32:52</sys_created_on>
+        <sys_id>a5071019fb75621086e7f4045eefdcf4</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-27 19:32:52</sys_updated_on>
+        <ui_id>b1c3d1ce-831a-4bfb-b59b-fac37677e4f9</ui_id>
+        <values>H4sIAAAAAAAA/+VX2WobMRT9lWGejRnH2Zq3kBAoZKFJyUuaCo2ksUU10lTSeInxx5Q+lH5AvyA/1itpxh68pDY4kNAnM3eRzr33HEl+mMScxifxcbafJLhzcHyUJN1ukhwedgnupGn3kKRJup/GrVjinEGkxalg8DnAonTfhqC8FJYjrYboe8mM5UoiLM2QaQij3BQCj++r6CsXGt2qYfSpCo1O61DS54JqJuOTh8dWXGANG1rwnEwWXJsiFjhlAkI/u1+8XIIdF7NP5H3BdjnPEyy6Dg6lqcOStGI2skxSBiAyLAxrxTmWFFulxzOLZpjeSDE39Lm0sGLsgkeGP8G+x4mLyxiURVjwzT5R1bZgzs6xxXdWl8SWugolfcUJM6EhlGUYGnvWtIWAm8L1OKSEskO2EmUur0M74tkC9ZTAUhoAwQpXqENelZHd9dXwtkZ5waXvSeUUimAx+8LWap6W1uGZxEywHBZCOS4KLnuo0GrAfTJgyds9AR/tTACFKDO8J9uYOOBt6CtuX4D93JvvseauiitYxnMm4wIogsIIjSq1b+UAEVEa79DAxLBWPG3FZmzOBDZmXjm0HFjrcIc+VBWj0DSXQjQv7CksMWBVcdPWRqo5SOaUI0pS7lCYhnS4ZTlSfkJIsmHbxX4pYSk6AAGpryABB4XTYJxMTJm6HrU1I0DH6XRZX7tYcpc69D2odXjmmvD86/kPM2s6UylyyXbZXKF2VIrs7EyRUMh70iRs/vYkub3IQgv+oTRy9CLLDuZ8MkpbFHrZkJq7nFxrRsuSabq2o/4GoGrq3wBXJdZRofQ6qBX3M84EXXUbXTjHwm2093/eRm+S+QCIojA9LgWX/mkBQF9LEsnLB++HBZ55ejWebc6GDVnWA46wff4dPW0thw0AzV5kvFARZZFvCs84wXAt/FSrIdeXgqfQ4oVQGytBdHcmiO7ebgQxmRXdaOyKKdTvSzffOuMpZODFDKBlI6UzXSW6LfftbL/v3nRZ2N2tlN0kYfCcr+Xijh+ka7Taes3DoQ+p1X4oKBsNOe0xO9+9jqLKDrH4tspfcQ/Vw/LlvcLjdv9FOR925mIFzSDNDIyv+brtwGtq+XTptIN5u6NlAyx1O66ef4x47k+XW48JU2XWYa2OFlA/6/kpNc+WjzNrRfj9Hb403+xtW49tpR7r6b2Lf4e7k8TjX/G64fAnEQAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Pesquisar registro">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Pesquisar registro">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Personal Expenses">65071019fb75621086e7f4045eefdcc5</flow>
+        <generation_source/>
+        <order>3</order>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-27 19:32:52</sys_created_on>
+        <sys_id>69071019fb75621086e7f4045eefdcf4</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-27 19:32:52</sys_updated_on>
+        <ui_id>f55fbb1c-5a9e-441e-ba14-6cf57444d9bf</ui_id>
+        <values>H4sIAAAAAAAA/+VY227jNhD9FUHPtiv5rrwVSQMU2CbFJt2X3QUxEkcxUZrUkpRzMfwxRR+KfkC/ID+2o5tt2E5iYx0gQV8SaMghz8ycM5zk89wX3D/xeRREaRQNxqMg6PWCYDjsJRDGcW+YxEEMfb/lK5gi7XQQS6TPGci8+L5jliOPWKaNA8kcC1jOONoMLTD6YTVI2s6FzSTcf6q9fkdjtQLp/XKXobJoaUsyEZIbVP7J568tPwNDFzo0/sl8Y2lfxBJilLT1uvgN2yG4+2z5ycq1yvZh5SfRu6gWtOEFlqDl451DRTH7JylIiy1/CoqD0+Z+aTEI/FLJlWEilKMT/WLznRUPdO84KPalSGElWK0tP1mdrsqcnoGDK2fyxOWm3ppMtEgobWVCOKaQS3e6bqs2XGZOaFW5VGFX3lrmU3VRpcNfHtBUhyy5JRCYFYEWyOsw0quJvv3YoDwXqsxJvSh1QqVuvsA5I+LcFXjmPkqc0kFsClkm1A3LjJ6J0pmwTDs3kj46qdS3BXXEjepAUgDvUF6hc072s9L8CYwooviNjiFnAiQkUYRVJbQ6N2UqZyyRuS0XDChbneUvWr69t6cSrF1FTiln3/ICd5WHOmJWJa1wSYzI3M90xAzr4BatRjWDZzkYrSiXaMVFgcKuSSdnoPSXnHz5fN4NUo7D/rjdS5C3+4No2I5DSNpxL4qH4xF0IRp2hMNpp3RfLLZF9cPnHajAl6NvFHhahP/4z+N/pdB35aTW4pbtw/oJzUKtxfBoWuwHwXtSI13+9sR4uLyqFLygsZA/yzK+4pOlF4hVuVwT2bZMDib6HhAaol8SMxUYj17Dp4DVTE8FSr7r1TkvFjZene7/89V5kzwnQJxV1RNKClWOEAT0tQQweJZ9cbjBs5JeK/qXNrDJtgzAA/f4r/dwsBz2ALScvESmPY5emRSRigToEfhb74bcPAElhTbbf2OsBdE7miB63eMIYr4Mei2xO6rQzJFFfRuPh8oDNj2Ilmsu4WKX6A68Nzz83u5iW9i9g5S9TsJq5exJLh558HxCq63XbA4Tcq3vY5Wy2a3gN+hWtze7uHa3IP/ctV5zjzXFKsN7hSE2fPYPqXhtiBUpm1LtREaztsGE6GEZGGSpzhVn9ZS9Nt5SJVNhrKs3b7egj0hyLZ5Lq4taoKe9zIgpCqM9gzfCOqMPf61fjqdJ6RV6s8e/jNB2eZ31Um1w6m02qj1jP6SH9Y84vh67h52DnIDHwUMH2Xp/QGPK0WZXG9uznM/wY89Oty+68FXQ/Xg/3KWMnX1xT8zv4o/143euBCHud2E46oVhEIQBHwXj0SgcD+N0CKN+ulIvY1Yl1Gzp5BSEpONZQ5Wm3uF2e5qh4cCLZB/chPaA1vDygvqMl5aMpr5TwNoLd91pYq0lgtpoNdf0ivx0Xj4YS9oO3ly7eRf/ucrF9WamK9POXL/WVJGLP5T4luOvBbnGGHTHIU/a41E4avdTPmxHHAZtiOLBqMcx6afHHBS+fgd9VoNoJRYAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Pesquisar registro">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Pesquisar registro">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Personal Expenses">65071019fb75621086e7f4045eefdcc5</flow>
+        <generation_source/>
+        <order>4</order>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-27 19:32:52</sys_created_on>
+        <sys_id>2d071019fb75621086e7f4045eefdcf4</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-27 19:32:52</sys_updated_on>
+        <ui_id>0a53884c-6d3f-4926-b143-7aebb7b97d97</ui_id>
+        <values>H4sIAAAAAAAA/+VYzW7jNhB+FUFn25Us/+a2SBCgwG6CJuletltiRFIxUVrUklScrOGHKXoo+gB9grxYh6JkG7aT2KhTJOgp0HCG/Gb4fcNxvsxDwcKTkI2jcTYe90fDKEqSKBoMEgpxmiYDmkYp9MJWmMOUo6eFVHL8vANZum9DybSUVhCtZuRbyY0VKieQmxnX6MaEKSQ8fK69PznX4ErNgp9q1+BD40onQjLN8/Dky9dWWIDGAy2unMw3lvZFLCHlEl1v3F/YTsE+FMtPUq1528dVnOTBhV9QmjksUSvk95bnjCOIDKThrXAKOQOr9MPSojmwy1yuDBORW9wxdM73RnzHc0eR88s4pkW5X1t+krps3pydgYVrq0tqS1270okSlBtfEMYzwMKertu8w2XhauxDfNo+Wslyml/4coTLDZpbQktpEAQvXKIOeZ1Gdj1Rs6sG5bnIq5rUi1JRkMsvsFaLtLQOzzzkkk9xIzKFohD5LSm0uhNVMGKZdm4lfnQyiRRi3IjbvAPUAe9gXaFzjvazyvwZtHBZfMJtKs5kQiJFiL9Co0pdlfKOUFmaakEjE/1e4aIVmgdzKsGYVeZYcmStw+3rUGdMfNFcCNWisB9wizteJ7doNarpP8vB8YpyVOVMOBRmTTpIcXeUYL+UGM/mc1OmrgYdzSnSbbH41WnKFfm+8ehGGeOD3qidUM7avf540E5joO00GaeD0RC6MB50hOXTzjJ0sdiW4X948oGqfrmijapPXUkf/3z8m5sn6lzre8v2cX2HZqHWd3w0ffei6D0pHA9/ewI/XLK+BC/oNmbPsoyt+GSUtsTXck2424I6mOh7QGiIfonMzEEHhdJPAauZngku2a6X7NwtbLxk3f/nS/YmeY6AGPG3J3Ip8mosQaCvJYD+s+xL4w2eVfRaG/mcDQzdlgEEYB//Cr4fLIc9AC2nOVGogPGgKorIBAV8BP5QuyE3T0BFoc323xhrQSRHE0TSPY4g5suk1wq74xaa2dTdbxPx3UfAZgTSci0kXuwS3YHnxoef211sCzs5SNnrJPQrZ09y8cjD7BNabb1mc5hgaH0e8comM8FuuV2d3ngxZWcgf9u1XnOPNJdVpfcKg3H87I+zdG0wFpn/+Vjg/O6HT0NwOCWZKnNG6sl9RSV3k5nQxtbO2y3oiqNc3XNplLsLHqig0GLKhVaB5rfCWK0Of61fzqcp6TUP7h5/10KZ5XEmyJTm02CzUe2Z+yE9rHfE8fXYPewc5AQCBgG3UKz3B651NdrsamN7Xucz/Niz0+2LLn4VdP++H+5Sxs6+uCfmd/EPgON3Lsoh7XVhMEziOIriiA2j0XAYjwZpNoBhL1uplxCTU2y2uHMGQuL2pKFKc9/Rdntypx3ef/ZA1VDyAltMkFVkxpbjEO0FuW4yqVKSQ77RZW7wAfnhvHorloztv7lO8y7+EVaKm81Ke9POWr/WQFGKn3PxreQ/OnKNeNQdxYy2R8N42O5lbNAeM+i3YZz2hwnjtJcdc0b4+g/jKzM6dBYAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Get MRVS Values (Personal Expenses)">9632d0ddfb35621086e7f4045eefdc7e</action_type>
+        <action_type_parent display_value="Get MRVS Values (Personal Expenses)">8d7b8495fb35621086e7f4045eefdc95</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>9632d0ddfb35621086e7f4045eefdc7e</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Personal Expenses">65071019fb75621086e7f4045eefdcc5</flow>
+        <generation_source/>
+        <order>5</order>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-27 19:32:52</sys_created_on>
+        <sys_id>21071019fb75621086e7f4045eefdcf5</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-27 19:32:52</sys_updated_on>
+        <ui_id>48a26039-251b-4103-aa0d-2be922aac49b</ui_id>
+        <values>H4sIAAAAAAAA/71V227aQBD9FbTP2DK2wTZvVaJIkdqmgjQvUWSNvWNYaX3J7jqBIv69s9gQSJsokVAed65nzszR3m+Y4GzKEgh87nFeZMF44o+8eIJREXrhGLHgeVSwIaugRIosW2mEqp9ThXmtODmeQLbWs9l4MA7iOMydCQ8KJ0z8iZONwsCJALMsypKIJ5E72+W5toSoOK62W6rBhW4krO/OUCpfCskVVmx6/zBkDSjCbVCx6eaV66ODS8hQUuisfh5c2zbvkWHWjXVoo0S16N/f+wLzvZFCLaDRkOHKIJUkJAVIjUNWQsXB1GrNpka1ZFAI/KaS60PEUlSGijEbu9LiD7WLPc+zkQXScDl23sMz7cntzMUlGCAkbW5a1Yfmy1rkqDtaOBZAY10c27qAm8aIuupSDGRyn13Ltqx+doywQ4H9LsnSagKBjZ3UYu8HKebL+nm2R3llN6gOTlnnIA8vMERd1hqLZ8NacfuK5c7yD88osaSOaQlNQ5a0UfWT2HUh0KW7kPRwC0n746jFonIhtxO6tAFwr8h+uTPfgRJ23B9UhpJtu9+VeGzx2l4Qj0dx6CeBMwkjcMIoDJ0k8MCJYw50S8HEjz22HTK91hcStH4hijaUPrZ2zI62nqC049im5Eo05huBesKei+2wV+wY3zvc2H85UpKArUr9U3GqV91mdnq3u97/CfHTevoArL2efu1wDeZrPbi+fBtur6iX6z4V1ezI3uvKP5euAv9UVatUU80kbWplQKYm9Uj4C0FnWNMFpTmoBeiUrrRuVf2GBGd9woDj4GKXMLg9JJxZnJ/F+wVKLuYIKl9eCZT2XKq2zHaSekPhx1s/Ffnx3r9E5+MgyEbjInOS2IudEP3IAcTAiRP6jTy6cMDgjDp/+AsYOfQXmwcAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Atualizar registro">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Atualizar registro">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Personal Expenses">65071019fb75621086e7f4045eefdcc5</flow>
+        <generation_source/>
+        <order>7</order>
+        <parent_ui_id>cc765906-5769-430a-b4ae-373f078cb540</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-27 19:32:53</sys_created_on>
+        <sys_id>e1071019fb75621086e7f4045eefdcf5</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-27 19:32:53</sys_updated_on>
+        <ui_id>30bd6918-a95f-4a24-b688-772ee9e9bf9e</ui_id>
+        <values>H4sIAAAAAAAA/+1Y32/bNhD+VwI924Zky16ctyFZgQFdO6RDXrqOOJEnhwMlqiTl2jX8v/eoX5YTr42MvgSzH2zoyPt49+m+I+mPu0CK4CaIUYTRMlrwWTSbTcNweh1HyWKWRFMxA8QoGAU5ZEgzDXJtBD2vQZXesNul83maJBEfz2GJ4ziOcJxAFI8XPJ3/EsexWCbp5L7y2+/JU0hbKNg+NABk4Y9SCYN5cPPx0ygowNBaDk1ws3sy9NJgFSSoaOo9rqR1Rp+I320L/yw0LzPMHZOt8W3je9eMXP1+RyPk5AOKwlGAG4e5QAolBWVxFGSQC3DabIMbZ0oyGATxPlfbbsajzF2dagYbK7/SynHo56VIufGGhu6RNRTV5vQOHHwgZO5K0zGmJUdbsyIwhVK5276tnvC+cFLntYuDRLXeWpVZ/q5mJOgAem+ktBQEFj5PH3mdVvrhUX+5b4N8I/OKkiZFpTmo7gmcMzIpnQ9nF6DCiuMMikLmK1YYvZaVM4WSTVaKHiap0l9oTStX+QS4j3tCrMLkDdnvKvMDGOmT+INgyHk/CuzW3iqw9pAKccg+lz6SOrEmBVaxUFHAqkrwztzIwv1KS62xCXw/agSRzL9XY3x5KKge5kEUG2apQJas0MaBYo6FrPS5FWiB0ZfVFOEzJfyJxuoc1NVvGwrbEndDpfGCsFtp/OV/4T/yaMTxzPb24Kzw6l090Ehj/tOkcf2apNGk8eq18SNFhNPvdl08VFIlAttTw6H0qTRKrtH+XYbhTOx28TVMF+FsOZ7Oo2QcR+FsDBCK8TTB5XQKwONlMuk7M7T7/T8doGW4QcMll5pBTrqQ2gxErwAYAdgeQn+NVq8MiBZ9VuRHCEfYArm0oNm/paAkQA2C90WWy69ApLQA8jj0xJSuW/6s0CuEI0yZV2lY5nsUVSJtsPQe1jLnpQKhh7EvPeUpkK77aEfrKfm5lMJnIeRQ+A6DVRgVLp0AUBIrdA4grTpsFxgEbLg6WSOUDaEbeinivFLpA9gf837WGg3Sc8qVzKTz3Y2BQtq5BqHTXseJT1hh1rhXmNTEqKXRpiV9m9OMmDsb9glWP2baPGQ2jPI+covCPEoftzAliWywNE9gH5AqfMiHRUvzn5RDLX7fTsmYSSrAwY3VezHN1rTp0T5AO8ipA/qlfV/a96V9X9r3pX2/jvY97Mr4gnN9e2W8hazQ9sRBv70uYkb7BnFVH/yfXBmbwauHZrD7R+Wn3RujRVh9XtHt8X/zx8qnb317u7JrFAAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Criar registro">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent display_value="Criar registro">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Personal Expenses">65071019fb75621086e7f4045eefdcc5</flow>
+        <generation_source/>
+        <order>9</order>
+        <parent_ui_id>bbf158a1-4051-412a-803b-c34c3913e71b</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-27 19:32:53</sys_created_on>
+        <sys_id>a5071019fb75621086e7f4045eefdcf5</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-27 19:32:53</sys_updated_on>
+        <ui_id>070c3028-da05-4dc4-afc6-b2410b50b51a</ui_id>
+        <values>H4sIAAAAAAAA/+1YS28bNxD+KwbPsrArKYKlW2EjpzYpmsKXNCVmyZE9BXe54UOxIui/d7i7ekZGukIvBqSDBA5nPs6bHH1eC9JiLqY5Zu9m+VSN8/F4lGWju0leTMdFPtJjQJyIgaigROYMUBiUzWIglmBiIr5Ir1HPZG1dACODzGSUGn2NHiR/eQuG2TX52sDqsZN6aBluft8xqGcy2mEl5p+/DEQNjo8J6MR8fbL1X5U2UKBh1j/TL7xiRVjVZ2m/7oUN3nxoN6zTSaFsIPAlYMVmi/kCjMeBKKHSEKxbiXlwkQkOQX+szGrH8UxVYECReF88fedj77LEt0A2TWG7t1vKzmEtefEAAT4xsgrRdazq2ZJC3zpF4wKiCfeHtJbhYx3IVq1IY2YnbU0sqw+tS8QOYBsfpkTPSmCd7Eyad2YsPj3bb39stXxPVeOSbtNYxbHcriAER0UMSZ+1QIMlA8kS6pqqJ1k7u6RGmHUph0+GF8OFsd9S8tBTNQSVFB+yW2H4nukPDfkRHCUrfmMYFt4MhF/5ewPe721hJ8qvMWnSWtbZIFs3JBHlqA6/8AFL7NTdDLbloDGbvZpZebFPpKYC/EEpRAmV/Stm2Viv15M7GE2z8ex29C4vbid5Nr4FyPTtqMDZaASgJrNiyPybzd/7eilcDLuq6YV0hHCE2aFJYGv7aXcW4QibSyAqi/4i2CQs0Z9VlitfITn6DvoynQ8Bjo+gqrHD81mV5wwjH+AyAzqkI6Cjowx9jaSTVZpYjYsOMbLBOHG7Ig9W/hM1KeqZKalkK/YLu34LQEdqe4kv7D3esJzQ7EiyrmeIGwDJAP4A4SQKrRYpe5hYEse9dx4lKWnlknsZlzc3hp8HWi6pUtFA33BQMmMB3Jh/iDa3L25mfFtRanBWOtUvIHxzKhaEJyxPsRp8QyWF1IslGORL9mLwVvwQk68iKvsV2CHgFkUmlEPc2kUOb+/UPIO9R2rwHXJVc4tU1vEFxPtdifU6hgO02fz4Jrm272v7vrbva/u+tu+30b57Tow/f9dvJ8Z7KGvrzzz0t9MilnxvsPbtw/9kYuw2bx67zW5qzP+vqTGfZs3nDc2OrXFvfnQ8+JfglSHyy78/LQlWVREAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=65071019fb75621086e7f4045eefdcc5"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=65071019fb75621086e7f4045eefdcc5^sys_idNOT INe1071019fb75621086e7f4045eefdcf3,e9071019fb75621086e7f4045eefdcf3,e1071019fb75621086e7f4045eefdcf4"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">212b3741fbf1621086e7f4045eefdcdc</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Personal Expenses">65071019fb75621086e7f4045eefdcc5</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Para cada">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-27 19:32:52</sys_created_on>
+        <sys_id>e1071019fb75621086e7f4045eefdcf3</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-27 19:32:52</sys_updated_on>
+        <ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</ui_id>
+        <values>H4sIAAAAAAAA/51TXW+jMBD8L34miI9cUvJWtapU6e4qpVVfThVa7CWxzticbZJyiP9+60Bo1cd7gh3vzs4MZmCm823n3Yu5dU4eNNv9eouY1AGj94FpaJDtmPTYOBaxE6gu1MNQpTwXKcfVTZ7Cal3V1ar6VlSrGni+3Wy3uK6LeI/cWOHGkUaFdK2C/vX/GfhRKmFxFtmCJW0eLdsNX46koAVpIeoiTQqeZ5s8S5LsZp1Wm7xKM5EDig0RKqhQUeujRx3cfTHr+zaUdpIwA9/nmf2C0iOIyJKI4TsxCaT1NSiHEWtAC/DG9mznbUeARRBPWvVLx1FqT3Qs9L47+Zc2pkkSGmskQxynw6Us5xwnuL4HD89EzX1n51Z+NJKjm6IQWEOn/N1nbGp4ar00ehrxUKnrtFFdo39OSbCF4PrZCOkcicA2GA3SZx/189Gc91eVD1JfQpkPleGglgq8t7LqfNAzMFTYEFHZQNtKfShba07yMkxamvigqIhrZc60NFzRGHgQHlOuED8Qfn+BX8HK4OIH0dDwGDHXuzsFzn14oRDLP11QMjmbPZRTDGGEW9n6W1pwwlnu+BZu/cS9ZMqlIwkvAXu8/ivhoKcbJPln6Gzs7yD+Axv/AcNY+5d1AwAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">612b3741fbf1621086e7f4045eefdcde</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Personal Expenses">65071019fb75621086e7f4045eefdcc5</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Se">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>6</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-27 19:32:52</sys_created_on>
+        <sys_id>e9071019fb75621086e7f4045eefdcf3</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-27 19:32:52</sys_updated_on>
+        <ui_id>cc765906-5769-430a-b4ae-373f078cb540</ui_id>
+        <values>H4sIAAAAAAAA/+1Vy27TQBT9FWvWSWQndiDZVSmVkIBKbdQNVNb1PJIRkxkzj7Yhytew4AP4hPwYd2wnjSivAEt2nnNf59yZI2+ICb4O3s3NmXNyocn07W2PSB0x/N4QDStOpoQazaSXRpcN0CN3oEIM3IAyNmE8OdMmeaExz1tgJtGQzKHiCpILqUFhBZOuVrC+ObmQLqVilnfcarDIwHNLpptvQpJhX5GCyCY0o6PheDRM0+HzPKvGoyobshFwGGFDFftj6tXuiw/KJAySRt/u8+6TwfiPNPt1HXHnrdSL7vyq63W9B41lkVuW9gh/8FwzjqwEKMd7ZAWagTd2fUAsB3ap1SOwlNpjOxKTH5z8iAOHRRETBUehlLfBw7Hs1trC4hw8IJVAfbBdKl0aSblrV8S4gKD87BhrEy7rKLUt8VCpfbVRYaXftBshhwb7W0QkOCTB66g0Uu90iOulub/as8SrbLbSBZWheLP7E3jcXRV85LMhXPEVNipXUNe40bK25k42xchlNVgoPAyEMvc4NL7YAdBIfICLhcEF4ucNfANWRhWvsQ0WtzQrcJKWzevGdrgmTrY94tZupsC5R5G43fJDiBRbyZ24st1PLKFW1v4MJ9/xTse299QsRz7ZbERRiKrKaL+ACe/necb7FWR5f0xF8SzPczapxMB58MFtt+9Cmo5Y+tQ2f9znNBdNoBBFlhbfd1E+PnLR7GfWOdE1w1+4Jl7Zb5omTdP/rvlr10hXtm+909YM/4emuY0OaWcedk2lQ2rziL3c/4hiYI2PS9Jj6N7Y91HUI7b9Chytrt7SBgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">f7ee3f85fbf1621086e7f4045eefdc51</block>
+        <comment/>
+        <connected_to>cc765906-5769-430a-b4ae-373f078cb540</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Personal Expenses">65071019fb75621086e7f4045eefdcc5</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Outro">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>8</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-27 19:32:52</sys_created_on>
+        <sys_id>e1071019fb75621086e7f4045eefdcf4</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-27 19:32:52</sys_updated_on>
+        <ui_id>bbf158a1-4051-412a-803b-c34c3913e71b</ui_id>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=65071019fb75621086e7f4045eefdcc5"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=65071019fb75621086e7f4045eefdcc5"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>record</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>pb</language>
+        <name>var__m_sys_hub_flow_input_65071019fb75621086e7f4045eefdcc5</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-27 19:32:52</sys_created_on>
+        <sys_id>21071019fb75621086e7f4045eefdcee</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-27 19:32:52</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_65071019fb75621086e7f4045eefdcc5"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_65071019fb75621086e7f4045eefdcc5"/>
+    <sys_hub_flow action="UPDATE">
+        <sys_id>8aba0455fb35621086e7f4045eefdc1c</sys_id>
+        <latest_snapshot>65071019fb75621086e7f4045eefdcc5</latest_snapshot>
+        <compiler_build>glide-yokohama-12-18-2024__patch1a-03-25-2025_04-10-2025_1007.zip</compiler_build>
+    </sys_hub_flow>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=8aba0455fb35621086e7f4045eefdc1c"/>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=8aba0455fb35621086e7f4045eefdc1c^sys_idNOT IN71071019fb75621086e7f4045eefdcfa"/>
+    <sys_flow_subflow_plan action="INSERT_OR_UPDATE">
+        <plan>com.snc.process_flow.engine.ProcessPlan@653b3616</plan>
+        <plan_id display_value="Personal Expenses">8aba0455fb35621086e7f4045eefdc1c</plan_id>
+        <snapshot>65071019fb75621086e7f4045eefdcc5</snapshot>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-27 19:32:53</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>71071019fb75621086e7f4045eefdcfa</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-27 19:32:53</sys_updated_on>
+    </sys_flow_subflow_plan>
+</record_update>
