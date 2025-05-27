@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($scope) {
+  /* widget controller */
+  var c = this;
+	// Estado inicial (pode ser null, true ou false)
+$scope.isLowercase = null;
+
+// Escuta evento do rootScope para atualizar o estado
+$scope.$root.$on('toggleCaseEvent', function(event, isLowercase) {
+  $scope.isLowercase = isLowercase;
+});
+
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>/* Tipografia base */
+body, h5, ol, li, a {
+  font-family: 'Roboto Flex', sans-serif !important;
+  color: #333;
+}
+
+/* Container do widget */
+.acessos-widget {
+  color: #333;
+  margin-bottom: 30px;
+}
+
+/* Títulos desktop (linha com ícones nas extremidades) */
+.topo-linha {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px; /* espaço entre os elementos */
+}
+
+.titulo-esquerda,
+.titulo-direita {
+  font-size: 16px;
+  font-weight: 600;
+  white-space: nowrap;
+  margin: 0;
+}
+
+.titulo-esquerda {
+  margin-left: 7rem; /* ajusta para mover um pouco pra direita */
+}
+
+.titulo-direita {
+  margin-right: 5rem; /* um pouco mais pra direita */
+}
+
+.linha-flex {
+  flex-grow: 1; 
+  height: 1px;
+  background-color: #000; 
+  margin: 0 10px; 
+  border-radius: 1px; 
+}
+
+/* Títulos visíveis só no mobile */
+.titulo-mobile {
+  display: none;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.fa.fa-fire{
+	color: tomato;
+}
+
+.fa.fa-star{
+	color: #ffd700;
+}
+
+/* Listagem dos mais acessados */
+.list-mais-acessados {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.list-mais-acessados li {
+  margin-bottom: 15px;
+}
+
+.list-mais-acessados {
+  list-style-type: decimal; /* mantém a numeração */
+  counter-reset: item; /* zera o contador */
+  padding-left: 0; /* opcional, ajustar o espaço */
+}
+
+.list-mais-acessados li {
+  list-style-type: none; /* remove o estilo padrão */
+  counter-increment: item; /* incrementa o contador */
+  position: relative;
+  padding-left: 20px; /* espaço para o número personalizado */
+  transform: translateY(10px);
+}
+
+.list-mais-acessados li::before {
+  content: counter(item); /* exibe só o número */
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #bbb; /* cinza claro */
+  font-weight: bold;
+}
+
+.list-mais-acessados a {
+  text-decoration: none;
+}
+
+.list-mais-acessados a:hover {
+  text-decoration: underline;
+}
+
+/* Últimos acessos */
+.ultimos-acessos {
+  margin-bottom: 15px;
+  transform: translateY(10px);
+  margin-right: 10px;
+}
+
+.ultimos-acessos a {
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.ultimos-acessos a:hover {
+  text-decoration: underline;
+}
+
+.categoria {
+  font-size: 12px;
+  color: #888;
+}
+
+.bloco-ultimos {
+  margin-left: auto;
+}
+
+/* Layout responsivo */
+.acessos-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid black;
+}
+
+.lowercase-text {
+  text-transform: lowercase;
+}
+
+.uppercase-text {
+  text-transform: uppercase;
+}
+
+
+/* Em telas menores: empilha blocos e mostra títulos internos */
+@media (max-width: 800px) {
+  .acessos-wrapper {
+    flex-direction: column;
+  }
+
+  .bloco {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .bloco-mais {
+    order: 1;
+  }
+
+  .bloco-ultimos {
+    order: 2;
+  }
+
+  .topo-linha {
+    display: none; /* esconde os títulos com linha no mobile */
+  }
+
+  .titulo-mobile {
+    display: block; /* mostra os títulos internos no mobile */
+  }
+  
+  .bloco.bloco-ultimos{
+  	margin-left: 2rem;
+  }
+}
+
+
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>servicos_para_voce_menu_item_sefaz</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Servicos para voce menu item sefaz</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  // Exemplo estático — substitua com dados reais se necessário
+  data.maisAcessados = [
+    { nome: "Secretaria Adjunta e Equipe Técnica", url: "https://sefazmtdev.service-now.com/sate?id=404_sefaz" },
+    { nome: "Mapeamento Estratégico", url: "https://www5.sefaz.mt.gov.br/mapas-estrategicos1" },
+    { nome: "Organograma", url: "https://sefazmtdev.service-now.com/sefaz?id=404_sefaz" },
+    { nome: "Sobre o Tesouro", url: "https://sefazmtdev.service-now.com/sate?id=404_sefaz" },
+    { nome: "Sistemas > GFO", url: "https://www.fiplan-gfo.mt.gov.br/fiplangfo/login" },
+    { nome: "Orientações do Tesouro", url: "https://www5.sefaz.mt.gov.br/orientacoes-tesouro-estadual" }
+  ];
+
+  data.ultimosAcessos = [
+    { nome: "Comparativo 2023 - 2024", url: "sate?id=404_sefaz", categoria: "Receita Primária · Despesas · Resultado Primário" },
+    { nome: "Comparativo 2023 - 2024", url: "sate?id=404_sefaz", categoria: "Receita Primária · Despesas · Resultado Primário" },
+    { nome: "Comparativo 2023 - 2024", url: "sate?id=404_sefaz", categoria: "Receita Primária · Despesas · Resultado Primário" },
+		{ nome: "Comparativo 2023 - 2024", url: "sate?id=404_sefaz", categoria: "Receita Primária · Despesas · Resultado Primário" }
+	];
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-05-15 21:57:40</sys_created_on>
+        <sys_id>a5154b9dfbe9e65086e7f4045eefdcf9</sys_id>
+        <sys_mod_count>60</sys_mod_count>
+        <sys_name>Servicos para voce menu item sefaz</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_a5154b9dfbe9e65086e7f4045eefdcf9</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-27 23:22:59</sys_updated_on>
+        <template><![CDATA[<!-- Fonte -->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+</style>
+
+<!-- Widget de Acessos -->
+<div class="acessos-widget">
+
+  <!-- Títulos com linha no meio -->
+  <div class="topo-linha d-flex align-items-center justify-content-between">
+    <h5 class="titulo-esquerda" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">
+      <i class="fa fa-fire text-warning"></i> MAIS ACESSADOS
+    </h5>
+    <div class="linha-flex"></div>
+    <h5 class="titulo-direita" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">
+      <i class="fa fa-star text-warning"></i> ÚLTIMOS ACESSOS
+    </h5>
+  </div>
+
+  <!-- Conteúdo em colunas -->
+  <div class="row acessos-wrapper">
+    <!-- MAIS ACESSADOS -->
+    <div class="col-md-6 bloco bloco-mais">
+      <!-- Título mobile -->
+      <h5 class="titulo-mobile" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">
+        <i class="fa fa-fire text-warning"></i> MAIS ACESSADOS
+      </h5>
+      <ol class="list-mais-acessados" >
+        <li ng-repeat="item in c.data.maisAcessados">
+          <a target="_blank" href="{{ item.url }}" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">{{ item.nome }}</a>
+        </li>
+      </ol>
+    </div>
+
+    <!-- ÚLTIMOS ACESSOS -->
+    <div class="bloco bloco-ultimos">
+      <!-- Título mobile -->
+      <h5 class="titulo-mobile" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">
+        <i class="fa fa-star text-warning"></i> ÚLTIMOS ACESSOS
+      </h5>
+      <div class="ultimos-acessos" ng-repeat="item in c.data.ultimosAcessos">
+        <small class="text-muted categoria" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">{{ item.categoria }}</small><br>
+        <a target="_blank" href="{{ item.url }}" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">{{ item.nome }}</a>
+      </div>
+    </div>
+  </div>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>
