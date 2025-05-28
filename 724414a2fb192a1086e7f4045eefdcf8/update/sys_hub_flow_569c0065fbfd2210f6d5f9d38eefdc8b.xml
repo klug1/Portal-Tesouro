@@ -1,0 +1,1946 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=15963000,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>27000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from>3e9700e9fbbd2210f6d5f9d38eefdcb6</copied_from>
+        <copied_from_name>RCL (Net Current Revenue)</copied_from_name>
+        <description/>
+        <display_name_after_preview/>
+        <flow_priority>MEDIUM</flow_priority>
+        <generation_source/>
+        <internal_name>rreo_summary_report_of_budget_execution</internal_name>
+        <label_cache>[{"name":"subflow.record","label":"Entrada➛Record","reference":"x_sded9_portal_t_0_registro_de_cargas_tesouro","reference_display":"Treasury Cargo Registration","type":"reference","base_type":"reference","column_name":"","usedInstances":{"b1c3d1ce-831a-4bfb-b59b-fac37677e4f9":["conditions"],"0a53884c-6d3f-4926-b143-7aebb7b97d97":["conditions"],"39268173-2ed3-4659-805a-84b15f1045a3":["parent_sys_id"],"c89a2cab-c4b6-4d9a-a522-66df72662c5e":["parent_sys_id"],"fb48067c-f6f5-45ab-b1f7-87e39e2b4f53":["parent_sys_id"],"83c6e11f-e93b-467c-9b7f-38bab9ae0a3b":["parent_sys_id"],"b68068aa-2262-4839-a185-5e13cd917f72":["parent_sys_id"],"d54d22bc-061e-44b3-8b1e-9ed82884ca5f":["parent_sys_id"]},"attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"f4b7b973-3190-4871-8403-baaef11efe7b","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"b1c3d1ce-831a-4bfb-b59b-fac37677e4f9.Records","label":"1 - Look Up Records➛Multi Row Question Answer Records","reference":"sc_multi_row_question_answer","reference_display":"Multi Row Question Answer","type":"records","base_type":"records","usedInstances":{"20fde648-3ced-4596-b1ac-b39b687a2a96":["items"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.value","label":"3 - For Each➛Multi Row Question Answer Record➛Value","reference":"","reference_display":"Value","type":"string","base_type":"string","parent_table_name":"sc_multi_row_question_answer","column_name":"value","usedInstances":{"3283fd25-754f-4540-a6dc-42c1d8b9e628":["conditions"],"45e87eb4-1522-46c8-928c-4e868bc4e337":["var_ano-0"],"509ab718-88ae-46b1-9886-0418f90aabbf":["var_mes-0"]}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.row_index","label":"3 - For Each➛Multi Row Question Answer Record➛Row index","reference":"","reference_display":"Row index","type":"long","base_type":"long","parent_table_name":"sc_multi_row_question_answer","column_name":"row_index","usedInstances":{"0a53884c-6d3f-4926-b143-7aebb7b97d97":["conditions"]}},{"name":"0a53884c-6d3f-4926-b143-7aebb7b97d97.Record.row_index","label":"14 - Look Up Record➛Multi Row Question Answer Record➛Índice de linha","reference":"","reference_display":"Índice de linha","type":"long","base_type":"long","parent_table_name":"sc_multi_row_question_answer","column_name":"row_index","usedInstances":{"39268173-2ed3-4659-805a-84b15f1045a3":["multirow_record"],"c89a2cab-c4b6-4d9a-a522-66df72662c5e":["multirow_record"],"fb48067c-f6f5-45ab-b1f7-87e39e2b4f53":["multirow_record"],"83c6e11f-e93b-467c-9b7f-38bab9ae0a3b":["multirow_record"],"b68068aa-2262-4839-a185-5e13cd917f72":["multirow_record"],"d54d22bc-061e-44b3-8b1e-9ed82884ca5f":["multirow_record"]}},{"name":"0a53884c-6d3f-4926-b143-7aebb7b97d97.status","label":"14 - Look Up Record➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Error","value":"1","order":0.0},{"label":"Success","value":"0","order":1.0}],"usedInstances":{},"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"0a53884c-6d3f-4926-b143-7aebb7b97d97.Record","label":"14 - Look Up Record➛Multi Row Question Answer Record","reference":"sc_multi_row_question_answer","reference_display":"Multi Row Question Answer","type":"reference","base_type":"reference","usedInstances":{},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf.Record","label":"13 - Look Up Record➛RREO (Relatório Resumido da Execução Orçamentária) Record","reference":"x_sded9_portal_t_0_u_rreo","reference_display":"RREO (Summary Report of Budget Execution)","type":"reference","base_type":"reference","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["record"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf.status","label":"13 - Look Up Record➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Error","value":"1","order":0.0},{"label":"Success","value":"0","order":1.0}],"usedInstances":{"cc765906-5769-430a-b4ae-373f078cb540":["condition"]},"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf.__action_status__","label":"13 - Look Up Record➛Action Status","reference_display":"Action Status","type":"object","base_type":"object","usedInstances":{},"attributes":{"uiType":"object","co_type_name":"FDACTIONSTATUS","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"d54d22bc-061e-44b3-8b1e-9ed82884ca5f.rreo","label":"15 - Get MRVS Values (RREO)➛RREO","reference_display":"RREO","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["rreo_according_to_lrf_fiscal_responsibility_law_2"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["rreo_according_to_lrf_fiscal_responsibility_law_2"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"f552e66c-f522-45a5-8abc-fb82bf0d5a07"}},{"name":"d54d22bc-061e-44b3-8b1e-9ed82884ca5f.rreo_ajustado","label":"15 - Get MRVS Values (RREO)➛RREO Ajustado","reference_display":"RREO Ajustado","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["adjusted_rreo_fiscal_management_report_2"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["adjusted_rreo_fiscal_management_report_2"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"97ccce28-34b2-4066-a099-9b0cf93443dd"}},{"name":"d54d22bc-061e-44b3-8b1e-9ed82884ca5f.mes","label":"15 - Get MRVS Values (RREO)➛Mês","reference_display":"Mês","type":"string","base_type":"string","usedInstances":{"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_mes"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"0ddd278d-520e-4619-82a0-46346cd50045"}},{"name":"d54d22bc-061e-44b3-8b1e-9ed82884ca5f.ano","label":"15 - Get MRVS Values (RREO)➛Ano","reference_display":"Ano","type":"string","base_type":"string","usedInstances":{"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_ano"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"0e1cc34c-2b5e-4d54-a04e-32522d615aba"}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.item_option_new.name","label":"3 - For Each➛Multi Row Question Answer Record➛Question➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"item_option_new","column_name":"name","usedInstances":{"cfdc988b-b11d-4942-b9bf-11cea3ddb70f":["condition"],"fefe5d28-2611-4ce7-9f3a-4b1127da7629":["condition"]}},{"name":"flow_variable.var_count1","label":"Flow Variables➛var_count","reference":"","reference_display":"","type":"integer","base_type":"integer","usedInstances":{"b6f98993-2de4-48f4-9d42-7ad52358075f":["condition"],"3c031a62-dd97-42a9-ae1e-b0b41c896ded":["condition"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"9fc98cf4-2f8f-46ca-a232-6c078f64d1d2"}},{"name":"flow_variable.var_ano","label":"Flow Variables➛var_ano","type":"string","base_type":"string","usedInstances":{"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf":["conditions"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"72f2355b-0329-4d8c-b4dc-3cb07f54ba9d"}},{"name":"flow_variable.var_mes","label":"Flow Variables➛var_mes","type":"string","base_type":"string","usedInstances":{"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf":["conditions"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"3576bc47-0baa-4380-a20c-7f6e4ce1a770"}}]</label_cache>
+        <master_snapshot>667018e9fbfd2210f6d5f9d38eefdc64</master_snapshot>
+        <master_snapshot_digest/>
+        <name>RREO (Summary Report of Budget Execution)</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>published</status>
+        <substatus/>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 13:25:48</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>569c0065fbfd2210f6d5f9d38eefdc8b</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_name>RREO (Summary Report of Budget Execution)</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sys_hub_flow_569c0065fbfd2210f6d5f9d38eefdc8b</sys_update_name>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 17:51:56</sys_updated_on>
+        <type>subflow</type>
+        <version>2</version>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=569c0065fbfd2210f6d5f9d38eefdc8b"/>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>569c0065fbfd2210f6d5f9d38eefdc8b</documentkey>
+        <fieldname>annotation</fieldname>
+        <language>pb</language>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 13:42:39</sys_created_on>
+        <sys_id>cd70d4e9fbfd2210f6d5f9d38eefdce0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 13:42:39</sys_updated_on>
+        <tablename>sys_hub_flow</tablename>
+        <value/>
+    </sys_translated_text>
+    <sys_variable_value action="delete_multiple" query="document_key=569c0065fbfd2210f6d5f9d38eefdc8b"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=569c0065fbfd2210f6d5f9d38eefdc8b"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=569c0065fbfd2210f6d5f9d38eefdc8b^sys_idNOT INda9c0065fbfd2210f6d5f9d38eefdc8b"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>569c0065fbfd2210f6d5f9d38eefdc8b</id>
+        <name>RREO (Summary Report of Budget Execution)</name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 13:25:48</sys_created_on>
+        <sys_id>da9c0065fbfd2210f6d5f9d38eefdc8b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 13:25:48</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=da9c0065fbfd2210f6d5f9d38eefdc8b"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=569c0065fbfd2210f6d5f9d38eefdc8b^sys_idNOT IN9a9c0065fbfd2210f6d5f9d38eefdc8f"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference,uiUniqueId=f4b7b973-3190-4871-8403-baaef11efe7b</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table>x_sded9_portal_t_0_registro_de_cargas_tesouro</choice_table>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>record</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="RREO (Summary Report of Budget Execution)">569c0065fbfd2210f6d5f9d38eefdc8b</model>
+        <model_id>569c0065fbfd2210f6d5f9d38eefdc8b</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_569c0065fbfd2210f6d5f9d38eefdc8b</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="x_sded9_portal_t_0_registro_de_cargas_tesouro">x_sded9_portal_t_0_registro_de_cargas_tesouro</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 13:25:48</sys_created_on>
+        <sys_id>9a9c0065fbfd2210f6d5f9d38eefdc8f</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 13:25:49</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=9a9c0065fbfd2210f6d5f9d38eefdc8f"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=569c0065fbfd2210f6d5f9d38eefdc8b"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=569c0065fbfd2210f6d5f9d38eefdc8b"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=569c0065fbfd2210f6d5f9d38eefdc8b"/>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=569c0065fbfd2210f6d5f9d38eefdc8b^sys_idNOT IN669c0065fbfd2210f6d5f9d38eefdcb4,aa9c0065fbfd2210f6d5f9d38eefdcb3,6e9c0065fbfd2210f6d5f9d38eefdcb3,e69c0065fbfd2210f6d5f9d38eefdcb3,8970d4e9fbfd2210f6d5f9d38eefdcce,2a9c0065fbfd2210f6d5f9d38eefdcb4"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="RREO (Summary Report of Budget Execution)">569c0065fbfd2210f6d5f9d38eefdc8b</flow>
+        <generation_source/>
+        <order>17</order>
+        <parent_ui_id>cc765906-5769-430a-b4ae-373f078cb540</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 13:25:49</sys_created_on>
+        <sys_id>669c0065fbfd2210f6d5f9d38eefdcb4</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 17:51:51</sys_updated_on>
+        <ui_id>30bd6918-a95f-4a24-b688-772ee9e9bf9e</ui_id>
+        <values>H4sIAAAAAAAA/+1VS27bMBC9iqBVC9iGJEuu7V2BJEAXjQG3yCZNCYocOSwoUSUpx67hwxRd5AA9gi/WoT6Ok6ZpEAQoWtQrz4gz897jw/B84wvuT/0YeBBOwhEbhsNhFATROA7T0TANIz6kAKHf8wuaA57UwJTmGC+prFxis8mSJEvTkPUTOoF+HIfQT2kY90csS17FccwnaTaY13XbLVZyYUpJ12dtA8ywSyG5hsKfnl/0/JJqnGVB+9PNnU92XQKRNAWJhUeKVTkU1ntzhD0ey6OrnndE7hJzMzDmbXciXBI/OTxh0PNhZaHggOMyKg30/JwWnFql1/7U6goTGiifFXK9P3EpCtswzenKiC/YPw7cuQyQGmtV2IekVagTRwkGs9IKVTQZS1PZKadklRenDQWnLWS0kvZA28pgPygdZAeiQZi9u1RX827eiShqdi1aqRiV+4haq0VaWTDuOkBCLUpOy1IUC1JqtRR1MULJBwuJwSCT6gpnGrEoBpQ53AMUiA5OMH9Up8+oFo7EW2yDxduaPPlcubkNjRYwqTnXhEl9UXjUMC1K+xobL6GFue21Rk6ThwzAJjf3fdDzxswrYvBmJ6RU2lJJLAlIRbQG9bNt5/PjmfdiDpLa3XctlDcHU+WCK49T73gFrNpd774pb6Z319RptvuKnF8+2e3vHV7vtMH7WK63in/BvfX7rVxr9+TZ7D7+Q3ZvEf1lfv+dy4PowTV3cNO1sc2Bwyn/VBkLvHY1yYRB7siuoIuGqAbnfRJ9qIJgyDcbnsQ8ilLWD0ahW+7psD9O8d8E+Dgaj2NGk2xQ96KuMeVqu/3YxMwtVCeaVUTqrBumwZSqMCIVUtg1+vvqCdPue0j+JWpP3BGQoyAWvEaS3qPd0jU4ESC5ucc+3ZJoB5BlO2D/Lj7bpghHQf37/zw+4/N48QNpx1nd6QkAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
+        <display_text/>
+        <flow display_value="RREO (Summary Report of Budget Execution)">569c0065fbfd2210f6d5f9d38eefdc8b</flow>
+        <generation_source/>
+        <order>13</order>
+        <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 13:25:49</sys_created_on>
+        <sys_id>aa9c0065fbfd2210f6d5f9d38eefdcb3</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 17:51:51</sys_updated_on>
+        <ui_id>f55fbb1c-5a9e-441e-ba14-6cf57444d9bf</ui_id>
+        <values>H4sIAAAAAAAA/9VY224bNxD9FWKfWkBWd3VbyW9FHAEB2ghQ3Ly4LsFdci2iFLnhkvJF0McUfcgH9BP0Yx3uRZJ1t6wgzptIzuXMzJlZUjdTj1Pv0qM9v5f0eu1u6PvNpu93Os2YBFHU7MSRH5GWV/MkGTOQNCQSDJYTIqxbP+CMMtrDqdKGCGywjy3WmimQoTxLBXn8XIoOh+8H6KchE8TM/9NcoSHL7JhThShB7x9YbOdf5/8qNNDzr+BMmvk/mpOfwVA84oJqJr3Lm9ualxINx4Zp73K6dmQeU4YFiZgAf9cOKvrocNeODvOZ8mbYzkG1xLIwrTR1WPyaxx4Mk5AO7zIhImM1b0wkJUbpx8WOZoQOpFhujLg0YNFzwg8ZfwLzXd/JJQzCillxtljiMqnFdjxSPGaD1HAli50CaHGohB3Lj0UArhwsIVaYqhywYzOwx1KH2YEoESWfRup+WDnsc5mHVx4KFROxWBFjNI+sYZmrBRPMlQ2PSZpyeYdTrSY8VwYs4/qdgEU9EeoenGb8TtZJ7IDXIUWk3of9q3z7M4GyQxS/gxlQBkBcQLVxkfRMWZ1nZYJjYbP8QBOZFba8WZ4r/MU6lEXUZXy4SBEIZLHmqfkVFCasDGVWqzqhvZcivSUlYiUpdz6zlXawmEj1pwVdOp3moU7KaOrwwx3OZn9ZPGbZbiE4nM022+ecpk9rqHerER+bra3K21JYttazvbK1grO1Vsv3v1NzGW3fXm8d6pYi4AMtE9C9JKDLemfwkcBF5lZ6ZpPqJzO0z5mgz0b+EeAq5YEjG4oed+EtCZo4H2uzv/HDz/43SU8ARHGRby4Fl/mnF4Ceh7ftvdSIgjUe5OVfsjbfI1m8yV6CjEJPp0/ZvK4Vf48AWSl+AkToukC5BXg1XyvzJXWbZ6Nus/Ey6gJxbqYL9IusbUlwdcNypavkn5w8WZcHdq0oBLPbBfXfneYzeKnPhvO51pvNFzXnKrOKk6sdBDvz/W1Hs9W+ZXePQLX0h4tmxfec3jGz9F5JUWXuifh723nJrkUP5eG9+i4Y7H0uRCt3QZ7gMdSJp3BB1SwGKmSYaIYTZSXF5dV05ZYIdUu4zkwpvOWtxIzVEiloOWRGDOXSaCF9jslyRHSV4ocEVeGVGDIE4aE8PLQI72XJ2DGPWme8671mHvUJF3nq4YmRrtSOaa30jpl0oGp7yn/kwDoSVHBWUK+faNv4vnWyHcD6Q7xXXzt1YkaiVoN0wmYQ+H7g09DvhmHQ7URJh4StZNloGGcyhrEIlhMgBpjHFRGqqgabo6Wcmif+pwLKv/Tz6Vo7Gm6lfKWke5o2QoMcXigzqvAejqgcF5FSghG5ZGf7u82Lt/K3i+XX67kptn7bVrRv9S23/A/Jv1j2wZGiy/xGN6DxRTcMwotWQjsXPUraF6QXtcMmZXErOf3zfPs/KN4oxrYUAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
+        <display_text/>
+        <flow display_value="RREO (Summary Report of Budget Execution)">569c0065fbfd2210f6d5f9d38eefdc8b</flow>
+        <generation_source/>
+        <order>14</order>
+        <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 13:25:49</sys_created_on>
+        <sys_id>6e9c0065fbfd2210f6d5f9d38eefdcb3</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 17:51:51</sys_updated_on>
+        <ui_id>0a53884c-6d3f-4926-b143-7aebb7b97d97</ui_id>
+        <values>H4sIAAAAAAAA/9VY227bOBD9FUHPtleybMnKW9HAQIFtg02zfclmCUqkYmJpUqWoOInhf+9QlGTH9zjuNn0kOZczM2eGlG7nLiPuhUtiL87ieDiKPC8IPC8MgxT7SRKEaeIleOB2XIGnFCQ1TjiF5QPmpVkXKZqWXDOk5Ax9L2mhmRQIi2JGFYgRVuQcP32rpT8bUedazpy/alHnQyOaThgnigr34vau4+ZYgUMNJxfztSP9lFPEcUI5WLwxeJwvBlzn6FheKG/GZhw0SySsaamIweJ1XPqoqSAUXGWYF7TjTrEgWEv11O4oismV4MuNCRMaLLpG+LFgz2B+5Bm5jEJYKbVn7RLVabPb6USylF7lJl12xwK1h5KXU/HFBmASTjMMSW4SDjtlAfZobjAbEDWi7OtEzq4bh2MmqvDqQy5TzNsV1lqxpNS0MLWgnE7BEJriPGfiHuVKPrBKGbBMe/ccFr2MAxsILdi96OHUAO9BinBvDPuX1fY3rJiJ4jOYqcqfMQ7VRjbphSxVlZUHlPKyqA4UkMrachdVroBuBqWNuo4P2RSBQJEqlusPoPBA61AWnYbuw70UiZeUSKUgzPgsVjgP3DSuGPmnBH0ynxdlYiLuKZoCTxaLf00zmJQ+NhJ9LyM0HIy6QUpJdzCMw27i47SbBHESjiLcx3HYY5pOe63qYrHZP/+j59Pa8eNqvo7N9VblbQWoG/PFXt2Y/tkac+B5v6g1tSrfX2ce6jUb8IGG88leEpBlvQupNLKZW+m4zU44maFjRjl5cWEcAa5RvjJkc5KnXXhrgmbGx9rN0f/tb453SU8ARJDNNxOcieriBqDn4e1wLzUSf40HVflX3kZmDxfpJnuxo6XzfPqUrera8PcIkI3iV0Dk3FiUW4A387UxX1M3OBt1g/7rqAvEuZ236NusbUlw8z4zpWvkn408XpcHdq0o+Iu7lvofT/Ppv9Zn3/hc683gVc25yix7crmDYGd+/e1ots7P7O4JqNb+kG1WNGPknuql90aKSD3D/L9t5zW72h6qwnvzS9Lf+7GRrLwkWWY/lHJ43trXWoHgNYcyWQqC6oftkjambhlTha6FN2fINdWlEo6ElnP0hDqVtNNKn2OyHBFdo/gpc5rwagyFA+E5VXhOG97rkrFjHg3O+NZ7yzwaY8ar1MMHSr5SO6qUVDtm0oGq7Sn/kQPrSFD+WUG9faJt4/vWyXYA62/xtfvWqZNSnAz6OIwC3/c83yORN4oifxQmWYijQbZsNIQKkcJYBMsZEAPMo4YITVW9zdFiZ+PJv2Rg5v4xrk0ci7dRvpTCfLn2I+0YwFBnpwF8OKR6XiRScorFkp7DXzYw3stfm5LdrOfGbv25rWg/6zIv2d+CfS/pJ0OKEfX6I5+k3VHkR91BRsJuTPCwi+NkGAWEpoPs9Pv57gc9mT1D2hQAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Records">43400a1587003300663ca1bb36cb0b4b</action_type>
+        <action_type_parent display_value="Look Up Records">d1c56ec50b30030085c083eb37673a50</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>43400a1587003300663ca1bb36cb0b4b</compiled_snapshot>
+        <display_text/>
+        <flow display_value="RREO (Summary Report of Budget Execution)">569c0065fbfd2210f6d5f9d38eefdc8b</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 13:25:49</sys_created_on>
+        <sys_id>e69c0065fbfd2210f6d5f9d38eefdcb3</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 17:51:51</sys_updated_on>
+        <ui_id>b1c3d1ce-831a-4bfb-b59b-fac37677e4f9</ui_id>
+        <values>H4sIAAAAAAAA/9VXTU/jMBD9K1HOVZSQUlhuCIS0B6i2IC4sWE7itNY6dtZ2+kHV/77jOElDW0rpdlk4ejz2vHl+z3Ee5i5N3DP3NO36Pg6OT098Pwx9v9cLYxxEUdiLIz/qRm7H5TgjkKlxxAgMx5gVZqxilBVMUyTFBP0uiNJUcIS5mhAJaQlVOcOz+yr72qQ6AzFxflSpznmdGo8oSyTh7tnDY8fNsYSCGmbO5itTepYTxHBEGOx4Z/A4NwZcZ+deXixe780UqIeI262FTAwWv+OSqSY8IVAqxUyRjpthnmAt5KyJSIKTPmfLwIhyDTu6Jnmq6DNsf+qbvJRAWzGxc80QVbTZcDwSNCb93NBlIxaonRSsyPiNbcAQTlIMJNeEQ6RQsB/JDWYDokKU3o7EZFAXvKK8bK+aZCLGrBlhrSWNCk2UOQvCSAYboQznOeVDlEsxpuViwJJ5QwYDL2WghoQoOuQejg1wDyjC3hXEL8vwPZbUdHEN25THn1IGp40s6UoUsmRljGJWqHJCgqjsXu6i5ArkZlDarqv+kKUIElQsaa7PYcGYVK0sOjvJ/dhfSiIWPKGmpmppnmqSIVGeB+Jk4pncnwVslYxB+eKpP9iWkRH1BOo2YGlig/O5KiLDmSdJDEpbLNat8zFF9zPhRZulXRneuHgT7ZUdX8QqOwYHsyPA/U+G1LL4fH58y2G24TdsFp9sFcHx8ryVkBpZ5lo+M58UQ8R03Q3tqf00e0UJS158OHaAWy/uG/k50ey1DirJpqbGyhfk6Mt/QT6lYAFQgizflDPKyw84AD2Mkv3t19m3FR2Ux996I5kYVvG6jLGjhfO8/71bnmut3x1A1gtvAZFzZ1FuAF7fuPX2lXTDg0k3PHqfdEE4D/MGfcPaBoLrd5o5ujr/2eTj1XxQV2tBsHhspH+xX83gvTWPTM0Vb4bvMmdbWXbm8hWBHfgV+IrZOv/S3SNYWtVD1qxoQpMh0cvqdVYi9ASzX5vmK3U1Hirb++sXZXer93rB0mfgASSJgqNqPykDeH6sXw+BZ8P73Q7fuSbDkrxdIdYrr/HUGTQYNwKvrgja1Kg03T3gi+wjPm818RvdU/P/JX6h9pXw4x+xsGcbBRAAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Get MRVS Values (RREO)">9f8f40a9fbfd2210f6d5f9d38eefdc0f</action_type>
+        <action_type_parent display_value="Get MRVS Values (RREO)">250e48e5fbfd2210f6d5f9d38eefdc52</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>9f8f40a9fbfd2210f6d5f9d38eefdc0f</compiled_snapshot>
+        <display_text/>
+        <flow display_value="RREO (Summary Report of Budget Execution)">569c0065fbfd2210f6d5f9d38eefdc8b</flow>
+        <generation_source/>
+        <order>15</order>
+        <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 13:42:39</sys_created_on>
+        <sys_id>8970d4e9fbfd2210f6d5f9d38eefdcce</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 17:51:51</sys_updated_on>
+        <ui_id>d54d22bc-061e-44b3-8b1e-9ed82884ca5f</ui_id>
+        <values>H4sIAAAAAAAA/8VUXU/bMBT9K1WemyjNZ9O3aQgJaRtTYbwgZN3YTmvJiYPtQLOq/33XTdpRNBBDaHv0/Tr3nnuPb7eeYN7CS8t5lYRQVGXFomgWVhlLq4LFc84rRmczb+o1UHOMrDtphVaPRHOqNEPHA8jOebbbENJ4Pk+on7G48pMiyvxylsR+Drws87LIWZEHy31e4EqIhvHNboc1mDCthP7mA0rRtZBM88Zb3N5NvRY09m259hbbZy7bt5xIKLlExCurRbPC9LfScUhcqsfJhQN/jSIHhQ5zAEGr62g29fjGcsxG0Aqk4VOvhoaBVbr3FlZ3aNAc2GUj+2PEWjQWi3kudmPET6w8D8PQRVYcp6N88B6fZGR3MNO1EpRftlaoZrBYKOWYQ5Xs6ubbMIfbC68ApznsBS2dwXq8dU27Nsaeqqu1elweAM/dNvTRKRUFeXyBRRbKznLjVtKJ62fcDJYvz/fCJa8RkdTQtmghrVYPYo+CTdfBSuIjqCSyzrgRqyYA6iYMkEwIztF+tjffgBZu3K9YBpMd3I9G3Hf8wu09qqCIizz1c56Dn0Ce+EWcVH4JnOX5PI2ykHq7PbXkvnNDDSSNdJCBUQwwVIvWfsIWHvg4+W46aq2IXz2u5Pch4fG6qqY3RJwqzXSlmzUYLuxPEnq3Eo5bPIjhDf0ecr/vG55c9WZycfbyHKMc9BOkURHRRykijk71sCEGaxakVdqCJJaEqM6VwKtTeDCEgl6BIXiUqtPqBfFcI7DpdD/5jNFqshzyYS+k13T1t9j/T4RPN3Kqw6dX8U+kiD88y7I09WcQZ36SZKk/L0Lql1mEv39SsCiJ3y3Fu18e9LV8+AYAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Create Record">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent display_value="Create Record">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="RREO (Summary Report of Budget Execution)">569c0065fbfd2210f6d5f9d38eefdc8b</flow>
+        <generation_source/>
+        <order>19</order>
+        <parent_ui_id>bbf158a1-4051-412a-803b-c34c3913e71b</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 13:25:49</sys_created_on>
+        <sys_id>2a9c0065fbfd2210f6d5f9d38eefdcb4</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 17:51:51</sys_updated_on>
+        <ui_id>070c3028-da05-4dc4-afc6-b2410b50b51a</ui_id>
+        <values>H4sIAAAAAAAA/+1VzW7TQBB+FWtPILmRf9IoyQ2J9kYjBdRLKau1d5wsWu+a/UkTojwM4tAH4BHyYszaTimFSG2FhJDIKfP/zXyz46stEZxMySiF5HSSjso8zfMsSbLxMC1GeZFmPGcAQxITxWpAT8cKCbQVYrJi0gflmloOfEIbbRyT1NGEemoMaPThwjaSbS571/n8bBa9mINkbv/NCB3NwfpacB1xFp2tofT72/1XHc3M/haLKLf/YgR7iYnKpZDcgCLTq+uYNMyg2YEh0+0Dk9s0QCUrQGK9dwFvdNHhfWyvPwUf6T1UeajThgdASUxg7UDhTMi0YtJCTGqmOHPabMjUGY8KA4zPlNzceSyFcpiQBN+1FZ8x+zgJfhVgayV0tjuR9oPt1OVSixJmjRNadZoWWG/U0tfqomsiUAIV89IdKEGNt5gPmgA5gOgRVW+X+mZ+KHguVNtdb5S6ZPJOYs4ZUXgHNvABEgJ1tGZNI9SCNkavRBuMWOrBQqIwqKS+waJWLNSAlQH4ACfEBueof92qLxlSj128wTQYvGu7p598qNv10SOmXdPoYEsjGvcK062gB7eLD0vOIZkcJT4tfhDd7rW9t+CeMqXf+yTJ+XbLT4c8y4ryJMFVOhkOi/xkXOC/CfBxNh4PS3ZaDdB/t/vgaQ32SXHoj3GMf/TWAW8fEa2ExVnjNBVbdIM1EJ4azZ6Uus3FQmLGA7hOLkvc2kCS01Sa6lDMgG20sqIQUrgNPqebZ1Tb7X49AP9H+fxRPvMEQo0EOIg6CuJHv4ZDgnMBktvfPI/DDewL0FVfoL+D6Z+6g+koaX9/5xp2OP+xY3jvu3TkLF5/B7Ff9nv9BwAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=569c0065fbfd2210f6d5f9d38eefdc8b"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=569c0065fbfd2210f6d5f9d38eefdc8b^sys_idNOT IN269c0065fbfd2210f6d5f9d38eefdcb3,269c0065fbfd2210f6d5f9d38eefdcb2,2e9c0065fbfd2210f6d5f9d38eefdcb2,ab790d2dfb756210f6d5f9d38eefdc0e,6f790d2dfb756210f6d5f9d38eefdc0f,e7790d2dfb756210f6d5f9d38eefdc10,ef790d2dfb756210f6d5f9d38eefdc10,e7790d2dfb756210f6d5f9d38eefdc11,ef790d2dfb756210f6d5f9d38eefdc11,e7790d2dfb756210f6d5f9d38eefdc12,ef790d2dfb756210f6d5f9d38eefdc12,6b790d2dfb756210f6d5f9d38eefdc13,63790d2dfb756210f6d5f9d38eefdc14,eb790d2dfb756210f6d5f9d38eefdc15"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">f7ee3f85fbf1621086e7f4045eefdc51</block>
+        <comment/>
+        <connected_to>cc765906-5769-430a-b4ae-373f078cb540</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="RREO (Summary Report of Budget Execution)">569c0065fbfd2210f6d5f9d38eefdc8b</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>18</order>
+        <outputs_assigned/>
+        <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 13:25:49</sys_created_on>
+        <sys_id>269c0065fbfd2210f6d5f9d38eefdcb3</sys_id>
+        <sys_mod_count>14</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 17:51:51</sys_updated_on>
+        <ui_id>bbf158a1-4051-412a-803b-c34c3913e71b</ui_id>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">212b3741fbf1621086e7f4045eefdcdc</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="RREO (Summary Report of Budget Execution)">569c0065fbfd2210f6d5f9d38eefdc8b</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="For Each">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
+        <order>3</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 13:25:49</sys_created_on>
+        <sys_id>269c0065fbfd2210f6d5f9d38eefdcb2</sys_id>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 17:51:51</sys_updated_on>
+        <ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</ui_id>
+        <values>H4sIAAAAAAAA/51STW/bMAz9Lzonhj+ypM6twFCgh61AV/QyFAYl0YkwWdIkOaln+L+Pip106HEnm4/k43siR2b76PoYXux9COpg2P7n24opkzD6H5mBDtmeqYhdYCt2At2neBx5ISpZCFzfVQWsN7zla/6l5usWRLXb7na4aevsGYX1MkwTtUoVnIbh9f8ZxFFp6XER6cCTtoie7cdPqTg4bDRw1DRoYaB+JSksatnWRV6LqtxWZZ6Xd5uCbytelLIClFuqu3Y+LqY/vUFip9DfeOmTVJT5iuF7RCORBrWgA65YB0ZCtH5g++h7AjyCfDJ6uFUclYlEx1Lte1B/iLvI81TYIjkSOCdvYbM85AyLo1UCn1xU1sxIBK6XHmF135nvs/y0Amyh1/G6AkL6QHzokuakYpHU/jja8/N14IMyF39LUlsB+hZBjF7xPmJIa0CNHRE1HTinzKFx3p7UpZm0dNlBU5C12p5paDq3DEQSntETQfZA+NcL/ApeJRffiIaap4v75nef5s4+FsXNbJoKgvDKxXuiO+EibnpL9zozhfkwJAoVaOBLwh6vV54SAy1ZiX+hs/W/ktQPbPoLPlHA5y8DAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">612b3741fbf1621086e7f4045eefdcde</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="RREO (Summary Report of Budget Execution)">569c0065fbfd2210f6d5f9d38eefdc8b</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>16</order>
+        <outputs_assigned/>
+        <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 13:25:49</sys_created_on>
+        <sys_id>2e9c0065fbfd2210f6d5f9d38eefdcb2</sys_id>
+        <sys_mod_count>14</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 17:51:51</sys_updated_on>
+        <ui_id>cc765906-5769-430a-b4ae-373f078cb540</ui_id>
+        <values>H4sIAAAAAAAA/+1Uy27TQBT9Fctrx/IzkOwioBISUIlG3UBlXc8jGTGeMTPjpCHKv3PHjzaiqYCKJTvPua9z7j3yMdSdaztn13plrdiocPnlLgqF8hh+H0MFDQuXIdGKCie0qnogCncgOx+4BalNQFmwUjp4pzDPGaA6UBCsoWYSgiuhQGIFFbaVcLj960KyFZIaNnJrwSADx0y4PP4ScoeWVdIXY/8bZ4TaYLmg+OIJ8HRBUpJn8zxLkux1kdbzvE4zmgODHPOmwjeT1OBDj0TP7sDPQ9xOk7ShnlaaRCG7d0xRhqM5SMuisAFFwWlzeEAMA3qt5COwFcphu9An31vxA3tnZekTOUONhA3Bh2c1bnSAyVYLwq5bT3BAHNRyrCFado36NOjwt2AcOummWyDSWezHWk/asxgp8Zut3n+eBuJBeoFjUGqC95le4HANdeeY9YdhkjXYqGqgbXE5VWv0TvTFyKWJNxIfMZd6j0O972IgnniMO4L4CvG3PXwLRngVH7ENFg80a7CCVL1HsZ0zKOHUr6X63nlCg8BRSjVsAxMsMaJ1K5yzYyPrU/TU4GfePh55WfK6TsmshAWbFUXKZjWkxWxOePmqKAq6qHlsHbjOnk5fuyTJafLU6i/u8y+cv4CSl2lSXnZ+Mb/k/Auef97u2W/s7g/0h25PkuS/3c/tLmw12HbU1g9/sdvvvLWHCXbwDWVEWCSy9tj76a/vAwc0gCDn0F6bb17CI3b6CQQGB94/BgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">a7790d2dfb756210f6d5f9d38eefdc0e</block>
+        <comment>Setando o count em 0</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="RREO (Summary Report of Budget Execution)">569c0065fbfd2210f6d5f9d38eefdc8b</flow>
+        <flow_variables_assigned>var_count1</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 17:51:51</sys_created_on>
+        <sys_id>ab790d2dfb756210f6d5f9d38eefdc0e</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 17:51:51</sys_updated_on>
+        <ui_id>f4620f47-34ec-411b-af22-18f36db78b5b</ui_id>
+        <values>H4sIAAAAAAAA/5WPMQ7CMAxF7+K5A6zdOrJXLKhCJknBwiRVnKSqqt4dRwLB2u3r2f5PXiHkNOUkfehE6O6hvQwNkK9M8wpkoQVowOPLaSoYryZkn47KCnKu8KDZPIhtdJ8CMZGm1JlERRdGZHHbUA8i4Y3dvmpLMjEu57026wwJBd9X5en7Uh0sqiTzj+YQnyOH+ce2N0SMljscAQAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">6b790d2dfb756210f6d5f9d38eefdc0f</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="RREO (Summary Report of Budget Execution)">569c0065fbfd2210f6d5f9d38eefdc8b</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>4</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 17:51:51</sys_created_on>
+        <sys_id>6f790d2dfb756210f6d5f9d38eefdc0f</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 17:51:51</sys_updated_on>
+        <ui_id>b6f98993-2de4-48f4-9d42-7ad52358075f</ui_id>
+        <values>H4sIAAAAAAAA/+1UXWvbMBT9K0PPxsh2Hda8lY3CYFthLX3ZiriW5ERMljxJTpqZ/Pdd+SMJa8rC2OPepHN17z3n+OCe2C60XfAP9sZ7tTJk+fUpIcpEDM89UYIsSU2hzq55xot8UeSU5m+vsmpRVFkuCpBQkIQYaCS+5NYIFZQ1bAASsgHdxQIehfKtht3jEeFrpYWT09YWHPYE6ciy/60Udq1kGiqpsfE+OGVW2H4pt7nx3UzuzccBeZ113Ie4nzdZJyKtjCZEPgdphMTVNWgvE9KAERCs2x0QJ0HcGX0E1sqEUXEDz179xNl5WcaHtUSNfLLjcGWTVbNLVnF510aCIxKg0rOFVneN+TzqiCbLGjodTkzuPM6TbSQdWUyU6vu13X6ZF94qMwicitpy0IcbBLSh6oL08cNILRscxBpoWzSHtc5u1NCMXJp0pfGS1tpucWlMVAo8Ek/RI0hvEX8/wI/gVFTxCcdg80izAq84G9KH44JDCfvBFvaji4RGgZMUNrqBDzx3qg03uGcjJ9b7ZIruNZR1mdHyfDyuFmdCcJLavh+UbCayKR4Yt50J2X7/raO0EPRlsC9r+hfZv0Dci+yfF/xK4PM/BD5+ogvzTin9H/jTwCvPxuBO2oblf533pxjacYMfcyMkVx6JPETsw/xHj4UdBkDxU2hr3fco4YjtfwHcMPJhGwYAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">e3790d2dfb756210f6d5f9d38eefdc10</block>
+        <comment>Setando em 1</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="RREO (Summary Report of Budget Execution)">569c0065fbfd2210f6d5f9d38eefdc8b</flow>
+        <flow_variables_assigned>var_count1</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>5</order>
+        <outputs_assigned/>
+        <parent_ui_id>b6f98993-2de4-48f4-9d42-7ad52358075f</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 17:51:51</sys_created_on>
+        <sys_id>e7790d2dfb756210f6d5f9d38eefdc10</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 17:51:51</sys_updated_on>
+        <ui_id>3443d07f-a146-41ae-ab16-99e00768f4e4</ui_id>
+        <values>H4sIAAAAAAAA/5WPMQrDMAxF76I5S9dsGbuHLCUU1XZaUdcylp0QQu5eC1raNdvnSfoPbcAlx5Kl506E7gHay9gABWU1b0AWWoAGAr5cTTOmq+ES8qmyGX1RqNk8yNvkPgViEsXcmUxzXZjQi9tHPUiEN++OVVuS6HEdjtqsMyTEoVfl+fuSDtaqJPOPFk7PyfPyY/sb3PKcPhwBAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">eb790d2dfb756210f6d5f9d38eefdc10</block>
+        <comment/>
+        <connected_to>b6f98993-2de4-48f4-9d42-7ad52358075f</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="RREO (Summary Report of Budget Execution)">569c0065fbfd2210f6d5f9d38eefdc8b</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>6</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 17:51:51</sys_created_on>
+        <sys_id>ef790d2dfb756210f6d5f9d38eefdc10</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 17:51:51</sys_updated_on>
+        <ui_id>9293447b-4381-4d7b-bfa2-d1373275d096</ui_id>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">e3790d2dfb756210f6d5f9d38eefdc11</block>
+        <comment>Setando em 0</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="RREO (Summary Report of Budget Execution)">569c0065fbfd2210f6d5f9d38eefdc8b</flow>
+        <flow_variables_assigned>var_count1</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>7</order>
+        <outputs_assigned/>
+        <parent_ui_id>9293447b-4381-4d7b-bfa2-d1373275d096</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 17:51:51</sys_created_on>
+        <sys_id>e7790d2dfb756210f6d5f9d38eefdc11</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 17:51:51</sys_updated_on>
+        <ui_id>6352d366-f036-48f1-8001-aafb42a31f7f</ui_id>
+        <values>H4sIAAAAAAAA/5WPMQ7CMAxF7+K5A6zdOrJXLKhCJknBwiRVnKSqqt4dRwLB2u3r2f5PXiHkNOUkfehE6O6hvQwNkK9M8wpkoQVowOPLaSoYryZkn47KCnKu8KDZPIhtdJ8CMZGm1JlERRdGZHHbUA8i4Y3dvmpLMjEu57026wwJBd9X5en7Uh0sqiTzj+YQnyOH+ce2N0SMljscAQAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">eb790d2dfb756210f6d5f9d38eefdc11</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="RREO (Summary Report of Budget Execution)">569c0065fbfd2210f6d5f9d38eefdc8b</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>8</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 17:51:51</sys_created_on>
+        <sys_id>ef790d2dfb756210f6d5f9d38eefdc11</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 17:51:51</sys_updated_on>
+        <ui_id>cfdc988b-b11d-4942-b9bf-11cea3ddb70f</ui_id>
+        <values>H4sIAAAAAAAA/+1Vy27bMBD8lYJnW9DDUm3fghYBCrQN0AS5tIGwIlc2UYpURcqOa/jfu9QjNhIHNYocezGkIXd3ZrQD75lpXd06e2eurJUrzZbfHyZMao/R855JwZasDKGMFjziSZwlcRjG81lUZEkRxSIBhIRNmIYK6SY3Wkgnjc47YMI2oFp/QI9C2lrB7v6I8LVUosFhag0N1Ths2HL/7MjtaswVFKio8NY1Uq+o/FJuY+GHkdy7zx3yOms/j3A7TjKN8LSicMLw0aEWSKNLUBYnrAItwJlm94Q0COJGqyOwltr1iit4tPI39Y7T1F8skTTywY6n13ywanTJSI43tSfYIw4KNVpoVFvpr70ObzKW0Cp3YnJrqR/WnrRnMVAqb9dm+20ceC11J3A4VIaDenoDRzYUrUPrPwwqrKhRXkFdkzl53ZiN7IqJSxWsFL0EpTJbGuo3KgDuiQfkEQTXhH/s4HtopFfxhdpQcU+zACt53m0ftXMNSTh0tuS/Wk+oFzhIyXs36ILljazdFc3Z4MD6MBlWdwFpmUZhen49ZtmZJTjZ2v0+DkuB2Ww+TTiK6SxdZNMiAj4tkkWRzd9DDIsskA6r7ic3db9GuA1828PhRxuGidjkoM3LCLx1+7fI0wWGvcjTeRNfCVH8lxD5z35hhsIw/B+i0xBJm/dhGLR1w/85Qw8+CP0E2++NQC4tEbnz2KfxX8If7GgBJD+Ftqb56SUcscMfmbCHiW8GAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">e3790d2dfb756210f6d5f9d38eefdc12</block>
+        <comment>Popula o ano</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="RREO (Summary Report of Budget Execution)">569c0065fbfd2210f6d5f9d38eefdc8b</flow>
+        <flow_variables_assigned>var_ano</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>9</order>
+        <outputs_assigned/>
+        <parent_ui_id>cfdc988b-b11d-4942-b9bf-11cea3ddb70f</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 17:51:51</sys_created_on>
+        <sys_id>e7790d2dfb756210f6d5f9d38eefdc12</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 17:51:51</sys_updated_on>
+        <ui_id>45e87eb4-1522-46c8-928c-4e868bc4e337</ui_id>
+        <values>H4sIAAAAAAAA/72QzQ6CMBCE36VnSvxBBG4cvRMvxpilLbqxtqQtEEN4d1uD0aPx4G3ybWZ3ZkeiO9d2zla6tBbPihSHY0RQBeb1SJCTgpCIKLgJr3owJ1Dagx5kF8g4rhYNF2mS0TUTnCabPKX1Ehit13mdZltYQZ7G6MQtfnqmybs52lbCfT8v8YRdUHIj5gSWGWxdyRz2ft6AtGI6hqMGoZbin9l+W/JVHS4YWtSqCp12r6eHwd13QvaJBm2ujdTDm00PBHNZML4BAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">eb790d2dfb756210f6d5f9d38eefdc12</block>
+        <comment/>
+        <connected_to>cfdc988b-b11d-4942-b9bf-11cea3ddb70f</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="RREO (Summary Report of Budget Execution)">569c0065fbfd2210f6d5f9d38eefdc8b</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
+        <order>10</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 17:51:51</sys_created_on>
+        <sys_id>ef790d2dfb756210f6d5f9d38eefdc12</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 17:51:51</sys_updated_on>
+        <ui_id>fefe5d28-2611-4ce7-9f3a-4b1127da7629</ui_id>
+        <values>H4sIAAAAAAAA/+1VTY/TMBD9K8jnNMpHG9reVqCVkICV2NVeYBVN7Elr4cTBdtotVf8743y0FXRFhRAnLlXy7Jl572Weume6dU3r7IO+sVauarb8/BQwWXuMnvdMCrZkZQRlvOAxT5MsTaIomU/jIkuLOBEpICQsYDVUSDe5roV0Utd5BwRsA6r1B/QopG0U7B5PCF9LJQwOUxswVOPQsOX+pyO3azBXUKCiwntnZL2i8mu5jYVvRnKv3nfIy6z9PMLtOEkb4WnFUcDw2WEtkEaXoCwGrIJagNNmd0QMgrir1QlYy9r1iit4tvI79U5mM3+xRNLIBzuOr/lg1eiSlhzvGk+wRxwUarRQq7aqP/Y6vMlYQqvcmcmtpX7YeNKexUCpvF/r7adx4K2sO4HDodIc1PENHNlQtA6t/zCosKJGeQVNQ+bkjdEb2RUTlypcKXoJS6W3NNRvVAjcEw/JIwhvCX/bwY9gpFfxgdpQcU+zACt53m0ftXOGJBw6W/JvrSfUCxyk5L0bdMFyIxt3Q3M2OLA+BNetbnxhCc62dr9PolJgNp1PUo5iMp0tskkRA58U6aLI5q8hgUUWSodV95Prpl8j3Ia+7eHwpY2iVGzyitz7JQJ/u/0/yFN8KU+XTXwhRMlvQuQ/+5UZiqLof4jOQyRt3odh0NYN/+MMPfkg9BNsvzcCubRE5MFj78Z/CX+wowWQ/BzaavPVSzhhhx8HyS0BbwYAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">67790d2dfb756210f6d5f9d38eefdc13</block>
+        <comment>Popula o mês</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="RREO (Summary Report of Budget Execution)">569c0065fbfd2210f6d5f9d38eefdc8b</flow>
+        <flow_variables_assigned>var_mes</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>11</order>
+        <outputs_assigned/>
+        <parent_ui_id>fefe5d28-2611-4ce7-9f3a-4b1127da7629</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 17:51:51</sys_created_on>
+        <sys_id>6b790d2dfb756210f6d5f9d38eefdc13</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 17:51:51</sys_updated_on>
+        <ui_id>509ab718-88ae-46b1-9886-0418f90aabbf</ui_id>
+        <values>H4sIAAAAAAAA/72QMQ+CMBCF/0tnISqIwMboTlyMMUd76MVCSVsghvDfbY1GR+Pg9vJd3t17NzHV2663plSFMXRuWX44Lhi1njk9MRIsZ2zBWmjQqQH0qUHjwACy92Sa1staYBKnQcRRBPEmS4JqBTyooqxK0i2sIUtCstiED888O7cg00m47Z9LHOEXkkLjM4HhmjpbcEuDm9cgDc5Hf1QTVBL/me23JV/VEcjJkGpL32n3erof3Fwn4p9oVPpaSzW+2XwHAXIRCr4BAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">6f790d2dfb756210f6d5f9d38eefdc13</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="RREO (Summary Report of Budget Execution)">569c0065fbfd2210f6d5f9d38eefdc8b</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>12</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 17:51:51</sys_created_on>
+        <sys_id>63790d2dfb756210f6d5f9d38eefdc14</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 17:51:51</sys_updated_on>
+        <ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</ui_id>
+        <values>H4sIAAAAAAAA/+2U32rbMBTGXyXo2hjZrsOau9JRGGwrrKU3WzHHkpyIyZInyUmz4Afac+zFduQ/aehcFsYud2d/Rzrn+45/+EBM65vWu3tz5Zxca7L6/BgRqYOGzwciOVmRikKVXLKEZekySylN31wk5TIrk5RnICAjEdFQCzzJjObSS6OLXojIFlQbCtem1X7x88eCosilaxTsH+ZqbCMVt2J00oDFPl5Ysjq8KPl9IwoFpVDY4s5bqdd4/Vy/08XryfDifa+8niTMQ91Nk4zlwVZCIyKevNBc4OgKlBMRqUFz8Mbuj4oVwG+1ehY2UntsR8LhJye/Y+80z8PBSmBGJobi8bUYlzbIbGMkE7dNMDgoHko13mFGtbX+OOQI6xYVtMpP60alddhPNMF0cDFaqu42ZvdpGngjdR9wLCrDQB3fwOMaytYLFz6MUKLGRkUNTYPLKRprtrK/jF7qeK3wJa6U2eHQQFkMLBiPcUcQ36D+tpcfwMqQ4gO2wcuDzRKcZEVPJLbzFiN0/VqKb20wNAQcoxTDNvCAY1Y2/grnbMXouotGnC8hr/KE5vN4XCxnIDgh+XDok2xHszE+FCwQnHTdl5bSjM8gft6lf8H+GeF+Y38+8CvAp38APnyiM3mnlP4H/hR46YoB3DFbP/yveX8M0A4T3MANF0w6NHIftHfTXz4U9giAZKfSztivIcKz1v0CbiCgBC8GAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">e7790d2dfb756210f6d5f9d38eefdc15</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="RREO (Summary Report of Budget Execution)">569c0065fbfd2210f6d5f9d38eefdc8b</flow>
+        <flow_variables_assigned>var_mes,var_ano</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>20</order>
+        <outputs_assigned/>
+        <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 17:51:51</sys_created_on>
+        <sys_id>eb790d2dfb756210f6d5f9d38eefdc15</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 17:51:51</sys_updated_on>
+        <ui_id>6deb7984-2b14-4d0a-a4e7-d189ebcd7d31</ui_id>
+        <values>H4sIAAAAAAAA/7WQMQ7CMAxF7+K5J+jWkb1iQRUyiQsWaVLFSaqq6t2bCBAMDIDEZr1vf397ARfDGIO0rhHhs4X60FXAtrBcL8AaaoAKLA6Uq4T+OJBkkNBEumnqwkZ7ug+L8jyGRgVOWe/RCK3VWyO07lujrvR7xpOhz/NpltHgvP9D4l+sM9akWNjZthyye3y7CHPexuoVTc5fe+OmJ1s3I17t7LcBAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=569c0065fbfd2210f6d5f9d38eefdc8b"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=569c0065fbfd2210f6d5f9d38eefdc8b^sys_idNOT IN9b79c92dfb756210f6d5f9d38eefdcf7,e7790d2dfb756210f6d5f9d38eefdc07,ef790d2dfb756210f6d5f9d38eefdc09"/>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=integer,uiTypeLabel=Integer,uiUniqueId=9fc98cf4-2f8f-46ca-a232-6c078f64d1d2</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>var_count1</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Integer">integer</internal_type>
+        <label>var_count</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="RREO (Summary Report of Budget Execution)">569c0065fbfd2210f6d5f9d38eefdc8b</model>
+        <model_id>569c0065fbfd2210f6d5f9d38eefdc8b</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_variable_569c0065fbfd2210f6d5f9d38eefdc8b</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 17:51:51</sys_created_on>
+        <sys_id>9b79c92dfb756210f6d5f9d38eefdcf7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 17:51:51</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=72f2355b-0329-4d8c-b4dc-3cb07f54ba9d</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>var_ano</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>var_ano</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="RREO (Summary Report of Budget Execution)">569c0065fbfd2210f6d5f9d38eefdc8b</model>
+        <model_id>569c0065fbfd2210f6d5f9d38eefdc8b</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_variable_569c0065fbfd2210f6d5f9d38eefdc8b</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 17:51:51</sys_created_on>
+        <sys_id>e7790d2dfb756210f6d5f9d38eefdc07</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 17:51:51</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=3576bc47-0baa-4380-a20c-7f6e4ce1a770</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>var_mes</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>var_mes</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="RREO (Summary Report of Budget Execution)">569c0065fbfd2210f6d5f9d38eefdc8b</model>
+        <model_id>569c0065fbfd2210f6d5f9d38eefdc8b</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_variable_569c0065fbfd2210f6d5f9d38eefdc8b</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 17:51:51</sys_created_on>
+        <sys_id>ef790d2dfb756210f6d5f9d38eefdc09</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 17:51:51</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>record</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>pb</language>
+        <name>var__m_sys_hub_flow_input_569c0065fbfd2210f6d5f9d38eefdc8b</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 13:42:38</sys_created_on>
+        <sys_id>0970d4e9fbfd2210f6d5f9d38eefdcb5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 13:42:38</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>record</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_569c0065fbfd2210f6d5f9d38eefdc8b</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 13:25:49</sys_created_on>
+        <sys_id>d69c0065fbfd2210f6d5f9d38eefdc91</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 13:25:49</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_569c0065fbfd2210f6d5f9d38eefdc8b"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_569c0065fbfd2210f6d5f9d38eefdc8b"/>
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=1143000,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>27000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from>3e9700e9fbbd2210f6d5f9d38eefdcb6</copied_from>
+        <copied_from_name/>
+        <description/>
+        <flow_priority>MEDIUM</flow_priority>
+        <internal_name>rreo_summary_report_of_budget_execution</internal_name>
+        <label_cache>[{"name":"subflow.record","label":"Entrada➛Record","reference":"x_sded9_portal_t_0_registro_de_cargas_tesouro","reference_display":"Treasury Cargo Registration","type":"reference","base_type":"reference","column_name":"","usedInstances":{"b1c3d1ce-831a-4bfb-b59b-fac37677e4f9":["conditions"],"0a53884c-6d3f-4926-b143-7aebb7b97d97":["conditions"],"39268173-2ed3-4659-805a-84b15f1045a3":["parent_sys_id"],"c89a2cab-c4b6-4d9a-a522-66df72662c5e":["parent_sys_id"],"fb48067c-f6f5-45ab-b1f7-87e39e2b4f53":["parent_sys_id"],"83c6e11f-e93b-467c-9b7f-38bab9ae0a3b":["parent_sys_id"],"b68068aa-2262-4839-a185-5e13cd917f72":["parent_sys_id"],"d54d22bc-061e-44b3-8b1e-9ed82884ca5f":["parent_sys_id"]},"attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"f4b7b973-3190-4871-8403-baaef11efe7b","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"b1c3d1ce-831a-4bfb-b59b-fac37677e4f9.Records","label":"1 - Look Up Records➛Multi Row Question Answer Records","reference":"sc_multi_row_question_answer","reference_display":"Multi Row Question Answer","type":"records","base_type":"records","usedInstances":{"20fde648-3ced-4596-b1ac-b39b687a2a96":["items"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.value","label":"3 - For Each➛Multi Row Question Answer Record➛Value","reference":"","reference_display":"Value","type":"string","base_type":"string","parent_table_name":"sc_multi_row_question_answer","column_name":"value","usedInstances":{"3283fd25-754f-4540-a6dc-42c1d8b9e628":["conditions"],"45e87eb4-1522-46c8-928c-4e868bc4e337":["var_ano-0"],"509ab718-88ae-46b1-9886-0418f90aabbf":["var_mes-0"]}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.row_index","label":"3 - For Each➛Multi Row Question Answer Record➛Row index","reference":"","reference_display":"Row index","type":"long","base_type":"long","parent_table_name":"sc_multi_row_question_answer","column_name":"row_index","usedInstances":{"0a53884c-6d3f-4926-b143-7aebb7b97d97":["conditions"]}},{"name":"0a53884c-6d3f-4926-b143-7aebb7b97d97.Record.row_index","label":"14 - Look Up Record➛Multi Row Question Answer Record➛Índice de linha","reference":"","reference_display":"Índice de linha","type":"long","base_type":"long","parent_table_name":"sc_multi_row_question_answer","column_name":"row_index","usedInstances":{"39268173-2ed3-4659-805a-84b15f1045a3":["multirow_record"],"c89a2cab-c4b6-4d9a-a522-66df72662c5e":["multirow_record"],"fb48067c-f6f5-45ab-b1f7-87e39e2b4f53":["multirow_record"],"83c6e11f-e93b-467c-9b7f-38bab9ae0a3b":["multirow_record"],"b68068aa-2262-4839-a185-5e13cd917f72":["multirow_record"],"d54d22bc-061e-44b3-8b1e-9ed82884ca5f":["multirow_record"]}},{"name":"0a53884c-6d3f-4926-b143-7aebb7b97d97.status","label":"14 - Look Up Record➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Error","value":"1","order":0.0},{"label":"Success","value":"0","order":1.0}],"usedInstances":{},"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"0a53884c-6d3f-4926-b143-7aebb7b97d97.Record","label":"14 - Look Up Record➛Multi Row Question Answer Record","reference":"sc_multi_row_question_answer","reference_display":"Multi Row Question Answer","type":"reference","base_type":"reference","usedInstances":{},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf.Record","label":"13 - Look Up Record➛RREO (Relatório Resumido da Execução Orçamentária) Record","reference":"x_sded9_portal_t_0_u_rreo","reference_display":"RREO (Summary Report of Budget Execution)","type":"reference","base_type":"reference","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["record"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf.status","label":"13 - Look Up Record➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Error","value":"1","order":0.0},{"label":"Success","value":"0","order":1.0}],"usedInstances":{"cc765906-5769-430a-b4ae-373f078cb540":["condition"]},"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf.__action_status__","label":"13 - Look Up Record➛Action Status","reference_display":"Action Status","type":"object","base_type":"object","usedInstances":{},"attributes":{"uiType":"object","co_type_name":"FDACTIONSTATUS","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"d54d22bc-061e-44b3-8b1e-9ed82884ca5f.rreo","label":"15 - Get MRVS Values (RREO)➛RREO","reference_display":"RREO","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["rreo_according_to_lrf_fiscal_responsibility_law_2"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["rreo_according_to_lrf_fiscal_responsibility_law_2"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"f552e66c-f522-45a5-8abc-fb82bf0d5a07"}},{"name":"d54d22bc-061e-44b3-8b1e-9ed82884ca5f.rreo_ajustado","label":"15 - Get MRVS Values (RREO)➛RREO Ajustado","reference_display":"RREO Ajustado","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["adjusted_rreo_fiscal_management_report_2"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["adjusted_rreo_fiscal_management_report_2"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"97ccce28-34b2-4066-a099-9b0cf93443dd"}},{"name":"d54d22bc-061e-44b3-8b1e-9ed82884ca5f.mes","label":"15 - Get MRVS Values (RREO)➛Mês","reference_display":"Mês","type":"string","base_type":"string","usedInstances":{"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_mes"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"0ddd278d-520e-4619-82a0-46346cd50045"}},{"name":"d54d22bc-061e-44b3-8b1e-9ed82884ca5f.ano","label":"15 - Get MRVS Values (RREO)➛Ano","reference_display":"Ano","type":"string","base_type":"string","usedInstances":{"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_ano"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"0e1cc34c-2b5e-4d54-a04e-32522d615aba"}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.item_option_new.name","label":"3 - For Each➛Multi Row Question Answer Record➛Question➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"item_option_new","column_name":"name","usedInstances":{"cfdc988b-b11d-4942-b9bf-11cea3ddb70f":["condition"],"fefe5d28-2611-4ce7-9f3a-4b1127da7629":["condition"]}},{"name":"flow_variable.var_count1","label":"Flow Variables➛var_count","reference":"","reference_display":"","type":"integer","base_type":"integer","usedInstances":{"b6f98993-2de4-48f4-9d42-7ad52358075f":["condition"],"3c031a62-dd97-42a9-ae1e-b0b41c896ded":["condition"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"9fc98cf4-2f8f-46ca-a232-6c078f64d1d2"}},{"name":"flow_variable.var_ano","label":"Flow Variables➛var_ano","type":"string","base_type":"string","usedInstances":{"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf":["conditions"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"72f2355b-0329-4d8c-b4dc-3cb07f54ba9d"}},{"name":"flow_variable.var_mes","label":"Flow Variables➛var_mes","type":"string","base_type":"string","usedInstances":{"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf":["conditions"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"3576bc47-0baa-4380-a20c-7f6e4ce1a770"}}]</label_cache>
+        <master>true</master>
+        <name>RREO (Summary Report of Budget Execution)</name>
+        <natlang/>
+        <outputs/>
+        <parent_flow display_value="RREO (Summary Report of Budget Execution)">569c0065fbfd2210f6d5f9d38eefdc8b</parent_flow>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 13:42:45</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>667018e9fbfd2210f6d5f9d38eefdc64</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 17:51:55</sys_updated_on>
+        <type>subflow</type>
+        <version>2</version>
+    </sys_hub_flow_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=667018e9fbfd2210f6d5f9d38eefdc64"/>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>667018e9fbfd2210f6d5f9d38eefdc64</documentkey>
+        <fieldname>annotation</fieldname>
+        <language>pb</language>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 13:42:45</sys_created_on>
+        <sys_id>6e7018e9fbfd2210f6d5f9d38eefdc64</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 13:42:45</sys_updated_on>
+        <tablename>sys_hub_flow_snapshot</tablename>
+        <value/>
+    </sys_translated_text>
+    <sys_variable_value action="delete_multiple" query="document_key=667018e9fbfd2210f6d5f9d38eefdc64"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=667018e9fbfd2210f6d5f9d38eefdc64"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=667018e9fbfd2210f6d5f9d38eefdc64^sys_idNOT INa27018e9fbfd2210f6d5f9d38eefdc65"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>667018e9fbfd2210f6d5f9d38eefdc64</id>
+        <name>RREO (Summary Report of Budget Execution)</name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 13:42:45</sys_created_on>
+        <sys_id>a27018e9fbfd2210f6d5f9d38eefdc65</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 13:42:45</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=a27018e9fbfd2210f6d5f9d38eefdc65"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=667018e9fbfd2210f6d5f9d38eefdc64^sys_idNOT INae7018e9fbfd2210f6d5f9d38eefdc65"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference,uiUniqueId=f4b7b973-3190-4871-8403-baaef11efe7b</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table>x_sded9_portal_t_0_registro_de_cargas_tesouro</choice_table>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>record</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="RREO (Summary Report of Budget Execution)">667018e9fbfd2210f6d5f9d38eefdc64</model>
+        <model_id>667018e9fbfd2210f6d5f9d38eefdc64</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_667018e9fbfd2210f6d5f9d38eefdc64</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="x_sded9_portal_t_0_registro_de_cargas_tesouro">x_sded9_portal_t_0_registro_de_cargas_tesouro</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 13:42:45</sys_created_on>
+        <sys_id>ae7018e9fbfd2210f6d5f9d38eefdc65</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 13:42:45</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=ae7018e9fbfd2210f6d5f9d38eefdc65"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=667018e9fbfd2210f6d5f9d38eefdc64"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=667018e9fbfd2210f6d5f9d38eefdc64"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=667018e9fbfd2210f6d5f9d38eefdc64"/>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=667018e9fbfd2210f6d5f9d38eefdc64^sys_idNOT IN227018e9fbfd2210f6d5f9d38eefdc87,ea7018e9fbfd2210f6d5f9d38eefdc87,e27018e9fbfd2210f6d5f9d38eefdc87,a67018e9fbfd2210f6d5f9d38eefdc87,ae7018e9fbfd2210f6d5f9d38eefdc87,627018e9fbfd2210f6d5f9d38eefdc88"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Records">43400a1587003300663ca1bb36cb0b4b</action_type>
+        <action_type_parent display_value="Look Up Records">d1c56ec50b30030085c083eb37673a50</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>43400a1587003300663ca1bb36cb0b4b</compiled_snapshot>
+        <display_text/>
+        <flow display_value="RREO (Summary Report of Budget Execution)">667018e9fbfd2210f6d5f9d38eefdc64</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 13:42:45</sys_created_on>
+        <sys_id>227018e9fbfd2210f6d5f9d38eefdc87</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 14:30:48</sys_updated_on>
+        <ui_id>b1c3d1ce-831a-4bfb-b59b-fac37677e4f9</ui_id>
+        <values>H4sIAAAAAAAA/+VXXU/bMBT9K1GeqyilpTDeEAhpElCtIF4YWE7stNacOLOdflD1v+86dtKoDV0rlQm0R997bZ97fI7jPC99RvwL/zzphyHunp6fhWGvF4aDQS/G3SjqDeIojPqR3/EznFKo1DjiFIZTzAszVjFKC64ZkmKGfhdUaSYyhDM1oxLKCFM5x4snV31nSr2RmHk/XKl3WZXGE8aJpJl/8fzS8XMsYUMNmYvlRmpfxBxHlEPpo4O80YFe5PUQlTkbu21O8+5tQkhioIQdn841zQgFDAnminb8FGcEayEXdURSTIYZXwcmLNOwom+K54q9wb7noalLKHQVU5urh8ixZsPJNdb4Qcsi1oV0pfFEsJgqywehCQZer5oxWzDMDcV2im3bzha8SLN7S4dfL1AdEkQKBSBobho1yF0bycNEzEYVyhuWlZy4JBcx5vUIay1ZVGiDZ+lTTlNYCKU4z1k2RrkUU1ZOBixpMOYwCBIOCiJUsXEW4NgAD4BXHNxA/LoMP2HJTBd3sEwpmYRxUAiyR6hEIUsqpyjmhSoTEoRo1/JXHV8t1BXHSq07B8pBtAa35cF1jCxpZkosWa4vYYkpdc2tOnuZ5jRcSy4WGWEGhWo4h2maIlGeEMroLDC1PwtYikzBP+J1ONpVkVL1Ch4xYBmxweVSFZFhMZA0BsGuVtsG/DebHtPKJY+Vla+aRLaR60y9FbttW8CZuns0U0MfX8nWsPnnc/XhPrUU/MWs8dlOkZ2u9aSE1Mhy2XCr+bwZaubbnmqmDlP+HqAq5Q+NVr1o8R5OJ/yEUU7avmY3JrHxNTv5P79mn1L2AIgge3os4ywrnyYA9KP8EO6+dL9t6KyUV+PVZ2JYxdtmwJ4W3tvBTtgDTuWEB9jbe7R4WiBWX4BSMpu3fxV0BugdzQC9k+MYYFm3WRPZwnn1GjWnWdW/mXq8WQ8SbEzortoMdtCe3UP3PFltG7h3kIObYrOZ63c0d+Rn6zuO7HzkFTCBqW4/ZP2LZoyMqV7vXlURoWeY/2rLO8Wh6qDK9j7gCdzfadtBd21RcAqSVMHhNd/AXXgwbd8h3cCGD7tC9sBS0XGH596oBtOK0F0j4HQ6Ls+meY98r6NO5P0jPiE/7Ze0OqxWD1Zn9iX+HI9nhJc/riNko0IRAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Get MRVS Values (RREO)">9f8f40a9fbfd2210f6d5f9d38eefdc0f</action_type>
+        <action_type_parent display_value="Get MRVS Values (RREO)">250e48e5fbfd2210f6d5f9d38eefdc52</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>9f8f40a9fbfd2210f6d5f9d38eefdc0f</compiled_snapshot>
+        <display_text/>
+        <flow display_value="RREO (Summary Report of Budget Execution)">667018e9fbfd2210f6d5f9d38eefdc64</flow>
+        <generation_source/>
+        <order>15</order>
+        <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 13:42:45</sys_created_on>
+        <sys_id>ea7018e9fbfd2210f6d5f9d38eefdc87</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 17:51:55</sys_updated_on>
+        <ui_id>d54d22bc-061e-44b3-8b1e-9ed82884ca5f</ui_id>
+        <values>H4sIAAAAAAAA/71V22rjMBD9laDn2Di+O29LS6Gwu12Sbl9KMWNLSgTypZLcJhvy7zuKnTTpbksLoY+a65kzc9D9hghKpiQqUh56kPGCU9+feDymEc9okDLGaTmZkDGpoWIYWXXSCNU854qVjaLoeALZWc9m40EUpGlYOjENuBNmfuwUkzBwEmBFkRRZQrPEne3yXFtC1JSttlusQYVuJazvzlCqXApJFavJ9P5hTFpQiNswRaabV66PDi6hYBJDZ83z6Nq2eY8Ms26tQxsl6sXw/j4UmO+NGGoBTcaErQzDkoiEg9RsTCqoKZhGrcnUqA4NigG9qeX6ELEUtcFixMautPiD7VLP82wkZzhcyXrv4ZkP5PZmfgkGEElXmk4NoeWyESXTPS2UccCxLo5tfcBNa0RT9ykGCrnPbmRX1T97RsihwH6XaOk0gmCtndRiHwbh82XzPNujvLIbVAenbEqQhxcYpK7ojMWzIZ24fcVyb/mHZyZZhR3zCtoWLXmrmiex64KgK3ch8eFyifujTItF7UJpJ3RxA+Beof1yZ74DJey4P7AMJtt2v2vx2LFre0E+hyzIkshJWAJOCEnoZEHInQIYTZI08mOvJNsx0Wt9IUHrF6JwQ/ljZ8fsaRsIynuObUqpRGu+IagnNnCxHQ+KzYJ3Dzd8OVKUgK2K/XNxqlfdFXZ6t7/e/wnx03r6AKy9nn7tcI3maz26vnwb7qCol+s+FdXsyD7oyj+XrgL/VFWrXGPNLG8bZUDmJvdQ+AuBZ9jgBeUlqAXoHK+06VTzhgRvsbHu1Hp0gdHNaNbnw05ZZ1fnZwF/gZT5nIEql1eCSXsvdVcVO029IfHjtZ+q/HjxXyJ0/HNoHEeRM4EgdsIwjpw080qniH38j8KM+mFwRqE//AWLG20vnAcAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
+        <display_text/>
+        <flow display_value="RREO (Summary Report of Budget Execution)">667018e9fbfd2210f6d5f9d38eefdc64</flow>
+        <generation_source/>
+        <order>13</order>
+        <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 13:42:45</sys_created_on>
+        <sys_id>e27018e9fbfd2210f6d5f9d38eefdc87</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 17:51:55</sys_updated_on>
+        <ui_id>f55fbb1c-5a9e-441e-ba14-6cf57444d9bf</ui_id>
+        <values>H4sIAAAAAAAA/+VY227bOBD9FUFPu4DjlXx33hZJDRTo1oCT7UvbJSiRiomlSZWknDiGP6bYh37AfoJ/rCNRsgVbvgjrAAn2zeQMyTMz5wwpf166jLjXLhl6w2g47A76ntdue16v1w6xHwTtXhh4Ae64DVfgGQVPgwNOYTjHPEnHT0gTSoYolspgjgzyUIKUohJ8CNMxx4tPuetk8m7s/DKhHJv1v4pJZ0J1MmNEOgQ7755omKx/rP+Rzlitf8Bhwqy/K4Z/hY3CKeNEUeFef/7acGOswGyocq+XO6Zzg+E4oBxc7/NodoIzi3gzRJnNzn0oL3M+WoNUJIXiNVz6ZKiAbLjXEeaaNtwZFgQbqRabGUUxGQu+nZgyYWBHN3V+0uwZzh14qV9EIaqQWttmiPKc2unoFht8Z1QSmkTlruFUspBqmw9CI5xwc1Oesw7j2DAp7BIbtl0teTITH2063M0GRQlhJtEAgsZpoCnyPIzobiofJwXKERNZTnIjlyHmmxE2RrEgMSmepUs5TUuNZjiOmXhAsZJzli0GLLPmA4dBM+LyEQ7V7EE0cZgCb0JecXME87fZ9CcMVIEo/oBtYDEAYhwYgmwJtUxUlso5CnmiM4PCQtu93FXD1Qt9w7HW28gh5ehbkuK2ecgjRjZp6ZJQsdj8DlvMaR7cqlHoqXuUgsMt5UIpCEtR6JKoEoSF/JLAWrJcZsHP8/ia8CM1rlZ/JWhG9WEnMK5W+yK85NY1ZXk6J4Usb8pJqUpULtC9uQ9VG+QC9S8m0I7nvSWJwuGvT6H1NWdTcEJ4PjlKMrLlk4YLC9lclpS3L5jaPD8DQsHzccpMJ1gcQpXTPGKUk6p7aJQadu6h1v/zHnqVJAdABNnqMcGZyB4VAPSl2N89Sr3A3+FZRq8t97M5rMN9DWDHSOe5thLOgFMo4Q7Odu4tngqIRb/PKLPb64vJXADtiwmg3bqMAJabMDeJrMh58Y5Mq1n4P6f+eNcfKFha4K+qBFbrTL/uma3VvoDbtRRcJpu13B7g3IUfnAcU2XjJFjCFpfl5yOoXPTLyQM329MKLSPOI+d9V9pxxqChUFt4LPF79o99PQenxyiI0g8qxGN7YioZADo2woiiSiSAof12XnrVQyYgpbXLnik9ECvoRjgRhOmZKnczb2XjXvIhPx1Gk8n3kFIHkp2kHAnGyQJxNIPXCrtO0Ohd8nF66aY0w41k14MMpLpWTKiXVgcZ1opBHGHFmVzsTlH9RUP+97VVJoLL9ncD6Jr7CL9+aQoqDTgv3+m3f9zzfI31v0O/7g14Q9XC/E201ipAWIXRT2DkCqsD2qKBGUWd/v//kzbZenzkDVMHAWynSz+pW3zgpKiivU6A6jTvvJ4GUnGKx01DuAflvo+xG2NC1++qaypv4Syph97uZtlOVuX6pZ0PC/hTsW0LfpxQbUK818El4Nej7/atORHpXQ4K7V3gYdPttQsNOdMmXwNefZgHZ6xgWAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
+        <display_text/>
+        <flow display_value="RREO (Summary Report of Budget Execution)">667018e9fbfd2210f6d5f9d38eefdc64</flow>
+        <generation_source/>
+        <order>14</order>
+        <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 13:42:45</sys_created_on>
+        <sys_id>a67018e9fbfd2210f6d5f9d38eefdc87</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 17:51:55</sys_updated_on>
+        <ui_id>0a53884c-6d3f-4926-b143-7aebb7b97d97</ui_id>
+        <values>H4sIAAAAAAAA/+VYUW/iOBD+K1GegUsIJNC3VSuklXa3ura3L3t7lhM7xTpjZ2OnlCL++41jBxBQIDp6anWPHo/tb8bfNxnnx9JnxL/yyTgY5+PxcJQEQRQFQRxHGQ7TNIqzNEjxwO/4As8oeGqccgrDJ8wrM1YZmlVcM1TKOfpVUaWZFAgLNacluBGmCo4X3533V+Pq3cm597tz9T41rtmUcVJS4V/9+NnxC1zCgRpmrpY7U+ci5jilHFwfHOSdCPSiWA9RPWdtX7aXed/shCyJgRJ0fPqsqSAUMOSYK9rxZ1gQrGW5WFtKismt4BvDlAkNO/rG+VmxFzh3FBi/nEJUGbVz6yFyWbPm/AZrfK/LKtNV6VyzqWQZVTYfhOYY8nq9bbMOt4VJsV1iw7arJa9m4ptNh7/eoLkksFQKQNDCBGqQuzDy+6mc3zUoJ0zUOXGTXGaYr0dY65KllTZ4lj7ldAYboRkuCiYeUVHKJ1YvBiyz3iOHQS/nwCBCFXsUPZwZ4D3IK+5NwH5Tm7/jkpkovsI2NWVyxoEhyF6hklVZp/IJZbxS9UQJRLR7+auOrxbqmmOlNpFDyoG0BrfNg4sY2aSZJVnJCv0JtniiLrhVpxHN8CgFxxvKZVIQZlCoLeUAw81RjPxZwXqyXKoqNTnolTQDuq1WfxlJmSQ/Nx79ICc0Hoy6UUZJdzAcx900xFk3jcZpPEpwH4/jHtN01lsvXa32VfgfntxS1Kcz2oj6ejulh9Ls5L1n+3JoAyfv8GLyHgTBRxI4HP7+9N1esTYFJ2QbkqMkIxs+KVlqZHO5pdt9PbXm+RkQGp7fGmZ66eI1VI7mOaOcHPqKTczEzles///8ir1LkgMgguztMcGZqFsSAPpW7B8epV4a7vCsptdWt2dsWGX7GsCelt5LayWcAadRwj2c7T1YPAcgNvW+psxurW+MTgDRxQQQ9S8jgOU6zHUiD+S86ULNbTb+L8Yf7/oDBbcWhKtDAmt1Ztj2zP5qX8BRKwVvk83O3LzCuQu3q68osvOWJWAKS915yOoXzRl5pHpzeuNFpJ5j/vehecc41FxUHd4btL7h0ddXutX6sty+Dwvo0G17qRC0nyiXlSDI9eYbIpmbzFmptHPeLzR3FPQjPAnC9PSUerW3t/Zu+SE+HUeTys+51wTiTlMeBOLVgXjrQNqF3aZoDS7YnF66aE0w4/VtwLOr2LpOWpayfKVwnbjII4w4s6qdCSq8KKh/X/YOSeBg+TuB9UO84S9fmjKK00Efx0kUhkEQBiQJRkkSjuI0j3EyyDcaRUiJDKop7JwDVWB71FCjuedgv/7Yktq20JyBqqHgjRTm1d1PtGdgwf16DazTwF1BSaXkFIudivIA34nfJg6/4+vw3VWVD/FHq2IPu5m2poO5fqu+oWJ/CParop8NxUY06I9CknVHSZh0BzmJu2OCh108TodJRGg2yC/ZCvz8B7qKcL88FgAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="RREO (Summary Report of Budget Execution)">667018e9fbfd2210f6d5f9d38eefdc64</flow>
+        <generation_source/>
+        <order>17</order>
+        <parent_ui_id>cc765906-5769-430a-b4ae-373f078cb540</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 13:42:45</sys_created_on>
+        <sys_id>ae7018e9fbfd2210f6d5f9d38eefdc87</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 17:51:55</sys_updated_on>
+        <ui_id>30bd6918-a95f-4a24-b688-772ee9e9bf9e</ui_id>
+        <values>H4sIAAAAAAAA/+VVS27bMBC9iqBVC9iGJMuu7V0RJ0CBNAacIps0JUbkyGFBiSpJJXYNH6boIgfoEXyxkvo4RhKkSZFNWq/EIWf43vO84fna58yf+DGyIByHQ9oP+/0oCKJRHCbDfhJGrA+Iod/xc8jQnlRIpWJ2fQWidIH1Oh0M0iQJaXcAY+zGcYjdBMK4O6Tp4F0cx2ycpL15lbfZ2EzGdSFgddYUsBF6yQVTmPuT84uOX4CydxlU/mR9Z+upYAUkKOzReYv2LnqzKtyaSVpmmBvC2+BxkzltdrwPU7tjkxycMOj4uDSYM7RAUhAaO34GOQMj1cqfGFXagEJgs1ysdicueW5qohksNf9ub44Ddy5Fy4w2IuyWpBGoDqdTMHBqK1NTqp1eklPUtSYMUyiFOdiP1QdmheEyr1MMJKLNlqLM8pNaEX9XYO//KLUFgYXj6ZDXtNLTS3k9b0Ee8bySpKEoJAWxW4ExiielcXDWPgqsNM6gKHi+IIWSV7xKtlCy3kLYRS8V8treqfki7wF1uHtWVegd2fi0Cp+B4o7ER1vGJm86vl7pAwFa31KxGpJvpUNSE2sokEqFSgJSdYJLpooX5r296gob4JtOY4dk8FiH0fFtQ+3VvLXEkmjbIGNSSGVAEEMCUhKlUN5v/vn8cOa9maMAs/2luPTmqMuMM+kx8A6XSMvtzfan9GZqewNOxe0Pq8LbZ3vmCYxaz3yqOuVhho1t7sWO93O9k3qjMc3gxUwzek2maWi8etf8yStB9Og03uukyh56zyfAvpbaIKu8QVKurRqWbw6LmrpC5yASfS6DoM/WazaIWRQltBsMQ/fQJP3uKLFfY2SjaDSKKQzSXlULXGFgcrP5Uq+pm/tORiOJUGl7mUJdyFzzhAtuVkTA9V/c9tCj9i9Re96keUI/tJPmiKNg+oEGaccMZlZTg6RumDujptn0zprN3Rv9YvMmHAbV7xVNnf/mqb74DUL99a67CgAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Create Record">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent display_value="Create Record">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="RREO (Summary Report of Budget Execution)">667018e9fbfd2210f6d5f9d38eefdc64</flow>
+        <generation_source/>
+        <order>19</order>
+        <parent_ui_id>bbf158a1-4051-412a-803b-c34c3913e71b</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 13:42:45</sys_created_on>
+        <sys_id>627018e9fbfd2210f6d5f9d38eefdc88</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 17:51:55</sys_updated_on>
+        <ui_id>070c3028-da05-4dc4-afc6-b2410b50b51a</ui_id>
+        <values>H4sIAAAAAAAA/+1VzW7aQBB+FbSnViLIBoKAW5WfUxskUuWSpquxdwxbrb3u/iRQxMNUPeQB+gi8WGdtQ1Aa1CbqJVI5Mf/zfTszvl4xKdiYDWKMjkfxIO3FvV43irrDfpwMekncFT1A7LM2KyBH8nSQKOSV0Ga3oHxQLrgVKEa81MaB4o5H3HNjUJOPkLZUsLxqXKfTs0nrzRQVuM1PI3VritbnUuiWgNbZAlO/ud/80K2J2dxTkcJtvhsJbylROpdKGCzY+PqmzUowZHZo2Hj1yPS3iBQkqMj1Y4B0AKFblk/q3u/Hti5qgzYi9BO1GS4cFkQJG2egLLZZDoUAp82SjZ3xpDAIYlKo5c5jLgtHCVnwXVj5jcoOo+CXISFLsbbtRN7wWquzU3BwSZlT503jms61TNHWnAjMwCt3sq+rHSalk7qoQyqYTbRWPi8uakrYLsH2GUnjLTWBZcAZOm9gZJdzfTfddnkui4qSxqh0CmongXNGJt6FflYMFYbn5jmUpSxmvDT6VlbB1EvemSkSOpnSd1TUylnRgTQ03iFaoXNO+tNKfQU0LoTiA6Wh4HWb2aU9UWDtAxYikX/1oZMaWYOB1zSEkNTI0r2jArfYtLtub1dFYDQ6OFhx8jBI1XbYvTXxHAr9yUdRT6xW4rgvut0kPYpoVI/6/aR3NEzo3wjFsDsc9lM4zjrkv15/9jxH+6w48qc4EF+8dSiqVeSZtMQ+8VvArKbaYFhY3n1W6ioXhMQgQnO1nKY0/OHZnObKZNtiBm2pCysTqaRbcgV3L6i2Xv9+Rv5T+XIqn3lI/zzv20N6LlEJ+8QCbK8o5vSGDnm9EI8uaWNsXTXG5prG/+qaxoOo+r2im1qDe/Unde/reeC43vwClMzdG4kIAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=667018e9fbfd2210f6d5f9d38eefdc64"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=667018e9fbfd2210f6d5f9d38eefdc64^sys_idNOT IN6e7018e9fbfd2210f6d5f9d38eefdc85,667018e9fbfd2210f6d5f9d38eefdc86,ea7018e9fbfd2210f6d5f9d38eefdc86,c8890d2dfb756210f6d5f9d38eefdc6d,c8890d2dfb756210f6d5f9d38eefdc6e,40890d2dfb756210f6d5f9d38eefdc6f,c4890d2dfb756210f6d5f9d38eefdc6f,4c890d2dfb756210f6d5f9d38eefdc6f,c0890d2dfb756210f6d5f9d38eefdc70,48890d2dfb756210f6d5f9d38eefdc70,cc890d2dfb756210f6d5f9d38eefdc70,44890d2dfb756210f6d5f9d38eefdc71,c8890d2dfb756210f6d5f9d38eefdc71,d8890d2dfb756210f6d5f9d38eefdc72"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">212b3741fbf1621086e7f4045eefdcdc</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="RREO (Summary Report of Budget Execution)">667018e9fbfd2210f6d5f9d38eefdc64</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="For Each">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
+        <order>3</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 13:42:45</sys_created_on>
+        <sys_id>6e7018e9fbfd2210f6d5f9d38eefdc85</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 17:51:54</sys_updated_on>
+        <ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</ui_id>
+        <values>H4sIAAAAAAAA/51TXW+jMBD8L34miI9cUvJWtapU6e4qpVVfThVa7CWxzticbZJyiP9+60Bo1cd7gh3vzs4MZmCm823n3Yu5dU4eNNv9eouY1AGj94FpaJDtmPTYOBaxE6gu1MNQpTwXKcfVTZ7Cal3V1ar6VlSrGni+3Wy3uK6LeI/cWOHGkUaFdK2C/vX/GfhRKmFxFtmCJW0eLdsNX46koAVpIeoiTQqeZ5s8S5LsZp1Wm7xKM5EDig0RKqhQUevj7O6LWd+3obSThBn4Ps/sF5QeQUSWRAzfPWqBtL4G5TBiDWgB3tie7bztCLAI4kmrfuk4Su2JjoXedyf/0sY0SUJjjWSI43S4lOWc4wTX9+Dhmai57+zcyo9GcnRTFAJr6JS/+4xNDU+tl0ZPIx4qdZ02qmv0zykJthBcPxshnSMR2AajQfrso34+mvP+qvJB6kso86EyHNRSgfdWVp0PegaGChsiKhtoW6kPZWvNSV6GSUsTHxQVca3MmZaGKxoDD8JjyhXiB8LvL/ArWBlc/CAaGh4j5np3p8C5Dy8UYvmnC0omZ7OHcoohjHArW39LC044yx3fwq2fuJdMuXQk4SVgj9d/JRz0dIMk/wydjf0dxH9g4z8Uu0oRdQMAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">612b3741fbf1621086e7f4045eefdcde</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="RREO (Summary Report of Budget Execution)">667018e9fbfd2210f6d5f9d38eefdc64</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>16</order>
+        <outputs_assigned/>
+        <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 13:42:45</sys_created_on>
+        <sys_id>667018e9fbfd2210f6d5f9d38eefdc86</sys_id>
+        <sys_mod_count>13</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 17:51:55</sys_updated_on>
+        <ui_id>cc765906-5769-430a-b4ae-373f078cb540</ui_id>
+        <values>H4sIAAAAAAAA/+1VXW/TMBT9K5Gf0yppkkL7NnVMQhpMYtNe2BTd+KO1cO1gO9tK1P/OdT7aiRXBgEfe4uN7r8859lFaYhpfN97dmDPn5FqT5ef7mEgdMPxuiYYtJ0tCjWbSS6PLDojJA6gmbNyCMjZiPDrTJnqnsc5bYCbSEN1AxRVEF1KDwg4mXa1gd/vqRrqRilk+cKvBIgPPLVm2P2xJhnNFAiJd0JRms3k2S5LZ2zyt5lmVzlgGHDIcqMJ8LF2NoqLLDol/qtbv6oA7b6VeD+vLYcr1CBrLAqs0iQl/8lwzjnwEKMdjsgXNwBu7OyCWA7vS6ghspPY4joTiJye/4YGzogiFgqNEyvvNw7IcDO1hcQ4ekEpDfWOHUroxknLXm8O4gEb51XOsL7iqg9S+xUOlxm6jmq3+2DtCDgPG+0OkcUiC10FpoD7oENcb8/hpZImX2LkybCpD8U7HFXj0rmp84NMSrvgWB5VbqGt0tKyteZBdM3LZTtcKF1OhzCMeGt7qFGggPkVjYXqB+HkH34KVQcUHHIPNPc0KnKRl965xHNrEyT4mbudWCpw7ikR3y69NoNhLHsSVvT+hhVpZ+zM8+YEPOvbxy5g8S0jbiqIQVZXSSQELPsnzlE8qSPPJnIriTZ7nbFGJqfPgG7ff3zVJkrHkZWD+eM7r8rOAQhRpUpzOTz4/lZ8TyXllaGa/CE24sd/MTJIk/0Pz16GRruyf+qCtO/wfZuY+BKQ/8+A1lQ6p3QTs/fgHChs7fFySPocejf0SRB2x/XegvCDnywYAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">f7ee3f85fbf1621086e7f4045eefdc51</block>
+        <comment/>
+        <connected_to>cc765906-5769-430a-b4ae-373f078cb540</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="RREO (Summary Report of Budget Execution)">667018e9fbfd2210f6d5f9d38eefdc64</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>18</order>
+        <outputs_assigned/>
+        <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 13:42:45</sys_created_on>
+        <sys_id>ea7018e9fbfd2210f6d5f9d38eefdc86</sys_id>
+        <sys_mod_count>13</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 17:51:55</sys_updated_on>
+        <ui_id>bbf158a1-4051-412a-803b-c34c3913e71b</ui_id>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">a7790d2dfb756210f6d5f9d38eefdc0e</block>
+        <comment>Setando o count em 0</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="RREO (Summary Report of Budget Execution)">667018e9fbfd2210f6d5f9d38eefdc64</flow>
+        <flow_variables_assigned>var_count1</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 17:51:54</sys_created_on>
+        <sys_id>c8890d2dfb756210f6d5f9d38eefdc6d</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 17:51:54</sys_updated_on>
+        <ui_id>f4620f47-34ec-411b-af22-18f36db78b5b</ui_id>
+        <values>H4sIAAAAAAAA/+2V224aMRCG38XXgGBDON1FiSIhtY3U0NxU0Wqwx2DFa298gFDEu3e8Xg5K1TwBd/Y39sw/v215z2wMdQx+Ye+8VyvDZr9fO0yZxGi8Z0qwGWMdZqBCGm3AldxGEwbENqBjgn0aC+VrDbuXC8TXSguHbc4aHKUI6Nhs/ynU1Jgux1M+LYRcjm9HxaAvR+JWTsXNBFEKLseUUMMS9aWI/+gKuzoxZQKuqF4G39rN8xO1TiQ1/Q7Dj4BGIMmQoD12WAVGQLBudyIOQTwZfQZrSp+tqeDDqz9UcdhP6yRSYxxz7DQtW4Mylg8Q4Dm4yEN07VK+toqjz5YIlBB1uL9kecFTHZQ1eUuApT7utjpW5kd2g50SHM+DSPQkAuvUaFLetiGf13b786jyUZnGkzaoLQd9mkEITi1jSHr2LKrFZ5sz+tdo1FhRzbKCulZmVdbOblRTh2RXvZWmSU9quyV96RL2gKcee3QE0Hsk/tDgF3AqNfyd0rT1fhn1HnHe3B/JpxMuh91CTmR3OOLQheKm6I54fzyRo6EYiIIdOszv/L0G789W0RmV7zE1mo1rLSqzy2kLd6oOdyRqg60bh9d0/bOe60O5PpTrQ/nioQjkypPORRI1P/4tKbCjW6n4Jdpa95Y6PLPDX+NJ1u6lBgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">6b790d2dfb756210f6d5f9d38eefdc0f</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="RREO (Summary Report of Budget Execution)">667018e9fbfd2210f6d5f9d38eefdc64</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>4</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 17:51:54</sys_created_on>
+        <sys_id>c8890d2dfb756210f6d5f9d38eefdc6e</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 17:51:54</sys_updated_on>
+        <ui_id>b6f98993-2de4-48f4-9d42-7ad52358075f</ui_id>
+        <values>H4sIAAAAAAAA/+1VXWvbMBT9K0PPxsh2E9a8lZTCoFthLX3ZirmW5UZMljx9JM1M/vuubMUJa8ZStse9SUe6uucc34N7or3rvLMP+spa8azI4stTQoQKGK57ImqyIA2FJrtkGSvyeZFTmr+/yKp5UWV5XQCHgiREQcvxJtOqFk5oVQ5AQtYgfTjAZS1sJ2H7eEDYSsja8Ni1A4M1jhuy6H85OpeFhIpLvLrc03h3OyC/5+e2XcCtM0I9x/1tfOV+D2pTB1YZTQh/cVzVHPk0IC1PSAuqBqfNdkIMh/pOyQOwEsqNglt4seIHNsxns3Cx4SiRRTembRmdGuHmGhwgFc+cN5NxWjBuR3Nq3oCXbnmMjRfuuiB1LHFQyX21lr5Vn0ZHyPTA0YfxFknwLigN1KOO5n6lN5/3LG+EGlyJh1IzkNMOHHpXeRf49IRL3uJDZQtdh46WndFrMRQjlzZ9lrhJG6k32DRMYQosEE/RWEhvEL8e4EcwIqj4iM9g8UizAitYOUwsPoc2cbJLiN3apQRrDyLR3fK7DxRHyVFcOfoTSpgRnbvCzmsedeySGIBLmDWzjM5Oj97F/MSAHc1+3w/a1pF+iouSaa9cttt99ZQWNX0dj/OK3pagM2S8StBpaW+JTf6H2IRvdmZqKKX/Y/PXsRG2HIc9ahua/8PUPIXRH3tOXjNhkdpDwD7s/y7hYIvDJdgxtNHmWxB1wHY/AQPhRrSnBgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">e3790d2dfb756210f6d5f9d38eefdc10</block>
+        <comment>Setando em 1</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="RREO (Summary Report of Budget Execution)">667018e9fbfd2210f6d5f9d38eefdc64</flow>
+        <flow_variables_assigned>var_count1</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>5</order>
+        <outputs_assigned/>
+        <parent_ui_id>b6f98993-2de4-48f4-9d42-7ad52358075f</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 17:51:54</sys_created_on>
+        <sys_id>40890d2dfb756210f6d5f9d38eefdc6f</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 17:51:54</sys_updated_on>
+        <ui_id>3443d07f-a146-41ae-ab16-99e00768f4e4</ui_id>
+        <values>H4sIAAAAAAAA/+2V224aMRCG38XXgGBDON1FiSIhtY3U0NxU0Wqwx2DFa298gFDEu3e8Xg5K1TwBd/Y39sw/v215z2wMdQx+Ye+8VyvDZr9fO0yZxGi8Z0qwGWMdZqBCGm3AldxGEwbENqBjgmkslK817F4uEF8rLRy2OWtwlCKgY7P9p1BTY7ocT/m0EHI5vh0Vg74ciVs5FTcTRCm4HFNCDUvUlyL+oyvs6sSUCbiiehl8azfPT9Q6kdT0Oww/AhqBJEOC9thhFRgBwbrdiTgE8WT0Gawpfbamgg+v/lDFYT+tk0iNccyx07RsDcpYPkCA5+AiD9G1S/naKo4+WyJQQtTh/pLlBU91UNbkLQGW+rjb6liZH9kNdkpwPA8i0ZMIrFOjSXnbhnxe2+3Po8pHZRpP2qC2HPRpBiE4tYwh6dmzqBafbc7oX6NRY0U1ywrqWplVWTu7UU0dkl31VpomPantlvSlS9gDnnrs0RFA75H4Q4NfwKnU8HdK09b7ZdR7xHlzfySfTrgcdgs5kd3hiEMXipuiO+L98USOhmIgCnboML/z9xq8P1tFZ1S+x9RoNq61qMwupy3cqTrckagNtm4cXtP1z3quD+X6UK4P5YuHIpArTzoXSdT8+LekwI5upeKXaGvdW+rwzA5/Ad74cvSlBgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">eb790d2dfb756210f6d5f9d38eefdc10</block>
+        <comment/>
+        <connected_to>b6f98993-2de4-48f4-9d42-7ad52358075f</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="RREO (Summary Report of Budget Execution)">667018e9fbfd2210f6d5f9d38eefdc64</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>6</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 17:51:54</sys_created_on>
+        <sys_id>c4890d2dfb756210f6d5f9d38eefdc6f</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 17:51:54</sys_updated_on>
+        <ui_id>9293447b-4381-4d7b-bfa2-d1373275d096</ui_id>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">e3790d2dfb756210f6d5f9d38eefdc11</block>
+        <comment>Setando em 0</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="RREO (Summary Report of Budget Execution)">667018e9fbfd2210f6d5f9d38eefdc64</flow>
+        <flow_variables_assigned>var_count1</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>7</order>
+        <outputs_assigned/>
+        <parent_ui_id>9293447b-4381-4d7b-bfa2-d1373275d096</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 17:51:54</sys_created_on>
+        <sys_id>4c890d2dfb756210f6d5f9d38eefdc6f</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 17:51:54</sys_updated_on>
+        <ui_id>6352d366-f036-48f1-8001-aafb42a31f7f</ui_id>
+        <values>H4sIAAAAAAAA/+2V224aMRCG38XXgGBDON1FiSIhtY3U0NxU0Wqwx2DFa298gFDEu3e8Xg5K1TwBd/Y39sw/v215z2wMdQx+Ye+8VyvDZr9fO0yZxGi8Z0qwGWMdZqBCGm3AldxGEwbENqBjgn0aC+VrDbuXC8TXSguHbc4aHKUI6Nhs/ynU1Jgux1M+LYRcjm9HxaAvR+JWTsXNBFEKLseUUMMS9aWI/+gKuzoxZQKuqF4G39rN8xO1TiQ1/Q7Dj4BGIMmQoD12WAVGQLBudyIOQTwZfQZrSp+tqeDDqz9UcdhP6yRSYxxz7DQtW4Mylg8Q4Dm4yEN07VK+toqjz5YIlBB1uL9kecFTHZQ1eUuApT7utjpW5kd2g50SHM+DSPQkAuvUaFLetiGf13b786jyUZnGkzaoLQd9mkEITi1jSHr2LKrFZ5sz+tdo1FhRzbKCulZmVdbOblRTh2RXvZWmSU9quyV96RL2gKcee3QE0Hsk/tDgF3AqNfyd0rT1fhn1HnHe3B/JpxMuh91CTmR3OOLQheKm6I54fzyRo6EYiIIdOszv/L0G789W0RmV7zE1mo1rLSqzy2kLd6oOdyRqg60bh9d0/bOe60O5PpTrQ/nioQjkypPORRI1P/4tKbCjW6n4Jdpa95Y6PLPDX+NJ1u6lBgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">eb790d2dfb756210f6d5f9d38eefdc11</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="RREO (Summary Report of Budget Execution)">667018e9fbfd2210f6d5f9d38eefdc64</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>8</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 17:51:54</sys_created_on>
+        <sys_id>c0890d2dfb756210f6d5f9d38eefdc70</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 17:51:54</sys_updated_on>
+        <ui_id>cfdc988b-b11d-4942-b9bf-11cea3ddb70f</ui_id>
+        <values>H4sIAAAAAAAA/+1VXW/aMBT9K5OfQ5QPkgFvFVWlSd0qrVVftiq6sR2w5thZ7EBZxH/fdRICaplGtT7uBeFj33vPOdwjWqIbWzXWPOgrY8RKkcW3J48I5TD83hLByIIUARThnIY0jtI4CoJoNg3zNM7DiMXAISYeUVByfEm1YsIKrbIO8MgGZOMu8CsTppKwezwidC0kq/kwtYIaayyvyaJ9cXUpCwk5l/h0eaDx4bZD/szP7iqHG1sLtRrOt0OX+wOoa+ZYhYFH+LPlinHkU4A03CMlKAZW17sRqTmwOyWPwFoo2wsu4dmIXzgwShL3sOAokQ5ujMdscKqHi2uwgFQaapt6NE4Lyk1vDuMFNNIuT7H+wV3lpPYlFnJ5qNayKdWX3hEyNjj5YRqDJHjllDrqg47ifq23Xw8sb4TqXBkupaYgxxNY9C5vrOPTEi55iY2yEqoKHc2qWm9EV4xcSn8l8eAXUm9xqNtCH6gj7qOx4N8gft3Bj1ALp+IztsHinmYORtCs21hshzZxsveI2ZmlBGOOItHd7GfjKPaSB3FZ748robWo7BVO3vBBx94bAjCHpEjCIDm/etP0zIKd7H7bRkHBeDqdTWLK2WSazNNJHgKd5PE8T2cfIYJ56gvLy+4j01W/onzru7b7/fcmCGK2yUDp10F67/ZvS+UF1rxK5Xm73hLF6C9RdHtwYRKDIPgfxX+OojBZH6BBWzf8HZP45OLUzxy9psIgtQeHfTr8Y7mLHS6XoKfQVtc/nKgjtv8N1hPQb/sGAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">e3790d2dfb756210f6d5f9d38eefdc12</block>
+        <comment>Popula o ano</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="RREO (Summary Report of Budget Execution)">667018e9fbfd2210f6d5f9d38eefdc64</flow>
+        <flow_variables_assigned>var_ano</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>9</order>
+        <outputs_assigned/>
+        <parent_ui_id>cfdc988b-b11d-4942-b9bf-11cea3ddb70f</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 17:51:54</sys_created_on>
+        <sys_id>48890d2dfb756210f6d5f9d38eefdc70</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 17:51:54</sys_updated_on>
+        <ui_id>45e87eb4-1522-46c8-928c-4e868bc4e337</ui_id>
+        <values>H4sIAAAAAAAA/+1VwW7bMAz9F50Tw3ViO+6taFGgwLYCa9bLUAS0RCXCZMmV5KRZkH8fFTtJ1x532CU381EU33si4R2zXWi74Of2xnu1NOz658uIKRMx+t4xJdg1YyNmoEH6WoNbgLEErEF3EdntslQKLKaz8YSjGE/zqhjXV8DH9aSqi1kJGVRFogI2yaFmv6dqoXyrYfv8T5fwldLC4UC6BUccAzp2vfuQOojAsqxSkQlZl3mRXaWyELmsxGSGKAVPS7pQQ436L5WfZIdtGwEfnDLLIf4ylD0dQetEpJGOGL4FNAKpvwTtccQaMAKCddsT4hDEo9FnYKVM6E1v4M2r39RvlqZpPCmRNHHss6dwMbjZw/IOAhCVjofODUf5yiqOvndDoIROh9v3WH/gsQ3Kmr4kQK2P1VZ3jfnWW8FOFxwfj5DOEwlso9TIfRAin1Z28/3I8l6ZgytDUlsO+hRBIO/qLkQ+O9ap+Qebe+ST0aixoY6LBtqWkEXr7FoduhDpJllqChKp7YbYxfFOgEeFCT0BJPeE3x3gZ3Aqyv1K11BxbPfDqNcOH+LglJnMJnlej9NJVo2nYkZTORWcJrVOS5lPa6gE24+Y3/pbDd6fjaIXWrx2UWZv22DQovc4lnCn2nBDpNY4eLF/ibvV87ms4GUFLyv4X1ZQIFeeeM4jqYfj/zAmtjSQir+HNtb9igrP2P4Pm7ws7VkHAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">eb790d2dfb756210f6d5f9d38eefdc12</block>
+        <comment/>
+        <connected_to>cfdc988b-b11d-4942-b9bf-11cea3ddb70f</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="RREO (Summary Report of Budget Execution)">667018e9fbfd2210f6d5f9d38eefdc64</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
+        <order>10</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 17:51:54</sys_created_on>
+        <sys_id>cc890d2dfb756210f6d5f9d38eefdc70</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 17:51:54</sys_updated_on>
+        <ui_id>fefe5d28-2611-4ce7-9f3a-4b1127da7629</ui_id>
+        <values>H4sIAAAAAAAA/+1VXY/aMBD8K5WfQ5QPSIG3E6eTKl17Uu90L+0p2tgOWHXsNHbgKOK/dx2HgK5UpSqPfUF47N2dGXbEjujW1q01T/rGGLFUZP7lJSBCOQy/74hgZE7KCMp4RmOaJlmaRFEyHcdFlhZxwlLgkJCAKKg4vqRaMWGFVnkHBGQNsnUX+JUJU0vYPh8RuhKSNbyfWkODNZY3ZL57c3UpCwkFl/h0caDx7r5Dfs/PbmuHG9sItezP932XxwOoG+ZYxVFA+KvlinHkU4I0PCAVKAZWN9sBaTiwByWPwEoo6wVX8GrEDxyYTCbuYclRIu3dGI5575SHy1uwgFRaattmME4Lyo03h/ESWmkXp5h/8FA7qb7EQiEP1Vq2lfrkHSFDg5MfpjVIgtdOqaPe6ygfV3rz+cDyTqjOlf5SagpyOIFF74rWOj47wiWvsFFeQV2jo3nd6LXoipFLFS4lHsJS6g0OdVsYAnXEQzQWwjvEbzv4GRrhVHzENljsaRZgBM27jcV2aBMn+4CYrVlIMOYoEt3Nv7eOopfci8u9P66ENqK2Nzh5zXsd++CyAMRnFuxk93e7JCoZz8bTUUo5G40ns2xUxEBHRTorsul7SGCWhcLyqvvIde1XlG9C13a//9pGUcrWeYV+/hKka7e/airjc6k8b9ffRDH5QxTdHlyYxCiK/kfxn6MoTO4D1Gvrhl8xiS8uTn7m4DUVBqk9OezD4R/LXWxxuQQ9hTa6+eZEHbH9T+qelnT7BgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">67790d2dfb756210f6d5f9d38eefdc13</block>
+        <comment>Popula o mês</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="RREO (Summary Report of Budget Execution)">667018e9fbfd2210f6d5f9d38eefdc64</flow>
+        <flow_variables_assigned>var_mes</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>11</order>
+        <outputs_assigned/>
+        <parent_ui_id>fefe5d28-2611-4ce7-9f3a-4b1127da7629</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 17:51:54</sys_created_on>
+        <sys_id>44890d2dfb756210f6d5f9d38eefdc71</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 17:51:54</sys_updated_on>
+        <ui_id>509ab718-88ae-46b1-9886-0418f90aabbf</ui_id>
+        <values>H4sIAAAAAAAA/+1VTW/bMAz9LzrHhvNlx7kVLQoU2FZgzXoZCoOWqESYLLuSnDQz8t9HxU7StccddsnNfBTJ955EuGN165vWu1V945xaG7b8+TJiygSMvjumBFsyNmIGKqSvLdiiQkfAFnQbkK6bJFJgOltEU44ims3zNCrHwKNympfpIoMJ5GmsPFbxseZwoGqhXKNh//xPTfhGaWFxIN2AJY4eLVt2H1JHESizPBETIctsnk7GiUzFXOZiukCUgic5NdRQov5L5SfZft8EwHmrzHqIvwxlTyewtiLQSEYM3zwagTRfgnY4YhUYAb62+zNiEcSj0Rdgo4zvTa/gzanfNG+RJEk4KZE0ceyz57AY3OxheQceiErLfWuHo3xTK46ud0OghFb72/dYf+Cx8ao2fYmHUp+qa91W5ltvBTs3OF0eIa0jEtgEqYH7IEQ+berd9xPLe2WOrgxJXXPQ5wg8eVe2PvDpWKtWH2zukU9Go8aKJhYVNA0hRWPrrTpOIdJVvNYUxFLXO2IXnncMPCiM6Qogvif87gg/g1VB7ldqQ8Vh3A+jXlt8CA9nOs/Sks+yKCkBotl0kUQwSXiUyRRnHMeQZQk7jJjbu1sNzl2MohsqXtsgs7dtMKjoPQ4l3KrG3xCpLQ5eHF7CbvV8rit4XcHrCv6XFRTIlSOeq0Dq4fQ/DIk9PUjF30O72v4KCi/Y4Q/kWRDiWQcAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">6f790d2dfb756210f6d5f9d38eefdc13</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="RREO (Summary Report of Budget Execution)">667018e9fbfd2210f6d5f9d38eefdc64</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>12</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 17:51:54</sys_created_on>
+        <sys_id>c8890d2dfb756210f6d5f9d38eefdc71</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 17:51:55</sys_updated_on>
+        <ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</ui_id>
+        <values>H4sIAAAAAAAA/+1Vy27bMBD8FYNnQdAjNhrfAgcBCqQN0AS5tIGwoqiYKEWqfNhxBX9Qv6M/1qVIP9C6qIP22Js4y92dWe5AA1HO9s6aB3VlDH+WZP7xKSFcegy/B8IbMidtBm1+SXNaFrOyyLLizUVez8o6L5oSGJQkIRI6hjepkg23XMlqBBKyAuF8YKGctJPv3yYZgg03vYDN46kYXXLRaBaZ9KCxjmWazIefQucyE1AzMXaJ1Ca3I/J7znbTe9xYzeVzPN/GKvc7UOnGs8qzhLAXy2TDkE8LwrCEdCAbsEpv9ohm0NxJcQCWXFosR/zlF8O/YsNiOvUXW4YSKQvB/bGKMwtwew0WkIqj1ul4lS4Vp8yE4TSsBSfs4hgLF+56LzWkWKjFLlsJ18n3YSJkX2D3RIg4gyRY75V66lFHe79U6w87ljdcjlOJQaEoiP0JLM6udtbzGQgTrMNCVQd9jxOteq1WfExGLl36LPCQtkKtsanfzBSoJ57iYCG9Qfx6hB9Bc6/iHZbB5ECzBsNpNW4xlsMxMbJNiNmYhQBjDiJxutUX5ykGyVFcFebjU6jmvb3CzisWdWyTaIpLmLbTPJueXr2L2YkFO/LDMIzaVpF+ih8V9T7It9tPLsvK5oRRzkt6nYPOkPGLg05Le41tij/Yxr/Zma7Jsuy/bf7aNtxUYdmjtrH5P3TNk1/90HM/a8oNUnvw2NvdH8cHNrhcnB5Da6U/e1EHbPsDIZ6d6bsGAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">e7790d2dfb756210f6d5f9d38eefdc15</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="RREO (Summary Report of Budget Execution)">667018e9fbfd2210f6d5f9d38eefdc64</flow>
+        <flow_variables_assigned>var_mes,var_ano</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>20</order>
+        <outputs_assigned/>
+        <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 17:51:54</sys_created_on>
+        <sys_id>d8890d2dfb756210f6d5f9d38eefdc72</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 17:51:55</sys_updated_on>
+        <ui_id>6deb7984-2b14-4d0a-a4e7-d189ebcd7d31</ui_id>
+        <values>H4sIAAAAAAAA/+1XXWvbMBT9L3qOg5rYcdK30lIobCusWV9GMdfSVSImS64kJ81C/vuk2PloMvZU2GB5s87VvffcIx2E18Q0vm68m5ob5+RMk+vvLz0idcTC95pITq4J6RENFYavBdiiQheABagG2xiXrlawej4gbC4Vt9iVq8GGbI+WXK9PQtvyKPIJ5QMuyjwbDa6oGPFMTPhwjCg4o5NQUEGJ6l3/M0J+VUfAeSv1rFt/6tKedqCxPNKgPYJvHjXH0F+ActgjFWgO3tjVHrEI/FGrAzCX2rcDVvDm5M/Qb0wpjTsFhplYN/5+WXTStLC4Aw+BSsN8Y/dKGcnQtWpwFNAof3uMtRseay+NblM8lGqXbVRT6S+tFGRf4OgkGhdIYB1Hjdy7QcTT3Cy/7ljeS71VpQsqw0DtV+CDdmXjI581aeT0ROYWORMaFVahY1FBXQekqK1ZyG2XQLrqz1RY9IUyy8AuXrw+sDhhPxwB9O8DfreFn8HKOO7nUCYkx3bftHxt8CFenGGWj0qW5gktAZJ0OKYJDChLcjHClOEV5Dklmx5xK3erwLmDUOGEitcmjtnK1glUtBrHFGZl7W8CqQV2Wmx6v7UDaPPBdsj/aIf8xA5t/zNCFzv8d3bIB2IwzLIyocPBJEn5mCVlylkyZCXNRZaWMOEfaIeXeOtbPpe34mKOf9wcl7fi8lZc7PAX3wqOTLrAcxpJPez+MGJgFS6kZMfQ0tgfccIDtvkFNHqRW6sMAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=667018e9fbfd2210f6d5f9d38eefdc64"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=667018e9fbfd2210f6d5f9d38eefdc64^sys_idNOT IN08890d2dfb756210f6d5f9d38eefdc69,4c890d2dfb756210f6d5f9d38eefdc65,4c890d2dfb756210f6d5f9d38eefdc67"/>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=3576bc47-0baa-4380-a20c-7f6e4ce1a770</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>var_mes</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>var_mes</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="RREO (Summary Report of Budget Execution)">667018e9fbfd2210f6d5f9d38eefdc64</model>
+        <model_id>667018e9fbfd2210f6d5f9d38eefdc64</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_variable_667018e9fbfd2210f6d5f9d38eefdc64</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 17:51:53</sys_created_on>
+        <sys_id>08890d2dfb756210f6d5f9d38eefdc69</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 17:51:53</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=integer,uiTypeLabel=Integer,uiUniqueId=9fc98cf4-2f8f-46ca-a232-6c078f64d1d2</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>var_count1</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Integer">integer</internal_type>
+        <label>var_count</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="RREO (Summary Report of Budget Execution)">667018e9fbfd2210f6d5f9d38eefdc64</model>
+        <model_id>667018e9fbfd2210f6d5f9d38eefdc64</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_variable_667018e9fbfd2210f6d5f9d38eefdc64</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 17:51:53</sys_created_on>
+        <sys_id>4c890d2dfb756210f6d5f9d38eefdc65</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 17:51:53</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=72f2355b-0329-4d8c-b4dc-3cb07f54ba9d</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>var_ano</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>var_ano</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="RREO (Summary Report of Budget Execution)">667018e9fbfd2210f6d5f9d38eefdc64</model>
+        <model_id>667018e9fbfd2210f6d5f9d38eefdc64</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_variable_667018e9fbfd2210f6d5f9d38eefdc64</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 17:51:53</sys_created_on>
+        <sys_id>4c890d2dfb756210f6d5f9d38eefdc67</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 17:51:53</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>record</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_667018e9fbfd2210f6d5f9d38eefdc64</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 14:30:47</sys_created_on>
+        <sys_id>167b5461fb716210f6d5f9d38eefdc32</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 14:30:47</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>record</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>pb</language>
+        <name>var__m_sys_hub_flow_input_667018e9fbfd2210f6d5f9d38eefdc64</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 13:42:45</sys_created_on>
+        <sys_id>2a7018e9fbfd2210f6d5f9d38eefdc80</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 13:42:45</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_667018e9fbfd2210f6d5f9d38eefdc64"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_667018e9fbfd2210f6d5f9d38eefdc64"/>
+    <sys_hub_flow action="UPDATE">
+        <sys_id>569c0065fbfd2210f6d5f9d38eefdc8b</sys_id>
+        <latest_snapshot>667018e9fbfd2210f6d5f9d38eefdc64</latest_snapshot>
+        <compiler_build>glide-yokohama-12-18-2024__patch1b-04-22-2025_05-15-2025_2108.zip</compiler_build>
+    </sys_hub_flow>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=569c0065fbfd2210f6d5f9d38eefdc8b"/>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=569c0065fbfd2210f6d5f9d38eefdc8b^sys_idNOT INb27018e9fbfd2210f6d5f9d38eefdc8c"/>
+    <sys_flow_subflow_plan action="INSERT_OR_UPDATE">
+        <plan>com.snc.process_flow.engine.ProcessPlan@6f44b3ed</plan>
+        <plan_id display_value="RREO (Summary Report of Budget Execution)">569c0065fbfd2210f6d5f9d38eefdc8b</plan_id>
+        <snapshot>667018e9fbfd2210f6d5f9d38eefdc64</snapshot>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 13:42:46</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>b27018e9fbfd2210f6d5f9d38eefdc8c</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 17:51:56</sys_updated_on>
+    </sys_flow_subflow_plan>
+</record_update>
