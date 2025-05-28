@@ -24,6 +24,7 @@
         var listaAnos = listaDados.map(function(item) { return item.ano; });
         var despesasAtivo = listaDados.map(function(item) { return item.ativo; });
         var despesasInativo = listaDados.map(function(item) { return item.inativo; });
+        var despesasTerceirizado = listaDados.map(function(item) { return item.terceirizado; });
 
         var contexto = document.getElementById('graficoPessoalAtivoInativo').getContext('2d');
 
@@ -39,12 +40,20 @@
                     {
                         label: 'Pessoal Ativo',
                         data: despesasAtivo,
-                        backgroundColor: '#4052D6'
+                        backgroundColor: '#4052D6',
+                        yAxisID: 'y' // Eixo principal
                     },
                     {
                         label: 'Inativos e Pensionistas',
                         data: despesasInativo,
-                        backgroundColor: '#60E1EB'
+                        backgroundColor: '#60E1EB',
+                        yAxisID: 'y' // Eixo principal
+                    },
+                    {
+                        label: 'Terceirizados',
+                        data: despesasTerceirizado,
+                        backgroundColor: '#60ebb0',
+                        yAxisID: 'y1' // Eixo secundário
                     }
                 ]
             },
@@ -58,6 +67,17 @@
                     y: {
                         beginAtZero: true,
                         title: { display: true, text: 'Valores em Milhões (R$)' },
+                        ticks: {
+                            callback: function(value) {
+                                return value.toLocaleString('pt-BR') + ' mi';
+                            }
+                        }
+                    },
+                    y1: {
+                        beginAtZero: true,
+                        position: 'right',
+                        title: { display: true, text: 'Terceirizados (Milhões)' },
+                        grid: { drawOnChartArea: false }, // Remove a grade para não poluir
                         ticks: {
                             callback: function(value) {
                                 return value.toLocaleString('pt-BR') + ' mi';
@@ -96,8 +116,7 @@
     $timeout(function() {
         inicializarGrafico(obterDadosPorAno(null));
     }, 300);
-}
-]]></client_script>
+}]]></client_script>
         <controller_as>c</controller_as>
         <css>.chart-wrapper {
     width: 100%;
@@ -160,7 +179,8 @@ h3, h2, div {
         dados.push({
             ano: gr.getValue('u_ano'),
             ativo: parseFloat(gr.getValue('u_despesa_pessoal_ativo')),
-            inativo: parseFloat(gr.getValue('u_despesa_inativos_pensionistas'))
+            inativo: parseFloat(gr.getValue('u_despesa_inativos_pensionistas')),
+            terceirizado: parseFloat(gr.getValue('u_despesa_pessoal_terceirizado')) 
         });
     }
 
@@ -172,14 +192,14 @@ h3, h2, div {
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-21 23:07:43</sys_created_on>
         <sys_id>5aae8e9bfba1a29086e7f4045eefdc64</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>11</sys_mod_count>
         <sys_name>Ativo x Pensionista</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_5aae8e9bfba1a29086e7f4045eefdc64</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-21 23:44:22</sys_updated_on>
+        <sys_updated_on>2025-05-28 21:39:10</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;600&display=swap');
 
