@@ -26,138 +26,155 @@
     carregarDadosDoServer();
 
     function inicializarGrafico(listaDados) {
-        if (!listaDados || listaDados.length === 0) {
-            if (chartInstance) {
-                chartInstance.destroy();
-                chartInstance = null;
-            }
-            $scope.exibirGrafico = false;
-            $scope.$applyAsync();
-            return;
-        }
-
-        $scope.exibirGrafico = true;
-        $scope.$applyAsync();
-
-        var labels = [];
-        var camData = [];
-        var cdiData = [];
-        var dolarSofrData = [];
-        var selicData = [];
-        var tjlpData = [];
-
-        for (var i = 0; i < listaDados.length; i++) {
-            labels.push(listaDados[i].ano);
-            camData.push(listaDados[i].cam);
-            cdiData.push(listaDados[i].cdi);
-            dolarSofrData.push(listaDados[i].dolar_sofr);
-            selicData.push(listaDados[i].selic);
-            tjlpData.push(listaDados[i].tjlp);
-        }
-
-        var contexto = document.getElementById('graficoIndicadores').getContext('2d');
-
+    if (!listaDados || listaDados.length === 0) {
         if (chartInstance) {
             chartInstance.destroy();
+            chartInstance = null;
         }
+        $scope.exibirGrafico = false;
+        $scope.$applyAsync();
+        return;
+    }
 
-        chartInstance = new Chart(contexto, {
-            type: 'bar',
-            data: {
-                labels: labels,
-                datasets: [
-                    { 
-                        label: 'CAM (Coeficiente de Atualização Monetária (IPCA + 4% a.ae a variação acumulada taxa Selic)',
-                        data: camData,
-                        backgroundColor: '#0A46FA',
-                        borderColor: '#0A46FA',
-                        borderWidth: 1,
-                        yAxisID: 'y'
-                    },
-                    {
-                        label: 'CDI (Certificado deposito bancário)',
-                        data: cdiData,
-                        backgroundColor: '#1A0AFA',
-                        borderColor: '#1A0AFA',
-                        borderWidth: 1,
-                        yAxisID: 'y'
-                    },
-                    {
-                        label: 'Dólar SOFR (Dólar americano taxa de juros americano)',
-                        data: dolarSofrData,
-                        backgroundColor: '#0A92FA',
-                        borderColor: '#0A92FA',
-                        borderWidth: 1,
-                        yAxisID: 'y'
-                    },
-                    {
-                        label: 'TJLP (Taxa de Juros de Longo Prazo)',
-                        data: tjlpData,
-                        backgroundColor: '#685DFA',
-                        borderColor: '#685DFA',
-                        borderWidth: 1,
-                        yAxisID: 'y'
-                    },
-                    {
-                        label: 'SELIC (Taxa básica de juros da economia)',
-												data: selicData,
-												type: 'line', // Linha para destacar
-												borderColor: '#00FAED', // Cor da linha
-												backgroundColor: '#00FAED', // Preenchimento (não afeta a bolinha na linha)
-												borderWidth: 3,
-												tension: 0.4,
-												fill: false,
-												yAxisID: 'y2',
-												pointBackgroundColor: '#00FAED', // Cor da bolinha (vermelho)
-												pointBorderColor: '#00FAED',      // Cor da borda da bolinha (opcional)
-												pointRadius: 3                    // Tamanho da bolinha (opcional)
-                    }
-                ]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                scales: {
-                    x: {
-                        title: {
-                            display: true,
-                            text: 'Ano'
-                        }
-                    },
-                    y: {
-                        beginAtZero: true,
-                        title: {
-                            display: true,
-                            text: 'Indicadores (%)'
-                        }
-                    },
-                    y2: {
-                        beginAtZero: true,
-                        position: 'right',
-                        title: {
-                            display: true,
-                            text: 'SELIC (%)'
-                        },
-                        grid: {
-                            drawOnChartArea: false // não desenha linhas do y2 no gráfico
-                        }
+    $scope.exibirGrafico = true;
+    $scope.$applyAsync();
+
+    var labels = [];
+    var camData = [];
+    var cdiData = [];
+    var dolarSofrData = [];
+    var selicData = [];
+    var tjlpData = [];
+    var trData = [];  // NOVO array para TR
+
+    for (var i = 0; i < listaDados.length; i++) {
+        labels.push(listaDados[i].ano);
+        camData.push(listaDados[i].cam);
+        cdiData.push(listaDados[i].cdi);
+        dolarSofrData.push(listaDados[i].dolar_sofr);
+        selicData.push(listaDados[i].selic);
+        tjlpData.push(listaDados[i].tjlp);
+        trData.push(listaDados[i].tr); // adiciona os dados de TR
+    }
+
+    var contexto = document.getElementById('graficoIndicadores').getContext('2d');
+
+    if (chartInstance) {
+        chartInstance.destroy();
+    }
+
+    chartInstance = new Chart(contexto, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [
+                { 
+                    label: 'CAM (Coeficiente de Atualização Monetária (IPCA + 4% a.ae a variação acumulada taxa Selic)',
+                    data: camData,
+                    backgroundColor: '#0A46FA',
+                    borderColor: '#0A46FA',
+                    borderWidth: 1,
+                    yAxisID: 'y'
+                },
+                {
+                    label: 'CDI (Certificado deposito bancário)',
+                    data: cdiData,
+                    backgroundColor: '#1A0AFA',
+                    borderColor: '#1A0AFA',
+                    borderWidth: 1,
+                    yAxisID: 'y'
+                },
+                {
+                    label: 'Dólar SOFR (Dólar americano taxa de juros americano)',
+                    data: dolarSofrData,
+                    backgroundColor: '#0A92FA',
+                    borderColor: '#0A92FA',
+                    borderWidth: 1,
+                    yAxisID: 'y'
+                },
+                {
+                    label: 'TJLP (Taxa de Juros de Longo Prazo)',
+                    data: tjlpData,
+                    backgroundColor: '#685DFA',
+                    borderColor: '#685DFA',
+                    borderWidth: 1,
+                    yAxisID: 'y'
+                },
+                {
+                    label: 'SELIC (Taxa básica de juros da economia)',
+                    data: selicData,
+                    type: 'line', // Linha para destacar
+                    borderColor: '#00FAED',
+                    backgroundColor: '#00FAED',
+                    borderWidth: 3,
+                    tension: 0.4,
+                    fill: false,
+                    yAxisID: 'y2',
+                    pointBackgroundColor: '#00FAED',
+                    pointBorderColor: '#00FAED',
+                    pointRadius: 3
+                },
+                {
+                    label: 'TR (Taxa Referencial)',
+                    data: trData,
+                    type: 'line',  // Linha igual SELIC
+                    borderColor: '#000',
+                    backgroundColor: '#000',
+                    borderWidth: 3,
+                    tension: 0.4,
+                    fill: false,
+                    yAxisID: 'y2', 
+                    pointBackgroundColor: '#000',
+                    pointBorderColor: '#000',
+                    pointRadius: 3
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Ano'
                     }
                 },
-                plugins: {
-                    legend: {
-                        position: 'top'
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Indicadores (%)'
+                    }
+                },
+                y2: {
+                    beginAtZero: true,
+                    position: 'right',
+                    title: {
+                        display: true,
+                        text: 'SELIC / TR (%)'
                     },
-                    tooltip: {
-                        callbacks: {
-                            label: function(context) {
-                                return context.dataset.label + ': ' + context.parsed.y + ' %';
-                            }
+                    grid: {
+                        drawOnChartArea: false
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    position: 'top'
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            return context.dataset.label + ': ' + context.parsed.y + ' %';
                         }
                     }
                 }
             }
-        });
-    }
+        }
+    });
+}
+
 }
 ]]></client_script>
         <controller_as>c</controller_as>
@@ -248,7 +265,8 @@ h3, div, span {
             cdi: parseFloat(gr.getValue('u_cdi')) || 0,
             dolar_sofr: parseFloat(gr.getValue('u_dolar_sofr')) || 0,
             selic: parseFloat(gr.getValue('u_selic')) || 0,
-            tjlp: parseFloat(gr.getValue('u_tjlp')) || 0
+            tjlp: parseFloat(gr.getValue('u_tjlp')) || 0,
+					 	tr: parseFloat(gr.getValue('u_tr')) || 0
         });
     }
 	//gs.addInfoMessage(JSON.stringify(listaDados))
@@ -261,14 +279,14 @@ h3, div, span {
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-24 18:43:22</sys_created_on>
         <sys_id>1bee2858fb3dae10f6d5f9d38eefdc0d</sys_id>
-        <sys_mod_count>36</sys_mod_count>
+        <sys_mod_count>58</sys_mod_count>
         <sys_name>Indice de Atualizacao Grafico</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_1bee2858fb3dae10f6d5f9d38eefdc0d</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-24 21:06:24</sys_updated_on>
+        <sys_updated_on>2025-05-28 23:34:08</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 
@@ -298,7 +316,7 @@ h3, div, span {
 <div class="chart-wrapper">
 <h3 style="text-align:center; font-weight: 600; margin-bottom: 16px;">
   Índices de Atualização da Dívida Pública
-  <span style="font-weight: 600; color: #333;">
+  <span class="dadosInfo" style="font-weight: 600; color: #333;">
     {{anoSelecionado ? ' - Ano: ' + anoSelecionado : ' - Todos os anos'}}
   </span>
 </h3>

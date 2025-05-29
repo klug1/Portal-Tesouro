@@ -60,9 +60,18 @@
             resultadoData.push(listaDados[i].resultado / 1000000);
         }
 
-        // Dois datasets: positivo e negativo
-        var dataPositivo = resultadoData.map(v => (v >= 0 ? v : null));
-        var dataNegativo = resultadoData.map(v => (v < 0 ? v : null));
+        var backgroundColors = [];
+        var borderColors = [];
+
+        for (var j = 0; j < resultadoData.length; j++) {
+            if (resultadoData[j] >= 0) {
+                backgroundColors.push('#00CED1'); // Azul para positivo
+                borderColors.push('#00CED1');
+            } else {
+                backgroundColors.push('#FF4C4C'); // Vermelho para negativo
+                borderColors.push('#FF4C4C');
+            }
+        }
 
         var contexto = document.getElementById('graficoResultadoBimestre').getContext('2d');
 
@@ -76,17 +85,10 @@
                 labels: labels,
                 datasets: [
                     {
-                        label: 'Positivo',
-                        data: dataPositivo,
-                        backgroundColor: '#00CED1',
-                        borderColor: '#00CED1',
-                        borderWidth: 1
-                    },
-                    {
-                        label: 'Negativo',
-                        data: dataNegativo,
-                        backgroundColor: '#FF4C4C',
-                        borderColor: '#FF4C4C',
+                        label: 'Resultado Primário',
+                        data: resultadoData,
+                        backgroundColor: backgroundColors,
+                        borderColor: borderColors,
                         borderWidth: 1
                     }
                 ]
@@ -96,7 +98,7 @@
                 maintainAspectRatio: false,
                 scales: {
                     x: {
-                        stacked: true,
+                        stacked: false,
                         title: {
                             display: true,
                             text: $scope.anoSelecionadoBimestre ? 'Bimestre' : 'Ano'
@@ -105,7 +107,6 @@
                         categoryPercentage: 1.0
                     },
                     y: {
-                        stacked: true,
                         beginAtZero: true,
                         title: {
                             display: true,
@@ -120,6 +121,7 @@
                 },
                 plugins: {
                     legend: {
+                        display: true,
                         position: 'top'
                     },
                     tooltip: {
@@ -209,7 +211,8 @@ h3, div, span {
     var bimestreFiltro = input.bimestre || "";
 
     var gr = new GlideRecord('x_sded9_portal_t_0_u_resultado_primario');
-
+		gr.addQuery('u_rpps', false);
+	
     if (anoFiltro !== "") {
         gr.addQuery('u_ano', anoFiltro);
     }
@@ -273,14 +276,14 @@ h3, div, span {
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-24 17:31:07</sys_created_on>
         <sys_id>b46e9490fbf9ae10f6d5f9d38eefdcb8</sys_id>
-        <sys_mod_count>28</sys_mod_count>
+        <sys_mod_count>34</sys_mod_count>
         <sys_name>Resultado Primario Consolidado Grafico</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_b46e9490fbf9ae10f6d5f9d38eefdcb8</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-24 18:03:47</sys_updated_on>
+        <sys_updated_on>2025-05-29 00:30:03</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;600&display=swap');
 

@@ -2,49 +2,32 @@
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
         <client_script><![CDATA[function($scope, $rootScope, $timeout) {
-  // Inicialização dos filtros
-  $scope.anoSelecionado = "";
-  $scope.mesSelecionado = "";
+  // Variáveis de filtro
+  $scope.anoSelecionadoRcl = "";
   $scope.bimestreSelecionadoRcl = "";
 
-  $scope.anoChanged = function() {
-    if (!$scope.anoSelecionado) {
-      $scope.bimestreSelecionadoRcl = "";
-      $scope.mesSelecionado = "";
-      $rootScope.$broadcast('bimestreSelecionadoRcl', "");
-      $rootScope.$broadcast('mesSelecionado', "");
-      console.log("Ano limpo, mês e bimestre também limpos.");
-    }
-    $rootScope.$broadcast('anoSelecionado', $scope.anoSelecionado);
-    console.log('Ano selecionado:', $scope.anoSelecionado);
+  // Quando o ano muda
+  $scope.anoChangedRcl = function() {
+    $rootScope.$broadcast('anoSelecionadoRcl', $scope.anoSelecionadoRcl);
+    console.log('Ano selecionado (RCL):', $scope.anoSelecionadoRcl);
   };
 
-  $scope.mesChanged = function() {
-    if ($scope.mesSelecionado) {
-      $scope.bimestreSelecionadoRcl = "";
-      $rootScope.$broadcast('bimestreSelecionadoRcl', "");
-      console.log('Bimestre limpo porque mês foi selecionado');
-    }
-    $rootScope.$broadcast('mesSelecionado', $scope.mesSelecionado);
-    console.log('Mês selecionado:', $scope.mesSelecionado);
-  };
+  // Quando o bimestre muda
+  $scope.bimestreChangedRcl = function() {
+  var bimestreNumero = parseInt($scope.bimestreSelecionadoRcl, 10);
+  $rootScope.$broadcast('bimestreSelecionadoRcl', bimestreNumero);
+  console.log('Bimestre selecionado (RCL):', bimestreNumero);
+};
 
-  $scope.bimestreChanged = function() {
-    if ($scope.bimestreSelecionadoRcl) {
-      $scope.mesSelecionado = "";
-      $rootScope.$broadcast('mesSelecionado', "");
-      console.log('Mês limpo porque bimestre foi selecionado');
-    }
-    $rootScope.$broadcast('bimestreSelecionadoRcl', $scope.bimestreSelecionadoRcl);
-    console.log('Bimestre selecionado:', $scope.bimestreSelecionadoRcl);
-  };
 
+  // Inicialização dos eventos na carga
   $timeout(function() {
-    $scope.anoChanged();
-    $scope.mesChanged();
-    $scope.bimestreChanged();
+    $scope.anoChangedRcl();
+    $scope.bimestreChangedRcl();
   });
+ 
 }
+
 ]]></client_script>
         <controller_as>c</controller_as>
         <css>body, h1, h2, h3, h4, span, div {
@@ -57,7 +40,7 @@
   background-color: #f0f0f0;
   padding: 0.5rem 1rem; 
   margin-bottom: 1rem;
-  margin-top: 20rem;
+  margin-top: 2rem;
   font-family: 'Roboto Flex', sans-serif;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   transition: all 0.2s ease;
@@ -78,7 +61,9 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.filter-header .label-ano {
+.filter-header .label-ano,
+.filter-header .label-bimestre {
+
   display: block;
   margin-bottom: 0.25rem; 
   font-weight: 600; 
@@ -280,161 +265,85 @@
         <docs/>
         <field_list/>
         <has_preview>true</has_preview>
-        <id>rcl_filtro</id>
+        <id>comparativo_bimestre_filtro</id>
         <internal>false</internal>
         <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
-        <name>RCL Filtro</name>
+        <name>Comparativo Bimestre Filtro</name>
         <option_schema/>
         <public>true</public>
         <roles/>
         <script><![CDATA[(function() {
-  var anos = [];
-  var meses = [];
-  var bimestres = ['1', '2', '3', '4', '5', '6'];
+		var anosRcl = [];
+    var bimestresRcl = ['1', '2', '3', '4', '5', '6'];
 
-  // Coletando dados da tabela 1 (Exemplo: RCL)
-  var grRcl = new GlideRecord('x_sded9_portal_t_0_u_rcl_basica');
-  grRcl.query();
+    var gr = new GlideRecord('x_sded9_portal_t_0_u_rcl_basica');
+    gr.query();
 
-  var anosUnicos = {};
-  while (grRcl.next()) {
-    var ano = grRcl.getValue('u_ano');
-    if (ano && !anosUnicos[ano]) {
-      anos.push(ano);
-      anosUnicos[ano] = true;
-    }
-  }
+    var anosUnicos = {};
 
-  // Coletando dados da tabela 2 (Exemplo: RREO)
-  var grRreo = new GlideRecord('x_sded9_portal_t_0_u_rreo');
-  grRreo.query();
-
-  var mesesUnicos = {};
-  while (grRreo.next()) {
-    var mes = grRreo.getValue('u_mes').toLowerCase();
-    if (mes && !mesesUnicos[mes]) {
-      meses.push(mes);
-      mesesUnicos[mes] = true;
+    while (gr.next()) {
+      var ano = gr.getValue('u_ano');
+      if (ano && !anosUnicos[ano]) {
+        anosRcl.push(ano);
+        anosUnicos[ano] = true;
+      }
     }
 
-    var ano = grRreo.getValue('u_ano');
-    if (ano && !anosUnicos[ano]) {
-      anos.push(ano);
-      anosUnicos[ano] = true;
-    }
-  }
+    anosRcl.sort(function(a, b) { return b - a; });
 
- // anos = [...new Set(anos)];
-  anos.sort(function(a, b) { return b - a; });
-
-  var ordemMeses = [
-    'january', 'february', 'march', 'april', 'may', 'june',
-    'july', 'august', 'september', 'october', 'november', 'december'
-  ];
-
-  meses.sort(function(a, b) {
-    return ordemMeses.indexOf(a) - ordemMeses.indexOf(b);
-  });
-
-  data.anos = anos;
-  data.meses = meses;
-  data.bimestres = bimestres;
+    data.anosRcl = anosRcl;
+    data.bimestresRcl = bimestresRcl;
 })();
 ]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
-        <sys_created_on>2025-05-22 21:52:34</sys_created_on>
-        <sys_id>4b07c7a3fb29ea10f6d5f9d38eefdce2</sys_id>
-        <sys_mod_count>19</sys_mod_count>
-        <sys_name>RCL Filtro</sys_name>
+        <sys_created_on>2025-05-28 21:43:19</sys_created_on>
+        <sys_id>967eb9e5fbb96210f6d5f9d38eefdcfe</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name>Comparativo Bimestre Filtro</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_update_name>sp_widget_4b07c7a3fb29ea10f6d5f9d38eefdce2</sys_update_name>
+        <sys_update_name>sp_widget_967eb9e5fbb96210f6d5f9d38eefdcfe</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 23:04:58</sys_updated_on>
+        <sys_updated_on>2025-05-28 22:27:36</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
-
-  .input-with-icon {
-    position: relative;
-  }
-
-  .filter-icon-left {
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #888;
-  }
-
-  .input-with-icon select {
-    padding-left: 30px;
-  }
 </style>
 
 <div class="filter-header flex items-center justify-between p-4 bg-gray-200 rounded-lg shadow-sm">
-  <h2 class="text-lg font-semibold text-gray-800">Receita Corrente Líquida (RCL)</h2>
+  <h2 class="text-lg font-semibold text-gray-800">Receita Corrente Líquida - Comparativo Ano/Bimestre</h2>
 
   <div class="filter-container flex gap-4">
 
     <!-- Filtro Ano -->
     <div class="filter-input-group">
-      <label class="text-sm text-gray-600">ANO:</label>
+      <label class="text-sm text-gray-600 label-ano">ANO:</label>
       <div class="input-with-icon">
         <i class="fa fa-filter filter-icon-left"></i>
-        <select class="form-control" ng-model="anoSelecionado" ng-change="anoChanged()">
+        <select class="form-control" ng-model="anoSelecionadoRcl" ng-change="anoChangedRcl()">
           <option value="">Todos</option>
-          <option ng-repeat="ano in data.anos">{{ano}}</option>
-        </select>
-      </div>
-    </div>
-
-    <!-- Filtro Mês -->
-    <div class="filter-input-group">
-      <label class="text-sm text-gray-600">MÊS:</label>
-      <div class="input-with-icon">
-        <i class="fa fa-filter filter-icon-left"></i>
-        <select class="form-control" ng-model="mesSelecionado" ng-change="mesChanged()">
-          <option value="">Todos</option>
-          <option ng-repeat="mes in data.meses" value="{{mes}}">
-            {{mes == 'january' ? 'Janeiro' :
-              mes == 'february' ? 'Fevereiro' :
-              mes == 'march' ? 'Março' :
-              mes == 'april' ? 'Abril' :
-              mes == 'may' ? 'Maio' :
-              mes == 'june' ? 'Junho' :
-              mes == 'july' ? 'Julho' :
-              mes == 'august' ? 'Agosto' :
-              mes == 'september' ? 'Setembro' :
-              mes == 'october' ? 'Outubro' :
-              mes == 'november' ? 'Novembro' :
-              mes == 'december' ? 'Dezembro' : mes}}
-          </option>
+          <option ng-repeat="ano in data.anosRcl">{{ano}}</option>
         </select>
       </div>
     </div>
 
     <!-- Filtro Bimestre -->
     <div class="filter-input-group">
-      <label class="text-sm text-gray-600">BIMESTRE:</label>
+      <label class="text-sm text-gray-600 label-bimestre">BIMESTRE:</label>
       <div class="input-with-icon">
         <i class="fa fa-filter filter-icon-left"></i>
-<select class="form-control"
-  ng-model="bimestreSelecionadoRcl"
-  ng-change="bimestreChanged()"
-  ng-disabled="false">
-  <option value="">Todos</option>
-  <option ng-repeat="bimestre in data.bimestres" value="{{bimestre}}">{{bimestre}}º Bimestre</option>
-</select>
-
-
+        <select class="form-control" ng-model="bimestreSelecionadoRcl" ng-change="bimestreChangedRcl()">
+          <option value="">Todos</option>
+          <option ng-repeat="bimestre in data.bimestresRcl">{{bimestre}}º Bimestre</option>
+        </select>
       </div>
     </div>
 
   </div>
 </div>
+
 ]]></template>
     </sp_widget>
 </record_update>
