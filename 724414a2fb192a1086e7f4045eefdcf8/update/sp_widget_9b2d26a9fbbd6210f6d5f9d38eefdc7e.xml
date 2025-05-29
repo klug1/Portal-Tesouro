@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $http, $timeout, $uibModal, $sce) {
+
+  $scope.modalData = {};
+
+  $scope.openModal = function(node) {
+    var usersHtml = node.users ? $sce.trustAsHtml(node.users) : '';
+    $scope.modalData = {
+      name: node.name,
+      title: node.title,
+      desc: node.desc,
+      users: usersHtml
+    };
+
+    $scope.modalInstance = $uibModal.open({
+      templateUrl: 'modalTemplate',
+      scope: $scope
+    });
+  };
+
+  $scope.closeModal = function() {
+    if ($scope.modalInstance) {
+      $scope.modalInstance.close();
+      $scope.modalInstance = null;
+    }
+  };
+
+  function loadScript(src) {
+    return new Promise(function(resolve, reject) {
+      var script = document.createElement('script');
+      script.src = src;
+      script.onload = resolve;
+      script.onerror = reject;
+      document.head.appendChild(script);
+    });
+  }
+
+  function loadAllScripts() {
+    var scripts = [
+      'https://code.highcharts.com/highcharts.js',
+      'https://code.highcharts.com/modules/sankey.js',
+      'https://code.highcharts.com/modules/organization.js',
+      'https://code.highcharts.com/modules/exporting.js',
+      'https://code.highcharts.com/modules/accessibility.js'
+    ];
+
+    var promise = Promise.resolve();
+    for (var i = 0; i < scripts.length; i++) {
+      (function(src) {
+        promise = promise.then(function() {
+          return loadScript(src);
+        });
+      })(scripts[i]);
+    }
+    return promise;
+  }
+
+  function initChart() {
+    loadAllScripts().then(function() {
+
+      Highcharts.setOptions({
+        chart: {
+          style: {
+            fontFamily: 'Roboto Flex, sans-serif'
+          }
+        }
+      });
+
+      Highcharts.chart('container', {
+        chart: {
+          height: 800,
+          inverted: true
+        },
+        title: {
+          text: 'Organograma da Empresa'
+        },
+        series: [{
+          type: 'organization',
+          name: 'Organograma',
+          keys: ['from', 'to'],
+          data: $scope.data.links,
+          nodes: $scope.data.nodes,
+          colorByPoint: false,
+          color: '#293273',
+          borderColor: 'white',
+          nodeWidth: 100,
+          dataLabels: {
+            color: 'white',
+            style: {
+              textOutline: 'none',
+              fontWeight: 'bold'
+            },
+            formatter: function() {
+              return this.point.desc || this.point.title || this.point.name;
+            }
+          },
+          events: {
+            click: function(event) {
+              var node = event.point;
+              $scope.openModal(node);
+              $scope.$apply();
+            }
+          }
+        }],
+        tooltip: {
+          enabled: false
+        },
+        exporting: {
+          enabled: true,
+          allowHTML: true,
+          sourceWidth: 1000,
+          sourceHeight: 800,
+          buttons: {
+            contextButton: {
+              menuItems: ['printChart', 'viewFullscreen']
+            }
+          }
+        }
+      });
+
+      // Aplicar cantos arredondados
+      var rects = document.querySelectorAll('#container svg rect.highcharts-point');
+      for (var i = 0; i < rects.length; i++) {
+        rects[i].setAttribute('rx', '15');
+        rects[i].setAttribute('ry', '15');
+      }
+
+    }).catch(function(e) {
+      console.error('Erro ao carregar gráfico:', e);
+    });
+  }
+
+  $timeout(function() {
+    initChart();
+  }, 1000);
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>div, h3, h2, h1, h4 {
+	 font-family: 'Roboto Flex', sans-serif;
+}
+
+
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>organograma_tesouro_clone_v3</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+angular.module('sn.$sp').directive('orgChart', function($compile) {
+  return {
+    scope: {
+      node: '='
+    },
+    templateUrl: 'org-chart-template',
+    link: function(scope, element) {
+      $compile(element.contents())(scope);
+    }
+  };
+});
+	
+
+}]]></link>
+        <name>Organograma Tesouro Clone v3</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  var nodes = [];
+  var links = [];
+
+  function fetchChildren(parentSysId, level) {
+    var gr = new GlideRecord('cmn_department');
+    gr.addQuery('u_nome_unidade_superior', parentSysId);
+    gr.query();
+
+    while (gr.next()) {
+      var childSysId = gr.sys_id.toString();
+
+      // Busca usuários
+      var userGr = new GlideRecord('sys_user');
+      userGr.addQuery('department', childSysId);
+      userGr.query();
+
+      var users = [];
+      while (userGr.next()) {
+        users.push(userGr.name + ' - ' + (userGr.title || 'Sem função'));
+      }
+
+      var color = '#293273';
+      if (level === 0) color = '#808080';
+      else if (level === 1) color = '#6CB4EE';
+
+      nodes.push({
+        id: childSysId,
+        title: gr.getValue('u_sigla_unidade') || '',
+        name: gr.name.toString(),
+        desc: gr.getValue('description') || '',
+        users: users.join('<br>'),
+        color: color
+      });
+
+      links.push([parentSysId, childSysId]);
+
+      fetchChildren(childSysId, level + 1);
+    }
+  }
+
+  var rootSysId = '22a5b94487030690947032a70cbb35ae'; 
+  var root = new GlideRecord('cmn_department');
+  if (root.get(rootSysId)) {
+    var userGr = new GlideRecord('sys_user');
+    userGr.addQuery('department', rootSysId);
+    userGr.query();
+
+    var users = [];
+    while (userGr.next()) {
+      users.push(userGr.name + ' - ' + (userGr.title || 'Sem função'));
+    }
+
+    nodes.push({
+      id: rootSysId,
+      title: root.getValue('u_sigla_unidade') || '',
+      name: root.name.toString(),
+      desc: root.getValue('description') || '',
+      users: users.join('<br>'),
+      color: '#808080'
+    });
+  }
+
+  fetchChildren(rootSysId, 1);
+
+  data.links = links;
+  data.nodes = nodes;
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-05-29 01:07:23</sys_created_on>
+        <sys_id>9b2d26a9fbbd6210f6d5f9d38eefdc7e</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>Organograma Tesouro Clone v3</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_9b2d26a9fbbd6210f6d5f9d38eefdc7e</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-29 01:43:44</sys_updated_on>
+        <template><![CDATA[<style>
+  #container .highcharts-point {
+    filter: drop-shadow(0 0 0 white) drop-shadow(0 0 0 white);
+    stroke-linejoin: round !important;
+    stroke-linecap: round !important;
+  }
+
+  #container .highcharts-data-label text {
+    font-family: 'Roboto Flex', sans-serif;
+  }
+
+  .highcharts-menu {
+    font-size: 18px !important;
+  }
+
+  .highcharts-a11y-proxy-element .highcharts-no-tooltip {
+    font-size: 18px !important;
+  }
+
+  .panel.panel-default {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 800px;
+    width: 90vw;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    z-index: 9999;
+  }
+
+  .panel-body.wrapper-xl p {
+    white-space: normal !important;
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+</style>
+
+<div id="container" style="min-width: 310px; max-width: 100%; height: 800px; margin: 0 auto"></div>
+
+<!-- Modal -->
+<script type="text/ng-template" id="modalTemplate">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">Informações do Departamento</h4>
+    </div>
+    <div class="panel-body wrapper-xl">
+      <p><b>Nome:</b> {{modalData.name}}</p>
+      <p><b>Sigla:</b> {{modalData.title}}</p>
+      <p><b>Descrição:</b> {{modalData.desc || 'Sem descrição'}}</p>
+      <p><b>Usuários:</b><br> 
+        <span ng-if="modalData.users" ng-bind-html="modalData.users"></span>
+        <span ng-if="!modalData.users"><i>Sem usuários cadastrados</i></span>
+      </p>
+    </div>
+    <div class="panel-footer text-right">
+      <button class="btn btn-primary" ng-click="closeModal()">Fechar</button>
+    </div>
+  </div>
+</script>
+]]></template>
+    </sp_widget>
+</record_update>
