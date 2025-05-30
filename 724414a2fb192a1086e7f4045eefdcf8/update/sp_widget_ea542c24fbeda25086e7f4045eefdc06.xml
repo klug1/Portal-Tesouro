@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $location) {
+  $scope.goTo = function(id) {
+    //$location.url("?id=" + id);
+		window.open("?id=" + id, '_blank');
+  };
+	
+	// Estado inicial (pode ser null, true ou false)
+$scope.isLowercase = null;
+
+// Escuta evento do rootScope para atualizar o estado
+$scope.$root.$on('toggleCaseEvent', function(event, isLowercase) {
+  $scope.isLowercase = isLowercase;
+});
+
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.servicos-widget {
+  font-family: 'Roboto Flex', sans-serif !important;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 80%;
+  margin: 25px auto 3rem auto; /* centraliza horizontalmente e adiciona margem superior */
+  position: static;
+  text-align: center; /* garante que o texto também fique centralizado */
+}
+.esconder-grafico {
+    display: none !important;
+  }
+
+.grafico-rcl {
+  max-width: 68.5rem; /* Aqui é onde você define o tamanho máximo */
+  margin: 32px auto;
+  padding: 24px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+  min-height: 30rem;
+	//max-height: 50rem;
+}
+
+
+.grafico-rcl h3 {
+    font-family: 'Roboto Flex', sans-serif !important;
+  font-weight: 400;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 24px;
+}
+
+.grafico-rcl img {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  margin-bottom: 24px;
+  border-radius: 6px;
+}
+
+.grafico-rcl p {
+    font-family: 'Roboto Flex', sans-serif !important;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 1.6;
+  text-align: justify;
+  margin-bottom: 24px;
+}
+
+.grafico-rcl button {
+    font-family: 'Roboto Flex', sans-serif !important;
+    font-weight: 400;
+    display: block;
+    margin-left: auto; /* empurra o botão para a direita */
+    padding: 12px 24px;
+    font-size: 2rem;
+    cursor: pointer;
+     border-radius: 3rem;
+}
+
+.lowercase-text {
+  text-transform: lowercase;
+}
+
+.uppercase-text {
+  text-transform: uppercase;
+}
+
+
+@media (max-width: 768px) {
+  .grafico-rcl {
+    padding: 16px;
+  }
+
+  .grafico-rcl h3 {
+    font-size: 1.25rem;
+  }
+
+  .grafico-rcl p {
+    font-size: 0.95rem;
+  }
+
+  .grafico-rcl button {
+    width: 100%;
+  }
+}
+
+
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>limite_prudencial_grafico_sefaz</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>limite prudencial grafico SEFAZ</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  //data.grafico1 = $sp.getWidget('indice_de_atualizacao_grafico', {});
+ // data.grafico2 = $sp.getWidget('widget_despesa_line_bar_v2', {});
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-05-13 02:19:58</sys_created_on>
+        <sys_id>ea542c24fbeda25086e7f4045eefdc06</sys_id>
+        <sys_mod_count>66</sys_mod_count>
+        <sys_name>limite prudencial grafico SEFAZ</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_ea542c24fbeda25086e7f4045eefdc06</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-30 12:26:44</sys_updated_on>
+        <template><![CDATA[<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+</style>
+
+<div class="grafico-rcl">
+  <h3 ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">Despesas com o Pessoal</h3>
+  <img src="x_sded9_portal_t_0.despesaImagem.png"/>
+  
+   <!--sp-widget class="teste" widget="data.grafico1"></sp-widget>
+		<sp-widget widget="data.grafico2"></sp-widget-->
+  
+  <p ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">
+   As Despesas com Pessoal são todos os gastos do Estado com salários, aposentadorias, pensões
+    e outros benefícios dos servidores públicos, incluindo encargos trabalhistas.
+    Esses gastos são monitorados para garantir que não ultrapassem um limite estabelecido por lei, 
+    mantendo o equilíbrio financeiro e permitindo que sobre dinheiro para outras áreas, como saúde, educação e segurança.
+  </p>
+  <button class="btn btn-primary" ng-click="goTo('despesa_pessoal')" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">Detalhar</button>
+</div>
+
+<!--
+<script>
+  var intervalo = setInterval(() => {
+    var elementos = document.getElementsByClassName('chart-wrapper');
+    if (elementos.length > 0) {
+      elementos[0].style.setProperty('display', 'none', 'important');
+      clearInterval(intervalo);
+    }
+  }, 300); 
+</script>
+-->
+]]></template>
+    </sp_widget>
+</record_update>

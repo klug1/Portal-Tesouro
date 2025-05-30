@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $location) {
+  $scope.goTo = function(id) {
+    //$location.url("?id=" + id);
+		window.open("?id=" + id, '_blank');
+  };
+	
+$scope.goToPage = function(id) {
+    $location.url("?id=" + id);
+};
+
+	
+	// Estado inicial (pode ser null, true ou false)
+$scope.isLowercase = null;
+
+// Escuta evento do rootScope para atualizar o estado
+$scope.$root.$on('toggleCaseEvent', function(event, isLowercase) {
+  $scope.isLowercase = isLowercase;
+});
+
+	
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.fiscal-widget-container {
+  font-family: 'Roboto Flex', sans-serif !important;
+  font-weight: 400; 
+  font-style: normal;
+  display: flex;
+  flex-wrap: wrap;
+	justify-content: center;
+  padding: 2rem;
+  gap: 2rem;
+  margin: 0 auto 3rem;
+  max-width:100%;
+
+.fiscal-card {
+  flex: 1 1 calc(33.333% - 2rem); /* 3 por linha com espaçamento */
+  min-width: 280px; /* evita ficar pequeno demais */
+  max-width: 350px; /* seu valor original */
+  height: 220px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding-top: 20px;
+  cursor: pointer;
+  transition: transform 0.2s;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fiscal-card:hover {
+  transform: scale(1.05);
+}
+
+.fiscal-card img {
+  height: 10rem;
+  margin-top: 10px;
+  object-fit: contain;
+}
+
+.fiscal-label {
+  background-color: #e2e5f3;
+  border-bottom-right-radius: 0.8rem;
+  border-top-right-radius: 0.8rem;
+  padding: 8px 12px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  display: inline-block;
+  align-self: flex-start; /* alinha à esquerda dentro do card */
+  margin-top: 4.5rem;
+  font-size: 2.0rem;
+
+}
+  
+  .lowercase-text {
+  text-transform: lowercase;
+}
+
+.uppercase-text {
+  text-transform: uppercase;
+}
+
+
+	/* Telas Maiores (desk grandes &gt; 1200px) vai manter 3 colunas, mas com espaço*/
+ @media (min-width: 1201px) {
+  .fiscal-widget-container {
+    padding: 3rem;
+    gap: 3rem;
+  }
+  
+    .fiscal-card {
+    flex-basis: calc(33.333% - 3rem);
+      max-width: 400px;
+  }
+}
+
+ /* Telas médias (Tablets deitados, desk menores) vai ter 2 colunas */
+  @media (max-width: 1200px) {
+    .fiscal-widget-container {
+      padding: 1.5rem;
+      gap: 1.5rem;
+    }
+    
+    .fiscal-card {
+      flex: 1 1 calc(50% - 1.5rem); /* 2 cards por linha */
+      max-width: 45%;
+    }
+  }
+  
+  /* Telas pequenas (tablets deitados 601px - 900px) - Ainda vai ter 2 colunas, mas menores */
+  @media (max-width: 900px) {
+    .fiscal-widget-container {
+      padding: 1rem;
+      gap: 1rem;
+      margin-left: 0;
+      margin-bottom: 5rem;
+    }
+    
+    .fiscal-card {
+      flex: 1 1 calc(50% - 1rem);
+      max-width: calc(50% - 1rem);
+      height: 200px;
+      
+      .fiscal-card img {
+        height: 8rem;
+      }
+      .fiscal-label {
+        font-size: 2rem;
+        padding: 8px 12px;
+        margin-top: 3rem;
+      }
+    }
+
+  }
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>acesso_rapido_menu_icon_sefaz</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Acesso Rapido Menu Icon Sefaz</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-05-09 21:48:23</sys_created_on>
+        <sys_id>87690023fb1d6e1086e7f4045eefdc19</sys_id>
+        <sys_mod_count>82</sys_mod_count>
+        <sys_name>Acesso Rapido Menu Icon Sefaz</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_87690023fb1d6e1086e7f4045eefdc19</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-29 23:17:51</sys_updated_on>
+        <template><![CDATA[<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+</style>
+
+<div class="fiscal-widget-container">
+  <div class="fiscal-card" ng-click="goToPage('indicadores_fiscais')">
+    <img src="x_sded9_portal_t_0.resultadosGif.gif" alt="Indicadores Fiscais" />
+     <div class="fiscal-label" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">Indicadores Fiscais</div>
+  </div>
+
+  <div class="fiscal-card" ng-click="goToPage('404_sefaz')">
+    <img src="x_sded9_portal_t_0.analyticsGif.gif" alt="Resultado Fiscal" />
+    <div class="fiscal-label" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">Resultado Fiscal</div>
+  </div>
+
+  <div class="fiscal-card" ng-click="goTo('404_sefaz')">
+    <img src="x_sded9_portal_t_0.marketingGif.gif" alt="Comunicados" />
+    <div class="fiscal-label" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">Comunicados</div>
+  </div>
+</div>
+
+
+
+ <!--img src="x_sded9_portal_t_0.velocimetro.gif" style="width: 100%; max-width: 100px; height: auto;" alt="Indicadores Fiscais" /-->
+<!--img src="x_sded9_portal_t_0.chart.gif" style="width: 100%; max-width: 100px; height: auto;" alt="Resultado Fiscal"/-->
+]]></template>
+    </sp_widget>
+</record_update>
