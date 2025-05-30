@@ -1,7 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[function($scope, $http, $timeout) {
+        <client_script><![CDATA[function($scope, $http, $timeout, $uibModal, $sce) {
+
+    $scope.modalData = {};
+
+    $scope.openModal = function(node) {
+        var usersHtml = node.users ? $sce.trustAsHtml(node.users) : '';
+
+        $scope.modalData = {
+            name: node.name,
+            title: node.title,
+            desc: node.desc,
+            users: usersHtml,
+            gestorTitular: node.gestorTitular || 'Não informado',
+            gestorSub1: node.gestorSub1 || 'Não informado',
+            gestorSub2: node.gestorSub2 || 'Não informado'
+        };
+
+        $scope.modalInstance = $uibModal.open({
+            templateUrl: 'modalTemplate',
+            scope: $scope
+        });
+    };
+
+    $scope.closeModal = function() {
+        if ($scope.modalInstance) {
+            $scope.modalInstance.close();
+            $scope.modalInstance = null;
+        }
+    };
+
     function loadScript(src) {
         return new Promise(function(resolve, reject) {
             var script = document.createElement('script');
@@ -12,7 +41,7 @@
         });
     }
 
-    async function loadAllScripts() {
+    function loadAllScripts() {
         var scripts = [
             'https://code.highcharts.com/highcharts.js',
             'https://code.highcharts.com/modules/sankey.js',
@@ -21,20 +50,19 @@
             'https://code.highcharts.com/modules/accessibility.js'
         ];
 
+        var promise = Promise.resolve();
         for (var i = 0; i < scripts.length; i++) {
-            await loadScript(scripts[i]);
+            (function(src) {
+                promise = promise.then(function() {
+                    return loadScript(src);
+                });
+            })(scripts[i]);
         }
+        return promise;
     }
 
-    async function initChart() {
-        try {
-            await loadAllScripts();
-
-            // Aqui você deve garantir que $scope.data esteja carregado
-            if (!$scope.data || !$scope.data.nodes || !$scope.data.links) {
-                console.warn('Dados não carregados ainda!');
-                return;
-            }
+    function initChart() {
+        loadAllScripts().then(function() {
 
             Highcharts.setOptions({
                 chart: {
@@ -45,10 +73,25 @@
             });
 
             Highcharts.chart('container', {
-                // suas configurações...
                 chart: {
                     height: 800,
-                    inverted: true
+                    inverted: true,
+                    events: {
+                       render: function() {
+                          var parents = document.querySelectorAll('.highcharts-label.highcharts-data-label.highcharts-data-label-color-undefined.highcharts-tracker');
+                          parents.forEach(function(parent) {
+                            var h4s = parent.querySelectorAll('h4');
+                            h4s.forEach(function(h4) {
+                              h4.style.display = 'none';
+                            });
+
+                            var ps = parent.querySelectorAll('p');
+                            ps.forEach(function(p) {
+                              p.style.fontSize = '18px';
+                            });
+                          });
+                       }
+                    }
                 },
                 title: {
                     text: 'Organograma da Empresa'
@@ -70,23 +113,27 @@
                             fontWeight: 'bold'
                         },
                         formatter: function() {
-                            return this.point.desc || this.point.title || this.point.name;
+                            return this.point.title;
+                        }
+                    },
+                    events: {
+                        click: function(event) {
+                            var node = event.point;
+                            $scope.openModal({
+                                name: node.name,
+                                title: node.title,
+                                desc: node.desc,
+                                users: node.users,
+                                gestorTitular: node.gestorTitular,
+                                gestorSub1: node.gestorSub1,
+                                gestorSub2: node.gestorSub2
+                            });
+                            $scope.$apply();
                         }
                     }
                 }],
                 tooltip: {
-                    outside: true,
-                    style: {
-                        fontSize: '16px',
-                        fontWeight: 'bold',
-                        fontFamily: 'Roboto Flex, sans-serif'
-                    },
-                    formatter: function() {
-                        var node = this.point;
-                        return '<b>' + node.name + '</b><br/>' +
-                               (node.desc ? node.desc + '<br/>' : '') +
-                               (node.users ? '<b>Usuários:</b> ' + node.users : '<i>Sem usuários neste departamento</i>');
-                    }
+                    enabled: false
                 },
                 exporting: {
                     enabled: true,
@@ -101,23 +148,22 @@
                 }
             });
 
-            // Faz os cantos arredondados
+            // Cantos arredondados dos nós
             var rects = document.querySelectorAll('#container svg rect.highcharts-point');
-            for (var i = 0; i < rects.length; i++) {
-                rects[i].setAttribute('rx', '15');
-                rects[i].setAttribute('ry', '15');
+            for (var j = 0; j < rects.length; j++) {
+                rects[j].setAttribute('rx', '15');
+                rects[j].setAttribute('ry', '15');
             }
-        } catch (e) {
+
+        }).catch(function(e) {
             console.error('Erro ao carregar ou inicializar gráfico:', e);
-        }
+        });
     }
 
-    // Agora, execute após o $scope.data estar pronto. Se você obtém dados async, chame initChart depois.
-    // Se os dados forem carregados pelo servidor async, chame initChart após a resposta.
-    
     $timeout(function() {
         initChart();
-    }, 1000); // 1 segundo só para garantir que $scope.data esteja pronto
+    }, 1000);
+
 }
 ]]></client_script>
         <controller_as>c</controller_as>
@@ -155,10 +201,33 @@ angular.module('sn.$sp').directive('orgChart', function($compile) {
         <public>true</public>
         <roles/>
         <script><![CDATA[(function() {
+
+    // Função para buscar usuários ativos de um departamento
+    function getUsersByDepartment(deptSysId) {
+        var users = [];
+        var userGr = new GlideRecord('sys_user');
+        userGr.addQuery('active', true);
+        userGr.addQuery('department', deptSysId);
+        userGr.query();
+        while (userGr.next()) {
+            users.push(userGr.name.toString() + ' - ' + (userGr.title.toString() || 'Sem função'));
+        }
+        return users;
+    }
+
+    // Função para buscar info do usuário (gestor) pelo sys_id
+    function getUserInfo(userSysId) {
+        if (!userSysId) return 'Não informado';
+        var userGr = new GlideRecord('sys_user');
+        if (userGr.get(userSysId)) {
+            return userGr.name.toString() + ' - ' + (userGr.title.toString() || 'Sem função');
+        }
+        return 'Não encontrado';
+    }
+
     var nodes = [];
     var links = [];
 
-    // Função recursiva para buscar filhos com controle de nível
     function fetchChildren(parentSysId, level) {
         var gr = new GlideRecord('cmn_department');
         gr.addQuery('u_nome_unidade_superior', parentSysId);
@@ -167,67 +236,61 @@ angular.module('sn.$sp').directive('orgChart', function($compile) {
         while (gr.next()) {
             var childSysId = gr.sys_id.toString();
 
-            // Buscar usuários desse departamento
-            var userGr = new GlideRecord('sys_user');
-            userGr.addQuery('department', childSysId);
-            userGr.query();
+            var users = getUsersByDepartment(childSysId);
 
-            var users = [];
-            while (userGr.next()) {
-                users.push(userGr.name.toString() + ' (' + (userGr.title.toString() || 'Sem função') + ')');
-            }
+            var gestorTitular = getUserInfo(gr.getValue('u_matricula_responsavel'));
+            var gestorSub1 = getUserInfo(gr.getValue('u_matricula_substituto_1'));
+            var gestorSub2 = getUserInfo(gr.getValue('u_matricula_substituto_2'));
 
-            // Definir cor com base no nível
             var color = '#293273'; // Azul escuro para netos e além
             if (level === 0) color = '#808080'; // Cinza para o pai (root)
             else if (level === 1) color = '#6CB4EE'; // Azul claro para os filhos diretos
 
-            // Adiciona o nó (node)
             nodes.push({
                 id: childSysId,
                 title: gr.getValue('u_sigla_unidade') || '',
                 name: gr.name.toString(),
                 desc: gr.getValue('description') || '',
-                users: users.join(', '),
+                users: users.join('<br>'),
+                gestorTitular: gestorTitular,
+                gestorSub1: gestorSub1,
+                gestorSub2: gestorSub2,
                 color: color
             });
 
-            // Adiciona a ligação (link) com o pai
             links.push([parentSysId, childSysId]);
 
-            // Busca filhos desse filho (netos, bisnetos…) com nível incrementado
             fetchChildren(childSysId, level + 1);
         }
     }
 
-    // Começa pelo root
-    var rootSysId = '60ef95a4fb3d661086e7f4045eefdcb4';
+    var rootSysId = '22a5b94487030690947032a70cbb35ae'; // Seu root específico
     var root = new GlideRecord('cmn_department');
     if (root.get(rootSysId)) {
-        // Buscar usuários do root também
-        var userGr = new GlideRecord('sys_user');
-        userGr.addQuery('department', rootSysId);
-        userGr.query();
+        var users = getUsersByDepartment(rootSysId);
 
-        var users = [];
-        while (userGr.next()) {
-            users.push(userGr.name.toString() + ' (' + (userGr.title.toString() || 'Sem função') + ')');
-        }
+        var gestorTitularRoot = getUserInfo(root.getValue('u_matricula_responsavel'));
+        var gestorSub1Root = getUserInfo(root.getValue('u_matricula_substituto_1'));
+        var gestorSub2Root = getUserInfo(root.getValue('u_matricula_substituto_2'));
 
         nodes.push({
             id: rootSysId,
             title: root.getValue('u_sigla_unidade') || '',
             name: root.name.toString(),
             desc: root.getValue('description') || '',
-            users: users.join(', '),
-            color: '#808080'  // Cor do root (pai) cinza
+            users: users.join('<br>'),
+            gestorTitular: gestorTitularRoot,
+            gestorSub1: gestorSub1Root,
+            gestorSub2: gestorSub2Root,
+            color: '#808080'
         });
     }
 
-    fetchChildren(rootSysId, 1);  // chama com nível 1 para os filhos diretos
+    fetchChildren(rootSysId, 1);
 
     data.links = links;
     data.nodes = nodes;
+
 })();
 ]]></script>
         <servicenow>false</servicenow>
@@ -235,16 +298,16 @@ angular.module('sn.$sp').directive('orgChart', function($compile) {
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-25 16:25:06</sys_created_on>
         <sys_id>e3d8dde8fbf9661086e7f4045eefdcc7</sys_id>
-        <sys_mod_count>79</sys_mod_count>
+        <sys_mod_count>159</sys_mod_count>
         <sys_name>Organograma Tesouro Clone v2</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_e3d8dde8fbf9661086e7f4045eefdcc7</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-26 14:55:15</sys_updated_on>
+        <sys_updated_on>2025-05-30 22:16:31</sys_updated_on>
         <template><![CDATA[<style>
- #container .highcharts-point {
+  #container .highcharts-point {
     filter: drop-shadow(0 0 0 white) drop-shadow(0 0 0 white);
     stroke-linejoin: round !important;
     stroke-linecap: round !important;
@@ -253,19 +316,66 @@ angular.module('sn.$sp').directive('orgChart', function($compile) {
   #container .highcharts-data-label text {
     font-family: 'Roboto Flex', sans-serif;
   }
-    .highcharts-menu {
+
+  .highcharts-menu {
+    font-size: 18px !important;
+  }
+
+  .highcharts-a11y-proxy-element .highcharts-no-tooltip {
     font-size: 18px !important;
   }
   
-  .highcharts-a11y-proxy-element .highcharts-no-tooltip{
-  	font-size: 18px !important;
-  	}
- 
-  
+  /* Aumenta a largura do modal */
+.panel.panel-default {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 800px;
+  width: 90vw;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+  h4{
+  	cursor: pointer;
+  }
+
+/* Opcional: para o conteúdo não ficar apertado */
+.panel-body.wrapper-xl p {
+  white-space: normal !important;
+}
+
+
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 </style>
 
 <div class='containerOrg' id="container" style="min-width: 310px; max-width: 100%; height: 800px; margin: 0 auto"></div>
+
+<!-- Modal Template -->
+<script type="text/ng-template" id="modalTemplate">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">Informações do Departamento</h4>
+    </div>
+    <div class="panel-body wrapper-xl">
+      <p><b>Nome:</b> {{modalData.name}}</p>
+      <p><b>Sigla:</b> {{modalData.title}}</p>
+      <p><b>Descrição:</b> {{modalData.desc || 'Sem descrição'}}</p>
+      <p><b>Gestor Titular:</b> {{modalData.gestorTitular}}</p>
+      <p><b>Gestor Substituto 1:</b> {{modalData.gestorSub1}}</p>
+      <p><b>Gestor Substituto 2:</b> {{modalData.gestorSub2}}</p>
+      <p><b>Colaboradores:</b><br> 
+        <span ng-if="modalData.users" ng-bind-html="modalData.users"></span>
+        <span ng-if="!modalData.users"><i>Sem usuários cadastrados</i></span>
+      </p>
+    </div>
+    <div class="panel-footer text-right">
+      <button class="btn btn-primary" ng-click="closeModal()">Fechar</button>
+    </div>
+  </div>
+</script>
+
+
 ]]></template>
     </sp_widget>
 </record_update>
