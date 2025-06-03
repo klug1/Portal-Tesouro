@@ -2,6 +2,13 @@
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
         <client_script><![CDATA[function($scope, $location) {
+	 var c = this;
+	
+  console.log('Client loaded');
+    console.log('Instance Name from Client:', c.data.instanceName);
+
+    $scope.instanceName = c.data.instanceName;
+
   $scope.goTo = function(url) {
     // Abre o link em uma nova aba
     window.location.href = url;
@@ -37,7 +44,7 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, 30%); /* desce o bloco visualmente */
+  transform: translate(-50%, 7%); /* desce o bloco visualmente */
   max-width: 500px;
   width: 90%;
   text-align: center;
@@ -64,10 +71,10 @@ body {
 
 
 .center-widget .title {
-   font-family: 'Roboto Flex', sans-serif;
+  font-family: 'Roboto Flex', sans-serif;
   font-weight: 300;
   font-size: 2.8rem;
-   margin-top: -1rem;
+  margin-top: -1rem;
   margin-bottom: 1rem;
   color: #333;
 }
@@ -108,7 +115,7 @@ body {
 
 @media (max-width: 540px) {
   .center-widget {
-    transform: translate(-50%, 60%);
+    transform: translate(-50%, 20%);
   }
 
   .center-widget .title {
@@ -126,7 +133,7 @@ body {
 }
 @media (max-width: 440px) {
   .center-widget {
-    transform: translate(-50%, 80%);
+    transform: translate(-50%, 30%);
   }
 
   .center-widget .title {
@@ -145,7 +152,7 @@ body {
 
 @media (max-width: 350px) {
   .center-widget {
-    transform: translate(-50%, 100%);
+    transform: translate(-50%, 50%);
   }
 
   .center-widget .title {
@@ -175,26 +182,35 @@ body {
         <option_schema/>
         <public>true</public>
         <roles/>
-        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <script><![CDATA[(function() {
+  var instanceName = gs.getProperty('instance_name');
+    //gs.addInfoMessage('Instance Name (Server): ' + instanceName);
+    data.instanceName = instanceName;
+})();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-15 23:41:24</sys_created_on>
         <sys_id>0ddc9b1dfb6de65086e7f4045eefdc34</sys_id>
-        <sys_mod_count>46</sys_mod_count>
+        <sys_mod_count>73</sys_mod_count>
         <sys_name>404_sefaz_widget</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_0ddc9b1dfb6de65086e7f4045eefdc34</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-16 23:36:11</sys_updated_on>
+        <sys_updated_on>2025-06-02 21:34:34</sys_updated_on>
         <template><![CDATA[<div class="center-widget">
-   <a  ng-click="goTo('https://sefazmtdev.service-now.com/sefaz')" class="back-link" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">Voltar para o portal</a>
+    <a ng-click="goTo('https://' + c.data.instanceName + '.service-now.com/sate')" 
+      class="back-link" 
+      ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">
+      Voltar para o portal
+   </a>
   <div class="title" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">Ops! Estamos em construção...</div>
   <img src="x_sded9_portal_t_0.404Image.png" alt="404" />
   <div class="error-text" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">404 PÁGINA NÃO ENCONTRADA</div>
 </div>
+
 ]]></template>
     </sp_widget>
 </record_update>

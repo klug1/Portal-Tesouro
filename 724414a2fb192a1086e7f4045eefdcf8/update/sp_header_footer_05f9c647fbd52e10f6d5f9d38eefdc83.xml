@@ -4,21 +4,28 @@
         <client_script><![CDATA[api.controller = function($scope, $window, $http, spUtil, $location) {
     var c = this;
 	
-	$scope.goTo = function(url) {
-    //$location.url("?id=" + id);
-		window.open(url, '_blank');
-  };
+	$scope.instanceName = c.data.instanceName;
 	
-	$scope.goToPage = function(id) {
-    //$location.url(id, _blank);
-		window.open("?id=" + id, '_blank');
-  };
+$scope.goToPage = function(id) {
+    $scope.menuAberto = false;
+    $scope.submenuFinancasAberto = false;
+    $scope.submenuSistemasAberto = false;
+    window.open("?id=" + id, '_blank');
+};
+
+$scope.goTo = function(url) {
+    $scope.menuAberto = false;
+    $scope.submenuFinancasAberto = false;
+    $scope.submenuSistemasAberto = false;
+    window.open(url, '_blank');
+};
 	
 	
 	    function updateFlags() {
         var currentUrl = $location.absUrl();
-        $scope.isHomePage = (currentUrl === "https://sefazmtdev.service-now.com/sate");
-        $scope.showHeaderMenu = (currentUrl === "https://sefazmtdev.service-now.com/sate");
+        $scope.isHomePage = (currentUrl === "https://" + $scope.instanceName + ".service-now.com/sate");
+
+        $scope.showHeaderMenu = (currentUrl === "https://" + $scope.instanceName + ".service-now.com/sate");
     }
 
     // Atualiza na inicialização
@@ -29,16 +36,22 @@
         return $location.absUrl();
     }, function(newVal, oldVal) {
         if (newVal !== oldVal) {
+				$scope.menuAberto = false;
+        $scope.submenuFinancasAberto = false;
+        $scope.submenuSistemasAberto = false;
+        $scope.dropdownOpen = false;
             updateFlags();
         }
     });
+	
+	
 
     var highContrastEnabled = false;
 	
 	     var currentUrl = window.location.href;
-  		$scope.showHeaderMenu = currentUrl === "https://sefazmtdev.service-now.com/sate";
+  		$scope.showHeaderMenu = currentUrl === "https://" + $scope.instanceName + ".service-now.com/sate";
 
-$scope.isHomePage = (currentUrl === "https://sefazmtdev.service-now.com/sate");
+$scope.isHomePage = (currentUrl === "https://" + $scope.instanceName + ".service-now.com/sate");
 
 			
   $scope.menuAberto = false;
@@ -303,7 +316,7 @@ for (var p = 0; p < links.length; p++) {
 				imgLogo.src = 'x_sded9_portal_t_0.logoEscura.png';
 				imgLogo.style.transform = 'translateY(42px)';
 			} else {
-				imgLogo.src = 'https://sefazmtdev.service-now.com/logo_sefaz_footer.svg';
+				imgLogo.src = "https://" + $scope.instanceName + ".service-now.com/logo_sefaz_footer.svg";
 				imgLogo.style.transform = '';
 			}
 		}
@@ -1524,6 +1537,11 @@ li.dropdown:hover &gt; a .fa.fa-angle-right {
         <public>true</public>
         <roles/>
         <script><![CDATA[(function() {
+	
+	 var instanceName = gs.getProperty('instance_name');
+    //gs.addInfoMessage('Instance Name (Server): ' + instanceName);
+    data.instanceName = instanceName;
+	
   /* populate the 'data' object */
   /* e.g., data.table = $sp.getValue('table'); */
 data.typeAheadSearch = $sp.getWidget('typeahead_global_sefaz', options.typeahead_search);
@@ -1537,14 +1555,14 @@ data.typeAheadSearch = $sp.getWidget('typeahead_global_sefaz', options.typeahead
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-08 17:54:22</sys_created_on>
         <sys_id>05f9c647fbd52e10f6d5f9d38eefdc83</sys_id>
-        <sys_mod_count>438</sys_mod_count>
+        <sys_mod_count>445</sys_mod_count>
         <sys_name>Sefaz Header Portal</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_header_footer_05f9c647fbd52e10f6d5f9d38eefdc83</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-29 23:16:35</sys_updated_on>
+        <sys_updated_on>2025-06-03 21:30:06</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 </style>
@@ -1560,7 +1578,7 @@ data.typeAheadSearch = $sp.getWidget('typeahead_global_sefaz', options.typeahead
 <a 
    id="iconHamb" 
    ng-if="!isHomePage" 
-   href="https://sefazmtdev.service-now.com/sate" 
+   ng-href="https://{{instanceName}}.service-now.com/sate"
    aria-hidden="true" 
    style="text-decoration:none; color: inherit;">
   
@@ -1728,9 +1746,9 @@ data.typeAheadSearch = $sp.getWidget('typeahead_global_sefaz', options.typeahead
       </li>
       <!--li><a href="?id=gfo_kb_home">Base de conhecimento</a></li-->
       <li class="dropdown">
-       <a href="?id=404_sefaz">PAINÉIS <i class="fa fa-angle-right"></i></a>
+       <a href="">PAINÉIS <i class="fa fa-angle-right"></i></a>
         <ul class="dropdown-menu">
-          <li><a href="?id=404_sefaz" target="_blank"><i class="fa fa-external-link">404</i></a></li>
+          <!--li><a href="?id=404_sefaz" target="_blank"><i class="fa fa-external-link">404</i></a></li-->
           <!--li><a href="https://www.sigadoc.mt.gov.br/" target="_blank"><i class="fa fa-external-link"></i> SIGADOC</a></li>
           <li><a href="https://servicos.tce.mt.gov.br/" target="_blank"><i class="fa fa-external-link"></i> GEO-OBRAS</a></li>
           <li><a href="https://www.sefaz.mt.gov.br/sifimt/" target="_blank"><i class="fa fa-external-link"></i> SIFI</a></li-->

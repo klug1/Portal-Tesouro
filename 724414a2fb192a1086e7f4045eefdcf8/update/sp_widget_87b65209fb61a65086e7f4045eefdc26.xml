@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script/>
+        <client_script><![CDATA[api.controller = function($scope, $window, $http, spUtil, $location) {
+    var c = this;
+	
+	$scope.instanceName = c.data.instanceName;
+
+}]]></client_script>
         <controller_as>c</controller_as>
         <css>.title-global {
   position: absolute;
@@ -177,20 +182,31 @@
         <option_schema>[{"displayValue":"Carousel Slide","hint":"Select the slides to be displayed. Configure slide background image, title and URL on sp_carousel_slide table","name":"slides","display_value_list":[],"section":"Data","default_value":"7f6a3df2437cb110c27380a7fab8f25b,d38bf176437cb110c27380a7fab8f28d,be9b7976437cb110c27380a7fab8f2ad","label":"Slides","type":"glide_list","value":"sp_carousel_slide","ed":{"reference":"sp_carousel_slide"}},{"hint":"Title colour will be same for all slides","name":"title_colour","section":"Presentation","default_value":"#FFFFFF","label":"Title Colour","type":"string"},{"hint":"Alignment will be same for all slides","name":"alignment","section":"Presentation","default_value":"left","label":"Alignment","type":"choice","choices":[{"label":"left","value":"left"},{"label":"center","value":"center"}]}]</option_schema>
         <public>true</public>
         <roles/>
-        <script/>
+        <script><![CDATA[(function() {
+	
+	 var instanceName = gs.getProperty('instance_name');
+    //gs.addInfoMessage('Instance Name (Server): ' + instanceName);
+    data.instanceName = instanceName;
+	
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+})();
+
+]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-14 23:56:40</sys_created_on>
         <sys_id>87b65209fb61a65086e7f4045eefdc26</sys_id>
-        <sys_mod_count>63</sys_mod_count>
+        <sys_mod_count>64</sys_mod_count>
         <sys_name>Banner Sefaz</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_87b65209fb61a65086e7f4045eefdc26</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-26 21:36:26</sys_updated_on>
+        <sys_updated_on>2025-06-03 21:32:54</sys_updated_on>
         <template><![CDATA[<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -404,7 +420,7 @@
 
 
       <ul class='slider'>
-        <li class='item' style="background-image: url('https://sefazmtdev.service-now.com/x_sded9_portal_t_0.banner1.jpg')">
+        <li class='item' style="background-image: url('https://{{instanceName}}.service-now.com/x_sded9_portal_t_0.banner1.jpg')">
           <div class='content'>
             <h2 class='title'>Escola Estadual Leovegildo de Melo</h2>
             <p class='description'> 
@@ -412,21 +428,21 @@
             <!--button>Read More</button-->
           </div>
         </li>
-        <li class='item' style="background-image: url('https://sefazmtdev.service-now.com/x_sded9_portal_t_0.banner2.jpg')">
+        <li class='item' style="background-image: url('https://{{instanceName}}.service-now.com/x_sded9_portal_t_0.banner2.jpg')">
           <div class='content'>
             <h2 class='title'>Escola Estadual Leovegildo de Melo</h2>
             <p class='description'>Créditos da Foto: Michel Alvim / SECOM MT  </p>
             <!--button>Read More</button-->
           </div>
         </li>
-        <li class='item' style="background-image: url('https://sefazmtdev.service-now.com/x_sded9_portal_t_0.banner3.jpg')">
+        <li class='item' style="background-image: url('https://{{instanceName}}.service-now.com/x_sded9_portal_t_0.banner3.jpg')">
           <div class='content'>
             <h2 class='title'>Ponte sobre o Rio das Mortes em Cocalinho</h2>
             <p class='description'>  Crédito da Foto: Drone: Foto: Antônio Pinheiro/Secom-MT </p>
             <!--button>Read More</button-->
           </div>
         </li>
-        <li class='item' style=" background-image: url('https://sefazmtdev.service-now.com/x_sded9_portal_t_0.banner4.jpg');">
+        <li class='item' style=" background-image: url('https://{{instanceName}}.service-now.com/x_sded9_portal_t_0.banner4.jpg');">
           <div class='content'>
             <h2 class='title'>Batalhão de de Operações Policiais Especiais - BOPE</h2>
             <p class='description'>
@@ -435,7 +451,7 @@
             <!--button>Read More</button-->
           </div>
         </li>
-        <li class='item' style="background-image: url('https://sefazmtdev.service-now.com/x_sded9_portal_t_0.banner5.jpg')">
+        <li class='item' style="background-image: url('https://{{instanceName}}.service-now.com/x_sded9_portal_t_0.banner5.jpg')">
           <div class='content'>
             <h2 class='title'>Infraestrutura moderna e recursos tecnológicos transformam escolas estaduais na volta às aulas</h2>
             <p class='description'>
@@ -444,7 +460,7 @@
             <!--button>Read More</button-->
           </div>
         </li>
-        <li class='item' style="background-image: url('https://sefazmtdev.service-now.com/x_sded9_portal_t_0.banner6.jpg')">
+        <li class='item' style="background-image: url('https://{{instanceName}}.service-now.com/x_sded9_portal_t_0.banner6.jpg')">
           <div class='content'>
             <h2 class='title'>Parque Novo Mato Grosso - Espaço shows</h2>
             <p class='description'>  Créditos da Foto: Christiano Antonucci - Secom - MT Drone: Rodolfo Perdigão - Secom - MT  </p>

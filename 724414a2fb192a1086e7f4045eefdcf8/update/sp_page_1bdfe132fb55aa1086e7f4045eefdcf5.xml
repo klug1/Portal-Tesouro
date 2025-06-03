@@ -90,7 +90,7 @@
   min-height: 300px;
   position: relative; /* ou static */
   z-index: 1;
-  margin-top: 16rem;
+  //margin-top: 16rem;
 }</css>
         <draft>false</draft>
         <dynamic_title_structure/>
@@ -106,15 +106,15 @@
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-07 21:20:30</sys_created_on>
         <sys_id>1bdfe132fb55aa1086e7f4045eefdcf5</sys_id>
-        <sys_mod_count>34</sys_mod_count>
+        <sys_mod_count>36</sys_mod_count>
         <sys_name>ec_home_sefaz</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_page_1bdfe132fb55aa1086e7f4045eefdcf5</sys_update_name>
-        <sys_updated_by>pk.aba</sys_updated_by>
-        <sys_updated_on>2025-05-14 22:01:21</sys_updated_on>
-        <title>Employee Center Homepage Sefaz</title>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-02 21:09:06</sys_updated_on>
+        <title>Tesouro Estadual MT</title>
         <use_seo_script>false</use_seo_script>
     </sp_page>
     <sys_translated_text action="delete_multiple" query="documentkey=1bdfe132fb55aa1086e7f4045eefdcf5"/>
