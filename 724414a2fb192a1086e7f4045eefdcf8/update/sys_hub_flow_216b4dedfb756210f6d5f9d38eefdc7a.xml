@@ -4,7 +4,7 @@
         <acls/>
         <active>true</active>
         <annotation/>
-        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=6193000,viewActivatedIn=naturalLanguage</attributes>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=613704000,viewActivatedIn=naturalLanguage</attributes>
         <authored_on_release_version>27000</authored_on_release_version>
         <callable_by_client_api>false</callable_by_client_api>
         <category/>
@@ -15,7 +15,7 @@
         <flow_priority>MEDIUM</flow_priority>
         <generation_source/>
         <internal_name>primary_revenue_and_expenditure_2</internal_name>
-        <label_cache>[{"name":"subflow.record","label":"Input➛Record","reference":"x_sded9_portal_t_0_registro_de_cargas_tesouro","reference_display":"Treasury Cargo Registration","type":"reference","base_type":"reference","column_name":"","usedInstances":{"b1c3d1ce-831a-4bfb-b59b-fac37677e4f9":["conditions"],"0a53884c-6d3f-4926-b143-7aebb7b97d97":["conditions"],"39268173-2ed3-4659-805a-84b15f1045a3":["parent_sys_id"],"c89a2cab-c4b6-4d9a-a522-66df72662c5e":["parent_sys_id"],"fb48067c-f6f5-45ab-b1f7-87e39e2b4f53":["parent_sys_id"],"83c6e11f-e93b-467c-9b7f-38bab9ae0a3b":["parent_sys_id"],"b68068aa-2262-4839-a185-5e13cd917f72":["parent_sys_id"],"d54d22bc-061e-44b3-8b1e-9ed82884ca5f":["parent_sys_id"],"7a5418ac-94b7-4d9e-aa2a-30eca3999ced":["parent_sys_id"]},"attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"f4b7b973-3190-4871-8403-baaef11efe7b","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"b1c3d1ce-831a-4bfb-b59b-fac37677e4f9.Records","label":"1 - Look Up Records➛Multi Row Question Answer Records","reference":"sc_multi_row_question_answer","reference_display":"Multi Row Question Answer","type":"records","base_type":"records","usedInstances":{"20fde648-3ced-4596-b1ac-b39b687a2a96":["items"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.value","label":"3 - For Each➛Multi Row Question Answer Record➛Value","reference":"","reference_display":"Value","type":"string","base_type":"string","parent_table_name":"sc_multi_row_question_answer","column_name":"value","usedInstances":{"3283fd25-754f-4540-a6dc-42c1d8b9e628":["conditions"],"45e87eb4-1522-46c8-928c-4e868bc4e337":["var_ano-0"],"509ab718-88ae-46b1-9886-0418f90aabbf":["var_mes-0"],"43175a16-f870-4ccd-b780-63e52089e443":["var_rpps-0"],"3866f7bc-4596-4ecc-b5ab-abdbbde58ec9":["condition"]}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.row_index","label":"3 - For Each➛Multi Row Question Answer Record➛Row index","reference":"","reference_display":"Row index","type":"long","base_type":"long","parent_table_name":"sc_multi_row_question_answer","column_name":"row_index","usedInstances":{"0a53884c-6d3f-4926-b143-7aebb7b97d97":["conditions"],"7a5418ac-94b7-4d9e-aa2a-30eca3999ced":["multirow_record"]}},{"name":"0a53884c-6d3f-4926-b143-7aebb7b97d97.Record.row_index","label":"21 - Look Up Record➛Multi Row Question Answer Record➛Índice de linha","reference":"","reference_display":"Índice de linha","type":"long","base_type":"long","parent_table_name":"sc_multi_row_question_answer","column_name":"row_index","usedInstances":{"39268173-2ed3-4659-805a-84b15f1045a3":["multirow_record"],"c89a2cab-c4b6-4d9a-a522-66df72662c5e":["multirow_record"],"fb48067c-f6f5-45ab-b1f7-87e39e2b4f53":["multirow_record"],"83c6e11f-e93b-467c-9b7f-38bab9ae0a3b":["multirow_record"],"b68068aa-2262-4839-a185-5e13cd917f72":["multirow_record"],"d54d22bc-061e-44b3-8b1e-9ed82884ca5f":["multirow_record"]}},{"name":"0a53884c-6d3f-4926-b143-7aebb7b97d97.status","label":"21 - Look Up Record➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Error","value":"1","order":0.0},{"label":"Success","value":"0","order":1.0}],"usedInstances":{},"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"0a53884c-6d3f-4926-b143-7aebb7b97d97.Record","label":"21 - Look Up Record➛Multi Row Question Answer Record","reference":"sc_multi_row_question_answer","reference_display":"Multi Row Question Answer","type":"reference","base_type":"reference","usedInstances":{},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf.Record","label":"20 - Look Up Record➛Primary Revenue and Expenditure Record","reference":"x_sded9_portal_t_0_u_resultado_primario","reference_display":"Primary Revenue and Expenditure","type":"reference","base_type":"reference","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["record"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf.status","label":"20 - Look Up Record➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Error","value":"1","order":0.0},{"label":"Success","value":"0","order":1.0}],"usedInstances":{"cc765906-5769-430a-b4ae-373f078cb540":["condition"]},"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf.__action_status__","label":"20 - Look Up Record➛Action Status","reference_display":"Action Status","type":"object","base_type":"object","usedInstances":{},"attributes":{"uiType":"object","co_type_name":"FDea4f1de926f5621031a5e9727f74b6a8","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.item_option_new.name","label":"3 - For Each➛Multi Row Question Answer Record➛Question➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"item_option_new","column_name":"name","usedInstances":{"cfdc988b-b11d-4942-b9bf-11cea3ddb70f":["condition"],"fefe5d28-2611-4ce7-9f3a-4b1127da7629":["condition"],"7b5c4780-d3a5-467a-a4b8-6c282af57221":["condition"]}},{"name":"flow_variable.var_count1","label":"Flow Variables➛var_count","reference":"","reference_display":"","type":"integer","base_type":"integer","column_name":"","usedInstances":{"b6f98993-2de4-48f4-9d42-7ad52358075f":["condition"],"3c031a62-dd97-42a9-ae1e-b0b41c896ded":["condition"],"e0441a5d-de7b-4465-8283-c2d239ca3641":["condition"]},"attributes":{"uiType":"integer","uiTypeLabel":"Integer","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"9fc98cf4-2f8f-46ca-a232-6c078f64d1d2"}},{"name":"flow_variable.var_ano","label":"Flow Variables➛var_ano","type":"string","base_type":"string","usedInstances":{"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf":["conditions"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"72f2355b-0329-4d8c-b4dc-3cb07f54ba9d"}},{"name":"flow_variable.var_mes","label":"Flow Variables➛var_mes","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf":["conditions"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"3576bc47-0baa-4380-a20c-7f6e4ce1a770"}},{"name":"flow_variable.var_rpps","label":"Flow Variables➛var_rpps","reference":"","reference_display":"","type":"boolean","base_type":"boolean","column_name":"","choices":[],"usedInstances":{"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf":["conditions"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"d7cbe4fe-a090-4ba1-b6bd-d3e948e273cf","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"7a5418ac-94b7-4d9e-aa2a-30eca3999ced.receita_primaria","label":"22 - Get MRVS Values (Primary Revenue and Expenditure)➛Receita Primaria","reference_display":"Receita Primaria","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_receita_primaria_total"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_receita_primaria_total"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"f39dd8de-3de1-44a8-b8c8-72cfec1fe81f"}},{"name":"7a5418ac-94b7-4d9e-aa2a-30eca3999ced.despesa_primaria","label":"22 - Get MRVS Values (Primary Revenue and Expenditure)➛Despesa Primaria","reference_display":"Despesa Primaria","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_despesa_primaria_total"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_despesa_primaria_total"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"a31b41dd-ec2e-4c89-8009-c97a7c3a4638"}},{"name":"7a5418ac-94b7-4d9e-aa2a-30eca3999ced.resultado_primario","label":"22 - Get MRVS Values (Primary Revenue and Expenditure)➛Resultado Primario","reference_display":"Resultado Primario","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_resultado_primario"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_resultado_primario"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"52d478d9-7af9-4f3e-abf2-28881f681601"}},{"name":"7a5418ac-94b7-4d9e-aa2a-30eca3999ced.bimestre","label":"22 - Get MRVS Values (Primary Revenue and Expenditure)➛Bimestre","reference_display":"Bimestre","type":"string","base_type":"string","usedInstances":{"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_bimestre"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"93cd234b-2888-4c83-a94d-895c3c90b8a4"}},{"name":"7a5418ac-94b7-4d9e-aa2a-30eca3999ced.rpps","label":"22 - Get MRVS Values (Primary Revenue and Expenditure)➛RPPS","reference_display":"RPPS","type":"boolean","base_type":"boolean","usedInstances":{"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_rpps"]},"attributes":{"uiType":"boolean","uiTypeLabel":"True/False","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"50549c4c-803c-4ecc-97fa-1ad6de17086a"}},{"name":"7a5418ac-94b7-4d9e-aa2a-30eca3999ced.ano","label":"22 - Get MRVS Values (Primary Revenue and Expenditure)➛Ano","reference_display":"Ano","type":"string","base_type":"string","usedInstances":{"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_ano"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"7facceb0-a44f-4f91-a772-4353cdeadc45"}}]</label_cache>
+        <label_cache>[{"name":"7a5418ac-94b7-4d9e-aa2a-30eca3999ced.ano","label":"22 - Get MRVS Values (Primary Revenue and Expenditure)➛Ano","reference_display":"Ano","type":"string","base_type":"string","usedInstances":{"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_ano"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"7facceb0-a44f-4f91-a772-4353cdeadc45"}},{"name":"7a5418ac-94b7-4d9e-aa2a-30eca3999ced.rpps","label":"22 - Get MRVS Values (Primary Revenue and Expenditure)➛RPPS","reference_display":"RPPS","type":"boolean","base_type":"boolean","usedInstances":{"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_rpps"]},"attributes":{"uiType":"boolean","uiTypeLabel":"True/False","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"50549c4c-803c-4ecc-97fa-1ad6de17086a"}},{"name":"7a5418ac-94b7-4d9e-aa2a-30eca3999ced.bimestre","label":"22 - Get MRVS Values (Primary Revenue and Expenditure)➛Bimestre","reference_display":"Bimestre","type":"string","base_type":"string","usedInstances":{"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_bimestre"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"93cd234b-2888-4c83-a94d-895c3c90b8a4"}},{"name":"7a5418ac-94b7-4d9e-aa2a-30eca3999ced.resultado_primario","label":"22 - Get MRVS Values (Primary Revenue and Expenditure)➛Resultado Primario","reference_display":"Resultado Primario","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_resultado_primario"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_resultado_primario"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"52d478d9-7af9-4f3e-abf2-28881f681601"}},{"name":"7a5418ac-94b7-4d9e-aa2a-30eca3999ced.despesa_primaria","label":"22 - Get MRVS Values (Primary Revenue and Expenditure)➛Despesa Primaria","reference_display":"Despesa Primaria","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_despesa_primaria_total"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_despesa_primaria_total"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"a31b41dd-ec2e-4c89-8009-c97a7c3a4638"}},{"name":"7a5418ac-94b7-4d9e-aa2a-30eca3999ced.receita_primaria","label":"22 - Get MRVS Values (Primary Revenue and Expenditure)➛Receita Primaria","reference_display":"Receita Primaria","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_receita_primaria_total"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_receita_primaria_total"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"f39dd8de-3de1-44a8-b8c8-72cfec1fe81f"}},{"name":"flow_variable.var_rpps","label":"Flow Variables➛var_rpps","reference":"","reference_display":"","type":"boolean","base_type":"boolean","column_name":"","choices":[],"usedInstances":{"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf":["conditions"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"d7cbe4fe-a090-4ba1-b6bd-d3e948e273cf","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"flow_variable.var_mes","label":"Flow Variables➛var_mes","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf":["conditions"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"3576bc47-0baa-4380-a20c-7f6e4ce1a770"}},{"name":"flow_variable.var_ano","label":"Flow Variables➛var_ano","type":"string","base_type":"string","usedInstances":{"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf":["conditions"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"72f2355b-0329-4d8c-b4dc-3cb07f54ba9d"}},{"name":"flow_variable.var_count1","label":"Flow Variables➛var_count","reference":"","reference_display":"","type":"integer","base_type":"integer","column_name":"","usedInstances":{"b6f98993-2de4-48f4-9d42-7ad52358075f":["condition"],"3c031a62-dd97-42a9-ae1e-b0b41c896ded":["condition"],"e0441a5d-de7b-4465-8283-c2d239ca3641":["condition"]},"attributes":{"uiType":"integer","uiTypeLabel":"Integer","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"9fc98cf4-2f8f-46ca-a232-6c078f64d1d2"}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.item_option_new.name","label":"3 - For Each➛Multi Row Question Answer Record➛Question➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"item_option_new","column_name":"name","usedInstances":{"cfdc988b-b11d-4942-b9bf-11cea3ddb70f":["condition"],"fefe5d28-2611-4ce7-9f3a-4b1127da7629":["condition"],"7b5c4780-d3a5-467a-a4b8-6c282af57221":["condition"]}},{"name":"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf.__action_status__","label":"20 - Look Up Record➛Action Status","reference_display":"Action Status","type":"object","base_type":"object","usedInstances":{},"attributes":{"uiType":"object","co_type_name":"FDACTIONSTATUS","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf.status","label":"20 - Look Up Record➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Error","value":"1","order":0.0},{"label":"Success","value":"0","order":1.0}],"usedInstances":{"cc765906-5769-430a-b4ae-373f078cb540":["condition"]},"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf.Record","label":"20 - Look Up Record➛Primary Revenue and Expenditure Record","reference":"x_sded9_portal_t_0_u_resultado_primario","reference_display":"Primary Revenue and Expenditure","type":"reference","base_type":"reference","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["record"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"0a53884c-6d3f-4926-b143-7aebb7b97d97.Record","label":"21 - Look Up Record➛Multi Row Question Answer Record","reference":"sc_multi_row_question_answer","reference_display":"Multi Row Question Answer","type":"reference","base_type":"reference","usedInstances":{},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"0a53884c-6d3f-4926-b143-7aebb7b97d97.status","label":"21 - Look Up Record➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Error","value":"1","order":0.0},{"label":"Success","value":"0","order":1.0}],"usedInstances":{},"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"0a53884c-6d3f-4926-b143-7aebb7b97d97.Record.row_index","label":"21 - Look Up Record➛Multi Row Question Answer Record➛Índice de linha","reference":"","reference_display":"Índice de linha","type":"long","base_type":"long","parent_table_name":"sc_multi_row_question_answer","column_name":"row_index","usedInstances":{"39268173-2ed3-4659-805a-84b15f1045a3":["multirow_record"],"c89a2cab-c4b6-4d9a-a522-66df72662c5e":["multirow_record"],"fb48067c-f6f5-45ab-b1f7-87e39e2b4f53":["multirow_record"],"83c6e11f-e93b-467c-9b7f-38bab9ae0a3b":["multirow_record"],"b68068aa-2262-4839-a185-5e13cd917f72":["multirow_record"],"d54d22bc-061e-44b3-8b1e-9ed82884ca5f":["multirow_record"]}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.row_index","label":"3 - For Each➛Multi Row Question Answer Record➛Row index","reference":"","reference_display":"Row index","type":"long","base_type":"long","parent_table_name":"sc_multi_row_question_answer","column_name":"row_index","usedInstances":{"0a53884c-6d3f-4926-b143-7aebb7b97d97":["conditions"],"7a5418ac-94b7-4d9e-aa2a-30eca3999ced":["multirow_record"]}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.value","label":"3 - For Each➛Multi Row Question Answer Record➛Value","reference":"","reference_display":"Value","type":"string","base_type":"string","parent_table_name":"sc_multi_row_question_answer","column_name":"value","usedInstances":{"3283fd25-754f-4540-a6dc-42c1d8b9e628":["conditions"],"45e87eb4-1522-46c8-928c-4e868bc4e337":["var_ano-0"],"509ab718-88ae-46b1-9886-0418f90aabbf":["var_mes-0"],"43175a16-f870-4ccd-b780-63e52089e443":["var_rpps-0"],"3866f7bc-4596-4ecc-b5ab-abdbbde58ec9":["condition"]}},{"name":"b1c3d1ce-831a-4bfb-b59b-fac37677e4f9.Records","label":"1 - Look Up Records➛Multi Row Question Answer Records","reference":"sc_multi_row_question_answer","reference_display":"Multi Row Question Answer","type":"records","base_type":"records","usedInstances":{"20fde648-3ced-4596-b1ac-b39b687a2a96":["items"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"subflow.record","label":"Input➛Record","reference":"x_sded9_portal_t_0_registro_de_cargas_tesouro","reference_display":"Treasury Cargo Registration","type":"reference","base_type":"reference","column_name":"","usedInstances":{"b1c3d1ce-831a-4bfb-b59b-fac37677e4f9":["conditions"],"0a53884c-6d3f-4926-b143-7aebb7b97d97":["conditions"],"39268173-2ed3-4659-805a-84b15f1045a3":["parent_sys_id"],"c89a2cab-c4b6-4d9a-a522-66df72662c5e":["parent_sys_id"],"fb48067c-f6f5-45ab-b1f7-87e39e2b4f53":["parent_sys_id"],"83c6e11f-e93b-467c-9b7f-38bab9ae0a3b":["parent_sys_id"],"b68068aa-2262-4839-a185-5e13cd917f72":["parent_sys_id"],"d54d22bc-061e-44b3-8b1e-9ed82884ca5f":["parent_sys_id"],"7a5418ac-94b7-4d9e-aa2a-30eca3999ced":["parent_sys_id"]},"attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"f4b7b973-3190-4871-8403-baaef11efe7b","sourceUiUniqueId":"","sourceType":"","sourceId":""}}]</label_cache>
         <master_snapshot>80ce0525fbb56210f6d5f9d38eefdce1</master_snapshot>
         <master_snapshot_digest/>
         <name>Primary Revenue and Expenditure 2</name>
@@ -23,7 +23,7 @@
         <outputs/>
         <pre_compiled>false</pre_compiled>
         <remote_trigger_id/>
-        <run_as>user</run_as>
+        <run_as>system</run_as>
         <run_with_roles/>
         <sc_callable>false</sc_callable>
         <show_draft_actions>false</show_draft_actions>
@@ -36,16 +36,17 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>216b4dedfb756210f6d5f9d38eefdc7a</sys_id>
-        <sys_mod_count>32</sys_mod_count>
+        <sys_mod_count>35</sys_mod_count>
         <sys_name>Primary Revenue and Expenditure 2</sys_name>
         <sys_overrides/>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sys_hub_flow_216b4dedfb756210f6d5f9d38eefdc7a</sys_update_name>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:29</sys_updated_on>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:41</sys_updated_on>
         <type>subflow</type>
+        <updation_source/>
         <version>2</version>
     </sys_hub_flow>
     <sys_translated_text action="delete_multiple" query="documentkey=216b4dedfb756210f6d5f9d38eefdc7a"/>
@@ -152,7 +153,7 @@
     <sys_hub_flow_output action="delete_multiple" query="model=216b4dedfb756210f6d5f9d38eefdc7a"/>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=216b4dedfb756210f6d5f9d38eefdc7a"/>
     <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=216b4dedfb756210f6d5f9d38eefdc7a"/>
-    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=216b4dedfb756210f6d5f9d38eefdc7a^sys_idNOT IN356b4dedfb756210f6d5f9d38eefdcb5,3d6b4dedfb756210f6d5f9d38eefdcb5,69bec125fbb56210f6d5f9d38eefdce5,796b4dedfb756210f6d5f9d38eefdcb5,356b4dedfb756210f6d5f9d38eefdcb6,f56b4dedfb756210f6d5f9d38eefdcb6"/>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=216b4dedfb756210f6d5f9d38eefdc7a^sys_idNOT IN356b4dedfb756210f6d5f9d38eefdcb5,796b4dedfb756210f6d5f9d38eefdcb5,3d6b4dedfb756210f6d5f9d38eefdcb5,69bec125fbb56210f6d5f9d38eefdce5,356b4dedfb756210f6d5f9d38eefdcb6,f56b4dedfb756210f6d5f9d38eefdcb6"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
         <action_type display_value="Look Up Records">43400a1587003300663ca1bb36cb0b4b</action_type>
         <action_type_parent display_value="Look Up Records">d1c56ec50b30030085c083eb37673a50</action_type_parent>
@@ -168,56 +169,13 @@
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-28 18:00:12</sys_created_on>
         <sys_id>356b4dedfb756210f6d5f9d38eefdcb5</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:12</sys_updated_on>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:34</sys_updated_on>
         <ui_id>b1c3d1ce-831a-4bfb-b59b-fac37677e4f9</ui_id>
+        <updation_source/>
         <values>H4sIAAAAAAAA/91X3U/bMBD/V6I8V1VCS2G8IRDSHqBaQbwwsJzEaa05dmY7/aDq/75zHKehLaV03QZ7qeTzffzu7ncX92Hu08Q/80/TbhDg8Pj0JAg6nSDo9ToxDqOo04ujIOpGfsvnOCOgqXHECBzHmBXmrGKUFUxTJMUE/SyI0lRwhLmaEAlqCVU5w7P7SvvaqHoDMfG+VareuVONR5QlknD/7OGx5edYQkANN2fzlSs9ywliOCIMPN4ZPN6NAdfaOZcXxuu5mQDuiLh1LWRisAQtn0w14QmBUClmirT8DPMEayFntUQSnPQ5WwpGlGvw6BvlqaLP4P40MHopgbRiYu/qI6rKZsXxSNCY9HNTLiuxQO2lYEXGb2wCpuAkxVBkV3CQFAr8kdxgNiAqROntSEwGLuAV5WV61SUTMWb1CWstaVRookwvCCMZOEIZznPKhyiXYkxLY8CStYcMDu2UARsSouiQt3FsgLehRLh9BfLLUnyPJTVZXIObsv0pZdBtZIuuRCHLqoxRzApVXkgglfXlL8paAd0MSpt1lR+yJQIFFUua63MwGJMqlUVrJ7ofB0tKxIIn1MRUDc5TTTIkyn4gTiZto/u9AFfJGJgvnvqDbRoRzYD60jQFuY5TjELUe8NQ5rkCiyHYm6rnkgrjI5fENKB0ogT8sicYHlMLmljT+VwVkWlJW5IYiLxYrE/mf5HTfivkotnjXfmx0XgTaapl8kJWLZPwYMsE4P6jdaJl8fG2yVv7wSb8xpKIT7aS4HjZbyWkRrZyjS1hPoimENP1YWte7cfZK0pY8uKztwNcZ9w39POi2WsZVJRNTYyV79/Rp//+fUjCAqAE2XpTzigvnx8A9DBMDravsy8rPCjb33jhGRlW8TqNsaeF97z/3i376vi7A0hneAuIvDuLcgNwt3Gd+4q6nYNRt3P0PuoCcR7mNfq6ahsK7F6ZpnVO/9no41V9YFfDIFw81tS/2C9m+N6YRybmymx23jWcTWbZm8tXCHbgN+wrw9b6k9M9AtMqHrLDiiY0GRK9jO60EqEnmP3YdF+xq56hMr3ffg93t85eL1zOGcwAPNcUtKr5IA7h+bG+HsK2Fe+3Hb5yTYZl8XaF6Cyv8dQb1Bg3Aq9WBK1jVJzuHvBF9jc+b67wG6fH1f9T/AHcl8KPvwAaqMSywxAAAA==</values>
-    </sys_hub_action_instance_v2>
-    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
-        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
-        <attributes/>
-        <comment/>
-        <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
-        <display_text/>
-        <flow display_value="Primary Revenue and Expenditure 2">216b4dedfb756210f6d5f9d38eefdc7a</flow>
-        <generation_source/>
-        <order>21</order>
-        <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
-        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
-        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
-        <sys_created_on>2025-05-28 18:00:12</sys_created_on>
-        <sys_id>3d6b4dedfb756210f6d5f9d38eefdcb5</sys_id>
-        <sys_mod_count>9</sys_mod_count>
-        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:13</sys_updated_on>
-        <ui_id>0a53884c-6d3f-4926-b143-7aebb7b97d97</ui_id>
-        <values>H4sIAAAAAAAA/9VY227bOBD9FUHPtleybMnKW9HAQIFtg02zfclmCUqkYmJpUqWoOInhf+9QlGTH9zjuNn0kOZczM2eGlG7nLiPuhUtiL87ieDiKPC8IPC8MgxT7SRKEaeIleOB2XIGnFCQ1TjiF5QPmpVkXKZqWXDOk5Ax9L2mhmRQIi2JGFYgRVuQcP32rpT8bUedazpy/alHnQyOaThgnigr34vau4+ZYgUMNJxfztSP9lFPEcUI5WLwxeJwvBlzn6FheKG/GZhw0SySsaamIweJ1XPqoqSAUXGWYF7TjTrEgWEv11O4oismV4MuNCRMaLLpG+LFgz2B+5Bm5jEJYKbVn7RLVabPb6USylF7lJl12xwK1h5KXU/HFBmASTjMMSW4SDjtlAfZobjAbEDWi7OtEzq4bh2MmqvDqQy5TzNsV1lqxpNS0MLWgnE7BEJriPGfiHuVKPrBKGbBMe/ccFr2MAxsILdi96OHUAO9BinBvDPuX1fY3rJiJ4jOYqcqfMQ7VRjbphSxVlZUHlPKyqA4UkMrachdVroBuBqWNuo4P2RSBQJEqlusPoPBA61AWnYbuw70UiZeUSKUgzPgsVjgP3DSuGPmnBH0ynxdlYiLuKZoCTxaLf00zmJQ+NhJ9LyM0HIy6QUpJdzCMw27i47SbBHESjiLcx3HYY5pOe63qYrHZP/+j59Pa8eNqvo7N9VblbQWoG/PFXt2Y/tkac+B5v6g1tSrfX2ce6jUb8IGG88leEpBlvQupNLKZW+m4zU44maFjRjl5cWEcAa5RvjJkc5KnXXhrgmbGx9rN0f/tb453SU8ARJDNNxOcieriBqDn4e1wLzUSf40HVflX3kZmDxfpJnuxo6XzfPqUrera8PcIkI3iV0Dk3FiUW4A387UxX1M3OBt1g/7rqAvEuZ236NusbUlw8z4zpWvkn408XpcHdq0o+Iu7lvofT/Ppv9Zn3/hc683gVc25yix7crmDYGd+/e1ots7P7O4JqNb+kG1WNGPknuql90aKSD3D/L9t5zW72h6qwnvzS9Lf+7GRrLwkWWY/lHJ43trXWoHgNYcyWQqC6oftkjambhlTha6FN2fINdWlEo6ElnP0hDqVtNNKn2OyHBFdo/gpc5rwagyFA+E5VXhOG97rkrFjHg3O+NZ7yzwaY8ar1MMHSr5SO6qUVDtm0oGq7Sn/kQPrSFD+WUG9faJt4/vWyXYA62/xtfvWqZNSnAz6OIwC3/c83yORN4oifxQmWYijQbZsNIQKkcJYBMsZEAPMo4YITVW9zdFiZ+PJv2Rg5v4xrk0ci7dRvpTCfLn2I+0YwFBnpwF8OKR6XiRScorFkp7DXzYw3stfm5LdrOfGbv25rWg/6zIv2d+CfS/pJ0OKEfX6I5+k3VHkR91BRsJuTPCwi+NkGAWEpoPs9Pv57gc9mT1D2hQAAA==</values>
-    </sys_hub_action_instance_v2>
-    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Get MRVS Values (Primary Revenue and Expenditure)">1f4318edfbfd2210f6d5f9d38eefdcfc</action_type>
-        <action_type_parent display_value="Get MRVS Values (Primary Revenue and Expenditure)">d9c19429fbfd2210f6d5f9d38eefdc75</action_type_parent>
-        <attributes/>
-        <comment/>
-        <compiled_snapshot/>
-        <display_text/>
-        <flow display_value="Primary Revenue and Expenditure 2">216b4dedfb756210f6d5f9d38eefdc7a</flow>
-        <generation_source/>
-        <order>22</order>
-        <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
-        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
-        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
-        <sys_created_on>2025-05-28 18:14:39</sys_created_on>
-        <sys_id>69bec125fbb56210f6d5f9d38eefdce5</sys_id>
-        <sys_mod_count>9</sys_mod_count>
-        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:13</sys_updated_on>
-        <ui_id>7a5418ac-94b7-4d9e-aa2a-30eca3999ced</ui_id>
-        <values>H4sIAAAAAAAA/8VU207cMBD9lVWeN1Fum8u+VUVISG2pgPKCUOTY411LThxsBzZd7b93vMluARVEadU+em5n5swc32w9wbylx+o0iQpgvOYsjqOQZ2zBS5YUAJxRzry515IGMLLppRVaPVQaqNLOcU9k7zzbbRxyBlla+AkF5qeLMvPriFC/Tso6K3ISkzILhIUmcAVEy2Cz22EFJkwnyXD9x4XoWkimofWWN7dzryMae7agveX2mcsOHVSS1CAR79Jq0a4w/a1UHBIv1MPszIG/Ro+DQoc5gKDVdRTNPdhYwGwE5UQamHsNaRmxSg/e0uoeDRoIO2/lcIxYi9ZiMc/Fboz4jpWLMAxdJAecjsLoPT6ridvRTNdKUDjvrFDtaLGkllMOVbJv2i/jHG4rwAlOc9gKWnqD9aBzTbs2pp745Vo9XBwAT9029NEpFSXy+CIWWah7C8atpBdXz7gZLZ+e7wUkNIhYNaTr0FJ1Wt2LPQo23QQriY+AS2SdgRGrNiDUTRggmSQ4RfvJ3nxNtHDjfsYymOzgvrXiroczt3fIKcUNp34dktJPcfN+WbDcX9Awj6O8zOs48XZ7aqu73g01kjTRUY2MYoChWnT2A7ZwD9Pku/mkswV/9bj4z0PC43VVzWAq8VRlpq/drMF4Yb8S0LuVcNziQQxv6PeQ+3Xf8OxyMLOzk5fnmOSgHyFNioj/liKS+KkeNpXBmmXVKW2JrGwVojpXAq9O4cFUlOgVMRUepeq1ekE8Vwhsej3MPmK0ml2M+WQvpNd09bvY/0+EjzfyVIePr+KfSDGJFzRJkhx//oz7KYHIr7Oo8KMSwkXKQgYJfbcUb38ALVJ8zPQGAAA=</values>
     </sys_hub_action_instance_v2>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
         <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
@@ -234,12 +192,59 @@
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-28 18:00:12</sys_created_on>
         <sys_id>796b4dedfb756210f6d5f9d38eefdcb5</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:13</sys_updated_on>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:35</sys_updated_on>
         <ui_id>f55fbb1c-5a9e-441e-ba14-6cf57444d9bf</ui_id>
+        <updation_source/>
         <values>H4sIAAAAAAAA/9VY227jOAz9FcPPadbOzUnfFtMNMMDudNHpzEu3K8gW3QirSB5JTpsG+felfEnS3Jtm0M5bJJLiIXlIybmb+Zz5lz4bBIN0MOj2oyBot4Og12snNIzjdi+Jg5h2/IYv6RhQ09JYAC4nVORu/UQMAzYgmdKWCmJJQHKiweTCUqZIpvmYaq7QgnGTCTr9Xhn+XUim3g1MQObgUcm8P54ykIzbXDsXyYgLpkH6l3f3DT+jGhFY0P7lbE1kpxkQQWMQeO6tA+h9cWgbRwf3wngzWOegXhJZHq00c1iChg9PFlEDukqpMNDwxxgLtUpPFzsaKLuWYrkx4tLiib5TfjL8GY/vB04vBQwrgVK2WJIqeeV2MlI8gevMciXLnRJoKVQiH8svZQAu7ZBSLEaddtzJDZ4HLtPgQFSI0q8j9XhTOxxyWYRXCYVKqFisqLWax7kF42oBAsZ4EBnTLOPyAUuuJrwwRizj5oPARTMV6hGdGv4gmzRxwJuYItoc4v5Vsf0daeKi+AuPQWMExAVWm5RJNyrXRVYmJBG5KQSaSlOe5c+LXJEfuUNZRl3FR8oUoYJJNM/s72gwgSqUeaPmf3cvRQZLSiTKERR9mpUmyAmV6p8cbdlsVoQ6qaJp4g8nnM//zUnMx2Csht2aKC80dZaZ3VpOOp9vttR7wTitUT+tZvLYKmw13laaqmVf7FUtG56tZTtB8E5Na3X+8Xr2UBeWAR9oxZDtJQFb1tvglUPKzK304mZbnMzQIQfBXlwlR4Crja8d2bx4ugtvRdDU+Vi7U1q//J3yIemJgBgp882l4LK40hHoeXjb3UuNOFzjQVH+JWuLPWqSTfZSzyrv+fQpW9S15u8RIGvDr4jIuy1RbgFez9f6+Iq67bNRt916HXWROHezBfpF1rYkuH65udLV+s9On67rI7tWDML5/YL6n07zGb7WZ8v5XOvN9quac5VZpeRqB8HO/C7c0WyNn9ndIzSt/JGyWckjZw9gl95rLabsIxX/bZNX7Fr0UBHem9+Y4d7PkHjljclTMsY68QwfvhoSpIIhVANJVS4ZqZ68K69PrFvKtbGV8uYMuQH8pJKewpbz7Ai8QttbaJ9jshwRXW34OfXq8CoMxsPwvCI8bxHe65KxYx51zvjWe8s8GlIuitTjp0u2UjvQWukdM+lA1faU/8iBdSSo8Kyg3j7RtvF962Q7gPWX+A5+69RJgMadFu1F7TAMgjBgUdCPorDfi9MejTrpstEIMTLBsYgnp0gMPJ7URKirGm6OlmpqnvhfDRr/Niyma+NouLXxlZLu27QVWc/hxTJ7Nd7DEVXjIlZKAJVLdnbfbV58lL9zcn67npty689tRftZd3nOv0n+I4fPjhR9CFr9kCUX/SiMLjop610MGO1e0EHcjdoMkk56+vV8/z9vF9pMBBUAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Primary Revenue and Expenditure 2">216b4dedfb756210f6d5f9d38eefdc7a</flow>
+        <generation_source/>
+        <order>21</order>
+        <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 18:00:12</sys_created_on>
+        <sys_id>3d6b4dedfb756210f6d5f9d38eefdcb5</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:35</sys_updated_on>
+        <ui_id>0a53884c-6d3f-4926-b143-7aebb7b97d97</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/9VY227bOBD9FUHPtleybMnKW9HAQIFtg02zfclmCUqkYmJpUqWoOInhf+9QlGTH9zjuNn0kOZczM2eGlG7nLiPuhUtiL87ieDiKPC8IPC8MgxT7SRKEaeIleOB2XIGnFCQ1TjiF5QPmpVkXKZqWXDOk5Ax9L2mhmRQIi2JGFYgRVuQcP32rpT8bUedazpy/alHnQyOaThgnigr34vau4+ZYgUMNJxfztSP9lFPEcUI5WLwxeJwvBlzn6FheKG/GZhw0SySsaamIweJ1XPqoqSAUXGWYF7TjTrEgWEv11O4oismV4MuNCRMaLLpG+LFgz2B+5Bm5jEJYKbVn7RLVabPb6USylF7lJl12xwK1h5KXU/HFBmASTjMMSW4SDjtlAfZobjAbEDWi7OtEzq4bh2MmqvDqQy5TzNsV1lqxpNS0MLWgnE7BEJriPGfiHuVKPrBKGbBMe/ccFr2MAxsILdi96OHUAO9BinBvDPuX1fY3rJiJ4jOYqcqfMQ7VRjbphSxVlZUHlPKyqA4UkMrachdVroBuBqWNuo4P2RSBQJEqlusPoPBA61AWnYbuw70UiZeUSKUgzPgsVjgP3DSuGPmnBH0ynxdlYiLuKZoCTxaLf00zmJQ+NhJ9LyM0HIy6QUpJdzCMw27i47SbBHESjiLcx3HYY5pOe63qYrHZP/+j59Pa8eNqvo7N9VblbQWoG/PFXt2Y/tkac+B5v6g1tSrfX2ce6jUb8IGG88leEpBlvQupNLKZW+m4zU44maFjRjl5cWEcAa5RvjJkc5KnXXhrgmbGx9rN0f/tb453SU8ARJDNNxOcieriBqDn4e1wLzUSf40HVflX3kZmDxfpJnuxo6XzfPqUrera8PcIkI3iV0Dk3FiUW4A387UxX1M3OBt1g/7rqAvEuZ236NusbUlw8z4zpWvkn408XpcHdq0o+Iu7lvofT/Ppv9Zn3/hc683gVc25yix7crmDYGd+/e1ots7P7O4JqNb+kG1WNGPknuql90aKSD3D/L9t5zW72h6qwnvzS9Lf+7GRrLwkWWY/lHJ43trXWoHgNYcyWQqC6oftkjambhlTha6FN2fINdWlEo6ElnP0hDqVtNNKn2OyHBFdo/gpc5rwagyFA+E5VXhOG97rkrFjHg3O+NZ7yzwaY8ar1MMHSr5SO6qUVDtm0oGq7Sn/kQPrSFD+WUG9faJt4/vWyXYA62/xtfvWqZNSnAz6OIwC3/c83yORN4oifxQmWYijQbZsNIQKkcJYBMsZEAPMo4YITVW9zdFiZ+PJv2Rg5v4xrk0ci7dRvpTCfLn2I+0YwFBnpwF8OKR6XiRScorFkp7DXzYw3stfm5LdrOfGbv25rWg/6zIv2d+CfS/pJ0OKEfX6I5+k3VHkR91BRsJuTPCwi+NkGAWEpoPs9Pv57gc9mT1D2hQAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Get MRVS Values (Primary Revenue and Expenditure)">1f4318edfbfd2210f6d5f9d38eefdcfc</action_type>
+        <action_type_parent display_value="Get MRVS Values (Primary Revenue and Expenditure)">d9c19429fbfd2210f6d5f9d38eefdc75</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>1f4318edfbfd2210f6d5f9d38eefdcfc</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Primary Revenue and Expenditure 2">216b4dedfb756210f6d5f9d38eefdc7a</flow>
+        <generation_source/>
+        <order>22</order>
+        <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 18:14:39</sys_created_on>
+        <sys_id>69bec125fbb56210f6d5f9d38eefdce5</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:35</sys_updated_on>
+        <ui_id>7a5418ac-94b7-4d9e-aa2a-30eca3999ced</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/8VU207cMBD9lVWeN1Fum8u+VUVISG2pgPKCUOTY411LThxsBzZd7b93vMluARVEadU+em5n5swc32w9wbylx+o0iQpgvOYsjqOQZ2zBS5YUAJxRzry515IGMLLppRVaPVQaqNLOcU9k7zzbbRxyBlla+AkF5qeLMvPriFC/Tso6K3ISkzILhIUmcAVEy2Cz22EFJkwnyXD9x4XoWkimofWWN7dzryMae7agveX2mcsOHVSS1CAR79Jq0a4w/a1UHBIv1MPszIG/Ro+DQoc5gKDVdRTNPdhYwGwE5UQamHsNaRmxSg/e0uoeDRoIO2/lcIxYi9ZiMc/Fboz4jpWLMAxdJAecjsLoPT6ridvRTNdKUDjvrFDtaLGkllMOVbJv2i/jHG4rwAlOc9gKWnqD9aBzTbs2pp745Vo9XBwAT9029NEpFSXy+CIWWah7C8atpBdXz7gZLZ+e7wUkNIhYNaTr0FJ1Wt2LPQo23QQriY+AS2SdgRGrNiDUTRggmSQ4RfvJ3nxNtHDjfsYymOzgvrXiroczt3fIKcUNp34dktJPcfN+WbDcX9Awj6O8zOs48XZ7aqu73g01kjTRUY2MYoChWnT2A7ZwD9Pku/mkswV/9bj4z0PC43VVzWAq8VRlpq/drMF4Yb8S0LuVcNziQQxv6PeQ+3Xf8OxyMLOzk5fnmOSgHyFNioj/liKS+KkeNpXBmmXVKW2JrGwVojpXAq9O4cFUlOgVMRUepeq1ekE8Vwhsej3MPmK0ml2M+WQvpNd09bvY/0+EjzfyVIePr+KfSDGJFzRJkhx//oz7KYHIr7Oo8KMSwkXKQgYJfbcUb38ALVJ8zPQGAAA=</values>
     </sys_hub_action_instance_v2>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
         <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
@@ -256,11 +261,12 @@
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-28 18:00:12</sys_created_on>
         <sys_id>356b4dedfb756210f6d5f9d38eefdcb6</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:13</sys_updated_on>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:35</sys_updated_on>
         <ui_id>30bd6918-a95f-4a24-b688-772ee9e9bf9e</ui_id>
+        <updation_source/>
         <values>H4sIAAAAAAAA/+1VXU/bMBT9K1WemyppkkL6Nokh7WEwdRMvjFk39g1YcuLMcUq7qv991/kopTDGGNI0ib75xvfcc45P7cuNJ4U392IUQZiGMx6FUTQNgulxHGazKAunIgLE0Bt7JRRIOw1ybQStl6AaV9hs8iTJsyzkfgIp+nEcop9BGPsznidHcRyLNMsni7Zvu6VOIetKwfqiB6AKv5FKGCy9+eXV2KvA0CyLxptvDj7ZdYVMQYaKGk80bwos7ejDCWE8V8fQvRiEHApzM2gtenQmXZE+OT5hMPZwZbEUSONyUDWOvQJKAVabtTe3pqGCQRDnpVrvdtzI0nZKC1jV8gfhx4HblyNJ470LuyXrHRrM0ZLjeWWlLruKhUwNzmnVFOVZJ8F5izk0yu5529SEh5Wj7Eh0DPPPN/p2Mcw7lWWrrmerNAe1W4G1RmaNxdodBypsTSmgqmR5zSqjl7JtJirF5FrRYpIrfUsza3ldToA73hMyCCanVD9pyxdgpBPxkWCoeduKZ98bN7eT0RNmreZWMGsPirbW3MjKviPgJfY0t+M+yFnyVAB4enfee5h3YV6xmk42ZZU2FhSzLGANM1iTpSA0qZUFMdcPQ/yp/bIeLXCJZYMjisTo/cqJkLYx+OKMf3EsR2cdy+cqvNf8C8V9yu/V+pAnrxby438U8p7Rf5by32U7mD55ue2ddBvnei/Xj4X4axMEkdhsjiCJw2PgfhpnRz7d1ugDTMGPAuQQpWnKUUwetm+33xonv8IahiIwq+l/80fIhxAtLl3GKO1f4R5CPPb0vNnS2fLCuwkLMtPiqLNz/OyUDgCnEpWoH4ntcDn1A9iyH7B7hV/thgpnQft7e4xf8TG++gk0BTlrVwoAAA==</values>
     </sys_hub_action_instance_v2>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
@@ -278,15 +284,16 @@
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-28 18:00:12</sys_created_on>
         <sys_id>f56b4dedfb756210f6d5f9d38eefdcb6</sys_id>
-        <sys_mod_count>14</sys_mod_count>
+        <sys_mod_count>16</sys_mod_count>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:13</sys_updated_on>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:35</sys_updated_on>
         <ui_id>070c3028-da05-4dc4-afc6-b2410b50b51a</ui_id>
+        <updation_source/>
         <values>H4sIAAAAAAAA/+1WbW/TMBD+K1E+gdRWSdN1S/mEBPvGhgaahLZhXeJLa8lxgu10LVX++85x2m3dhjZAAiTyoYrv5bnnXnzNxSYUPJyF0xijgzSe5kmcJOMoGh9N4myaZPGYJ4A4CQehghLJ0kImkXWHQbgE2TjhihmOPGV1pS1IZlnEGqbRNNICr1itRQlaVOTBhaklrM97x4+dZh2c4RJVgwEoHrxf1ai4sI12IfKFkFyjCmcXV4OwBk2RLepwttlT2XWNTEKGknA/O5bBiWf53AzvOT+RsYuyL6s0d4SiQYgrS9SR4hUgDQ7CkhICW+l1OLO6IYFG4KdKrncWC6EsAYbOdmXEd0I/ipxdgZRajl63O7K+gF6cLyqR42ltRaW8pCPWKyvZlOrEJ+FKjwVQQ7alJ0ljCA9dtdGR6BkVnxbV9dk24LFQXXa9UlY5yN0JrNUiaywa1w+UWBIQK6GuhZpT26ul6JyJSzmaSzqMClldU1Aj5moEuSM+ogrB6Jjk7zrxOY2Ky+IDwZBz22XPvjUurs+jZ8x80mRgci1q+5bgltiTawfb0eYYpU82Ps5uG91Ns7kz1o/N8GUTRQnfbA7hYBIfQT5MJ9nhcMJTHAKMYZhEmEOSpmmOfPTQvW2/EmpdG49T8KHnjpzkmSjRWI0virF16pBBvYwg2Xd+1JAaDWxpArMVXeQXQe1D+EwxR2F/CXcfom0frpH/jfpbG/WT6xtLaq/FwDd48OybvAU4Fii5eeRqb/d3H4At+wD9Do9/1w6Pp1H3/JlN7nn+Y4v8zn/qg5XuE/Iyx9BfTff2I7tQFMGrgrOOFxuPGZsjZaWXxvfd9LO6pvHvvj/oWnKGt98fIxcl8LfA/3aH8eEXNP7l9eZSBfRoJHsVuPhvLlUbIJU1uK/rSu2UlLqBJfJd/9q2vboBVwSzjooJAAA=</values>
     </sys_hub_action_instance_v2>
     <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=216b4dedfb756210f6d5f9d38eefdc7a"/>
-    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=216b4dedfb756210f6d5f9d38eefdc7a^sys_idNOT IN616b4dedfb756210f6d5f9d38eefdcb1,e96b4dedfb756210f6d5f9d38eefdcb0,e56b4dedfb756210f6d5f9d38eefdcb1,6d6b4dedfb756210f6d5f9d38eefdcb1,e16b4dedfb756210f6d5f9d38eefdcb2,796b4dedfb756210f6d5f9d38eefdcb2,fd6b4dedfb756210f6d5f9d38eefdcb2,756b4dedfb756210f6d5f9d38eefdcb3,e96b4dedfb756210f6d5f9d38eefdcaf,e16b4dedfb756210f6d5f9d38eefdcb0,2f1d41a1fbb56210f6d5f9d38eefdc62,a71d41a1fbb56210f6d5f9d38eefdc63,271d41a1fbb56210f6d5f9d38eefdc66,f96b4dedfb756210f6d5f9d38eefdcb3,716b4dedfb756210f6d5f9d38eefdcb4,f56b4dedfb756210f6d5f9d38eefdcb4,7d6b4dedfb756210f6d5f9d38eefdcb4,2f1d41a1fbb56210f6d5f9d38eefdc65,1b3615edfbb56210f6d5f9d38eefdc2b,573615edfbb56210f6d5f9d38eefdc2c,5f3615edfbb56210f6d5f9d38eefdc2c"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=216b4dedfb756210f6d5f9d38eefdc7a^sys_idNOT IN616b4dedfb756210f6d5f9d38eefdcb1,e96b4dedfb756210f6d5f9d38eefdcb0,fd6b4dedfb756210f6d5f9d38eefdcb2,e96b4dedfb756210f6d5f9d38eefdcaf,e16b4dedfb756210f6d5f9d38eefdcb0,2f1d41a1fbb56210f6d5f9d38eefdc62,a71d41a1fbb56210f6d5f9d38eefdc63,2f1d41a1fbb56210f6d5f9d38eefdc65,e56b4dedfb756210f6d5f9d38eefdcb1,6d6b4dedfb756210f6d5f9d38eefdcb1,e16b4dedfb756210f6d5f9d38eefdcb2,796b4dedfb756210f6d5f9d38eefdcb2,756b4dedfb756210f6d5f9d38eefdcb3,1b3615edfbb56210f6d5f9d38eefdc2b,271d41a1fbb56210f6d5f9d38eefdc66,573615edfbb56210f6d5f9d38eefdc2c,5f3615edfbb56210f6d5f9d38eefdc2c,f96b4dedfb756210f6d5f9d38eefdcb3,716b4dedfb756210f6d5f9d38eefdcb4,f56b4dedfb756210f6d5f9d38eefdcb4,7d6b4dedfb756210f6d5f9d38eefdcb4"/>
     <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
         <attributes/>
         <block display_value="">e3790d2dfb756210f6d5f9d38eefdc10</block>
@@ -305,11 +312,12 @@
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-28 18:00:11</sys_created_on>
         <sys_id>616b4dedfb756210f6d5f9d38eefdcb1</sys_id>
-        <sys_mod_count>22</sys_mod_count>
+        <sys_mod_count>23</sys_mod_count>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:23</sys_updated_on>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:34</sys_updated_on>
         <ui_id>3443d07f-a146-41ae-ab16-99e00768f4e4</ui_id>
+        <updation_source/>
         <values>H4sIAAAAAAAA/+1Uy27bMBD8F55twVYU+XELUAQw0DZA6+ZSBMKKXNpEKZKhSDuu4X/v0pKVIGk+IEBu2uFyZ3Y40JHZGFwM7dretK3aGLb8/TBiyiSMvo/MQINsyXbgK26jCVM2okLHBKZvoVqn4XD/AuJbpYXHfpYDTyMCerY8vjoKB4eVhho13VyZgBvqInZBJYiyLgQKWc+uy3w6kaW4lgtxNUeUgs8E9V1uDtoI+5/cREOYGgisF0nOZMTwKaAhFraUoFscsQaMgGD9YUA8grgz+hnY0iAax1LzU6v+0uxikvok0mYcu7OhrHqHOphvreJ454KypkMC1Lq/w62OjfnerZC8RQlRh4u3hMSW5qFLmpOIXpH8ubX7HxfCW2XO6/WH2nLQQwUheFXHgG16jqjWr73poK9vHgU1NsRZNeCcMpvKebtTZx6S3WQbTUUmtd2TvhSkDHjaMSM3Ibsl/MsZvgev0sLfaEzP98uox4ir9OgLyRdzLotxLudyXJQcxpBf5eOST2ZzWRZiKnJ2OptbPca0VmdTb0jVeUoNLffKhRuSsMN+99NDCm7H3kX7nLN3MvMZ8c+If8iIC+SqJVXrJGF1+Y+ngwMFR/GX0N76P2mfZ+z0D+uobLURBgAA</values>
         <workflow_reference/>
     </sys_hub_flow_logic_instance_v2>
@@ -331,116 +339,13 @@
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-28 18:00:11</sys_created_on>
         <sys_id>e96b4dedfb756210f6d5f9d38eefdcb0</sys_id>
-        <sys_mod_count>22</sys_mod_count>
+        <sys_mod_count>23</sys_mod_count>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:23</sys_updated_on>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:34</sys_updated_on>
         <ui_id>b6f98993-2de4-48f4-9d42-7ad52358075f</ui_id>
+        <updation_source/>
         <values>H4sIAAAAAAAA/+1UXWvbMBT9K0PPxsh2Hda8lY3CYFthLX3ZirmW5ERMljx9JM1M/vuu/JGENWWl9HFv0rm6955zfHBPTPBd8O7OXDknV5osvz8kROqI4bknGlpBloQZzaWXRlcDkJANqBALeOTSdQp290eEraXiVkzTOrDY44Uly/6vkt91olJQC4WNt95KvcJ2yfHWUGiyS5axIl8UOaX5+4usXhR1lvMCBBT4bm78MJN793lAkmdZx32Iu3mTsTzSymhCxKMXmgtc3YByIiEtaA7e2N0BsQL4jVZHYC21HxW38Ojkb5ydl2V82AjUyCY7Dtdqsmp2yUgmbrpIcEQ81Gq20KjQ6q+jjmiyaCAof2JycDhPdJF0ZDFRam7XZvttXngt9SBwKirDQB1u4NGGOnjh4ocRSrQ4qGqh69CcqrNmI4dm5NKmK4WXtFFmi0tjUlJgkXiKHkF6jfjHAb4HK6OKLzgGm0eaNTjJqiFVOM5blLAfbKl+hUhoFDhJqUY38IFjVnb+CvdsxMR6nzyN5Eka+35guJlIpHiomAnaZ/v9j0BpwenTwL6s6S0yfQllU2a0PJ/pi8W5TJ9J8/NBzv8R5Gj9C3NMKf0f5NMgS1eNgZy0DctfneOHGNpxgxtzwwWTDoncRezT/AeOhR0GQLJTaGvszyjhiO3/AG3f7sTLBQAA</values>
-        <workflow_reference/>
-    </sys_hub_flow_logic_instance_v2>
-    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
-        <attributes/>
-        <block display_value="">eb790d2dfb756210f6d5f9d38eefdc10</block>
-        <comment/>
-        <connected_to>b6f98993-2de4-48f4-9d42-7ad52358075f</connected_to>
-        <decision_table/>
-        <display_text/>
-        <flow display_value="Primary Revenue and Expenditure 2">216b4dedfb756210f6d5f9d38eefdc7a</flow>
-        <flow_variables_assigned/>
-        <generation_source/>
-        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
-        <order>8</order>
-        <outputs_assigned/>
-        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
-        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
-        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
-        <sys_created_on>2025-05-28 18:00:11</sys_created_on>
-        <sys_id>e56b4dedfb756210f6d5f9d38eefdcb1</sys_id>
-        <sys_mod_count>22</sys_mod_count>
-        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:23</sys_updated_on>
-        <ui_id>9293447b-4381-4d7b-bfa2-d1373275d096</ui_id>
-        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
-        <workflow_reference/>
-    </sys_hub_flow_logic_instance_v2>
-    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
-        <attributes/>
-        <block display_value="">e3790d2dfb756210f6d5f9d38eefdc11</block>
-        <comment>Setando em 0</comment>
-        <connected_to/>
-        <decision_table/>
-        <display_text/>
-        <flow display_value="Primary Revenue and Expenditure 2">216b4dedfb756210f6d5f9d38eefdc7a</flow>
-        <flow_variables_assigned>var_count1</flow_variables_assigned>
-        <generation_source/>
-        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
-        <order>9</order>
-        <outputs_assigned/>
-        <parent_ui_id>9293447b-4381-4d7b-bfa2-d1373275d096</parent_ui_id>
-        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
-        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
-        <sys_created_on>2025-05-28 18:00:11</sys_created_on>
-        <sys_id>6d6b4dedfb756210f6d5f9d38eefdcb1</sys_id>
-        <sys_mod_count>22</sys_mod_count>
-        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:23</sys_updated_on>
-        <ui_id>6352d366-f036-48f1-8001-aafb42a31f7f</ui_id>
-        <values>H4sIAAAAAAAA/+1Uy27bMBD8F55tQVYU+XELUAQw0DZA6+ZSBAJFLm2iFMnwYcc1/O9dSrISJM0HBMhNO1zuzA4HOhETg43Bb8yN93Kryer3w4RInTD8PhFNWyArsqeuZibqMCMTLFRMYI7fXHqr6PH+BcR2UnEHwyxLHY4I4Mjq9OooHC3Uijag8OZaB9hiF7JzLCmvmpIDF838uipmuaj4tVjyqwWA4GzOse9yc9SG2P/kJhrE5EhgHE9y8gmBpwAaWchKUOVhQlqqOQ3GHUfEAeV3Wj0DOxyE40hqfvLyL84u89QnADdj0J+NZT041MNsZySDOxuk0T0SaKOGO8yo2Orv/QrJWxA0qnDxFpHocR7YpDmJGBSJnztz+HEhvJW6W284VIZRNVY0BCebGMCn54hy89qbHvr65lFAQYucdUutlXpbW2f2suNB2W22VVhkQpkD6ktByihLO2boJs1uEf/SwffUybTwNxwz8P3S8jHCOj36UrDlgolyWoiFmJYVo1NaXBXTiuXzhahKPuMFOXfm1o8xrdXbNBhS955ig2dO2nCDEvYw7H5+SMHt2ftodzl7JzOfEf+M+IeMOAcmParaJAnry388HRwxOJK9hA7G/Un7PGPnf6tqjhkRBgAA</values>
-        <workflow_reference/>
-    </sys_hub_flow_logic_instance_v2>
-    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
-        <attributes/>
-        <block display_value="">eb790d2dfb756210f6d5f9d38eefdc11</block>
-        <comment/>
-        <connected_to/>
-        <decision_table/>
-        <display_text/>
-        <flow display_value="Primary Revenue and Expenditure 2">216b4dedfb756210f6d5f9d38eefdc7a</flow>
-        <flow_variables_assigned/>
-        <generation_source/>
-        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
-        <order>10</order>
-        <outputs_assigned/>
-        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
-        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
-        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
-        <sys_created_on>2025-05-28 18:00:11</sys_created_on>
-        <sys_id>e16b4dedfb756210f6d5f9d38eefdcb2</sys_id>
-        <sys_mod_count>22</sys_mod_count>
-        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:23</sys_updated_on>
-        <ui_id>cfdc988b-b11d-4942-b9bf-11cea3ddb70f</ui_id>
-        <values>H4sIAAAAAAAA/+1Uy27bMBD8lUJnWdDDUmPfghYBCrQN0AS5tIGwIlc2UYpUScqOa/jfu9TDNhoHLYocezHEoXZ3ZrTjfaA713bO3utra8VKBcuvj2EglMfoeR8oaDBYBkwrLpzQquyBMNiA7PwFPXJhWwm7hxPC1kJyg2O3FgzVODTBcv/bldu1WEqoUFLhnTNCrahccDrVMdTJgiUsS4ssjeP0ap5URVYlKc8AIaP3psJ3E7k3H3skfJG1n0e4nSZpwz2tJA4DfHKoONLoGqTFMGhAcXDa7I6IQeC3Sp6AtVBuUNzAkxU/qXea5/7FGkkjG+04HsvRqsklLRjetp7ggDio5GShll2jPg86vMlYQyfdmcmdpX7YetKexUipvlvr7Zdp4I1QvcDxUmoG8ngCRzZUnUPrPwxKbKhR2UDbkjlla/RG9MXEpYlWkg5RLfWWhvpNiYB54hF5BNEN4e97+AGM8Co+URsqHmhWYAUr+62ids6QhENvS/mj84QGgaOUcnCDXrDMiNZd05wNjqwP4fOVPNvG/T6Na47F/GqWMeSzeb4oZlUCbFZli6q4egspLIpIOGz6n1K3w3rgNvJtD4dvXRxnfFOC0s9X+7Xbv0ZOFpDXeRLnl3MyLy7l5EJCXg5H+odw+M/5l9mI4/h/OM7DIWw5LPmorR/+z9l49EEYJthhbzgyYYnIvcc+TP/q/mJHCyDYObTV5ruXcMIOvwDm5h6wHwYAAA==</values>
-        <workflow_reference/>
-    </sys_hub_flow_logic_instance_v2>
-    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
-        <attributes/>
-        <block display_value="">e3790d2dfb756210f6d5f9d38eefdc12</block>
-        <comment>Popula o ano</comment>
-        <connected_to/>
-        <decision_table/>
-        <display_text/>
-        <flow display_value="Primary Revenue and Expenditure 2">216b4dedfb756210f6d5f9d38eefdc7a</flow>
-        <flow_variables_assigned>var_ano</flow_variables_assigned>
-        <generation_source/>
-        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
-        <order>11</order>
-        <outputs_assigned/>
-        <parent_ui_id>cfdc988b-b11d-4942-b9bf-11cea3ddb70f</parent_ui_id>
-        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
-        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
-        <sys_created_on>2025-05-28 18:00:11</sys_created_on>
-        <sys_id>796b4dedfb756210f6d5f9d38eefdcb2</sys_id>
-        <sys_mod_count>22</sys_mod_count>
-        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:23</sys_updated_on>
-        <ui_id>45e87eb4-1522-46c8-928c-4e868bc4e337</ui_id>
-        <values>H4sIAAAAAAAA/+1VwW7bMAz9F51jw3Vsx86twFCgQLsCa9bLUBiyRCXCZMmV5KRZkH8fZTvJkO22a27Wk0i+90jCB2J63/Xercy9c3KtyfLH+4xIHTD8PhBNWyBLsqW2ptqQGX6pPiCHQ5oIDkVWRnMGPMryqoiaO8qiZl41RbmgKa2KWHpo4yHmeMRoLl2n6P7tv5KwjVTcwkS2oxY5erBkebi68vsOakUbUFjr1Vup1xguOZ4KXjQZBy6aRV6kd4koeC4qPi8BBGdlgu9OgRftf5kRCiDgTqmN5YFHMiPw6UFjfrIUVDmYkZZqTr2x+zNigfIXrS7ARmqP2Uh4/OnkL0xdJkkSXgpAUQzG2/OxnuwcYbYxksFL56XRI+Jpo6YYZlTf6q+jgNAIELRX/tQIRHqH+aALrAONiZN43Zjdt1PBB6kHgdOlMoyq84l6tKHpPbjQiV6urswZkafrdoCCFivWLe06ROrOmq0cqiDpNl4rPMRCmR2yCyMaUxYUxugmjR8Q/zLAb9TKIPcZ02BwKPddy48eHkO7F6lI53neRMk8raKMlzhhGWc4dU2yEHnW0IqT42Bt/dEHUaNJkx316Cg+cMzKzt8jhS1Myo/vYSvG6uPSDBP2r3m5Lc9teW7Lc708HJh0yGoVKDye/j3hYo9DI9mf0M7Yn0HPBTv+Bi3W1GHFBgAA</values>
         <workflow_reference/>
     </sys_hub_flow_logic_instance_v2>
     <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
@@ -461,38 +366,13 @@
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-28 18:00:11</sys_created_on>
         <sys_id>fd6b4dedfb756210f6d5f9d38eefdcb2</sys_id>
-        <sys_mod_count>22</sys_mod_count>
+        <sys_mod_count>23</sys_mod_count>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:23</sys_updated_on>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:34</sys_updated_on>
         <ui_id>fefe5d28-2611-4ce7-9f3a-4b1127da7629</ui_id>
+        <updation_source/>
         <values>H4sIAAAAAAAA/+1Vy27bMBD8lUJnW9DDVm3fghYBCrQN0AS5tAGxIlc2UYpUScqOa/jfu9TDNpoELXrIqReBHHJ3Z4c70CEyrW9a7+7MlXNyraPV14dJJHXAaH2INNQYrSJutJBeGs06YBJtQbXhgJZCukbB/v6M8I1UwuKQrQFLMR5ttDr8duT3DTIFJSoKvPVW6jWFS0G7KoEqXfKU51mRZ0mSLWZpWeRlmokcEDK6Nwa+G8m9+dghkxdZh3qEu7GSsSLQSpNJhI8etUAqXYFyOIlq0AK8sfsTYhHEjVZnYCO17zuu4dHJn5Q7m8/DxQqpRz7IcdqyQapRJSM53jSBYI94KNUooVFtrT/3fQSRsYJW+QuRW0f5sAmkA4uBUnW7MbsvY8FrqbsGh0NlOKjTDjzJULYeXXgYVFhTIlZD05A4rLFmK7tg4lLHa0WbuFJmR0XDpMTAA/GYNIL4mvD3HXwPVoYuPlEaCu5pluAkZ91UUTpvqYVjJwv70QZCfYNDK6xXgy44bmXjr6jOFgfWx8nTkbyYxsMhSyqBxWwxzTmK6Wy+LKZlCnxa5suyWLyFDJZFLD3W3YeZph8P3MUh7fH4rU2SXGxZKWukMQkSs/H9JLCUFU8n/pWqvoKr0udc9YyfXrZS9gcrhcf/SyclSfLfSpdWko71lhh664r/s5Megm36Cq6fG4FcOiJyF7AP4z8gHOxpACS/hHbGfg8tnLHjLyQoZBZNBgAA</values>
-        <workflow_reference/>
-    </sys_hub_flow_logic_instance_v2>
-    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
-        <attributes/>
-        <block display_value="">67790d2dfb756210f6d5f9d38eefdc13</block>
-        <comment>Popula o mês</comment>
-        <connected_to/>
-        <decision_table/>
-        <display_text/>
-        <flow display_value="Primary Revenue and Expenditure 2">216b4dedfb756210f6d5f9d38eefdc7a</flow>
-        <flow_variables_assigned>var_mes</flow_variables_assigned>
-        <generation_source/>
-        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
-        <order>13</order>
-        <outputs_assigned/>
-        <parent_ui_id>fefe5d28-2611-4ce7-9f3a-4b1127da7629</parent_ui_id>
-        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
-        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
-        <sys_created_on>2025-05-28 18:00:11</sys_created_on>
-        <sys_id>756b4dedfb756210f6d5f9d38eefdcb3</sys_id>
-        <sys_mod_count>22</sys_mod_count>
-        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:23</sys_updated_on>
-        <ui_id>509ab718-88ae-46b1-9886-0418f90aabbf</ui_id>
-        <values>H4sIAAAAAAAA/+1VwY7aMBD9F59JFCAkgdtK1UortV2pS/dSraKJPQarjp11HFiK+PeOkwAV7a1XbvEbz8x7bzzKkdnON51v1/ahbdXGsNWPtwlTJmD0fWQGamQrtgNX1tiyCX3pLiDH4yyRArO0iOYcRZQulllUTYFH1XxZZUUOM1hmsfJYx33O6UTZQrWNhsPrfxXhW6WFw5FsA444enRsdbwJ+UODpYYKNfV68U6ZDaUrQadskVWpQCGrfJHNponMxEIuxbxAlIIXM7p3Trxq/8uM0ICA9lzaOhF4JBOGHx4N1WcrCbrFCavBCPDWHS6IQxDPRl+BrTKeqrFw+aNVv6h0kSRJuCmRRHEcopdjOdo5wHxrFcfnxitrBsRDpcccbnVXm6+DgDAIlNBpfx4EIV1L9bAJrAONkZN82dr9t3PDR2V6gWNQWw76cgJPNlSdJ2doEp1a35gzIJ9vx4Eaa+pY1tA0hJSNszvVdyHSdbzRdIiltntiF55oDDwojMlNiB8J/9TDr+BUkPuFylByaPfdqPcOn8K454s8q3iaR0kFEKXzIolglvAolxmmHKeQ5wk79daW710QNZg02lEOjtKFljvV+AeisMNR+ektbMXQfVia/oX9673cl+e+PPfluV0egVy1xGodKDyd/z0hcKBHo/if0N66n0HPFTv9BqYEMWPFBgAA</values>
         <workflow_reference/>
     </sys_hub_flow_logic_instance_v2>
     <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
@@ -513,11 +393,12 @@
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-28 18:00:11</sys_created_on>
         <sys_id>e96b4dedfb756210f6d5f9d38eefdcaf</sys_id>
-        <sys_mod_count>22</sys_mod_count>
+        <sys_mod_count>23</sys_mod_count>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:23</sys_updated_on>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:34</sys_updated_on>
         <ui_id>f4620f47-34ec-411b-af22-18f36db78b5b</ui_id>
+        <updation_source/>
         <values>H4sIAAAAAAAA/+1Uy27bMBD8F55tQVYU+XELUAQw0DZA6+ZSBAJFLm2iFMnwYcc1/O9dSrISJM0HBMhNO1zuzA4HOhETg43Bb8yN93Kryer3w4RInTD8PhFNWyArsqeuZibqMCMTLFRMYI7fXHqr6PH+BcR2UnEHwyxLHY4I4Mjq9OooHC3Uijag8OZaB9hiF7JzLCmvmpIDF838uipmuaj4tVjyqwWA4GzOse9yc9SG2P/kJhrE5EhgHE9y8gmBpwAaWchKUOVhQlqqOQ3GHUfEAeV3Wj0DOxyE40hqfvLyL84u89QnADdj0J+NZT041MNsZySDOxuk0T0SaKOGO8yo2Orv/QrJWxA0qnDxFpHocR7YpDmJGBSJnztz+HEhvJW6W284VIZRNVY0BCebGMCn54hy89qbHvr65lFAQYucdUutlXpbW2f2suNB2W22VVhkQpkD6ktByihLO2boJs1uEf/SwffUybTwNxwz8P3S8jHCOj36UrDlgolyWoiFmJYVo1NaXBXTiuXzhahKPuMFOXfm1o8xrdXbNBhS955ig2dO2nCDEvYw7H5+SMHt2ftodzl7JzOfEf+M+IeMOAcmParaJAnry388HRwxOJK9hA7G/Un7PGPnf6tqjhkRBgAA</values>
         <workflow_reference/>
     </sys_hub_flow_logic_instance_v2>
@@ -539,11 +420,12 @@
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-28 18:00:11</sys_created_on>
         <sys_id>e16b4dedfb756210f6d5f9d38eefdcb0</sys_id>
-        <sys_mod_count>22</sys_mod_count>
+        <sys_mod_count>23</sys_mod_count>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:23</sys_updated_on>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:34</sys_updated_on>
         <ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</ui_id>
+        <updation_source/>
         <values>H4sIAAAAAAAA/51STW/bMAz9Lzonhj+ypM6twFCgh61AV/QyFAYl0YkwWdIkOaln+L+Pip106HEnm4/k43siR2b76PoYXux9COpg2P7n24opkzD6H5mBDtmeqYhdYCt2At2neBx5ISpZCFzfVQWsN7zla/6l5usWRLXb7na4aevsGYX1MkwTtUoVnIbh9f8ZxFFp6XER6cCTtoie7cdPqTg4bDRw1DRoYaB+JSksatnWRV6LqtxWZZ6Xd5uCbytelLIClFuqu3Y+LqY/vUFip9DfeOmTVJT5iuF7RCORBrWgA65YB0ZCtH5g++h7AjyCfDJ6uFUclYlEx1Lte1B/iLvI81TYIjkSOCdvYbM85AyLo1UCn1xU1sxIBK6XHmF135nvs/y0Amyh1/G6AkL6QHzokuakYpHU/jja8/N14IMyF39LUlsB+hZBjF7xPmJIa0CNHRE1HTinzKFx3p7UpZm0dNlBU5C12p5paDq3DEQSntETQfZA+NcL/ApeJRffiIaap4v75nef5s4+FsXNbJoKgvDKxXuiO+EibnpL9zozhfkwJAoVaOBLwh6vV54SAy1ZiX+hs/W/ktQPbPoLPlHA5y8DAAA=</values>
         <workflow_reference/>
     </sys_hub_flow_logic_instance_v2>
@@ -565,11 +447,12 @@
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-28 18:07:41</sys_created_on>
         <sys_id>2f1d41a1fbb56210f6d5f9d38eefdc62</sys_id>
-        <sys_mod_count>20</sys_mod_count>
+        <sys_mod_count>21</sys_mod_count>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:23</sys_updated_on>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:34</sys_updated_on>
         <ui_id>e0441a5d-de7b-4465-8283-c2d239ca3641</ui_id>
+        <updation_source/>
         <values>H4sIAAAAAAAA/+1UTWvcMBD9K0VnY/zRhHZvoSVQaBtoQi5tEGNJ3hWVJVUfu9ka//eO/LG7NAkNOeTUm/RGM/Pe88M9MTHYGPyNufBerjVZfb/LiNQJw3NPNHSCrAgzmssgjaYjkJEtqJgKeOTSWwX72yPCNlJxJ+ZpFhz2BOHIqv+rFPZWUAWNUNh4HZzUa2yXHG9tAW35npWsrs7rqiiqd2/L5rxuyorXIKDCd0vjh4Xcm88jkj3JOu1D3C+bjOOJVllkRNwHobnA1S0oLzLSgeYQjNsfECeAX2l1BDZSh0lxB/de/sbZ1dlZetgK1MhmOw5XOlu1uGQkE1c2EZyQAI1aLDQqdvrrpCOZLFqIKpyYHD3OEzaRTixmSu31xuy+LQsvpR4FzkVlGKjDDQLa0MQgfPowQokOB9EOrEVzqHVmK8dm5NLla4WXvFVmh0tTUnJgiXiOHkF+ifjHEb4FJ5OKLzgGmyeaDXjJ6JgqHBccShhGW+ivmAhNAmcpdHIDH3jmpA0XuGcrZtZD9jCSJ2ns+5HhdiaR44EyE3Uoh+FHLIqalw8D+7ymV8h0+VimH0nz00Gu/hHkZP0zc1wUxf8gnwZZejoFctY2Ln9xju9SaKcNfsoNF0x6JHKTsE/LHzgV9hgAyU6hnXE/k4QjNvwBPUsE1MsFAAA=</values>
         <workflow_reference/>
     </sys_hub_flow_logic_instance_v2>
@@ -591,142 +474,13 @@
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-28 18:07:42</sys_created_on>
         <sys_id>a71d41a1fbb56210f6d5f9d38eefdc63</sys_id>
-        <sys_mod_count>20</sys_mod_count>
-        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:23</sys_updated_on>
-        <ui_id>26bc65d4-7174-419d-bffb-8c2a18337402</ui_id>
-        <values>H4sIAAAAAAAA/+1Uy27bMBD8F55twVYU+XELUAQw0DZA6+ZSBMKKXNpEKZKhSDuu4X/v0pKVIGk+IEBu2uFyZ3Y40JHZGFwM7dretK3aGLb8/TBiyiSMvo/MQINsyXbgK26jCVM2okLHBOb0LVTrNBzuX0B8q7Tw2M9y4GlEQM+Wx1dH4eCw0lCjppsrE3BDXcQuqARR1oVAIevZdZlPJ7IU13IhruaIUvCZoL7LzUEbYf+Tm2gIUwOB9SLJmYwYPgU0xMKWEnSLI9aAERCsPwyIRxB3Rj8DWxpE41hqfmrVX5pdTFKfRNqMY3c2lFXvUAfzrVUc71xQ1nRIgFr3d7jVsTHfuxWStygh6nDxlpDY0jx0SXMS0SuSP7d2/+NCeKvMeb3+UFsOeqggBK/qGLBNzxHV+rU3HfT1zaOgxoY4qwacU2ZTOW936sxDsptso6nIpLZ70peClAFPO2bkJmS3hH85w/fgVVr4G43p+X4Z9RhxlR59IflizmUxzuVcjouSwxjyq3xc8slsLstCTEXOTmdzq8eY1ups6g2pOk+poeVeuXBDEnbY7356SMHt2Lton3P2TmY+I/4Z8Q8ZcYFctaRqnSSsLv/xdHCg4Cj+Etpb/yft84yd/gFq6DqbEQYAAA==</values>
-        <workflow_reference/>
-    </sys_hub_flow_logic_instance_v2>
-    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
-        <attributes/>
-        <block display_value="">231d41a1fbb56210f6d5f9d38eefdc66</block>
-        <comment/>
-        <connected_to/>
-        <decision_table/>
-        <display_text/>
-        <flow display_value="Primary Revenue and Expenditure 2">216b4dedfb756210f6d5f9d38eefdc7a</flow>
-        <flow_variables_assigned>var_rpps</flow_variables_assigned>
-        <generation_source/>
-        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
-        <order>16</order>
-        <outputs_assigned/>
-        <parent_ui_id>3866f7bc-4596-4ecc-b5ab-abdbbde58ec9</parent_ui_id>
-        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
-        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
-        <sys_created_on>2025-05-28 18:07:42</sys_created_on>
-        <sys_id>271d41a1fbb56210f6d5f9d38eefdc66</sys_id>
         <sys_mod_count>21</sys_mod_count>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:23</sys_updated_on>
-        <ui_id>43175a16-f870-4ccd-b780-63e52089e443</ui_id>
-        <values>H4sIAAAAAAAA/+1V224aMRD9Fz8vFMKdt0gRUqS2kVqalypa+TIGK17bsb0Qivj3zrC7JE3zBVGe1j5zO3M8oz0yX+dQ57T21ymZjWPL3w8FM44wPB+Z4xWwJdvxWMYQEivwaGuChnhWJgXLD/ctlCN+Cia3xqoIbbLAI+bIENny+MaUDwFKywVYDF5j8JcVt4lSGIXIXEwmCzVVWojJ9Go40FM10Qs1mgNoJScz9OuCX/H7nzGVQUR4b4E7BHxURGdQMHjO4BRgNU2VC1Zxp3j28XBBInB15+wLsDUuYzpGzs/J/MHc4wH5acDOJDS2y7VsRWpgufVGwl3IxrsGyVzYNkZ6W1fue9MAyQua1zZ38upWnBa++Vf8zlonLAmB2iKeLWn9c+v3PzpOK+POCrRG6yW3lxvPORpRZ0j0YrVZv5Wvgb6+925gocKyZcVDMG5Thuh35lwKm6v6G4uXvrZ+jxRp3vpckhJ91Jz3V4jfnOF7Hg3J8g3TYDCV/OXMUw23NBdqJgWMNfT4YDHojQUf9sRUqJ4awWI8h6vZSGp2Oj9B+VRTZ42YrSZlozw6JBlNyNdIYQdt+6cHmvCmerMB51F8d64+N+FzEz72JiiQJiGrNVG47f4KZDjgcBn5Gtr7+Ej9vGCnv6GhWspfBgAA</values>
-        <workflow_reference/>
-    </sys_hub_flow_logic_instance_v2>
-    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
-        <attributes/>
-        <block display_value="">6f790d2dfb756210f6d5f9d38eefdc13</block>
-        <comment/>
-        <connected_to/>
-        <decision_table/>
-        <display_text/>
-        <flow display_value="Primary Revenue and Expenditure 2">216b4dedfb756210f6d5f9d38eefdc7a</flow>
-        <flow_variables_assigned/>
-        <generation_source/>
-        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
-        <order>19</order>
-        <outputs_assigned/>
-        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
-        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
-        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
-        <sys_created_on>2025-05-28 18:00:12</sys_created_on>
-        <sys_id>f96b4dedfb756210f6d5f9d38eefdcb3</sys_id>
-        <sys_mod_count>23</sys_mod_count>
-        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:23</sys_updated_on>
-        <ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</ui_id>
-        <values>H4sIAAAAAAAA/+2Uz27bMAzGX6XQ2TBkuwnW3IoOBQZsK7AWvWyFQUt0IkyWPElOmgV5oD3HXmyU/6RBl2LFsONu0keR/Ej/4B2zXWi74O/spfdqadji80PClIkanXfMQINswYQ1UgVlTdkLCVuD7mLgynYmnP38ccZJlMq3Grb3p2JipbR0OHZowVGdgI4tds9CYdtiqaFCTSVug1NmSelK0q3mUGcXIhNFPi9yzvM351k1L6oslwUgFPRuSryaDJ+975XkxUliP9L91Mk6GW1lPGH4GNBIpNY1aI8Ja8BICNZtD4pDkDdGPwkrZQKVY/Hxo1ffqXY+m8WHNdKMAofg4VqOSxtksbJK4E0bDQ5KgEqPOcLqrjEfhzniurGGTodp3aR0nuphG01HF6Ol+nZlN5+mhtfK9AOOQW0F6MMNAq2h6gL6+GFQY0OFygbalpZTts6uVZ9MXpp0qemS1tpuqGmkJwURjae0I0ivSX/by/fgVJziA5Wh5MFmBV6JsieNygVHI+z7tZTfumhoGHAcpRy2QQ+8cKoNl9RnjaPrffI7pkeE7na9w/VoIqVDKSKZ2X7/peO8kCfQfV3Sv2D6Amb1LOOz00yfz08xfYLml0HO/wByXP0rOeac/wf5GGTlywHIcba++V9z/BChHTr4gRuJQnkyche1d9NfOQa2BIASx9LGuq9xhCdt/wsKQ4JR3wUAAA==</values>
-        <workflow_reference/>
-    </sys_hub_flow_logic_instance_v2>
-    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
-        <attributes/>
-        <block display_value="">612b3741fbf1621086e7f4045eefdcde</block>
-        <comment/>
-        <connected_to/>
-        <decision_table/>
-        <display_text/>
-        <flow display_value="Primary Revenue and Expenditure 2">216b4dedfb756210f6d5f9d38eefdc7a</flow>
-        <flow_variables_assigned/>
-        <generation_source/>
-        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
-        <order>23</order>
-        <outputs_assigned/>
-        <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
-        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
-        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
-        <sys_created_on>2025-05-28 18:00:12</sys_created_on>
-        <sys_id>716b4dedfb756210f6d5f9d38eefdcb4</sys_id>
-        <sys_mod_count>23</sys_mod_count>
-        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:24</sys_updated_on>
-        <ui_id>cc765906-5769-430a-b4ae-373f078cb540</ui_id>
-        <values>H4sIAAAAAAAA/+1Uy27TQBT9Fctrx/IzkOwioBISUIlG3UBlXc8jGTGeMTPjpCHKv3PHjzaiqYCKJTvPua9z7j3yMdSdaztn13plrdiocPnlLgqF8hh+H0MFDQuXIdGKCie0qnogCncgOx+4BalNQFmwUjp4pzDPGaA6UBCsoWYSgiuhQGIFFbaVcLj960KyFZIaNnJrwSADx0y4PP4ScoeWVdIXY/8bZ4TaYLmg+OIJ8HRBUpJn8zxLkux1kdbzvE4zmgODHPOmwjeT1OBDj0TP7sDPQ9xOk7ShnlaaRCG7d0xRhqM5SMuisAFFwWlzeEAMA3qt5COwFcphu9An31vxA3tnZekTOUONhA3Bh2c1bnSAyVYLwq5bT3BAHNRyrCFado36NOjwt2AcOummWyDSWezHWk/asxgp8Zut3n+eBuJBeoFjUGqC95le4HANdeeY9YdhkjXYqGqgbXE5VWv0TvTFyKWJNxIfMZd6j0O972IgnniMO4L4CvG3PXwLRngVH7ENFg80a7CCVL1HsZ0zKOHUr6X63nlCg8BRSjVsAxMsMaJ1K5yzYyPrU/TU4GfePh55WfK6TsmshAWbFUXKZjWkxWxOePmqKAq6qHlsHbjOnk5fuyTJafLU6i/u8y+cv4CSl2lSXnZ+Mb/k/Auef97u2W/s7g/0h25PkuS/3c/tLmw12HbU1g9/sdvvvLWHCXbwDWVEWCSy9tj76a/vAwc0gCDn0F6bb17CI3b6CQQGB94/BgAA</values>
-        <workflow_reference/>
-    </sys_hub_flow_logic_instance_v2>
-    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
-        <attributes/>
-        <block display_value="">f7ee3f85fbf1621086e7f4045eefdc51</block>
-        <comment/>
-        <connected_to>cc765906-5769-430a-b4ae-373f078cb540</connected_to>
-        <decision_table/>
-        <display_text/>
-        <flow display_value="Primary Revenue and Expenditure 2">216b4dedfb756210f6d5f9d38eefdc7a</flow>
-        <flow_variables_assigned/>
-        <generation_source/>
-        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
-        <order>25</order>
-        <outputs_assigned/>
-        <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
-        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
-        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
-        <sys_created_on>2025-05-28 18:00:12</sys_created_on>
-        <sys_id>f56b4dedfb756210f6d5f9d38eefdcb4</sys_id>
-        <sys_mod_count>23</sys_mod_count>
-        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:24</sys_updated_on>
-        <ui_id>bbf158a1-4051-412a-803b-c34c3913e71b</ui_id>
-        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
-        <workflow_reference/>
-    </sys_hub_flow_logic_instance_v2>
-    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
-        <attributes/>
-        <block display_value="">e7790d2dfb756210f6d5f9d38eefdc15</block>
-        <comment>Limpando Variables</comment>
-        <connected_to/>
-        <decision_table/>
-        <display_text/>
-        <flow display_value="Primary Revenue and Expenditure 2">216b4dedfb756210f6d5f9d38eefdc7a</flow>
-        <flow_variables_assigned>var_mes,var_ano,var_rpps</flow_variables_assigned>
-        <generation_source/>
-        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
-        <order>27</order>
-        <outputs_assigned/>
-        <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
-        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
-        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
-        <sys_created_on>2025-05-28 18:00:12</sys_created_on>
-        <sys_id>7d6b4dedfb756210f6d5f9d38eefdcb4</sys_id>
-        <sys_mod_count>24</sys_mod_count>
-        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:24</sys_updated_on>
-        <ui_id>6deb7984-2b14-4d0a-a4e7-d189ebcd7d31</ui_id>
-        <values>H4sIAAAAAAAA/+2YXU/bMBSG/0uum87ku71DQkhI25BGx800Rf44AWuOHRwH6BD/fcdNQqGtdoEGElru4tex/Z7Xj9KjPgSmc03n2pU5blt5pYPlj5+zQGqv4fNDoGkNwTK4pbasoQ1m+KQ6r+CjkG2j6Ppyq/BrqYSFYZuGWlztwAbLh50pt26gVJSBwoUXzkp9hculwFGWZiwRICqWp1l0RKpMpNVCxAVAJXgR4Xvjwq2rPZv+ABTacWtjhfdBZgHcO9C4f7CsqGphFtRUC+qMXT8pFqg412orXEvt+gpret/K37h1QQjxb1aARfGh/qdhOWQzxmIkh/PGSaN7xVGmxsyM6mr9tS/ApwoV7ZR7lmrX4n7QeNfexuCpurg2d9/GA0+l3hQ4TCrDqXoaUYcxsM5hMngTnVzthNMrn3evAxTUeGJZ06ZBpWysuZWbU9B0Pb9SOJhXytyhOw/PnHJf4RzTpPNT1E828iW10pf7BbfBxf6471redHDmrztO84zxJA8JozRM4oKENCI8zKsMEg5HNM9J8LiJtrzpfFF9SEMcZZ8ovtByKxt3jBZuYaj8cfYCYKrNuwAs/gow2QG4d7VncwL4gwCcR1UUpykLSRwtwkQUPMTr52HMGcmrNGF0If4RwLZpnn+CyT7Cm1Wv5nhlO/h0OmyxYblgaboQGbLMDrCc5jssDwb3LQ80M2MUUP0WOCfvAvOY7yCfHE7/rXjfxvcS+Bf39i7Qi5wzSCoIKVmQEBk/ClnGRChiWCQFRHnMq1dD/9Mj3p/eNyEbFA/9yk/NyPQt/0jNyAGQp6ZkAvnjNSUHQJ6ak6k5+T+aEwFctuhq5S2cjf+V+Ik1wiX5c+nO2F++nq32+Aeu+7gTdREAAA==</values>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:34</sys_updated_on>
+        <ui_id>26bc65d4-7174-419d-bffb-8c2a18337402</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Uy27bMBD8F55twVYU+XELUAQw0DZA6+ZSBMKKXNpEKZKhSDuu4X/v0pKVIGk+IEBu2uFyZ3Y40JHZGFwM7dretK3aGLb8/TBiyiSMvo/MQINsyXbgK26jCVM2okLHBOb0LVTrNBzuX0B8q7Tw2M9y4GlEQM+Wx1dH4eCw0lCjppsrE3BDXcQuqARR1oVAIevZdZlPJ7IU13IhruaIUvCZoL7LzUEbYf+Tm2gIUwOB9SLJmYwYPgU0xMKWEnSLI9aAERCsPwyIRxB3Rj8DWxpE41hqfmrVX5pdTFKfRNqMY3c2lFXvUAfzrVUc71xQ1nRIgFr3d7jVsTHfuxWStygh6nDxlpDY0jx0SXMS0SuSP7d2/+NCeKvMeb3+UFsOeqggBK/qGLBNzxHV+rU3HfT1zaOgxoY4qwacU2ZTOW936sxDsptso6nIpLZ70peClAFPO2bkJmS3hH85w/fgVVr4G43p+X4Z9RhxlR59IflizmUxzuVcjouSwxjyq3xc8slsLstCTEXOTmdzq8eY1ups6g2pOk+poeVeuXBDEnbY7356SMHt2Lton3P2TmY+I/4Z8Q8ZcYFctaRqnSSsLv/xdHCg4Cj+Etpb/yft84yd/gFq6DqbEQYAAA==</values>
         <workflow_reference/>
     </sys_hub_flow_logic_instance_v2>
     <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
@@ -747,12 +501,148 @@
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-28 18:07:42</sys_created_on>
         <sys_id>2f1d41a1fbb56210f6d5f9d38eefdc65</sys_id>
-        <sys_mod_count>20</sys_mod_count>
+        <sys_mod_count>21</sys_mod_count>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:23</sys_updated_on>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:34</sys_updated_on>
         <ui_id>7b5c4780-d3a5-467a-a4b8-6c282af57221</ui_id>
+        <updation_source/>
         <values>H4sIAAAAAAAA/+1VTW8TMRD9K2jPm9V+NCHJrQJVQgIq0aoXqKxZeza18NrG9iYNUf474/1oI9oKxAEuXFb2sz3z3ss85ZCYLtgu+Gtz7r3c6GT9+TZNpI4YrQ+JhhaTdcKNFjJIo1kPpMkWVBcPaCmktwr2N48Iv5NKOByrWXD0JqBL1oefjsLeIlNQo6KHV8FJvaHnUtCuyaEpVrzgVbmoyjwvl2dFvajqohQVIJR0b3r4ZiL36n2PpC+yjv0I91Mn40SkVeRpgvcBtUBq3YDymCYtaAHBuP0D4hDEpVaPwJ3UYVDcwr2X36l2OZ/Hiw2SRj7a8bBlo1WTS0ZyvLSR4IAEqNVkoVFdqz8OOqLJ2ECnwonJnad6aCPpyGKk1Fzdmd2nqeGF1L3A8VAZDuphB4FsqLuAPv4wqLClQqwFa8kcZp3Zyv4xcWmzjaJN1iizo6ZxUjLgkXhGHkF2QfjbHr4BJ6OKD1SGHg80a/CSs36qqFxwJOHY28K+dZHQIHCUwgY36ILnTtpwTn22OLI+pk9H8mQaD4cybwQuzpaziqOYnc1Xi1ldAJ/V1apeLF9DCatFJgO2/YcZO4wH7rJY9nj80uV5JbbMWeuZw41sMVphnTQknJYYXdFcAvOGvuppAP4Nib+QueK5zD2TtpeDVv4iaHE0fjNneZ7/D9pp0KRnQ2BGbX3zP87ZbQzV0MEPcyOQS09EriP2bvqHiAd7GgDJT6GdcV+jhEfs+AMnXa8bawYAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">eb790d2dfb756210f6d5f9d38eefdc10</block>
+        <comment/>
+        <connected_to>b6f98993-2de4-48f4-9d42-7ad52358075f</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Primary Revenue and Expenditure 2">216b4dedfb756210f6d5f9d38eefdc7a</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>8</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 18:00:11</sys_created_on>
+        <sys_id>e56b4dedfb756210f6d5f9d38eefdcb1</sys_id>
+        <sys_mod_count>23</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:34</sys_updated_on>
+        <ui_id>9293447b-4381-4d7b-bfa2-d1373275d096</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">e3790d2dfb756210f6d5f9d38eefdc11</block>
+        <comment>Setando em 0</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Primary Revenue and Expenditure 2">216b4dedfb756210f6d5f9d38eefdc7a</flow>
+        <flow_variables_assigned>var_count1</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>9</order>
+        <outputs_assigned/>
+        <parent_ui_id>9293447b-4381-4d7b-bfa2-d1373275d096</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 18:00:11</sys_created_on>
+        <sys_id>6d6b4dedfb756210f6d5f9d38eefdcb1</sys_id>
+        <sys_mod_count>23</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:34</sys_updated_on>
+        <ui_id>6352d366-f036-48f1-8001-aafb42a31f7f</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Uy27bMBD8F55tQVYU+XELUAQw0DZA6+ZSBAJFLm2iFMnwYcc1/O9dSrISJM0HBMhNO1zuzA4HOhETg43Bb8yN93Kryer3w4RInTD8PhFNWyArsqeuZibqMCMTLFRMYI7fXHqr6PH+BcR2UnEHwyxLHY4I4Mjq9OooHC3Uijag8OZaB9hiF7JzLCmvmpIDF838uipmuaj4tVjyqwWA4GzOse9yc9SG2P/kJhrE5EhgHE9y8gmBpwAaWchKUOVhQlqqOQ3GHUfEAeV3Wj0DOxyE40hqfvLyL84u89QnADdj0J+NZT041MNsZySDOxuk0T0SaKOGO8yo2Orv/QrJWxA0qnDxFpHocR7YpDmJGBSJnztz+HEhvJW6W284VIZRNVY0BCebGMCn54hy89qbHvr65lFAQYucdUutlXpbW2f2suNB2W22VVhkQpkD6ktByihLO2boJs1uEf/SwffUybTwNxwz8P3S8jHCOj36UrDlgolyWoiFmJYVo1NaXBXTiuXzhahKPuMFOXfm1o8xrdXbNBhS955ig2dO2nCDEvYw7H5+SMHt2ftodzl7JzOfEf+M+IeMOAcmParaJAnry388HRwxOJK9hA7G/Un7PGPnf6tqjhkRBgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">eb790d2dfb756210f6d5f9d38eefdc11</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Primary Revenue and Expenditure 2">216b4dedfb756210f6d5f9d38eefdc7a</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>10</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 18:00:11</sys_created_on>
+        <sys_id>e16b4dedfb756210f6d5f9d38eefdcb2</sys_id>
+        <sys_mod_count>23</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:34</sys_updated_on>
+        <ui_id>cfdc988b-b11d-4942-b9bf-11cea3ddb70f</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Uy27bMBD8lUJnWdDDUmPfghYBCrQN0AS5tIGwIlc2UYpUScqOa/jfu9TDNhoHLYocezHEoXZ3ZrTjfaA713bO3utra8VKBcuvj2EglMfoeR8oaDBYBkwrLpzQquyBMNiA7PwFPXJhWwm7hxPC1kJyg2O3FgzVODTBcv/bldu1WEqoUFLhnTNCrahccDrVMdTJgiUsS4ssjeP0ap5URVYlKc8AIaP3psJ3E7k3H3skfJG1n0e4nSZpwz2tJA4DfHKoONLoGqTFMGhAcXDa7I6IQeC3Sp6AtVBuUNzAkxU/qXea5/7FGkkjG+04HsvRqsklLRjetp7ggDio5GShll2jPg86vMlYQyfdmcmdpX7YetKexUipvlvr7Zdp4I1QvcDxUmoG8ngCRzZUnUPrPwxKbKhR2UDbkjlla/RG9MXEpYlWkg5RLfWWhvpNiYB54hF5BNEN4e97+AGM8Co+URsqHmhWYAUr+62ids6QhENvS/mj84QGgaOUcnCDXrDMiNZd05wNjqwP4fOVPNvG/T6Na47F/GqWMeSzeb4oZlUCbFZli6q4egspLIpIOGz6n1K3w3rgNvJtD4dvXRxnfFOC0s9X+7Xbv0ZOFpDXeRLnl3MyLy7l5EJCXg5H+odw+M/5l9mI4/h/OM7DIWw5LPmorR/+z9l49EEYJthhbzgyYYnIvcc+TP/q/mJHCyDYObTV5ruXcMIOvwDm5h6wHwYAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">e3790d2dfb756210f6d5f9d38eefdc12</block>
+        <comment>Popula o ano</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Primary Revenue and Expenditure 2">216b4dedfb756210f6d5f9d38eefdc7a</flow>
+        <flow_variables_assigned>var_ano</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>11</order>
+        <outputs_assigned/>
+        <parent_ui_id>cfdc988b-b11d-4942-b9bf-11cea3ddb70f</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 18:00:11</sys_created_on>
+        <sys_id>796b4dedfb756210f6d5f9d38eefdcb2</sys_id>
+        <sys_mod_count>23</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:34</sys_updated_on>
+        <ui_id>45e87eb4-1522-46c8-928c-4e868bc4e337</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VwW7bMAz9F51jw3Vsx86twFCgQLsCa9bLUBiyRCXCZMmV5KRZkH8fZTvJkO22a27Wk0i+90jCB2J63/Xercy9c3KtyfLH+4xIHTD8PhBNWyBLsqW2ptqQGX6pPiCHQ5oIDkVWRnMGPMryqoiaO8qiZl41RbmgKa2KWHpo4yHmeMRoLl2n6P7tv5KwjVTcwkS2oxY5erBkebi68vsOakUbUFjr1Vup1xguOZ4KXjQZBy6aRV6kd4koeC4qPi8BBGdlgu9OgRftf5kRCiDgTqmN5YFHMiPw6UFjfrIUVDmYkZZqTr2x+zNigfIXrS7ARmqP2Uh4/OnkL0xdJkkSXgpAUQzG2/OxnuwcYbYxksFL56XRI+Jpo6YYZlTf6q+jgNAIELRX/tQIRHqH+aALrAONiZN43Zjdt1PBB6kHgdOlMoyq84l6tKHpPbjQiV6urswZkafrdoCCFivWLe06ROrOmq0cqiDpNl4rPMRCmR2yCyMaUxYUxugmjR8Q/zLAb9TKIPcZ02BwKPddy48eHkO7F6lI53neRMk8raKMlzhhGWc4dU2yEHnW0IqT42Bt/dEHUaNJkx316Cg+cMzKzt8jhS1Myo/vYSvG6uPSDBP2r3m5Lc9teW7Lc708HJh0yGoVKDye/j3hYo9DI9mf0M7Yn0HPBTv+Bi3W1GHFBgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">67790d2dfb756210f6d5f9d38eefdc13</block>
+        <comment>Popula o mês</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Primary Revenue and Expenditure 2">216b4dedfb756210f6d5f9d38eefdc7a</flow>
+        <flow_variables_assigned>var_mes</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>13</order>
+        <outputs_assigned/>
+        <parent_ui_id>fefe5d28-2611-4ce7-9f3a-4b1127da7629</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 18:00:11</sys_created_on>
+        <sys_id>756b4dedfb756210f6d5f9d38eefdcb3</sys_id>
+        <sys_mod_count>23</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:34</sys_updated_on>
+        <ui_id>509ab718-88ae-46b1-9886-0418f90aabbf</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VwY7aMBD9F59JFCAkgdtK1UortV2pS/dSraKJPQarjp11HFiK+PeOkwAV7a1XbvEbz8x7bzzKkdnON51v1/ahbdXGsNWPtwlTJmD0fWQGamQrtgNX1tiyCX3pLiDH4yyRArO0iOYcRZQulllUTYFH1XxZZUUOM1hmsfJYx33O6UTZQrWNhsPrfxXhW6WFw5FsA444enRsdbwJ+UODpYYKNfV68U6ZDaUrQadskVWpQCGrfJHNponMxEIuxbxAlIIXM7p3Trxq/8uM0ICA9lzaOhF4JBOGHx4N1WcrCbrFCavBCPDWHS6IQxDPRl+BrTKeqrFw+aNVv6h0kSRJuCmRRHEcopdjOdo5wHxrFcfnxitrBsRDpcccbnVXm6+DgDAIlNBpfx4EIV1L9bAJrAONkZN82dr9t3PDR2V6gWNQWw76cgJPNlSdJ2doEp1a35gzIJ9vx4Eaa+pY1tA0hJSNszvVdyHSdbzRdIiltntiF55oDDwojMlNiB8J/9TDr+BUkPuFylByaPfdqPcOn8K454s8q3iaR0kFEKXzIolglvAolxmmHKeQ5wk79daW710QNZg02lEOjtKFljvV+AeisMNR+ektbMXQfVia/oX9673cl+e+PPfluV0egVy1xGodKDyd/z0hcKBHo/if0N66n0HPFTv9BqYEMWPFBgAA</values>
         <workflow_reference/>
     </sys_hub_flow_logic_instance_v2>
     <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
@@ -773,12 +663,40 @@
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-28 18:47:33</sys_created_on>
         <sys_id>1b3615edfbb56210f6d5f9d38eefdc2b</sys_id>
-        <sys_mod_count>15</sys_mod_count>
+        <sys_mod_count>16</sys_mod_count>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:23</sys_updated_on>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:34</sys_updated_on>
         <ui_id>3866f7bc-4596-4ecc-b5ab-abdbbde58ec9</ui_id>
+        <updation_source/>
         <values>H4sIAAAAAAAA/+1UXY/TMBD8KyjPaZSPNrR9O4FOQgJO4k4nIe4UbexNa+HYwXbaK1X/O+t8tBXXEwh45C0ee3dnxuPsA926pnX2Tl9ZK1YqWH55DAOhPEbf+0BBjcEyYFpx4YRWRQeEwQZk6zfokwvbSNjdnxC2FpIbHLo1YKjGoQmW+5+23K7BQkKJkgpvnRFqReWC06qKoUoWLGFZmmdpHKfzaVLmWZmkPAOEjM6NhW9Gcq/ed0j4Ims/j3A7TtKGe1pJHAb45FBxpNEVSIthUIPi4LTZHRGDwG+UPAFroVyvuIYnK75T73Q28wcrJI1ssOO4LAarRpe0YHjTeII94qCUo4VatrX62OvwJmMFrXRnJreW+mHjSXsWA6Xqdq23n8aB10J1AodNqRnI4woc2VC2Dq2/GJRYU6OihqYhc4rG6I3oiolLHa0kLaJK6i0N9UmJgHniEXkE0TXhbzv4HozwKj5QGyruaZZgBSu6VFE7Z0jCobOl+NZ6Qr3AQUrRu0EHLDOicVc0Z4MD60P4PJJnadzv07jimE/nk4whn0xni3xSJsAmZbYo8/lrSGGRR8JhHXU1h8NDG8cZ/0wmPEvyX3b7F69gAbNqlsSzy69gml96BRfy/3L0019E31/WbyY/juP/0T+PvrBFH+FBWzf8j5P/6GPeT7B9bjgyYYnIncfejf9sv7GjAAh2Dm21+eolnLDDDxxmQ1r9BQAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">231d41a1fbb56210f6d5f9d38eefdc66</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Primary Revenue and Expenditure 2">216b4dedfb756210f6d5f9d38eefdc7a</flow>
+        <flow_variables_assigned>var_rpps</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>16</order>
+        <outputs_assigned/>
+        <parent_ui_id>3866f7bc-4596-4ecc-b5ab-abdbbde58ec9</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 18:07:42</sys_created_on>
+        <sys_id>271d41a1fbb56210f6d5f9d38eefdc66</sys_id>
+        <sys_mod_count>22</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:34</sys_updated_on>
+        <ui_id>43175a16-f870-4ccd-b780-63e52089e443</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1V224aMRD9Fz8vFMKdt0gRUqS2kVqalypa+TIGK17bsb0Qivj3zrC7JE3zBVGe1j5zO3M8oz0yX+dQ57T21ymZjWPL3w8FM44wPB+Z4xWwJdvxWMYQEivwaGuChnhWJgXLD/ctlCN+Cia3xqoIbbLAI+bIENny+MaUDwFKywVYDF5j8JcVt4lSGIXIXEwmCzVVWojJ9Go40FM10Qs1mgNoJScz9OuCX/H7nzGVQUR4b4E7BHxURGdQMHjO4BRgNU2VC1Zxp3j28XBBInB15+wLsDUuYzpGzs/J/MHc4wH5acDOJDS2y7VsRWpgufVGwl3IxrsGyVzYNkZ6W1fue9MAyQua1zZ38upWnBa++Vf8zlonLAmB2iKeLWn9c+v3PzpOK+POCrRG6yW3lxvPORpRZ0j0YrVZv5Wvgb6+925gocKyZcVDMG5Thuh35lwKm6v6G4uXvrZ+jxRp3vpckhJ91Jz3V4jfnOF7Hg3J8g3TYDCV/OXMUw23NBdqJgWMNfT4YDHojQUf9sRUqJ4awWI8h6vZSGp2Oj9B+VRTZ42YrSZlozw6JBlNyNdIYQdt+6cHmvCmerMB51F8d64+N+FzEz72JiiQJiGrNVG47f4KZDjgcBn5Gtr7+Ej9vGCnv6GhWspfBgAA</values>
         <workflow_reference/>
     </sys_hub_flow_logic_instance_v2>
     <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
@@ -799,11 +717,12 @@
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-28 18:47:33</sys_created_on>
         <sys_id>573615edfbb56210f6d5f9d38eefdc2c</sys_id>
-        <sys_mod_count>15</sys_mod_count>
+        <sys_mod_count>16</sys_mod_count>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:23</sys_updated_on>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:34</sys_updated_on>
         <ui_id>51156d05-59e8-4d9c-8652-71b3a21d2954</ui_id>
+        <updation_source/>
         <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
         <workflow_reference/>
     </sys_hub_flow_logic_instance_v2>
@@ -825,12 +744,121 @@
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-28 18:47:33</sys_created_on>
         <sys_id>5f3615edfbb56210f6d5f9d38eefdc2c</sys_id>
-        <sys_mod_count>15</sys_mod_count>
+        <sys_mod_count>16</sys_mod_count>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:23</sys_updated_on>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:34</sys_updated_on>
         <ui_id>d1370173-7d51-4e8b-96d1-dcf3e392fd9c</ui_id>
+        <updation_source/>
         <values>H4sIAAAAAAAA/+2V224aMRCG38XXsN0EltNdpAgpUttILc1NFa18GINVr+34AKGId+94dyER4Qmq3Nmf7Zl/fo/lA7EpuhTDyt6FoNaGLH4/D4gymeH4QAxtgCzIlvraOxfIAIc6ZVTiWKjgNN0/9UhSHQAx3ygtPPTRHPUYJIIni8PFUtw7qDVloPH0yif4suxDKIFkxqpqLiZCMlZNbm9KORGVnIvRDEAKXk1x3+nwO4EfJec0SJi1GqhBYL3IcsoBgdcIRgBma8UPSEONoNH6/Zl4oOLR6DewUSZiOJI3vwb1F2OPy7xPAlbGoVs7T+vepQ7zjVUcHl1U1nQkUqb7M9zq1JjvXQHZX5A06Xjpb4/vr7ufAqYEl8vKOnvR8ufG7n6cNC2VaR3oF7XlVJ9nNEavWIoQ8o0ltbq0r0Nfr90baGgwbd1Q55RZ187brWpTYXFNsdY4KaS2O5SYG66gPDtRoOe0WCK/b/ET9Srb8g3D4OGc8pdRLwkecl+IKWcwljCk5bwcjhm9GbIJE0Mxgvl4BrfTEZfk2F5B/ZJyZZ2ZvSd15zxuCNwrF+9Qwhb68o/PucW77N0TaFvxal99PoXPp/CfPwUBXAVUtcoSHk7/Ql7YY3Mp/h7trP+T63ljx38lX1A2YQYAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">6f790d2dfb756210f6d5f9d38eefdc13</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Primary Revenue and Expenditure 2">216b4dedfb756210f6d5f9d38eefdc7a</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>19</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 18:00:12</sys_created_on>
+        <sys_id>f96b4dedfb756210f6d5f9d38eefdcb3</sys_id>
+        <sys_mod_count>24</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:34</sys_updated_on>
+        <ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+2Uz27bMAzGX6XQ2TBkuwnW3IoOBQZsK7AWvWyFQUt0IkyWPElOmgV5oD3HXmyU/6RBl2LFsONu0keR/Ej/4B2zXWi74O/spfdqadji80PClIkanXfMQINswYQ1UgVlTdkLCVuD7mLgynYmnP38ccZJlMq3Grb3p2JipbR0OHZowVGdgI4tds9CYdtiqaFCTSVug1NmSelK0q3mUGcXIhNFPi9yzvM351k1L6oslwUgFPRuSryaDJ+975XkxUliP9L91Mk6GW1lPGH4GNBIpNY1aI8Ja8BICNZtD4pDkDdGPwkrZQKVY/Hxo1ffqXY+m8WHNdKMAofg4VqOSxtksbJK4E0bDQ5KgEqPOcLqrjEfhzniurGGTodp3aR0nuphG01HF6Ol+nZlN5+mhtfK9AOOQW0F6MMNAq2h6gL6+GFQY0OFygbalpZTts6uVZ9MXpp0qemS1tpuqGmkJwURjae0I0ivSX/by/fgVJziA5Wh5MFmBV6JsieNygVHI+z7tZTfumhoGHAcpRy2QQ+8cKoNl9RnjaPrffI7pkeE7na9w/VoIqVDKSKZ2X7/peO8kCfQfV3Sv2D6Amb1LOOz00yfz08xfYLml0HO/wByXP0rOeac/wf5GGTlywHIcba++V9z/BChHTr4gRuJQnkyche1d9NfOQa2BIASx9LGuq9xhCdt/wsKQ4JR3wUAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">612b3741fbf1621086e7f4045eefdcde</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Primary Revenue and Expenditure 2">216b4dedfb756210f6d5f9d38eefdc7a</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>23</order>
+        <outputs_assigned/>
+        <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 18:00:12</sys_created_on>
+        <sys_id>716b4dedfb756210f6d5f9d38eefdcb4</sys_id>
+        <sys_mod_count>24</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:35</sys_updated_on>
+        <ui_id>cc765906-5769-430a-b4ae-373f078cb540</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Uy27TQBT9Fctrx/IzkOwioBISUIlG3UBlXc8jGTGeMTPjpCHKv3PHjzaiqYCKJTvPua9z7j3yMdSdaztn13plrdiocPnlLgqF8hh+H0MFDQuXIdGKCie0qnogCncgOx+4BalNQFmwUjp4pzDPGaA6UBCsoWYSgiuhQGIFFbaVcLj960KyFZIaNnJrwSADx0y4PP4ScoeWVdIXY/8bZ4TaYLmg+OIJ8HRBUpJn8zxLkux1kdbzvE4zmgODHPOmwjeT1OBDj0TP7sDPQ9xOk7ShnlaaRCG7d0xRhqM5SMuisAFFwWlzeEAMA3qt5COwFcphu9An31vxA3tnZekTOUONhA3Bh2c1bnSAyVYLwq5bT3BAHNRyrCFado36NOjwt2AcOummWyDSWezHWk/asxgp8Zut3n+eBuJBeoFjUGqC95le4HANdeeY9YdhkjXYqGqgbXE5VWv0TvTFyKWJNxIfMZd6j0O972IgnniMO4L4CvG3PXwLRngVH7ENFg80a7CCVL1HsZ0zKOHUr6X63nlCg8BRSjVsAxMsMaJ1K5yzYyPrU/TU4GfePh55WfK6TsmshAWbFUXKZjWkxWxOePmqKAq6qHlsHbjOnk5fuyTJafLU6i/u8y+cv4CSl2lSXnZ+Mb/k/Auef97u2W/s7g/0h25PkuS/3c/tLmw12HbU1g9/sdvvvLWHCXbwDWVEWCSy9tj76a/vAwc0gCDn0F6bb17CI3b6CQQGB94/BgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">f7ee3f85fbf1621086e7f4045eefdc51</block>
+        <comment/>
+        <connected_to>cc765906-5769-430a-b4ae-373f078cb540</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Primary Revenue and Expenditure 2">216b4dedfb756210f6d5f9d38eefdc7a</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>25</order>
+        <outputs_assigned/>
+        <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 18:00:12</sys_created_on>
+        <sys_id>f56b4dedfb756210f6d5f9d38eefdcb4</sys_id>
+        <sys_mod_count>24</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:35</sys_updated_on>
+        <ui_id>bbf158a1-4051-412a-803b-c34c3913e71b</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">e7790d2dfb756210f6d5f9d38eefdc15</block>
+        <comment>Limpando Variables</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Primary Revenue and Expenditure 2">216b4dedfb756210f6d5f9d38eefdc7a</flow>
+        <flow_variables_assigned>var_mes,var_ano,var_rpps</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>27</order>
+        <outputs_assigned/>
+        <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 18:00:12</sys_created_on>
+        <sys_id>7d6b4dedfb756210f6d5f9d38eefdcb4</sys_id>
+        <sys_mod_count>25</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:35</sys_updated_on>
+        <ui_id>6deb7984-2b14-4d0a-a4e7-d189ebcd7d31</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+2YXU/bMBSG/0uum87ku71DQkhI25BGx800Rf44AWuOHRwH6BD/fcdNQqGtdoEGElru4tex/Z7Xj9KjPgSmc03n2pU5blt5pYPlj5+zQGqv4fNDoGkNwTK4pbasoQ1m+KQ6r+CjkG2j6Ppyq/BrqYSFYZuGWlztwAbLh50pt26gVJSBwoUXzkp9hculwFGWZiwRICqWp1l0RKpMpNVCxAVAJXgR4Xvjwq2rPZv+ABTacWtjhfdBZgHcO9C4f7CsqGphFtRUC+qMXT8pFqg412orXEvt+gpret/K37h1QQjxb1aARfGh/qdhOWQzxmIkh/PGSaN7xVGmxsyM6mr9tS/ApwoV7ZR7lmrX4n7QeNfexuCpurg2d9/GA0+l3hQ4TCrDqXoaUYcxsM5hMngTnVzthNMrn3evAxTUeGJZ06ZBpWysuZWbU9B0Pb9SOJhXytyhOw/PnHJf4RzTpPNT1E828iW10pf7BbfBxf6471redHDmrztO84zxJA8JozRM4oKENCI8zKsMEg5HNM9J8LiJtrzpfFF9SEMcZZ8ovtByKxt3jBZuYaj8cfYCYKrNuwAs/gow2QG4d7VncwL4gwCcR1UUpykLSRwtwkQUPMTr52HMGcmrNGF0If4RwLZpnn+CyT7Cm1Wv5nhlO/h0OmyxYblgaboQGbLMDrCc5jssDwb3LQ80M2MUUP0WOCfvAvOY7yCfHE7/rXjfxvcS+Bf39i7Qi5wzSCoIKVmQEBk/ClnGRChiWCQFRHnMq1dD/9Mj3p/eNyEbFA/9yk/NyPQt/0jNyAGQp6ZkAvnjNSUHQJ6ak6k5+T+aEwFctuhq5S2cjf+V+Ik1wiX5c+nO2F++nq32+Aeu+7gTdREAAA==</values>
         <workflow_reference/>
     </sys_hub_flow_logic_instance_v2>
     <sys_hub_pill_compound action="delete_multiple" query="attached_to=216b4dedfb756210f6d5f9d38eefdc7a"/>
@@ -1064,14 +1092,14 @@
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-28 18:43:42</sys_created_on>
         <sys_id>8b559d6dfbb56210f6d5f9d38eefdc57</sys_id>
-        <sys_mod_count>65</sys_mod_count>
+        <sys_mod_count>75</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name/>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:23</sys_updated_on>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:34</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -1206,14 +1234,14 @@
         <description/>
         <flow_priority>MEDIUM</flow_priority>
         <internal_name>primary_revenue_and_expenditure_2</internal_name>
-        <label_cache>[{"name":"subflow.record","label":"Input➛Record","reference":"x_sded9_portal_t_0_registro_de_cargas_tesouro","reference_display":"Treasury Cargo Registration","type":"reference","base_type":"reference","column_name":"","usedInstances":{"b1c3d1ce-831a-4bfb-b59b-fac37677e4f9":["conditions"],"0a53884c-6d3f-4926-b143-7aebb7b97d97":["conditions"],"39268173-2ed3-4659-805a-84b15f1045a3":["parent_sys_id"],"c89a2cab-c4b6-4d9a-a522-66df72662c5e":["parent_sys_id"],"fb48067c-f6f5-45ab-b1f7-87e39e2b4f53":["parent_sys_id"],"83c6e11f-e93b-467c-9b7f-38bab9ae0a3b":["parent_sys_id"],"b68068aa-2262-4839-a185-5e13cd917f72":["parent_sys_id"],"d54d22bc-061e-44b3-8b1e-9ed82884ca5f":["parent_sys_id"],"7a5418ac-94b7-4d9e-aa2a-30eca3999ced":["parent_sys_id"]},"attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"f4b7b973-3190-4871-8403-baaef11efe7b","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"b1c3d1ce-831a-4bfb-b59b-fac37677e4f9.Records","label":"1 - Look Up Records➛Multi Row Question Answer Records","reference":"sc_multi_row_question_answer","reference_display":"Multi Row Question Answer","type":"records","base_type":"records","usedInstances":{"20fde648-3ced-4596-b1ac-b39b687a2a96":["items"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.value","label":"3 - For Each➛Multi Row Question Answer Record➛Value","reference":"","reference_display":"Value","type":"string","base_type":"string","parent_table_name":"sc_multi_row_question_answer","column_name":"value","usedInstances":{"3283fd25-754f-4540-a6dc-42c1d8b9e628":["conditions"],"45e87eb4-1522-46c8-928c-4e868bc4e337":["var_ano-0"],"509ab718-88ae-46b1-9886-0418f90aabbf":["var_mes-0"],"43175a16-f870-4ccd-b780-63e52089e443":["var_rpps-0"],"3866f7bc-4596-4ecc-b5ab-abdbbde58ec9":["condition"]}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.row_index","label":"3 - For Each➛Multi Row Question Answer Record➛Row index","reference":"","reference_display":"Row index","type":"long","base_type":"long","parent_table_name":"sc_multi_row_question_answer","column_name":"row_index","usedInstances":{"0a53884c-6d3f-4926-b143-7aebb7b97d97":["conditions"],"7a5418ac-94b7-4d9e-aa2a-30eca3999ced":["multirow_record"]}},{"name":"0a53884c-6d3f-4926-b143-7aebb7b97d97.Record.row_index","label":"21 - Look Up Record➛Multi Row Question Answer Record➛Índice de linha","reference":"","reference_display":"Índice de linha","type":"long","base_type":"long","parent_table_name":"sc_multi_row_question_answer","column_name":"row_index","usedInstances":{"39268173-2ed3-4659-805a-84b15f1045a3":["multirow_record"],"c89a2cab-c4b6-4d9a-a522-66df72662c5e":["multirow_record"],"fb48067c-f6f5-45ab-b1f7-87e39e2b4f53":["multirow_record"],"83c6e11f-e93b-467c-9b7f-38bab9ae0a3b":["multirow_record"],"b68068aa-2262-4839-a185-5e13cd917f72":["multirow_record"],"d54d22bc-061e-44b3-8b1e-9ed82884ca5f":["multirow_record"]}},{"name":"0a53884c-6d3f-4926-b143-7aebb7b97d97.status","label":"21 - Look Up Record➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Error","value":"1","order":0.0},{"label":"Success","value":"0","order":1.0}],"usedInstances":{},"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"0a53884c-6d3f-4926-b143-7aebb7b97d97.Record","label":"21 - Look Up Record➛Multi Row Question Answer Record","reference":"sc_multi_row_question_answer","reference_display":"Multi Row Question Answer","type":"reference","base_type":"reference","usedInstances":{},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf.Record","label":"20 - Look Up Record➛Primary Revenue and Expenditure Record","reference":"x_sded9_portal_t_0_u_resultado_primario","reference_display":"Primary Revenue and Expenditure","type":"reference","base_type":"reference","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["record"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf.status","label":"20 - Look Up Record➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Error","value":"1","order":0.0},{"label":"Success","value":"0","order":1.0}],"usedInstances":{"cc765906-5769-430a-b4ae-373f078cb540":["condition"]},"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf.__action_status__","label":"20 - Look Up Record➛Action Status","reference_display":"Action Status","type":"object","base_type":"object","usedInstances":{},"attributes":{"uiType":"object","co_type_name":"FDea4f1de926f5621031a5e9727f74b6a8","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.item_option_new.name","label":"3 - For Each➛Multi Row Question Answer Record➛Question➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"item_option_new","column_name":"name","usedInstances":{"cfdc988b-b11d-4942-b9bf-11cea3ddb70f":["condition"],"fefe5d28-2611-4ce7-9f3a-4b1127da7629":["condition"],"7b5c4780-d3a5-467a-a4b8-6c282af57221":["condition"]}},{"name":"flow_variable.var_count1","label":"Flow Variables➛var_count","reference":"","reference_display":"","type":"integer","base_type":"integer","column_name":"","usedInstances":{"b6f98993-2de4-48f4-9d42-7ad52358075f":["condition"],"3c031a62-dd97-42a9-ae1e-b0b41c896ded":["condition"],"e0441a5d-de7b-4465-8283-c2d239ca3641":["condition"]},"attributes":{"uiType":"integer","uiTypeLabel":"Integer","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"9fc98cf4-2f8f-46ca-a232-6c078f64d1d2"}},{"name":"flow_variable.var_ano","label":"Flow Variables➛var_ano","type":"string","base_type":"string","usedInstances":{"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf":["conditions"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"72f2355b-0329-4d8c-b4dc-3cb07f54ba9d"}},{"name":"flow_variable.var_mes","label":"Flow Variables➛var_mes","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf":["conditions"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"3576bc47-0baa-4380-a20c-7f6e4ce1a770"}},{"name":"flow_variable.var_rpps","label":"Flow Variables➛var_rpps","reference":"","reference_display":"","type":"boolean","base_type":"boolean","column_name":"","choices":[],"usedInstances":{"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf":["conditions"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"d7cbe4fe-a090-4ba1-b6bd-d3e948e273cf","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"7a5418ac-94b7-4d9e-aa2a-30eca3999ced.receita_primaria","label":"22 - Get MRVS Values (Primary Revenue and Expenditure)➛Receita Primaria","reference_display":"Receita Primaria","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_receita_primaria_total"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_receita_primaria_total"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"f39dd8de-3de1-44a8-b8c8-72cfec1fe81f"}},{"name":"7a5418ac-94b7-4d9e-aa2a-30eca3999ced.despesa_primaria","label":"22 - Get MRVS Values (Primary Revenue and Expenditure)➛Despesa Primaria","reference_display":"Despesa Primaria","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_despesa_primaria_total"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_despesa_primaria_total"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"a31b41dd-ec2e-4c89-8009-c97a7c3a4638"}},{"name":"7a5418ac-94b7-4d9e-aa2a-30eca3999ced.resultado_primario","label":"22 - Get MRVS Values (Primary Revenue and Expenditure)➛Resultado Primario","reference_display":"Resultado Primario","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_resultado_primario"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_resultado_primario"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"52d478d9-7af9-4f3e-abf2-28881f681601"}},{"name":"7a5418ac-94b7-4d9e-aa2a-30eca3999ced.bimestre","label":"22 - Get MRVS Values (Primary Revenue and Expenditure)➛Bimestre","reference_display":"Bimestre","type":"string","base_type":"string","usedInstances":{"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_bimestre"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"93cd234b-2888-4c83-a94d-895c3c90b8a4"}},{"name":"7a5418ac-94b7-4d9e-aa2a-30eca3999ced.rpps","label":"22 - Get MRVS Values (Primary Revenue and Expenditure)➛RPPS","reference_display":"RPPS","type":"boolean","base_type":"boolean","usedInstances":{"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_rpps"]},"attributes":{"uiType":"boolean","uiTypeLabel":"True/False","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"50549c4c-803c-4ecc-97fa-1ad6de17086a"}},{"name":"7a5418ac-94b7-4d9e-aa2a-30eca3999ced.ano","label":"22 - Get MRVS Values (Primary Revenue and Expenditure)➛Ano","reference_display":"Ano","type":"string","base_type":"string","usedInstances":{"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_ano"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"7facceb0-a44f-4f91-a772-4353cdeadc45"}}]</label_cache>
+        <label_cache>[{"name":"7a5418ac-94b7-4d9e-aa2a-30eca3999ced.ano","label":"22 - Get MRVS Values (Primary Revenue and Expenditure)➛Ano","reference_display":"Ano","type":"string","base_type":"string","usedInstances":{"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_ano"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"7facceb0-a44f-4f91-a772-4353cdeadc45"}},{"name":"7a5418ac-94b7-4d9e-aa2a-30eca3999ced.rpps","label":"22 - Get MRVS Values (Primary Revenue and Expenditure)➛RPPS","reference_display":"RPPS","type":"boolean","base_type":"boolean","usedInstances":{"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_rpps"]},"attributes":{"uiType":"boolean","uiTypeLabel":"True/False","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"50549c4c-803c-4ecc-97fa-1ad6de17086a"}},{"name":"7a5418ac-94b7-4d9e-aa2a-30eca3999ced.bimestre","label":"22 - Get MRVS Values (Primary Revenue and Expenditure)➛Bimestre","reference_display":"Bimestre","type":"string","base_type":"string","usedInstances":{"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_bimestre"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"93cd234b-2888-4c83-a94d-895c3c90b8a4"}},{"name":"7a5418ac-94b7-4d9e-aa2a-30eca3999ced.resultado_primario","label":"22 - Get MRVS Values (Primary Revenue and Expenditure)➛Resultado Primario","reference_display":"Resultado Primario","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_resultado_primario"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_resultado_primario"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"52d478d9-7af9-4f3e-abf2-28881f681601"}},{"name":"7a5418ac-94b7-4d9e-aa2a-30eca3999ced.despesa_primaria","label":"22 - Get MRVS Values (Primary Revenue and Expenditure)➛Despesa Primaria","reference_display":"Despesa Primaria","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_despesa_primaria_total"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_despesa_primaria_total"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"a31b41dd-ec2e-4c89-8009-c97a7c3a4638"}},{"name":"7a5418ac-94b7-4d9e-aa2a-30eca3999ced.receita_primaria","label":"22 - Get MRVS Values (Primary Revenue and Expenditure)➛Receita Primaria","reference_display":"Receita Primaria","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_receita_primaria_total"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_receita_primaria_total"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"f39dd8de-3de1-44a8-b8c8-72cfec1fe81f"}},{"name":"flow_variable.var_rpps","label":"Flow Variables➛var_rpps","reference":"","reference_display":"","type":"boolean","base_type":"boolean","column_name":"","choices":[],"usedInstances":{"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf":["conditions"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"d7cbe4fe-a090-4ba1-b6bd-d3e948e273cf","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"flow_variable.var_mes","label":"Flow Variables➛var_mes","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf":["conditions"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"3576bc47-0baa-4380-a20c-7f6e4ce1a770"}},{"name":"flow_variable.var_ano","label":"Flow Variables➛var_ano","type":"string","base_type":"string","usedInstances":{"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf":["conditions"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"72f2355b-0329-4d8c-b4dc-3cb07f54ba9d"}},{"name":"flow_variable.var_count1","label":"Flow Variables➛var_count","reference":"","reference_display":"","type":"integer","base_type":"integer","column_name":"","usedInstances":{"b6f98993-2de4-48f4-9d42-7ad52358075f":["condition"],"3c031a62-dd97-42a9-ae1e-b0b41c896ded":["condition"],"e0441a5d-de7b-4465-8283-c2d239ca3641":["condition"]},"attributes":{"uiType":"integer","uiTypeLabel":"Integer","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"9fc98cf4-2f8f-46ca-a232-6c078f64d1d2"}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.item_option_new.name","label":"3 - For Each➛Multi Row Question Answer Record➛Question➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"item_option_new","column_name":"name","usedInstances":{"cfdc988b-b11d-4942-b9bf-11cea3ddb70f":["condition"],"fefe5d28-2611-4ce7-9f3a-4b1127da7629":["condition"],"7b5c4780-d3a5-467a-a4b8-6c282af57221":["condition"]}},{"name":"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf.__action_status__","label":"20 - Look Up Record➛Action Status","reference_display":"Action Status","type":"object","base_type":"object","usedInstances":{},"attributes":{"uiType":"object","co_type_name":"FDACTIONSTATUS","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf.status","label":"20 - Look Up Record➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Error","value":"1","order":0.0},{"label":"Success","value":"0","order":1.0}],"usedInstances":{"cc765906-5769-430a-b4ae-373f078cb540":["condition"]},"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf.Record","label":"20 - Look Up Record➛Primary Revenue and Expenditure Record","reference":"x_sded9_portal_t_0_u_resultado_primario","reference_display":"Primary Revenue and Expenditure","type":"reference","base_type":"reference","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["record"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"0a53884c-6d3f-4926-b143-7aebb7b97d97.Record","label":"21 - Look Up Record➛Multi Row Question Answer Record","reference":"sc_multi_row_question_answer","reference_display":"Multi Row Question Answer","type":"reference","base_type":"reference","usedInstances":{},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"0a53884c-6d3f-4926-b143-7aebb7b97d97.status","label":"21 - Look Up Record➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Error","value":"1","order":0.0},{"label":"Success","value":"0","order":1.0}],"usedInstances":{},"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"0a53884c-6d3f-4926-b143-7aebb7b97d97.Record.row_index","label":"21 - Look Up Record➛Multi Row Question Answer Record➛Índice de linha","reference":"","reference_display":"Índice de linha","type":"long","base_type":"long","parent_table_name":"sc_multi_row_question_answer","column_name":"row_index","usedInstances":{"39268173-2ed3-4659-805a-84b15f1045a3":["multirow_record"],"c89a2cab-c4b6-4d9a-a522-66df72662c5e":["multirow_record"],"fb48067c-f6f5-45ab-b1f7-87e39e2b4f53":["multirow_record"],"83c6e11f-e93b-467c-9b7f-38bab9ae0a3b":["multirow_record"],"b68068aa-2262-4839-a185-5e13cd917f72":["multirow_record"],"d54d22bc-061e-44b3-8b1e-9ed82884ca5f":["multirow_record"]}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.row_index","label":"3 - For Each➛Multi Row Question Answer Record➛Row index","reference":"","reference_display":"Row index","type":"long","base_type":"long","parent_table_name":"sc_multi_row_question_answer","column_name":"row_index","usedInstances":{"0a53884c-6d3f-4926-b143-7aebb7b97d97":["conditions"],"7a5418ac-94b7-4d9e-aa2a-30eca3999ced":["multirow_record"]}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.value","label":"3 - For Each➛Multi Row Question Answer Record➛Value","reference":"","reference_display":"Value","type":"string","base_type":"string","parent_table_name":"sc_multi_row_question_answer","column_name":"value","usedInstances":{"3283fd25-754f-4540-a6dc-42c1d8b9e628":["conditions"],"45e87eb4-1522-46c8-928c-4e868bc4e337":["var_ano-0"],"509ab718-88ae-46b1-9886-0418f90aabbf":["var_mes-0"],"43175a16-f870-4ccd-b780-63e52089e443":["var_rpps-0"],"3866f7bc-4596-4ecc-b5ab-abdbbde58ec9":["condition"]}},{"name":"b1c3d1ce-831a-4bfb-b59b-fac37677e4f9.Records","label":"1 - Look Up Records➛Multi Row Question Answer Records","reference":"sc_multi_row_question_answer","reference_display":"Multi Row Question Answer","type":"records","base_type":"records","usedInstances":{"20fde648-3ced-4596-b1ac-b39b687a2a96":["items"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"subflow.record","label":"Input➛Record","reference":"x_sded9_portal_t_0_registro_de_cargas_tesouro","reference_display":"Treasury Cargo Registration","type":"reference","base_type":"reference","column_name":"","usedInstances":{"b1c3d1ce-831a-4bfb-b59b-fac37677e4f9":["conditions"],"0a53884c-6d3f-4926-b143-7aebb7b97d97":["conditions"],"39268173-2ed3-4659-805a-84b15f1045a3":["parent_sys_id"],"c89a2cab-c4b6-4d9a-a522-66df72662c5e":["parent_sys_id"],"fb48067c-f6f5-45ab-b1f7-87e39e2b4f53":["parent_sys_id"],"83c6e11f-e93b-467c-9b7f-38bab9ae0a3b":["parent_sys_id"],"b68068aa-2262-4839-a185-5e13cd917f72":["parent_sys_id"],"d54d22bc-061e-44b3-8b1e-9ed82884ca5f":["parent_sys_id"],"7a5418ac-94b7-4d9e-aa2a-30eca3999ced":["parent_sys_id"]},"attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"f4b7b973-3190-4871-8403-baaef11efe7b","sourceUiUniqueId":"","sourceType":"","sourceId":""}}]</label_cache>
         <master>true</master>
         <name>Primary Revenue and Expenditure 2</name>
         <natlang/>
         <outputs/>
         <parent_flow display_value="Primary Revenue and Expenditure 2">216b4dedfb756210f6d5f9d38eefdc7a</parent_flow>
         <remote_trigger_id/>
-        <run_as>user</run_as>
+        <run_as>system</run_as>
         <run_with_roles/>
         <sc_callable>false</sc_callable>
         <status>published</status>
@@ -1223,15 +1251,15 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>80ce0525fbb56210f6d5f9d38eefdce1</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>11</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name/>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:28</sys_updated_on>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:39</sys_updated_on>
         <type>subflow</type>
         <version>2</version>
     </sys_hub_flow_snapshot>
@@ -1360,6 +1388,7 @@
         <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
         <sys_updated_on>2025-05-28 18:22:18</sys_updated_on>
         <ui_id>b1c3d1ce-831a-4bfb-b59b-fac37677e4f9</ui_id>
+        <updation_source/>
         <values>H4sIAAAAAAAA/+VXTU/jMBD9K1HOVZXQUlhuCIS0ElBtQVx2wXJip7XWibO20w+q/vcdx04ataG0UpFg91IpM2P7zcx7Y/fn0mfEv/DPk34Q4PD0/CwIer0gGAx6MQ6jqDeIoyDqR37Hz3BKIVLjiFP4nGJemG8Vo7TgmiEpZuhPQZVmIkM4UzMqIYwwlXO8eHLRdybUG4mZ98OFepdVaDxhnEia+Rc/nzt+jiUcqMFzsdxw7YuY44hyCH10kDcy0Iu8/kSlz9pum8u8e+sQkhgoQcenc00zQgFDgrmiHT/FGcFayEVtkRSTYcbXhgnLNOzom+C5Yq9w7nlg4hIKWcXU+upP5Kpmzck11vhByyLWhXSh8USwmCpbD0ITDHW9atpswDA3JbZLbNp2teBFmt3bcvj1BlWTwFIoAEFzk6hB7tJIHiZiNqpQ3rCsrIlzchFjXn9hrSWLCm3wLH3KaQoboRTnOcvGKJdiysrFgCXtjjl8dBMODCJUsXHWxbEB3oW64u4N2K9L8xOWzGRxB9uUlEkYB4Yg20IlClmWcopiXqjSIYGIdi9/1fHVQl1xrNQ6cyg5kNbgtnVwGSNbNLMklizXl7DFlLrkVp29RHMarCkXi4wwg0I1lMM0TZEoO4QyOuua2F8FbEWmoB/xMhztiohYCgKSpk2oIg7DKESDdxbKPFewYgzrTR9yyYTZI5fUtKTcRAn45S8gQVMLRuzS5VIVkWlSV9IY9LBabev7n8jpmIOoZEE1iK6aNGijhhtJW7bbtg3cSAqPNpIgj680lODwzzeTDp8ytgTvjJr4bCfJTtd8UkJqZGvZmDXmcjalmW9Ltuk6jPl7gKqYPzRc9aLFWzgd8RNGOWm7i2+MY+MuPvk/7+JPSXsARJDtHss4y8qHFQD9KD0Eu4futw2elfRqvFmNDat4WwzY08J7PVgJe8CplPAAZ3uPFk8LxOoGKCmzOf0roxNA72gC6J0cRwDLOs26kC01r97SpptV/KuJx5vxQMHGgnDVJrCDzgwPPfNktS3g3kEKbpLNeq7f4NyRH91vKLLzkSNgAkvdecjqF80YGVO9Pr2KIkLPMP/d5neMQ1WjyvQ+4AHf3ynbQbiWKCgF3pcKmtd8wYfwYNqeIWHXmg8bIXtgqcpxh+feqAbTitCNEVA6HZe9ac6R77XVkbx/xCfkp71Jq2a1arDq2Zf433s8ITz/BSz94RsAEgAA</values>
     </sys_hub_action_instance_v2>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
@@ -1382,6 +1411,7 @@
         <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
         <sys_updated_on>2025-05-28 18:47:47</sys_updated_on>
         <ui_id>f55fbb1c-5a9e-441e-ba14-6cf57444d9bf</ui_id>
+        <updation_source/>
         <values>H4sIAAAAAAAA/+VY227jNhD9FUHPjiv57rwVSQ0ssN0USXZftluCEqmYKE1qScqJY/jfOxQlWbDli1AHTdA3a2ZInpk5Z0T5+9pnxL/2yTSYJtPpcDIOgn4/CEajfozDKOqP4iiI8MDv+AIvKEQaHHEKj0vMM/v8gjShZIpSqQzmyKAAZUhRnXGDiUSpYgusmIQVhOmU49W3YuEfuWfl3dMlFRn1sCDeby8pFYSZTNkj4jnjRFHhX3//0fFTrACBocq/Xu+4zk2B44hyCH0scthJyazS6hHlPmf7XF/mfXEOqYiFEnR8+mIANAUMCeaadvwFpIKNVKvKoigmd4JvDXMmDOzo2+AXzV7h3Elg4xIKWcXU+apHVNTOmZNbbPCDUVmcFyq3xXPJYqpdPQhNMNT/pm5zAXepYVK4JS5tt1rybCG+uHL41QZlq8CSaQBBbXeoRV6kkTzM5fN9iXLGRF6TwslljHn1hI1RLMqMxbP2KacL2AgtcJoy8QQ0kUuWLwYsi+4Th4duwuUzHKrZk+ji2ALvQl1xdwb229z8Dahls/gdtoHFAIhxYAhyLdQyU3kplyjmmc4dCgvt9vI3HV+v9A3HWm8zh5Kjn5nF7epQZIxc0eySWLHU/ApbLGmR3KZTqmh4lILTLeViaWkOKHRNShnCQv6ZwVqyXufJL4v8uvDDOjebvzIUsQXVRtHDkeDPI1Wa6sNR1rvZ7Avzv4LRUu6na13K/aZe7KYGFMLfs31u2qAQfngx4Q+C4CNJHw5/f8pvr2VXghOCDslRkpEtnzS8/pCrZU3R++JqzfMzIJQ8v7PM9KLVIVQFzRNGOWl6v82sY+f91vt/vt/eJckBEEGue0xwJvLLCgB9K/YPj1IvCnd4ltNry/3chnW8rwHsGem9tlbCGXBKJTzA2d6jw9MAsZz3OWV2Z31pLATQv5gA+r3LCGBdpVkVsqHm5f3UdrOMf7XxeDceKFhbEG6aBNbqzLDtmb3NvoD7rRRcJ5vz3B7g3IUvsgcU2XnLETCHpcV5yOkXPTPyRM329DKKSPOM+d9N/oJxqGxUnt4bXIrDo99lUe1SzBK0gM6xFO7uisZADo2woiiRmSCouLXXrsvQyYQpbYrg/UFzT0E/wpMgTM/MqZdHe1V0yxfx6TzKUn5KvDKR4jTtQSJenohXJdIu7TZDa3DBy+mlh9YMM553Az7I0lo7qVJSHRhcJxp5hBFnTrUzQYUXBfXvx16TBBrH3wmsH+Lr/vKjKaY4GvTwaNwPwyAIAzIOJuNxOBlFyQiPB8lWowhpEcM0hZ0ToApsj0pqlH0O9+dPMWzbzZkzQJUMvJXCflf3xsazqKC9XonqNO5inkRScorFzkB5BOS/zPI3QkXX4bsbKh/ir66MPe5W2pkaa/1W14aMfRXsZ0Y/WYpNaNCbhCS+mozD8dUgIaOrKcHDKzyNhuM+ofEgueRN4Mc/PaIMi2YWAAA=</values>
     </sys_hub_action_instance_v2>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
@@ -1404,6 +1434,7 @@
         <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
         <sys_updated_on>2025-05-28 18:47:47</sys_updated_on>
         <ui_id>0a53884c-6d3f-4926-b143-7aebb7b97d97</ui_id>
+        <updation_source/>
         <values>H4sIAAAAAAAA/+VYUW/iOBD+K1GegUsIJNC3VSuklXa3ura3L3t7lhM7xTpjZ2OnlCL++41jBxBQIDp6anWPHo/tb8bfNxnnx9JnxL/yyTgY5+PxcJQEQRQFQRxHGQ7TNIqzNEjxwO/4As8oeGqccgrDJ8wrM1YZmlVcM1TKOfpVUaWZFAgLNacluBGmCo4X3533V+Pq3cm597tz9T41rtmUcVJS4V/9+NnxC1zCgRpmrpY7U+ci5jilHFwfHOSdCPSiWA9RPWdtX7aXed/shCyJgRJ0fPqsqSAUMOSYK9rxZ1gQrGW5WFtKismt4BvDlAkNO/rG+VmxFzh3FBi/nEJUGbVz6yFyWbPm/AZrfK/LKtNV6VyzqWQZVTYfhOYY8nq9bbMOt4VJsV1iw7arJa9m4ptNh7/eoLkksFQKQNDCBGqQuzDy+6mc3zUoJ0zUOXGTXGaYr0dY65KllTZ4lj7ldAYboRkuCiYeUVHKJ1YvBiyz3iOHQS/nwCBCFXsUPZwZ4D3IK+5NwH5Tm7/jkpkovsI2NWVyxoEhyF6hklVZp/IJZbxS9UQJRLR7+auOrxbqmmOlNpFDyoG0BrfNg4sY2aSZJVnJCv0JtniiLrhVpxHN8CgFxxvKZVIQZlCoLeUAw81RjPxZwXqyXKoqNTnolTQDuq1WfxlJmSQ/Nx79ICc0Hoy6UUZJdzAcx900xFk3jcZpPEpwH4/jHtN01lsvXa32VfgfntxS1Kcz2oj6ejulh9Ls5L1n+3JoAyfv8GLyHgTBRxI4HP7+9N1esTYFJ2QbkqMkIxs+KVlqZHO5pdt9PbXm+RkQGp7fGmZ66eI1VI7mOaOcHPqKTczEzles///8ir1LkgMgguztMcGZqFsSAPpW7B8epV4a7vCsptdWt2dsWGX7GsCelt5LayWcAadRwj2c7T1YPAcgNvW+psxurW+MTgDRxQQQ9S8jgOU6zHUiD+S86ULNbTb+L8Yf7/oDBbcWhKtDAmt1Ztj2zP5qX8BRKwVvk83O3LzCuQu3q68osvOWJWAKS915yOoXzRl5pHpzeuNFpJ5j/vehecc41FxUHd4btL7h0ddXutX6sty+Dwvo0G17qRC0nyiXlSDI9eYbIpmbzFmptHPeLzR3FPQjPAnC9PSUerW3t/Zu+SE+HUeTys+51wTiTlMeBOLVgXjrQNqF3aZoDS7YnF66aE0w4/VtwLOr2LpOWpayfKVwnbjII4w4s6qdCSq8KKh/X/YOSeBg+TuB9UO84S9fmjKK00Efx0kUhkEQBiQJRkkSjuI0j3EyyDcaRUiJDKop7JwDVWB71FCjuedgv/7Yktq20JyBqqHgjRTm1d1PtGdgwf16DazTwF1BSaXkFIudivIA34nfJg6/4+vw3VWVD/FHq2IPu5m2poO5fqu+oWJ/CParop8NxUY06I9CknVHSZh0BzmJu2OCh108TodJRGg2yC/ZCvz8B7qKcL88FgAA</values>
     </sys_hub_action_instance_v2>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
@@ -1426,6 +1457,7 @@
         <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
         <sys_updated_on>2025-05-28 18:47:47</sys_updated_on>
         <ui_id>7a5418ac-94b7-4d9e-aa2a-30eca3999ced</ui_id>
+        <updation_source/>
         <values>H4sIAAAAAAAA/71V207bQBD9lWifY8uX3Jw3BEJCakuVUF4Qsta7s8lK6wt7gaRR/r2zsRMSWhCoiEfPzM6cOXOOfLchkpMp4cUgjSfARSF4ksSRGPGhyHg6ARCcCU76pKIlYGXplJW6fso1sFr7xCNVzmc2myQSHEaDSZAy4MFgmI2CIqYsKNKsGE3GNKHZKJQWytA3kBWH1XaLHbg0jaLr2/9uxJZScQ0Vmd7d90lDNWK2oMl08yL13qUVLUBh6ax+6l35MW8RYdeNTxirZbXovr91Deb7IJZ6QHGfwMoCtkQkgioDfVLSilNb6zWZWu0woIHy60qtDxVLWVlsRnztysjfOG4SRZGvFIDLMWizh8+8o7YNiwtqKSJxzDrdlbJlLRmYlhYOguJa58extuC6sbKu2ieWFmr/ulaurH60jJBDg/0lMeIMgoDGb+qxd4uI+bJ+mu1RXvoL6kNS1Yyqwxe1SF3hrMezIU7evGC5jfzFMygocWJe0qbBSN7o+lHupiDoMlwo/AiFwvtxMHJRhZT5DUO8AA0vMX6xC99SLf2637ENPvbjflXywcGVVxCMGUOtDIIiolkwQA0F2YSPgyGLxkk8zsZFkpJtn5i1OVfUmGei8EL5g/NrtrR1BOUtx/4J07KxZwjqEToutv3OrUPxpnDFs0jRAr4rzs/lqVeNK/z2Yavef9nww356B6y9n37ucPXma9O7ungdbueoZ3Wfmmp2FO98lXyWr9Lk1FWr3GDPLG9qbanKbR6h8RcSZVijgnJG9YKaHFVaO12/YsEbHGycXvfOsbruzdr3dOesT3fnRwF/gZXFHKhmy0sJyuulcmWx89QrFj8++6nLjw//JUZPkyFL03SM/6KRCAYU4qAYxZMgziAaDnjEIWWfaPT7P/HBM+eYBwAA</values>
     </sys_hub_action_instance_v2>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
@@ -1448,6 +1480,7 @@
         <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
         <sys_updated_on>2025-05-28 18:47:47</sys_updated_on>
         <ui_id>30bd6918-a95f-4a24-b688-772ee9e9bf9e</ui_id>
+        <updation_source/>
         <values>H4sIAAAAAAAA/+1WTW/bMAz9K4HPsWHHdlrnNjQrMKBrh2zopesMWqJbAfLHJDlNFuS/j7blNEiDrsV6KTbfRIoU3xMf5ZuNI7gzcyLkfpAEUxYGYTjx/clpFGTTMAsmPATEwBk7JRRIOxWySnFaL0E2rWGzyeM4z7KAuTEk6EZRgG4GQeROWR6fRFHEkyz3Fl3cdkuRXOhawvraJiALuxeSKyyd2c3t2KlB0VkGlTPbHLheWqyEDCVtXQzVHlZv1nW75hVrCixNKgbjhY2cW8/o05w8FNSWE/hjB1cGS45USA5S49gpoORgKrV2ZkY1ZFAI/KqU692Oe1GaHmgBKy1+0cmR3+7LkZAxS8JumVqCenM+BwNfKTMzjdrxVQmGuueEYw6NNGf7tn7DVW1EVfYhBjI5RFeyKcrLnhFnl2DvPhpNRWDd4mwr72HlX++rh8VQ5LkoO0osRFkxkLsVGKNE1pi2nI2DEjuOC6hrUd6ltaqWogumUgrvTtLCy2X1QGdqcVd6wNq6PWIVvHOyzzvzNSjRgvhMaSh4O3b0Wp9J0PoRCnGY/mzaSnpgFkLasdBRkHad0AYzJWrzgY5aoi18O7ZyyOLnOowljw21l/NREqtUU4MkaV0pAzI1qZ82qUJNJAOvCL8oCEv1VApfOs96tMAllg2OqLNGH1ctCNFd/muV8gIcg1K+df1xHJcVyxPbxX7s6LJ3WKnEbyaV0/ckFQvj3WvlTwrxJ8/O4L1O6kSh99RxTArfG98P+WZzAnEUnAJzkyg7cenlQBdgAm7oI4MwSRKG3Hsavt3+aFpCatQwGCE1FanvVZkPU3R56c1AYf4q72GKY8/gf1p6Wl434V7Qh8OEOxcouT7SmMN4w4Luw2DaN+rBiLPO0bV17v4I3mzOBVO/+97RtPtnfgxufwOqMRmSKQsAAA==</values>
     </sys_hub_action_instance_v2>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
@@ -1470,13 +1503,14 @@
         <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
         <sys_updated_on>2025-05-28 19:43:28</sys_updated_on>
         <ui_id>070c3028-da05-4dc4-afc6-b2410b50b51a</ui_id>
+        <updation_source/>
         <values>H4sIAAAAAAAA/+1W3W/TMBD/VyI/gdRWSdt1S3lCG3uCDW1oEtqGdYkvrSXnA9vpVqr875zjtCvdBlTwwCTyUNX3+fvd+XK5XjEp2JRNIgwP4miSjqLRaBiGw6NxlExGSTQUI0Acsx4rIEeytJAo5O2hxxagaie850agiHlVaguKWx7ymms0tbIgSl5pmYOWJXkIaSoFy6vO8WOrWQYXuMCixgAKEby7r7AQ0tbapUjnUgmNBZte3/ZYBZoyW9RsutpR/S4PBQkqMv3kiDzDyy6rJ2Xvt32DM68otXB4wh7De0vIkYBkoAz2WE58wJZ6yaZW1yTQCOK8UMuNxVwWlgIyZ3tv5DdKexQ6uwyJWYpetznyrn5enJ2AhUuKnLbFamXpvJQpGl8TgRlQD463Zd7gvLKyLLxLS7PzLlWdF2e+JGwTYN0uktSGQKDrEDrkHY3scl7eXaxRnsqiLUmnVGUKanMCa7VMauvwrBgqzCkQz6GqZDGjq1IuZOtMWPLBTNFhkKnyjpIaOSsGkDrgAyorDE5JftKKr+h6ORYfKAw5Nz1mluZYgTEPXKiI/GvtkHhmHQfuy+BcUi0r+5YSLLCD2/TWAyIwjJ+9WFHycJHamTBbw/HUJNzUYTgSq9UhHIyjI0j78Tg57I9FjH2AIfRHIaYwiuM4RTF47N40XyhqVRkfJxN9jx0FyROZo7Ea98qxdmojQ7EfQLJv/ahFFRpYwwRuS3od7BVqN4RniilK+0dxd0M0zeOX0f9G/auN2nMJ/HpW10vgVKIS5onhXW8AzOmGWOR+mHe2QKcMrjpltwmiv7UJoknYPi9oH3hyL34dbG3+R4vBU/Qyh9kPuPv3Mzsms+BVJniLlA+HnM+QeOqF8XfLdDd+SUPUfgvRcAuOD99CA5cl8LPkf9vD8PAzGv/n9eqmCOjRSPZF4PK/uSmaAKnQwY+6tvhOSdQNLFBsOto0ze13v0TBmhYKAAA=</values>
     </sys_hub_action_instance_v2>
     <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=80ce0525fbb56210f6d5f9d38eefdce1"/>
-    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=80ce0525fbb56210f6d5f9d38eefdce1^sys_idNOT IN98ce4525fbb56210f6d5f9d38eefdc2b,aa4655edfbb56210f6d5f9d38eefdc2e,94ce4525fbb56210f6d5f9d38eefdc2c,9cce4525fbb56210f6d5f9d38eefdc27,14ce4525fbb56210f6d5f9d38eefdc28,98ce4525fbb56210f6d5f9d38eefdc28,10ce4525fbb56210f6d5f9d38eefdc29,04ce4525fbb56210f6d5f9d38eefdc26,88ce4525fbb56210f6d5f9d38eefdc26,80ce4525fbb56210f6d5f9d38eefdc27,94ce4525fbb56210f6d5f9d38eefdc29,1cce4525fbb56210f6d5f9d38eefdc29,90ce4525fbb56210f6d5f9d38eefdc2a,14ce4525fbb56210f6d5f9d38eefdc2b,9cce4525fbb56210f6d5f9d38eefdc2a,08ce4525fbb56210f6d5f9d38eefdc27,18ce4525fbb56210f6d5f9d38eefdc2a,6a4655edfbb56210f6d5f9d38eefdc2d,264655edfbb56210f6d5f9d38eefdc2e,1cce4525fbb56210f6d5f9d38eefdc2c,10ce4525fbb56210f6d5f9d38eefdc2c"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=80ce0525fbb56210f6d5f9d38eefdce1^sys_idNOT IN10ce4525fbb56210f6d5f9d38eefdc2c,88ce4525fbb56210f6d5f9d38eefdc26,90ce4525fbb56210f6d5f9d38eefdc2a,9cce4525fbb56210f6d5f9d38eefdc2a,6a4655edfbb56210f6d5f9d38eefdc2d,14ce4525fbb56210f6d5f9d38eefdc2b,264655edfbb56210f6d5f9d38eefdc2e,04ce4525fbb56210f6d5f9d38eefdc26,80ce4525fbb56210f6d5f9d38eefdc27,08ce4525fbb56210f6d5f9d38eefdc27,9cce4525fbb56210f6d5f9d38eefdc27,14ce4525fbb56210f6d5f9d38eefdc28,98ce4525fbb56210f6d5f9d38eefdc28,10ce4525fbb56210f6d5f9d38eefdc29,94ce4525fbb56210f6d5f9d38eefdc29,1cce4525fbb56210f6d5f9d38eefdc29,18ce4525fbb56210f6d5f9d38eefdc2a,aa4655edfbb56210f6d5f9d38eefdc2e,98ce4525fbb56210f6d5f9d38eefdc2b,94ce4525fbb56210f6d5f9d38eefdc2c,1cce4525fbb56210f6d5f9d38eefdc2c"/>
     <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">6f790d2dfb756210f6d5f9d38eefdc13</block>
+        <block display_value="">612b3741fbf1621086e7f4045eefdcde</block>
         <comment/>
         <connected_to/>
         <decision_table/>
@@ -1485,24 +1519,133 @@
         <flow_variables_assigned/>
         <generation_source/>
         <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
-        <order>19</order>
+        <order>23</order>
+        <outputs_assigned/>
+        <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 18:14:50</sys_created_on>
+        <sys_id>10ce4525fbb56210f6d5f9d38eefdc2c</sys_id>
+        <sys_mod_count>25</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:39</sys_updated_on>
+        <ui_id>cc765906-5769-430a-b4ae-373f078cb540</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VXW/TMBT9K5Gf0yppkkL7NnVMQhpMYtNe2BTd+KO1cO1gO9tK1P/OdT7aiRXBgEfe4uN7r8859lFaYhpfN97dmDPn5FqT5ef7mEgdMPxuiYYtJ0tCjWbSS6PLDojJA6gmbNyCMjZiPDrTJnqnsc5bYCbSEN1AxRVEF1KDwg4mXa1gd/vqRrqRilk+cKvBIgPPLVm2P2xJhnNFAiJd0JRms3k2S5LZ2zyt5lmVzlgGHDIcqMJ8LF2NoqLLDol/qtbv6oA7b6VeD+vLYcr1CBrLAqs0iQl/8lwzjnwEKMdjsgXNwBu7OyCWA7vS6ghspPY4joTiJye/4YGzogiFgqNEyvvNw7IcDO1hcQ4ekEpDfWOHUroxknLXm8O4gEb51XOsL7iqg9S+xUOlxm6jmq3+2DtCDgPG+0OkcUiC10FpoD7oENcb8/hpZImX2LkybCpD8U7HFXj0rmp84NMSrvgWB5VbqGt0tKyteZBdM3LZTtcKF1OhzCMeGt7qFGggPkVjYXqB+HkH34KVQcUHHIPNPc0KnKRl965xHNrEyT4mbudWCpw7ikR3y69NoNhLHsSVvT+hhVpZ+zM8+YEPOvbxy5g8S0jbiqIQVZXSSQELPsnzlE8qSPPJnIriTZ7nbFGJqfPgG7ff3zVJkrHkZWD+eM7r8rOAQhRpUpzOTz4/lZ8TyXllaGa/CE24sd/MTJIk/0Pz16GRruyf+qCtO/wfZuY+BKQ/8+A1lQ6p3QTs/fgHChs7fFySPocejf0SRB2x/XegvCDnywYAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">212b3741fbf1621086e7f4045eefdcdc</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Primary Revenue and Expenditure 2">80ce0525fbb56210f6d5f9d38eefdce1</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="For Each">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
+        <order>3</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 18:14:50</sys_created_on>
+        <sys_id>88ce4525fbb56210f6d5f9d38eefdc26</sys_id>
+        <sys_mod_count>24</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:39</sys_updated_on>
+        <ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/51TXW+jMBD8L34miI9cUvJWtapU6e4qpVVfThVa7CWxzticbZJyiP9+60Bo1cd7gh3vzs4MZmCm823n3Yu5dU4eNNv9eouY1AGj94FpaJDtmPTYOBaxE6gu1MNQpTwXKcfVTZ7Cal3V1ar6VlSrGni+3Wy3uK6LeI/cWOHGkUaFdK2C/vX/GfhRKmFxFtmCJW0eLdsNX46koAVpIeoiTQqeZ5s8S5LsZp1Wm7xKM5EDig0RKqhQUevj7O6LWd+3obSThBn4Ps/sF5QeQUSWRAzfPWqBtL4G5TBiDWgB3tie7bztCLAI4kmrfuk4Su2JjoXedyf/0sY0SUJjjWSI43S4lOWc4wTX9+Dhmai57+zcyo9GcnRTFAJr6JS/+4xNDU+tl0ZPIx4qdZ02qmv0zykJthBcPxshnSMR2AajQfrso34+mvP+qvJB6kso86EyHNRSgfdWVp0PegaGChsiKhtoW6kPZWvNSV6GSUsTHxQVca3MmZaGKxoDD8JjyhXiB8LvL/ArWBlc/CAaGh4j5np3p8C5Dy8UYvmnC0omZ7OHcoohjHArW39LC044yx3fwq2fuJdMuXQk4SVgj9d/JRz0dIMk/wydjf0dxH9g4z8Uu0oRdQMAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">eb790d2dfb756210f6d5f9d38eefdc12</block>
+        <comment/>
+        <connected_to>cfdc988b-b11d-4942-b9bf-11cea3ddb70f</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Primary Revenue and Expenditure 2">80ce0525fbb56210f6d5f9d38eefdce1</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
+        <order>12</order>
         <outputs_assigned/>
         <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
         <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-28 18:14:50</sys_created_on>
-        <sys_id>98ce4525fbb56210f6d5f9d38eefdc2b</sys_id>
-        <sys_mod_count>23</sys_mod_count>
+        <sys_id>90ce4525fbb56210f6d5f9d38eefdc2a</sys_id>
+        <sys_mod_count>24</sys_mod_count>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:28</sys_updated_on>
-        <ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</ui_id>
-        <values>H4sIAAAAAAAA/+1Vy27bMBD8FYNnQdAjNhrfAgcBCqQN0AS5tIGwoiibKEWqfNhxBX9Qv6M/1qVIP9C6aIL22Js4y92dHe5AA1HO9s6aB3VlDF9KMv/4lBAuPYbfA5HQMTInVMmGW65kNQIJWYNwPrBQTtrJ92+TDMGGm17A9vFcjK64aDSLHXrQWMcyTebDTyHeYGqbQZtf0pyWxawssqx4c5HXs7LOi6YEBiUWFFAzMXaJ1Ca3I5L8lrPd9h43VnO5jOfbWOV+DyrdeFZ5lhD2bJlsGPJpQRiWkA5kA1bp7QHRDJo7KY7AikuL5Yi//Gz4V2xYTKf+YstwRMpC8HCsomYBbq/BAlJx1Dodr9KV4pSZIE7DWnDCLk6xcOGu96OGFAu12Gcr4Tr5PihCDgX2T4SIM0iC9X5STz3O0d6v1ObDnuUNl6MqMSgUBXE4gUXtamc9n4EwwTosVHXQ96ho1Wu15mMycunSpcBD2gq1waZ+41KgnniKwkJ6g/j1CD+C5n6Kd1gGkwPNGgyn1bidWA5lYmSXELM1CwHGHIdEdasvzlMMI8fhqqCPT6Ga9/YKO69ZnGOX/LrsJ3s+DCPndaSV4kdF/X7nu90nl2Vlc8YAL0t6nTMuYdpO82x63hkXs3POOOOJV9qh+IMd/Fu80A1Zlv23w1/bgZsqLHGcbWz+D93w5Fc/9DxoTblBag8ee7v/Q/jAFpeL01Noo/RnP9QR2/0AAAV/dWsGAAA=</values>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:39</sys_updated_on>
+        <ui_id>fefe5d28-2611-4ce7-9f3a-4b1127da7629</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VXWvbMBT9K0PPjvFH4iV5KymFQbfCWvqyFXEtyY2YbHmWnDQz+e+7smwnrB3bWNnTXoJ15HvvOSf34I7o1tatNXf6whj5WJH1p4eAyMph+NyRCkpB1oTpiksrdUV7ICA7UK27wEcuTa3gcH9C2FYq3oihWw0N1ljRkHX3w5XkWFBEUMQrFrM0ydIkipLlPM6zNI8TnoKABBsqyIXCVzcjjTfXPRL8lJ891A43tpHV43C+HrrcjqBuuGMVRwERT1ZUXCCfApQRASmh4mB1c5iQRgC/qdQJ2MrKesElPBn5DQcmi4V7sRAokQ1uTEc6OOXh4hIsIJWW2baZjNOSCePN4aKAVtnNOeZfuKmdVF9iIVdjtVZtWX3wjpCpwdkf0xokIWqn1FEfdBS3W73/OLK8klXvynCpNAM1ncCid3lrHZ+OCCVKbERLqGt0lNaN3sm+GLmU4aPCQ1govcehbrtCYI54iMZCeIX4ZQ/fQyOdivfYBos9zRyMZLTfRGyHNglyDIg5mI0CY04i0V36tXUUveRBHPX+uBLWyNpe4OSdGHQcg+eLfbbTXZdEBRfZfDlLmeCz+WKVzfIY2CxPV3m2fAsJrLJQWlH2P1TXfvXEPnRtj8fPbRSlfEdzWQpcQWc6HddAAo1p9jw3/2jqq2YzfimbL6TyDwOZ/CKQbht+M49RFP0P5F8HUhrqYzRo64e/Yh4fXPj8zMlrJg1Su3PYu/F75C4OuFySnUN73Xxxok7Y8TtFJAos2QYAAA==</values>
         <workflow_reference/>
     </sys_hub_flow_logic_instance_v2>
     <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">5b3615edfbb56210f6d5f9d38eefdc2c</block>
+        <block display_value="">2b1d41a1fbb56210f6d5f9d38eefdc65</block>
+        <comment/>
+        <connected_to>cfdc988b-b11d-4942-b9bf-11cea3ddb70f</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Primary Revenue and Expenditure 2">80ce0525fbb56210f6d5f9d38eefdce1</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
+        <order>14</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 18:14:50</sys_created_on>
+        <sys_id>9cce4525fbb56210f6d5f9d38eefdc2a</sys_id>
+        <sys_mod_count>24</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:39</sys_updated_on>
+        <ui_id>7b5c4780-d3a5-467a-a4b8-6c282af57221</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VXWvbMBT9K0PPjvFHmzV5Ky2FQbfCWvqyFXMtXadisqRJctIs5L/vynY+WDu2scJe9mKkI92rc07uIRtmumC74O/Mufdyodn800PCpI4YrTdMQ4tszrjRQgZpdNUDCVuC6uIBLYX0VsH6/oDwR6mEw7GbBUc1AR2bb344koIKmgyafMZzXhbTssiy4uwkr6dlnReiBISCGiqoUdHVix2NN9c9kvyUX1jbiPvgpF6M++uxy+0ONE5EVnmWMHwKqAUSnwaUx4S1oAUE49Z7xCGIG60OwKPUYRDcwpOX3+jB4vQ0XmyQJPLRjf22Gp0a4OYSAhCVjofO7Y0zkqMfzBHYQKfCxTE2XLixUepQEqBWu2qjulZ/GBxh+wZHP0zniQTaqDRSH3U0t49m9XHH8krq3pXxUBkOar+DQN7VXYh8NgwVttSoasFacrSyzixlX0xc2nShaJM2yqzo0ThdKfBIPCVjIb0i/LKH78HJqOI9taHigWYNXvKqn0RqRzYh2ybMr/2FAu8PIsnd6msXKQ6SR3HV4E8s4U7acE4vL3HUsU2eD/bRTG82RdYInJ6cTUqOYnJyOptO6hz4pC5n9fTsLRQwm6YyYNt/KmOH0cNVGttut5+7LCvFsnLW+srhQrYYzbFOGrKClhh90lxC5Q191fMY/RsSr5rc/KXkvpDZP4xr8Yu4xln5zbRmWfY/rn8dV+mrIWSjtv7xV0zrQ4zm8Obeay49UbuL2Lvdv1U8WNNwSX4MrYz7EkUdsO134ZCcXfcGAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">173615edfbb56210f6d5f9d38eefdc2b</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Primary Revenue and Expenditure 2">80ce0525fbb56210f6d5f9d38eefdce1</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>15</order>
+        <outputs_assigned/>
+        <parent_ui_id>7b5c4780-d3a5-467a-a4b8-6c282af57221</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 18:47:46</sys_created_on>
+        <sys_id>6a4655edfbb56210f6d5f9d38eefdc2d</sys_id>
+        <sys_mod_count>19</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:39</sys_updated_on>
+        <ui_id>3866f7bc-4596-4ecc-b5ab-abdbbde58ec9</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VXWvbMBT9K0PPjvFH7DV5KymFQbfCWgpjLeZakhMxWfIkOWkW8t93ZTtOWDO20j3uzTrSvTrn6B68I7p1Tevsvb60ViwVmX99CohQHsPvHVFQczInVCsmnNCq6ICArEG2fgM/mbCNhO3DEaErIZnhQ7cGDNY4bsh898uWYFhQRVDFMxrTNMnTJIqSi2lc5mkZJywFDik2lFByiUcXBxrvbjok+C0/t208bp0Rajmsb4YudwdQG+ZZxVFA+LPjinHkU4G0PCA1KAZOm+2IGA7sVskjsBLK9YJreLbiB16YZJk/WHGUSAc3xmUxONXD1RU4QCotda0ZjdOCctubw3gFrXSLU6w/cNt4qX2Jg1IeqrVsa/Wpd4SMDU4eprVIgjdeqac+6KjuVnrz+cDyWqjOlWFTagpyXIFD78rWeT47wiWvsVFRQ9Ogo0Vj9Fp0xcilDpcSF2El9QYv9dMVAvXEQzQWwmvErzr4AYzwKj5iGyzuaZZgBS26ScR2aBMn+4DYrV1IsPYoEt0tvreeYi95EFf0/vgSakTjLvHmNR907IOXg30y07tdElWM59OLSUo5m0yzWT4pY6CTMp2V+cV7SGCWh8LxOuxq9vvHNopS9gVteZGHN3Z7XZZmkFVZHGXnszTNz2XpTIpeGaDkDwHyr/eX+Ymi6H+A3hwgYYt+7Adt3eX/MD9PPiz9naPXVFikdu+xD4f/h9/Y4nAJegpttPnmRR2x/U9joyMbiQYAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">231d41a1fbb56210f6d5f9d38eefdc66</block>
         <comment/>
         <connected_to/>
         <decision_table/>
@@ -1511,45 +1654,128 @@
         <flow_variables_assigned>var_rpps</flow_variables_assigned>
         <generation_source/>
         <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
-        <order>18</order>
+        <order>16</order>
         <outputs_assigned/>
-        <parent_ui_id>51156d05-59e8-4d9c-8652-71b3a21d2954</parent_ui_id>
+        <parent_ui_id>3866f7bc-4596-4ecc-b5ab-abdbbde58ec9</parent_ui_id>
         <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
-        <sys_created_on>2025-05-28 18:47:46</sys_created_on>
-        <sys_id>aa4655edfbb56210f6d5f9d38eefdc2e</sys_id>
-        <sys_mod_count>17</sys_mod_count>
+        <sys_created_on>2025-05-28 18:14:50</sys_created_on>
+        <sys_id>14ce4525fbb56210f6d5f9d38eefdc2b</sys_id>
+        <sys_mod_count>25</sys_mod_count>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:28</sys_updated_on>
-        <ui_id>d1370173-7d51-4e8b-96d1-dcf3e392fd9c</ui_id>
-        <values>H4sIAAAAAAAA/+2VTW8aMRCG/4vPQDfhm1sUhBSpbaSG5lJFq1l7DFa9tuMPyBbx32uzBhKaY4/c1o89nnfe8Wh3RAdvgndLfeecWCky+/XSIUIlFr93RDAyI6RDFNQYvzZgS2uMi2QDMiRUxG8mnJHQPGfEQTqMmK6FZBbzrQZsvMSjJbPdxdYhy6QaDqdsxHhVDUe3NwUfsSGfsv4EkTM6HMcLJVQoP8r4V5hvTCKV1hJBZfA1Ry5twC+LrE9bltQUHYJvHhXDKOOgvUNqUAy8ts2JWAT2qOQZrIXyrTk1vDnxJyYdFOkcx1gYxXbvtCyzSS3mc/Dw5G2gPth8lK61oOhaSxhyCNLfv2ftgUfjhVZtiIdKHqO1DLX63tpBThdc9iTj+ecdCy7qRJO8SMXlSvnTWm9/HAtZCHWwLW9KTUGeVuC9FVXwSfKOBLG8bEaLPm0HSqxj2rIGY4RalcbqjTikisXVvZWMix6XehslpsfaA5qc6MVGQW8R+fyAn8GKZMu3eE0MTil/KvEa8CG9MjamFQ44dqGYFt1BBTfdalSxLuvjdDDB23GfcrLvENe4ewnOnQ2NnSxfQ6q1tTe7VLa9SCHUCuPvoqgNZkP2L2lQWj3XgboO1HWg/sNAMaTCRZ3LJOrh+K9KG018vIK+R1ttf6cKz2z/FwfQBSj1BgAA</values>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:39</sys_updated_on>
+        <ui_id>43175a16-f870-4ccd-b780-63e52089e443</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VTW8aMRD9Lz4DhfDNLQpCitQ2UkNzqaLVrD0Gq17bsb0QivjvHbMG8tFbr5x2/MYz8+aNR7tnto6ujmFpb0NQK8Nmv55bTJmEkb1nSrAZYy1moEKyNuAL71wgZAO6TlCPbKGC07B7ylD09GkxvlZaeMxJHXjKEdGz2f6D61hkUg6HUzESsiyHo5teV47EUE5Ff4IoBR+OKaGGEvV7Fp95xZ1LSGmtRjAZ+Jojl8TsywJ0SPysF4lNt8XwNaIRSDRk8rVYBUZAtH53RjyCeDD6AqyViY02FbwG9YeKDrrpnkRqjGPjOx+LrFEDyzlEeCSdeKx9vsrXVnEMjSQCJdQ63r3FmgsPLiprmpAIpT5FW11X5nsjBzsnOI1E5p4zPH8/sJO3DsQTXdIiNZc7lY9ru/1xamShzFG27NSWgz6fIEavyjomyntWq+XHYTTQP8eBGisqW1TgnDKrwnm7UcdS1FzVWWk6dKS2W6KY3moHeFKiQ4OCzoLw+RF+Aq+SLN8oDQWnkj+NeqnxPr0yMeYlDiS2oTvttgcl9NrlqBRt0cfpYII34z6X7NBiYRfuNIRwEZQmWbzUqddG3qxS0cwihXCvXLwlUhvMghye0540fK77dN2n6z79/z4J5CoQz2UidX/6UyXHjh6v4m+hrfW/U4cX7PAXy1AupvMGAAA=</values>
         <workflow_reference/>
     </sys_hub_flow_logic_instance_v2>
     <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">f7ee3f85fbf1621086e7f4045eefdc51</block>
+        <block display_value="">533615edfbb56210f6d5f9d38eefdc2c</block>
         <comment/>
-        <connected_to>cc765906-5769-430a-b4ae-373f078cb540</connected_to>
+        <connected_to>3866f7bc-4596-4ecc-b5ab-abdbbde58ec9</connected_to>
         <decision_table/>
         <display_text/>
         <flow display_value="Primary Revenue and Expenditure 2">80ce0525fbb56210f6d5f9d38eefdce1</flow>
         <flow_variables_assigned/>
         <generation_source/>
         <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
-        <order>25</order>
+        <order>17</order>
         <outputs_assigned/>
-        <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
+        <parent_ui_id>7b5c4780-d3a5-467a-a4b8-6c282af57221</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 18:47:46</sys_created_on>
+        <sys_id>264655edfbb56210f6d5f9d38eefdc2e</sys_id>
+        <sys_mod_count>19</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:39</sys_updated_on>
+        <ui_id>51156d05-59e8-4d9c-8652-71b3a21d2954</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">a7790d2dfb756210f6d5f9d38eefdc0e</block>
+        <comment>Setando o count em 0</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Primary Revenue and Expenditure 2">80ce0525fbb56210f6d5f9d38eefdce1</flow>
+        <flow_variables_assigned>var_count1</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
         <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-28 18:14:50</sys_created_on>
-        <sys_id>94ce4525fbb56210f6d5f9d38eefdc2c</sys_id>
-        <sys_mod_count>23</sys_mod_count>
+        <sys_id>04ce4525fbb56210f6d5f9d38eefdc26</sys_id>
+        <sys_mod_count>24</sys_mod_count>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:28</sys_updated_on>
-        <ui_id>bbf158a1-4051-412a-803b-c34c3913e71b</ui_id>
-        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:38</sys_updated_on>
+        <ui_id>f4620f47-34ec-411b-af22-18f36db78b5b</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+2V224aMRCG38XXgICQ5XAXJYqE1DZSQ3NTRavBHoMVr73xAbJFvHvHeDkoVfME3Nnf2DP//LblHbMx1DH4hb3zXq0Mm/1+7TBlEqPxjinBZox1mIEKabQBV3IbTRgQ24COCfZpLJSvNTQvF4ivlRYO25w1OEoR0LHZ7lPoUANEsRwJFHI5vi2Gg74sxK2cipsJohR8LCihhiXqSxH/0RWaOjFlAq6oXgbf2s3zE7VOJDX9DsOPgIZqs5kE7bHDKjACgnXNiTgE8WT0Gawpfbamgg+v/lDFUT+tk0iNccyx07RsDcpYPkCA5+AiD9G1S/naKo4+WyJQQtTh/pLlBU91UNbkLQGW+rjb6liZH9kNdkpwPA8i0ZMIrFOjSXnbhnxe2+3Po8pHZQ6etEFtOejTDEJwahlD0rNjUS0+25zRv0ajxopqlhXUtTKrsnZ2ow51SHbVW2ma9KS2W9KXLmEPeOqxR0cAvUfiDwf8Ak6lhr9TmrbeL6PeI87T/ZlKPp1wOeoO5UR2RwWHLgxvht2C98cTWYzEQAzZvsN84+81eH+2is6ofI+p0Wxca1GZXU5buFN1uCNRG2zd2L+m65/1XB/K9aFcH8oXD0UgV550LpKo+fFvSYGGbqXil2hr3Vvq8Mz2fwEhX739pQYAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">6b790d2dfb756210f6d5f9d38eefdc0f</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Primary Revenue and Expenditure 2">80ce0525fbb56210f6d5f9d38eefdce1</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>4</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 18:14:50</sys_created_on>
+        <sys_id>80ce4525fbb56210f6d5f9d38eefdc27</sys_id>
+        <sys_mod_count>24</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:39</sys_updated_on>
+        <ui_id>b6f98993-2de4-48f4-9d42-7ad52358075f</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VXWvbMBT9K0PPxsh2E9a8lZTCoFthLX3ZirmW5ERMljx9JM1M/vuubMcJa8Zatse9SUe6V+cc34M7YoJvg3cP5so5udJk8eUpIVJHDNcd0dAIsiDMaC69NLrsgYRsQIV4gEsuXatg93hE2FoqbsXYrQWLNV5Ysuh+OZIcC2oKdXbJMlbk8yKnNH9/kVXzospyXoCAAhsqqITCq8sDjXe3PZL8lp/ftRF33kq9Gve3Y5f7A2gsj6wymhDx7IXmAvnUoJxISAOagzd2NyFWAL/T6gispfaD4AaenfyBD+azWbxYC5TIRjembTk6NcD1NXhAKoH5YCfjjGTCDeZwUUNQfnmKDRfu2ih1KPFQqUO1UaHRnwZHyNTg5MMEhyREG5VG6qOO+n5ttp8PLG+k7l0ZD5VhoKYdePSuCj7y6YhQosFGZQNti46WrTUb2RcjlyZdKdyktTJbfDROVwosEk/RWEhvEL/u4UewMqr4iG2weKBZgZOs7CcR26FNguwT4nZuqcC5o0h0t/weIsVB8iiuHPyJJczK1l/hyxsx6tgnLwf7ZKa7rue8GWmluCiZCdpn+/3XQGnB6cuxf13R25JxCbN6ltHZ+WRczM8l40wm3hiH/A9xiN/ilWmglP6Pw1/HQbpyGOJRW//4P0zDUxz94c3JayYdUnuI2IfD3yAe7HC4JDuFtsZ+i6KO2P4n3OlZ2VcGAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">e3790d2dfb756210f6d5f9d38eefdc10</block>
+        <comment>Setando em 1</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Primary Revenue and Expenditure 2">80ce0525fbb56210f6d5f9d38eefdce1</flow>
+        <flow_variables_assigned>var_count1</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>5</order>
+        <outputs_assigned/>
+        <parent_ui_id>b6f98993-2de4-48f4-9d42-7ad52358075f</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 18:14:50</sys_created_on>
+        <sys_id>08ce4525fbb56210f6d5f9d38eefdc27</sys_id>
+        <sys_mod_count>24</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:39</sys_updated_on>
+        <ui_id>3443d07f-a146-41ae-ab16-99e00768f4e4</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+2V224aMRCG38XXgICQ5XAXJYqE1DZSQ3NTRavBHoMVr73xAbJFvHvHeDkoVfME3Nnf2DP//LblHbMx1DH4hb3zXq0Mm/1+7TBlEqPxjinBZox1mIEKabQBV3IbTRgQ24COCaaxUL7W0LxcIL5WWjhsc9bgKEVAx2a7T6FDDRDFciRQyOX4thgO+rIQt3IqbiaIUvCxoIQalqgvRfxHV2jqxJQJuKJ6GXxrN89P1DqR1PQ7DD8CGqrNZhK0xw6rwAgI1jUn4hDEk9FnsKb02ZoKPrz6QxVH/bROIjXGMcdO07I1KGP5AAGeg4s8RNcu5WurOPpsiUAJUYf7S5YXPNVBWZO3BFjq426rY2V+ZDfYKcHxPIhETyKwTo0m5W0b8nlttz+PKh+VOXjSBrXloE8zCMGpZQxJz45Ftfhsc0b/Go0aK6pZVlDXyqzK2tmNOtQh2VVvpWnSk9puSV+6hD3gqcceHQH0Hok/HPALOJUa/k5p2nq/jHqPOE/3Zyr5dMLlqDuUE9kdFRy6MLwZdgveH09kMRIDMWT7DvONv9fg/dkqOqPyPaZGs3GtRWV2OW3hTtXhjkRtsHVj/5quf9ZzfSjXh3J9KF88FIFcedK5SKLmx78lBRq6lYpfoq11b6nDM9v/BRzuGeelBgAA</values>
         <workflow_reference/>
     </sys_hub_flow_logic_instance_v2>
     <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
@@ -1570,11 +1796,12 @@
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-28 18:14:50</sys_created_on>
         <sys_id>9cce4525fbb56210f6d5f9d38eefdc27</sys_id>
-        <sys_mod_count>22</sys_mod_count>
+        <sys_mod_count>24</sys_mod_count>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:27</sys_updated_on>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:39</sys_updated_on>
         <ui_id>e0441a5d-de7b-4465-8283-c2d239ca3641</ui_id>
+        <updation_source/>
         <values>H4sIAAAAAAAA/+1VTWvcMBD9K0VnY2xvE9q9hQ2BQtpAE3JpgxlL8q6oLLn62M3W7H/vyJK9S5PSlObYm/RGM/Pe8wweiPau987e6QtrxVqR5ZeHjAgVMDwPREHHyZJQrZhwQqt6BDKyBelDAI9M2F7C/v6I0I2QzPBUrQeDOY4bshx+CQmGCW0BbfmelnRRnS+qoqjevS2b80VTVmwBHCosKKHhEp+uJhpvrkck+y0/t+8Dbp0Rap3u16nK7QRqwwKrssgIf3RcMY58WpCWZ6QDxcBps58Rw4HdKHkENkK5KLiDRyt+YMPq7Cw8bDlKpMmN+VonpyLcXoIDpOKp82Y2TgvKbTSH8Ra8dKtTLD646YPUmOKgkVO2lr5Tn6IjZC5w8mG8RRK8D0oD9aSjvd3o3eeJ5ZVQoyspKDUFOd/AoXeNd4HPQLjkHRaqO+h7dLTujd6KMRm5dPla4iVvpd5h0zBdOdBAPEdjIb9C/HKE78GIoOIjlsHkSLMBK2g9TiKWQ5s4OWTE7u1KgrVHkehu/d0HilFyEldHf0IKNaJ3F9h5y5OOQ/Z0sE9mehhGzttEK8dDTbVXrjwcvvqiWLDy6di/LOlVN6N8bjOe2Ym/XIfqD+sQvsULt6Eoiv/r8M/rIGwdhzhpG5u/4jY8hNGPPWevqbBI7S5gH6a/QQjscbgEPYV22nwLoo7Y4ScA0RdeVwYAAA==</values>
         <workflow_reference/>
     </sys_hub_flow_logic_instance_v2>
@@ -1596,11 +1823,12 @@
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-28 18:14:50</sys_created_on>
         <sys_id>14ce4525fbb56210f6d5f9d38eefdc28</sys_id>
-        <sys_mod_count>22</sys_mod_count>
+        <sys_mod_count>24</sys_mod_count>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:27</sys_updated_on>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:39</sys_updated_on>
         <ui_id>26bc65d4-7174-419d-bffb-8c2a18337402</ui_id>
+        <updation_source/>
         <values>H4sIAAAAAAAA/+2V224aMRCG38XXgGBDlsNdlCgSUttIDc1NFa0GewxWvPbGBwhFvHvHeDkoVfME3Nnf2DP//LblHbMxNDH4ub3zXi0Nm/5+7TBlEqPxjinBpox1mIEaabQGV3EbTRgQW4OOCRY0Fso3GrYvF4ivlBYO25wNOEoR0LHp7lPoUANEuRgKFHIxui2LQV+W4lZOxM0YUQo+EpRQwwL1pYj/6ArbJjFlAi6pXgbf2s2zE7VOJDX9DsOPgIZqs6kE7bHDajACgnXbE3EI4snoM1hR+mxNDR9e/aGKw35aJ5Ea45hjp2nVGpSxfIAAz8FFHqJrl/KVVRx9tkSghKjD/SXLC56aoKzJWwIs9HG31bE2P7Ib7JTgeB5EoicR2KRGk/K2Dfm8spufR5WPyhw8aYPactCnGYTg1CKGpGfHopp/tjmjf41GjTXVrGpoGmWWVePsWh3qkOy6t9Q06UltN6QvXcIe8NRjj44Aeo/EHw74BZxKDX+nNG29X0a9R5yl+zORfDLmctgt5Fh2hyWHLhQ3Rbfk/dFYlkMxEAXbd5jf+nsN3p+tojOq3mNqNBvXWlRll9MW7lQT7kjUGls39q/p+mc914dyfSjXh/LFQxHIlSed8yRqdvxbUmBLt1LxS7Sx7i11eGb7v1s99MilBgAA</values>
         <workflow_reference/>
     </sys_hub_flow_logic_instance_v2>
@@ -1622,11 +1850,12 @@
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-28 18:14:50</sys_created_on>
         <sys_id>98ce4525fbb56210f6d5f9d38eefdc28</sys_id>
-        <sys_mod_count>22</sys_mod_count>
+        <sys_mod_count>24</sys_mod_count>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:27</sys_updated_on>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:39</sys_updated_on>
         <ui_id>9293447b-4381-4d7b-bfa2-d1373275d096</ui_id>
+        <updation_source/>
         <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
         <workflow_reference/>
     </sys_hub_flow_logic_instance_v2>
@@ -1648,90 +1877,13 @@
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-28 18:14:50</sys_created_on>
         <sys_id>10ce4525fbb56210f6d5f9d38eefdc29</sys_id>
-        <sys_mod_count>22</sys_mod_count>
+        <sys_mod_count>24</sys_mod_count>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:27</sys_updated_on>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:39</sys_updated_on>
         <ui_id>6352d366-f036-48f1-8001-aafb42a31f7f</ui_id>
+        <updation_source/>
         <values>H4sIAAAAAAAA/+2V224aMRCG38XXgICQ5XAXJYqE1DZSQ3NTRavBHoMVr73xAbJFvHvHeDkoVfME3Nnf2DP//LblHbMx1DH4hb3zXq0Mm/1+7TBlEqPxjinBZox1mIEKabQBV3IbTRgQ24COCfZpLJSvNTQvF4ivlRYO25w1OEoR0LHZ7lPoUANEsRwJFHI5vi2Gg74sxK2cipsJohR8LCihhiXqSxH/0RWaOjFlAq6oXgbf2s3zE7VOJDX9DsOPgIZqs5kE7bHDKjACgnXNiTgE8WT0Gawpfbamgg+v/lDFUT+tk0iNccyx07RsDcpYPkCA5+AiD9G1S/naKo4+WyJQQtTh/pLlBU91UNbkLQGW+rjb6liZH9kNdkpwPA8i0ZMIrFOjSXnbhnxe2+3Po8pHZQ6etEFtOejTDEJwahlD0rNjUS0+25zRv0ajxopqlhXUtTKrsnZ2ow51SHbVW2ma9KS2W9KXLmEPeOqxR0cAvUfiDwf8Ak6lhr9TmrbeL6PeI87T/ZlKPp1wOeoO5UR2RwWHLgxvht2C98cTWYzEQAzZvsN84+81eH+2is6ofI+p0Wxca1GZXU5buFN1uCNRG2zd2L+m65/1XB/K9aFcH8oXD0UgV550LpKo+fFvSYGGbqXil2hr3Vvq8Mz2fwEhX739pQYAAA==</values>
-        <workflow_reference/>
-    </sys_hub_flow_logic_instance_v2>
-    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
-        <attributes/>
-        <block display_value="">a7790d2dfb756210f6d5f9d38eefdc0e</block>
-        <comment>Setando o count em 0</comment>
-        <connected_to/>
-        <decision_table/>
-        <display_text/>
-        <flow display_value="Primary Revenue and Expenditure 2">80ce0525fbb56210f6d5f9d38eefdce1</flow>
-        <flow_variables_assigned>var_count1</flow_variables_assigned>
-        <generation_source/>
-        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
-        <order>2</order>
-        <outputs_assigned/>
-        <parent_ui_id/>
-        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
-        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
-        <sys_created_on>2025-05-28 18:14:50</sys_created_on>
-        <sys_id>04ce4525fbb56210f6d5f9d38eefdc26</sys_id>
-        <sys_mod_count>22</sys_mod_count>
-        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:27</sys_updated_on>
-        <ui_id>f4620f47-34ec-411b-af22-18f36db78b5b</ui_id>
-        <values>H4sIAAAAAAAA/+2V224aMRCG38XXgICQ5XAXJYqE1DZSQ3NTRavBHoMVr73xAbJFvHvHeDkoVfME3Nnf2DP//LblHbMx1DH4hb3zXq0Mm/1+7TBlEqPxjinBZox1mIEKabQBV3IbTRgQ24COCfZpLJSvNTQvF4ivlRYO25w1OEoR0LHZ7lPoUANEsRwJFHI5vi2Gg74sxK2cipsJohR8LCihhiXqSxH/0RWaOjFlAq6oXgbf2s3zE7VOJDX9DsOPgIZqs5kE7bHDKjACgnXNiTgE8WT0Gawpfbamgg+v/lDFUT+tk0iNccyx07RsDcpYPkCA5+AiD9G1S/naKo4+WyJQQtTh/pLlBU91UNbkLQGW+rjb6liZH9kNdkpwPA8i0ZMIrFOjSXnbhnxe2+3Po8pHZQ6etEFtOejTDEJwahlD0rNjUS0+25zRv0ajxopqlhXUtTKrsnZ2ow51SHbVW2ma9KS2W9KXLmEPeOqxR0cAvUfiDwf8Ak6lhr9TmrbeL6PeI87T/ZlKPp1wOeoO5UR2RwWHLgxvht2C98cTWYzEQAzZvsN84+81eH+2is6ofI+p0Wxca1GZXU5buFN1uCNRG2zd2L+m65/1XB/K9aFcH8oXD0UgV550LpKo+fFvSYGGbqXil2hr3Vvq8Mz2fwEhX739pQYAAA==</values>
-        <workflow_reference/>
-    </sys_hub_flow_logic_instance_v2>
-    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
-        <attributes/>
-        <block display_value="">212b3741fbf1621086e7f4045eefdcdc</block>
-        <comment/>
-        <connected_to/>
-        <decision_table/>
-        <display_text/>
-        <flow display_value="Primary Revenue and Expenditure 2">80ce0525fbb56210f6d5f9d38eefdce1</flow>
-        <flow_variables_assigned/>
-        <generation_source/>
-        <logic_definition display_value="For Each">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
-        <order>3</order>
-        <outputs_assigned/>
-        <parent_ui_id/>
-        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
-        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
-        <sys_created_on>2025-05-28 18:14:50</sys_created_on>
-        <sys_id>88ce4525fbb56210f6d5f9d38eefdc26</sys_id>
-        <sys_mod_count>22</sys_mod_count>
-        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:27</sys_updated_on>
-        <ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</ui_id>
-        <values>H4sIAAAAAAAA/51TXW+jMBD8L34miI9cUvJWtapU6e4qpVVfThVa7CWxzticbZJyiP9+60Bo1cd7gh3vzs4MZmCm823n3Yu5dU4eNNv9eouY1AGj94FpaJDtmPTYOBaxE6gu1MNQpTwXKcfVTZ7Cal3V1ar6VlSrGni+3Wy3uK6LeI/cWOHGkUaFdK2C/vX/GfhRKmFxFtmCJW0eLdsNX46koAVpIeoiTQqeZ5s8S5LsZp1Wm7xKM5EDig0RKqhQUevj7O6LWd+3obSThBn4Ps/sF5QeQUSWRAzfPWqBtL4G5TBiDWgB3tie7bztCLAI4kmrfuk4Su2JjoXedyf/0sY0SUJjjWSI43S4lOWc4wTX9+Dhmai57+zcyo9GcnRTFAJr6JS/+4xNDU+tl0ZPIx4qdZ02qmv0zykJthBcPxshnSMR2AajQfrso34+mvP+qvJB6kso86EyHNRSgfdWVp0PegaGChsiKhtoW6kPZWvNSV6GSUsTHxQVca3MmZaGKxoDD8JjyhXiB8LvL/ArWBlc/CAaGh4j5np3p8C5Dy8UYvmnC0omZ7OHcoohjHArW39LC044yx3fwq2fuJdMuXQk4SVgj9d/JRz0dIMk/wydjf0dxH9g4z8Uu0oRdQMAAA==</values>
-        <workflow_reference/>
-    </sys_hub_flow_logic_instance_v2>
-    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
-        <attributes/>
-        <block display_value="">6b790d2dfb756210f6d5f9d38eefdc0f</block>
-        <comment/>
-        <connected_to/>
-        <decision_table/>
-        <display_text/>
-        <flow display_value="Primary Revenue and Expenditure 2">80ce0525fbb56210f6d5f9d38eefdce1</flow>
-        <flow_variables_assigned/>
-        <generation_source/>
-        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
-        <order>4</order>
-        <outputs_assigned/>
-        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
-        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
-        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
-        <sys_created_on>2025-05-28 18:14:50</sys_created_on>
-        <sys_id>80ce4525fbb56210f6d5f9d38eefdc27</sys_id>
-        <sys_mod_count>22</sys_mod_count>
-        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:27</sys_updated_on>
-        <ui_id>b6f98993-2de4-48f4-9d42-7ad52358075f</ui_id>
-        <values>H4sIAAAAAAAA/+1VXWvbMBT9K0PPxsh2E9a8lZTCoFthLX3ZirmW5ERMljx9JM1M/vuubMcJa8Zatse9SUe6V+cc34M7YoJvg3cP5so5udJk8eUpIVJHDNcd0dAIsiDMaC69NLrsgYRsQIV4gEsuXatg93hE2FoqbsXYrQWLNV5Ysuh+OZIcC2oKdXbJMlbk8yKnNH9/kVXzospyXoCAAhsqqITCq8sDjXe3PZL8lp/ftRF33kq9Gve3Y5f7A2gsj6wymhDx7IXmAvnUoJxISAOagzd2NyFWAL/T6gispfaD4AaenfyBD+azWbxYC5TIRjembTk6NcD1NXhAKoH5YCfjjGTCDeZwUUNQfnmKDRfu2ih1KPFQqUO1UaHRnwZHyNTg5MMEhyREG5VG6qOO+n5ttp8PLG+k7l0ZD5VhoKYdePSuCj7y6YhQosFGZQNti46WrTUb2RcjlyZdKdyktTJbfDROVwosEk/RWEhvEL/u4UewMqr4iG2weKBZgZOs7CcR26FNguwT4nZuqcC5o0h0t/weIsVB8iiuHPyJJczK1l/hyxsx6tgnLwf7ZKa7rue8GWmluCiZCdpn+/3XQGnB6cuxf13R25JxCbN6ltHZ+WRczM8l40wm3hiH/A9xiN/ilWmglP6Pw1/HQbpyGOJRW//4P0zDUxz94c3JayYdUnuI2IfD3yAe7HC4JDuFtsZ+i6KO2P4n3OlZ2VcGAAA=</values>
         <workflow_reference/>
     </sys_hub_flow_logic_instance_v2>
     <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
@@ -1752,11 +1904,12 @@
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-28 18:14:50</sys_created_on>
         <sys_id>94ce4525fbb56210f6d5f9d38eefdc29</sys_id>
-        <sys_mod_count>22</sys_mod_count>
+        <sys_mod_count>24</sys_mod_count>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:27</sys_updated_on>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:39</sys_updated_on>
         <ui_id>cfdc988b-b11d-4942-b9bf-11cea3ddb70f</ui_id>
+        <updation_source/>
         <values>H4sIAAAAAAAA/+1VXWvbMBT9K0PPjvFH7CV5KymFQbfCWvqyFXMtyYmYLHmWnDQL+e+7shwnrBlbWR/3Yqwj3atzju/Be6I723TWPOgrY8RKkcWXp4AI5TB83xMFNScLQrViwgqtih4IyAZk5zbwlQnTSNg9nhC6FpK1fOjWQIs1lrdksf9lSzAsqCKo4jmNaZrkaRJFyWwal3laxglLgUOKDSWUXOLR5ZHGu9seCX7Lz+4ahxvbCrUa1rdDl/sjqFvmWMVRQPiz5Ypx5FOBNDwgNSgGVre7EWk5sDslT8BaKOsF1/BsxA+8MMkyd7DiKJEObozLYnDKw9U1WEAqHbVdOxqnBeXGm8N4BZ20y3PMH7hrnFRfYqGUx2otu1p98o6QscHZh+kMkuCNU+qoDzqq+7Xefj6yvBGqd2XYlJqCHFdg0buys47PnnDJa2xU1NA06GjRtHoj+mLkUocriYuwknqLl7rpCoE64iEaC+EN4tc9/AitcCo+Yhss9jRLMIIW/SRiO7SJk0NAzM4sJRhzEonuFt87R9FLHsQV3h9XQlvR2Cu8ecMHHYfg5WCfzfR+n0QV4/l0NkkpZ5NpNs8nZQx0UqbzMp+9hwTmeSgsr/tHoRs/enwburaHw9cuilK2KUDplwF56/avS9scsiqLo+xy2qb5pbRdyNkrI5b8IWLu+/5lwqIo+h+xf46YMIUPxqCtv/wNE/bk4uTvHL2mwiC1B4d9OP5h3MYOh0vQc2ir229O1Ak7/AST4ntAqwYAAA==</values>
         <workflow_reference/>
     </sys_hub_flow_logic_instance_v2>
@@ -1778,116 +1931,13 @@
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-28 18:14:50</sys_created_on>
         <sys_id>1cce4525fbb56210f6d5f9d38eefdc29</sys_id>
-        <sys_mod_count>22</sys_mod_count>
+        <sys_mod_count>24</sys_mod_count>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:27</sys_updated_on>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:39</sys_updated_on>
         <ui_id>45e87eb4-1522-46c8-928c-4e868bc4e337</ui_id>
+        <updation_source/>
         <values>H4sIAAAAAAAA/+1VTW/bMAz9LzrHhuvYjp1b0aJAgW0F1q6XoTBofSTCZMmV5KSZkf8+KnaSrj3usEtu5qMovvdEwgMxve96757MtXNypcny58uMSB0w/B6IZGRJyIxoaDl+bcDWoA0CG1B9QIYhTQTjRVZGc8pZlOVVETVXQKNmXjVFuYAUqiKWnrfxoWa/x2omXadg9/xPl9C1VMzyiXQHFjl6bsly+JA6iChY0WSMM9Es8iK9SkTBclGxecm5YLRM8EIFDVd/qfwk2++6ADhvpV5N8Zep7PEIGssCjWRG+JvnGpuSpQDl+Iy0oBl4Y3cnxHJgD1qdgbXUfjS9hTcnf2O/MkmScFJw1ET5mD2F9eTmCItb8IBUeup7Ox2layMpd6MbjAvolb95j40HHjovjR5LPDTqWG1U3+pvoxXkdMHx8RDpHZLgXZAauE9CxOPabL8fWd5JfXBlSipDQZ0i8Ohd0/vAZyC9fPpg84h8Mpor3mLHuoWuQ6TurNnIQxck3cYrhUEslNkiuzDeMdCgMMYngPgO8dsD/AxWBrlf8RosDu1+aPna8/swOItUpPM8b6JknlZRxkqcyoxRnNQmWYg8a6BiZD8jbuduFDh3NgpfqH7tg8zRtsmgevQ4lFArO3+NpDZ88mL/EnZr5HNZwcsKXlbwv6wg41Q65PkUSN0f/4chscOBlPQ9tDX2V1B4xvZ/ADGC0gpZBwAA</values>
-        <workflow_reference/>
-    </sys_hub_flow_logic_instance_v2>
-    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
-        <attributes/>
-        <block display_value="">eb790d2dfb756210f6d5f9d38eefdc12</block>
-        <comment/>
-        <connected_to>cfdc988b-b11d-4942-b9bf-11cea3ddb70f</connected_to>
-        <decision_table/>
-        <display_text/>
-        <flow display_value="Primary Revenue and Expenditure 2">80ce0525fbb56210f6d5f9d38eefdce1</flow>
-        <flow_variables_assigned/>
-        <generation_source/>
-        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
-        <order>12</order>
-        <outputs_assigned/>
-        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
-        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
-        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
-        <sys_created_on>2025-05-28 18:14:50</sys_created_on>
-        <sys_id>90ce4525fbb56210f6d5f9d38eefdc2a</sys_id>
-        <sys_mod_count>22</sys_mod_count>
-        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:28</sys_updated_on>
-        <ui_id>fefe5d28-2611-4ce7-9f3a-4b1127da7629</ui_id>
-        <values>H4sIAAAAAAAA/+1VXWvbMBT9K0PPjvFH4iV5KymFQbfCWvqyFXEtyY2YbHmWnDQz+e+7smwnrB3bWNnTXoJ15HvvOSf34I7o1tatNXf6whj5WJH1p4eAyMph+NyRCkpB1oTpiksrdUV7ICA7UK27wEcuTa3gcH9C2FYq3oihWw0N1ljRkHX3w5XkWFBEUMQrFrM0ydIkipLlPM6zNI8TnoKABBsqyIXCVzcjjTfXPRL8lJ891A43tpHV43C+HrrcjqBuuGMVRwERT1ZUXCCfApQRASmh4mB1c5iQRgC/qdQJ2MrKesElPBn5DQcmi4V7sRAokQ1uTEc6OOXh4hIsIJWW2baZjNOSCePN4aKAVtnNOeZfuKmdVF9iIVdjtVZtWX3wjpCpwdkf0xokIWqn1FEfdBS3W73/OLK8klXvynCpNAM1ncCid3lrHZ+OCCVKbERLqGt0lNaN3sm+GLmU4aPCQ1govcehbrtCYI54iMZCeIX4ZQ/fQyOdivfYBos9zRyMZLTfRGyHNglyDIg5mI0CY04i0V36tXUUveRBHPX+uBLWyNpe4OSdGHQcg+eLfbbTXZdEBRfZfDlLmeCz+WKVzfIY2CxPV3m2fAsJrLJQWlH2P1TXfvXEPnRtj8fPbRSlfEdzWQpcQWc6HddAAo1p9jw3/2jqq2YzfimbL6TyDwOZ/CKQbht+M49RFP0P5F8HUhrqYzRo64e/Yh4fXPj8zMlrJg1Su3PYu/F75C4OuFySnUN73Xxxok7Y8TtFJAos2QYAAA==</values>
-        <workflow_reference/>
-    </sys_hub_flow_logic_instance_v2>
-    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
-        <attributes/>
-        <block display_value="">231d41a1fbb56210f6d5f9d38eefdc66</block>
-        <comment/>
-        <connected_to/>
-        <decision_table/>
-        <display_text/>
-        <flow display_value="Primary Revenue and Expenditure 2">80ce0525fbb56210f6d5f9d38eefdce1</flow>
-        <flow_variables_assigned>var_rpps</flow_variables_assigned>
-        <generation_source/>
-        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
-        <order>16</order>
-        <outputs_assigned/>
-        <parent_ui_id>3866f7bc-4596-4ecc-b5ab-abdbbde58ec9</parent_ui_id>
-        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
-        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
-        <sys_created_on>2025-05-28 18:14:50</sys_created_on>
-        <sys_id>14ce4525fbb56210f6d5f9d38eefdc2b</sys_id>
-        <sys_mod_count>23</sys_mod_count>
-        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:28</sys_updated_on>
-        <ui_id>43175a16-f870-4ccd-b780-63e52089e443</ui_id>
-        <values>H4sIAAAAAAAA/+1VTW8aMRD9Lz4DhfDNLQpCitQ2UkNzqaLVrD0Gq17bsb0QivjvHbMG8tFbr5x2/MYz8+aNR7tnto6ujmFpb0NQK8Nmv55bTJmEkb1nSrAZYy1moEKyNuAL71wgZAO6TlCPbKGC07B7ylD09GkxvlZaeMxJHXjKEdGz2f6D61hkUg6HUzESsiyHo5teV47EUE5Ff4IoBR+OKaGGEvV7Fp95xZ1LSGmtRjAZ+Jojl8TsywJ0SPysF4lNt8XwNaIRSDRk8rVYBUZAtH53RjyCeDD6AqyViY02FbwG9YeKDrrpnkRqjGPjOx+LrFEDyzlEeCSdeKx9vsrXVnEMjSQCJdQ63r3FmgsPLiprmpAIpT5FW11X5nsjBzsnOI1E5p4zPH8/sJO3DsQTXdIiNZc7lY9ru/1xamShzFG27NSWgz6fIEavyjomyntWq+XHYTTQP8eBGisqW1TgnDKrwnm7UcdS1FzVWWk6dKS2W6KY3moHeFKiQ4OCzoLw+RF+Aq+SLN8oDQWnkj+NeqnxPr0yMeYlDiS2oTvttgcl9NrlqBRt0cfpYII34z6X7NBiYRfuNIRwEZQmWbzUqddG3qxS0cwihXCvXLwlUhvMghye0540fK77dN2n6z79/z4J5CoQz2UidX/6UyXHjh6v4m+hrfW/U4cX7PAXy1AupvMGAAA=</values>
-        <workflow_reference/>
-    </sys_hub_flow_logic_instance_v2>
-    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
-        <attributes/>
-        <block display_value="">2b1d41a1fbb56210f6d5f9d38eefdc65</block>
-        <comment/>
-        <connected_to>cfdc988b-b11d-4942-b9bf-11cea3ddb70f</connected_to>
-        <decision_table/>
-        <display_text/>
-        <flow display_value="Primary Revenue and Expenditure 2">80ce0525fbb56210f6d5f9d38eefdce1</flow>
-        <flow_variables_assigned/>
-        <generation_source/>
-        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
-        <order>14</order>
-        <outputs_assigned/>
-        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
-        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
-        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
-        <sys_created_on>2025-05-28 18:14:50</sys_created_on>
-        <sys_id>9cce4525fbb56210f6d5f9d38eefdc2a</sys_id>
-        <sys_mod_count>22</sys_mod_count>
-        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:28</sys_updated_on>
-        <ui_id>7b5c4780-d3a5-467a-a4b8-6c282af57221</ui_id>
-        <values>H4sIAAAAAAAA/+1VXWvbMBT9K0PPjvFHmzV5Ky2FQbfCWvqyFXMtXadisqRJctIs5L/vynY+WDu2scJe9mKkI92rc07uIRtmumC74O/Mufdyodn800PCpI4YrTdMQ4tszrjRQgZpdNUDCVuC6uIBLYX0VsH6/oDwR6mEw7GbBUc1AR2bb344koIKmgyafMZzXhbTssiy4uwkr6dlnReiBISCGiqoUdHVix2NN9c9kvyUX1jbiPvgpF6M++uxy+0ONE5EVnmWMHwKqAUSnwaUx4S1oAUE49Z7xCGIG60OwKPUYRDcwpOX3+jB4vQ0XmyQJPLRjf22Gp0a4OYSAhCVjofO7Y0zkqMfzBHYQKfCxTE2XLixUepQEqBWu2qjulZ/GBxh+wZHP0zniQTaqDRSH3U0t49m9XHH8krq3pXxUBkOar+DQN7VXYh8NgwVttSoasFacrSyzixlX0xc2nShaJM2yqzo0ThdKfBIPCVjIb0i/LKH78HJqOI9taHigWYNXvKqn0RqRzYh2ybMr/2FAu8PIsnd6msXKQ6SR3HV4E8s4U7acE4vL3HUsU2eD/bRTG82RdYInJ6cTUqOYnJyOptO6hz4pC5n9fTsLRQwm6YyYNt/KmOH0cNVGttut5+7LCvFsnLW+srhQrYYzbFOGrKClhh90lxC5Q191fMY/RsSr5rc/KXkvpDZP4xr8Yu4xln5zbRmWfY/rn8dV+mrIWSjtv7xV0zrQ4zm8Obeay49UbuL2Lvdv1U8WNNwSX4MrYz7EkUdsO134ZCcXfcGAAA=</values>
-        <workflow_reference/>
-    </sys_hub_flow_logic_instance_v2>
-    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
-        <attributes/>
-        <block display_value="">e3790d2dfb756210f6d5f9d38eefdc10</block>
-        <comment>Setando em 1</comment>
-        <connected_to/>
-        <decision_table/>
-        <display_text/>
-        <flow display_value="Primary Revenue and Expenditure 2">80ce0525fbb56210f6d5f9d38eefdce1</flow>
-        <flow_variables_assigned>var_count1</flow_variables_assigned>
-        <generation_source/>
-        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
-        <order>5</order>
-        <outputs_assigned/>
-        <parent_ui_id>b6f98993-2de4-48f4-9d42-7ad52358075f</parent_ui_id>
-        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
-        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
-        <sys_created_on>2025-05-28 18:14:50</sys_created_on>
-        <sys_id>08ce4525fbb56210f6d5f9d38eefdc27</sys_id>
-        <sys_mod_count>22</sys_mod_count>
-        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:27</sys_updated_on>
-        <ui_id>3443d07f-a146-41ae-ab16-99e00768f4e4</ui_id>
-        <values>H4sIAAAAAAAA/+2V224aMRCG38XXgICQ5XAXJYqE1DZSQ3NTRavBHoMVr73xAbJFvHvHeDkoVfME3Nnf2DP//LblHbMx1DH4hb3zXq0Mm/1+7TBlEqPxjinBZox1mIEKabQBV3IbTRgQ24COCaaxUL7W0LxcIL5WWjhsc9bgKEVAx2a7T6FDDRDFciRQyOX4thgO+rIQt3IqbiaIUvCxoIQalqgvRfxHV2jqxJQJuKJ6GXxrN89P1DqR1PQ7DD8CGqrNZhK0xw6rwAgI1jUn4hDEk9FnsKb02ZoKPrz6QxVH/bROIjXGMcdO07I1KGP5AAGeg4s8RNcu5WurOPpsiUAJUYf7S5YXPNVBWZO3BFjq426rY2V+ZDfYKcHxPIhETyKwTo0m5W0b8nlttz+PKh+VOXjSBrXloE8zCMGpZQxJz45Ftfhsc0b/Go0aK6pZVlDXyqzK2tmNOtQh2VVvpWnSk9puSV+6hD3gqcceHQH0Hok/HPALOJUa/k5p2nq/jHqPOE/3Zyr5dMLlqDuUE9kdFRy6MLwZdgveH09kMRIDMWT7DvONv9fg/dkqOqPyPaZGs3GtRWV2OW3hTtXhjkRtsHVj/5quf9ZzfSjXh3J9KF88FIFcedK5SKLmx78lBRq6lYpfoq11b6nDM9v/BRzuGeelBgAA</values>
         <workflow_reference/>
     </sys_hub_flow_logic_instance_v2>
     <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
@@ -1908,17 +1958,45 @@
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-28 18:14:50</sys_created_on>
         <sys_id>18ce4525fbb56210f6d5f9d38eefdc2a</sys_id>
-        <sys_mod_count>22</sys_mod_count>
+        <sys_mod_count>24</sys_mod_count>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:28</sys_updated_on>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:39</sys_updated_on>
         <ui_id>509ab718-88ae-46b1-9886-0418f90aabbf</ui_id>
+        <updation_source/>
         <values>H4sIAAAAAAAA/+1VwW7bMAz9F51jw0kcO8mtaFGgwLYCa9bLUBi0RCfCZMmV5KSZkX8fFTtJ1x532CU381Ek33sS4Y6Z1jetdytz45xca7b8+TJiUgeMvjsmBVsyNmIaaqSvLdiiRkfAFlQbkK6bJJXALJ1HU44iSmeLLCrHwKNyuiizeQ4TWGSx9FjHx5rDgaqFdI2C/fM/NeEbqYTFgXQDljh6tGzZfUgdRWSzrEwFiqrMZ9lknFSZmFULMZ0jVoLPJ9RQQYnqL5WfZPt9EwDnrdTrIf4ylD2dQGNFoJGMGL551DSULStQDkesBi3AG7s/IxZBPGp1ATZS+970Gt6c/E3z5kmShJMVkiaOffYcFoObPVzdgQei0nLf2uEo3xjJ0fVuCKygVf72PdYfeGy8NLov8VCqU7VRba2/9Vawc4PT5RHSOiKBTZAauA9CqqeN2X0/sbyX+ujKkFSGgzpH4Mm7svWBT8daufpgc498MhoV1jSxqKFpCCkaa7byOIVI1/FaURBXyuyIXXjeMfCgMKYrgPie8Lsj/AxWBrlfqQ0Vh3E/tHxt8SE8nOksz0qe5lFSAkTpdJ5EMEl4lFcZphzHkOcJO4yY27tbBc5djKIbKl7bILO3bTCo6D0OJdzKxt8QqS0OXhxewm71fK4reF3B6wr+lxUUyKUjnqtA6uH0PwyJPT1Iyd9DO2N/BYUX7PAHlwsGuFkHAAA=</values>
         <workflow_reference/>
     </sys_hub_flow_logic_instance_v2>
     <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">173615edfbb56210f6d5f9d38eefdc2b</block>
+        <block display_value="">5b3615edfbb56210f6d5f9d38eefdc2c</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Primary Revenue and Expenditure 2">80ce0525fbb56210f6d5f9d38eefdce1</flow>
+        <flow_variables_assigned>var_rpps</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>18</order>
+        <outputs_assigned/>
+        <parent_ui_id>51156d05-59e8-4d9c-8652-71b3a21d2954</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 18:47:46</sys_created_on>
+        <sys_id>aa4655edfbb56210f6d5f9d38eefdc2e</sys_id>
+        <sys_mod_count>19</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:39</sys_updated_on>
+        <ui_id>d1370173-7d51-4e8b-96d1-dcf3e392fd9c</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+2VTW8aMRCG/4vPQDfhm1sUhBSpbaSG5lJFq1l7DFa9tuMPyBbx32uzBhKaY4/c1o89nnfe8Wh3RAdvgndLfeecWCky+/XSIUIlFr93RDAyI6RDFNQYvzZgS2uMi2QDMiRUxG8mnJHQPGfEQTqMmK6FZBbzrQZsvMSjJbPdxdYhy6QaDqdsxHhVDUe3NwUfsSGfsv4EkTM6HMcLJVQoP8r4V5hvTCKV1hJBZfA1Ry5twC+LrE9bltQUHYJvHhXDKOOgvUNqUAy8ts2JWAT2qOQZrIXyrTk1vDnxJyYdFOkcx1gYxXbvtCyzSS3mc/Dw5G2gPth8lK61oOhaSxhyCNLfv2ftgUfjhVZtiIdKHqO1DLX63tpBThdc9iTj+ecdCy7qRJO8SMXlSvnTWm9/HAtZCHWwLW9KTUGeVuC9FVXwSfKOBLG8bEaLPm0HSqxj2rIGY4RalcbqjTikisXVvZWMix6XehslpsfaA5qc6MVGQW8R+fyAn8GKZMu3eE0MTil/KvEa8CG9MjamFQ44dqGYFt1BBTfdalSxLuvjdDDB23GfcrLvENe4ewnOnQ2NnSxfQ6q1tTe7VLa9SCHUCuPvoqgNZkP2L2lQWj3XgboO1HWg/sNAMaTCRZ3LJOrh+K9KG018vIK+R1ttf6cKz2z/FwfQBSj1BgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">6f790d2dfb756210f6d5f9d38eefdc13</block>
         <comment/>
         <connected_to/>
         <decision_table/>
@@ -1927,44 +2005,46 @@
         <flow_variables_assigned/>
         <generation_source/>
         <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
-        <order>15</order>
+        <order>19</order>
         <outputs_assigned/>
-        <parent_ui_id>7b5c4780-d3a5-467a-a4b8-6c282af57221</parent_ui_id>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
         <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
-        <sys_created_on>2025-05-28 18:47:46</sys_created_on>
-        <sys_id>6a4655edfbb56210f6d5f9d38eefdc2d</sys_id>
-        <sys_mod_count>17</sys_mod_count>
+        <sys_created_on>2025-05-28 18:14:50</sys_created_on>
+        <sys_id>98ce4525fbb56210f6d5f9d38eefdc2b</sys_id>
+        <sys_mod_count>25</sys_mod_count>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:28</sys_updated_on>
-        <ui_id>3866f7bc-4596-4ecc-b5ab-abdbbde58ec9</ui_id>
-        <values>H4sIAAAAAAAA/+1VXWvbMBT9K0PPjvFH7DV5KymFQbfCWgpjLeZakhMxWfIkOWkW8t93ZTtOWDO20j3uzTrSvTrn6B68I7p1Tevsvb60ViwVmX99CohQHsPvHVFQczInVCsmnNCq6ICArEG2fgM/mbCNhO3DEaErIZnhQ7cGDNY4bsh898uWYFhQRVDFMxrTNMnTJIqSi2lc5mkZJywFDik2lFByiUcXBxrvbjok+C0/t208bp0Rajmsb4YudwdQG+ZZxVFA+LPjinHkU4G0PCA1KAZOm+2IGA7sVskjsBLK9YJreLbiB16YZJk/WHGUSAc3xmUxONXD1RU4QCotda0ZjdOCctubw3gFrXSLU6w/cNt4qX2Jg1IeqrVsa/Wpd4SMDU4eprVIgjdeqac+6KjuVnrz+cDyWqjOlWFTagpyXIFD78rWeT47wiWvsVFRQ9Ogo0Vj9Fp0xcilDpcSF2El9QYv9dMVAvXEQzQWwmvErzr4AYzwKj5iGyzuaZZgBS26ScR2aBMn+4DYrV1IsPYoEt0tvreeYi95EFf0/vgSakTjLvHmNR907IOXg30y07tdElWM59OLSUo5m0yzWT4pY6CTMp2V+cV7SGCWh8LxOuxq9vvHNopS9gVteZGHN3Z7XZZmkFVZHGXnszTNz2XpTIpeGaDkDwHyr/eX+Ymi6H+A3hwgYYt+7Adt3eX/MD9PPiz9naPXVFikdu+xD4f/h9/Y4nAJegpttPnmRR2x/U9joyMbiQYAAA==</values>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:39</sys_updated_on>
+        <ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Vy27bMBD8FYNnQdAjNhrfAgcBCqQN0AS5tIGwoiibKEWqfNhxBX9Qv6M/1qVIP9C6aIL22Js4y92dHe5AA1HO9s6aB3VlDF9KMv/4lBAuPYbfA5HQMTInVMmGW65kNQIJWYNwPrBQTtrJ92+TDMGGm17A9vFcjK64aDSLHXrQWMcyTebDTyHeYGqbQZtf0pyWxawssqx4c5HXs7LOi6YEBiUWFFAzMXaJ1Ca3I5L8lrPd9h43VnO5jOfbWOV+DyrdeFZ5lhD2bJlsGPJpQRiWkA5kA1bp7QHRDJo7KY7AikuL5Yi//Gz4V2xYTKf+YstwRMpC8HCsomYBbq/BAlJx1Dodr9KV4pSZIE7DWnDCLk6xcOGu96OGFAu12Gcr4Tr5PihCDgX2T4SIM0iC9X5STz3O0d6v1ObDnuUNl6MqMSgUBXE4gUXtamc9n4EwwTosVHXQ96ho1Wu15mMycunSpcBD2gq1waZ+41KgnniKwkJ6g/j1CD+C5n6Kd1gGkwPNGgyn1bidWA5lYmSXELM1CwHGHIdEdasvzlMMI8fhqqCPT6Ga9/YKO69ZnGOX/LrsJ3s+DCPndaSV4kdF/X7nu90nl2Vlc8YAL0t6nTMuYdpO82x63hkXs3POOOOJV9qh+IMd/Fu80A1Zlv23w1/bgZsqLHGcbWz+D93w5Fc/9DxoTblBag8ee7v/Q/jAFpeL01Noo/RnP9QR2/0AAAV/dWsGAAA=</values>
         <workflow_reference/>
     </sys_hub_flow_logic_instance_v2>
     <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
         <attributes/>
-        <block display_value="">533615edfbb56210f6d5f9d38eefdc2c</block>
+        <block display_value="">f7ee3f85fbf1621086e7f4045eefdc51</block>
         <comment/>
-        <connected_to>3866f7bc-4596-4ecc-b5ab-abdbbde58ec9</connected_to>
+        <connected_to>cc765906-5769-430a-b4ae-373f078cb540</connected_to>
         <decision_table/>
         <display_text/>
         <flow display_value="Primary Revenue and Expenditure 2">80ce0525fbb56210f6d5f9d38eefdce1</flow>
         <flow_variables_assigned/>
         <generation_source/>
         <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
-        <order>17</order>
+        <order>25</order>
         <outputs_assigned/>
-        <parent_ui_id>7b5c4780-d3a5-467a-a4b8-6c282af57221</parent_ui_id>
+        <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
         <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
-        <sys_created_on>2025-05-28 18:47:46</sys_created_on>
-        <sys_id>264655edfbb56210f6d5f9d38eefdc2e</sys_id>
-        <sys_mod_count>17</sys_mod_count>
+        <sys_created_on>2025-05-28 18:14:50</sys_created_on>
+        <sys_id>94ce4525fbb56210f6d5f9d38eefdc2c</sys_id>
+        <sys_mod_count>25</sys_mod_count>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:28</sys_updated_on>
-        <ui_id>51156d05-59e8-4d9c-8652-71b3a21d2954</ui_id>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:39</sys_updated_on>
+        <ui_id>bbf158a1-4051-412a-803b-c34c3913e71b</ui_id>
+        <updation_source/>
         <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
         <workflow_reference/>
     </sys_hub_flow_logic_instance_v2>
@@ -1986,38 +2066,13 @@
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-28 18:14:50</sys_created_on>
         <sys_id>1cce4525fbb56210f6d5f9d38eefdc2c</sys_id>
-        <sys_mod_count>23</sys_mod_count>
+        <sys_mod_count>25</sys_mod_count>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:28</sys_updated_on>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:39</sys_updated_on>
         <ui_id>6deb7984-2b14-4d0a-a4e7-d189ebcd7d31</ui_id>
+        <updation_source/>
         <values>H4sIAAAAAAAA/+1YXWvbMBT9L3qOMzf+SvJWWgqFbYU128so4Uq6asVky5XktFnof58UOx9NymDQjo75zTry1T33XB188YroxtWNszN9aq28rcj0+82AyCpg/nlFJCdTQgakghL90wLMvETrgQWoBts9Lm2tYPlth7A7qbjB7rgajI92aMh0dbC1Pj7Pcppy5IIWWT46iUXOMzHhyRhRcDYe+QMVUFTP8h8Rcss6ANYZWd12649d2PUG1IYHGvGA4KPDyiclUwHK4oCUUHFw2iy3iEHgV5XaAXeycm2BJTxa+dPnG8dxHN4U6GtiXfnb5byTpoXFOTjwVBrmGrNVSkuGtlWDo4BGubN9rH3hqnZSV22IA6o20Vo1ZfW5lYJsD9jrRGM9CaxDqYF7V4i4vtMPXzYsL2S1VqXbVJqB2q7Aee1o4wKfFWnk7EDmFjkSGhWWPuO8hLr2yLw2eiHXWTzpcnir/GIolH7w7MLFGwILFQ59C2B44fHzNfwNjAzlfvLH+OCQ7msl7xu8DBcnyYqcsrSIYgoQpck4jmAUs6gQOaYMT6AoYvI0IHZpzxRYuxPKd2h+34QyW9k6geatxiGEGVm7U09qgZ0WT4MX7QCVfmU78N/aIT6wQ5v/iFBvh//ODsVIjJIso1GcjCZRyscs8heJRQmjcSGylMKEv7kdTF3vfx7iY0Oso//YFWOaZROee1fQF1yRFQeu6GgcE+t8QbVWCNWBMWamwQ8XHb9XN0f6fq2x6UkHn7/csbdyz64Zz+3zrB1/xUK8YBRTgRHEkzjyjjmJaE55xBOcpGMcFQkTr2ihm2CUlk8/bvXfl3f+fenHrX7c6u3Qj1v9uNWPW//quMWRSet5zgKpy81/rrCx9JdXsn3oQZsfocId9vQLgNzyiTETAAA=</values>
-        <workflow_reference/>
-    </sys_hub_flow_logic_instance_v2>
-    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
-        <attributes/>
-        <block display_value="">612b3741fbf1621086e7f4045eefdcde</block>
-        <comment/>
-        <connected_to/>
-        <decision_table/>
-        <display_text/>
-        <flow display_value="Primary Revenue and Expenditure 2">80ce0525fbb56210f6d5f9d38eefdce1</flow>
-        <flow_variables_assigned/>
-        <generation_source/>
-        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
-        <order>23</order>
-        <outputs_assigned/>
-        <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
-        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
-        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
-        <sys_created_on>2025-05-28 18:14:50</sys_created_on>
-        <sys_id>10ce4525fbb56210f6d5f9d38eefdc2c</sys_id>
-        <sys_mod_count>23</sys_mod_count>
-        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:28</sys_updated_on>
-        <ui_id>cc765906-5769-430a-b4ae-373f078cb540</ui_id>
-        <values>H4sIAAAAAAAA/+1VXW/TMBT9K5Gf0yppkkL7NnVMQhpMYtNe2BTd+KO1cO1gO9tK1P/OdT7aiRXBgEfe4uN7r8859lFaYhpfN97dmDPn5FqT5ef7mEgdMPxuiYYtJ0tCjWbSS6PLDojJA6gmbNyCMjZiPDrTJnqnsc5bYCbSEN1AxRVEF1KDwg4mXa1gd/vqRrqRilk+cKvBIgPPLVm2P2xJhnNFAiJd0JRms3k2S5LZ2zyt5lmVzlgGHDIcqMJ8LF2NoqLLDol/qtbv6oA7b6VeD+vLYcr1CBrLAqs0iQl/8lwzjnwEKMdjsgXNwBu7OyCWA7vS6ghspPY4joTiJye/4YGzogiFgqNEyvvNw7IcDO1hcQ4ekEpDfWOHUroxknLXm8O4gEb51XOsL7iqg9S+xUOlxm6jmq3+2DtCDgPG+0OkcUiC10FpoD7oENcb8/hpZImX2LkybCpD8U7HFXj0rmp84NMSrvgWB5VbqGt0tKyteZBdM3LZTtcKF1OhzCMeGt7qFGggPkVjYXqB+HkH34KVQcUHHIPNPc0KnKRl965xHNrEyT4mbudWCpw7ikR3y69NoNhLHsSVvT+hhVpZ+zM8+YEPOvbxy5g8S0jbiqIQVZXSSQELPsnzlE8qSPPJnIriTZ7nbFGJqfPgG7ff3zVJkrHkZWD+eM7r8rOAQhRpUpzOTz4/lZ8TyXllaGa/CE24sd/MTJIk/0Pz16GRruyf+qCtO/wfZuY+BKQ/8+A1lQ6p3QTs/fgHChs7fFySPocejf0SRB2x/XegvCDnywYAAA==</values>
         <workflow_reference/>
     </sys_hub_flow_logic_instance_v2>
     <sys_hub_pill_compound action="delete_multiple" query="attached_to=80ce0525fbb56210f6d5f9d38eefdce1"/>
@@ -2382,12 +2437,12 @@
     <sys_hub_flow action="UPDATE">
         <sys_id>216b4dedfb756210f6d5f9d38eefdc7a</sys_id>
         <latest_snapshot>80ce0525fbb56210f6d5f9d38eefdce1</latest_snapshot>
-        <compiler_build>glide-yokohama-12-18-2024__patch1b-04-22-2025_05-15-2025_2108.zip</compiler_build>
+        <compiler_build>glide-yokohama-12-18-2024__patch1b-hotfix1-05-20-2025_05-24-2025_1031.zip</compiler_build>
     </sys_hub_flow>
     <sys_flow_trigger_plan action="delete_multiple" query="plan_id=216b4dedfb756210f6d5f9d38eefdc7a"/>
     <sys_flow_subflow_plan action="delete_multiple" query="plan_id=216b4dedfb756210f6d5f9d38eefdc7a^sys_idNOT INacce4525fbb56210f6d5f9d38eefdc3d"/>
     <sys_flow_subflow_plan action="INSERT_OR_UPDATE">
-        <plan>com.snc.process_flow.engine.ProcessPlan@5b4c5d1d</plan>
+        <plan>com.snc.process_flow.engine.ProcessPlan@74d178e5</plan>
         <plan_id display_value="Primary Revenue and Expenditure 2">216b4dedfb756210f6d5f9d38eefdc7a</plan_id>
         <snapshot>80ce0525fbb56210f6d5f9d38eefdce1</snapshot>
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
@@ -2395,10 +2450,10 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>acce4525fbb56210f6d5f9d38eefdc3d</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>11</sys_mod_count>
         <sys_overrides/>
         <sys_scope/>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 19:43:29</sys_updated_on>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:28:41</sys_updated_on>
     </sys_flow_subflow_plan>
 </record_update>

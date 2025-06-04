@@ -4,7 +4,7 @@
         <acls/>
         <active>true</active>
         <annotation/>
-        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=1028000,viewActivatedIn=naturalLanguage</attributes>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=633218000,viewActivatedIn=naturalLanguage</attributes>
         <authored_on_release_version>27000</authored_on_release_version>
         <callable_by_client_api>false</callable_by_client_api>
         <category/>
@@ -15,7 +15,7 @@
         <flow_priority>MEDIUM</flow_priority>
         <generation_source/>
         <internal_name>amortization_and_interest</internal_name>
-        <label_cache>[{"name":"83c6e11f-e93b-467c-9b7f-38bab9ae0a3b.ano","label":"5 - Get MRVS Values (Amortization and Interest)➛Ano","reference_display":"Ano","type":"string","base_type":"string","usedInstances":{"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_ano"]},"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiType":"string","uiUniqueId":"921bac8b-356b-4575-9000-92f18a2bdd28"}},{"name":"83c6e11f-e93b-467c-9b7f-38bab9ae0a3b.amortizacao_externa","label":"5 - Get MRVS Values (Amortization and Interest)➛Amortizacao Externa","reference_display":"Amortizacao Externa","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_amortizacao_externa"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_amortizacao_externa"]},"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiType":"string","uiUniqueId":"6fd5e870-abf5-453b-b0a8-5c783d72293a"}},{"name":"83c6e11f-e93b-467c-9b7f-38bab9ae0a3b.amortizacao_interna","label":"5 - Get MRVS Values (Amortization and Interest)➛Amortizacao Interna","reference_display":"Amortizacao Interna","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_amortizacao_interna"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_amortizacao_interna"]},"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiType":"string","uiUniqueId":"7c2e5cfd-8b47-4fb8-8367-2fb8ca3abbf5"}},{"name":"83c6e11f-e93b-467c-9b7f-38bab9ae0a3b.juros_interno","label":"5 - Get MRVS Values (Amortization and Interest)➛Juros Interno","reference_display":"Juros Interno","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_juros_encargos_interna"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_juros_encargos_interna"]},"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiType":"string","uiUniqueId":"27ee82ef-daab-4b84-ba73-d97b180bb72a"}},{"name":"83c6e11f-e93b-467c-9b7f-38bab9ae0a3b.juros_externo","label":"5 - Get MRVS Values (Amortization and Interest)➛Juros Externo","reference_display":"Juros Externo","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_juros_encargos_externa"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_juros_encargos_externa"]},"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiType":"string","uiUniqueId":"942d7520-1be4-4a31-adcf-09df5ffa937a"}},{"name":"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf.__action_status__","label":"3 - Pesquisar registro➛Status da ação","reference_display":"Status da ação","type":"object","base_type":"object","usedInstances":{},"attributes":{"uiType":"object","co_type_name":"FDACTIONSTATUS","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf.status","label":"3 - Pesquisar registro➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Erro","value":"1","order":0.0},{"label":"Êxito","value":"0","order":1.0}],"usedInstances":{"cc765906-5769-430a-b4ae-373f078cb540":["condition"]},"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf.Record","label":"3 - Pesquisar registro➛Amortização e Juros Record","reference":"x_sded9_portal_t_0_u_amortizacao_juros","reference_display":"Amortização e Juros","type":"reference","base_type":"reference","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["record"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"0a53884c-6d3f-4926-b143-7aebb7b97d97.Record","label":"4 - Pesquisar registro➛Multi Row Question Answer Record","reference":"sc_multi_row_question_answer","reference_display":"Resposta para a pergunta de várias linhas","type":"reference","base_type":"reference","usedInstances":{},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"0a53884c-6d3f-4926-b143-7aebb7b97d97.status","label":"4 - Pesquisar registro➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Erro","value":"1","order":0.0},{"label":"Êxito","value":"0","order":1.0}],"usedInstances":{},"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"0a53884c-6d3f-4926-b143-7aebb7b97d97.Record.row_index","label":"4 - Pesquisar registro➛Multi Row Question Answer Record➛Índice de linha","reference":"","reference_display":"Índice de linha","type":"long","base_type":"long","parent_table_name":"sc_multi_row_question_answer","column_name":"row_index","usedInstances":{"39268173-2ed3-4659-805a-84b15f1045a3":["multirow_record"],"c89a2cab-c4b6-4d9a-a522-66df72662c5e":["multirow_record"],"fb48067c-f6f5-45ab-b1f7-87e39e2b4f53":["multirow_record"],"83c6e11f-e93b-467c-9b7f-38bab9ae0a3b":["multirow_record"]}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.row_index","label":"2 - For Each➛Multi Row Question Answer Record➛Row index","reference":"","reference_display":"Row index","type":"long","base_type":"long","parent_table_name":"sc_multi_row_question_answer","column_name":"row_index","usedInstances":{"0a53884c-6d3f-4926-b143-7aebb7b97d97":["conditions"]}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.value","label":"2 - Para cada➛Resposta para a pergunta de várias linhas Record➛Valor","reference":"","reference_display":"Valor","type":"string","base_type":"string","parent_table_name":"sc_multi_row_question_answer","column_name":"value","usedInstances":{"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf":["conditions"]}},{"name":"b1c3d1ce-831a-4bfb-b59b-fac37677e4f9.Records","label":"1 - Pesquisar registros➛Multi Row Question Answer Records","reference":"sc_multi_row_question_answer","reference_display":"Resposta para a pergunta de várias linhas","type":"records","base_type":"records","usedInstances":{"20fde648-3ced-4596-b1ac-b39b687a2a96":["items"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"subflow.record","label":"Entrada➛Record","reference":"x_sded9_portal_t_0_registro_de_cargas_tesouro","reference_display":"Registro de Cargas Tesouro","type":"reference","base_type":"reference","column_name":"","usedInstances":{"b1c3d1ce-831a-4bfb-b59b-fac37677e4f9":["conditions"],"0a53884c-6d3f-4926-b143-7aebb7b97d97":["conditions"],"39268173-2ed3-4659-805a-84b15f1045a3":["parent_sys_id"],"c89a2cab-c4b6-4d9a-a522-66df72662c5e":["parent_sys_id"],"fb48067c-f6f5-45ab-b1f7-87e39e2b4f53":["parent_sys_id"],"83c6e11f-e93b-467c-9b7f-38bab9ae0a3b":["parent_sys_id"]},"attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"f4b7b973-3190-4871-8403-baaef11efe7b","sourceUiUniqueId":"","sourceType":"","sourceId":""}}]</label_cache>
+        <label_cache>[{"name":"subflow.record","label":"Entrada➛Record","reference":"x_sded9_portal_t_0_registro_de_cargas_tesouro","reference_display":"Treasury Cargo Registration","type":"reference","base_type":"reference","column_name":"","usedInstances":{"b1c3d1ce-831a-4bfb-b59b-fac37677e4f9":["conditions"],"0a53884c-6d3f-4926-b143-7aebb7b97d97":["conditions"],"39268173-2ed3-4659-805a-84b15f1045a3":["parent_sys_id"],"c89a2cab-c4b6-4d9a-a522-66df72662c5e":["parent_sys_id"],"fb48067c-f6f5-45ab-b1f7-87e39e2b4f53":["parent_sys_id"],"83c6e11f-e93b-467c-9b7f-38bab9ae0a3b":["parent_sys_id"]},"attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"f4b7b973-3190-4871-8403-baaef11efe7b","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"b1c3d1ce-831a-4bfb-b59b-fac37677e4f9.Records","label":"1 - Look Up Records➛Multi Row Question Answer Records","reference":"sc_multi_row_question_answer","reference_display":"Multi Row Question Answer","type":"records","base_type":"records","usedInstances":{"20fde648-3ced-4596-b1ac-b39b687a2a96":["items"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.value","label":"2 - Para cada➛Resposta para a pergunta de várias linhas Record➛Valor","reference":"","reference_display":"Valor","type":"string","base_type":"string","parent_table_name":"sc_multi_row_question_answer","column_name":"value","usedInstances":{"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf":["conditions"]}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.row_index","label":"2 - For Each➛Multi Row Question Answer Record➛Row index","reference":"","reference_display":"Row index","type":"long","base_type":"long","parent_table_name":"sc_multi_row_question_answer","column_name":"row_index","usedInstances":{"0a53884c-6d3f-4926-b143-7aebb7b97d97":["conditions"]}},{"name":"0a53884c-6d3f-4926-b143-7aebb7b97d97.Record.row_index","label":"4 - Look Up Record➛Multi Row Question Answer Record➛Índice de linha","reference":"","reference_display":"Índice de linha","type":"long","base_type":"long","parent_table_name":"sc_multi_row_question_answer","column_name":"row_index","usedInstances":{"39268173-2ed3-4659-805a-84b15f1045a3":["multirow_record"],"c89a2cab-c4b6-4d9a-a522-66df72662c5e":["multirow_record"],"fb48067c-f6f5-45ab-b1f7-87e39e2b4f53":["multirow_record"],"83c6e11f-e93b-467c-9b7f-38bab9ae0a3b":["multirow_record"]}},{"name":"0a53884c-6d3f-4926-b143-7aebb7b97d97.status","label":"4 - Look Up Record➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Error","value":"1","order":0.0},{"label":"Success","value":"0","order":1.0}],"usedInstances":{},"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"0a53884c-6d3f-4926-b143-7aebb7b97d97.Record","label":"4 - Look Up Record➛Multi Row Question Answer Record","reference":"sc_multi_row_question_answer","reference_display":"Multi Row Question Answer","type":"reference","base_type":"reference","usedInstances":{},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf.Record","label":"3 - Look Up Record➛Amortização e Juros Record","reference":"x_sded9_portal_t_0_u_amortizacao_juros","reference_display":"Amortization and Interest","type":"reference","base_type":"reference","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["record"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf.status","label":"3 - Look Up Record➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Error","value":"1","order":0.0},{"label":"Success","value":"0","order":1.0}],"usedInstances":{"cc765906-5769-430a-b4ae-373f078cb540":["condition"]},"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf.__action_status__","label":"3 - Look Up Record➛Action Status","reference_display":"Action Status","type":"object","base_type":"object","usedInstances":{},"attributes":{"uiType":"object","co_type_name":"FDACTIONSTATUS","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"83c6e11f-e93b-467c-9b7f-38bab9ae0a3b.juros_externo","label":"5 - Get MRVS Values (Amortization and Interest)➛Juros Externo","reference_display":"Juros Externo","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_juros_encargos_externa"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_juros_encargos_externa"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"942d7520-1be4-4a31-adcf-09df5ffa937a"}},{"name":"83c6e11f-e93b-467c-9b7f-38bab9ae0a3b.juros_interno","label":"5 - Get MRVS Values (Amortization and Interest)➛Juros Interno","reference_display":"Juros Interno","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_juros_encargos_interna"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_juros_encargos_interna"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"27ee82ef-daab-4b84-ba73-d97b180bb72a"}},{"name":"83c6e11f-e93b-467c-9b7f-38bab9ae0a3b.amortizacao_interna","label":"5 - Get MRVS Values (Amortization and Interest)➛Amortizacao Interna","reference_display":"Amortizacao Interna","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_amortizacao_interna"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_amortizacao_interna"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"7c2e5cfd-8b47-4fb8-8367-2fb8ca3abbf5"}},{"name":"83c6e11f-e93b-467c-9b7f-38bab9ae0a3b.amortizacao_externa","label":"5 - Get MRVS Values (Amortization and Interest)➛Amortizacao Externa","reference_display":"Amortizacao Externa","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_amortizacao_externa"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_amortizacao_externa"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"6fd5e870-abf5-453b-b0a8-5c783d72293a"}},{"name":"83c6e11f-e93b-467c-9b7f-38bab9ae0a3b.ano","label":"5 - Get MRVS Values (Amortization and Interest)➛Ano","reference_display":"Ano","type":"string","base_type":"string","usedInstances":{"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_ano"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"921bac8b-356b-4575-9000-92f18a2bdd28"}}]</label_cache>
         <master_snapshot>f5a40c65fbbd2210f6d5f9d38eefdcb8</master_snapshot>
         <master_snapshot_digest/>
         <name>Amortization and Interest</name>
@@ -23,7 +23,7 @@
         <outputs/>
         <pre_compiled>false</pre_compiled>
         <remote_trigger_id/>
-        <run_as>user</run_as>
+        <run_as>system</run_as>
         <run_with_roles/>
         <sc_callable>false</sc_callable>
         <show_draft_actions>false</show_draft_actions>
@@ -36,16 +36,17 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>6eb048edfb7d2210f6d5f9d38eefdc6f</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>Amortization and Interest</sys_name>
         <sys_overrides/>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sys_hub_flow_6eb048edfb7d2210f6d5f9d38eefdc6f</sys_update_name>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 12:51:07</sys_updated_on>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:27:37</sys_updated_on>
         <type>subflow</type>
+        <updation_source/>
         <version>2</version>
     </sys_hub_flow>
     <sys_translated_text action="delete_multiple" query="documentkey=6eb048edfb7d2210f6d5f9d38eefdc6f"/>
@@ -114,7 +115,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Referência">reference</internal_type>
+        <internal_type display_value="Reference">reference</internal_type>
         <label>Record</label>
         <mandatory>true</mandatory>
         <max_length>32</max_length>
@@ -165,10 +166,10 @@
     <sys_hub_flow_output action="delete_multiple" query="model=6eb048edfb7d2210f6d5f9d38eefdc6f"/>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=6eb048edfb7d2210f6d5f9d38eefdc6f"/>
     <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=6eb048edfb7d2210f6d5f9d38eefdc6f"/>
-    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=6eb048edfb7d2210f6d5f9d38eefdc6f^sys_idNOT IN72b048edfb7d2210f6d5f9d38eefdcbc,3ab048edfb7d2210f6d5f9d38eefdcbc,fab048edfb7d2210f6d5f9d38eefdcbc,bab048edfb7d2210f6d5f9d38eefdcbd,f6b048edfb7d2210f6d5f9d38eefdcbd,40a4c865fbbd2210f6d5f9d38eefdcc3"/>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=6eb048edfb7d2210f6d5f9d38eefdc6f^sys_idNOT IN72b048edfb7d2210f6d5f9d38eefdcbc,3ab048edfb7d2210f6d5f9d38eefdcbc,fab048edfb7d2210f6d5f9d38eefdcbc,40a4c865fbbd2210f6d5f9d38eefdcc3,f6b048edfb7d2210f6d5f9d38eefdcbd,bab048edfb7d2210f6d5f9d38eefdcbd"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Pesquisar registros">43400a1587003300663ca1bb36cb0b4b</action_type>
-        <action_type_parent display_value="Pesquisar registros">d1c56ec50b30030085c083eb37673a50</action_type_parent>
+        <action_type display_value="Look Up Records">43400a1587003300663ca1bb36cb0b4b</action_type>
+        <action_type_parent display_value="Look Up Records">d1c56ec50b30030085c083eb37673a50</action_type_parent>
         <attributes/>
         <comment/>
         <compiled_snapshot>43400a1587003300663ca1bb36cb0b4b</compiled_snapshot>
@@ -181,16 +182,17 @@
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-28 12:33:57</sys_created_on>
         <sys_id>72b048edfb7d2210f6d5f9d38eefdcbc</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 12:50:58</sys_updated_on>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:27:33</sys_updated_on>
         <ui_id>b1c3d1ce-831a-4bfb-b59b-fac37677e4f9</ui_id>
-        <values>H4sIAAAAAAAA/9VX3U7bMBR+lSjXVZTQUhh3CIS0C0Bj024Ys5zYaa05dmY7LVD1YaZdTHuAPUFfbMdxkob+QOm6DS59fP7P95041xOfEf/IP0x7YYij/cODMOx2w7Df7yY4iuNuP4nDuBf7HV/gjIKmwTGncBxhXtizTlBWcMOQkmP0taDaMCkQFnpMFagRpnOO7z5W2udW1buSY+9dpeod16rJkHGiqPCPrm86fo4VBDRwczRZuDJ3OUUcx5SDxw82H+/CJtfZuJaWMeV4uTgboT4i4XxLRWwyYcent4YKQiFWirmmHT/DgmAj1V0jURSTS8HngiETBjz6VvlWs3twfxhavZRCXQl1d80RVX1z4mQoWUIvc9svJ3GJukvJi0xcuAJsx2mKoct1x0FSaPBHc5uzTaLKKH0/lOOrOuAZE2V51SWXCebNCRujWFwYqu0wKKcZOEIZznMmBihXcsRKY8glCwYcDkHKAQ6EajYQAU5s4gG0CAdnID8txR+xYraKc3BTzj9lHMaNXNO1LFTZlRFKeKHLCwWocr78adkrwJvN0lVd1Ydci0BBJ4rl5hgMRrQqZdrZCO/74RwSiRSE2Zi6BXpmaIZkOQ8k6Diwup8KcEVGAH35GcBrU2HECScTXcS2I4GiCeBoOl1mxi5cbsegk3aFm3bngfHsx+wX1Wt6VnHpgaziUrQzLkG+/4lNRhUvj0xP0cMV/ARHkoNHUbA/n7eWyiDXuRZJ7AfBNuJ2Geztq+1Ae8YoJw/W/gbp1saXAD+BlZdLta6ICrWpDbPwBdh79V+AF4lZSIgg128mOBPlBxgS3Q2Yw8dX2psFHJTjbz1yrAzrZBnJ2MNm9tO73377lpOtQbxBms3bheXSI9Q74VhrlrIEwxr+LlcXUi/hOlgF5e7OoNzdex6UAUjXk6aWVhdXtLx+edlh1hb3zgIvWgDiWibR9Kahw8m2caPnx92zcRc4230WaduIczena4G34/fdGhp2/ibvh2BaxUOOxmjMyICaefRai0gzxvzLqvsKZw23yvL++K3Ye5ST/WjOOGADUlTDsNqPxQjeJsuLIwqceLut8VYYOiibt2mKteX57Nsty8rNcVWmionU60qo1gZrolX47u3w4fYvPoH1CFYyqZ7Eq/hN2hbMN78ByRgUpeoPAAA=</values>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/9VXXU/bMBT9K1GeqyghpTDeEAhpD4AGiBfGLCdxWmuOndlOP6j633cdx2loC5Su2+Ax19f3nnt8jus+zH2a+Sf+cd4PQxwdHh+FYRyH4WAQpzhKkniQJmHST/yez3FBIFPjhBH4HGNWmW+VoqJimiIpJuhXRZSmgiPM1YRISMuoKhme3TfZlybVuxET71uT6p261HREWSYJ908eHnt+iSU01LByMl9Z0rOSIIYTwqDincHjXRlwva1nebZ5fTbTwH0ibksLmRksYc8nU014RqBVjpkiPb/APMNayFkbkQRn15wtAyPKNVT0TfJU0ScofxyavJzAWCmxa+0namiz4XQkaEquS0OXjVigdlGwquBXdgBDOMkxkOwIh0iloB4pDWYDokGU347E5MY1vKC8Hq9ZZCLFrP3CWkuaVJoocxaEkQIKoQKXJeVDVEoxpvVmwFIEQwYfQc5ADRlRdMgDnBrgAVCEgwuIn9fheyypmeISytTHn1MGp40s6UpUsmZljFJWqXpBgqhsLX9RcwVyMyjt1M18yFIECSqVtNSnsGFMmlEWva3kfhguJZEKnlHTU3U0TzUpkKjPA3EyCUzu9wpKZWNQvvgB2jVQaGaD87mqEsNIIEkKOlos1o2xj5K7GeisO+G27GzcvImyxkrPYo2Vor1ZCeD+JzNpWX08L73lDjvwGxZJj14VweHyvJWQGlnmOh4xPweGiOm61rtLu2n2ghKWPbv0t4DrNl8b+XnJ7KUJGsnmpsfK7X/w6W//DylYAJQhyzfljPL6xxeA7kfJ4evX2ZcVHdTH33nfmBhW6bqMsaeF97T7vVufq9PvFiDdxltA5N1ZlBuAuxvXlW+kG+9NuvHB+6QLwnmYt+hb1jYQ7N5Y5uhc/pPJx6v5oK7Ohmjx2Er/bLee0Xt7HpieK96M32XOrrLsyvkLAtvzC+4Fs/X+prtHsLXph6xZ0YRmQ6KX3V1WJvQEs5+b1ht1tR6qx/vj12D/Ve8NoqXPwANIEgVH1X0ORvD8WL8eosCGd7sdvnJNhjV520J0Oy/x1LtpMW4E3lwRtO3RaLq/xxfZv/h5c8RvdI/j/1P8/dlVwo+/AUCmO9DBDwAA</values>
     </sys_hub_action_instance_v2>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Pesquisar registro">9d09f99587003300663ca1bb36cb0ba3</action_type>
-        <action_type_parent display_value="Pesquisar registro">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
         <attributes/>
         <comment/>
         <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
@@ -203,16 +205,17 @@
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-28 12:33:57</sys_created_on>
         <sys_id>3ab048edfb7d2210f6d5f9d38eefdcbc</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 12:50:58</sys_updated_on>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:27:33</sys_updated_on>
         <ui_id>f55fbb1c-5a9e-441e-ba14-6cf57444d9bf</ui_id>
-        <values>H4sIAAAAAAAA/9VY227bRhD9FYLPkkqKEiX5LXBgoEVrA0maF9dYDLlDa9sVl9kl5Rv0MUEfin5Av8A/1lleJFmSHVqWEedxL7NzO+dwpPM7V3D3yOUTb5JMJsPxyPOCwPPCMIjBj6IgjCMvgoHbcVOYId3MIZJIyznIwq6vmeHIJyxTOgfJcuaxgsGMVuIWYlDsz0IrQwZcmEzCzefa7l195f6f+7+Vg84v9bV4KiTXmLpH5xcdNwNNbnPU7tHdxlF+kyGTEKGk1z7ZqJxTG2KndUZrxihhO0XroVmytHpbaW6D8TouXueYUuruUQLSYMedQcohV/pmuaMR+FkqVxtTkeb0omsvXxtxS8+PPXsvQcorxupsuWR1zarteKpEjGdZLlRa7VSBVodKFrP0tErAVhsTKGTeVJt2CkPvYWZjtkHUESUfp+rqQ+PwRKRlevWhVDHI5QryXIuoyNHYZqDEGT3EZpBlIr1kmVZzURpTLLPepaRFL5HqipwacZn2ILaB96hE0Duh/ffl9mfQwmbxGz1DxhSQkNRuVhXdqEKXVZmzWBamPNCQmuotd1HWin0pbJRV1nV+rCoRXTCxFln+jgzmWKey6DSoHz6JkckKErFKubA+zRr0Ceep+qMgW3531/cSjuFg3A1i5N3BcBJ2Ix/ibhRMonA8gj5Mwp7IcdYrzReLbUq8+L39uHO8nlvbujwwJg7/h+aRatUserBXs8g/GIsGnvedeJTr4u3R6FvEqBL+Bjt8/iQK+KrfhqScVZVbo8c2wPeG6IlAyR/Ie4vgGuMzAlsK2qEv1GMh1xhNrJsNpe//8Er/JhFKAXFW1VukUqTlh5YCPQx0h0+iI/I3cFC2fwXccg9MvA1gcCC//9e53V9ry842IG4R5nJGEZlyODrHEowRiYirwWl3Io3kNs5qKAcHg3LQfx6UCUjnd8tc1qq4o+TNhGWb2VjcVhawaUGIWzPxFxdLOhzv69d/vt++9bvB2eBZpF1HXHXy/lHgHXiOe4SGndfk/ZRMa3+sojG7EvwS85X35hZX+RXIv3ad1zhbcqtM78Uzof/k74ZobSYUCZtRp0RGg6rGmMBgGGhkiSpSzuoRdW1apL4lQpu8vrytLh+QiGi/VEbZyqOjnEyLGQqtHI2XwuRaHUh5WmTZGH5EZ37/VQtllkEYJ1EaZ86mBrWsyCPyNDjgNPgSeToBOQWHg4M5ZOvUR63LEWKXQrXs3RNgaClibaPzXyW6l0vdLhrslLyWMf8QP2tfKkoxQjToQzgKfN/zfI+PvPFo5I/DKAlhNEhWFGTMpDGpJr2cgJD0PGuA0XTX31aeOWoO3JZ2/39gSJd/OikluNM66Mb41P4HlJTIJlmxAbfKqBaSSCmJkK5QOvxuSvJW/p0pxKfN2lRbv+5q12t96gvxeyq+FPizhcMYvf7Y53F3PPJH3UHCw+6Ew7ALk2g4CjjGg2T/r/fF/wwwqDDJFAAA</values>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/9VY227bOBD9FUHPtleybMnKW9HAQBe7DdBm+5INCIqkYu7SpEpRuRn+mj7sh/THdqibHd9ju2j6yOFczsycGVO+mbmcuhcujb04jePhKPK8IPC8MAwI9pMkCEniJXjgdlyJpww0DU4Eg+M9FoU9P6KcMhqjTGmDBTLIQwXCUzjxZ0ywQv8UWuVgQHmeCfz0pbZ7V6t8/+/7N+Uw5/dajUy4oJpJ9+LmtuNmWENYw7R7MVu5Mk8ZQwInTIC3a4vK+Wghdg7O6IXxeoY2QHNEsnKtNLVYvI7LHg2TkLl7kWKRs447xZJio/RTK9EM0yspFoIJlwY8ulb5MefP4H7kWb2UQVqEVXftEdUlq8RkojhhV5nhSlaSCmh1qUQxlR+rBGyxWYoLYZpig6TIwR/LLGYLokaUfp6oh09NwDGXZXr1pVAEi/aEjdE8KQzLbS+YYFNwhKY4y7i8Q5lW97w0BizT3p2AQy8V6gGC5vxO9jCxwHtQItwbg/yyFH/Bmtss/gQ3YAyAuIBuo6rouSp0WZV7RESRlxcay7zy5c7LWqGvhUVZZV3nh6oSgUJONM/MOzC4Z3Uq805D+uFOisQLShAlKbcx8yXmA82l+rsAWzqb9b2UsnAw6gaE0e5gGIfdxMekmwRxEo4i3Mdx2OOGTXul+Xy+PhEn+ztudN4v53ZoXTYabypWPUQvZPUQ+WcbooHn/aQxMrp4e1O0by6qhPcMh093koAu+p3DIkdV5ZamY53fRzN0zJmgL5b7AeAa4ytLNid52oa3JmhqY6xs+f4vv+XfJD0BEEVVvbkUXJY/sgD0PLwd7qRG4q/woGz/grWlDOdknb3YMcp5Pn7Lln1t+HsAyMbwMyByriuUG4A3+7VxX1M3OBt1g/7rqAvEuZm16NuqbShw85ayrWv0n60+XtUHdi0Z+PPblvrvj4vpvzZm38Zcmc3gVcO5zKzq5nILwc78UtsybJ0fOd0TMK3joWpY0QOnd8wsojdaVJkHLP7ddF+zq52hMr2TX33+zg+DZOnVx1M0hT7xDJ6imhGgQo6wZihVhaSofoQuvQehbynXuamV13fIJ2YKLR0FI+eYCXNKbafVPsdmOSC7xvBD6jTp1RhyB9JzyvScNr3XFWPLPhqc8a13yj4aYy7K0sPHRLbUO6a10lt20p6u7Wj/gQvrQFD+WUGdvtE28X3jZtuD9Zf4Mj116xCGk0Efh1Hg+57nezTyRlHkj8IkDXE0SBeDhlAuCaxF8JwCMcA9aojQdNVfXy311jzy3xMw/m1cbtfOwXAb40sl7UdrPzKOxQttdhq8+zOq10WilGBYLtg5/Gn74q38wVLw69XaVKI/NjXtR/2WF/wvyb8W7IMlxYh5/ZFPSXcU+VF3kNKwG1M87OI4GUYBZWSQHv/zfPs/xynIZosUAAA=</values>
     </sys_hub_action_instance_v2>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Pesquisar registro">9d09f99587003300663ca1bb36cb0ba3</action_type>
-        <action_type_parent display_value="Pesquisar registro">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
         <attributes/>
         <comment/>
         <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
@@ -225,38 +228,40 @@
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-28 12:33:57</sys_created_on>
         <sys_id>fab048edfb7d2210f6d5f9d38eefdcbc</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 12:50:58</sys_updated_on>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:27:33</sys_updated_on>
         <ui_id>0a53884c-6d3f-4926-b143-7aebb7b97d97</ui_id>
-        <values>H4sIAAAAAAAA/9VY227bOBD9FUHPtleyfM1bkSLAAtsEm2b7kmaJkTiKiaVFlZTiXOCPKfZhsR+wX5Af61AX27GdVHGcbfpIcoZzO2c40vmdK7h74PKxN47H4/5o6HlB4HmDQRCBH4bBIAq9EHpuy01giiSZQSiRllcgc7s2EZvmMhNMqxn7kqPJhEoYJGaGmsS4MKmEm0+V9Acr6pyqmfN7Jeq8q0WjiZBcY+IenF+03BQ0Gczo5OBu7Si7SZFJCFHSjWfWH+fYOtdqHMuKMkrYDM5aqJcsKe9WmltnvJaL1xkmHMlWDNJgy51CwiFT+maxoxH4SSKXGxORZHSja4Wvjbil60eelYuR4oqwPFssWZW3cjuaKBHhSWrzVe6UjpaHSubT5LgMwGYcY6As1xmnndzQfZhan60TlUfxx4mandYGj0RShFcdShWBXKwgy7QI8wyNLQZKnNJFbAppKpJLlmp1JQpl8mXauZS06MSS4MDRiMukA5F1vEMpgs4R7b8vtj+BFjaKD3RNUf9YSCo3K5NuVK6LrFyxSOamONCEqvIud17kivBmvSyjruJjZYpIwERapNk7UrjCKpR5q8Z7/0mMjJeQiFTChbVpVkBP4LSmBP+ckz6/uzN5aCPuaIwIJ/P5n5YNNqXXtUTXizkOeqN2ECFv9/rjQTv0IWqHwTgcjIbQhfGgIzKcdhaq8/kmgf5Hy7vx8XA1X01z/UD5/p/7/9A8UoGKmQ/2Kmb6e2Nmz/N+EDcznb89an6PbGXA32Gcz59EAV/W2yidsTJzK5TbpMLOED0SKPmDJ6OBc7XyCYEtAe2kSj/mcoXR2JpZez26P/3r8SYRSg5xVuZbJFIkxeNNju4Huv0n0RH6azgoyr8yINk9MNEmgMGB7P5f53b3XltUtgZxAzcXc49IlcPROZRgjIhFBNR0/1bbA6lbbm2sgnKwNygH3edBmYB0freIZSWLW1JeT222mLXGbakB6xqEuBUVf36xoMPhrnb959vtWrtrnA2eRdpVxJUn7x8F3p5nw0do2HpN3k9ItbLHShqzmeCXmC2t11JcZTOQf207r3C24FYR3ovnTP/Jb5FwZc4UcfkdldLwW85yhtGsx2KVJ5xVY+8SOLZusdAmq4Q3u8spEhHtS2WUzTw6ykm1mKLQytF4KUym1Z46T4Moa8WP6Fzdf9VCmYUTxomVxqmz3oMaZuSR9tTb4zT4kvZ0BHICDgcHM0hXqY9aFyPEtg7VsHZPgKFhE2vqnf8q3r281W2jwdaW19Dnn+JT+aVNKUIIe10YDAPf9zzf40NvNBz6o0EYD2DYi5cUZMwkEXVNujkGIel6VgOjrq632Xmstd1byxm15F+Oiu7bauxvrXxMHcSJC1BTR7G+Ngqm6iGhUhIhWQK0/8OayFv52ZOLs/XclFu/bSvXa73yufgjEV9y/NXCYYRed+TzqD0a+sN2L+aD9phDvw3jsD8MOEa9ePeH++IbCymLchIVAAA=</values>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/9VY227bOBD9FUHPtleybMnKW9HAQIFtg02zfclmCUqkYmJpUqWoOInhf+9QlGTH9zjuNn0kOZczM2eGlG7nLiPuhUtiL87ieDiKPC8IPC8MgxT7SRKEaeIleOB2XIGnFCQ1TjiF5QPmpVkXKZqWXDOk5Ax9L2mhmRQIi2JGFYgRVuQcP32rpT8bUedazpy/alHnQyOaThgnigr34vau4+ZYgUMNJxfztSP9lFPEcUI5WLwxeJwvBlzn6FheKG/GZhw0SySsaamIweJ1XPqoqSAUXGWYF7TjTrEgWEv11O4oismV4MuNCRMaLLpG+LFgz2B+5Bm5jEJYKbVn7RLVabPb6USylF7lJl12xwK1h5KXU/HFBmASTjMMSW4SDjtlAfZobjAbEDWi7OtEzq4bh2MmqvDqQy5TzNsV1lqxpNS0MLWgnE7BEJriPGfiHuVKPrBKGbBMe/ccFr2MAxsILdi96OHUAO9BinBvDPuX1fY3rJiJ4jOYqcqfMQ7VRjbphSxVlZUHlPKyqA4UkMrachdVroBuBqWNuo4P2RSBQJEqlusPoPBA61AWnYbuw70UiZeUSKUgzPgsVjgP3DSuGPmnBH0ynxdlYiLuKZoCTxaLf00zmJQ+NhJ9LyM0HIy6QUpJdzCMw27i47SbBHESjiLcx3HYY5pOe63qYrHZP/+j59Pa8eNqvo7N9VblbQWoG/PFXt2Y/tkac+B5v6g1tSrfX2ce6jUb8IGG88leEpBlvQupNLKZW+m4zU44maFjRjl5cWEcAa5RvjJkc5KnXXhrgmbGx9rN0f/tb453SU8ARJDNNxOcieriBqDn4e1wLzUSf40HVflX3kZmDxfpJnuxo6XzfPqUrera8PcIkI3iV0Dk3FiUW4A387UxX1M3OBt1g/7rqAvEuZ236NusbUlw8z4zpWvkn408XpcHdq0o+Iu7lvofT/Ppv9Zn3/hc683gVc25yix7crmDYGd+/e1ots7P7O4JqNb+kG1WNGPknuql90aKSD3D/L9t5zW72h6qwnvzS9Lf+7GRrLwkWWY/lHJ43trXWoHgNYcyWQqC6oftkjambhlTha6FN2fINdWlEo6ElnP0hDqVtNNKn2OyHBFdo/gpc5rwagyFA+E5VXhOG97rkrFjHg3O+NZ7yzwaY8ar1MMHSr5SO6qUVDtm0oGq7Sn/kQPrSFD+WUG9faJt4/vWyXYA62/xtfvWqZNSnAz6OIwC3/c83yORN4oifxQmWYijQbZsNIQKkcJYBMsZEAPMo4YITVW9zdFiZ+PJv2Rg5v4xrk0ci7dRvpTCfLn2I+0YwFBnpwF8OKR6XiRScorFkp7DXzYw3stfm5LdrOfGbv25rWg/6zIv2d+CfS/pJ0OKEfX6I5+k3VHkR91BRsJuTPCwi+NkGAWEpoPs9Pv57gc9mT1D2hQAAA==</values>
     </sys_hub_action_instance_v2>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Criar registro">2de05916c31332002841b63b12d3aee1</action_type>
-        <action_type_parent display_value="Criar registro">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <action_type display_value="Get MRVS Values (Amortization and Interest)">9b73c8e1fbbd2210f6d5f9d38eefdc17</action_type>
+        <action_type_parent display_value="Get MRVS Values (Amortization and Interest)">8ca18821fbbd2210f6d5f9d38eefdc7d</action_type_parent>
         <attributes/>
         <comment/>
-        <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
+        <compiled_snapshot>9b73c8e1fbbd2210f6d5f9d38eefdc17</compiled_snapshot>
         <display_text/>
         <flow display_value="Amortization and Interest">6eb048edfb7d2210f6d5f9d38eefdc6f</flow>
         <generation_source/>
-        <order>9</order>
-        <parent_ui_id>bbf158a1-4051-412a-803b-c34c3913e71b</parent_ui_id>
+        <order>5</order>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
         <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
-        <sys_created_on>2025-05-28 12:33:57</sys_created_on>
-        <sys_id>bab048edfb7d2210f6d5f9d38eefdcbd</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_created_on>2025-05-28 12:50:58</sys_created_on>
+        <sys_id>40a4c865fbbd2210f6d5f9d38eefdcc3</sys_id>
+        <sys_mod_count>4</sys_mod_count>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 12:50:59</sys_updated_on>
-        <ui_id>070c3028-da05-4dc4-afc6-b2410b50b51a</ui_id>
-        <values>H4sIAAAAAAAA/+1VwW7bMAz9lUBnJ7DjLI1zKzb0MGAtsA29dJ1A23SiQZY8WU6TBvmaHfYh/bFRtpIFaQJ0wYBtwHKKKPLxPZKi79ZM5GzKxhGGr5JonMVRHA/DcDgZRek4TqNhHgPiiAVMQYnkaSGVyNtDwBYgG2dc8jrHPOGVNhYktzzkDYeSTuIRMtD8S2N0TQG5qCsJq1sfd+ldnr4/fdM97L31btlcyNygYtO7+4BVYCidRcOm64Mru6qQS0hREtpHR6133VF7qay9YJRwQqdLc2jTJneMwoDh0qIi/WxagKwxYCWoHKw2Kza1piGDQchvlFztPOZCWQJkzndZi0dCn4TOr0DSlmF3tztyX7fOnM21yPCmskKrztIS85daNqW67kS4imMBjbTbipOlqQkPK0fZkfCMig9z/fB+m/BKqFadv5Q6A7k7gbVGpI3F2jUEJZYExEuoKqFmvDJ6Idpg4lIOZpIOg0LqB0pai5kaQOaID6hCMLgi+5vWfAtGOBXvCIaCN616/rVxeTsdnjHvRJNDnRlR2UuCW6Antwm2A51jmJzsfJT+bHQ7w/XeMNPkKv2pCcM4X68ncTbGKCr6mMRpfzS+yPpJelH040kKaQIYQpwOyH+z+dx0U86pfmBm7g/NhVHwS1Aeoo08CkqDcyZoF9mB7r/Nc2geiX+Gew7TI/GbzfO98b9Ff1+LztzZWFJjLfa61gYvfr1bgNdQVu034/A5b3e2T8AXPoHf29Hv2tvROGx/f2Z7dzz/seW99x09scbvfwD82t2HmQgAAA==</values>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:27:33</sys_updated_on>
+        <ui_id>83c6e11f-e93b-467c-9b7f-38bab9ae0a3b</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/8VT227aQBD9FeRnbBkMvvBWNYoUqW0qkuYliqzZ3TGstHid3XUCRfx7Z7GhJGrSNorax7memTNzbreBFMEsmGZZwnMcVYyJ8XgUV6mYVoVIcsRK8FERDIMaVkiZq1Y5afRjaZBrIyjwAKr1ke02hmmS5xMepiKpwkkxTkM2miRhBshYxopMFFk039dFvoWsBa53O+ohpG0UbG7eoRVfSiUM1sHs9m4YNGBobocmmG2fhdymwVIBQ0WIV87IekHlf0rHoXCuHwcXHvw1ijwUBewBhLx+otEwwLVDqibQCpTFYbCCWoDTZhPMnGnJYRDEZa02x4ylrB01C3zu2srv1DmP49hnVkjbceyiR7Ps2e3cfKklx8vGSV13HgdM9TVcq3ZVf+n28HfBCmibw13I01rqh40f2o/Rz1RdLfXj/AB47q9hjkGlOaijBY5YYK1D60/Syutn3HSeT8/vggpXhFiuoGnIUzZGP8g9Cg29ihaKjKhSxLpAKxd1BNxvGBGZEJ2T/2zvvgEj/bqfqQ0Ve7hvtbxv8cLfvWCYCp4WYZogfZ2YijBnYwgFpAlkVZYAj4PdntryvvVLdST1dJQdo5RguZGN+0AjPGC/+W540Fr16nOxn49Ez+u72o0t5VOl2Zb5XaPuw34loTcr4XjFoxh+P++h9ut+4MHVxg4uzl7eo5eDOUHqFTF+L0Uk46d6WJeWehZlo40DVboyJnUuJH2dpocpOZgF2JKeUrdGvyCeawK2rdkMPlK2Hsy7etgL6TVd/S32/xPh6UWe6vD0K/6JFDFNp0maJWGeQRJOkI9CSAWEWDA2zqFIipi/WYp3PwDlMdwY+AYAAA==</values>
     </sys_hub_action_instance_v2>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Atualizar registro">f9d01dd2c31332002841b63b12d3aea1</action_type>
-        <action_type_parent display_value="Atualizar registro">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
         <attributes/>
         <comment/>
         <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
@@ -269,37 +274,66 @@
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-28 12:33:57</sys_created_on>
         <sys_id>f6b048edfb7d2210f6d5f9d38eefdcbd</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 12:50:59</sys_updated_on>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:27:33</sys_updated_on>
         <ui_id>30bd6918-a95f-4a24-b688-772ee9e9bf9e</ui_id>
-        <values>H4sIAAAAAAAA/+1WwU7bQBD9lcjnOLJjJ8S5oSKkVipItOJC6Wp2PQ5brb3ueh0IUb6mh34IP8bY3oQUUooiqqoSOWXHO2/em3le78XSk6k39WJMgzAJxyIKo2gYBMNJHPJxxMNhGgFi6PW9AnKknQaFNimt56DqJrBcZqNRxnko/BEk6MdxiD6HMPbHIhsdxHGcJjwbnLV5qxVlprIqFSzOHQBFxJVUqcHCm15c9r0SDNWyaLzp8tEjuyiRKeCoKPFIizrHwvbeHxHGS3Wss89wJitr9A5pTRVapw6fySZIjxpGYdD38MZikSIVzEBV2PdyKFKw2iy8qTU1BQxCelqoxWbHlSxspzWHm0reEn4cNPsyJHHC9WGzZK5H6/ZoKfC0tFIXXcQCV+veaVXnxUknoekuZlAru9XduiI8LBvKDYmOYfbpSl+fresdy6JV59gqLUBtVmCtkby2WDUDQYVtU3IoS1nMWGn0XLbJRCUfzBQtBpnS11SzkrNiAKLhPaAGweCY4kdt+ByMbER8JBhKXrXi2fe6qdvJcIRZq7kVzNpB0dZKGFnaQwKeo6O56jsr89FzFhDJw7y3MB/sfMMqmmzCSm0sKGZZwGoGOa3kLQjQ7FttdPXUxYduy93Pux+6h70Pbtt+1v7cUOuddNReKmsrGRX8Rqfz9i8xZ+3Rq1l78o+s7Rj9Z97+k6OD4bOHGj5MujVxteXmurMroz6AmTV/aL6mgC91EETpcjmJxBjDMPMxibgfjw+En/CDzI8mHHgCGEDEBw6izdSr1dcnoGSAPUG7zA50+yXbh+aO/Ce4+zDdkb/rM/bW6r/X6j0PUcxpQBZ73Yj6L36b1gDvIC/bQ/zx67U+RF0BNncFNneEVztJw3HQ/t6uCq94Vbi8B8n6Iev3CgAA</values>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1WwU7bQBD9lcjnOLJjJ8S5ISGkVipItOJC6Wp2PQ5brb3ueh0IUb6mh34IP8bY3oQAKUURVVWJnLLjnTfvzTyv92LpydSbejGmQZiEYxGFUTQMguEkDvk44uEwjQAx9PpeATnSToNCm5TWc1B1E1gus9Eo4zwU/ggS9OM4RJ9DGPtjkY0O4jhOE54Nztq81YoyU1mVChbnDoAi4kqq1GDhTS8u+14JhmpZNN50+eSRXZTIFHBUlHikRZ1jYXsfjgjjtTrW2WdrIU+FNTVonTp0JpsgPWr4hEHfwxuLRYpULgNVYd/LoUjBarPwptbUFDAI6WmhFpsdV7KwndIcbip5S/hx0OzLkKQJ14XNkrkOrZujpcDT0kpddBELXK07p1WdFyedhKa3mEGt7FZv64rwsGwoNyQ6htnnK319tq53LItWnWOrtAC1WYG1RvLaYtWMAxW2TcmhLGUxY6XRc9kmE5V8MFO0GGRKX1PNSs6KAYiG94AaBINjih+14XMwshHxiWAoedWKZz/qpm4nwxFmreZWMGsHRVsrYWRpDwl4jo7mqu+MzEcvGUAkD/Pewnww8w2raLIJK7WxoJhlAasZ5LSStyBAs++10dVzDx+6LXe/7n7qHvY+um37GftLQ6130lF7raxHyb+R6az9KOacPXozZ0/+kbMdo//M2n8ydDB88UTbmnTr4WrLzHXnVkZ9ADNr/tB8TQFf6yCI0uVyEokxhmHmYxJxPx4fCD/hB5kfTTjwBDCAiA8cRJupV6tvz0DJAHuCdpkd6PY7tg/NHfnPcPdhuiN/1zfsvdV/r9V7nqGY04As9roR9V/9Nq0BjiWqtNrxeq0PUVeAzV2BzRXhzU7ScBy0v/ebwhveFC7vAdNBl7P0CgAA</values>
     </sys_hub_action_instance_v2>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Get MRVS Values (Amortization and Interest)">9b73c8e1fbbd2210f6d5f9d38eefdc17</action_type>
-        <action_type_parent display_value="Get MRVS Values (Amortization and Interest)">8ca18821fbbd2210f6d5f9d38eefdc7d</action_type_parent>
+        <action_type display_value="Create Record">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent display_value="Create Record">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
         <attributes/>
         <comment/>
-        <compiled_snapshot/>
+        <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
         <display_text/>
         <flow display_value="Amortization and Interest">6eb048edfb7d2210f6d5f9d38eefdc6f</flow>
         <generation_source/>
-        <order>5</order>
-        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <order>9</order>
+        <parent_ui_id>bbf158a1-4051-412a-803b-c34c3913e71b</parent_ui_id>
         <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
-        <sys_created_on>2025-05-28 12:50:58</sys_created_on>
-        <sys_id>40a4c865fbbd2210f6d5f9d38eefdcc3</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_created_on>2025-05-28 12:33:57</sys_created_on>
+        <sys_id>bab048edfb7d2210f6d5f9d38eefdcbd</sys_id>
+        <sys_mod_count>4</sys_mod_count>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 12:51:04</sys_updated_on>
-        <ui_id>83c6e11f-e93b-467c-9b7f-38bab9ae0a3b</ui_id>
-        <values>H4sIAAAAAAAA/8VT227bMAz9lcDPseHYiS95G1YUKLCtQ9r1pSgESqITAfKlstwmC/Lvo2InS4u124piexSpw0Me8txuPSW9uTdL01hkOCk4l1E0CYtEzopcxhliIcUk98ZeBSXSz7LTVpn6kRkUtZGUeADducx2G8IszrKp8BMZF/40jxKfT6axnwJynvI8lXkaLPa4wJVQlcT1bkc1pGobDZubdyglVkpLg5U3v70bew0Y6tui8ebbZym7aZBp4KiJ8coaVS0J/qdyHICL+nF04chfk8hRUaI9kFDUdTQZe7i2SGgiLUC3OPZKqCTY2my8uTUdBQyCvKz05vhjpSpLxTz3d92q71Q5C8PQ/SyQphPYZ49PNqjbh8WqVgIvG6vqqo9Y4HrAiFp3ZfWln8PtBQugaQ57oUjXUj1sXNOujaGn4mpVPy4OhOduG+aY1LUAfXyBJRV4Z7F1K+nU9TNt+sin53tBjSUxshKahiKsMfWD2rNQ02Ww1PQICk2qS2zVsgpAuAkDEhOCc4qf7cM3YJQb9zOVIbCj+1ap+w4v3N5zjokUSe4nMdLVyZn0Mx6BLyGJIS3SGETo7fbSsvvODdWLNMjBekXpQyuMauwHauEBh8l344PXilePi/88JDpeV7XdtEw9dVrbcTdr0F/Yryz0Zicct3g0w+/7PWC/7hseXW3a0cXZy3MMdjAnTIMjovdyRBw99cOatVQzZ01tLGhmWUjuXCq6upoOhgkwS2gZHWXdmfoF8ywGwEji6OMeMLo+Al621d9S/z8Pni7kqQ1Pj+KfOBGTZBYnaexnKcT+FMXEh0SCjznnUQZ5nIfizU68+wFK8HHT9wYAAA==</values>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:27:34</sys_updated_on>
+        <ui_id>070c3028-da05-4dc4-afc6-b2410b50b51a</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VwW7bMAz9lUBnx7DjLE1yKzDkMGAtsA29dJ1A23SiQZY8WU6TBvmaHfYh/bFRtpJlbQJ0wYBtwHKKKPLxPZKibzdM5GzKRjFGrybxKEviJBlE0WA8jNNRksaDPAHEIQuYghLJ00IqkbeHgC1BNs644nWO+YRX2liQ3PKINxxKOokHyEDzz43RNQXkoq4krG983KV3efz2+FX3sPfGu2ULIXODik1v7wJWgaF0Fg2bbp5c2XWFXEKKktA+OGq9q47aS2X9FHxCpsvy1KZN7ghFAcOVRUXy2bQAWWPASlA5WG3WbGpNQwaDkF8rud57LISyBMic76oWD4Q+jpxfgSQtw+5uf+S+bJ05W2iR4XVlhVadpSXmL7VsSnXViXAFxwIaaXcFJ0tTEx5WjrIj4RkV7xf6/t0u4UyoVp2/lDoDuT+BtUakjcXa9QMllgTES6gqoea8Mnop2mDiUoZzSYewkPqektZirkLIHPGQKgThjOyvW/MNGOFUvCUYCt626vmXxuXtdHjGvBNNDnVmRGUvCW6Jntw22M1zjtHkZOPj9Eej2xGuD2aZBlfpj00UJflmM06yEcZx0cdJkvaHo4usP0kvin4yTiGdAEaQpCH5b7efmm7IOdUPzNz9obkwCn4JykO0kUdBaXDOBO0iO9DDp3kOzSPxz3DPYXokfrt9vjb+t+jva9GZKxtLaqzFXtfa4MWvdwcwEyjz+shz3u1sn4AvfQK/t+PftbfjUdT+/sz27nj+Y8v74Dt6Yo3ffQeG4J3PmAgAAA==</values>
     </sys_hub_action_instance_v2>
     <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=6eb048edfb7d2210f6d5f9d38eefdc6f"/>
-    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=6eb048edfb7d2210f6d5f9d38eefdc6f^sys_idNOT IN7ab048edfb7d2210f6d5f9d38eefdcba,fab048edfb7d2210f6d5f9d38eefdcbb,f2b048edfb7d2210f6d5f9d38eefdcbb"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=6eb048edfb7d2210f6d5f9d38eefdc6f^sys_idNOT INf2b048edfb7d2210f6d5f9d38eefdcbb,7ab048edfb7d2210f6d5f9d38eefdcba,fab048edfb7d2210f6d5f9d38eefdcbb"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">612b3741fbf1621086e7f4045eefdcde</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Amortization and Interest">6eb048edfb7d2210f6d5f9d38eefdc6f</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>6</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 12:33:57</sys_created_on>
+        <sys_id>f2b048edfb7d2210f6d5f9d38eefdcbb</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:27:33</sys_updated_on>
+        <ui_id>cc765906-5769-430a-b4ae-373f078cb540</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Uy27TQBT9Fctrx/IzkOwioBISUIlG3UBlXc8jGTGeMTPjpCHKv3PHjzaiqYCKJTvPua9z7j3yMdSdaztn13plrdiocPnlLgqF8hh+H0MFDQuXIdGKCie0qnogCncgOx+4BalNQFmwUjp4pzDPGaA6UBCsoWYSgiuhQGIFFbaVcLj960KyFZIaNnJrwSADx0y4PP4ScoeWVdIXY/8bZ4TaYLmg+OIJ8HRBUpJn8zxLkux1kdbzvE4zmgODHPOmwjeT1OBDj0TP7sDPQ9xOk7ShnlaaRCG7d0xRhqM5SMuisAFFwWlzeEAMA3qt5COwFcphu9An31vxA3tnZekTOUONhA3Bh2c1bnSAyVYLwq5bT3BAHNRyrCFado36NOjwt2AcOummWyDSWezHWk/asxgp8Zut3n+eBuJBeoFjUGqC95le4HANdeeY9YdhkjXYqGqgbXE5VWv0TvTFyKWJNxIfMZd6j0O972IgnniMO4L4CvG3PXwLRngVH7ENFg80a7CCVL1HsZ0zKOHUr6X63nlCg8BRSjVsAxMsMaJ1K5yzYyPrU/TU4GfePh55WfK6TsmshAWbFUXKZjWkxWxOePmqKAq6qHlsHbjOnk5fuyTJafLU6i/u8y+cv4CSl2lSXnZ+Mb/k/Auef97u2W/s7g/0h25PkuS/3c/tLmw12HbU1g9/sdvvvLWHCXbwDWVEWCSy9tj76a/vAwc0gCDn0F6bb17CI3b6CQQGB94/BgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
     <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
         <attributes/>
         <block display_value="">212b3741fbf1621086e7f4045eefdcdc</block>
@@ -310,7 +344,7 @@
         <flow display_value="Amortization and Interest">6eb048edfb7d2210f6d5f9d38eefdc6f</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Para cada">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
+        <logic_definition display_value="For Each">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
         <order>2</order>
         <outputs_assigned/>
         <parent_ui_id/>
@@ -318,12 +352,13 @@
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-28 12:33:57</sys_created_on>
         <sys_id>7ab048edfb7d2210f6d5f9d38eefdcba</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 12:51:04</sys_updated_on>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:27:33</sys_updated_on>
         <ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</ui_id>
-        <values>H4sIAAAAAAAA/51STW/bMAz9Lzonhj+ypM6twFCgh61AV/QyFAYl0YkwWdIkOaln+L+Pip106HEnm498j48iR2b76PoYXux9COpg2P7n24opkzD6H5mBDtmeqYhdYCt2At2neBx5ISpZCFzfVQWsN7zla/6l5usWRLXb7na4aevsGYX1MkwTUaUKTsPw+v8K4qi09LiYdODJW0TP9uOnVBwcNho4amq0KBBfSQqLWrZ1kdeiKrdVmefl3abg24oXpawA5ZbqrszHiCbxPr1BUqfQ33Tpk1yU+YrhO3EkUqMWdMAV68BIiNYPbB99T4BHkE9GD7eKozKR5FiqfQ/qD2kXeZ4KW6SJBM7JW9gsDznD4miVwCcXlTUzEoHrhSOs7jvzfbafVoAt9DpeV0BIH0gPXfKcXCyW2h9He36+NnxQ5jLfktRWgL5FEKNXvI8Y0hpQY0dCTQfOKXNonLcndSGTly47aAqyVtszNU3nloFIxjN6IsgeCP96gV/BqzTFN5Ih8nSZvvndp77zHIvjZh6aCoLwysV7kjvhYm56S/c6K4X5MCQKFajhS8Ier1eeEgMtWYl/obP1v5LVD2z6C+JmBEcvAwAA</values>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/51STW/bMAz9Lzonhj+ypM6twFCgh61AV/QyFAYl0YkwWdIkOaln+L+Pip106HEnm4/k43siR2b76PoYXux9COpg2P7n24opkzD6H5mBDtmeqYhdYCt2At2neBx5ISpZCFzfVQWsN7zla/6l5usWRLXb7na4aevsGYX1MkwTtUoVnIbh9f8ZxFFp6XER6cCTtoie7cdPqTg4bDRw1DRoYaB+JSksatnWRV6LqtxWZZ6Xd5uCbytelLIClFuqu3Y+LqY/vUFip9DfeOmTVJT5iuF7RCORBrWgA65YB0ZCtH5g++h7AjyCfDJ6uFUclYlEx1Lte1B/iLvI81TYIjkSOCdvYbM85AyLo1UCn1xU1sxIBK6XHmF135nvs/y0Amyh1/G6AkL6QHzokuakYpHU/jja8/N14IMyF39LUlsB+hZBjF7xPmJIa0CNHRE1HTinzKFx3p7UpZm0dNlBU5C12p5paDq3DEQSntETQfZA+NcL/ApeJRffiIaap4v75nef5s4+FsXNbJoKgvDKxXuiO+EibnpL9zozhfkwJAoVaOBLwh6vV54SAy1ZiX+hs/W/ktQPbPoLPlHA5y8DAAA=</values>
         <workflow_reference/>
     </sys_hub_flow_logic_instance_v2>
     <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
@@ -336,7 +371,7 @@
         <flow display_value="Amortization and Interest">6eb048edfb7d2210f6d5f9d38eefdc6f</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Outro">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
         <order>8</order>
         <outputs_assigned/>
         <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
@@ -344,38 +379,13 @@
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-28 12:33:57</sys_created_on>
         <sys_id>fab048edfb7d2210f6d5f9d38eefdcbb</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 12:51:04</sys_updated_on>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:27:34</sys_updated_on>
         <ui_id>bbf158a1-4051-412a-803b-c34c3913e71b</ui_id>
+        <updation_source/>
         <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
-        <workflow_reference/>
-    </sys_hub_flow_logic_instance_v2>
-    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
-        <attributes/>
-        <block display_value="">612b3741fbf1621086e7f4045eefdcde</block>
-        <comment/>
-        <connected_to/>
-        <decision_table/>
-        <display_text/>
-        <flow display_value="Amortization and Interest">6eb048edfb7d2210f6d5f9d38eefdc6f</flow>
-        <flow_variables_assigned/>
-        <generation_source/>
-        <logic_definition display_value="Se">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
-        <order>6</order>
-        <outputs_assigned/>
-        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
-        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
-        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
-        <sys_created_on>2025-05-28 12:33:57</sys_created_on>
-        <sys_id>f2b048edfb7d2210f6d5f9d38eefdcbb</sys_id>
-        <sys_mod_count>4</sys_mod_count>
-        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 12:51:04</sys_updated_on>
-        <ui_id>cc765906-5769-430a-b4ae-373f078cb540</ui_id>
-        <values>H4sIAAAAAAAA/+1Uy27TQBT9FcvrJPIzkOwioBILqNRG2UBlXc8jGTGeMTPjpCHK17DgA/iE/Fjv+NFGlPKoWLLznPs6594jH0LduLpxdqkX1oq1CucfbkahUB7D70OooGLhPCRaUeGEVkULjMItyMYHViC1CSgLFkoHbxTmOQNUBwqCJZRMQnAhFEisoMLWEvarvy4kGyGpYT23GgwycMyE88MPIbevWSF9Mfa/dkaoNZYLii8eAY9nJCZpMk2TKEpeZnE5Tcs4oSkwSDFvKLw6fXeN1AGFoFV9+nb6qjH+1Cb8VMTtME8b6snF0Shkt44pypAAB2nZKKxAUXDa7O8Rw4BeKvkAbIRy2C70ybdWfMHeSZ77RM5QKWFd8P5Z9HvtYLLRgrDL2hPsEAel7GuIlk2l3nc6/EUYh0a64SKINBb7sdqT9ix6Svx6o3dXw0A8SyuwD0pN8ErDCxyuoWwcs/48TLIKGxUV1DUup6iN3oq2GLlUk7XEx4RLvcOh3n0TIJ74BHcEkwvEX7fwCozwKt5hGyzuaJZgBSlap2I7Z1DCsV1L8bnxhDqBvZSi2wYmWGJE7RY4Z8t61sfRY5ufOfxw4HnOyzIm4xxmbJxlMRuXEGfjKeH5iyzL6KzkE+vANfZ4/NhEUUqjx4Z/dp9/4f8Z5DyPo/zn/s+mZ/5/9SvTP+335Dd+9xf6Q7tHUfTf7+d+F7bofNtra4c/2+433tvdBNsZhzIiLBJZeuzt8PP3gT0aQJBzaKfNJy/hATveAf3ikJVGBgAA</values>
         <workflow_reference/>
     </sys_hub_flow_logic_instance_v2>
     <sys_hub_pill_compound action="delete_multiple" query="attached_to=6eb048edfb7d2210f6d5f9d38eefdc6f"/>
@@ -403,6 +413,29 @@
         <url/>
         <url_target/>
     </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>record</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_6eb048edfb7d2210f6d5f9d38eefdc6f</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-06-04 20:27:33</sys_created_on>
+        <sys_id>7c403973fb756a10f6d5f9d38eefdc28</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:27:33</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
     <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_6eb048edfb7d2210f6d5f9d38eefdc6f"/>
     <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_6eb048edfb7d2210f6d5f9d38eefdc6f"/>
     <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
@@ -419,14 +452,14 @@
         <description/>
         <flow_priority>MEDIUM</flow_priority>
         <internal_name>amortization_and_interest</internal_name>
-        <label_cache>[{"name":"83c6e11f-e93b-467c-9b7f-38bab9ae0a3b.ano","label":"5 - Get MRVS Values (Amortization and Interest)➛Ano","reference_display":"Ano","type":"string","base_type":"string","usedInstances":{"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_ano"]},"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiType":"string","uiUniqueId":"921bac8b-356b-4575-9000-92f18a2bdd28"}},{"name":"83c6e11f-e93b-467c-9b7f-38bab9ae0a3b.amortizacao_externa","label":"5 - Get MRVS Values (Amortization and Interest)➛Amortizacao Externa","reference_display":"Amortizacao Externa","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_amortizacao_externa"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_amortizacao_externa"]},"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiType":"string","uiUniqueId":"6fd5e870-abf5-453b-b0a8-5c783d72293a"}},{"name":"83c6e11f-e93b-467c-9b7f-38bab9ae0a3b.amortizacao_interna","label":"5 - Get MRVS Values (Amortization and Interest)➛Amortizacao Interna","reference_display":"Amortizacao Interna","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_amortizacao_interna"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_amortizacao_interna"]},"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiType":"string","uiUniqueId":"7c2e5cfd-8b47-4fb8-8367-2fb8ca3abbf5"}},{"name":"83c6e11f-e93b-467c-9b7f-38bab9ae0a3b.juros_interno","label":"5 - Get MRVS Values (Amortization and Interest)➛Juros Interno","reference_display":"Juros Interno","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_juros_encargos_interna"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_juros_encargos_interna"]},"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiType":"string","uiUniqueId":"27ee82ef-daab-4b84-ba73-d97b180bb72a"}},{"name":"83c6e11f-e93b-467c-9b7f-38bab9ae0a3b.juros_externo","label":"5 - Get MRVS Values (Amortization and Interest)➛Juros Externo","reference_display":"Juros Externo","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_juros_encargos_externa"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_juros_encargos_externa"]},"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiType":"string","uiUniqueId":"942d7520-1be4-4a31-adcf-09df5ffa937a"}},{"name":"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf.__action_status__","label":"3 - Pesquisar registro➛Status da ação","reference_display":"Status da ação","type":"object","base_type":"object","usedInstances":{},"attributes":{"uiType":"object","co_type_name":"FDACTIONSTATUS","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf.status","label":"3 - Pesquisar registro➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Erro","value":"1","order":0.0},{"label":"Êxito","value":"0","order":1.0}],"usedInstances":{"cc765906-5769-430a-b4ae-373f078cb540":["condition"]},"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf.Record","label":"3 - Pesquisar registro➛Amortização e Juros Record","reference":"x_sded9_portal_t_0_u_amortizacao_juros","reference_display":"Amortização e Juros","type":"reference","base_type":"reference","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["record"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"0a53884c-6d3f-4926-b143-7aebb7b97d97.Record","label":"4 - Pesquisar registro➛Multi Row Question Answer Record","reference":"sc_multi_row_question_answer","reference_display":"Resposta para a pergunta de várias linhas","type":"reference","base_type":"reference","usedInstances":{},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"0a53884c-6d3f-4926-b143-7aebb7b97d97.status","label":"4 - Pesquisar registro➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Erro","value":"1","order":0.0},{"label":"Êxito","value":"0","order":1.0}],"usedInstances":{},"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"0a53884c-6d3f-4926-b143-7aebb7b97d97.Record.row_index","label":"4 - Pesquisar registro➛Multi Row Question Answer Record➛Índice de linha","reference":"","reference_display":"Índice de linha","type":"long","base_type":"long","parent_table_name":"sc_multi_row_question_answer","column_name":"row_index","usedInstances":{"39268173-2ed3-4659-805a-84b15f1045a3":["multirow_record"],"c89a2cab-c4b6-4d9a-a522-66df72662c5e":["multirow_record"],"fb48067c-f6f5-45ab-b1f7-87e39e2b4f53":["multirow_record"],"83c6e11f-e93b-467c-9b7f-38bab9ae0a3b":["multirow_record"]}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.row_index","label":"2 - For Each➛Multi Row Question Answer Record➛Row index","reference":"","reference_display":"Row index","type":"long","base_type":"long","parent_table_name":"sc_multi_row_question_answer","column_name":"row_index","usedInstances":{"0a53884c-6d3f-4926-b143-7aebb7b97d97":["conditions"]}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.value","label":"2 - Para cada➛Resposta para a pergunta de várias linhas Record➛Valor","reference":"","reference_display":"Valor","type":"string","base_type":"string","parent_table_name":"sc_multi_row_question_answer","column_name":"value","usedInstances":{"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf":["conditions"]}},{"name":"b1c3d1ce-831a-4bfb-b59b-fac37677e4f9.Records","label":"1 - Pesquisar registros➛Multi Row Question Answer Records","reference":"sc_multi_row_question_answer","reference_display":"Resposta para a pergunta de várias linhas","type":"records","base_type":"records","usedInstances":{"20fde648-3ced-4596-b1ac-b39b687a2a96":["items"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"subflow.record","label":"Entrada➛Record","reference":"x_sded9_portal_t_0_registro_de_cargas_tesouro","reference_display":"Registro de Cargas Tesouro","type":"reference","base_type":"reference","column_name":"","usedInstances":{"b1c3d1ce-831a-4bfb-b59b-fac37677e4f9":["conditions"],"0a53884c-6d3f-4926-b143-7aebb7b97d97":["conditions"],"39268173-2ed3-4659-805a-84b15f1045a3":["parent_sys_id"],"c89a2cab-c4b6-4d9a-a522-66df72662c5e":["parent_sys_id"],"fb48067c-f6f5-45ab-b1f7-87e39e2b4f53":["parent_sys_id"],"83c6e11f-e93b-467c-9b7f-38bab9ae0a3b":["parent_sys_id"]},"attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"f4b7b973-3190-4871-8403-baaef11efe7b","sourceUiUniqueId":"","sourceType":"","sourceId":""}}]</label_cache>
+        <label_cache>[{"name":"subflow.record","label":"Entrada➛Record","reference":"x_sded9_portal_t_0_registro_de_cargas_tesouro","reference_display":"Treasury Cargo Registration","type":"reference","base_type":"reference","column_name":"","usedInstances":{"b1c3d1ce-831a-4bfb-b59b-fac37677e4f9":["conditions"],"0a53884c-6d3f-4926-b143-7aebb7b97d97":["conditions"],"39268173-2ed3-4659-805a-84b15f1045a3":["parent_sys_id"],"c89a2cab-c4b6-4d9a-a522-66df72662c5e":["parent_sys_id"],"fb48067c-f6f5-45ab-b1f7-87e39e2b4f53":["parent_sys_id"],"83c6e11f-e93b-467c-9b7f-38bab9ae0a3b":["parent_sys_id"]},"attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"f4b7b973-3190-4871-8403-baaef11efe7b","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"b1c3d1ce-831a-4bfb-b59b-fac37677e4f9.Records","label":"1 - Look Up Records➛Multi Row Question Answer Records","reference":"sc_multi_row_question_answer","reference_display":"Multi Row Question Answer","type":"records","base_type":"records","usedInstances":{"20fde648-3ced-4596-b1ac-b39b687a2a96":["items"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.value","label":"2 - Para cada➛Resposta para a pergunta de várias linhas Record➛Valor","reference":"","reference_display":"Valor","type":"string","base_type":"string","parent_table_name":"sc_multi_row_question_answer","column_name":"value","usedInstances":{"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf":["conditions"]}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.row_index","label":"2 - For Each➛Multi Row Question Answer Record➛Row index","reference":"","reference_display":"Row index","type":"long","base_type":"long","parent_table_name":"sc_multi_row_question_answer","column_name":"row_index","usedInstances":{"0a53884c-6d3f-4926-b143-7aebb7b97d97":["conditions"]}},{"name":"0a53884c-6d3f-4926-b143-7aebb7b97d97.Record.row_index","label":"4 - Look Up Record➛Multi Row Question Answer Record➛Índice de linha","reference":"","reference_display":"Índice de linha","type":"long","base_type":"long","parent_table_name":"sc_multi_row_question_answer","column_name":"row_index","usedInstances":{"39268173-2ed3-4659-805a-84b15f1045a3":["multirow_record"],"c89a2cab-c4b6-4d9a-a522-66df72662c5e":["multirow_record"],"fb48067c-f6f5-45ab-b1f7-87e39e2b4f53":["multirow_record"],"83c6e11f-e93b-467c-9b7f-38bab9ae0a3b":["multirow_record"]}},{"name":"0a53884c-6d3f-4926-b143-7aebb7b97d97.status","label":"4 - Look Up Record➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Error","value":"1","order":0.0},{"label":"Success","value":"0","order":1.0}],"usedInstances":{},"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"0a53884c-6d3f-4926-b143-7aebb7b97d97.Record","label":"4 - Look Up Record➛Multi Row Question Answer Record","reference":"sc_multi_row_question_answer","reference_display":"Multi Row Question Answer","type":"reference","base_type":"reference","usedInstances":{},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf.Record","label":"3 - Look Up Record➛Amortização e Juros Record","reference":"x_sded9_portal_t_0_u_amortizacao_juros","reference_display":"Amortization and Interest","type":"reference","base_type":"reference","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["record"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf.status","label":"3 - Look Up Record➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Error","value":"1","order":0.0},{"label":"Success","value":"0","order":1.0}],"usedInstances":{"cc765906-5769-430a-b4ae-373f078cb540":["condition"]},"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf.__action_status__","label":"3 - Look Up Record➛Action Status","reference_display":"Action Status","type":"object","base_type":"object","usedInstances":{},"attributes":{"uiType":"object","co_type_name":"FDACTIONSTATUS","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"83c6e11f-e93b-467c-9b7f-38bab9ae0a3b.juros_externo","label":"5 - Get MRVS Values (Amortization and Interest)➛Juros Externo","reference_display":"Juros Externo","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_juros_encargos_externa"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_juros_encargos_externa"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"942d7520-1be4-4a31-adcf-09df5ffa937a"}},{"name":"83c6e11f-e93b-467c-9b7f-38bab9ae0a3b.juros_interno","label":"5 - Get MRVS Values (Amortization and Interest)➛Juros Interno","reference_display":"Juros Interno","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_juros_encargos_interna"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_juros_encargos_interna"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"27ee82ef-daab-4b84-ba73-d97b180bb72a"}},{"name":"83c6e11f-e93b-467c-9b7f-38bab9ae0a3b.amortizacao_interna","label":"5 - Get MRVS Values (Amortization and Interest)➛Amortizacao Interna","reference_display":"Amortizacao Interna","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_amortizacao_interna"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_amortizacao_interna"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"7c2e5cfd-8b47-4fb8-8367-2fb8ca3abbf5"}},{"name":"83c6e11f-e93b-467c-9b7f-38bab9ae0a3b.amortizacao_externa","label":"5 - Get MRVS Values (Amortization and Interest)➛Amortizacao Externa","reference_display":"Amortizacao Externa","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_amortizacao_externa"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_amortizacao_externa"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"6fd5e870-abf5-453b-b0a8-5c783d72293a"}},{"name":"83c6e11f-e93b-467c-9b7f-38bab9ae0a3b.ano","label":"5 - Get MRVS Values (Amortization and Interest)➛Ano","reference_display":"Ano","type":"string","base_type":"string","usedInstances":{"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_ano"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"921bac8b-356b-4575-9000-92f18a2bdd28"}}]</label_cache>
         <master>true</master>
         <name>Amortization and Interest</name>
         <natlang/>
         <outputs/>
         <parent_flow display_value="Amortization and Interest">6eb048edfb7d2210f6d5f9d38eefdc6f</parent_flow>
         <remote_trigger_id/>
-        <run_as>user</run_as>
+        <run_as>system</run_as>
         <run_with_roles/>
         <sc_callable>false</sc_callable>
         <status>published</status>
@@ -436,15 +469,15 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>f5a40c65fbbd2210f6d5f9d38eefdcb8</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name/>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 12:51:05</sys_updated_on>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:27:36</sys_updated_on>
         <type>subflow</type>
         <version>2</version>
     </sys_hub_flow_snapshot>
@@ -514,7 +547,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Referência">reference</internal_type>
+        <internal_type display_value="Reference">reference</internal_type>
         <label>Record</label>
         <mandatory>true</mandatory>
         <max_length>32</max_length>
@@ -567,8 +600,8 @@
     <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=f5a40c65fbbd2210f6d5f9d38eefdcb8"/>
     <sys_hub_action_instance_v2 action="delete_multiple" query="flow=f5a40c65fbbd2210f6d5f9d38eefdcb8^sys_idNOT IN0aa44c65fbbd2210f6d5f9d38eefdc19,caa44c65fbbd2210f6d5f9d38eefdc19,8ea44c65fbbd2210f6d5f9d38eefdc19,82a44c65fbbd2210f6d5f9d38eefdc1a,46a44c65fbbd2210f6d5f9d38eefdc1a,0aa44c65fbbd2210f6d5f9d38eefdc1a"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Pesquisar registros">43400a1587003300663ca1bb36cb0b4b</action_type>
-        <action_type_parent display_value="Pesquisar registros">d1c56ec50b30030085c083eb37673a50</action_type_parent>
+        <action_type display_value="Look Up Records">43400a1587003300663ca1bb36cb0b4b</action_type>
+        <action_type_parent display_value="Look Up Records">d1c56ec50b30030085c083eb37673a50</action_type_parent>
         <attributes/>
         <comment/>
         <compiled_snapshot>43400a1587003300663ca1bb36cb0b4b</compiled_snapshot>
@@ -581,16 +614,17 @@
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-28 12:51:06</sys_created_on>
         <sys_id>0aa44c65fbbd2210f6d5f9d38eefdc19</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 12:51:06</sys_updated_on>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:27:36</sys_updated_on>
         <ui_id>b1c3d1ce-831a-4bfb-b59b-fac37677e4f9</ui_id>
-        <values>H4sIAAAAAAAA/+VX2WobMRT9lWGejRnH2Zq3kBAoZKFJyUuaCo2ksUU10lTSeInxx5Q+lH5AvyA/1itpxh68pDY4kNAnM3eRzr33HEl+mMScxifxcbafJLhzcHyUJN1ukhwedgnupGn3kKRJup/GrVjinEGkxalg8DnAonTfhqC8FJYjrYboe8mM5UoiLM2QaQij3BQCj++r6CsXGt2qYfSpCo1O61DS54JqJuOTh8dWXGANG1rwnEwWXJsiFjhlAkI/u1+8XIIdF7NP5H3BdjnPEyy6Dg6lqcOStGI2skxSBiAyLAxrxTmWFFulxzOLZpjeSDE39Lm0sGLsgkeGP8G+x4mLyxiURVjwzT5R1bZgzs6xxXdWl8SWugolfcUJM6EhlGUYGnvWtIWAm8L1OKSEskO2EmUur0M74tkC9ZTAUhoAwQpXqENelZHd9dXwtkZ5waXvSeUUimAx+8LWap6W1uGZxEywHBZCOS4KLnuo0GrAfTJgyds9AR/tTACFKDO8J9uYOOBt6CtuX4D93JvvseauiitYxnMm4wIogsIIjSq1b+UAEVEa79DAxLBWPG3FZmzOBDZmXjm0HFjrcIc+VBWj0DSXQjQv7CksMWBVcdPWRqo5SOaUI0pS7lCYhnS4ZTlSfkJIsmHbxX4pYSk6AAGpryABB4XTYJxMTJm6HrU1I0DH6XRZX7tYcpc69D2odXjmmvD86/kPM2s6UylyyXbZXKF2VIrs7EyRUMh70iRs/vYkub3IQgv+oTRy9CLLDuZ8MkpbFHrZkJq7nFxrRsuSabq2o/4GoGrq3wBXJdZRofQ6qBX3M84EXXUbXTjHwm2093/eRm+S+QCIojA9LgWX/mkBQF9LEsnLB++HBZ55ejWebc6GDVnWA46wff4dPW0thw0AzV5kvFARZZFvCs84wXAt/FSrIdeXgqfQ4oVQGytBdHcmiO7ebgQxmRXdaOyKKdTvSzffOuMpZODFDKBlI6UzXSW6LfftbL/v3nRZ2N2tlN0kYfCcr+Xijh+ka7Taes3DoQ+p1X4oKBsNOe0xO9+9jqLKDrH4tspfcQ/Vw/LlvcLjdv9FOR925mIFzSDNDIyv+brtwGtq+XTptIN5u6NlAyx1O66ef4x47k+XW48JU2XWYa2OFlA/6/kpNc+WjzNrRfj9Hb403+xtW49tpR7r6b2Lf4e7k8TjX/G64fAnEQAA</values>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VXXU/bMBT9K1GeqyihpTDeEAhpEh8aIF4YsxzHaa05cWY7/aDqf9917KRRG1grBQm0R997bZ97fI7jPK98lvhn/mk6CkMcHZ+ehOFwGIbj8ZDgKI6HYxKH8Sj2B36OMwqVGsecwnCGeWnGiqCs5JohKeboT0mVZiJHOFdzKqEsYargePnkqm9MqXcv5t4PV+qd16Vkyngiae6fPb8M/AJL2FBD5my1ldoXMccx5VD66CBvdaCXRTNEVc7GrtvTvFubEDIxUMKBTxea5gkFDCnmig78DOcJ1kIum4ikOLnL+SYwZbmGFX1TvFDsFfY9DU1dSqErQm2uGSLHmg2nl1jjBy1LokvpSslUMEKV5SOhKQZeL9oxW3BXGIrtFNu2nS14meW3lg6/WaA+JIiUCkDQwjRqkLs20oepmN/XKK9YXnHiklwQzJsR1lqyuNQGz8qnnGawEMpwUbB8ggopZqyaDFiyYMJhEKQcFJRQxSZ5gIkBHgCvOLiC+GUVfsKSmS5uYJlKMinjoBBkj1CJUlZUzhDhpaoSEoRo1/LXA18t1QXHSm06B8pBtAa35cF1jCxpZgqRrNDnsMSMuubWg71McxxuJEdEnjCDQrWcwzTNkKhOCOV0HpjanyUslczAP+IXOMBAYYkNrlaqjA1HgaQE5Lhe79qrjyX7tGHFQW3DizYJXcQ4Q+7ErrsWcIaMejMk9PGVLAmbfz5HHu4xS8E/jEZO3hXZ8UZPSkiNLJctp5lPk6FmseuYduow5e8Bqlb+ndGqFy/fwumEnzLKk64v0ZVJbH2Jjv7PL9GnlD0ASpA9PZZzllfPCgD6UX4I3790v23prJJX68VmYliRXTNgTwvv9WAn7AGndsID7O09WjwdEOsvQCWZ7du/DjoDDHszwPCoHwOsmjYbIjs4r1+S5jTr+ldTj7frQYKtCdG6y2AH7RkduufRetfAw4Mc3BabzVy+obmen5xvOHLwkVfAFKa6/ZD1L5qzZEL1Zve6KhF6jvnvrrxTHKoPqmrvA56vo3dtO442FgWnIEkVHF77/RrBg2n3DokCGz7sCtkDS03HDV549w2YToTuGgGn00l1Nu175HsTdSIf9fiE/LRf0vqwOj1Yn9mX+OvrzwgvfwGBSiNC/hAAAA==</values>
     </sys_hub_action_instance_v2>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Pesquisar registro">9d09f99587003300663ca1bb36cb0ba3</action_type>
-        <action_type_parent display_value="Pesquisar registro">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
         <attributes/>
         <comment/>
         <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
@@ -603,16 +637,17 @@
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-28 12:51:06</sys_created_on>
         <sys_id>caa44c65fbbd2210f6d5f9d38eefdc19</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 12:51:06</sys_updated_on>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:27:36</sys_updated_on>
         <ui_id>f55fbb1c-5a9e-441e-ba14-6cf57444d9bf</ui_id>
-        <values>H4sIAAAAAAAA/+VY227jNhD9FUHPtitZvilviwQBWmwTYJPuy3ZBjEgqZkuJWpJyLoY/ZtGHoh/QL8iPdSRKtmE7iY11gAR9MjjkkGeG5wxH/jL3BfNPfBYHcRrHw8k4CKIoCEajiEKYJNGIJkECA7/j55BxXGkhkRyHM5BlNb4jhnEWk0JpC5JYEpCSQIYj8QAUFPmj1MqgAxOmkHD/ufH70Cx5/PvxL+Vx75dmGZ0KyTTP/ZMvXzt+ARqPtVz7J/ONqX1xS0i4xKXX1S9sB2Lvi+WQ1HPO9nHlJ7l34SaUZhWWoOPzO8tzjNw/SUEa3vEzyBlYpe+XFs2BXeZyZZiK3OKOfrX4zogHPHcSVOtSjmFR7uaWQ9KkzJnTM7BwZXVJbambpXSqBOXGJYTxFEppT9dtbsFlYYXKnYsL23krWWb5hUuHv9ygvSG0lAZB8KIKtELehJFeTdXtpxblucjrnDSTUlGQyxFYq0VS2grP3OeSZ7gRyaAoRH5DCq1monZGLFnvRuKgl0p1i4cacZP3gFbAe5hX6J2j/aw2fwYtqih+xW3QGQEJiRQh7gqNKnWdyhmhsjT1hIbcuL38Rcc39+ZUgjGryDHl5FtZ4XZ5aCImLmmVC9WisB9wixlvglt0Wu0Mn+VgvKIcVTkTFQqzJiBUS65+L9GXzef9IGV8NJh0I8pZdzCMR90kBNpNojgZTcbQh3jUE5Znvdp9sdgW1g/vd6ACX46+VeBpFT7q/V9unshJo8Ut28f1HdqJRovh0bQ4CIL3pEY8/O2J8XB5uRS8oLGQPcsytuKTwWeFuFyuiWxbJgcTfQ8ILdEvkZk5aA/fxKeANUxPBZds16tzXk1svDr9/+er8yZ5joAYcbcncinyuoVAoK8lgOGz7EvCDZ7V9FrRv7aBodsyAA/s4z/ew8Fy2APQsvMShfIY9+qkiFRQ1/Tthtw+ATWFNst/a2wEER1NEFH/OIKYL4NeS+yOW2j7yOp+W48H5wGbHkjLNZdwsUt0B54bHn5uf7Et7OggZa+T0M2cPcnFIzeeT2i185rFYYquzXnEKZvcCnbD7er0dhVT9hbkn7vmG+6R9rLq8F6hiQ2f/ZBK1ppYkZIM704U2GtrTpEehoDmJFVlzkjTZa+1t3iTqdDGNou3S9AnjnKtnkujqrvgnvIKLTIutPI0vxHGanX4a/1yPG1Kr7g3e/yuhTLL44yXKs0zb7NQ7Rn7ITVscMT29dg17BzkFDwGHrdQrNcHrnXd2uwqY3te5zP82LPS7YsufBV0P14PdyljZ13cE/O7+Fg/fuWiHJJBH0bjKAyDIAzYOJiMx+FklKQjGA/SlXoJMTnFYos7pyAkbk9aqrT3HW6XpxnXDFiV7IOL0B7QWl5eVP+CpTWjse5UsPbC3VSaRCnJId8oNdf4ivx0Xj8YS9oO31y5eRf/XJXiejPTzrQz16/VVZTit1x8K/nPFbkmPOhPQka7k3E47g5SNurGDIZdiJPhOGKcDtJjNgpf/wPzSo2oKxYAAA==</values>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VYzW7bOBB+FUFn2ytZtmTlViQI0EW3AZpsL92CoEQqZkuTKknlz/DT9LAP0hfbkUjZhu3YFuoACfbI4Qz5zcz3jWh/mfuM+Gc+SYO0SNPxJAmCKAqCOI5yHGZZFOdZkOGR3/MFnlHwNDjjFJZ3mFf1+gFpQkmKSqkM5sigAFUIz2DFnnCOJfpWKakhgDBdcvz42cW9cy6//v31U3rU+9O55VPGiaLCP/vyteeXWMG1hir/bL6xdSxujjPKwfXGAd/IwzyWyyVq9qztw3qY99FuSEVqKEHPpw+GCkjcPysw17Tnz7Ag2Ej1uLQoismV4CvDlAkDJ/q184NmT3DvJKj9CgpZ5dTuLZfIVcyaiwts8LVRVW4q5VzzqWQ51bYehBa44uZ83WYdrkrDpLAhNm0bLXk1Ex9tOfzlAW2DwFJpAEHLOtEauUujuJ7K+08tyksmmpq4TS5zzJcrbIxiWWVqPHOfcjqDg9AMlyUTt6hU8o41wYBlNrjlsBgUXN7DpZrdigHOa+ADqCseXIL9ojF/xorVWfwFx0AwAGIcGIJsC7WsVFPKO5TzSjcbCgttz/IXPV8/6nOOtV5lDiVHP6oat62DyxjZotUhuWKleQdH3FGX3KLXSme8l4LpinK5FITVKPSafkAsQv5TQSyZz4dBQWg8mvSjnJL+aJzG/SzEeT+L0iyeJHiI03jADJ0NmvDFYltXv31eRwEezr4V4Pl6+rtK4qS4Zfuw6wAnxfBkUhwFwVsSI1z++rTYXV22BAckFpK9JCMrPmn4qCBbyzWNbaukM8+PgNDy/Kpmppc9PofK0bxglJNdX5zLemPjizP8f35xXiXJARBBtntMcCaa5wMAfSn2j/dSLws3eNbQa8X9xoZ1vq0B7BnpPXVWwhFwWiVcw93ejcWzA2I77xvKbM761ugEEJ1MANHwNAKYL9NcFnJHzdsXY93N1v+p9seb/kDBtYBwsUtgne4Mu945XGwLOOqk4HWy2Z2LZzh34qflM4rsveQImEKouw9Z/aJ7Rm6pWd3eehFp7jH/vmvfMQ61jWrSe4Fnarj3l1K29kxlBZpB51gJr2lFcyCHRlhRVMhKEOTe0WsPWOhkwZQ2znl70HyioB/hSRCmZ6bUa7y9pXfHD/HhPNpSvi+8NhF3m/YgEa9JxFsm0i3tLkNrdMLH6amH1iVmvOkG/EQq19pJlZLqmcF1oJF7GHHkVDsSVHhSUL8/9nZJYOf4O4D1TfzePv1oyinORkMcJ1EYBkEYkCSYJEk4ibMixsmoWGkUIS1ymKZwcgFUgeNRS422z+H2/HHDttucOQJUy8ALKeof3MPEeDUqaK/XojqM282TTEpOsdgYKDeA/I/L5ouwpOv41Q2VN/HnU8VuNittTTtr/VLPhor9LdiPir6vKTahwXASkrw/ScKkPypI3E8JHvdxmo2TiNB8VJzyJfD1P5UfKPztFQAA</values>
     </sys_hub_action_instance_v2>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Pesquisar registro">9d09f99587003300663ca1bb36cb0ba3</action_type>
-        <action_type_parent display_value="Pesquisar registro">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
         <attributes/>
         <comment/>
         <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
@@ -625,12 +660,13 @@
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-28 12:51:06</sys_created_on>
         <sys_id>8ea44c65fbbd2210f6d5f9d38eefdc19</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 12:51:06</sys_updated_on>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:27:36</sys_updated_on>
         <ui_id>0a53884c-6d3f-4926-b143-7aebb7b97d97</ui_id>
-        <values>H4sIAAAAAAAA/+VYzW7jNhB+FUFn25Us/+a2SBCgwG6CJuletltiRFIxUVrUklScrOGHKXoo+gB9grxYh6JkG7aT2KhTJOgp0HCG/Gb4fcNxvsxDwcKTkI2jcTYe90fDKEqSKBoMEgpxmiYDmkYp9MJWmMOUo6eFVHL8vANZum9DybSUVhCtZuRbyY0VKieQmxnX6MaEKSQ8fK69PznX4ErNgp9q1+BD40onQjLN8/Dky9dWWIDGAy2unMw3lvZFLCHlEl1v3F/YTsE+FMtPUq1528dVnOTBhV9QmjksUSvk95bnjCOIDKThrXAKOQOr9MPSojmwy1yuDBORW9wxdM73RnzHc0eR88s4pkW5X1t+krps3pydgYVrq0tqS1270okSlBtfEMYzwMKertu8w2XhauxDfNo+Wslyml/4coTLDZpbQktpEAQvXKIOeZ1Gdj1Rs6sG5bnIq5rUi1JRkMsvsFaLtLQOzzzkkk9xIzKFohD5LSm0uhNVMGKZdm4lfnQyiRRi3IjbvAPUAe9gXaFzjvazyvwZtHBZfMJtKs5kQiJFiL9Co0pdlfKOUFmaakEjE/1e4aIVmgdzKsGYVeZYcmStw+3rUGdMfNFcCNWisB9wizteJ7doNarpP8vB8YpyVOVMOBRmTTpIcXeUYL+UGM/mc1OmrgYdzSnSbbH41WnKFfm+8ehGGeOD3qidUM7avf540E5joO00GaeD0RC6MB50hOXTzjJ0sdiW4X948oGqfrmijapPXUkf/3z8m5sn6lzre8v2cX2HZqHWd3w0ffei6D0pHA9/ewI/XLK+BC/oNmbPsoyt+GSUtsTXck2424I6mOh7QGiIfonMzEEHhdJPAauZngku2a6X7NwtbLxk3f/nS/YmeY6AGPG3J3Ip8mosQaCvJYD+s+xL4w2eVfRaG/mcDQzdlgEEYB//Cr4fLIc9AC2nOVGogPGgKorIBAV8BP5QuyE3T0BFoc323xhrQSRHE0TSPY4g5suk1wq74xaa2dTdbxPx3UfAZgTSci0kXuwS3YHnxoef211sCzs5SNnrJPQrZ09y8cjD7BNabb1mc5hgaH0e8comM8FuuV2d3ngxZWcgf9u1XnOPNJdVpfcKg3H87I+zdG0wFpn/+Vjg/O6HT0NwOCWZKnNG6sl9RSV3k5nQxtbO2y3oiqNc3XNplLsLHqig0GLKhVaB5rfCWK0Of61fzqcp6TUP7h5/10KZ5XEmyJTm02CzUe2Z+yE9rHfE8fXYPewc5AQCBgG3UKz3B651NdrsamN7Xucz/Niz0+2LLn4VdP++H+5Sxs6+uCfmd/EPgON3Lsoh7XVhMEziOIriiA2j0XAYjwZpNoBhL1uplxCTU2y2uHMGQuL2pKFKc9/Rdntypx3ef/ZA1VDyAltMkFVkxpbjEO0FuW4yqVKSQ77RZW7wAfnhvHorloztv7lO8y7+EVaKm81Ke9POWr/WQFGKn3PxreQ/OnKNeNQdxYy2R8N42O5lbNAeM+i3YZz2hwnjtJcdc0b4+g/jKzM6dBYAAA==</values>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VYUW/iOBD+K1GegUsIJNC3VSuklXa3ura3L3t7lhM7xTpjZ2OnlCL++41jBxBQIDp6anWPHo/tb8bfNxnnx9JnxL/yyTgY5+PxcJQEQRQFQRxHGQ7TNIqzNEjxwO/4As8oeGqccgrDJ8wrM1YZmlVcM1TKOfpVUaWZFAgLNacluBGmCo4X3533V+Pq3cm597tz9T41rtmUcVJS4V/9+NnxC1zCgRpmrpY7U+ci5jilHFwfHOSdCPSiWA9RPWdtX7aXed/shCyJgRJ0fPqsqSAUMOSYK9rxZ1gQrGW5WFtKismt4BvDlAkNO/rG+VmxFzh3FBi/nEJUGbVz6yFyWbPm/AZrfK/LKtNV6VyzqWQZVTYfhOYY8nq9bbMOt4VJsV1iw7arJa9m4ptNh7/eoLkksFQKQNDCBGqQuzDy+6mc3zUoJ0zUOXGTXGaYr0dY65KllTZ4lj7ldAYboRkuCiYeUVHKJ1YvBiyz3iOHQS/nwCBCFXsUPZwZ4D3IK+5NwH5Tm7/jkpkovsI2NWVyxoEhyF6hklVZp/IJZbxS9UQJRLR7+auOrxbqmmOlNpFDyoG0BrfNg4sY2aSZJVnJCv0JtniiLrhVpxHN8CgFxxvKZVIQZlCoLeUAw81RjPxZwXqyXKoqNTnolTQDuq1WfxlJmSQ/Nx79ICc0Hoy6UUZJdzAcx900xFk3jcZpPEpwH4/jHtN01lsvXa32VfgfntxS1Kcz2oj6ejulh9Ls5L1n+3JoAyfv8GLyHgTBRxI4HP7+9N1esTYFJ2QbkqMkIxs+KVlqZHO5pdt9PbXm+RkQGp7fGmZ66eI1VI7mOaOcHPqKTczEzles///8ir1LkgMgguztMcGZqFsSAPpW7B8epV4a7vCsptdWt2dsWGX7GsCelt5LayWcAadRwj2c7T1YPAcgNvW+psxurW+MTgDRxQQQ9S8jgOU6zHUiD+S86ULNbTb+L8Yf7/oDBbcWhKtDAmt1Ztj2zP5qX8BRKwVvk83O3LzCuQu3q68osvOWJWAKS915yOoXzRl5pHpzeuNFpJ5j/vehecc41FxUHd4btL7h0ddXutX6sty+Dwvo0G17qRC0nyiXlSDI9eYbIpmbzFmptHPeLzR3FPQjPAnC9PSUerW3t/Zu+SE+HUeTys+51wTiTlMeBOLVgXjrQNqF3aZoDS7YnF66aE0w4/VtwLOr2LpOWpayfKVwnbjII4w4s6qdCSq8KKh/X/YOSeBg+TuB9UO84S9fmjKK00Efx0kUhkEQBiQJRkkSjuI0j3EyyDcaRUiJDKop7JwDVWB71FCjuedgv/7Yktq20JyBqqHgjRTm1d1PtGdgwf16DazTwF1BSaXkFIudivIA34nfJg6/4+vw3VWVD/FHq2IPu5m2poO5fqu+oWJ/CParop8NxUY06I9CknVHSZh0BzmJu2OCh108TodJRGg2yC/ZCvz8B7qKcL88FgAA</values>
     </sys_hub_action_instance_v2>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
         <action_type display_value="Get MRVS Values (Amortization and Interest)">9b73c8e1fbbd2210f6d5f9d38eefdc17</action_type>
@@ -647,16 +683,17 @@
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-28 12:51:06</sys_created_on>
         <sys_id>82a44c65fbbd2210f6d5f9d38eefdc1a</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 12:51:06</sys_updated_on>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:27:36</sys_updated_on>
         <ui_id>83c6e11f-e93b-467c-9b7f-38bab9ae0a3b</ui_id>
-        <values>H4sIAAAAAAAA/71T227aQBD9FbTP2AIMvvBWJYoUqW0qSPMSRdbs7hhWWl+yXidQxL93FhsCaZM2Esrj3M+cmXO/YUqyKZtEUSBiHGacy9FoOMhCOckSGcSImRTDhPVZATlSZt5oq0z5nBoUpZEUeALduMhmM4BJEMdj4YUyyLxxMgo9PhwHXgTIecSTSCaRP9vV+a6FKiSutlvqIVVdaVjfnaGVWCotDRZsev/QZxUYwm3RsOnmVeh/F9fAUVPqrHzuXbsx75Fh15UL1NaoYtHZX7sG872TUh2gYZ/hyiK1JCQZ6Br7LIdCgi3Nmk2tachhEORNodeHjKUqLDVjLndVq180Lh4MBi4zQ1pOYBs9mGlHbuvOLsECIWmEbUyXKpalEli3tEjMgNa6OPa1CTeVVWXRlljgel9d6iYvvreMsEOD/S3J09QEAiu3qcPeLZLNl+XzbI/yyl3QHIK6FKAPFliijjfW4dmwRt2+Yrn1/MEzasxpYppDVZEnrUz5pHZTCHTuLzQZfqbpfhJrtSh8EG5Dny4A/hX5L3fuOzDKrfuN2lCxG/ezUI8NXrsPSjiGUoSJFwZInyon0ov5CDwJYQBRFgUgBmzbZ/W6vtBQ1y9E0YXSx8at2dLWEZS2HLsSYVRlvxCoJ+y42Pb3is3efVz+8qQkAdeV5qfqVK91w932fvu9fxPix/X0b1h7Pf3Y4erN13Xv+vJtuJ2iXr77VFSzI3+nq9G5dBWMTlW1SmvqmaRVaSzo1KYDEv5C0RuW9EGpALOAOqUvLRtTviHBWVfQk9i72BX0bg8FZxbnR/F+gpKzOYIRyyuF2r1L0eR8J6k3FH589VORH9/9U3SOYTgJwijw4ggCb4xi6EEowcOE81EMSZAMxBl1/vAbTZN2wpsHAAA=</values>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/71T227aQBD9FbTP2DI2+MJblShSpLapIM1LFFmzF8NK60t21wkU8e+dxYZA2qSNhPI49zNn5txviORkSiZJErFUjApKeRiOgiLmkyLjUSpEwdkoI0NSQSkws2yVlbp+zrVgteYYeALVushmE8AkStMx82IeFd44C2OPjsaRl4CgNKFZwrPEn+3qfNdCVlystlvswaVpFKzvztCKLaXiWlRkev8wJA1oxG2FJtPNq9D/Lq6ACoWps/p5cO3GvEeGXTcuYKyW1aK3v/YN5nsnpjpAoyERKyuwJSIpQBkxJCVUHGyt12RqdYsOLYDfVGp9yFjKymIz4nJXRv7CcWkQBC6zELgcE130YOY9uZ27uAQLiKRlttV9KlvWkgnT0cJFAbjWxbGvS7hprKyrrsQCVfvqWrVl9b1jhBwa7G+JntYgCNG4TR32fpFivqyfZ3uUV+6C+hBUNQN1sMAidbS1Ds+GtPL2Fcud5w+ehRIlTsxLaBr05I2un+RuCoIu/YVCwy8U3o8LIxeVD8xt6OMFwL9C/+XOfQdaunW/YRssduN+VvKxFdfugzIqYs7izIsjgZ/KJ9xLaQgehziCpEgiYAHZDolZmwsFxrwQhRfKH1u3ZkdbT1DecexKmJaN/YKgnkTPxXa4V2zx7uPSlydFCbiuOD+Xp3o1LXXb+933/k2IH9fTv2Ht9fRjh2swX5vB9eXbcHtFvXz3qahmR/5eV+G5dBWFp6pa5QZ7ZnlTawsqt3mAwl9IfMMaPyhnoBdgcvzSutX1GxK8xcGm1evBBWbXg1lXDztlnV2dHwX8CVIu5gI0W15Jody/VG1Jd5p6Q+LHZz9V+fHhP0XoIo4nUZxEXppA5I0FG3kQc/BERmmYQhZlATuj0B9+AxFrGSOcBwAA</values>
     </sys_hub_action_instance_v2>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Atualizar registro">f9d01dd2c31332002841b63b12d3aea1</action_type>
-        <action_type_parent display_value="Atualizar registro">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
         <attributes/>
         <comment/>
         <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
@@ -669,16 +706,17 @@
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-28 12:51:06</sys_created_on>
         <sys_id>46a44c65fbbd2210f6d5f9d38eefdc1a</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 12:51:06</sys_updated_on>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:27:36</sys_updated_on>
         <ui_id>30bd6918-a95f-4a24-b688-772ee9e9bf9e</ui_id>
-        <values>H4sIAAAAAAAA/+1WXU/bMBT9K1Wemyhp0tL0DVEhbWIgwcQLY9a1c1M8OXHmOECJ+mv2sB/CH5uTuB+iHYOKPaCtL62vfa7PPbnnNle1wxNn4kSY+EEcjFgYhOHA9wfjKKCjkAaDJATEwOk7OWRoTipkUiVmfQuiagJ1nQ6HKaUBc4cQoxtFAboUgsgdsXR4EEVREtPUO29xi4VBJrwsBMwvbQITYTdcJApzZ3J13XcKUOYujcqZ1E+2XkpWAEVhjp7jjJdayR389bxo1olkVYa5JnwZPLHYqd3pfZiaHQNqCAV+38F7jXmChkoKosS+k0GegJZq7ky0qkxAISRnuZivTtzwXHelZnBf8gdzc+Q351I0tTErw2pJrERdOJ2ChguTmelKrRSTnGHZqZJgCpXQR5ux7sBZobnMO4gGKpZoKaosP+0UcVYJNp5IVRoSWDR1Nsy7stKLG3l3viR5zPNWEluikAzEagVaK04r3dCpHRTYapxBUfB8Rgolb3kLNlQybybMwkuFvDN3lnyWe8Aa3p5RFbxjE5+24UtQvCnik0ljwIu+U87LIwFluS7FaEi+Vw2TrjBbAmlVaCUgbSc0YKZ4oQ/NVbdoiS/61hB0+FyPsXjdUBs516a4J6VpkJgUUmkQRBOfVAQys+IPwECSb5WS5bYXDu2Rx5+PP2QPex/tsdcZ5AXklwb53HzDb6qxFtmKnazBAnun3YY1yPDNDDJ+TwaxZbx7h/zJF/7g2dmL605qrVBueKLqmp4YZUDNmh+mTVQOXyrfD5O6HodshEGQuhiH1I1GB8yN6UHqhmMKNAb0IaSeTdEi5WLxdSup6aM9k3bILummVfehuQO/lXcfpjvwu/5S/0v996R+3Sh+gV+Wo/gIsqId9k8NtBzDmJlnrJF0hnoyiu1m79Jurt5X3mweByO//byjqfzPvLZc/wLY/gD/yQsAAA==</values>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1WwU7bQBD9lcjnOLJjJ+DcEBFSKwoSVFxauppdj8NWa6+7XgMhytf00A/hxzq2NyEiEQVED6jNKTu7b/bN87yxvyw8mXoTL8Y0CJNwLKIwioZBMNyPQz6OeDhMI0AMvb5XQI500qDQJqX1Nai6CSwW2WiUcR4KfwQJ+nEcos8hjP2xyEZ7cRynCc8GZy1uuSRkKqtSwfzCJaCIuJIqNVh4ky+Xfa8EQ3dZNN5k8WjruWQVcFR09GzF9jF7Oy+bdapFnWNhmVwFjx1y6nZ6H6a0Q6CGThj0Pby1WKRIRDJQFfa9HIoUrDZzb2JNTQGDkJ4War4+cSUL2xWaw20l7+jmOGjOZUiVCSfCesmcQF04m4KFc8osbG3WemkpsOo0STGDWtnDzVh34LS0UhcdxAJXK7RWdV6cdIp46wQbz6OuiASWTZ0N866s7PxK35ytSB7JopXElai0ALVegbVG8to2dBYeKmw1zqEsZTFjpdHXsgUTlXwwU7QYZErf0J2VnBUDEA3vAakKgyOKT9vwBRjZFPGJ0hB42feqeXWooKoeSiEN2Y+6YdIV5kpgrQqtBKzthAYsjCztAV11jY74su/swEdPdZhIHhpqI+eDJW5ZRQ2SsFIbC4pZFrCaQU4reQcCNPteG11tO+HAHbn/df9T97D30R17mT2eQX5lj89tU+wuxjlkK3a8ie2ddBvOH6M388f+e/KHK+PdG+RPtgiGTw7ejU5qnVBtWKLuep6RMmBmzR9qE1PA1zoIonSx2I/EGMMw8zGJuB+P94Sf8L3Mj/Y58AQwgIgPXIoWqZfLb1tJqY9embRDdkk3nfoamjvwW3lfw3QHftf79L/Uf0/ql03iZ/hlNYmPJKq02mGg1RjGnJ6xRdYZ6tEodpu9C7e5/lx5s3kcjoP2946m8j/z1XL5G5U4manGCwAA</values>
     </sys_hub_action_instance_v2>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Criar registro">2de05916c31332002841b63b12d3aee1</action_type>
-        <action_type_parent display_value="Criar registro">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <action_type display_value="Create Record">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent display_value="Create Record">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
         <attributes/>
         <comment/>
         <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
@@ -691,41 +729,16 @@
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-28 12:51:06</sys_created_on>
         <sys_id>0aa44c65fbbd2210f6d5f9d38eefdc1a</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 12:51:06</sys_updated_on>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:27:36</sys_updated_on>
         <ui_id>070c3028-da05-4dc4-afc6-b2410b50b51a</ui_id>
-        <values>H4sIAAAAAAAA/+1VzW7bMAx+lUBnJ7DrLE1yK1r0MGwtsA69dJ1A23SiQZY8SU6bBnmaHfYgfbHRlpIGbYqtxQ4rsFwckfyojxR/rlZMFGzKRgnG7ybJKE+TND2I44PxMMlGaZYcFCkgDlnEFFRIlg4yibw7RGwBsmmFt9wWWEx4rY0DyR2PecOhopO4gxw0/9YYbQlQCFtLWF4G3FEwuf95/0P3sPc+mOVzIQuDik2vriNWg6HrHBo2XT1S/Sl5CRlKMv3cfuGZaNyy3iv78ACW2DvzCm2KllAcMbx1qCh8Ni1BWoxYBaoAp82STZ1pSGAQinMll1uLuVCOHLLW9taKO7p2HLd2JVJoOXrd9shD2ry4PAEHF+Q5d40JpvlcixytT0qBJTTSHe/KvMF57YRWHtKFGdBaNpU68ylhWwebVyJJY4kE1m2cLfMQRnkx1zefNixPhepSEpRS5yC3J3DOiKxxLZ8VQ4kVOeIV1LVQM14bvRAdmLhUg5mkw6CU+oYutWKmBpC3xAeUVhickvykE1+CEW0UH8kNgdcRs0t7LMHah1goifx70zLxkYUYuE9DC8mNqN0RXbDAQHcdbdqiwHjybGUl2UMhdZ1gd1qC6l/pL00cp8VqNU7zESZJ2cdJmvWHo8O8P8kOy346ziCbAMaQZgOyX6+/Nr5XOGUUzKz9Q+VlFLzIVXDRIfc6pfp7pVOP9E53O/w1NPfgn/h9DdM9+PX66fT5/0T/3hO9cPL/vj83k/8YqrrbLY8bdjP1saLacMh9Az+a/EHZuwzKMP2TvzX9k1Hc/d7QDvDBvfkVsLPtn1kG178AGUJjZCUJAAA=</values>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VwW7bMAz9lUBnJ7DrLk1yK1rkMGwtsA69dJ1A23SiQbY8SW6bBvmaHfYh/bFRlpIGbYqtwQ4rsJwiko96jyapqyUTBZuwYYLxu3EyzNMkTQ/i+GB0mGTDNEsOihQQD1nEaqiQIi1kEnl3iNgNyNYZ77gpsBjzRmkLklse85ZDRSdxDzko/q3VyhCgEKaRsLgMuOMQ8vDz4YfqYe99CMvnQhYaaza5uo5YA5qus6jZZPnE9afkJWQoKfSzY/+CGLtodto+bGN7Z96hdOH4xBHDO4s1qWeTEqTBiFVQF2CVXrCJ1S0ZNEJxXsvFJmIuaksJmYu9M+Kerh3FLq5EUpaj922OPFTNm8tTsHBBmXPb6hCaz5XI0fiaFFhCK+3Jts0HnDdWqNpDOpkBrWRb1We+JGyTYP2RyNIaIoGN0+mYBxnlxVzdflqznIq6K0lwSpWD3JzAWi2y1jo+S4YSK0rEK2gaUc94o9WN6MDEpRrMJB0GpVS3dKkRs3oAuSM+oLLCYEr20858CVo4FR8pDYFXETMLcyLBmEctVET+vXVMvLKggfsyOEiuRWOP6YIbDHRX0XoqCozHLzZWkj02UjcIZmsiqP1r9aWN47RYLkdpPsQkKfs4TrP+4fAo74+zo7KfjjLIxoAxpNmA4lerr60fFU4VBT1zf6i9dA2vShVSdMidSan/9kzqkT7p9oDvQ3MH/lnefZjuwK9Wz5fP/0/0732iVy7+38/nevFPBcrC7BjY9dbHinrDIvcD/GTzB2fvMjjD9k/+1vZPhnH3e0NvgBf35p+Ardf+hcfg+hdN+2Q3JAkAAA==</values>
     </sys_hub_action_instance_v2>
     <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=f5a40c65fbbd2210f6d5f9d38eefdcb8"/>
-    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=f5a40c65fbbd2210f6d5f9d38eefdcb8^sys_idNOT IN4ea44c65fbbd2210f6d5f9d38eefdc18,46a44c65fbbd2210f6d5f9d38eefdc18,c2a44c65fbbd2210f6d5f9d38eefdc19"/>
-    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
-        <attributes/>
-        <block display_value="">612b3741fbf1621086e7f4045eefdcde</block>
-        <comment/>
-        <connected_to/>
-        <decision_table/>
-        <display_text/>
-        <flow display_value="Amortization and Interest">f5a40c65fbbd2210f6d5f9d38eefdcb8</flow>
-        <flow_variables_assigned/>
-        <generation_source/>
-        <logic_definition display_value="Se">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
-        <order>6</order>
-        <outputs_assigned/>
-        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
-        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
-        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
-        <sys_created_on>2025-05-28 12:51:06</sys_created_on>
-        <sys_id>4ea44c65fbbd2210f6d5f9d38eefdc18</sys_id>
-        <sys_mod_count>1</sys_mod_count>
-        <sys_scope/>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 12:51:06</sys_updated_on>
-        <ui_id>cc765906-5769-430a-b4ae-373f078cb540</ui_id>
-        <values>H4sIAAAAAAAA/+1Vy27TQBT9FWvWSWQndiDZVSmVkIBKbdQNVNb1PJIRkxkzj7Yhytew4AP4hPwYd2wnjSivAEt2nnNf59yZI2+ICb4O3s3NmXNyocn07W2PSB0x/N4QDStOpoQazaSXRpcN0CN3oEIM3IAyNmE8OdMmeaExz1tgJtGQzKHiCpILqUFhBZOuVrC+ObmQLqVilnfcarDIwHNLpptvQpJhX5GCyCY0o6PheDRM0+HzPKvGoyobshFwGGFDFftj6tXuiw/KJAySRt/u8+6TwfiPNPt1HXHnrdSL7vyq63W9B41lkVuW9gh/8FwzjqwEKMd7ZAWagTd2fUAsB3ap1SOwlNpjOxKTH5z8iAOHRRETBUehlLfBw7Hs1trC4hw8IJVAfbBdKl0aSblrV8S4gKD87BhrEy7rKLUt8VCpfbVRYaXftBshhwb7W0QkOCTB66g0Uu90iOulub/as8SrbLbSBZWheLP7E3jcXRV85LMhXPEVNipXUNe40bK25k42xchlNVgoPAyEMvc4NL7YAdBIfICLhcEF4ucNfANWRhWvsQ0WtzQrcJKWzevGdrgmTrY94tZupsC5R5G43fJDiBRbyZ24st1PLKFW1v4MJ9/xTse299QsRz7ZbERRiKrKaL+ACe/necb7FWR5f0xF8SzPczapxMB58MFtt+9Cmo5Y+tQ2f9znNBdNoBBFlhbfd1E+PnLR7GfWOdE1w1+4Jl7Zb5omTdP/rvlr10hXtm+909YM/4emuY0OaWcedk2lQ2rziL3c/4hiYI2PS9Jj6N7Y91HUI7b9Chytrt7SBgAA</values>
-        <workflow_reference/>
-    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=f5a40c65fbbd2210f6d5f9d38eefdcb8^sys_idNOT IN46a44c65fbbd2210f6d5f9d38eefdc18,4ea44c65fbbd2210f6d5f9d38eefdc18,c2a44c65fbbd2210f6d5f9d38eefdc19"/>
     <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
         <attributes/>
         <block display_value="">212b3741fbf1621086e7f4045eefdcdc</block>
@@ -736,7 +749,7 @@
         <flow display_value="Amortization and Interest">f5a40c65fbbd2210f6d5f9d38eefdcb8</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Para cada">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
+        <logic_definition display_value="For Each">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
         <order>2</order>
         <outputs_assigned/>
         <parent_ui_id/>
@@ -744,12 +757,40 @@
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-28 12:51:06</sys_created_on>
         <sys_id>46a44c65fbbd2210f6d5f9d38eefdc18</sys_id>
-        <sys_mod_count>1</sys_mod_count>
-        <sys_scope/>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 12:51:06</sys_updated_on>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:27:36</sys_updated_on>
         <ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</ui_id>
-        <values>H4sIAAAAAAAA/51TXW+jMBD8L34miI9cUvJWtapU6e4qpVVfThVa7CWxzticbZJyiP9+60Bo1cd7gh3vzs4MZmCm823n3Yu5dU4eNNv9eouY1AGj94FpaJDtmPTYOBaxE6gu1MNQpTwXKcfVTZ7Cal3V1ar6VlSrGni+3Wy3uK6LeI/cWOHGkUaFdK2C/vX/GfhRKmFxFtmCJW0eLdsNX46koAVpIeoiTQqeZ5s8S5LsZp1Wm7xKM5EDig0RKqhQUeujRx3cfTHr+zaUdpIwA9/nmf2C0iOIyJKI4TsxCaT1NSiHEWtAC/DG9mznbUeARRBPWvVLx1FqT3Qs9L47+Zc2pkkSGmskQxynw6Us5xwnuL4HD89EzX1n51Z+NJKjm6IQWEOn/N1nbGp4ar00ehrxUKnrtFFdo39OSbCF4PrZCOkcicA2GA3SZx/189Gc91eVD1JfQpkPleGglgq8t7LqfNAzMFTYEFHZQNtKfShba07yMkxamvigqIhrZc60NFzRGHgQHlOuED8Qfn+BX8HK4OIH0dDwGDHXuzsFzn14oRDLP11QMjmbPZRTDGGEW9n6W1pwwlnu+BZu/cS9ZMqlIwkvAXu8/ivhoKcbJPln6Gzs7yD+Axv/AcNY+5d1AwAA</values>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/51TXW+jMBD8L34miI9cUvJWtapU6e4qpVVfThVa7CWxzticbZJyiP9+60Bo1cd7gh3vzs4MZmCm823n3Yu5dU4eNNv9eouY1AGj94FpaJDtmPTYOBaxE6gu1MNQpTwXKcfVTZ7Cal3V1ar6VlSrGni+3Wy3uK6LeI/cWOHGkUaFdK2C/vX/GfhRKmFxFtmCJW0eLdsNX46koAVpIeoiTQqeZ5s8S5LsZp1Wm7xKM5EDig0RKqhQUevj7O6LWd+3obSThBn4Ps/sF5QeQUSWRAzfPWqBtL4G5TBiDWgB3tie7bztCLAI4kmrfuk4Su2JjoXedyf/0sY0SUJjjWSI43S4lOWc4wTX9+Dhmai57+zcyo9GcnRTFAJr6JS/+4xNDU+tl0ZPIx4qdZ02qmv0zykJthBcPxshnSMR2AajQfrso34+mvP+qvJB6kso86EyHNRSgfdWVp0PegaGChsiKhtoW6kPZWvNSV6GSUsTHxQVca3MmZaGKxoDD8JjyhXiB8LvL/ArWBlc/CAaGh4j5np3p8C5Dy8UYvmnC0omZ7OHcoohjHArW39LC044yx3fwq2fuJdMuXQk4SVgj9d/JRz0dIMk/wydjf0dxH9g4z8Uu0oRdQMAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">612b3741fbf1621086e7f4045eefdcde</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Amortization and Interest">f5a40c65fbbd2210f6d5f9d38eefdcb8</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>6</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 12:51:06</sys_created_on>
+        <sys_id>4ea44c65fbbd2210f6d5f9d38eefdc18</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:27:36</sys_updated_on>
+        <ui_id>cc765906-5769-430a-b4ae-373f078cb540</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VXW/TMBT9K5Gf0yppkkL7NnVMQhpMYtNe2BTd+KO1cO1gO9tK1P/OdT7aiRXBgEfe4uN7r8859lFaYhpfN97dmDPn5FqT5ef7mEgdMPxuiYYtJ0tCjWbSS6PLDojJA6gmbNyCMjZiPDrTJnqnsc5bYCbSEN1AxRVEF1KDwg4mXa1gd/vqRrqRilk+cKvBIgPPLVm2P2xJhnNFAiJd0JRms3k2S5LZ2zyt5lmVzlgGHDIcqMJ8LF2NoqLLDol/qtbv6oA7b6VeD+vLYcr1CBrLAqs0iQl/8lwzjnwEKMdjsgXNwBu7OyCWA7vS6ghspPY4joTiJye/4YGzogiFgqNEyvvNw7IcDO1hcQ4ekEpDfWOHUroxknLXm8O4gEb51XOsL7iqg9S+xUOlxm6jmq3+2DtCDgPG+0OkcUiC10FpoD7oENcb8/hpZImX2LkybCpD8U7HFXj0rmp84NMSrvgWB5VbqGt0tKyteZBdM3LZTtcKF1OhzCMeGt7qFGggPkVjYXqB+HkH34KVQcUHHIPNPc0KnKRl965xHNrEyT4mbudWCpw7ikR3y69NoNhLHsSVvT+hhVpZ+zM8+YEPOvbxy5g8S0jbiqIQVZXSSQELPsnzlE8qSPPJnIriTZ7nbFGJqfPgG7ff3zVJkrHkZWD+eM7r8rOAQhRpUpzOTz4/lZ8TyXllaGa/CE24sd/MTJIk/0Pz16GRruyf+qCtO/wfZuY+BKQ/8+A1lQ6p3QTs/fgHChs7fFySPocejf0SRB2x/XegvCDnywYAAA==</values>
         <workflow_reference/>
     </sys_hub_flow_logic_instance_v2>
     <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
@@ -762,7 +803,7 @@
         <flow display_value="Amortization and Interest">f5a40c65fbbd2210f6d5f9d38eefdcb8</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Outro">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
         <order>8</order>
         <outputs_assigned/>
         <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
@@ -770,11 +811,12 @@
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-28 12:51:06</sys_created_on>
         <sys_id>c2a44c65fbbd2210f6d5f9d38eefdc19</sys_id>
-        <sys_mod_count>1</sys_mod_count>
-        <sys_scope/>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 12:51:06</sys_updated_on>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:27:36</sys_updated_on>
         <ui_id>bbf158a1-4051-412a-803b-c34c3913e71b</ui_id>
+        <updation_source/>
         <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
         <workflow_reference/>
     </sys_hub_flow_logic_instance_v2>
@@ -803,6 +845,29 @@
         <url/>
         <url_target/>
     </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>record</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_f5a40c65fbbd2210f6d5f9d38eefdcb8</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-06-04 20:27:35</sys_created_on>
+        <sys_id>99407d73fb756a10f6d5f9d38eefdceb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:27:35</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
     <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_f5a40c65fbbd2210f6d5f9d38eefdcb8"/>
     <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_f5a40c65fbbd2210f6d5f9d38eefdcb8"/>
     <sys_hub_flow action="UPDATE">
@@ -813,7 +878,7 @@
     <sys_flow_trigger_plan action="delete_multiple" query="plan_id=6eb048edfb7d2210f6d5f9d38eefdc6f"/>
     <sys_flow_subflow_plan action="delete_multiple" query="plan_id=6eb048edfb7d2210f6d5f9d38eefdc6f^sys_idNOT IN8aa44c65fbbd2210f6d5f9d38eefdc1e"/>
     <sys_flow_subflow_plan action="INSERT_OR_UPDATE">
-        <plan>com.snc.process_flow.engine.ProcessPlan@1c28a204</plan>
+        <plan>com.snc.process_flow.engine.ProcessPlan@53dfd578</plan>
         <plan_id display_value="Amortization and Interest">6eb048edfb7d2210f6d5f9d38eefdc6f</plan_id>
         <snapshot>f5a40c65fbbd2210f6d5f9d38eefdcb8</snapshot>
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
@@ -821,10 +886,10 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>8aa44c65fbbd2210f6d5f9d38eefdc1e</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_overrides/>
         <sys_scope/>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 12:51:07</sys_updated_on>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-04 20:27:37</sys_updated_on>
     </sys_flow_subflow_plan>
 </record_update>
