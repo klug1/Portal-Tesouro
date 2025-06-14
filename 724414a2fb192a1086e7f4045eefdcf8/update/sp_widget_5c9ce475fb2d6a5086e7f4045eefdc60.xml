@@ -34,7 +34,7 @@ div, h1, h2, h3, h4, span, figcaption, p, a{
 }
 
 .titulo-superior {
-  margin-top: 15rem;
+   margin-top: 5rem;
   flex-basis: 100%;      /* ocupa toda largura do flex container */
   font-family: 'Roboto Flex', sans-serif;
   font-size: 3.4rem;
@@ -49,6 +49,7 @@ div, h1, h2, h3, h4, span, figcaption, p, a{
 
 .sobre-nos-texto {
     flex: 1 1 500px;
+  	margin-left: 2rem;
 }
 
 .sobre-nos-titulo {
@@ -244,14 +245,14 @@ div, h1, h2, h3, h4, span, figcaption, p, a{
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-17 00:08:15</sys_created_on>
         <sys_id>5c9ce475fb2d6a5086e7f4045eefdc60</sys_id>
-        <sys_mod_count>56</sys_mod_count>
+        <sys_mod_count>59</sys_mod_count>
         <sys_name>Sobre Nos Text SEFAZ</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_5c9ce475fb2d6a5086e7f4045eefdc60</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-25 19:45:41</sys_updated_on>
+        <sys_updated_on>2025-06-14 18:19:13</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 </style>
@@ -291,7 +292,7 @@ div, h1, h2, h3, h4, span, figcaption, p, a{
     <img src="x_sded9_portal_t_0.sobrenos.png" alt="Imagem Sobre Nós" width="708" height="473">
     <figcaption class="imagem-legenda" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">
       Equipe SATE SEFAZ-MT, Secretário, Superintendentes e Coordenadores das unidades que compõem nosso time. <br>
-      <strong>Créditos da Foto:</strong> Testerson/Secom-MT
+      <strong>Créditos da Foto:</strong> Flávio Costa/USC Sefaz-MT
     </figcaption>
   </figure>
 

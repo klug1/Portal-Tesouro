@@ -352,14 +352,14 @@ body {
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-10 15:50:54</sys_created_on>
         <sys_id>5c318cbffb9dee10f6d5f9d38eefdc38</sys_id>
-        <sys_mod_count>63</sys_mod_count>
+        <sys_mod_count>65</sys_mod_count>
         <sys_name>Financas Menu Icon</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_5c318cbffb9dee10f6d5f9d38eefdc38</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-16 23:28:00</sys_updated_on>
+        <sys_updated_on>2025-06-14 14:36:39</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 </style>
@@ -367,37 +367,37 @@ body {
         <div class="fiscal-card" ng-click="goTo('https://lookerstudio.google.com/reporting/b59a6cf3-1516-40ee-9df4-9fe68bd39a21/page/p_5cnsnj22od')">
             <div class="fiscal-label" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">Convênios</div>
             <img src="x_sded9_portal_t_0.agreementGif.gif" alt="Convênios" />
-            <div class="fiscal-info" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">Informações sobre convênios e parcerias institucionais.</div>
+            <div class="fiscal-info" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">Parcerias firmadas entre o Estado e outras entidades para repasse de recursos e realização de projetos de interesse público</div>
         </div>
         
         <div class="fiscal-card" ng-click="goTo('https://www5.sefaz.mt.gov.br/fundo-de-participacao-dos-municipios')">
-            <div class="fiscal-label" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">Repasse do ICMS</div>
+            <div class="fiscal-label" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">Fundo de participação dos municípios</div>
             <img src="x_sded9_portal_t_0.growthGif.gif" alt="Repasse do ICMS" />
-            <div class="fiscal-info" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">Informações sobre repasse</div>
+            <div class="fiscal-info" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">Calendário de repasses do ICMS para os Municípios</div>
         </div>
         
         <div class="fiscal-card" ng-click="goTo('https://www5.sefaz.mt.gov.br/ajuste-fiscal')">
             <div class="fiscal-label" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">Ajuste Fiscal</div>
             <img src="x_sded9_portal_t_0.calculatorGif.gif" alt="Ajuste Fiscal" />
-            <div class="fiscal-info" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">Informações sobre Ajuste</div>
+            <div class="fiscal-info" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">Programa de Reestruturação e Ajuste Fiscal do Estado de Mato Grosso</div>
         </div>
         
         <div class="fiscal-card" ng-click="goTo('https://www5.sefaz.mt.gov.br/acoes-mt-bird')">
             <div class="fiscal-label" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">Ações Dívida MT / BIRD</div>
             <img src="x_sded9_portal_t_0.saveTWGif.gif" alt="Ações Dívida MT/BIRD" />
-            <div class="fiscal-info" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">Ações jurídicas que possibilitaram a reestruturação da dívida do Estado</div>
+            <div class="fiscal-info" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">Ações jurídicas que possibilitaram a reestruturação da dívida do Estado.</div>
         </div>
         
         <div class="fiscal-card" ng-click="goToPageBlank('indicadores_fiscais')">
             <div class="fiscal-label" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">Indicadores Fiscais</div>
-            <img src="x_sded9_portal_t_0.result2.gif" alt="Indicadores Fiscais" />
+            <img src="x_sded9_portal_t_0.velocimetro2.gif" alt="Indicadores Fiscais" />
             <div class="fiscal-info" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">Números da saúde financeira do estado que ajudam a planejar e acompanhar as contas públicas</div>
         </div>
         
         <div class="fiscal-card" ng-click="goToPage('404_sefaz')">
             <div class="fiscal-label" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">Resultado Fiscal</div>
             <img src="x_sded9_portal_t_0.analytics2.gif" alt="Resultado Fiscal" />
-            <div class="fiscal-info" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">Informações sobre resultado</div>
+            <div class="fiscal-info" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">Indica a diferença entre as receitas e despesas do Estado, revelando se houve sobra de recursos (superávit) ou falta de recursos (déficit) em determinado período.</div>
         </div>
     </div>]]></template>
     </sp_widget>

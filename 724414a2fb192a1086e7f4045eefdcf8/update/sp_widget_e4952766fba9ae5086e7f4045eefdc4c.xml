@@ -335,6 +335,11 @@
   border-top-right-radius: 12px;
 }
 
+.comprometimento {
+  text-align: center;
+  margin-top: 37px; /* valor padrão */
+}
+
 .panel-title {
   margin: 0;
   font-size: 18px;
@@ -466,6 +471,28 @@ body, h5, ol, li, a, div, h2, h1, p {
   transform: translateY(0);
   height: auto;
 }
+
+/* Telas muito grandes */
+@media (min-width: 1853px) {
+  .comprometimento {
+    margin-top: 5rem;
+  }
+}
+
+/* Telas médias */
+@media (max-width: 1852px) and (min-width: 1024px) {
+  .comprometimento {
+    margin-top: 7rem;
+  }
+}
+
+/* Telas pequenas */
+@media (max-width: 1023px) {
+  .comprometimento {
+    margin-top: 9rem;
+  }
+}
+
 </css>
         <data_table>sp_instance</data_table>
         <demo_data/>
@@ -509,14 +536,14 @@ body, h5, ol, li, a, div, h2, h1, p {
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-19 21:32:00</sys_created_on>
         <sys_id>e4952766fba9ae5086e7f4045eefdc4c</sys_id>
-        <sys_mod_count>147</sys_mod_count>
+        <sys_mod_count>157</sys_mod_count>
         <sys_name>Widget Limite com Despesas SemiDonut</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_e4952766fba9ae5086e7f4045eefdc4c</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-26 23:00:33</sys_updated_on>
+        <sys_updated_on>2025-06-14 23:23:19</sys_updated_on>
         <template><![CDATA[<!-- Fonte -->
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
@@ -537,9 +564,24 @@ body, h5, ol, li, a, div, h2, h1, p {
     <div class="chart-container" style="position: relative;">
       <canvas id="gaugeChart" width="800" height="250"></canvas>
       <canvas id="gaugePointer" width="800" height="250" style="position: absolute; top: 0; left: 0;"></canvas>
+    <div class="legenda" style="display: flex; justify-content: center; margin-top: 12px; gap: 20px; font-family: 'Roboto Flex', sans-serif; font-size: 14px;">
+  <div style="display: flex; align-items: center;">
+    <div style="width: 16px; height: 16px; background-color: #8BC34A; margin-right: 6px; border-radius: 3px;"></div>
+    Limite de Alerta
+  </div>
+  <div style="display: flex; align-items: center;">
+    <div style="width: 16px; height: 16px; background-color: #FFEB3B; margin-right: 6px; border-radius: 3px;"></div>
+    Limite Prudencial
+  </div>
+  <div style="display: flex; align-items: center;">
+    <div style="width: 16px; height: 16px; background-color: #F44336; margin-right: 6px; border-radius: 3px;"></div>
+    Limite Máximo
+  </div>
+</div>
+
     </div>
 
-    <div style="margin-top: 12px; text-align: center;">
+    <div class="comprometimento">
       <strong>{{latestYear}}</strong> - Comprometimento RCL com Pessoal: <strong>{{dadosVisiveis.comprometimento}}%</strong>
     </div>
   </div>

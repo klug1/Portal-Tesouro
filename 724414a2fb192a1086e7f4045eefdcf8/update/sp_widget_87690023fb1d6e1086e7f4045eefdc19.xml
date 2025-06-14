@@ -158,21 +158,21 @@ $scope.$root.$on('toggleCaseEvent', function(event, isLowercase) {
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-09 21:48:23</sys_created_on>
         <sys_id>87690023fb1d6e1086e7f4045eefdc19</sys_id>
-        <sys_mod_count>82</sys_mod_count>
+        <sys_mod_count>83</sys_mod_count>
         <sys_name>Acesso Rapido Menu Icon Sefaz</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_87690023fb1d6e1086e7f4045eefdc19</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-29 23:17:51</sys_updated_on>
+        <sys_updated_on>2025-06-14 14:14:19</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 </style>
 
 <div class="fiscal-widget-container">
   <div class="fiscal-card" ng-click="goToPage('indicadores_fiscais')">
-    <img src="x_sded9_portal_t_0.resultadosGif.gif" alt="Indicadores Fiscais" />
+    <img src="x_sded9_portal_t_0.velocimetro2.gif" alt="Indicadores Fiscais" />
      <div class="fiscal-label" ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">Indicadores Fiscais</div>
   </div>
 

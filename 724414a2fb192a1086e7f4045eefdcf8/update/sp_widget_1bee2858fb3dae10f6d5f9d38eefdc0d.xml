@@ -71,32 +71,32 @@
                 { 
                     label: 'CAM (Coeficiente de Atualização Monetária (IPCA + 4% a.ae a variação acumulada taxa Selic)',
                     data: camData,
-                    backgroundColor: '#0A46FA',
-                    borderColor: '#0A46FA',
+                    backgroundColor: '#4A75B1',
+                    borderColor: '#4A75B1',
                     borderWidth: 1,
                     yAxisID: 'y'
                 },
                 {
                     label: 'CDI (Certificado deposito bancário)',
                     data: cdiData,
-                    backgroundColor: '#1A0AFA',
-                    borderColor: '#1A0AFA',
+                    backgroundColor: '#6BB7F0',
+                    borderColor: '#6BB7F0',
                     borderWidth: 1,
                     yAxisID: 'y'
                 },
                 {
                     label: 'Dólar SOFR (Dólar americano taxa de juros americano)',
                     data: dolarSofrData,
-                    backgroundColor: '#0A92FA',
-                    borderColor: '#0A92FA',
+                    backgroundColor: '#293273',
+                    borderColor: '#293273',
                     borderWidth: 1,
                     yAxisID: 'y'
                 },
                 {
                     label: 'TJLP (Taxa de Juros de Longo Prazo)',
                     data: tjlpData,
-                    backgroundColor: '#685DFA',
-                    borderColor: '#685DFA',
+                    backgroundColor: '#04B4CB',
+                    borderColor: '#04B4CB',
                     borderWidth: 1,
                     yAxisID: 'y'
                 },
@@ -104,28 +104,28 @@
                     label: 'SELIC (Taxa básica de juros da economia)',
                     data: selicData,
                     type: 'line', // Linha para destacar
-                    borderColor: '#00FAED',
-                    backgroundColor: '#00FAED',
+                    borderColor: '#E66734',
+                    backgroundColor: '#E66734',
                     borderWidth: 3,
                     tension: 0.4,
                     fill: false,
                     yAxisID: 'y2',
-                    pointBackgroundColor: '#00FAED',
-                    pointBorderColor: '#00FAED',
+                    pointBackgroundColor: '#E66734',
+                    pointBorderColor: '#E66734',
                     pointRadius: 3
                 },
                 {
                     label: 'TR (Taxa Referencial)',
                     data: trData,
                     type: 'line',  // Linha igual SELIC
-                    borderColor: '#000',
-                    backgroundColor: '#000',
+                    borderColor: '#137A8F',
+                    backgroundColor: '#137A8F',
                     borderWidth: 3,
                     tension: 0.4,
                     fill: false,
                     yAxisID: 'y2', 
-                    pointBackgroundColor: '#000',
-                    pointBorderColor: '#000',
+                    pointBackgroundColor: '#137A8F',
+                    pointBorderColor: '#137A8F',
                     pointRadius: 3
                 }
             ]
@@ -279,14 +279,14 @@ h3, div, span {
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-24 18:43:22</sys_created_on>
         <sys_id>1bee2858fb3dae10f6d5f9d38eefdc0d</sys_id>
-        <sys_mod_count>58</sys_mod_count>
+        <sys_mod_count>62</sys_mod_count>
         <sys_name>Indice de Atualizacao Grafico</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_1bee2858fb3dae10f6d5f9d38eefdc0d</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 23:34:08</sys_updated_on>
+        <sys_updated_on>2025-06-14 17:13:35</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 

@@ -20,6 +20,10 @@ $scope.goTo = function(url) {
     window.open(url, '_blank');
 };
 	
+	  $scope.goToPageWithoutBlank = function(id) {
+    $location.url("?id=" + id);
+  };
+	
 	
 	    function updateFlags() {
         var currentUrl = $location.absUrl();
@@ -1555,14 +1559,14 @@ data.typeAheadSearch = $sp.getWidget('typeahead_global_sefaz', options.typeahead
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-08 17:54:22</sys_created_on>
         <sys_id>05f9c647fbd52e10f6d5f9d38eefdc83</sys_id>
-        <sys_mod_count>445</sys_mod_count>
+        <sys_mod_count>450</sys_mod_count>
         <sys_name>Sefaz Header Portal</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_header_footer_05f9c647fbd52e10f6d5f9d38eefdc83</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-06-03 21:30:06</sys_updated_on>
+        <sys_updated_on>2025-06-14 14:43:17</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 </style>
@@ -1593,7 +1597,7 @@ data.typeAheadSearch = $sp.getWidget('typeahead_global_sefaz', options.typeahead
    aria-hidden="true"></i>
 
 
-  <a id="tesouroPointer" href="#" ng-click="toggleMenu()">TESOURO NACIONAL</a>
+  <a id="tesouroPointer" href="#" ng-click="toggleMenu()">TESOURO ESTADUAL</a>
 
   <ul class="dropdown2" ng-show="menuAberto">
     <li class="has-submenu">
@@ -1746,7 +1750,7 @@ data.typeAheadSearch = $sp.getWidget('typeahead_global_sefaz', options.typeahead
       </li>
       <!--li><a href="?id=gfo_kb_home">Base de conhecimento</a></li-->
       <li class="dropdown">
-       <a href="">PAINÉIS <i class="fa fa-angle-right"></i></a>
+       <a href="" ng-click="goToPageWithoutBlank('404_sefaz')">PAINÉIS <i class="fa fa-angle-right"></i></a>
         <ul class="dropdown-menu">
           <!--li><a href="?id=404_sefaz" target="_blank"><i class="fa fa-external-link">404</i></a></li-->
           <!--li><a href="https://www.sigadoc.mt.gov.br/" target="_blank"><i class="fa fa-external-link"></i> SIGADOC</a></li>
@@ -1754,7 +1758,7 @@ data.typeAheadSearch = $sp.getWidget('typeahead_global_sefaz', options.typeahead
           <li><a href="https://www.sefaz.mt.gov.br/sifimt/" target="_blank"><i class="fa fa-external-link"></i> SIFI</a></li-->
         </ul>
       </li>
-       <li><a id="aUnderline" href="https://www5.sefaz.mt.gov.br/sobre_a_sefaz">A SEFAZ</a></li>
+       <li><a id="aUnderline"  target="_blank" href="https://www5.sefaz.mt.gov.br/sobre_a_sefaz">A SEFAZ</a></li>
        <li><a id="aUnderline" href="?id=tesouro_estadual">O TESOURO</a></li>
     </ul>
   </div>
