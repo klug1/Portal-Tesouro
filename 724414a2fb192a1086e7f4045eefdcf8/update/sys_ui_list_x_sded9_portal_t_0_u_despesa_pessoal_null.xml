@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_list parent="" relationship="" sys_domain="global" table="x_sded9_portal_t_0_u_despesa_pessoal" version="2" view="">
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>u_ano</element>
+            <list_id display_value="x_sded9_portal_t_0_u_despesa_pessoal" element="NULL" name="x_sded9_portal_t_0_u_despesa_pessoal" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">5032be6ffb8a6a10f6d5f9d38eefdc82</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>0</position>
+            <sum>false</sum>
+            <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-06-16 16:52:49</sys_created_on>
+            <sys_id>5832be6ffb8a6a10f6d5f9d38eefdc82</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-06-16 16:52:49</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>u_comprometimento_rcl</element>
+            <list_id display_value="x_sded9_portal_t_0_u_despesa_pessoal" element="NULL" name="x_sded9_portal_t_0_u_despesa_pessoal" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">5032be6ffb8a6a10f6d5f9d38eefdc82</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>1</position>
+            <sum>false</sum>
+            <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-06-16 16:52:49</sys_created_on>
+            <sys_id>5c32be6ffb8a6a10f6d5f9d38eefdc82</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-06-16 16:52:49</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>u_despesa_bruta_pessoal</element>
+            <list_id display_value="x_sded9_portal_t_0_u_despesa_pessoal" element="NULL" name="x_sded9_portal_t_0_u_despesa_pessoal" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">5032be6ffb8a6a10f6d5f9d38eefdc82</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>2</position>
+            <sum>false</sum>
+            <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-06-16 16:52:49</sys_created_on>
+            <sys_id>5032be6ffb8a6a10f6d5f9d38eefdc83</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-06-16 16:52:49</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>u_despesa_decisao_judicial</element>
+            <list_id display_value="x_sded9_portal_t_0_u_despesa_pessoal" element="NULL" name="x_sded9_portal_t_0_u_despesa_pessoal" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">5032be6ffb8a6a10f6d5f9d38eefdc82</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>3</position>
+            <sum>false</sum>
+            <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-06-16 16:52:49</sys_created_on>
+            <sys_id>5432be6ffb8a6a10f6d5f9d38eefdc83</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-06-16 16:52:49</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>u_despesa_deducoes</element>
+            <list_id display_value="x_sded9_portal_t_0_u_despesa_pessoal" element="NULL" name="x_sded9_portal_t_0_u_despesa_pessoal" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">5032be6ffb8a6a10f6d5f9d38eefdc82</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>4</position>
+            <sum>false</sum>
+            <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-06-16 16:52:49</sys_created_on>
+            <sys_id>5832be6ffb8a6a10f6d5f9d38eefdc83</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-06-16 16:52:49</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>u_despesa_inativos_pensionistas</element>
+            <list_id display_value="x_sded9_portal_t_0_u_despesa_pessoal" element="NULL" name="x_sded9_portal_t_0_u_despesa_pessoal" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">5032be6ffb8a6a10f6d5f9d38eefdc82</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>5</position>
+            <sum>false</sum>
+            <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-06-16 16:52:49</sys_created_on>
+            <sys_id>5c32be6ffb8a6a10f6d5f9d38eefdc83</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-06-16 16:52:49</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>u_despesa_inativos_pensionistas_vinculados</element>
+            <list_id display_value="x_sded9_portal_t_0_u_despesa_pessoal" element="NULL" name="x_sded9_portal_t_0_u_despesa_pessoal" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">5032be6ffb8a6a10f6d5f9d38eefdc82</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>6</position>
+            <sum>false</sum>
+            <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-06-16 16:52:49</sys_created_on>
+            <sys_id>5032be6ffb8a6a10f6d5f9d38eefdc84</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-06-16 16:52:49</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>u_despesa_indenizacoes_demissoes</element>
+            <list_id display_value="x_sded9_portal_t_0_u_despesa_pessoal" element="NULL" name="x_sded9_portal_t_0_u_despesa_pessoal" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">5032be6ffb8a6a10f6d5f9d38eefdc82</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>7</position>
+            <sum>false</sum>
+            <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-06-16 16:52:49</sys_created_on>
+            <sys_id>5432be6ffb8a6a10f6d5f9d38eefdc84</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-06-16 16:52:49</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>u_despesa_liquida_pedidos</element>
+            <list_id display_value="x_sded9_portal_t_0_u_despesa_pessoal" element="NULL" name="x_sded9_portal_t_0_u_despesa_pessoal" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">5032be6ffb8a6a10f6d5f9d38eefdc82</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>8</position>
+            <sum>false</sum>
+            <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-06-16 16:52:49</sys_created_on>
+            <sys_id>5832be6ffb8a6a10f6d5f9d38eefdc84</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-06-16 16:52:49</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>u_despesa_pessoal_ativo</element>
+            <list_id display_value="x_sded9_portal_t_0_u_despesa_pessoal" element="NULL" name="x_sded9_portal_t_0_u_despesa_pessoal" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">5032be6ffb8a6a10f6d5f9d38eefdc82</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>9</position>
+            <sum>false</sum>
+            <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-06-16 16:52:49</sys_created_on>
+            <sys_id>5c32be6ffb8a6a10f6d5f9d38eefdc84</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-06-16 16:52:49</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>u_despesas_exercicio_anteriores</element>
+            <list_id display_value="x_sded9_portal_t_0_u_despesa_pessoal" element="NULL" name="x_sded9_portal_t_0_u_despesa_pessoal" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">5032be6ffb8a6a10f6d5f9d38eefdc82</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>10</position>
+            <sum>false</sum>
+            <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-06-16 16:52:49</sys_created_on>
+            <sys_id>5032be6ffb8a6a10f6d5f9d38eefdc85</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-06-16 16:52:49</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>u_receita_corrente_liquida</element>
+            <list_id display_value="x_sded9_portal_t_0_u_despesa_pessoal" element="NULL" name="x_sded9_portal_t_0_u_despesa_pessoal" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">5032be6ffb8a6a10f6d5f9d38eefdc82</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>11</position>
+            <sum>false</sum>
+            <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-06-16 16:52:49</sys_created_on>
+            <sys_id>5432be6ffb8a6a10f6d5f9d38eefdc85</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-06-16 16:52:49</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>u_despesa_pessoal_terceirizado</element>
+            <list_id display_value="x_sded9_portal_t_0_u_despesa_pessoal" element="NULL" name="x_sded9_portal_t_0_u_despesa_pessoal" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">5032be6ffb8a6a10f6d5f9d38eefdc82</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>12</position>
+            <sum>false</sum>
+            <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-06-16 16:52:49</sys_created_on>
+            <sys_id>5832be6ffb8a6a10f6d5f9d38eefdc85</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-06-16 16:52:49</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>u_limite_de_alerta</element>
+            <list_id display_value="x_sded9_portal_t_0_u_despesa_pessoal" element="NULL" name="x_sded9_portal_t_0_u_despesa_pessoal" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">5032be6ffb8a6a10f6d5f9d38eefdc82</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>13</position>
+            <sum>false</sum>
+            <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-06-16 16:52:49</sys_created_on>
+            <sys_id>5c32be6ffb8a6a10f6d5f9d38eefdc85</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-06-16 16:52:49</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>u_limite_maximo</element>
+            <list_id display_value="x_sded9_portal_t_0_u_despesa_pessoal" element="NULL" name="x_sded9_portal_t_0_u_despesa_pessoal" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">5032be6ffb8a6a10f6d5f9d38eefdc82</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>14</position>
+            <sum>false</sum>
+            <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-06-16 16:52:49</sys_created_on>
+            <sys_id>d032b2affb8a6a10f6d5f9d38eefdc50</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-06-16 16:52:49</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>u_limite_prudencial</element>
+            <list_id display_value="x_sded9_portal_t_0_u_despesa_pessoal" element="NULL" name="x_sded9_portal_t_0_u_despesa_pessoal" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">5032be6ffb8a6a10f6d5f9d38eefdc82</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>15</position>
+            <sum>false</sum>
+            <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-06-16 16:52:49</sys_created_on>
+            <sys_id>d432b2affb8a6a10f6d5f9d38eefdc50</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-06-16 16:52:49</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element/>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <name>x_sded9_portal_t_0_u_despesa_pessoal</name>
+            <parent/>
+            <position/>
+            <relationship/>
+            <sum>false</sum>
+            <sys_class_name>sys_ui_list</sys_class_name>
+            <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-06-16 16:52:49</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>5032be6ffb8a6a10f6d5f9d38eefdc82</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_sded9_portal_t_0_u_despesa_pessoal</sys_name>
+            <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+            <sys_update_name>sys_ui_list_x_sded9_portal_t_0_u_despesa_pessoal_null</sys_update_name>
+            <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-06-16 16:52:49</sys_updated_on>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_list>
+    </sys_ui_list>
+</record_update>
