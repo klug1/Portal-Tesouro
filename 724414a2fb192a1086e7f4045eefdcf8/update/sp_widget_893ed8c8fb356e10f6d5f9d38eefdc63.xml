@@ -53,19 +53,19 @@
         // Mapear valores RCL Normal
         var valoresNormais = [];
         for (var j = 0; j < listaDados.length; j++) {
-            valoresNormais.push(listaDados[j].somaRclNormal / 1000000);
+            valoresNormais.push(listaDados[j].somaRclNormal / 1);
         }
 
         // Mapear valores RCL Ajustada
         var valoresAjustados = [];
         for (var k = 0; k < listaDados.length; k++) {
-            valoresAjustados.push(listaDados[k].somaRclAjustada / 1000000);
+            valoresAjustados.push(listaDados[k].somaRclAjustada / 1);
         }
 
         // Mapear valores Deduções (nova série)
         var valoresSerie = [];
         for (var m = 0; m < listaDados.length; m++) {
-            valoresSerie.push(listaDados[m].serie / 1000000);
+            valoresSerie.push(listaDados[m].serie / 1);
         }
 
         var ctx = document.getElementById('graficoRclLinha2').getContext('2d');
@@ -82,8 +82,8 @@
                     {
                         label: 'RCL Normal',
                         data: valoresNormais,
-                        borderColor: '#007bff',
-                        backgroundColor: 'rgba(0, 123, 255, 0.3)',
+                        borderColor: '#6BB7F0',
+                        backgroundColor: '#6BB7F0',
                         fill: false,
                         tension: 0.3,
                         pointRadius: 5,
@@ -92,8 +92,8 @@
                     {
                         label: 'RCL Ajustada',
                         data: valoresAjustados,
-                        borderColor: '#120a8f',
-                        backgroundColor: '#120a8f',
+                        borderColor: '#4A75B1',
+                        backgroundColor: '#4A75B1',
                         fill: false,
                         tension: 0.3,
                         pointRadius: 5,
@@ -102,8 +102,8 @@
                     {
                         label: 'Deduções',
                         data: valoresSerie,
-                        borderColor: '#e74c3c',
-                        backgroundColor: 'rgba(231, 76, 60, 0.3)',
+                        borderColor: '#D90C0C',
+                        backgroundColor: '#D90C0C',
                         fill: false,
                         tension: 0.3,
                         pointRadius: 5,
@@ -126,11 +126,11 @@
                         beginAtZero: true,
                         title: {
                             display: true,
-                            text: 'Valor (Milhões de R$)'
+                            text: 'Valor (em R$)'
                         },
                         ticks: {
                             callback: function(value) {
-                                return 'R$ ' + value.toLocaleString('pt-BR') + ' mi';
+                                return 'R$ ' + value.toLocaleString('pt-BR') + '';
                             }
                         }
                     }
@@ -142,7 +142,7 @@
                     tooltip: {
                         callbacks: {
                             label: function(context) {
-                                return context.dataset.label + ': R$ ' + context.parsed.y.toLocaleString('pt-BR') + ' mi';
+                                return context.dataset.label + ': R$ ' + context.parsed.y.toLocaleString('pt-BR') + '';
                             }
                         }
                     }
@@ -222,17 +222,44 @@ h3, div {
         <script><![CDATA[(function() {
     input = input || {};
 
-    var anoFiltro = input.ano || ""; // caso queira filtrar ano
+    var anoFiltro = input.ano || "";
+
     var grRCL = new GlideAggregate('x_sded9_portal_t_0_u_rcl_deducoes');
 
-    if (anoFiltro !== "") {
-        grRCL.addQuery('u_ano', anoFiltro);
-    }
+    /*if (anoFiltro !== "") {
+        var anoSelecionado = parseInt(anoFiltro, 10);
 
-    // Agrupamos por ano para somar por ano
+        // Buscar anos disponíveis
+        var anosDisponiveis = [];
+        var grAnos = new GlideRecord('x_sded9_portal_t_0_u_rcl_deducoes');
+        grAnos.orderByDesc('u_ano');
+        grAnos.query();
+        while (grAnos.next()) {
+            var anoAtual = parseInt(grAnos.getValue('u_ano'), 10);
+            if (anosDisponiveis.indexOf(anoAtual) === -1) {
+                anosDisponiveis.push(anoAtual);
+            }
+        }
+        anosDisponiveis.sort();
+
+        var anoAnterior = null;
+        var indexAnoSelecionado = anosDisponiveis.indexOf(anoSelecionado);
+        if (indexAnoSelecionado > 0) {
+            anoAnterior = anosDisponiveis[indexAnoSelecionado - 1];
+        }
+
+        // Construir query para ano selecionado e ano anterior (se existir)
+        if (anoAnterior !== null) {
+            var qc = grRCL.addQuery('u_ano', anoSelecionado);
+            qc.addOrCondition('u_ano', anoAnterior);
+        } else {
+            grRCL.addQuery('u_ano', anoSelecionado);
+        }
+    }*/
+
     grRCL.addAggregate('SUM', 'u_rcl_normal');
     grRCL.addAggregate('SUM', 'u_rcl_ajustada');
-    grRCL.addAggregate('SUM', 'u_deducoes'); // soma das deduções
+    grRCL.addAggregate('SUM', 'u_deducoes');
     grRCL.groupBy('u_ano');
     grRCL.orderBy('u_ano');
     grRCL.query();
@@ -249,20 +276,21 @@ h3, div {
     }
 
     data.dadosGraficoRCL = listaRCL;
-})();]]></script>
+})();
+]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-23 22:51:50</sys_created_on>
         <sys_id>893ed8c8fb356e10f6d5f9d38eefdc63</sys_id>
-        <sys_mod_count>9</sys_mod_count>
+        <sys_mod_count>17</sys_mod_count>
         <sys_name>RCL Ajusta X normal x serie</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_893ed8c8fb356e10f6d5f9d38eefdc63</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 22:24:53</sys_updated_on>
+        <sys_updated_on>2025-06-18 00:04:00</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 
@@ -310,7 +338,7 @@ h3, div {
 
 <div class="chart-wrapper">
   <h3 style="text-align:center; font-weight: 600; margin-bottom: 16px;">
-    Comparativo Anual da RCL Normal, Ajustada e Deduções - Valor Nominal (em R$)
+    Comparativo Receita Corrente Líquida, Receita Corrente Líquida Ajustada (LC 614/19)  e Deduções – Valor R$
   </h3>
 
   <div class="chart-container" ng-show="exibirGraficoRcl2">

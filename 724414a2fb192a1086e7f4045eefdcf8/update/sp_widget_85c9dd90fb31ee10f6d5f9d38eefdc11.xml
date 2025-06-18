@@ -72,8 +72,8 @@
                     {
                         label: 'Juros e Encargos Externa',
                         data: jurosExternaData,
-                        borderColor: '#0A92FA',
-                        backgroundColor: $scope.tipoGraficoJuros === 'bar' ? '#0A92FA' : 'transparent',
+                        borderColor: '#4A75B1',
+                        backgroundColor: $scope.tipoGraficoJuros === 'bar' ? '#4A75B1' : 'transparent',
                         borderWidth: 2,
                         borderDash: $scope.tipoGraficoJuros === 'line' ? [6, 4] : [],
                         fill: false,
@@ -84,8 +84,8 @@
                     {
                         label: 'Juros e Encargos Interna',
                         data: jurosInternaData,
-                        borderColor: '#685DFA',
-                        backgroundColor: $scope.tipoGraficoJuros === 'bar' ? '#685DFA' : 'transparent',
+                        borderColor: '#6BB7F0',
+                        backgroundColor: $scope.tipoGraficoJuros === 'bar' ? '#6BB7F0' : 'transparent',
                         borderWidth: 2,
                         borderDash: [],
                         fill: false,
@@ -109,7 +109,7 @@
                         beginAtZero: true,
                         title: {
                             display: true,
-                            text: 'Valores (milhões)'
+                            text: 'Valores (em R$)'
                         }
                     }
                 },
@@ -120,7 +120,7 @@
                     tooltip: {
                         callbacks: {
                             label: function(context) {
-                                return context.dataset.label + ': ' + context.parsed.y.toFixed(2) + ' M';
+                                return context.dataset.label + ': ' + context.parsed.y.toFixed(2) + '';
                             }
                         }
                     }
@@ -213,8 +213,8 @@ h3, div, span {
     while (gr.next()) {
         listaJuros.push({
             ano: gr.getValue('u_ano'),
-            jurosEncargosExterna: parseFloat(gr.getValue('u_juros_encargos_externa')) / 1000000 || 0,
-            jurosEncargosInterna: parseFloat(gr.getValue('u_juros_encargos_interna')) / 1000000 || 0
+            jurosEncargosExterna: parseFloat(gr.getValue('u_juros_encargos_externa')) / 1 || 0,
+            jurosEncargosInterna: parseFloat(gr.getValue('u_juros_encargos_interna')) / 1 || 0
         });
     }
 
@@ -226,14 +226,14 @@ h3, div, span {
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-24 21:50:32</sys_created_on>
         <sys_id>85c9dd90fb31ee10f6d5f9d38eefdc11</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name>Juros e Encargos de Servico Grafico</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_85c9dd90fb31ee10f6d5f9d38eefdc11</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-26 23:43:46</sys_updated_on>
+        <sys_updated_on>2025-06-17 23:35:45</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 

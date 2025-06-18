@@ -60,11 +60,11 @@
     });
 
     var valoresNormais = listaDados.map(function(item) {
-      return item.somaRclNormal / 1000000;
+      return item.somaRclNormal / 1;
     });
 
     var valoresAjustados = listaDados.map(function(item) {
-      return item.somaRclAjustada / 1000000;
+      return item.somaRclAjustada / 1;
     });
 
     var ctx = document.getElementById('graficoRclLinhaWidget').getContext('2d');
@@ -84,8 +84,8 @@
           {
             label: 'RCL Normal',
             data: valoresNormais,
-            borderColor: '#007bff',
-            backgroundColor: 'rgba(0, 123, 255, 0.3)',
+            borderColor: '#6BB7F0',
+            backgroundColor: 'rgba(107, 183, 240, 1)',
             fill: tipoGrafico === 'line' ? false : true,
             tension: tipoGrafico === 'line' ? 0.3 : 0,
             pointRadius: tipoGrafico === 'line' ? 5 : 0,
@@ -94,8 +94,8 @@
           {
             label: 'RCL Ajustada',
             data: valoresAjustados,
-            borderColor: '#120a8f',
-            backgroundColor: '#120a8f',
+            borderColor: '#4A75B1',
+            backgroundColor: '#4A75B1',
             fill: tipoGrafico === 'line' ? false : true,
             tension: tipoGrafico === 'line' ? 0.3 : 0,
             pointRadius: tipoGrafico === 'line' ? 5 : 0,
@@ -114,10 +114,10 @@
           },
           y: {
             beginAtZero: true,
-            title: { display: true, text: 'Valor (Milhões de R$)' },
+            title: { display: true, text: 'Valor (em R$)' },
             ticks: {
               callback: function(value) {
-                return 'R$ ' + value.toLocaleString('pt-BR') + ' mi';
+                return 'R$ ' + value.toLocaleString('pt-BR') + '';
               }
             },
             // stacked: false padrão
@@ -128,7 +128,7 @@
           tooltip: {
             callbacks: {
               label: function(context) {
-                return context.dataset.label + ': R$ ' + context.parsed.y.toLocaleString('pt-BR') + ' mi';
+                return context.dataset.label + ': R$ ' + context.parsed.y.toLocaleString('pt-BR') + '';
               }
             }
           }
@@ -213,9 +213,40 @@ h3, div {
 
   var grRCL = new GlideAggregate('x_sded9_portal_t_0_u_rcl_basica');
 
-  if (anoFiltro !== "") {
-    grRCL.addQuery('u_ano', anoFiltro);
+  // Buscar anos disponíveis para saber se existe ano anterior
+  var anosDisponiveis = [];
+  var grAnos = new GlideRecord('x_sded9_portal_t_0_u_rcl_basica');
+  grAnos.orderByDesc('u_ano');
+  grAnos.query();
+  while (grAnos.next()) {
+    var anoAtual = parseInt(grAnos.getValue('u_ano'), 10);
+    if (anosDisponiveis.indexOf(anoAtual) === -1) {
+      anosDisponiveis.push(anoAtual);
+    }
   }
+  anosDisponiveis.sort();
+
+  var anosParaFiltrar = [];
+
+  if (anoFiltro !== "") {
+    var anoSelecionado = parseInt(anoFiltro, 10);
+    anosParaFiltrar.push(anoSelecionado);
+
+    var indexAno = anosDisponiveis.indexOf(anoSelecionado);
+    if (indexAno > 0) {
+      // Ano anterior existe
+      anosParaFiltrar.push(anosDisponiveis[indexAno - 1]);
+    }
+  }
+
+  // Montar a query com OR para os anos (se tiver)
+  if (anosParaFiltrar.length > 0) {
+    var qc = grRCL.addQuery('u_ano', anosParaFiltrar[0]);
+    for (var i = 1; i < anosParaFiltrar.length; i++) {
+      qc.addOrCondition('u_ano', anosParaFiltrar[i]);
+    }
+  }
+
   if (bimestreFiltro !== "") {
     grRCL.addQuery('u_bimestre', bimestreFiltro);
   }
@@ -251,14 +282,14 @@ h3, div {
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-28 21:54:42</sys_created_on>
         <sys_id>4d11462dfbb96210f6d5f9d38eefdc82</sys_id>
-        <sys_mod_count>12</sys_mod_count>
+        <sys_mod_count>16</sys_mod_count>
         <sys_name>Comparativo Anual Bimeste</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_4d11462dfbb96210f6d5f9d38eefdc82</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-28 22:44:47</sys_updated_on>
+        <sys_updated_on>2025-06-17 23:53:34</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
   

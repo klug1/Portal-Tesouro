@@ -82,8 +82,8 @@
                     {
                         label: 'Amortização Externa (milhões)',
                         data: amortizacaoExternaData,
-                        borderColor: '#0A46FA',
-                        backgroundColor: $scope.tipoGrafico === 'bar' ? '#0A46FA' : 'transparent',
+                        borderColor: '#4A75B1',
+                        backgroundColor: $scope.tipoGrafico === 'bar' ? '#4A75B1' : 'transparent',
                         borderWidth: 2,
                         borderDash: $scope.tipoGrafico === 'line' ? [6, 4] : [],
                         fill: false,
@@ -94,8 +94,8 @@
                     {
                         label: 'Amortização Interna (milhões)',
                         data: amortizacaoInternaData,
-                        borderColor: '#1A0AFA',
-                        backgroundColor: $scope.tipoGrafico === 'bar' ? '#1A0AFA' : 'transparent',
+                        borderColor: '#6BB7F0',
+                        backgroundColor: $scope.tipoGrafico === 'bar' ? '#6BB7F0' : 'transparent',
                         borderWidth: 2,
                         fill: false,
                         tension: 0.4,
@@ -105,8 +105,8 @@
                     {
                         label: 'Juros e Encargos Externa (milhões)',
                         data: jurosEncargosExternaData,
-                        borderColor: '#0A92FA',
-                        backgroundColor: $scope.tipoGrafico === 'bar' ? '#0A92FA' : 'transparent',
+                        borderColor: '#293273',
+                        backgroundColor: $scope.tipoGrafico === 'bar' ? '#293273' : 'transparent',
                         borderWidth: 2,
                         borderDash: $scope.tipoGrafico === 'line' ? [6, 4] : [],
                         fill: false,
@@ -117,8 +117,8 @@
                     {
                         label: 'Juros e Encargos Interna (milhões)',
                         data: jurosEncargosInternaData,
-                        borderColor: '#685DFA',
-                        backgroundColor: $scope.tipoGrafico === 'bar' ? '#685DFA' : 'transparent',
+                        borderColor: '#137A8F',
+                        backgroundColor: $scope.tipoGrafico === 'bar' ? '#137A8F' : 'transparent',
                         borderWidth: 2,
                         fill: false,
                         tension: 0.4,
@@ -141,7 +141,7 @@
                         beginAtZero: true,
                         title: {
                             display: true,
-                            text: 'Valores (milhões)'
+                            text: 'Valores (em R$)'
                         }
                     }
                 },
@@ -152,7 +152,7 @@
                     tooltip: {
                         callbacks: {
                             label: function(context) {
-                                return context.dataset.label + ': ' + context.parsed.y.toFixed(2) + ' M';
+                                return context.dataset.label + ': ' + context.parsed.y.toFixed(2) + '';
                             }
                         }
                     }
@@ -245,10 +245,10 @@ h3, div, span {
     while (gr.next()) {
         listaAmortizacao.push({
             ano: gr.getValue('u_ano'),
-            amortizacaoExterna: parseFloat(gr.getValue('u_amortizacao_externa')) / 1000000 || 0,
-            amortizacaoInterna: parseFloat(gr.getValue('u_amortizacao_interna')) / 1000000 || 0,
-            jurosEncargosExterna: parseFloat(gr.getValue('u_juros_encargos_externa')) / 1000000 || 0,
-            jurosEncargosInterna: parseFloat(gr.getValue('u_juros_encargos_interna')) / 1000000 || 0
+            amortizacaoExterna: parseFloat(gr.getValue('u_amortizacao_externa')) / 1 || 0,
+            amortizacaoInterna: parseFloat(gr.getValue('u_amortizacao_interna')) / 1 || 0,
+            jurosEncargosExterna: parseFloat(gr.getValue('u_juros_encargos_externa')) / 1 || 0,
+            jurosEncargosInterna: parseFloat(gr.getValue('u_juros_encargos_interna')) / 1 || 0
         });
     }
 
@@ -260,14 +260,14 @@ h3, div, span {
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-24 20:15:02</sys_created_on>
         <sys_id>8ae34514fbbdae10f6d5f9d38eefdc94</sys_id>
-        <sys_mod_count>18</sys_mod_count>
+        <sys_mod_count>23</sys_mod_count>
         <sys_name>Serviço Divida Publica Grafico</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_8ae34514fbbdae10f6d5f9d38eefdc94</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-26 23:42:47</sys_updated_on>
+        <sys_updated_on>2025-06-17 23:34:02</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 

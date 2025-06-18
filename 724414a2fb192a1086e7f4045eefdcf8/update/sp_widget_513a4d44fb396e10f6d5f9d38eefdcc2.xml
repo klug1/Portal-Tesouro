@@ -52,8 +52,8 @@
 
         for (var i = 0; i < listaDados.length; i++) {
             labels.push(listaDados[i].ano);
-            receitaData.push(listaDados[i].receita / 1000000);
-            despesaData.push(listaDados[i].despesa / 1000000);
+            receitaData.push(listaDados[i].receita / 1);
+            despesaData.push(listaDados[i].despesa / 1);
         }
 
         var contexto = document.getElementById('graficoResultadoPrimario').getContext('2d');
@@ -70,15 +70,15 @@
                     {
                         label: 'Receita Primária Total',
                         data: receitaData,
-                        backgroundColor: '#36A2EB',
-                        borderColor: '#36A2EB',
+                        backgroundColor: '#4A75B1',
+                        borderColor: '#4A75B1',
                         borderWidth: 1
                     },
                     {
                         label: 'Despesa Primária Total',
                         data: despesaData,
-                        backgroundColor: '#00ced1',
-                        borderColor: '#00ced1',
+                        backgroundColor: '#6BB7F0',
+                        borderColor: '#6BB7F0',
                         borderWidth: 1
                     }
                 ]
@@ -97,11 +97,11 @@
                         beginAtZero: true,
                         title: {
                             display: true,
-                            text: 'Valor em Milhões de R$'
+                            text: 'Valor em R$'
                         },
                         ticks: {
                             callback: function(value) {
-                                return 'R$ ' + value.toLocaleString('pt-BR') + ' mi';
+                                return 'R$ ' + value.toLocaleString('pt-BR') + '';
                             }
                         }
                     }
@@ -113,7 +113,7 @@
                     tooltip: {
                         callbacks: {
                             label: function(context) {
-                                return context.dataset.label + ': R$ ' + context.parsed.y.toLocaleString('pt-BR') + ' mi';
+                                return context.dataset.label + ': R$ ' + context.parsed.y.toLocaleString('pt-BR') + '';
                             }
                         }
                     }
@@ -220,7 +220,7 @@ h3, div, span {
 
         // Convertendo valores formatados "4.092.955.668,73" -> 4092955668.73
         function parseValor(valorStr) {
-            return parseFloat(valorStr.trim().replace(/\./g, '').replace(',', '.')) || 0;
+            return parseFloat(valorStr) || 0;
         }
 
         var receita = parseValor(receitaRaw);
@@ -266,14 +266,14 @@ h3, div, span {
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-24 02:04:05</sys_created_on>
         <sys_id>513a4d44fb396e10f6d5f9d38eefdcc2</sys_id>
-        <sys_mod_count>20</sys_mod_count>
+        <sys_mod_count>28</sys_mod_count>
         <sys_name>Receita Primaria x Despesa Grafico</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_513a4d44fb396e10f6d5f9d38eefdcc2</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-29 00:31:50</sys_updated_on>
+        <sys_updated_on>2025-06-17 23:29:20</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 

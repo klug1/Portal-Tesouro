@@ -94,7 +94,7 @@
                     }
                 },
                 title: {
-                    text: 'Organograma da Empresa'
+                    text: null
                 },
                 series: [{
                     type: 'organization',
@@ -106,6 +106,7 @@
                     color: '#293273',
                     borderColor: 'white',
                     nodeWidth: 100,
+										borderRadius: 45,
                     dataLabels: {
                         color: 'white',
                         style: {
@@ -115,7 +116,11 @@
                         formatter: function() {
                             return this.point.title;
                         }
-                    },
+                    },  states: {
+        inactive: {
+            opacity: 0.5 // Aumente esse valor para deixar menos transparente
+        }
+    },
                     events: {
                         click: function(event) {
                             var node = event.point;
@@ -210,7 +215,8 @@ angular.module('sn.$sp').directive('orgChart', function($compile) {
         userGr.addQuery('department', deptSysId);
         userGr.query();
         while (userGr.next()) {
-            users.push(userGr.name.toString() + ' - ' + (userGr.title.toString() || 'Sem função'));
+            //users.push(userGr.name.toString() + ' - ' + (userGr.title.toString() || 'Sem função'));
+					users.push(userGr.name.toString());
         }
         return users;
     }
@@ -220,7 +226,8 @@ angular.module('sn.$sp').directive('orgChart', function($compile) {
         if (!userSysId) return 'Não informado';
         var userGr = new GlideRecord('sys_user');
         if (userGr.get(userSysId)) {
-            return userGr.name.toString() + ' - ' + (userGr.title.toString() || 'Sem função');
+          //  return userGr.name.toString() + ' - ' + (userGr.title.toString() || 'Sem função');
+					return userGr.name.toString();
         }
         return 'Não encontrado';
     }
@@ -242,9 +249,9 @@ angular.module('sn.$sp').directive('orgChart', function($compile) {
             var gestorSub1 = getUserInfo(gr.getValue('u_matricula_substituto_1'));
             var gestorSub2 = getUserInfo(gr.getValue('u_matricula_substituto_2'));
 
-            var color = '#293273'; // Azul escuro para netos e além
-            if (level === 0) color = '#808080'; // Cinza para o pai (root)
-            else if (level === 1) color = '#6CB4EE'; // Azul claro para os filhos diretos
+            var color = '#6BB7F0'; // Azul escuro para netos e além
+            if (level === 0) color = '#4A75B1'; // Cinza para o pai (root)
+            else if (level === 1) color = '#4A75B1'; // Azul claro para os filhos diretos
 
             nodes.push({
                 id: childSysId,
@@ -282,7 +289,7 @@ angular.module('sn.$sp').directive('orgChart', function($compile) {
             gestorTitular: gestorTitularRoot,
             gestorSub1: gestorSub1Root,
             gestorSub2: gestorSub2Root,
-            color: '#808080'
+            color: '#E66734'
         });
     }
 
@@ -298,14 +305,14 @@ angular.module('sn.$sp').directive('orgChart', function($compile) {
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-25 16:25:06</sys_created_on>
         <sys_id>e3d8dde8fbf9661086e7f4045eefdcc7</sys_id>
-        <sys_mod_count>159</sys_mod_count>
+        <sys_mod_count>182</sys_mod_count>
         <sys_name>Organograma Tesouro Clone v2</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_e3d8dde8fbf9661086e7f4045eefdcc7</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-30 22:16:31</sys_updated_on>
+        <sys_updated_on>2025-06-18 12:14:35</sys_updated_on>
         <template><![CDATA[<style>
   #container .highcharts-point {
     filter: drop-shadow(0 0 0 white) drop-shadow(0 0 0 white);

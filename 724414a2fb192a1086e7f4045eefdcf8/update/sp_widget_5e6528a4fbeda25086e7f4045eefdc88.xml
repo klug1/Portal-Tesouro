@@ -85,7 +85,7 @@ $scope.$root.$on('toggleCaseEvent', function(event, isLowercase) {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-   	height: 64rem;
+   	height: 71.8rem;;
   max-width: 68.5rem; /* Aqui é onde você define o tamanho máximo */
   margin: 32px auto;
   padding: 24px;
@@ -136,6 +136,18 @@ $scope.$root.$on('toggleCaseEvent', function(event, isLowercase) {
   }
 }
 
+@media (max-width: 1320px) {
+  .grafico-rcl {
+   height: 74.9rem;;
+  }
+}
+
+@media (max-width: 1060px) {
+  .grafico-rcl {
+   height: 81.3rem;
+  }
+}
+
 
 </css>
         <data_table>sp_instance</data_table>
@@ -161,21 +173,21 @@ $scope.$root.$on('toggleCaseEvent', function(event, isLowercase) {
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-13 02:24:35</sys_created_on>
         <sys_id>5e6528a4fbeda25086e7f4045eefdc88</sys_id>
-        <sys_mod_count>12</sys_mod_count>
+        <sys_mod_count>16</sys_mod_count>
         <sys_name>divida publica grafico sefaz</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_5e6528a4fbeda25086e7f4045eefdc88</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-30 12:06:00</sys_updated_on>
+        <sys_updated_on>2025-06-18 00:17:56</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 </style>
 
 <div class="grafico-rcl">
   <h3 ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">Dívidas Públicas</h3>
-   <img src="x_sded9_portal_t_0.dividaImagem.png"/>
+   <img src="x_sded9_portal_t_0.dividaNovo1.png"/>
   <!--sp-widget widget="data.graficoDivida"></sp-widget-->
   <p ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">
    A Dívida Pública é o total de dinheiro que o Estado deve para bancos, investidores,

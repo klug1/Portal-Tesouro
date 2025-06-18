@@ -46,13 +46,13 @@
           {
             label: 'Despesa Líquida com o pessoal',
             data: despesaLiquidaPessoal,
-            backgroundColor: '#ADD8E6',
+            backgroundColor: '#6BB7F0',
             yAxisID: 'yLeft'
           },
           {
             label: 'Receita Corrente Líquida - RCL - para fins de % pessoal',
             data: receitaCorrenteRCL,
-            backgroundColor: '#000080',
+            backgroundColor: '#4A75B1',
             yAxisID: 'yLeft'
           },
           {
@@ -67,7 +67,7 @@
           {
             label: 'Limite (54%)',
             type: 'line',
-            borderColor: 'red',
+            borderColor: '#D90C0C',
             borderDash: [5, 5],
             borderWidth: 2,
             fill: false,
@@ -90,7 +90,7 @@
             ticks: {
               stepSize: 5,
               callback: function(value) {
-                return value.toLocaleString('pt-BR') + ' mi';
+                return value.toLocaleString('pt-BR') + '';
               }
             },
             title: { display: true, text: 'Milhões (R$)' }
@@ -116,7 +116,7 @@
                 if (context.dataset.yAxisID === 'yRight') {
                   return context.dataset.label + ': ' + context.parsed.y + '%';
                 }
-                return context.dataset.label + ': ' + context.parsed.y.toLocaleString('pt-BR') + ' mi';
+                return context.dataset.label + ': ' + context.parsed.y.toLocaleString('pt-BR') + '';
               }
             }
           },
@@ -198,13 +198,37 @@ h3, div {
     h3 {
         font-size: 0.9rem;
     }
-}</css>
+}
+@media (min-width: 2001px) {
+    .chart-wrapper {
+        height: 72rem;
+    }
+}
+
+@media (min-width: 1884px) and (max-width: 2000px) {
+    .chart-wrapper {
+        height: 78rem;
+    }
+}
+
+@media (min-width: 1511px) and (max-width: 1883px) {
+    .chart-wrapper {
+        height: 76.5rem;
+    }
+}
+
+@media (min-width: 990px) and (max-width: 1510px) {
+    .chart-wrapper {
+        height: 84.5rem;
+    }
+}
+</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
         <docs/>
         <field_list/>
-        <has_preview>false</has_preview>
+        <has_preview>true</has_preview>
         <id>widget_despesa_line_bar_v2</id>
         <internal>false</internal>
         <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
@@ -223,8 +247,8 @@ h3, div {
   while (gr.next()) {
     dados.push({
       ano: gr.getValue('u_ano'),
-      ativo: parseFloat(gr.getValue('u_despesa_liquida_pedidos')) / 1000000,
-      inativo: parseFloat(gr.getValue('u_receita_corrente_liquida')) / 1000000,
+      ativo: parseFloat(gr.getValue('u_despesa_liquida_pedidos')) / 1,
+      inativo: parseFloat(gr.getValue('u_receita_corrente_liquida')) / 1,
       comprometimento: parseFloat(gr.getValue('u_comprometimento_rcl')) || 0
     });
   }
@@ -237,14 +261,14 @@ h3, div {
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-20 02:28:56</sys_created_on>
         <sys_id>5a89e0befbedae5086e7f4045eefdc52</sys_id>
-        <sys_mod_count>15</sys_mod_count>
+        <sys_mod_count>44</sys_mod_count>
         <sys_name>WIdget Despesa Line/Bar v2</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_5a89e0befbedae5086e7f4045eefdc52</sys_update_name>
-        <sys_updated_by>pk.aba</sys_updated_by>
-        <sys_updated_on>2025-05-22 11:09:57</sys_updated_on>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-06-17 23:24:19</sys_updated_on>
         <template><![CDATA[<style>
   
    @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
@@ -257,6 +281,7 @@ h3, div {
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
+  	height: 72rem;
 }
 .chart-container {
     position: relative;

@@ -49,8 +49,8 @@ function arredondarParaCimaMultiplo5Milhoes(num) {
                 datasets: [{
                     label: 'Despesa Bruta com Pessoal',
                     data: valoresDespesa,
-                    borderColor: '#0074D9',
-                    backgroundColor: '#0074D9',
+                    borderColor: '#4A75B1',
+                    backgroundColor: '#4A75B1',
                     borderWidth: 3,
                     tension: 0.2,
                     fill: false,
@@ -69,10 +69,10 @@ function arredondarParaCimaMultiplo5Milhoes(num) {
                     y: {
                         beginAtZero: true,
                         max: maxEixoY,
-                        title: { display: true, text: 'Valores em Milhões (R$)' },
+                        title: { display: true, text: 'Valores em R$' },
                         ticks: {
                             callback: function(value) {
-                                return value.toLocaleString('pt-BR') + ' mi';
+                                return value.toLocaleString('pt-BR') + '';
                             }
                         }
                     }
@@ -82,7 +82,7 @@ function arredondarParaCimaMultiplo5Milhoes(num) {
                     tooltip: {
                         callbacks: {
                             label: function(context) {
-                                return context.dataset.label + ': ' + context.parsed.y.toLocaleString('pt-BR') + ' mi';
+                                return context.dataset.label + ': ' + context.parsed.y.toLocaleString('pt-BR') + '';
                             }
                         }
                     }
@@ -183,14 +183,14 @@ h2, h3, div {
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-21 23:15:10</sys_created_on>
         <sys_id>63501e53fbe1a29086e7f4045eefdc6e</sys_id>
-        <sys_mod_count>22</sys_mod_count>
+        <sys_mod_count>26</sys_mod_count>
         <sys_name>Despesa Bruta com Pessoal Grafico</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_63501e53fbe1a29086e7f4045eefdc6e</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-21 23:44:42</sys_updated_on>
+        <sys_updated_on>2025-06-17 23:23:31</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 

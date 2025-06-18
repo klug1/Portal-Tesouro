@@ -39,13 +39,13 @@
                     {
                         label: 'Despesa Líquida com Pessoal',
                         data: despesasPessoal,
-                        backgroundColor: '#4052D6',
+                        backgroundColor: '#6BB7F0',
                         yAxisID: 'eixoEsquerdo'
                     },
                     {
                         label: 'Receita Corrente Líquida - RCL - Para Fins de % Pessoal',
                         data: receitasRCL,
-                        backgroundColor: '#60E1EB',
+                        backgroundColor: '#4A75B1',
                         yAxisID: 'eixoEsquerdo'
                     }
                 ]
@@ -68,11 +68,11 @@
                         type: 'linear',
                         position: 'left',
                         beginAtZero: true,
-                        title: { display: true, text: 'Valores em Milhões (R$)' },
+                        title: { display: true, text: 'Valores em R$' },
                         ticks: {
                             padding: 15,
                             callback: function(value) {
-                                return value.toLocaleString('pt-BR') + ' mi';
+                                return value.toLocaleString('pt-BR') + '';
                             }
                         }
                     }
@@ -84,7 +84,7 @@
                     tooltip: {
                         callbacks: {
                             label: function(context) {
-                                return context.dataset.label + ': ' + context.parsed.y.toLocaleString('pt-BR') + ' mi';
+                                return context.dataset.label + ': ' + context.parsed.y.toLocaleString('pt-BR') + '';
                             }
                         }
                     }
@@ -145,8 +145,8 @@ h3, div {
     while (gr.next()) {
         listaDados.push({
             ano: gr.getValue('u_ano'),
-            valorDespesa: parseFloat(gr.getValue('u_despesa_liquida_pedidos')) / 1000000,
-            valorReceita: parseFloat(gr.getValue('u_receita_corrente_liquida')) / 1000000,
+            valorDespesa: parseFloat(gr.getValue('u_despesa_liquida_pedidos')) / 1,
+            valorReceita: parseFloat(gr.getValue('u_receita_corrente_liquida')) / 1,
             percentualComprometimento: parseFloat(gr.getValue('u_comprometimento_rcl')) || 0
         });
     }
@@ -159,14 +159,14 @@ h3, div {
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-21 22:06:33</sys_created_on>
         <sys_id>d6a0ce5ffb61a29086e7f4045eefdcca</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>19</sys_mod_count>
         <sys_name>Receita Corrente x Despesa Liquida - Dee</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_d6a0ce5ffb61a29086e7f4045eefdcca</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-22 00:00:55</sys_updated_on>
+        <sys_updated_on>2025-06-17 23:23:59</sys_updated_on>
         <template><![CDATA[<style>
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 

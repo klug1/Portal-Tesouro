@@ -74,8 +74,8 @@
                     {
                         label: 'Externa',
                         data: estoqueExternaData,
-                        borderColor: '#685DFA',
-                        backgroundColor: $scope.tipoGraficoDividaPublica === 'bar' ? '#685DFA' : 'transparent',
+                        borderColor: '#4A75B1',
+                        backgroundColor: $scope.tipoGraficoDividaPublica === 'bar' ? '#4A75B1' : 'transparent',
                         borderWidth: 2,
                         //borderDash: $scope.tipoGraficoDividaPublica === 'line' ? [6, 4] : [],
                         fill: false,
@@ -86,8 +86,8 @@
                     {
                         label: 'Interna',
                         data: estoqueInternaData,
-                        borderColor: '#00FAED',
-                        backgroundColor: $scope.tipoGraficoDividaPublica === 'bar' ? '#00FAED' : 'transparent',
+                        borderColor: '#6BB7F0',
+                        backgroundColor: $scope.tipoGraficoDividaPublica === 'bar' ? '#6BB7F0' : 'transparent',
                         borderWidth: 2,
                         fill: false,
                         tension: 0.4,
@@ -97,8 +97,8 @@
                     {
                         label: 'Total',
                         data: estoqueTotalData,
-                        borderColor: '#FF0000',
-                        backgroundColor: $scope.tipoGraficoDividaPublica === 'bar' ? '#FF0000' : 'transparent',
+                        borderColor: '#D90C0C',
+                        backgroundColor: $scope.tipoGraficoDividaPublica === 'bar' ? '#D90C0C' : 'transparent',
                         borderWidth: 2,
                         fill: false,
                         tension: 0.4,
@@ -122,7 +122,7 @@
                         beginAtZero: true,
                         title: {
                             display: true,
-                            text: 'Valores (milhões)'
+                            text: 'Valores (em R$)'
                         }
                     }
                 },
@@ -133,7 +133,7 @@
                     tooltip: {
                         callbacks: {
                             label: function (context) {
-                                return context.dataset.label + ': ' + context.parsed.y.toFixed(2) + ' M';
+                                return context.dataset.label + ': ' + context.parsed.y.toFixed(2) + '';
                             }
                         }
                     }
@@ -317,9 +317,9 @@ h3, div, span {
     while (gr.next()) {
         listaDividaPublica.push({
             ano: gr.getValue('u_ano'),
-            estoqueExterna: parseFloat(gr.getValue('u_estoque_divida_publica_externa')) / 1000000 || 0,
-            estoqueInterna: parseFloat(gr.getValue('u_estoque_divida_publica_interna')) / 1000000 || 0,
-            estoqueTotal: parseFloat(gr.getValue('u_estoque_divida_publica_total')) / 1000000 || 0
+            estoqueExterna: parseFloat(gr.getValue('u_estoque_divida_publica_externa')) / 1 || 0,
+            estoqueInterna: parseFloat(gr.getValue('u_estoque_divida_publica_interna')) / 1 || 0,
+            estoqueTotal: parseFloat(gr.getValue('u_estoque_divida_publica_total')) / 1 || 0
         });
     }
 
@@ -331,14 +331,14 @@ h3, div, span {
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-24 20:49:06</sys_created_on>
         <sys_id>4dbbc1dcfbbdae10f6d5f9d38eefdca1</sys_id>
-        <sys_mod_count>9</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_name>Estoque da Divida Publica Grafico</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_4dbbc1dcfbbdae10f6d5f9d38eefdca1</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-26 23:43:01</sys_updated_on>
+        <sys_updated_on>2025-06-17 23:31:42</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 

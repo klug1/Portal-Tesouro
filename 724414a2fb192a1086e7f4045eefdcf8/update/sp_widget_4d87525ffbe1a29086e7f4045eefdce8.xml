@@ -45,8 +45,8 @@
                 datasets: [{
                     label: 'Despesa Líquida com Pessoal',
                     data: valoresDespesa,
-                    borderColor: '#49E5DD', // cor diferente da bruta
-                    backgroundColor: '#49E5DD',
+                    borderColor: '#6BB7F0', // cor diferente da bruta
+                    backgroundColor: '#6BB7F0',
                     borderWidth: 3,
                     tension: 0.2,
                     fill: false,
@@ -65,10 +65,10 @@
                     y: {
                         beginAtZero: true,
                         max: maxEixoY,
-                        title: { display: true, text: 'Valores em Milhões (R$)' },
+                        title: { display: true, text: 'Valores em R$' },
                         ticks: {
                             callback: function(value) {
-                                return value.toLocaleString('pt-BR') + ' mi';
+                                return value.toLocaleString('pt-BR') + '';
                             }
                         }
                     }
@@ -78,7 +78,7 @@
                     tooltip: {
                         callbacks: {
                             label: function(context) {
-                                return context.dataset.label + ': ' + context.parsed.y.toLocaleString('pt-BR') + ' mi';
+                                return context.dataset.label + ': ' + context.parsed.y.toLocaleString('pt-BR') + '';
                             }
                         }
                     }
@@ -144,14 +144,14 @@
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-21 23:46:25</sys_created_on>
         <sys_id>4d87525ffbe1a29086e7f4045eefdce8</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_name>Despesa Liquida Grafico</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_4d87525ffbe1a29086e7f4045eefdce8</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-21 23:50:21</sys_updated_on>
+        <sys_updated_on>2025-06-17 23:23:10</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 
