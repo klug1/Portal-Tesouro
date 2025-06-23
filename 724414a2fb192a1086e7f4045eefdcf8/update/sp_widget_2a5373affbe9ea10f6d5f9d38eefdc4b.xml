@@ -213,11 +213,12 @@
         <public>true</public>
         <roles/>
         <script><![CDATA[(function() {
-  function formatarNumero(valor, divisor, sufixo) {
-    var resultado = (valor / divisor).toFixed(2);
-    resultado = resultado.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-    return resultado + ' ' + sufixo;
-  }
+	function formatarNumero(valor, divisor, sufixo) {
+		var resultado = (valor / divisor);
+		resultado = resultado.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+		return resultado + ' ' + sufixo;
+	}
+
 
   // input.filtro_ano pode estar vazio ou indefinido
   var anoFiltrado = input && input.filtro_ano ? input.filtro_ano : null;
@@ -251,7 +252,7 @@
 
   // Aqui a diferença: soma >= 0 considera zero como dado válido
   if (soma >= 0) {
-    var valorFormatado = (soma >= 1000000000) ? formatarNumero(soma, 1000000000, 'BI') : formatarNumero(soma, 1000000, 'MI');
+    var valorFormatado = (soma >= 1) ? formatarNumero(soma, 1, '') : formatarNumero(soma, 1, '');
     data.temDado = true;
     data.valorSoma = soma;
     data.valorSomaFormatado = valorFormatado;
@@ -279,14 +280,14 @@
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-23 01:06:08</sys_created_on>
         <sys_id>2a5373affbe9ea10f6d5f9d38eefdc4b</sys_id>
-        <sys_mod_count>15</sys_mod_count>
+        <sys_mod_count>18</sys_mod_count>
         <sys_name>RCL Total ano card 2</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_2a5373affbe9ea10f6d5f9d38eefdc4b</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-23 01:32:26</sys_updated_on>
+        <sys_updated_on>2025-06-23 21:39:31</sys_updated_on>
         <template><![CDATA[<!-- Fonte -->
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
@@ -301,8 +302,8 @@
       <i class="fa fa-line-chart"></i> Soma Receita Ano Anterior {{anoAnteriorSelecionado}}
     </h2>
   </div>
-  <div class="panel-body" style="text-align: center; font-size: 2.5em; font-weight: bold;">
-    {{dadosAnoAnterior.valorSomaFormatado}}
+  <div class="panel-body" style="text-align: center; font-size: 1.5em; font-weight: bold;">
+   R$ {{dadosAnoAnterior.valorSomaFormatado}}
   </div>
 </div>
 

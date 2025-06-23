@@ -10,8 +10,14 @@
     function carregarDadosDoServer() {
         var filtros = {
             ano: $scope.anoSelecionado || "",
-            mes: $scope.mesSelecionado || "",
+            mes: ""
         };
+
+        if ($scope.mesSelecionado) {
+            // Garante zero à esquerda no mês
+            var mesNum = parseInt($scope.mesSelecionado, 10);
+            filtros.mes = ("0" + mesNum).slice(-2);  // Ex: '1' => '01'
+        }
 
         $scope.server.get(filtros).then(function(response) {
             var listaDados = response.data.dadosGraficoRCL || [];
@@ -50,9 +56,10 @@
             'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'
         ];
 
+        // Mapeia os meses numéricos para índices
         var mesesMap = {
-            january: 0, february: 1, march: 2, april: 3, may: 4, june: 5,
-            july: 6, august: 7, september: 8, october: 9, november: 10, december: 11
+            "01": 0, "02": 1, "03": 2, "04": 3, "05": 4, "06": 5,
+            "07": 6, "08": 7, "09": 8, "10": 9, "11": 10, "12": 11
         };
 
         var anos = [];
@@ -69,13 +76,13 @@
 
         for (var j = 0; j < listaDados.length; j++) {
             var item = listaDados[j];
-            var mesIndex = mesesMap[item.mes.toLowerCase()];
+            var mesIndex = mesesMap[item.mes];
             if (mesIndex === undefined) continue;
 
             if (item.ano === anoMaisRecente) {
-                dadosAnoMaisRecente[mesIndex] += item.valorRCL / 1000000;
+                dadosAnoMaisRecente[mesIndex] += item.valorRCL / 1;
             } else if (item.ano === anoAnterior) {
-                dadosAnoAnterior[mesIndex] += item.valorRCL / 1000000;
+                dadosAnoAnterior[mesIndex] += item.valorRCL / 1;
             }
         }
 
@@ -91,33 +98,33 @@
             datasets.push({
                 label: 'Série: RCL ' + anoAnterior,
                 data: dadosAnoAnterior,
-                borderColor: '#36A2EB',
-                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: '#6BB7F0',
+                backgroundColor: 'rgba(107, 183, 240, 1)',
                 fill: false,
                 tension: 0.3,
-								pointRadius: 6,
-								pointHoverRadius: 8,
-								pointBackgroundColor: '#36A2EB',
-								pointBorderColor: '#36A2EB',
-								pointStyle: 'rect', 
+                pointRadius: 6,
+                pointHoverRadius: 8,
+                pointBackgroundColor: '#6BB7F0',
+                pointBorderColor: '#6BB7F0',
+                pointStyle: 'rect'
             });
         }
 
         datasets.push({
             label: 'Série: RCL ' + anoMaisRecente,
             data: dadosAnoMaisRecente,
-            borderColor: '#00ced1',
-            backgroundColor: 'rgba(0, 206, 209, 0.2)',
+            borderColor: '#4A75B1',
+            backgroundColor: 'rgba(74, 117, 177, 1)',
             fill: false,
             tension: 0.3,
-					pointRadius: 6,          // <<< TAMANHO DA BOLINHA
-					pointHoverRadius: 8,     // <<< TAMANHO QUANDO PASSA O MOUSE
-					pointBackgroundColor: '#00ced1',
-					pointBorderColor: '#00ced1'
+            pointRadius: 6,
+            pointHoverRadius: 8,
+            pointBackgroundColor: '#4A75B1',
+            pointBorderColor: '#4A75B1'
         });
 
         chartInstanceLinha = new Chart(contexto, {
-            type: 'line',
+            type: 'bar',
             data: {
                 labels: mesesLabels,
                 datasets: datasets
@@ -126,15 +133,13 @@
                 responsive: true,
                 maintainAspectRatio: false,
                 scales: {
-                    x: {
-                        title: { display: true, text: 'Mês' },
-                    },
+                    x: { title: { display: true, text: 'Mês' } },
                     y: {
                         beginAtZero: true,
-                        title: { display: true, text: 'Valor em Milhões de R$' },
+                        title: { display: true, text: 'Valor em R$' },
                         ticks: {
                             callback: function(value) {
-                                return 'R$ ' + value.toLocaleString('pt-BR') + ' mi';
+                                return 'R$ ' + value.toLocaleString('pt-BR') + '';
                             }
                         }
                     }
@@ -144,7 +149,7 @@
                     tooltip: {
                         callbacks: {
                             label: function(context) {
-                                return context.dataset.label + ': R$ ' + context.parsed.y.toLocaleString('pt-BR') + ' mi';
+                                return context.dataset.label + ': R$ ' + context.parsed.y.toLocaleString('pt-BR') + '';
                             }
                         }
                     }
@@ -230,11 +235,38 @@ h3, div {
     var gr = new GlideRecord('x_sded9_portal_t_0_u_rreo');
 
     if (anoFiltro !== "") {
-        gr.addQuery('u_ano', anoFiltro);
+        var anoSelecionado = parseInt(anoFiltro, 10);
+
+        // Buscar anos disponíveis na tabela para saber se existe ano anterior
+        var anosDisponiveis = [];
+        var grAnos = new GlideRecord('x_sded9_portal_t_0_u_rreo');
+        grAnos.orderByDesc('u_ano');
+        grAnos.query();
+        while (grAnos.next()) {
+            var anoAtual = parseInt(grAnos.getValue('u_ano'), 10);
+            if (anosDisponiveis.indexOf(anoAtual) === -1) {
+                anosDisponiveis.push(anoAtual);
+            }
+        }
+        anosDisponiveis.sort();
+
+        var anoAnterior = null;
+        var indexSelecionado = anosDisponiveis.indexOf(anoSelecionado);
+        if (indexSelecionado > 0) {
+            anoAnterior = anosDisponiveis[indexSelecionado - 1];
+        }
+
+        // Criar query para ano selecionado OU ano anterior (se existir)
+        if (anoAnterior !== null) {
+            var qc = gr.addQuery('u_ano', anoSelecionado);
+            qc.addOrCondition('u_ano', anoAnterior);
+        } else {
+            gr.addQuery('u_ano', anoSelecionado);
+        }
     }
 
     if (mesFiltro !== "") {
-        gr.addQuery('u_mes', mesFiltro.toLowerCase());
+        gr.addQuery('u_mes', mesFiltro);
     }
 
     gr.orderByDesc('u_ano');
@@ -245,7 +277,7 @@ h3, div {
     while (gr.next()) {
         listaDados.push({
             ano: parseInt(gr.getValue('u_ano'), 10),
-            mes: gr.getValue('u_mes').toLowerCase(),
+            mes: gr.getValue('u_mes'),
             valorRCL: parseFloat(gr.getValue('adjusted_rreo_fiscal_management_report_2')) || 0
         });
     }
@@ -258,14 +290,14 @@ h3, div {
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-23 01:34:26</sys_created_on>
         <sys_id>0dd9b7e7fb2dea10f6d5f9d38eefdc2e</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>29</sys_mod_count>
         <sys_name>RCL Valor Nominal Grafico 2</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_0dd9b7e7fb2dea10f6d5f9d38eefdc2e</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-23 12:32:46</sys_updated_on>
+        <sys_updated_on>2025-06-23 21:48:45</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
   
@@ -316,7 +348,7 @@ h3, div {
 
 <div class="chart-wrapper">
   <h3 style="text-align:center; font-weight: 600; margin-bottom: 16px;">
-    RREO - Receita Corrente Líquida (LRF) - Valor Nominal (em R$) - Linha
+    Receita Corrente Líquida Ajustada (LC 614/19) – Valor R$
   </h3>
 
   <div class="chart-container" ng-show="exibirGraficoLinha">
