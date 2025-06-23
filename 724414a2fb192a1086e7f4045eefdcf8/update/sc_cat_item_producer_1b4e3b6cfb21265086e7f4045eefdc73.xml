@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_producer">
     <sc_cat_item_producer action="INSERT_OR_UPDATE">
         <access_type>restricted</access_type>
-        <active>true</active>
+        <active>false</active>
         <allow_edit>false</allow_edit>
         <availability>on_desktop</availability>
         <billable>false</billable>
@@ -49,12 +49,7 @@
         <ordered_item_link/>
         <owner display_value="Matheus Ribeiro da Silva">7d7b8842338d2210db2527cb9d5c7bf9</owner>
         <picture/>
-        <post_insert_script><![CDATA[/**
-* This script is executed after the record is generated. 
-* `current` Is the GlideRecord produced by Record Producer. Use `current.update()` to update the record
-* To access the variables, use `producer.var1` where var1 is the name of the variable
-* To access the Record Producer use `cat_item`
-*/]]></post_insert_script>
+        <post_insert_script><![CDATA[producer.redirect = "now/nav/ui/home";]]></post_insert_script>
         <preview>JavaScript: popupOpenStandard("com.glideapp.servicecatalog_cat_item_view.do?v=1&amp;sysparm_id=1b4e3b6cfb21265086e7f4045eefdc73&amp;sysparm_preview=true", "summary");</preview>
         <price>0</price>
         <published_ref/>
@@ -89,14 +84,14 @@
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-13 18:12:45</sys_created_on>
         <sys_id>1b4e3b6cfb21265086e7f4045eefdc73</sys_id>
-        <sys_mod_count>13</sys_mod_count>
+        <sys_mod_count>17</sys_mod_count>
         <sys_name>RCL (Receita Corrente Líquida)</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sc_cat_item_producer_1b4e3b6cfb21265086e7f4045eefdc73</sys_update_name>
         <sys_updated_by>system</sys_updated_by>
-        <sys_updated_on>2025-05-20 17:58:05</sys_updated_on>
+        <sys_updated_on>2025-06-23 15:52:11</sys_updated_on>
         <table_name>x_sded9_portal_t_0_registro_de_cargas_tesouro</table_name>
         <taxonomy_topic/>
         <template/>
@@ -104,7 +99,7 @@
         <type>item</type>
         <use_sc_layout>true</use_sc_layout>
         <vendor/>
-        <version>13</version>
+        <version>17</version>
         <view/>
         <visible_bundle>true</visible_bundle>
         <visible_guide>true</visible_guide>
