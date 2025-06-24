@@ -266,14 +266,14 @@ h3, div, span {
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-24 02:04:05</sys_created_on>
         <sys_id>513a4d44fb396e10f6d5f9d38eefdcc2</sys_id>
-        <sys_mod_count>28</sys_mod_count>
+        <sys_mod_count>29</sys_mod_count>
         <sys_name>Receita Primaria x Despesa Grafico</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_513a4d44fb396e10f6d5f9d38eefdcc2</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-06-17 23:29:20</sys_updated_on>
+        <sys_updated_on>2025-06-24 00:06:33</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 
@@ -320,7 +320,7 @@ h3, div, span {
 
 <div class="chart-wrapper">
 <h3 style="text-align:center; font-weight: 600; margin-bottom: 16px;">
-  Resultado Primário - Receita vs Despesa (em R$)
+  Resultado Primário - Comparativo Receita e  Despesas - Valor R$
   <span style="font-weight: 600; color: #333;">
     {{anoSelecionado ? ' - Ano: ' + anoSelecionado : ''}}
     {{bimestreSelecionado ? ' - ' + bimestreSelecionado + 'º Bimestre' : ''}}

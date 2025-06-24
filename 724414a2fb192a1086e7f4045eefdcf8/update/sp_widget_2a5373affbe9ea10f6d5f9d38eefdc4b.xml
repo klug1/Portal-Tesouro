@@ -213,34 +213,30 @@
         <public>true</public>
         <roles/>
         <script><![CDATA[(function() {
-	function formatarNumero(valor, divisor, sufixo) {
-		var resultado = (valor / divisor);
-		resultado = resultado.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-		return resultado + ' ' + sufixo;
-	}
+  // Função para formatar número no padrão brasileiro: 1.234.567,89
+   function formatarNumero(valor) {
+  var resultado = (valor);
+  resultado = resultado.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  return resultado;
+}
 
-
-  // input.filtro_ano pode estar vazio ou indefinido
+  // Pega o ano filtrado ou o último ano
   var anoFiltrado = input && input.filtro_ano ? input.filtro_ano : null;
-
   if (!anoFiltrado) {
-    // Buscar o último ano da tabela
     var grAno = new GlideRecord('x_sded9_portal_t_0_u_rreo');
     grAno.orderByDesc('u_ano');
     grAno.setLimit(1);
     grAno.query();
-
     if (!grAno.next()) {
       data.temDado = false;
       data.ano = null;
       data.dados = [];
       return;
     }
-
     anoFiltrado = grAno.getValue('u_ano');
   }
 
-  // Soma do anoFiltrado
+  // Soma valores do ano filtrado
   var grSoma = new GlideRecord('x_sded9_portal_t_0_u_rreo');
   grSoma.addQuery('u_ano', anoFiltrado);
   grSoma.query();
@@ -250,9 +246,9 @@
     soma += parseFloat(grSoma.getValue('rreo_according_to_lrf_fiscal_responsibility_law_2')) || 0;
   }
 
-  // Aqui a diferença: soma >= 0 considera zero como dado válido
   if (soma >= 0) {
-    var valorFormatado = (soma >= 1) ? formatarNumero(soma, 1, '') : formatarNumero(soma, 1, '');
+    var valorFormatado = formatarNumero(soma);
+
     data.temDado = true;
     data.valorSoma = soma;
     data.valorSomaFormatado = valorFormatado;
@@ -269,7 +265,7 @@
     data.dados = [{
       ano: anoFiltrado,
       valorSoma: 0,
-      valorSomaFormatado: '0',
+      valorSomaFormatado: '0,00',
       temDado: false
     }];
   }
@@ -280,14 +276,14 @@
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-23 01:06:08</sys_created_on>
         <sys_id>2a5373affbe9ea10f6d5f9d38eefdc4b</sys_id>
-        <sys_mod_count>18</sys_mod_count>
+        <sys_mod_count>30</sys_mod_count>
         <sys_name>RCL Total ano card 2</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_2a5373affbe9ea10f6d5f9d38eefdc4b</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-06-23 21:39:31</sys_updated_on>
+        <sys_updated_on>2025-06-23 23:08:21</sys_updated_on>
         <template><![CDATA[<!-- Fonte -->
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
@@ -303,7 +299,7 @@
     </h2>
   </div>
   <div class="panel-body" style="text-align: center; font-size: 1.5em; font-weight: bold;">
-   R$ {{dadosAnoAnterior.valorSomaFormatado}}
+    R$ {{dadosAnoAnterior.valorSomaFormatado}}
   </div>
 </div>
 

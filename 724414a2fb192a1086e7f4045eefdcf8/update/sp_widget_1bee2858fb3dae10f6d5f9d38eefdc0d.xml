@@ -100,7 +100,7 @@
                     borderWidth: 1,
                     yAxisID: 'y'
                 },
-                {
+               /* {
                     label: 'SELIC (Taxa básica de juros da economia)',
                     data: selicData,
                     type: 'line', // Linha para destacar
@@ -127,7 +127,7 @@
                     pointBackgroundColor: '#137A8F',
                     pointBorderColor: '#137A8F',
                     pointRadius: 3
-                }
+                }*/
             ]
         },
         options: {
@@ -264,9 +264,9 @@ h3, div, span {
             cam: parseFloat(gr.getValue('u_cam')) || 0,
             cdi: parseFloat(gr.getValue('u_cdi')) || 0,
             dolar_sofr: parseFloat(gr.getValue('u_dolar_sofr')) || 0,
-            selic: parseFloat(gr.getValue('u_selic')) || 0,
+           // selic: parseFloat(gr.getValue('u_selic')) || 0,
             tjlp: parseFloat(gr.getValue('u_tjlp')) || 0,
-					 	tr: parseFloat(gr.getValue('u_tr')) || 0
+					 //	tr: parseFloat(gr.getValue('u_tr')) || 0
         });
     }
 	//gs.addInfoMessage(JSON.stringify(listaDados))
@@ -279,14 +279,14 @@ h3, div, span {
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-24 18:43:22</sys_created_on>
         <sys_id>1bee2858fb3dae10f6d5f9d38eefdc0d</sys_id>
-        <sys_mod_count>62</sys_mod_count>
+        <sys_mod_count>64</sys_mod_count>
         <sys_name>Indice de Atualizacao Grafico</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_1bee2858fb3dae10f6d5f9d38eefdc0d</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-06-14 17:13:35</sys_updated_on>
+        <sys_updated_on>2025-06-24 01:14:00</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 

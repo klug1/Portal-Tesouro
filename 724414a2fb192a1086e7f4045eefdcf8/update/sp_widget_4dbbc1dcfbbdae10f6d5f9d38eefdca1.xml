@@ -6,7 +6,7 @@
 
     $scope.anoSelecionadoDividaPublica = "";
     $scope.exibirGraficoDividaPublica = false;
-    $scope.tipoGraficoDividaPublica = 'line';
+    $scope.tipoGraficoDividaPublica = 'bar'; //era line
     $scope.dadosDividaPublica = [];
 
     function carregarDadosDividaPublica() {
@@ -22,7 +22,7 @@
 
     $rootScope.$on('filtroAnoIndicadoresSelecionado', function (event, ano) {
         $scope.anoSelecionadoDividaPublica = ano;
-        $scope.tipoGraficoDividaPublica = ano ? 'bar' : 'line';
+        $scope.tipoGraficoDividaPublica = ano ? 'bar' : 'bar';
         carregarDadosDividaPublica();
     });
 
@@ -331,14 +331,14 @@ h3, div, span {
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-24 20:49:06</sys_created_on>
         <sys_id>4dbbc1dcfbbdae10f6d5f9d38eefdca1</sys_id>
-        <sys_mod_count>12</sys_mod_count>
+        <sys_mod_count>13</sys_mod_count>
         <sys_name>Estoque da Divida Publica Grafico</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_4dbbc1dcfbbdae10f6d5f9d38eefdca1</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-06-17 23:31:42</sys_updated_on>
+        <sys_updated_on>2025-06-24 01:18:20</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 

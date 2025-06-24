@@ -18,9 +18,11 @@
   };
 
   $timeout(function() {
-    $scope.filtroAnoChanged();
-    $scope.filtroBimestreChanged();
-  });
+  $scope.filtroBimestreSelecionado = "6";  // define 6º bimestre como padrão
+  $scope.filtroAnoChanged();
+  $scope.filtroBimestreChanged();
+});
+
 }
 ]]></client_script>
         <controller_as>c</controller_as>
@@ -292,21 +294,21 @@
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-24 01:44:55</sys_created_on>
         <sys_id>64d5c100fb396e10f6d5f9d38eefdcf4</sys_id>
-        <sys_mod_count>30</sys_mod_count>
+        <sys_mod_count>36</sys_mod_count>
         <sys_name>Resultado Primario Filtro</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_64d5c100fb396e10f6d5f9d38eefdcf4</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-25 19:24:19</sys_updated_on>
+        <sys_updated_on>2025-06-23 23:19:51</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 </style>
 
 
 <div class="filter-header flex items-center justify-between p-4 bg-gray-200 rounded-lg shadow-sm">
-  <h2 class="text-lg font-semibold text-gray-800">Resultado Primário sem RRPS</h2>
+  <!--h2 class="text-lg font-semibold text-gray-800">Resultado Primário sem RRPS</h2-->
 
   <div class="filter-container flex gap-4">
 
@@ -329,7 +331,7 @@
        <div class="input-with-icon">
          <i class="fa fa-filter filter-icon-left"></i>
       <select class="form-control" ng-model="filtroBimestreSelecionado" ng-change="filtroBimestreChanged()">
-        <option value="">Todos</option>
+        <!--option value="">Todos</option-->
         <option ng-repeat="bimestre in data.bimestres" value="{{bimestre}}">{{bimestre}} º Bimestre</option>
       </select>
           </div>
