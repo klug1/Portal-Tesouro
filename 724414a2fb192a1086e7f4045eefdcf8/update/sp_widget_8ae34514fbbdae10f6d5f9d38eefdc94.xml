@@ -23,11 +23,7 @@
         $scope.anoSelecionadoAmortizacao = ano;
 
         // Se um ano foi selecionado, muda para gráfico de barra, senão volta para linha
-        if (ano) {
-            $scope.tipoGrafico = 'bar';
-        } else {
-            $scope.tipoGrafico = 'bar'; //era line
-        }
+        $scope.tipoGrafico = ano ? 'bar' : 'bar'; // mantido bar conforme seu original
 
         carregarDadosAmortizacao();
     });
@@ -75,7 +71,7 @@
         }
 
         chartAmortizacaoInstance = new Chart(ctx, {
-            type: $scope.tipoGrafico,  // usa a variável para tipo
+            type: $scope.tipoGrafico,
             data: {
                 labels: labels,
                 datasets: [
@@ -152,7 +148,11 @@
                     tooltip: {
                         callbacks: {
                             label: function(context) {
-                                return context.dataset.label + ': ' + context.parsed.y.toFixed(2) + '';
+                                var valor = context.parsed.y || 0;
+                                var valorFormatado = valor.toFixed(2)
+                                    .replace('.', ',')
+                                    .replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+                                return context.dataset.label + ': R$ ' + valorFormatado;
                             }
                         }
                     }
@@ -260,14 +260,14 @@ h3, div, span {
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-24 20:15:02</sys_created_on>
         <sys_id>8ae34514fbbdae10f6d5f9d38eefdc94</sys_id>
-        <sys_mod_count>25</sys_mod_count>
+        <sys_mod_count>26</sys_mod_count>
         <sys_name>Serviço Divida Publica Grafico</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_8ae34514fbbdae10f6d5f9d38eefdc94</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-06-24 01:16:12</sys_updated_on>
+        <sys_updated_on>2025-06-24 23:55:48</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 

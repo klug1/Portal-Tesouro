@@ -101,7 +101,12 @@
                     tooltip: {
                         callbacks: {
                             label: function (context) {
-                                return context.dataset.label + ': ' + context.parsed.y.toFixed(2) + '';
+                                var valor = context.parsed.y || 0;
+                                // Formatar número para padrão brasileiro
+                                var valorFormatado = valor.toFixed(2)
+                                    .replace('.', ',')
+                                    .replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+                                return context.dataset.label + ': R$ ' + valorFormatado;
                             }
                         }
                     }
@@ -297,14 +302,14 @@ h3, div, span {
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-24 21:16:18</sys_created_on>
         <sys_id>e3e15d94fbfdae10f6d5f9d38eefdc96</sys_id>
-        <sys_mod_count>9</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_name>Evolucao do Estoque Total Grafico</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_e3e15d94fbfdae10f6d5f9d38eefdc96</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-06-17 23:32:14</sys_updated_on>
+        <sys_updated_on>2025-06-24 23:54:42</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 

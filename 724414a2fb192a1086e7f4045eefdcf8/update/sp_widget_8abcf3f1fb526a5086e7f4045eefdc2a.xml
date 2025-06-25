@@ -169,10 +169,21 @@
         <public>false</public>
         <roles/>
         <script><![CDATA[(function() {
-   function formatarNumero(valor) {
+   /*function formatarNumero(valor) {
   var resultado = (valor);
   resultado = resultado.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
   return resultado;
+}*/
+	//R$ 32.565.714.370.5
+	
+	 function formatarNumero(valor) {
+  if (typeof valor !== 'number') {
+    valor = parseFloat(valor);
+  }
+
+  return valor.toFixed(2) // fixa duas casas decimais
+              .replace('.', ',') // troca ponto decimal por vírgula
+              .replace(/\B(?=(\d{3})+(?!\d))/g, '.'); // separador de milhar
 }
 
   var gr = new GlideRecord('x_sded9_portal_t_0_u_rreo');
@@ -217,14 +228,14 @@
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-06-23 22:04:46</sys_created_on>
         <sys_id>8abcf3f1fb526a5086e7f4045eefdc2a</sys_id>
-        <sys_mod_count>31</sys_mod_count>
+        <sys_mod_count>32</sys_mod_count>
         <sys_name>KPI ultimos 12 Meses</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_8abcf3f1fb526a5086e7f4045eefdc2a</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-06-23 23:07:46</sys_updated_on>
+        <sys_updated_on>2025-06-24 22:43:31</sys_updated_on>
         <template><![CDATA[<!-- Fonte -->
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');

@@ -227,11 +227,21 @@
         <script><![CDATA[(function() {
 	
 	
-function formatarNumero(valor, divisor, sufixo) {
+/*function formatarNumero(valor, divisor, sufixo) {
   var resultado = (valor / divisor);
   resultado = resultado.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
   return resultado + ' ' + sufixo;
+}*/
+		function formatarNumero(valor) {
+  if (typeof valor !== 'number') {
+    valor = parseFloat(valor);
+  }
+
+  return valor.toFixed(2) // fixa duas casas decimais
+              .replace('.', ',') // troca ponto decimal por vírgula
+              .replace(/\B(?=(\d{3})+(?!\d))/g, '.'); // separador de milhar
 }
+
 
 
   // Captura mês e ano do input
@@ -288,14 +298,14 @@ function formatarNumero(valor, divisor, sufixo) {
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-23 22:07:01</sys_created_on>
         <sys_id>3cf39c0cfbf16e10f6d5f9d38eefdc65</sys_id>
-        <sys_mod_count>21</sys_mod_count>
+        <sys_mod_count>22</sys_mod_count>
         <sys_name>rcl ajustado card 4 mes/ano anterior</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_3cf39c0cfbf16e10f6d5f9d38eefdc65</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-06-23 23:09:40</sys_updated_on>
+        <sys_updated_on>2025-06-24 23:11:51</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 </style>

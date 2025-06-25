@@ -189,10 +189,19 @@
         <roles/>
         <script><![CDATA[(function() {
   // Função para formatar número no padrão brasileiro: 1.234.567,89
-   function formatarNumero(valor) {
+  /* function formatarNumero(valor) {
   var resultado = (valor);
   resultado = resultado.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
   return resultado;
+}*/
+	 function formatarNumero(valor) {
+  if (typeof valor !== 'number') {
+    valor = parseFloat(valor);
+  }
+
+  return valor.toFixed(2) // fixa duas casas decimais
+              .replace('.', ',') // troca ponto decimal por vírgula
+              .replace(/\B(?=(\d{3})+(?!\d))/g, '.'); // separador de milhar
 }
 
   // Pega o ano filtrado ou o último ano
@@ -220,9 +229,11 @@
   while (grSoma.next()) {
     soma += parseFloat(grSoma.getValue('rreo_according_to_lrf_fiscal_responsibility_law_2')) || 0;
   }
+	
 
   if (soma >= 0) {
     var valorFormatado = formatarNumero(soma);
+		//gs.addInfoMessage(valorFormatado)
 
     data.temDado = true;
     data.valorSoma = soma;
@@ -251,14 +262,14 @@
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-23 00:34:18</sys_created_on>
         <sys_id>581ce3e3fbe9ea10f6d5f9d38eefdc28</sys_id>
-        <sys_mod_count>54</sys_mod_count>
+        <sys_mod_count>61</sys_mod_count>
         <sys_name>RCL Total Ano card 1</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_581ce3e3fbe9ea10f6d5f9d38eefdc28</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-06-23 23:08:44</sys_updated_on>
+        <sys_updated_on>2025-06-24 22:48:14</sys_updated_on>
         <template><![CDATA[<!-- Fonte -->
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');

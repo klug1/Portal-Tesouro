@@ -207,12 +207,22 @@ h3, div, span {
         <script><![CDATA[(function() {
     input = input || {};
 
+    function formatarNumero(valor) {
+        if (typeof valor !== 'number') {
+            valor = parseFloat(valor);
+        }
+
+        return valor.toFixed(2) // fixa duas casas decimais
+                    .replace('.', ',') // troca ponto decimal por vírgula
+                    .replace(/\B(?=(\d{3})+(?!\d))/g, '.'); // insere separadores de milhar
+    }
+
     var anoFiltro = input.ano || "";
     var bimestreFiltro = input.bimestre || "";
 
     var gr = new GlideRecord('x_sded9_portal_t_0_u_resultado_primario');
-		gr.addQuery('u_rpps', false);
-	
+    gr.addQuery('u_rpps', false);
+
     if (anoFiltro !== "") {
         gr.addQuery('u_ano', anoFiltro);
     }
@@ -228,8 +238,7 @@ h3, div, span {
         var ano = gr.getValue('u_ano');
         var bimestre = gr.getValue('u_bimestre');
         var rawValor = gr.getValue('u_resultado_primario') || "0";
-        var valorSemPontuacao = rawValor.trim().replace(/\./g, '').replace(',', '.');
-        var resultado = parseFloat(valorSemPontuacao) || 0;
+        var resultado = parseFloat(rawValor) || 0;
 
         if (anoFiltro !== "") {
             var chave = bimestre;
@@ -237,19 +246,23 @@ h3, div, span {
                 dadosAgrupados[chave] = {
                     ano: ano,
                     bimestre: bimestre,
-                    resultado: 0
+                    resultado: 0,
+                    resultadoFormatado: ''
                 };
             }
             dadosAgrupados[chave].resultado += resultado;
+            dadosAgrupados[chave].resultadoFormatado = formatarNumero(dadosAgrupados[chave].resultado);
         } else {
             var chaveAno = ano;
             if (!dadosAgrupados[chaveAno]) {
                 dadosAgrupados[chaveAno] = {
                     ano: ano,
-                    resultado: 0
+                    resultado: 0,
+                    resultadoFormatado: ''
                 };
             }
             dadosAgrupados[chaveAno].resultado += resultado;
+            dadosAgrupados[chaveAno].resultadoFormatado = formatarNumero(dadosAgrupados[chaveAno].resultado);
         }
     }
 
@@ -276,14 +289,14 @@ h3, div, span {
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-24 17:31:07</sys_created_on>
         <sys_id>b46e9490fbf9ae10f6d5f9d38eefdcb8</sys_id>
-        <sys_mod_count>38</sys_mod_count>
+        <sys_mod_count>47</sys_mod_count>
         <sys_name>Resultado Primario Consolidado Grafico</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_b46e9490fbf9ae10f6d5f9d38eefdcb8</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-06-24 00:07:28</sys_updated_on>
+        <sys_updated_on>2025-06-24 23:40:54</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;600&display=swap');
 
