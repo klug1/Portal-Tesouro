@@ -8,22 +8,25 @@
     $scope.mesSelecionado = "";
 
     function carregarDadosDoServer() {
-        var filtros = {
-            ano: $scope.anoSelecionado || "",
-            mes: ""
-        };
+    var filtros = {
+        ano: $scope.anoSelecionado || "",
+        mes: ""
+    };
 
-        if ($scope.mesSelecionado) {
-            // Garante zero à esquerda no mês
-            var mesNum = parseInt($scope.mesSelecionado, 10);
-            filtros.mes = ("0" + mesNum).slice(-2);  // Ex: '1' => '01'
-        }
-
-        $scope.server.get(filtros).then(function(response) {
-            var listaDados = response.data.dadosGraficoRCL || [];
-            inicializarGraficoLinha(listaDados);
-        });
+    if ($scope.mesSelecionado) {
+        var mesNum = parseInt($scope.mesSelecionado, 10);
+        filtros.mes = ("0" + mesNum).slice(-2);
     }
+
+    $scope.server.get(filtros).then(function(response) {
+        var listaDados = response.data.dadosGraficoRCL || [];
+
+        $timeout(function() {
+            inicializarGraficoLinha(listaDados);
+        }, 300);
+    });
+}
+
 
     $rootScope.$on('anoSelecionado', function(event, ano) {
         $scope.anoSelecionado = ano;
@@ -290,14 +293,14 @@ h3, div {
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-23 01:34:26</sys_created_on>
         <sys_id>0dd9b7e7fb2dea10f6d5f9d38eefdc2e</sys_id>
-        <sys_mod_count>29</sys_mod_count>
+        <sys_mod_count>30</sys_mod_count>
         <sys_name>RCL Valor Nominal Grafico 2</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_0dd9b7e7fb2dea10f6d5f9d38eefdc2e</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-06-23 21:48:45</sys_updated_on>
+        <sys_updated_on>2025-06-27 21:04:30</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
   

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[function($scope, $rootScope) {
+        <client_script><![CDATA[function($scope, $rootScope, $timeout) {
     var chartVariacao = null;
 
     $scope.anoSelecionadoVariacao = "";
@@ -14,7 +14,10 @@
 
         $scope.server.get(filtros).then(function(response) {
             var dados = response.data.dadosGraficoVariacao || [];
-            montarGraficoVariacao(dados);
+
+            $timeout(function() {
+                montarGraficoVariacao(dados);
+            }, 300); // Delay de 300ms
         });
     }
 
@@ -62,7 +65,7 @@
             data: {
                 labels: anos,
                 datasets: [{
-                    label: 'Variação Anual (%)', // alterado para porcentagem
+                    label: 'Variação Anual (%)',
                     data: valoresVariacao,
                     backgroundColor: function(context) {
                         var value = context.dataset.data[context.dataIndex];
@@ -89,11 +92,11 @@
                         beginAtZero: true,
                         title: {
                             display: true,
-                            text: 'Variação (%)' // alterado para porcentagem
+                            text: 'Variação (%)'
                         },
                         ticks: {
                             callback: function(value) {
-                                return value.toFixed(2) + '%'; // alterado para mostrar %
+                                return value.toFixed(2) + '%';
                             }
                         }
                     }
@@ -105,7 +108,7 @@
                     tooltip: {
                         callbacks: {
                             label: function(context) {
-                                return context.dataset.label + ': ' + context.parsed.y.toFixed(2) + '%'; // alterado para mostrar %
+                                return context.dataset.label + ': ' + context.parsed.y.toFixed(2) + '%';
                             }
                         }
                     }
@@ -243,14 +246,14 @@ h3, div {
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-23 23:14:21</sys_created_on>
         <sys_id>3e53a840fb756e10f6d5f9d38eefdc43</sys_id>
-        <sys_mod_count>12</sys_mod_count>
+        <sys_mod_count>13</sys_mod_count>
         <sys_name>RCL Variacao Anual Grafico</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_3e53a840fb756e10f6d5f9d38eefdc43</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-06-18 00:05:22</sys_updated_on>
+        <sys_updated_on>2025-06-27 21:07:04</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 

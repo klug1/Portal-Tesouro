@@ -26,7 +26,9 @@
 
         $scope.server.get(filtros).then(function(response) {
             var listaDados = response.data.dadosGraficoLinha || [];
-            inicializarGrafico(listaDados);
+            $timeout(function() {
+                inicializarGrafico(listaDados);
+            }, 300); // delay de 300ms
         });
     }
 
@@ -274,14 +276,14 @@ h3, div, span {
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-24 15:38:54</sys_created_on>
         <sys_id>89b4089cfb39ae10f6d5f9d38eefdc57</sys_id>
-        <sys_mod_count>35</sys_mod_count>
+        <sys_mod_count>36</sys_mod_count>
         <sys_name>Resultado Primario Grafico</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_89b4089cfb39ae10f6d5f9d38eefdc57</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-06-25 12:21:38</sys_updated_on>
+        <sys_updated_on>2025-06-27 21:09:35</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 
