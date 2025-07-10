@@ -45,7 +45,7 @@
   background-color: #f0f0f0;
   padding: 0.5rem 1rem; 
   margin-bottom: 1rem;
-  margin-top: 20rem;
+  margin-top: 2rem;
   font-family: 'Roboto Flex', sans-serif;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   transition: all 0.2s ease;
@@ -218,7 +218,7 @@
 /* Laptops e Telas Maiores (iPad Pro, Surface Pro 7, Laptops, 4K - 1024px em diante) */
 @media (min-width: 1024px) {
   .filter-header {
-    margin-top: 20rem;
+      margin-top: 2rem;
     /* transform: translate(0px, -26px); */
   }
   
@@ -294,14 +294,14 @@
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-20 23:22:03</sys_created_on>
         <sys_id>2a580d0bfb69229086e7f4045eefdc45</sys_id>
-        <sys_mod_count>52</sys_mod_count>
+        <sys_mod_count>54</sys_mod_count>
         <sys_name>Despesa Filtro v2</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_2a580d0bfb69229086e7f4045eefdc45</sys_update_name>
-        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-06-23 23:15:10</sys_updated_on>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-07-10 20:57:48</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 </style>
