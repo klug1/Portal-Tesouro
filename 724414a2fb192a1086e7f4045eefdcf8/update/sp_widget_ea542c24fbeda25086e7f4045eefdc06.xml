@@ -56,12 +56,11 @@ $scope.$root.$on('toggleCaseEvent', function(event, isLowercase) {
 }
 
 .grafico-rcl img {
-  display: block;
-  margin: 0 auto 24px auto; /* margem superior 0, centraliza horizontal, margem inferior 24px */
-  width: 50%;
+  width: 100%;
   height: auto;
-  max-height: 300px;
-  border-radius: 6px;
+  max-height: 27rem;
+  margin-bottom: 2.4rem;
+  border-radius: .6rem;
 }
 
 .grafico-rcl p {
@@ -136,21 +135,21 @@ $scope.$root.$on('toggleCaseEvent', function(event, isLowercase) {
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-13 02:19:58</sys_created_on>
         <sys_id>ea542c24fbeda25086e7f4045eefdc06</sys_id>
-        <sys_mod_count>73</sys_mod_count>
+        <sys_mod_count>84</sys_mod_count>
         <sys_name>limite prudencial grafico SEFAZ</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_ea542c24fbeda25086e7f4045eefdc06</sys_update_name>
-        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-06-24 00:08:18</sys_updated_on>
+        <sys_updated_by>sued.barreto@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-09-18 18:12:34</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 </style>
 
 <div class="grafico-rcl">
-  <h3 ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">Despesas de Pessoal</h3>
-  <img src="x_sded9_portal_t_0.despesaNovo1.png"/>
+  <h3 ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">Despesa com Pessoal</h3>
+  <img src="x_sded9_portal_t_0.despesaNovo3.png"/>
   
    <!--sp-widget class="teste" widget="data.grafico1"></sp-widget>
 		<sp-widget widget="data.grafico2"></sp-widget-->

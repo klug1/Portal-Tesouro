@@ -52,10 +52,12 @@ $scope.$root.$on('toggleCaseEvent', function(event, isLowercase) {
 .grafico-rcl img {
   width: 100%;
   height: auto;
-  max-height: 300px;
-  margin-bottom: 24px;
-  border-radius: 6px;
+  max-height: 27rem;
+  margin-bottom: 2.4rem;
+  border-radius: .6rem;
+
 }
+
 
 .grafico-rcl p {
     font-family: 'Roboto Flex', sans-serif !important;
@@ -130,20 +132,20 @@ $scope.$root.$on('toggleCaseEvent', function(event, isLowercase) {
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-13 01:19:38</sys_created_on>
         <sys_id>f2861ce0fbada25086e7f4045eefdca0</sys_id>
-        <sys_mod_count>32</sys_mod_count>
+        <sys_mod_count>34</sys_mod_count>
         <sys_name>Receita Liquida SEFAZ Grafico</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_f2861ce0fbada25086e7f4045eefdca0</sys_update_name>
-        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-06-18 00:13:59</sys_updated_on>
+        <sys_updated_by>sued.barreto@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-09-18 18:11:00</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 </style>
 
 <div class="grafico-rcl">
-  <h3 ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">Receita Corrente Líquida (RCL)</h3>
+  <h3 ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">Receita Corrente Líquida</h3>
    <img src="x_sded9_portal_t_0.rclNovo1.png"/>
    <!--sp-widget widget="data.graficoRCL"></sp-widget-->
   <p ng-class="{'lowercase-text': isLowercase, 'uppercase-text': isLowercase === false}">
