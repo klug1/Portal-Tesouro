@@ -50,9 +50,6 @@
     font-weight: 500;
 }
 
-.info-box{
-	 margin-bottom: 9px;
-}
 /* --- Media Queries para Responsividade --- */
 
 /* Telas Pequenas (Mobile S, M, L - até 767px) */
@@ -140,34 +137,34 @@
         <docs/>
         <field_list/>
         <has_preview>false</has_preview>
-        <id>info_evolucao_estoque_total_divida_publi</id>
+        <id>info_indices_de_atualizacao_da_divida</id>
         <internal>false</internal>
         <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
-        <name>Info Evolução Estoque Total Dívida Públi</name>
+        <name>info Indices de Atualizacao da Divida Pu</name>
         <option_schema/>
         <public>true</public>
         <roles/>
         <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
-        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
-        <sys_created_on>2025-07-01 14:45:43</sys_created_on>
-        <sys_id>18f427d0fbea661086e7f4045eefdc30</sys_id>
-        <sys_mod_count>6</sys_mod_count>
-        <sys_name>Info Evolução Estoque Total Dívida Públi</sys_name>
+        <sys_created_by>sued.barreto@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-09-19 14:57:19</sys_created_on>
+        <sys_id>a6c6ab46fb8cb210f6d5f9d38eefdcdd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>info Indices de Atualizacao da Divida Pu</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_update_name>sp_widget_18f427d0fbea661086e7f4045eefdc30</sys_update_name>
+        <sys_update_name>sp_widget_a6c6ab46fb8cb210f6d5f9d38eefdcdd</sys_update_name>
         <sys_updated_by>sued.barreto@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-09-19 17:29:00</sys_updated_on>
+        <sys_updated_on>2025-09-19 14:57:19</sys_updated_on>
         <template><![CDATA[<style>
  @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 </style>
 
 <h3 class="info-title">Informações</h3>
 <div class="info-box">
-  <p class="dadosInfo"><strong>Descrição:</strong> Porcentagem por credor em relação ao total do estoque da dívida pública fundada. </p>
+  <p class="dadosInfo"><strong>Descrição:</strong> Serviço da Dívida Pública (amortização, juros e encargos) por origem do recurso (interno e externo). </p>
   <p class="dadosInfo"><strong>Fonte:</strong> CGDP/SOFT/SATE/SEFAZ.</p>
   <p class="dadosInfo"><strong>Atualização:</strong> Anual </p>
 </div>

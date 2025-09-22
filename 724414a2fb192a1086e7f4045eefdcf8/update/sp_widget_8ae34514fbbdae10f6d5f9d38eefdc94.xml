@@ -56,7 +56,7 @@
 
         for (var i = 0; i < listaAmortizacao.length; i++) {
             labels.push(listaAmortizacao[i].ano);
-            amortizacaoExternaData.push(listaAmortizacao[i].amortizacaoExterna);
+            amortizacaoExternaData.push(listaAmortizacao[i].amortizacaoExterna/10);
             amortizacaoInternaData.push(listaAmortizacao[i].amortizacaoInterna);
             jurosEncargosExternaData.push(listaAmortizacao[i].jurosEncargosExterna);
             jurosEncargosInternaData.push(listaAmortizacao[i].jurosEncargosInterna);
@@ -141,7 +141,26 @@
                         beginAtZero: true,
                         title: {
                             display: true,
-                            text: 'Valores (em R$)'
+                            text: 'Valores (Em R$)'
+                        },
+                        // Opcional: formatar os ticks do eixo Y em milhões para melhor visualização
+                        ticks: {
+                            callback: function(value) {
+															// Função para adicionar separadores de milhar
+															function formatarNumero(numero) {
+																	return numero.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+															}
+
+															if (value >= 1000000) {
+																	var valorEmMilhoes = (value / 1000000).toFixed(0);
+																	return 'R$ ' + formatarNumero(valorEmMilhoes) + ' mi';
+															} else if (value >= 1000) {
+																	var valorEmMilhares = (value / 1000).toFixed(0);
+																	return 'R$ ' + formatarNumero(valorEmMilhares) + ' mil';
+															} else {
+																	return 'R$ ' + formatarNumero(value.toFixed(2));
+															}
+													}
                         }
                     }
                 },
@@ -264,14 +283,14 @@ h3, div, span {
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-24 20:15:02</sys_created_on>
         <sys_id>8ae34514fbbdae10f6d5f9d38eefdc94</sys_id>
-        <sys_mod_count>27</sys_mod_count>
+        <sys_mod_count>54</sys_mod_count>
         <sys_name>Serviço Divida Publica Grafico</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_8ae34514fbbdae10f6d5f9d38eefdc94</sys_update_name>
-        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-06-27 20:58:24</sys_updated_on>
+        <sys_updated_by>sued.barreto@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-09-22 16:20:01</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 

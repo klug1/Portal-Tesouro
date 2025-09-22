@@ -6,23 +6,22 @@
 
     $scope.anoSelecionadoJuros = "";
     $scope.exibirGraficoJuros = false;
-    $scope.tipoGraficoJuros = 'line'; // padrão linha
+    $scope.tipoGraficoJuros = 'line';
     $scope.dadosGraficoJuros = [];
 
-function carregarDadosJuros() {
-    var filtros = {
-        ano: $scope.anoSelecionadoJuros || ""
-    };
+    function carregarDadosJuros() {
+        var filtros = {
+            ano: $scope.anoSelecionadoJuros || ""
+        };
 
-    $scope.server.get(filtros).then(function(response) {
-        $scope.dadosGraficoJuros = response.data.dadosGraficoJuros || [];
+        $scope.server.get(filtros).then(function(response) {
+            $scope.dadosGraficoJuros = response.data.dadosGraficoJuros || [];
 
-        setTimeout(function () {
-            inicializarGraficoJuros($scope.dadosGraficoJuros);
-        }, 300); // 300ms de atraso
-    });
-}
-
+            setTimeout(function () {
+                inicializarGraficoJuros($scope.dadosGraficoJuros);
+            }, 300);
+        });
+    }
 
     $rootScope.$on('filtroAnoIndicadoresSelecionado', function(event, ano) {
         $scope.anoSelecionadoJuros = ano;
@@ -31,6 +30,11 @@ function carregarDadosJuros() {
     });
 
     carregarDadosJuros();
+
+    // Função para formatar números com separadores de milhar
+    function formatarNumero(numero) {
+        return numero.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    }
 
     function formatarReal(valor) {
         return 'R$ ' + valor.toFixed(2)
@@ -122,9 +126,16 @@ function carregarDadosJuros() {
                             text: 'Valores (em R$)'
                         },
                         ticks: {
-                            // Formata os números no eixo Y
                             callback: function(value) {
-                                return formatarReal(value);
+                                if (value >= 1000000) {
+                                    var valorEmMilhoes = (value / 1000000).toFixed(0);
+                                    return 'R$ ' + formatarNumero(valorEmMilhoes) + ' mi';
+                                } else if (value >= 1000) {
+                                    var valorEmMilhares = (value / 1000).toFixed(0);
+                                    return 'R$ ' + formatarNumero(valorEmMilhares) + ' mil';
+                                } else {
+                                    return 'R$ ' + formatarNumero(value.toFixed(2));
+                                }
                             }
                         }
                     }
@@ -144,8 +155,7 @@ function carregarDadosJuros() {
             }
         });
     }
-}
-]]></client_script>
+}]]></client_script>
         <controller_as>c</controller_as>
         <css>canvas {
   display: block;
@@ -242,14 +252,14 @@ h3, div, span {
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-24 21:50:32</sys_created_on>
         <sys_id>85c9dd90fb31ee10f6d5f9d38eefdc11</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_name>Juros e Encargos de Servico Grafico</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_85c9dd90fb31ee10f6d5f9d38eefdc11</sys_update_name>
-        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-06-27 20:59:16</sys_updated_on>
+        <sys_updated_by>sued.barreto@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-09-22 16:34:36</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 

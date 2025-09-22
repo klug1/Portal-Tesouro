@@ -8,19 +8,18 @@
     $scope.exibirGraficoDividaPublicaTotal = false;
     $scope.dadosDividaPublicaTotal = [];
 
-  function carregarDadosDividaPublicaTotal() {
-    var filtros = {
-        ano: $scope.anoSelecionadoDividaPublicaTotal || ""
-    };
+    function carregarDadosDividaPublicaTotal() {
+        var filtros = {
+            ano: $scope.anoSelecionadoDividaPublicaTotal || ""
+        };
 
-    $scope.server.get(filtros).then(function (response) {
-        $scope.dadosDividaPublicaTotal = response.data.dadosDividaPublicaTotal || [];
-        setTimeout(function () {
-            inicializarGraficoDividaPublicaTotal($scope.dadosDividaPublicaTotal);
-        }, 300); // 300ms de atraso
-    });
-}
-
+        $scope.server.get(filtros).then(function (response) {
+            $scope.dadosDividaPublicaTotal = response.data.dadosDividaPublicaTotal || [];
+            setTimeout(function () {
+                inicializarGraficoDividaPublicaTotal($scope.dadosDividaPublicaTotal);
+            }, 300);
+        });
+    }
 
     $rootScope.$on('filtroAnoIndicadoresSelecionado', function (event, ano) {
         $scope.anoSelecionadoDividaPublicaTotal = ano;
@@ -28,6 +27,11 @@
     });
 
     carregarDadosDividaPublicaTotal();
+
+    // Função para formatar números com separadores de milhar
+    function formatarNumero(numero) {
+        return numero.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    }
 
     function inicializarGraficoDividaPublicaTotal(listaDividaPublicaTotal) {
         if (!listaDividaPublicaTotal || listaDividaPublicaTotal.length === 0) {
@@ -93,6 +97,19 @@
                         title: {
                             display: true,
                             text: 'Valores (em R$)'
+                        },
+                        ticks: {
+                            callback: function(value) {
+                                if (value >= 1000000000) {
+                                    var valorEmMilhoes = (value / 1000000000).toFixed(0);
+                                    return 'R$ ' + formatarNumero(valorEmMilhoes) + 'bi';
+                                } else if (value >= 1000) {
+                                    var valorEmMilhares = (value / 1000).toFixed(0);
+                                    return 'R$ ' + formatarNumero(valorEmMilhares) + ' mil';
+                                } else {
+                                    return 'R$ ' + formatarNumero(value.toFixed(2));
+                                }
+                            }
                         }
                     }
                 },
@@ -117,8 +134,7 @@
             }
         });
     }
-}
-]]></client_script>
+}]]></client_script>
         <controller_as>c</controller_as>
         <css>canvas {
   display: block;
@@ -305,14 +321,14 @@ h3, div, span {
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-24 21:16:18</sys_created_on>
         <sys_id>e3e15d94fbfdae10f6d5f9d38eefdc96</sys_id>
-        <sys_mod_count>12</sys_mod_count>
+        <sys_mod_count>13</sys_mod_count>
         <sys_name>Evolucao do Estoque Total Grafico</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_e3e15d94fbfdae10f6d5f9d38eefdc96</sys_update_name>
-        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-06-27 20:57:45</sys_updated_on>
+        <sys_updated_by>sued.barreto@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-09-22 16:30:55</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 
