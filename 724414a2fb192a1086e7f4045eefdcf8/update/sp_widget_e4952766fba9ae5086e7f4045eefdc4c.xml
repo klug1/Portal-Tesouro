@@ -4,7 +4,7 @@
         <client_script><![CDATA[function($scope, $rootScope, spUtil, $timeout) {
   $scope.anoSelecionado = "";
   $scope.latestYear = null;
-  $scope.dadosVisiveis = null; // controla se dados existem
+  $scope.dadosVisiveis = null;
   $scope.isFading = false;
   var currentAngle = 0;
   var animationFrameId = null;
@@ -23,14 +23,8 @@
   }
 
   function mapValueToAngle(realValue) {
-    var relativeAngleDeg = 0;
-    if (realValue <= 57) {
-      relativeAngleDeg = (realValue / 57) * 60;
-    } else if (realValue <= 60) {
-      relativeAngleDeg = 60 + ((realValue - 57) / 3) * 60;
-    } else {
-      relativeAngleDeg = 120 + ((realValue - 60) / 40) * 60;
-    }
+    var limitedValue = Math.max(0, Math.min(realValue, 100));
+    var relativeAngleDeg = (limitedValue / 100) * 180;
     return (relativeAngleDeg * Math.PI) / 180;
   }
 
@@ -42,7 +36,7 @@
     pointerCanvas.height = chartCanvas.offsetHeight;
   }
 
-  function drawPointerAtAngle(angle) {
+  function drawPointerAtAngle(angle, percentual) {
     var canvas = document.getElementById('gaugePointer');
     var ctx = canvas.getContext('2d');
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -89,9 +83,25 @@
     ctx.beginPath();
     ctx.arc(cx, cy, 5, 0, 2 * Math.PI);
     ctx.fill();
+
+    // Percentual na ponta da seta
+    if (percentual !== undefined && percentual !== null) {
+      var textOffset = height * 0.1;
+      var textX = tipX + ux * textOffset;
+      var textY = tipY + uy * textOffset;
+      
+      ctx.font = 'bold 18px Arial';
+      ctx.fillStyle = '#333';
+      ctx.textAlign = 'right';
+      ctx.textBaseline = 'down';
+      ctx.fillText(percentual.toFixed(1) + '%', textX, textY);
+    }
+
+    // DESENHA APENAS 0% E 60% NA ESCALA
+    drawScale();
   }
 
-  function animatePointer(toAngle) {
+  function animatePointer(toAngle, percentual) {
     if (animationFrameId) cancelAnimationFrame(animationFrameId);
 
     var duration = 600;
@@ -103,7 +113,7 @@
       var elapsed = now - startTime;
       var progress = Math.min(elapsed / duration, 1);
       currentAngle = startAngle + delta * (1 - Math.pow(1 - progress, 3));
-      drawPointerAtAngle(currentAngle);
+      drawPointerAtAngle(currentAngle, percentual);
       if (progress < 1) {
         animationFrameId = requestAnimationFrame(step);
       }
@@ -112,49 +122,107 @@
     requestAnimationFrame(step);
   }
 
-  function renderGauge(comprometimento) {
+function renderGauge(comprometimento) {
     var ctx = document.getElementById('gaugeChart').getContext('2d');
 
     if (window.myGaugeChart) {
-      window.myGaugeChart.destroy();
+        window.myGaugeChart.destroy();
     }
 
+    // Criando o degradê suave e contínuo até 100%
+    var gradient = ctx.createLinearGradient(0, 0, 300, 0);
+    
+    // Verde puro até 50%
+    gradient.addColorStop(0, '#8BC34A');     // Verde no início (0%)
+    gradient.addColorStop(0.50, '#8BC34A');  // Verde até 50%
+    
+    // Transição suave verde → amarelo (50% a 53%)
+    gradient.addColorStop(0.50, '#8BC34A');  // Verde
+    gradient.addColorStop(0.515, '#9BCD4F'); // Verde-amarelo
+    gradient.addColorStop(0.53, '#FFEB3B');  // Amarelo
+    
+    // Amarelo puro (53% a 55%)
+    gradient.addColorStop(0.53, '#FFEB3B');  // Amarelo
+    gradient.addColorStop(0.55, '#FFEB3B');  // Amarelo
+    
+    // Transição suave amarelo → laranja (55% a 57%)
+    gradient.addColorStop(0.55, '#FFEB3B');  // Amarelo
+    gradient.addColorStop(0.56, '#FFC107');  // Amarelo-alaranjado
+    gradient.addColorStop(0.57, '#FF9800');  // Laranja
+    
+    // Transição suave laranja → vermelho (57% a 58%)
+    gradient.addColorStop(0.57, '#FF9800');  // Laranja
+    gradient.addColorStop(0.575, '#FF5722'); // Laranja-avermelhado
+    gradient.addColorStop(0.58, '#F44336');  // Vermelho
+    
+    // Vermelho puro (58% a 65%)
+    gradient.addColorStop(0.58, '#F44336');  // Vermelho
+    gradient.addColorStop(0.65, '#F44336');  // Vermelho
+    
+    // Transição suave vermelho → vermelho escuro (65% a 100%)
+    gradient.addColorStop(0.65, '#F44336');  // Vermelho
+    gradient.addColorStop(0.75, '#D32F2F');  // Vermelho médio
+    gradient.addColorStop(0.85, '#C62828');  // Vermelho escuro
+    gradient.addColorStop(1, '#B71C1C');     // Vermelho muito escuro
+
     window.myGaugeChart = new Chart(ctx, {
-      type: 'doughnut',
-      data: {
-        labels: ['Limite de alerta', 'Limite prudencial', 'Limite máximo'],
-        datasets: [{
-          data: [33.33, 33.33, 33.34],
-          backgroundColor: ['#8BC34A', '#FFEB3B', '#F44336'],
-          borderWidth: 0,
-          circumference: 180,
-          rotation: 270,
-          cutout: '70%'
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: { display: false },
-          tooltip: {
-            enabled: true,
-            callbacks: {
-              label: function(context) {
-                return context.chart.data.labels[context.dataIndex] || '';
-              }
+        type: 'doughnut',
+        data: {
+            labels: ['Escala 0-100%'],
+            datasets: [{
+                data: [100], // 100% para cobrir toda a escala
+                backgroundColor: [gradient],
+                borderWidth: 0,
+                circumference: 180,
+                rotation: 270,
+                cutout: '70%'
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { 
+                    display: false
+                },
+                tooltip: {
+                    enabled: false
+                }
             }
-          }
         }
-      }
     });
 
     $timeout(function() {
-      syncPointerCanvasSize();
-      var targetAngle = mapValueToAngle(comprometimento);
-      animatePointer(targetAngle);
-    }, 200);
-  }
+        syncPointerCanvasSize();
+        var targetAngle = mapValueToAngle(comprometimento);
+        animatePointer(targetAngle, comprometimento);
+    }, 300);
+}
+
+  // FUNÇÃO CORRIGIDA: Desenha 0% e 100% nas posições corretas
+  function drawScale() {
+    var canvas = document.getElementById('gaugePointer');
+    if (!canvas) return;
+    
+    var ctx = canvas.getContext('2d');
+    var width = canvas.width;
+    var height = canvas.height;
+    var cx = width / 2;
+
+    ctx.font = 'bold 16px Arial';
+    ctx.fillStyle = '#333';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'top';
+
+    // Usa 40% da largura total para cada lado a partir do centro
+    var offset = width * 0.40;
+    
+    // 0% - alinhado com o início do segmento verde (esquerda)
+    ctx.fillText('0%', cx - offset, height - 25);
+    
+    // 100% - alinhado com o fim do segmento vermelho (direita)
+    ctx.fillText('100%', cx + offset, height - 25);
+}
 
   function atualizarDados(ano) {
     $scope.isFading = true;
@@ -178,6 +246,13 @@
             $scope.dadosVisiveis = response.data.dados[0];
             $scope.latestYear = ano;
             renderGauge($scope.dadosVisiveis.comprometimento);
+            
+            $timeout(function() {
+              syncPointerCanvasSize();
+              drawScale();
+              var targetAngle = mapValueToAngle($scope.dadosVisiveis.comprometimento);
+              drawPointerAtAngle(targetAngle, $scope.dadosVisiveis.comprometimento);
+            }, 300);
           } else {
             $scope.dadosVisiveis = null;
             $scope.latestYear = null;
@@ -215,13 +290,13 @@
     window.addEventListener('resize', function() {
       if ($scope.dadosVisiveis && $scope.dadosVisiveis.comprometimento != null) {
         syncPointerCanvasSize();
+        drawScale();
         var angle = mapValueToAngle($scope.dadosVisiveis.comprometimento);
-        drawPointerAtAngle(angle);
+        drawPointerAtAngle(angle, $scope.dadosVisiveis.comprometimento);
       }
     });
   });
-}
-]]></client_script>
+}]]></client_script>
         <controller_as>c</controller_as>
         <css>.report-widget {
   border-radius: 12px;
@@ -232,7 +307,6 @@
   display: flex;
   flex-direction: column;
   font-family: 'Roboto Flex', sans-serif;
-  
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
@@ -243,101 +317,14 @@
   opacity: 0;
   visibility: hidden;
   transform: translateY(20px);
-
-/* --- Media Queries para Responsividade --- */
-
-/* Telas Pequenas (Mobile S, M, L - até 767px) */
-@media (max-width: 767px) {
-  .report-widget {
-    margin-top: 1rem;
-  }
-  .panel-title {
-    font-size: 1.5rem;
-  }
-  .panel-body {
-    padding: 8px;
-  }
-  .chart-container {
-    height: 200px; /* Ajustar altura do gráfico */
-  }
-}
-
-/* Tablets (iPad Mini, iPad Air, Surface Duo, Galaxy Z Fold 5 - 768px até 1023px) */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .report-widget {
-    margin-top: 1.5rem;
-  }
-  .panel-title {
-    font-size: 1.1rem;
-  }
-  .chart-container {
-    height: 220px; /* Ajustar altura do gráfico */
-  }
-}
-
-/* Laptops e Telas Maiores (iPad Pro, Surface Pro 7, Laptops, 4K - 1024px em diante) */
-@media (min-width: 1024px) {
-  .report-widget {
-    margin-top: 24px;
-  }
-  .panel-title {
-    font-size: 1.6rem;
-  }
-  .chart-container {
-    height: 250px;
-  }
-}
-
-/* Ajustes específicos para dispositivos muito largos como Nest Hub Max ou telas 4K */
-@media (min-width: 1280px) {
-    .panel-heading {
-       padding: 14px 18px;
-       font-size: 1.5rem;
-    }
-    .panel-body {
-        padding: 20px;
-    }
-}
-
-/* Ajustes para o Surface Duo (540x720) */
-@media (width: 540px) and (height: 720px) {
-    .report-widget {
-        margin-top: 1.2rem;
-    }
-    .panel-title {
-        font-size: 1rem;
-    }
-    .chart-container {
-        height: 210px;
-    }
-}
-
-/* Ajustes para Galaxy Z Fold 5 (max-width: 350px) */
-@media (max-width: 350px) {
-    .panel-title {
-        font-size: 0.9rem;
-    }
-    .panel-body {
-        padding: 6px;
-    }
-    .chart-container {
-        height: 180px;
-    }
-}
-
 }
 
 .panel-heading {
-  background-color: #e0e0e0; /* fundo cinza */
+  background-color: #e0e0e0;
   padding: 12px 16px;
   border-bottom: 1px solid #ccc;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
-}
-
-.comprometimento {
-  text-align: center;
-  margin-top: 37px; /* valor padrão */
 }
 
 .panel-title {
@@ -345,7 +332,7 @@
   font-size: 18px;
   color: #333;
   text-align: center;
-    font-size: 1.2em;
+  font-size: 1.2em;
 }
 
 .panel-body {
@@ -353,113 +340,86 @@
   flex: 1;
   width: 100%;
   text-align: center;
-    font-size: 1.2em;
+  font-size: 1.2em;
+}
+
+/* Container principal do gráfico */
+.chart-container-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
 .chart-container {
   position: relative;
   width: 100%;
-  max-width: 800px; /* limita largura máxima */
+  max-width: 800px;
   height: 250px;
+  margin: 0 auto;
 }
 
 canvas {
   display: block;
-  margin: 0;
-  max-width: none;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
 }
 
-body, h5, ol, li, a, div, h2, h1, p {
-  font-family: 'Roboto Flex', sans-serif !important;
-  color: #333;
+/* Legenda melhorada */
+.legenda-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-/* Mensagem sem dado - transição igual */
+.legenda {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  font-family: 'Roboto Flex', sans-serif;
+  font-size: 14px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.legenda-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.legenda-color {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.legenda-text {
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+/* Comprometimento */
+.comprometimento {
+  text-align: center;
+  margin-top: 25px;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+/* Mensagem sem dado */
 .mensagem {
   opacity: 0;
   visibility: hidden;
   transform: translateY(20px);
-
-/* --- Media Queries para Responsividade --- */
-
-/* Telas Pequenas (Mobile S, M, L - até 767px) */
-@media (max-width: 767px) {
-  .report-widget {
-    margin-top: 1rem;
-  }
-  .panel-title {
-    font-size: 1.5rem;
-  }
-  .panel-body {
-    padding: 8px;
-  }
-  .chart-container {
-    height: 200px; /* Ajustar altura do gráfico */
-  }
-}
-
-/* Tablets (iPad Mini, iPad Air, Surface Duo, Galaxy Z Fold 5 - 768px até 1023px) */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .report-widget {
-    margin-top: 1.5rem;
-  }
-  .panel-title {
-    font-size: 1.1rem;
-  }
-  .chart-container {
-    height: 220px; /* Ajustar altura do gráfico */
-  }
-}
-
-/* Laptops e Telas Maiores (iPad Pro, Surface Pro 7, Laptops, 4K - 1024px em diante) */
-@media (min-width: 1024px) {
-  .report-widget {
-    margin-top: 24px; /* Valor original */
-  }
-  .panel-title {
-    font-size: 1.6rem; /* Valor original */
-  }
-  .chart-container {
-    height: 250px; /* Valor original */
-  }
-}
-
-/* Ajustes específicos para dispositivos muito largos como Nest Hub Max ou telas 4K */
-@media (min-width: 1280px) {
-    .panel-heading {
-        padding: 14px 18px;
-    }
-    .panel-body {
-        padding: 20px;
-    }
-}
-
-/* Ajustes para o Surface Duo (540x720) */
-@media (width: 540px) and (height: 720px) {
-    .report-widget {
-        margin-top: 1.2rem;
-    }
-    .panel-title {
-        font-size: 1rem;
-    }
-    .chart-container {
-        height: 210px;
-    }
-}
-
-/* Ajustes para Galaxy Z Fold 5 (max-width: 350px) */
-@media (max-width: 350px) {
-    .panel-title {
-        font-size: 0.9rem;
-    }
-    .panel-body {
-        padding: 6px;
-    }
-    .chart-container {
-        height: 180px;
-    }
-}
-
   transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out, transform 0.5s ease-in-out;
   height: 0;
   overflow: hidden;
@@ -472,28 +432,83 @@ body, h5, ol, li, a, div, h2, h1, p {
   height: auto;
 }
 
-/* Telas muito grandes */
-@media (min-width: 1853px) {
+/* --- Media Queries para Responsividade --- */
+
+/* Telas Pequenas (Mobile S, M, L - até 767px) */
+@media (max-width: 767px) {
+  .report-widget {
+    margin-top: 1rem;
+  }
+  
+  .panel-title {
+    font-size: 1.1rem;
+  }
+  
+  .panel-body {
+    padding: 12px;
+  }
+  
+  .chart-container {
+    height: 180px;
+  }
+  
+  .legenda {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 12px;
+  }
+  
+  .legenda-item {
+    margin-bottom: 5px;
+  }
+  
+  .legenda-text {
+    font-size: 11px;
+  }
+  
   .comprometimento {
-    margin-top: 5rem;
+    margin-top: 20px;
+    font-size: 14px;
   }
 }
 
-/* Telas médias */
-@media (max-width: 1852px) and (min-width: 1024px) {
-  .comprometimento {
-    margin-top: 7rem;
+/* Tablets (768px até 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .report-widget {
+    margin-top: 1.5rem;
+  }
+  
+  .panel-title {
+    font-size: 1.3rem;
+  }
+  
+  .chart-container {
+    height: 220px;
+  }
+  
+  .legenda {
+    gap: 20px;
+  }
+  
+  .legenda-text {
+    font-size: 13px;
   }
 }
 
-/* Telas pequenas */
-@media (max-width: 1023px) {
-  .comprometimento {
-    margin-top: 9rem;
+/* Laptops e Telas Maiores (1024px em diante) */
+@media (min-width: 1024px) {
+  .report-widget {
+    margin-top: 24px;
   }
-}
-
-</css>
+  
+  .panel-title {
+    font-size: 1.4rem;
+  }
+  
+  .chart-container {
+    height: 250px;
+  }</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -536,14 +551,14 @@ body, h5, ol, li, a, div, h2, h1, p {
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-19 21:32:00</sys_created_on>
         <sys_id>e4952766fba9ae5086e7f4045eefdc4c</sys_id>
-        <sys_mod_count>157</sys_mod_count>
+        <sys_mod_count>244</sys_mod_count>
         <sys_name>Widget Limite com Despesas SemiDonut</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_e4952766fba9ae5086e7f4045eefdc4c</sys_update_name>
-        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-06-14 23:23:19</sys_updated_on>
+        <sys_updated_by>sued.barreto@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-10-03 18:24:20</sys_updated_on>
         <template><![CDATA[<!-- Fonte -->
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
@@ -556,29 +571,37 @@ body, h5, ol, li, a, div, h2, h1, p {
   <div class="panel-heading">
     <h2 class="panel-title">
       <i class="fa fa-tachometer m-r"></i>
-      {{::c.options.title || 'Limites com Despesas de Pessoal'}}
+      {{::c.options.title || 'Despesa com Pessoal - Consolidado'}}
     </h2>
   </div>
 
   <div class="panel-body">
-    <div class="chart-container" style="position: relative;">
-      <canvas id="gaugeChart" width="800" height="250"></canvas>
-      <canvas id="gaugePointer" width="800" height="250" style="position: absolute; top: 0; left: 0;"></canvas>
-    <div class="legenda" style="display: flex; justify-content: center; margin-top: 12px; gap: 20px; font-family: 'Roboto Flex', sans-serif; font-size: 14px;">
-  <div style="display: flex; align-items: center;">
-    <div style="width: 16px; height: 16px; background-color: #8BC34A; margin-right: 6px; border-radius: 3px;"></div>
-    Limite de Alerta
-  </div>
-  <div style="display: flex; align-items: center;">
-    <div style="width: 16px; height: 16px; background-color: #FFEB3B; margin-right: 6px; border-radius: 3px;"></div>
-    Limite Prudencial
-  </div>
-  <div style="display: flex; align-items: center;">
-    <div style="width: 16px; height: 16px; background-color: #F44336; margin-right: 6px; border-radius: 3px;"></div>
-    Limite Máximo
-  </div>
-</div>
-
+    <div class="chart-container-wrapper">
+      <div class="chart-container">
+        <canvas id="gaugeChart" width="800" height="250"></canvas>
+        <canvas id="gaugePointer" width="800" height="250" style="position: absolute; top: 0; left: 0;"></canvas>
+      </div>
+      
+      <div class="legenda-container">
+        <div class="legenda">
+          <div class="legenda-item">
+            <div class="legenda-color" style="background-color: #8BC34A;"></div>
+            <span class="legenda-text">Limite de Alerta - 0 a 54%</span>
+          </div>
+          <div class="legenda-item">
+            <div class="legenda-color" style="background-color: #FFEB3B;"></div>
+            <span class="legenda-text">Limite Prudencial - 54 a 57%</span>
+          </div>
+          <div class="legenda-item">
+            <div class="legenda-color" style="background-color: #F44336;"></div>
+            <span class="legenda-text">Limite Máximo - 60%</span>
+          </div>
+          <div class="legenda-item">
+            <div class="legenda-color" style="background-color: #B71C1C;"></div>
+            <span class="legenda-text">Acima do Limite Máximo - 60,1 a 100%</span>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="comprometimento">
@@ -600,7 +623,6 @@ body, h5, ol, li, a, div, h2, h1, p {
   <div class="panel-body">
     <p class="dadosInfo">Nenhum dado disponível para o ano selecionado.</p>
   </div>
-</div>
-]]></template>
+</div>]]></template>
     </sp_widget>
 </record_update>
