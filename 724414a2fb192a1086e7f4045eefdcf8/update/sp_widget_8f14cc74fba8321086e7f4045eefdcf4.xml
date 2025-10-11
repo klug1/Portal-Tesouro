@@ -1,0 +1,2201 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function($scope, $window, $http, spUtil, $location) {
+    var c = this;
+	
+	$scope.instanceName = c.data.instanceName;
+	
+$scope.goToPage = function(id) {
+    $scope.menuAberto = false;
+    $scope.submenuFinancasAberto = false;
+    $scope.submenuSistemasAberto = false;
+    window.open("?id=" + id, '_blank');
+};
+
+$scope.goTo = function(url) {
+    $scope.menuAberto = false;
+    $scope.submenuFinancasAberto = false;
+    $scope.submenuSistemasAberto = false;
+    window.open(url, '_blank');
+};
+	
+	  $scope.goToPageWithoutBlank = function(id) {
+    $location.url("?id=" + id);
+  };
+	
+	
+	    function updateFlags() {
+        var currentUrl = $location.absUrl();
+        $scope.isHomePage = (currentUrl === "https://" + $scope.instanceName + ".service-now.com/sate");
+
+        $scope.showHeaderMenu = (currentUrl === "https://" + $scope.instanceName + ".service-now.com/sate");
+    }
+
+    // Atualiza na inicialização
+    updateFlags();
+
+    // Observa mudanças na URL para atualizar
+    $scope.$watch(function() {
+        return $location.absUrl();
+    }, function(newVal, oldVal) {
+        if (newVal !== oldVal) {
+				$scope.menuAberto = false;
+        $scope.submenuFinancasAberto = false;
+        $scope.submenuSistemasAberto = false;
+        $scope.dropdownOpen = false;
+            updateFlags();
+        }
+    });
+	
+	
+
+    var highContrastEnabled = false;
+	
+	     var currentUrl = window.location.href;
+  		$scope.showHeaderMenu = currentUrl === "https://" + $scope.instanceName + ".service-now.com/sate";
+
+$scope.isHomePage = (currentUrl === "https://" + $scope.instanceName + ".service-now.com/sate");
+
+			
+  $scope.menuAberto = false;
+  $scope.submenuFinancasAberto = false;
+
+$scope.toggleMenu = function() {
+    $scope.menuAberto = !$scope.menuAberto;
+
+    if (!$scope.menuAberto) {
+        $scope.submenuFinancasAberto = false;
+    }
+
+    // Fecha PRINCIPAIS SISTEMAS sempre que abrir ou fechar TESOURO ESTADUAL
+    $scope.submenuSistemasAberto = false;
+};
+
+$scope.toggleSubmenuFinancas = function($event) {
+    $event.stopPropagation();
+    $scope.submenuFinancasAberto = !$scope.submenuFinancasAberto;
+
+    if ($scope.submenuFinancasAberto) {
+        $scope.submenuSistemasAberto = false;
+        $scope.menuAberto = true;
+    }
+};
+	
+	$scope.submenuSistemasAberto = false;
+
+$scope.toggleSubmenuSistemas = function($event) {
+    $event.stopPropagation();
+    $scope.submenuSistemasAberto = !$scope.submenuSistemasAberto;
+
+    if ($scope.submenuSistemasAberto) {
+        $scope.submenuFinancasAberto = false;
+        $scope.menuAberto = false; // Fecha TESOURO ESTADUAL
+    }
+};
+	
+	// Dentro do seu controller
+document.addEventListener('click', function(event) {
+    var menu = document.querySelector('.tesouroHeaderlink'); // ou outro container do submenu
+    if (menu && !menu.contains(event.target)) {
+        $scope.$apply(function() {
+            $scope.submenuSistemasAberto = false;
+        });
+    }
+});
+
+    // Funcionalidade de login
+    c.checkUserLoggedIn = function() {
+        if ($scope.user && $scope.user.logged_in) {
+            c.loginButtonText = $scope.user.name;
+            $scope.dropdownOpen = false;
+
+            $scope.toggleDropdown = function() {
+                $scope.dropdownOpen = !$scope.dropdownOpen;
+            };
+
+            // Função de logout ajustada para desconexão e permanência na mesma página
+            $scope.logout = function() {
+                // Executa o logout via GET (isso pode ser modificado dependendo da sua configuração)
+                var logoutRequest = new XMLHttpRequest();
+                logoutRequest.open("GET", "/logout", true);
+                logoutRequest.onload = function() {
+                    // Após a requisição de logout, redireciona para a página /gfo
+                    $window.location.href = '/gfo';
+                };
+                logoutRequest.send();
+            };
+
+            $scope.avatarProfile = {
+                initials: $scope.user.first_name[0] + $scope.user.last_name[0]
+            };
+        } else {
+            c.loginButtonText = 'Entrar';
+            c.redirect = function() {
+                $window.location.href = '/login_with_sso.do?glide_sso_id=13e4f3d2fb2bca10f6d5f9d38eefdcce';
+            };
+        }
+    };
+	
+	 // Função para redirecionar para "Meus Pedidos" com verificação de login
+    c.goToPedidos = function() {
+        if ($scope.user && $scope.user.logged_in) {
+            // Se estiver logado, redireciona para "Meus Pedidos"
+            $window.location.href = '?id=gfo_minhas_solicitacoes';
+        } else {
+            // Se não estiver logado, redireciona para o login SSO
+            $window.location.href = '/login_with_sso.do?glide_sso_id=13e4f3d2fb2bca10f6d5f9d38eefdcce';
+        }
+    };
+
+    // Ajuste de fonte
+    $scope.adjustFontSize = function(factor) {
+        var elements = document.querySelectorAll('body, body *');
+        elements.forEach(function(element) {
+            if (element.tagName !== 'IMG' && element.children.length === 0) {
+                var currentSize = window.getComputedStyle(element).fontSize;
+                var newSize = parseFloat(currentSize) * factor;
+                element.style.fontSize = newSize + 'px';
+            }
+        });
+    };
+	
+		$scope.letter = 'a';  // estado interno
+
+$scope.toggleCase = function() {
+  if ($scope.letter === 'a') {
+    $scope.letter = 'A';
+  } else {
+    $scope.letter = 'a';
+  }
+
+  console.log('Letra agora está:', $scope.letter);
+};
+	
+$scope.isLowercase = null; // começa normal
+
+$scope.toggleCase = function() {
+  if ($scope.isLowercase === null) {
+    $scope.isLowercase = true;   // minúsculo
+  } else if ($scope.isLowercase === true) {
+    $scope.isLowercase = false;  // maiúsculo
+  } else {
+    $scope.isLowercase = null;   // normal
+  }
+
+  // Emite o evento para sincronizar nos outros widgets
+  $scope.$root.$broadcast('toggleCaseEvent', $scope.isLowercase);
+
+  console.log('Estado agora:', $scope.isLowercase);
+};
+
+
+
+
+
+    // Função para alternar contraste
+    $scope.toggleContrast = function(event) {
+        event.preventDefault(); // Evitar qualquer comportamento padrão do link
+        highContrastEnabled = !highContrastEnabled;
+       // var elements = document.querySelectorAll('body, body *');
+			
+			var allElements = document.querySelectorAll('body, body *');
+
+allElements.forEach(function(element) {
+    // Ignora elementos que estão dentro de .destaques-main-container
+    if (element.closest('.destaques-main-container')) {
+        return;
+    }
+
+    if (highContrastEnabled) {
+        element.style.backgroundColor = "#000000";
+        element.style.color = "#FFFFFF";
+    } else {
+        element.style.backgroundColor = "";
+        element.style.color = "";
+    }
+	var fiscalCards = document.getElementsByClassName('fiscal-card');
+				for (var m = 0; m < fiscalCards.length; m++) {
+						fiscalCards[m].style.border = highContrastEnabled ? "2px solid #FFFFFF" : ""; // Borda branca ou reset
+						fiscalCards[m].style.borderRadius = highContrastEnabled ? "8px" : ""; // (opcional) Arredondamento
+				}
+
+				var fiscalLabels = document.getElementsByClassName('fiscal-label');
+				for (var n = 0; n < fiscalLabels.length; n++) {
+						fiscalLabels[n].style.backgroundColor = highContrastEnabled ? "#FFFFFF" : ""; // fundo branco ou reset
+						fiscalLabels[n].style.color = highContrastEnabled ? "#000000" : ""; // texto preto no fundo branco
+						fiscalLabels[n].style.padding = highContrastEnabled ? "4px 8px" : ""; // (opcional) espaçamento interno
+						fiscalLabels[n].style.borderRadius = highContrastEnabled ? "4px" : ""; // (opcional) cantos arredondados
+				}
+	
+	var acessosWidgets = document.getElementsByClassName('acessos-widget');
+for (var k = 0; k < acessosWidgets.length; k++) {
+    acessosWidgets[k].style.border = highContrastEnabled ? "2px solid #FFFFFF" : "";
+    acessosWidgets[k].style.borderRadius = highContrastEnabled ? "10px" : "";
+    acessosWidgets[k].style.padding = highContrastEnabled ? "15px" : "";
+}
+	
+var submenuLinks = document.querySelectorAll('.submenu3 li a');
+
+for (var i = 0; i < submenuLinks.length; i++) {
+    if (highContrastEnabled) {
+        // Aplica estilo inicial de contraste
+        submenuLinks[i].style.color = '#fff'; // texto branco
+
+        // Mantém o hover de contraste
+        submenuLinks[i].addEventListener('mouseenter', function() {
+            this.style.backgroundColor = '#ffffff'; // fundo branco
+            this.style.color = '#000000';           // texto preto
+        });
+        submenuLinks[i].addEventListener('mouseleave', function() {
+            this.style.backgroundColor = '';        // volta ao padrão
+            this.style.color = '#fff';           // mantém branco no contraste
+        });
+    } else {
+        // Remove event listeners se o contraste for desativado
+        submenuLinks[i].onmouseenter = null;
+        submenuLinks[i].onmouseleave = null;
+        submenuLinks[i].style.backgroundColor = '';
+        submenuLinks[i].style.color = '';
+    }
+}
+
+	// Seleciona todos os links dentro do menu "TESOURO ESTADUAL"
+var tesouroLinks = document.querySelectorAll('.dropdown2 li a');
+
+for (var i09 = 0; i09 < tesouroLinks.length; i09++) {
+    if (highContrastEnabled) {
+        // Aplica cor inicial
+        tesouroLinks[i09].style.color = '#fff'; // texto branco
+
+        // Hover
+        tesouroLinks[i09].addEventListener('mouseenter', function() {
+            this.style.backgroundColor = '#ffffff'; // fundo branco
+            this.style.color = '#000000';           // texto preto
+        });
+        tesouroLinks[i09].addEventListener('mouseleave', function() {
+            this.style.backgroundColor = '';        // volta ao padrão
+            this.style.color = '#fff';              // mantém branco no contraste
+        });
+
+        // Click/focus (simula :focus)
+        tesouroLinks[i09].addEventListener('click', function() {
+            this.style.backgroundColor = '#ffffff';
+            this.style.color = '#000000';
+        });
+    } else {
+        // Remove estilos quando contraste é desativado
+        tesouroLinks[i09].onmouseenter = null;
+        tesouroLinks[i09].onmouseleave = null;
+        tesouroLinks[i09].onclick = null;
+        tesouroLinks[i09].style.backgroundColor = '';
+        tesouroLinks[i09].style.color = '';
+    }
+}
+
+// Seleciona todos os links do menu principal e submenus
+var allMenuLinks = document.querySelectorAll('.header-menu a, .dropdown2 li a, .submenu li a, .submenu3 li a, #aUnderline');
+
+for (var ii1 = 0; ii1 < allMenuLinks.length; ii1++) {
+    if (highContrastEnabled) {
+        // Hover
+        allMenuLinks[ii1].addEventListener('mouseenter', function() {
+            this.style.backgroundColor = '#ffffff'; // fundo branco
+            this.style.color = '#000000';           // texto preto
+        });
+        allMenuLinks[ii1].addEventListener('mouseleave', function() {
+            this.style.backgroundColor = '';        // volta ao padrão
+            this.style.color = '#fff';           // mantém branco no contraste
+        });
+
+        // Click/focus (simula :focus)
+        allMenuLinks[ii1].addEventListener('click', function() {
+            this.style.backgroundColor = '#ffffff';
+            this.style.color = '#000000';
+        });
+    } else {
+        // Remove estilos quando contraste é desativado
+        allMenuLinks[ii1].onmouseenter = null;
+        allMenuLinks[ii1].onmouseleave = null;
+        allMenuLinks[ii1].onclick = null;
+        allMenuLinks[ii1].style.backgroundColor = '';
+        allMenuLinks[ii1].style.color = '';
+    }
+}
+
+var linkPrincipais = document.querySelector('a.tesouroHeaderlink[href="#"] i#idArrowPrincipais').parentNode; // seleciona o <a>
+var arrowPrincipais = document.getElementById('idArrowPrincipais');
+
+if (linkPrincipais && arrowPrincipais) {
+    if (highContrastEnabled) {
+        // Cor inicial da seta
+        arrowPrincipais.style.color = '#ffffff';
+        arrowPrincipais.style.background = 'transparent';
+
+        // Hover no link inteiro
+        linkPrincipais.addEventListener('mouseenter', function() {
+            this.style.backgroundColor = '#ffffff'; // fundo branco do link
+            arrowPrincipais.style.color = '#000000'; // seta preta
+        });
+
+        linkPrincipais.addEventListener('mouseleave', function() {
+            this.style.backgroundColor = 'transparent'; // fundo volta ao padrão
+            arrowPrincipais.style.color = '#ffffff';     // seta volta a branca
+        });
+
+        // Click/focus mantém a seta preta
+        linkPrincipais.addEventListener('click', function() {
+            arrowPrincipais.style.color = '#000000';
+        });
+
+    } else {
+        // Remove estilos quando contraste é desativado
+        linkPrincipais.onmouseenter = null;
+        linkPrincipais.onmouseleave = null;
+        linkPrincipais.onclick = null;
+        arrowPrincipais.style.color = '';
+        linkPrincipais.style.backgroundColor = '';
+    }
+}
+
+
+
+	
+	
+	// seleciona todos os <li> dentro do submenu
+var submenuItems = document.querySelectorAll('.dropdown2 li');
+for (var i20 = 0; i20 < submenuItems.length; i20++) {
+  submenuItems[i20].style.width = highContrastEnabled ? '104%' : '120%';
+}
+
+var arrows = document.getElementsByClassName('arrowFinanca');
+
+for (var i21 = 0; i21 < arrows.length; i21++) {
+  arrows[i21].style.marginLeft = highContrastEnabled ? '104px' : '0';
+}
+	
+var navbars = document.getElementsByClassName('navbar');
+
+for (var i23 = 0; i23 < navbars.length; i23++) {
+  navbars[i23].style.borderBottom = highContrastEnabled ? '1.2rem solid #A1A1A1' : '1.2rem solid #6CB4EE';
+	 navbars[i23].style.background = highContrastEnabled ? 'none' : 'linear-gradient(90deg, #020944, #011272, #020944)';
+}
+
+var wrappers = document.getElementsByClassName('search-wrapper');
+for (var i24 = 0; i24 < wrappers.length; i24++) {
+  wrappers[i24].style.display = highContrastEnabled ? 'none' : '';
+}
+
+var submenuItems2 = document.querySelectorAll('.submenu li');
+for (var i22 = 0; i22 < submenuItems2.length; i22++) {
+  submenuItems2[i22].style.width = '100%';
+}
+
+	
+// Agora o toggle do footer 
+var portalFooters = document.getElementsByClassName('portal-footer');
+for (var i = 0; i < portalFooters.length; i++) {
+    var footer = portalFooters[i];
+
+    var footerContainers = footer.getElementsByClassName('footer-container');
+    for (var j = 0; j < footerContainers.length; j++) {
+        var container = footerContainers[j];
+        container.style.backgroundColor = highContrastEnabled ? "#FFFFFF" : "";
+        container.style.color = highContrastEnabled ? "#000000" : "";
+        container.style.maxWidth = highContrastEnabled ? "100%" : "";
+
+        var footerLefts = container.getElementsByClassName('footer-left');
+        for (var k = 0; k < footerLefts.length; k++) {
+            footerLefts[k].style.backgroundColor = highContrastEnabled ? "#FFFFFF" : "";
+            footerLefts[k].style.color = highContrastEnabled ? "#000000" : "";
+            footerLefts[k].style.transform = highContrastEnabled ? "translate(227px, 11px)" : "";
+        }
+
+        var footerColumns = container.getElementsByClassName('footer-column');
+        for (var l = 0; l < footerColumns.length; l++) {
+            footerColumns[l].style.backgroundColor = highContrastEnabled ? "#FFFFFF" : "";
+            footerColumns[l].style.color = highContrastEnabled ? "#000000" : "";
+						footerColumns[l].style.transform = highContrastEnabled ? "translateY(42px)" : "";
+        }
+
+        var rights = container.getElementsByClassName('right');
+        for (var m = 0; m < rights.length; m++) {
+            rights[m].style.backgroundColor = highContrastEnabled ? "#FFFFFF" : "";
+            rights[m].style.color = highContrastEnabled ? "#000000" : "";
+					rights[m].style.marginRight = highContrastEnabled ? "100px" : "";
+					
+
+            var contactInfos = rights[m].getElementsByClassName('contact-info');
+            for (var n = 0; n < contactInfos.length; n++) {
+                contactInfos[n].style.backgroundColor = highContrastEnabled ? "#FFFFFF" : "";
+                contactInfos[n].style.color = highContrastEnabled ? "#000000" : "";
+            }
+
+            var contactItems = rights[m].getElementsByClassName('contact-item');
+            for (var o = 0; o < contactItems.length; o++) {
+                contactItems[o].style.backgroundColor = highContrastEnabled ? "#FFFFFF" : "";
+                contactItems[o].style.color = highContrastEnabled ? "#000000" : "";
+                contactItems[o].style.transform = highContrastEnabled ? "translateX(-5px)" : "";
+            }
+
+            var links = rights[m].getElementsByTagName('a');
+            for (var p = 0; p < links.length; p++) {
+                links[p].style.color = highContrastEnabled ? "#000000" : "";
+            }
+        }
+
+        var h3s = container.getElementsByTagName('h3');
+        for (var q = 0; q < h3s.length; q++) {
+            h3s[q].style.color = highContrastEnabled ? "#000000" : "";
+            h3s[q].style.fontWeight = highContrastEnabled ? "bold" : "";
+						h3s[q].style.backgroundColor = highContrastEnabled ? "transparent" : "";
+					
+        }
+
+        var h4s = container.getElementsByTagName('h4');
+        for (var r = 0; r < h4s.length; r++) {
+            h4s[r].style.color = highContrastEnabled ? "#000000" : "";
+            h4s[r].style.fontWeight = highContrastEnabled ? "normal" : "";
+						h4s[r].style.backgroundColor = highContrastEnabled ? "transparent" : "";
+        }
+    }
+
+    var imgs = footer.getElementsByClassName('center-img');
+    for (var s = 0; s < imgs.length; s++) {
+        imgs[s].style.filter = highContrastEnabled ? "none" : "";
+    }
+	
+		var icons = footer.getElementsByTagName('i');
+	for (var t = 0; t < icons.length; t++) {
+			icons[t].style.color = highContrastEnabled ? "black" : "";
+			icons[t].style.backgroundColor = highContrastEnabled ? "white" : "";
+	}
+	
+	
+		var paragraphs = footer.getElementsByTagName('p');
+	for (var u = 0; u < paragraphs.length; u++) {
+			paragraphs[u].style.color = highContrastEnabled ? "black" : "";
+			paragraphs[u].style.backgroundColor = highContrastEnabled ? "transparent" : "";
+	}
+	
+	var links = footer.getElementsByTagName('a');
+for (var p = 0; p < links.length; p++) {
+    links[p].style.color = highContrastEnabled ? "#020202" : "";
+    links[p].style.backgroundColor = highContrastEnabled ? "transparent" : "";
+}
+	
+	var uls = footer.getElementsByTagName('ul');
+    for (var i = 0; i < uls.length; i++) {
+        uls[i].style.backgroundColor = highContrastEnabled ? "rgb(0, 0, 0)" : "";
+        uls[i].style.color = highContrastEnabled ? "#020202" : "";
+				uls[i].style.backgroundColor = highContrastEnabled ? "transparent" : "";
+    }
+	var lis = footer.getElementsByTagName('li');
+		for (var i2 = 0; i2 < lis.length; i2++) {
+				lis[i2].style.backgroundColor = highContrastEnabled ? "rgb(0, 0, 0)" : "";
+				lis[i2].style.color = highContrastEnabled ? "#020202" : "";
+				lis[i2].style.backgroundColor = highContrastEnabled ? "transparent" : "";
+		}
+
+		var imgLogo = document.querySelector('.center-img'); // ou outro seletor
+		if (imgLogo) {
+			if (highContrastEnabled) {
+				imgLogo.src = 'x_sded9_portal_t_0.logoEscura.png';
+				imgLogo.style.transform = 'translateY(42px)';
+			} else {
+				imgLogo.src = "https://" + $scope.instanceName + ".service-now.com/logo_sefaz_footer.svg";
+				imgLogo.style.transform = '';
+			}
+		}
+
+			var capagCards = document.getElementsByClassName('capag-card-exact');
+		for (var i3 = 0; i3 < capagCards.length; i3++) {
+				capagCards[i3].style.padding = highContrastEnabled ? "3.1rem" : "";
+		}
+
+			var blueBars = document.getElementsByClassName('blue-bar');
+		for (var i4 = 0; i4 < blueBars.length; i4++) {
+				blueBars[i4].style.backgroundColor = highContrastEnabled ? "#ffa500" : "";
+		}
+
+
+			var navbars = document.getElementsByClassName('navbar-content');
+for (var i5 = 0; i5 < navbars.length; i5++) {
+    if (highContrastEnabled) {
+        navbars[i5].style.background = "linear-gradient(90deg, #000000, #393939, #000000)";
+        navbars[i5].style.color = "#ffffff"; // texto claro no contraste alto
+    } else {
+        navbars[i5].style.background = "linear-gradient(90deg, #020944, #011272, #020944)";
+        navbars[i5].style.color = ""; // volta ao padrão
+    }
+}
+
+			var tesouros = document.getElementsByClassName('tesouroHeader');
+		for (var i7 = 0; i7 < tesouros.length; i7++) {
+				tesouros[i7].style.backgroundColor = highContrastEnabled ? "transparent" : "";
+				tesouros[i7].style.color = highContrastEnabled ? "#020202" : "";
+		}
+	
+	var roboto = document.getElementsByClassName('roboto');
+		for (var i10 = 0; i10 < roboto.length; i10++) {
+				roboto[i10].style.backgroundColor = highContrastEnabled ? "transparent" : "";
+				roboto[i10].style.color = highContrastEnabled ? "white" : "";
+		}
+	
+	var dots9 = document.getElementsByClassName('dots9');
+		for (var i11 = 0; i11 < dots9.length; i11++) {
+				dots9[i11].style.backgroundColor = highContrastEnabled ? "transparent" : "";
+				dots9[i11].style.color = highContrastEnabled ? "white" : "";
+		}
+
+			var iconHamb = document.getElementById('iconHamb');
+		if (iconHamb) {
+				iconHamb.style.color = highContrastEnabled ? "white" : "";
+				 iconHamb.style.backgroundColor = highContrastEnabled ? "white" : "";
+		}
+	
+	var icons2 = document.getElementsByClassName('fa-bars');
+
+for (var i90 = 0; i90 < icons2.length; i90++) {
+  if (highContrastEnabled) {
+    icons2[i90].classList.add('high-contrast-icon');
+  } else {
+    icons2[i90].classList.remove('high-contrast-icon');
+  }
+}
+
+
+
+
+		var tesouroPointer = document.getElementById('tesouroPointer');
+		if (tesouroPointer) {
+				tesouroPointer.style.backgroundColor = highContrastEnabled ? "transparent" : "";
+				tesouroPointer.style.color = highContrastEnabled ? "#000000" : "#FFFFFF";
+		}
+	
+	
+
+			var boldTags = document.getElementsByTagName('b');
+		for (var i8 = 0; i8 < boldTags.length; i8++) {
+				boldTags[i8].style.backgroundColor = highContrastEnabled ? "transparent" : "";
+				boldTags[i8].style.color = highContrastEnabled ? "#020202" : "";
+		}
+
+		// Para a classe .accessibility
+		var accessibilityElements = document.getElementsByClassName('accessibility');
+		for (var j1 = 0; j1 < accessibilityElements.length; j1++) {
+				accessibilityElements[j1].style.backgroundColor = highContrastEnabled ? "transparent" : "";
+			accessibilityElements[j1].style.color = highContrastEnabled ? "transparent" : "";
+		}
+
+			var linkAccessibilityElements = document.getElementsByClassName('linkAccessibility');
+		for (var k1 = 0; k1 < linkAccessibilityElements.length; k1++) {
+				linkAccessibilityElements[k1].style.backgroundColor = highContrastEnabled ? "transparent" : "";
+				linkAccessibilityElements[k1].style.color = highContrastEnabled ? "#020202" : "";
+		}
+	
+	var userInitials = document.getElementsByClassName('user-initials');
+for (var k8 = 0; k8 < userInitials.length; k8++) {
+    userInitials[k8].style.backgroundColor = highContrastEnabled ? "white" : "";
+	 userInitials[k8].style.color = highContrastEnabled ? "black" : "";
+}
+
+
+			var userAvatarElements = document.getElementsByClassName('user-avatar');
+		for (var k3 = 0; k3 < userAvatarElements.length; k3++) {
+				//userAvatarElements[k3].style.backgroundColor = highContrastEnabled ? "white" : "";
+			userAvatarElements[k3].style.color = highContrastEnabled ? "#black" : "";
+		}
+
+			var dropdownElements = document.getElementsByClassName('dropdown');
+		for (var k4 = 0; k4 < dropdownElements.length; k4++) {
+				dropdownElements[k4].style.backgroundColor = highContrastEnabled ? "transparent" : "";
+		}
+
+			var userLoggedElements = document.getElementsByClassName('user-logged ng-scope');
+		for (var k5 = 0; k5 < userLoggedElements.length; k5++) {
+				userLoggedElements[k5].style.backgroundColor = highContrastEnabled ? "transparent" : "";
+				userLoggedElements[k5].style.color = highContrastEnabled ? "#020202" : "";
+		}
+
+		var svgs = document.querySelectorAll('svg.bi.bi-circle-half');
+		for (var i9 = 0; i9 < svgs.length; i9++) {
+				var svg = svgs[i9];
+				if (highContrastEnabled) {
+						// fundo branco
+						svg.style.backgroundColor = "#FFFFFF";
+						svg.style.borderRadius = "50%"; // deixar circular o fundo branco
+
+						// desenha metade preta, metade branca
+						// (supondo SVG já com paths, muda o fill da metade preta)
+						var paths = svg.querySelectorAll('path');
+						for (var j6 = 0; j6 < paths.length; j6++) {
+								paths[j6].style.fill = "#000000"; // preto na metade
+						}
+				} else {
+						svg.style.backgroundColor = "";
+						var paths2 = svg.querySelectorAll('path');
+						for (var j7 = 0; j7 < paths2.length; j7++) {
+								paths2[j7].style.fill = ""; // resetar cor
+						}
+				}
+		}
+
+	  var imgsSefaz = document.querySelectorAll('.img_sefaz');
+    for (var img = 0; img < imgsSefaz.length; img++) {
+        imgsSefaz[i].src = highContrastEnabled ? 'x_sded9_portal_t_0.imgContrast.png'
+            : 'x_sded9_portal_t_0.logo_sefaz_branco.png';
+    }
+
+			var searchWrapperElements = document.getElementsByClassName('search-wrapper');
+		for (var z1 = 0; z1 < searchWrapperElements.length; z1++) {
+			searchWrapperElements[z1].style.backgroundColor = highContrastEnabled ? "transparent" : "";
+		}
+
+			// Para .fa.fa-search
+		var searchIcons = document.getElementsByClassName('fa fa-search');
+		for (var z2 = 0; z2 < searchIcons.length; z2++) {
+			if (highContrastEnabled) {
+				searchIcons[z2].style.color = "#000"; // cor preta
+				 searchIcons[z2].style.backgroundColor = highContrastEnabled ? "#FFFFFF" : "";
+				// searchIcons[z2].style.backgroundColor = "#FFF";
+			} else {
+				searchIcons[z2].style.color = "";
+				searchIcons[z2].style.backgroundColor = "";
+			}
+		}
+		// Para .btn.search-button
+		var searchButtons = document.querySelectorAll('.btn.search-button');
+		for (var z3 = 0; z3 < searchButtons.length; z3++) {
+			searchButtons[z3].style.backgroundColor = highContrastEnabled ? "#FFFFFF" : "";
+			searchButtons[z3].style.color = highContrastEnabled ? "#000000" : "";
+		}
+	
+	// Navbar
+var navbar = document.querySelector('.navbar');
+if (navbar) {
+  if (highContrastEnabled) {
+    navbar.style.borderBottom = "1.2rem solid #D3D3D3"; // CINZA claro
+  } else {
+    navbar.style.borderBottom = ""; // reseta se sair do modo contraste
+  }
+}
+
+		// linha-topo
+	var linhaTopoElements = document.getElementsByClassName('linha-topo');
+	for (var z4 = 0; z4 < linhaTopoElements.length; z4++) {
+		linhaTopoElements[z4].style.backgroundColor = highContrastEnabled ? "transparent" : "";
+	}
+
+	// lado-esquerdo
+	var ladoEsquerdoElements = document.getElementsByClassName('lado-esquerdo');
+	for (var z5 = 0; z5 < ladoEsquerdoElements.length; z5++) {
+		ladoEsquerdoElements[z5].style.backgroundColor = highContrastEnabled ? "transparent" : "";
+		
+	}
+
+	// lado-direito
+	var ladoDireitoElements = document.getElementsByClassName('lado-direito');
+	for (var z6 = 0; z6 < ladoDireitoElements.length; z6++) {
+		ladoDireitoElements[z6].style.backgroundColor = highContrastEnabled ? "transparent" : "";
+
+	}
+
+	// estado
+	var estadoElements = document.getElementsByClassName('estado');
+	for (var z7 = 0; z7 < estadoElements.length; z7++) {
+			estadoElements[z7].style.backgroundColor = highContrastEnabled ? "transparent" : "";
+	}
+
+	// subtitulo
+	var subtituloElements = document.getElementsByClassName('subtitulo');
+	for (var z8 = 0; z8 < subtituloElements.length; z8++) {
+			subtituloElements[z8].style.backgroundColor = highContrastEnabled ? "transparent" : "";
+	}
+
+	// categoria
+	var categoriaElements = document.getElementsByClassName('categoria');
+	for (var z9 = 0; z9 < categoriaElements.length; z9++) {
+		categoriaElements[z9].style.backgroundColor = highContrastEnabled ? "transparent" : "";
+	}
+
+	// nota
+	var notaElements = document.getElementsByClassName('nota');
+	for (var z10 = 0; z10 < notaElements.length; z10++) {
+		notaElements[z10].style.backgroundColor = highContrastEnabled ? "transparent" : "";
+	}
+
+	var titleBannerElements = document.getElementsByClassName('title-banner');
+	for (var z11 = 0; z11 < titleBannerElements.length; z11++) {
+		titleBannerElements[z11].style.backgroundColor = highContrastEnabled ? "transparent" : "";
+		//titleBannerElements[z11].style.color = highContrastEnabled ? "#000000" : "";
+	}
+	
+	var itemElements = document.getElementsByClassName('item');
+for (var z12 = 0; z12 < itemElements.length; z12++) {
+  if (highContrastEnabled) {
+    itemElements[z12].style.backgroundColor = highContrastEnabled ? "transparent" : ""; // mantém imagem e fundo transparente
+    //itemElements[z12].style.color = "#000000"; // texto preto
+  } else {
+    itemElements[z12].style.backgroundColor = "";
+    itemElements[z12].style.color = "";
+  }
+
+  // .title dentro de .item
+  var title = itemElements[z12].querySelector('.title');
+  if (title) {
+    title.style.backgroundColor = highContrastEnabled ? "transparent" : "";
+  }
+
+  // .description dentro de .item
+  var description = itemElements[z12].querySelector('.description');
+  if (description) {
+    description.style.backgroundColor = highContrastEnabled ? "transparent" : "";
+  }
+	var content = itemElements[z12].querySelector('.content');
+  if (content) {
+    content.style.backgroundColor = highContrastEnabled ? "transparent" : "";
+    //content.style.color = highContrastEnabled ? "#000000" : "";
+  }
+}
+
+	var fireIcons = document.querySelectorAll('.fa.fa-fire.text-warning');
+for (var i12 = 0; i12 < fireIcons.length; i12++) {
+  fireIcons[i12].style.color = highContrastEnabled ? "tomato" : "";
+}
+
+var starIcons = document.querySelectorAll('.fa.fa-star.text-warning');
+for (var j8 = 0; j8 < starIcons.length; j8++) {
+  starIcons[j8].style.color = highContrastEnabled ? "#ffd700" : "";
+}
+}
+	
+
+
+
+var lineNavegue = document.getElementsByClassName('servicos-line');
+	for (var y1 = 0; y1 < lineNavegue.length; y1++) {
+		lineNavegue[y1].style.backgroundColor = highContrastEnabled ? "white" : "";
+	}
+	
+	
+	
+	var buttonDetalhar = document.getElementsByClassName('btn-primary');
+	for (var y2 = 0; y2 < buttonDetalhar.length; y2++) {
+		buttonDetalhar[y2].style.backgroundColor = highContrastEnabled ? "white" : "";
+		buttonDetalhar[y2].style.color = highContrastEnabled ? "black" : "";
+	}
+	var imdIndicador = document.getElementsByClassName('overlay');
+	for (var y3 = 0; y3 < imdIndicador.length; y3++) {
+		imdIndicador[y3].style.backgroundColor = highContrastEnabled ? "rgba(0, 0, 0, 0.5)" : "";
+		imdIndicador[y3].style.color = highContrastEnabled ? "transparent" : "";
+	}
+	var textoSobreImagem = document.getElementsByClassName('textoSobreImagem');
+	for (var y4 = 0; y4 < textoSobreImagem.length; y4++) {
+		textoSobreImagem[y4].style.backgroundColor = highContrastEnabled ? "transparent" : "";
+		textoSobreImagem[y4].style.color = highContrastEnabled ? "transparent" : "";
+	}
+	
+	var textoSobreImagemH1 = document.getElementsByClassName('tituloIndicador');
+	for (var y5 = 0; y5 < textoSobreImagemH1.length; y5++) {
+		textoSobreImagemH1[y5].style.backgroundColor = highContrastEnabled ? "transparent" : "";
+		//textoSobreImagemH1[y5].style.color = highContrastEnabled ? "transparent" : "";
+	}
+	
+		var textoSobreImagemP = document.getElementsByClassName('textoIndicador');
+	for (var y6 = 0; y6 < textoSobreImagemP.length; y6++) {
+		textoSobreImagemP[y6].style.backgroundColor = highContrastEnabled ? "transparent" : "";
+		//textoSobreImagemP[y6].style.color = highContrastEnabled ? "transparent" : "";
+	}
+	var filtroDespesa = document.getElementsByClassName('filter-header');
+	for (var y7 = 0; y7 < filtroDespesa.length; y7++) {
+		filtroDespesa[y7].style.backgroundColor = highContrastEnabled ? "white" : "";
+		filtroDespesa[y7].style.color = highContrastEnabled ? "black" : "";
+	}
+	
+	var filtroDespesa2 = document.getElementsByClassName('filter-container');
+	for (var y8 = 0; y8 < filtroDespesa2.length; y8++) {
+		filtroDespesa2[y8].style.backgroundColor = highContrastEnabled ? "white" : "";
+		filtroDespesa2[y8].style.color = highContrastEnabled ? "black" : "";
+	}
+	
+	var filtroDespesa3 = document.getElementsByClassName('text-lg');
+	for (var y9 = 0; y9 < filtroDespesa3.length; y9++) {
+		filtroDespesa3[y9].style.backgroundColor = highContrastEnabled ? "white" : "";
+		filtroDespesa3[y9].style.color = highContrastEnabled ? "black" : "";
+	}
+		var filtroDespesa4 = document.getElementsByClassName('filter-input-group');
+	for (var a = 0; a < filtroDespesa4.length; a++) {
+		filtroDespesa4[a].style.backgroundColor = highContrastEnabled ? "white" : "";
+		filtroDespesa4[a].style.color = highContrastEnabled ? "black" : "";
+	}
+			var filtroDespesa5 = document.getElementsByClassName('text-sm');
+	for (var a1 = 0; a1 < filtroDespesa5.length; a1++) {
+		filtroDespesa5[a1].style.backgroundColor = highContrastEnabled ? "white" : "";
+		filtroDespesa5[a1].style.color = highContrastEnabled ? "black" : "";
+	}
+	
+		var filtroDespesa6 = document.getElementsByClassName('input-with-icon');
+	for (var a2 = 0; a2 < filtroDespesa6.length; a2++) {
+		filtroDespesa6[a2].style.backgroundColor = highContrastEnabled ? "white" : "";
+		filtroDespesa6[a2].style.color = highContrastEnabled ? "black" : "";
+	}
+	
+		var somareceita1 = document.getElementsByClassName('report-widget');
+	for (var a3 = 0; a3 < somareceita1.length; a3++) {
+		somareceita1[a3].style.backgroundColor = highContrastEnabled ? "white" : "";
+		somareceita1[a3].style.color = highContrastEnabled ? "black" : "";
+	}
+	var somareceita2 = document.getElementsByClassName('panel-body');
+	for (var a4 = 0; a4 < somareceita2.length; a4++) {
+		somareceita2[a4].style.backgroundColor = highContrastEnabled ? "white" : "";
+		somareceita2[a4].style.color = highContrastEnabled ? "black" : "";
+	}
+	var somareceita3 = document.getElementsByClassName('panel-heading');
+	for (var a5 = 0; a5 < somareceita3.length; a5++) {
+		somareceita3[a5].style.backgroundColor = highContrastEnabled ? "white" : "";
+		somareceita3[a5].style.color = highContrastEnabled ? "black" : "";
+	}
+	var somareceita4 = document.getElementsByClassName('panel-title');
+	for (var a6 = 0; a6 < somareceita4.length; a6++) {
+		somareceita4[a6].style.backgroundColor = highContrastEnabled ? "white" : "";
+		somareceita4[a6].style.color = highContrastEnabled ? "black" : "";
+	}
+		var somareceita5 = document.getElementsByClassName('fa-line-chart');
+	for (var a7 = 0; a7 < somareceita5.length; a7++) {
+		somareceita5[a7].style.backgroundColor = highContrastEnabled ? "transparent" : "";
+		somareceita5[a7].style.color = highContrastEnabled ? "black" : "";
+	}
+	var somareceita6 = document.getElementsByClassName('ng-scope');
+	for (var a8 = 0; a8 < somareceita6.length; a8++) {
+		somareceita6[a8].style.backgroundColor = highContrastEnabled ? "transparent" : "";
+		somareceita6[a8].style.color = highContrastEnabled ? "black" : "";
+	}
+	
+		var grafico1 = document.getElementsByClassName('chart-wrapper');
+	for (var a9 = 0; a9 < grafico1.length; a9++) {
+		grafico1[a9].style.backgroundColor = highContrastEnabled ? "white" : "";
+		grafico1[a9].style.color = highContrastEnabled ? "black" : "";
+	}
+	var grafico2 = document.getElementsByTagName('h3');
+	for (var b = 0; b < grafico2.length; b++) {
+		grafico2[b].style.backgroundColor = highContrastEnabled ? "white" : "";
+		grafico2[b].style.color = highContrastEnabled ? "black" : "";
+	}
+		var info1 = document.getElementsByClassName('info-box');
+	for (var b1 = 0; b1 < info1.length; b1++) {
+		info1[b1].style.backgroundColor = highContrastEnabled ? "white" : "";
+		info1[b1].style.color = highContrastEnabled ? "black" : "";
+	}
+	
+	var infoA2 = document.getElementsByClassName('dadosInfo');
+	for (var b2 = 0; b2 < infoA2.length; b2++) {
+		infoA2[b2].style.backgroundColor = highContrastEnabled ? "white" : "";
+		infoA2[b2].style.color = highContrastEnabled ? "black" : "";
+	}
+	
+	
+	
+	var info3 = document.getElementsByTagName('strong');
+	for (var b3 = 0; b3 < info3.length; b3++) {
+		info3[b3].style.backgroundColor = highContrastEnabled ? "white" : "";
+		info3[b3].style.color = highContrastEnabled ? "black" : "";
+	}
+	
+	var info4 = document.getElementsByClassName('info-rows');
+	for (var b4 = 0; b4 < info4.length; b4++) {
+		info4[b4].style.backgroundColor = highContrastEnabled ? "white" : "";
+		info4[b4].style.color = highContrastEnabled ? "black" : "";
+	}
+	
+	var info5 = document.getElementsByClassName('info-column');
+	for (var b5 = 0; b5 < info5.length; b5++) {
+		info5[b5].style.backgroundColor = highContrastEnabled ? "white" : "";
+		info5[b5].style.color = highContrastEnabled ? "black" : "";
+	}
+	var info6 = document.getElementsByClassName('sub-info');
+	for (var b66 = 0; b66 < info6.length; b66++) {
+		info6[b66].style.backgroundColor = highContrastEnabled ? "white" : "";
+		info6[b66].style.color = highContrastEnabled ? "black" : "";
+	}
+	
+	var info7 = document.getElementsByClassName('chart-wrapper-barras');
+	for (var b7 = 0; b7 < info7.length; b7++) {
+		info7[b7].style.backgroundColor = highContrastEnabled ? "white" : "";
+		info7[b7].style.color = highContrastEnabled ? "black" : "";
+	}
+	var info8 = document.getElementsByClassName('linha-wrapper');
+	for (var b8 = 0; b8 < info8.length; b8++) {
+		info8[b8].style.backgroundColor = highContrastEnabled ? "white" : "";
+		info8[b8].style.color = highContrastEnabled ? "black" : "";
+	}
+	var info9 = document.getElementsByClassName('linha-container');
+	for (var b9 = 0; b9 < info9.length; b9++) {
+		info9[b9].style.backgroundColor = highContrastEnabled ? "white" : "";
+		info9[b9].style.color = highContrastEnabled ? "black" : "";
+	}
+
+	var info10 = document.getElementsByClassName('chart-wrapper-total');
+	for (var c = 0; c < info10.length; c++) {
+		info10[c].style.backgroundColor = highContrastEnabled ? "white" : "";
+		info10[c].style.color = highContrastEnabled ? "black" : "";
+	}
+		var ajust1 = document.getElementsByClassName('chart-wrapper-ajustada');
+	for (var c22 = 0; c22 < ajust1.length; c22++) {
+		ajust1[c22].style.backgroundColor = highContrastEnabled ? "white" : "";
+		ajust1[c22].style.color = highContrastEnabled ? "black" : "";
+	}
+	var ajust2 = document.getElementsByClassName('chart-wrapper-ajustado');
+	for (var cd = 0; cd < ajust2.length; cd++) {
+		ajust2[cd].style.backgroundColor = highContrastEnabled ? "white" : "";
+		ajust2[cd].style.color = highContrastEnabled ? "black" : "";
+	}
+	
+	var ajust33 = document.getElementsByClassName('chart-wrapper-lrf');
+	for (var cd1 = 0; cd1 < ajust33.length; cd1++) {
+		ajust33[cd1].style.backgroundColor = highContrastEnabled ? "white" : "";
+		ajust33[cd1].style.color = highContrastEnabled ? "black" : "";
+	}
+	
+		var infoOption = document.getElementsByTagName('option');
+	for (var d4 = 0; d4 < infoOption.length; d4++) {
+		infoOption[d4].style.backgroundColor = highContrastEnabled ? "white" : "";
+		infoOption[d4].style.color = highContrastEnabled ? "black" : "";
+	}
+	
+	var accessibilityTexts = document.getElementsByClassName('accessibilityTexts');
+	for (var d5 = 0; d5 < accessibilityTexts.length; d5++) {
+		accessibilityTexts[d5].style.backgroundColor = highContrastEnabled ? "transparent" : "";
+		accessibilityTexts[d5].style.color = highContrastEnabled ? "white" : "";
+	}
+	
+	/*var infoSelect = document.getElementsByTagName('option');
+	for (var d5 = 0; d5 < infoSelect.length; d5++) {
+		infoSelect[d5].style.backgroundColor = highContrastEnabled ? "white" : "";
+		infoSelect[d5].style.color = highContrastEnabled ? "black" : "";
+	}*/
+	
+});
+
+/*
+        // Seleciona o botão do widget
+        var acessoGFOButton = document.querySelector('.acessoGFO-widget a');
+
+        // Seleciona os elementos com a classe 'servicos-line'
+        var servicosLineElements = document.querySelectorAll('.servicos-line');
+
+        elements.forEach(function(element) {
+            if (highContrastEnabled) {
+                element.style.backgroundColor = "#000000"; // fundo preto
+                element.style.color = "#FFFFFF"; // texto branco
+            } else {
+                element.style.backgroundColor = ""; // reset fundo
+                element.style.color = ""; // reset texto
+            }
+        });
+
+        // Ajustando o fundo de '.servicos-line'
+        servicosLineElements.forEach(function(element) {
+            element.style.backgroundColor = highContrastEnabled ? "#FFFFFF" : "#2F2F2F"; // Muda a cor para branco ou reseta
+        });
+
+        // Estilizando o botão do widget
+        if (acessoGFOButton) {
+            acessoGFOButton.style.backgroundColor = highContrastEnabled ? "#FFFFFF" : "#FD5F06"; // Muda a cor de fundo
+            acessoGFOButton.style.color = highContrastEnabled ? "#000000" : "#FFFFFF"; // Muda a cor do texto
+        }
+
+        // Estilizando botões com as classes 'btn-download' e 'btn-access'
+        var btnsDownload = document.getElementsByClassName('btn-download');
+        var btnsAccess = document.getElementsByClassName('btn-access');
+
+        for (var i = 0; i < btnsDownload.length; i++) {
+            btnsDownload[i].style.color = highContrastEnabled ? "#FFFFFF" : ""; // Cor do texto do botão
+            btnsDownload[i].style.border = highContrastEnabled ? "1px solid #FFFFFF" : ""; // Assegura que não tenha borda
+        }
+        for (var j = 0; j < btnsAccess.length; j++) {
+            btnsAccess[j].style.color = highContrastEnabled ? "#FFFFFF" : ""; // Cor do texto do botão
+            btnsAccess[j].style.border = highContrastEnabled ? "1px solid #FFFFFF" : ""; // Assegura que não tenha borda
+        }
+
+        // Mudando o fundo da classe 'carousel-controls-articles' para transparente
+        var carouselControls = document.getElementsByClassName('carousel-controls-articles');
+        var carouselItems = document.getElementsByClassName('carousel-item-articles');
+
+        for (var k = 0; k < carouselControls.length; k++) {
+            carouselControls[k].style.backgroundColor = highContrastEnabled ? "transparent" : ""; // Fundo transparente ou reset
+        }
+
+        for (var l = 0; l < carouselItems.length; l++) {
+            carouselItems[l].style.border = highContrastEnabled ? "1px solid #FFFFFF" : ""; // Borda branca ou reset
+        }
+			
+			var fiscalCards = document.getElementsByClassName('fiscal-card');
+				for (var m = 0; m < fiscalCards.length; m++) {
+						fiscalCards[m].style.border = highContrastEnabled ? "2px solid #FFFFFF" : ""; // Borda branca ou reset
+						fiscalCards[m].style.borderRadius = highContrastEnabled ? "8px" : ""; // (opcional) Arredondamento
+				}
+
+				var fiscalLabels = document.getElementsByClassName('fiscal-label');
+				for (var n = 0; n < fiscalLabels.length; n++) {
+						fiscalLabels[n].style.backgroundColor = highContrastEnabled ? "#FFFFFF" : ""; // fundo branco ou reset
+						fiscalLabels[n].style.color = highContrastEnabled ? "#000000" : ""; // texto preto no fundo branco
+						fiscalLabels[n].style.padding = highContrastEnabled ? "4px 8px" : ""; // (opcional) espaçamento interno
+						fiscalLabels[n].style.borderRadius = highContrastEnabled ? "4px" : ""; // (opcional) cantos arredondados
+				}
+				*/
+    };
+
+
+    // Chama a função para verificar o estado de login inicialmente
+    c.checkUserLoggedIn();
+};
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>@font-face {
+  font-family: "UniNeue";
+  src: url("/sys_attachment.do?sys_id=798684f4fba8321086e7f4045eefdcb4");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roboto Flex';
+  src: url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&amp;display=swap');
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+/* Change Homepage Header Font */
+#homepage-search &gt; div &gt; h1 {
+  font-family:'UniNeue';
+}
+/* Change H2 Font */
+div.panel-heading &gt; h2 {
+  font-family:'UniNeue';
+}
+/* Change H3 Font */
+h3,h2,h1,b {
+ font-family:'UniNeue';
+}
+.roboto{
+	font-family: 'Roboto Flex';
+  font-weight: 100;
+}
+.panel-heading
+{
+font-family:'UniNeue';
+}
+ul,li
+{
+font-family:'UniNeue';
+}
+.panel-body
+{
+font-family:'UniNeue';
+}
+p
+{
+ font-family:'UniNeue';
+}
+body
+{
+ font-family:'UniNeue';
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto Flex', sans-serif !important;
+  font-weight: 400;
+}
+
+li {
+  font-family: 'Roboto Flex', sans-serif !important;
+  font-weight: 400;
+  list-style: none;
+}
+
+/* ===== Navbar Styles ===== */
+.navbar {
+   background: linear-gradient(90deg, #020944, #011272, #020944);
+  min-height: 3em;
+  width: 100%;
+  transition: all 0.3s ease;
+  border-bottom: 1.2rem solid #6CB4EE;
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 1em;
+  width: 100%;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  gap: 1em;
+  margin-top: .22em;
+}
+
+/* ===== Tesouro Header Styles ===== */
+.tesouroHeader {
+  font-family: 'Roboto Flex', sans-serif !important;
+  font-weight: 400;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 10px;
+  color: white;
+  flex: 1;
+  padding-left: 1rem;
+}
+
+@media (min-width: 768px) {
+  .tesouroHeader {
+    padding-left: 4rem;
+  }
+}
+
+.high-contrast-icon {
+  color: white !important;
+ // background-color: white !important;
+}
+
+
+#iconHamb {
+  position: relative;
+  font-size: 17px;
+  margin-right: 10px;
+  cursor: pointer;
+  color: #01116F;
+  transform: translate(-10px, 8px);
+}
+
+
+
+#tesouroPointer {
+  text-decoration: none !important;
+  cursor: pointer;
+ // color: #01116F;
+  font-size: 16px;
+  font-family: 'Roboto Flex';
+  transform: translate(-38px, 0px);
+}
+
+/* ===== Dropdown Menu Styles ===== */
+.dropdown2 {
+  font-family: 'Roboto Flex', sans-serif !important;
+  font-weight: 400;
+  position: absolute;
+  top: 100%;
+  //left: 40px;
+  background-color: white;
+  border: 1px solid #ccc;
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+  z-index: 1000;
+  //width: 100%;
+  max-width: 31rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  left: 60px;
+  padding-left: 57px;
+}
+
+.dropdown2 li {
+  padding: 5px;
+  width: 120%;
+  //transform: translate(50px, 5px);
+}
+
+.dropdown2 li:hover {
+  //background-color: #f5f5f5;
+}
+
+.tesouroHeaderlink {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  padding: 8px;
+  width: 100%;
+}
+
+.tesouroHeaderlink:hover {
+  background-color: #f0f0f0;
+}
+
+/* ===== Submenu Styles ===== */
+.submenu {
+  list-style: none;
+  padding: 10px 0 10px 20px;
+  margin: 0;
+  width: 100%;
+}
+
+.submenu li {
+  padding: 5px;
+}
+
+.submenu li:hover {
+  //background-color: #ddd;
+  width: 186px;
+}
+
+#subMenuArrow,
+.fa-arrow-right {
+  transition: transform 0.3s ease;
+  margin-left:5px;
+}
+
+.seta-aberta {
+  transform: rotate(90deg);
+}
+
+.dropdown{
+	font-family: 'Roboto Flex';
+  color: #01116F;
+}
+
+/* ===== Accessibility Styles ===== */
+.accessibility {
+  display: flex;
+  gap: 1em;
+  color: #FFF;
+  justify-content: center;
+  align-items: center;
+}
+
+.accessibility a {
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  text-decoration: none;
+}
+.accessibility a {
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  text-decoration: none;
+}
+
+.accessibility a:hover {
+  text-decoration: underline;
+}
+
+.accessibility svg {
+  width: 1.1em;
+  height: 1.5em;
+  vertical-align: middle;
+}
+
+/* ===== Login Button Styles ===== */
+.login {
+  display: flex;
+  gap: 1em;
+}
+
+.login button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FD5F06;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  padding: 0.5em 1em;
+  font-size: 1em;
+  transition: all 0.3s ease;
+}
+
+.login button:hover {
+  background-color: #e55605;
+}
+
+.login button svg {
+  margin-right: 0.5em;
+  width: 1.2em;
+  height: 1.2em;
+  vertical-align: middle;
+}
+
+/* ===== User Dropdown Styles ===== */
+.user-logged {
+  /* position: relative; */
+}
+
+.user-avatar {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.user-initials {
+  font-family: Roboto;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: #01116F;
+  margin-right: 10px;
+}
+
+.user-name {
+  color: white;
+  font-size: 16px;
+  font-family: Roboto;
+}
+
+.dropdown-content {
+  position: absolute;
+  right: 0;
+  background-color: #293273;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 5px;
+}
+
+.dropdown-content a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 12px 16px;
+  display: block;
+  border-radius: 5px;
+}
+
+.dropdown-content a:hover {
+  background-color: #FD5F06;
+  color: #000000;
+}
+
+.dropdown-content a[href*="logout"] {
+  color: #ffffff;
+}
+
+.dropdown-content a[href*="logout"]:hover {
+  color: #ffffff;
+  background-color: #ff0000;
+}
+
+/* ===== Header Container Styles ===== */
+.header-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  background-color: white;
+  padding: 0.5rem;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  max-width: 25%;
+}
+
+.img_sefaz {
+  height: auto;
+  max-height: 120px;
+  width: auto;
+  max-width: 100%;
+  margin-left: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .img_sefaz {
+    margin-left: 2rem;
+  }
+}
+
+.search-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 1rem;
+}
+
+.search-widget {
+  width: 100%;
+  max-width: 400px;
+}
+
+/* ===== Header Menu Styles ===== */
+.header-menu {
+  font-family: 'Roboto Flex', sans-serif !important;
+  font-weight: 400;
+  background-color: #FFFFFF;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  overflow-x: auto;
+}
+
+.header-menu .menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1em;
+  width: 100%;
+  padding-left: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .header-menu .menu-list {
+    gap: 2em;
+    padding-left: 1em;
+  }
+}
+
+.header-menu .menu-list li {
+  position: static;
+  white-space: nowrap;
+}
+
+.header-menu .menu-list li a {
+  color: #101A5C;
+  font-size: 14px;
+  text-decoration: none;
+  padding: 0.5em;
+  display: flex;
+  align-items: center;
+  transform: translate(-53px,1px);
+}
+
+@media (min-width: 768px) {
+  .header-menu .menu-list li a {
+    font-size: 15px;
+  }
+}
+
+#aUnderline {
+  //text-decoration: underline;
+}
+
+.fa.fa-angle-right {
+  vertical-align: text-top;
+  transition: transform 0.3s ease;
+  display: inline-block;
+  transform-origin: center center;
+  padding-left: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .fa.fa-angle-right {
+    padding-left: 1rem;
+  }
+}
+
+a:hover .fa.fa-angle-right,
+li.dropdown:hover &gt; a .fa.fa-angle-right {
+  transform: rotate(90deg);
+}
+
+.header-menu .menu-list li a:hover {
+  background-color: #293273;
+  color: white;
+}
+
+.header-menu .menu-list li.dropdown ul.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: auto;
+  left: auto;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 0.5em 0;
+  margin: 0;
+  z-index: 1000;
+  min-width: 200px;
+}
+
+.header-menu .menu-list li.dropdown:hover ul.dropdown-menu {
+  display: block;
+}
+
+.header-menu .menu-list li.dropdown ul.dropdown-menu li a {
+  color: #101A5C;
+  font-size: 14px;
+  padding: 8px 16px;
+  display: block;
+}
+
+.lowercase-text {
+  text-transform: lowercase;
+}
+
+.uppercase-text {
+  text-transform: uppercase;
+}
+
+
+@media (min-width: 768px) {
+  .header-menu .menu-list li.dropdown ul.dropdown-menu li a {
+    font-size: 16px;
+  }
+}
+
+.header-menu .menu-list li.dropdown ul.dropdown-menu li a:hover {
+  color: white;
+}
+
+/* ===== Media Queries pra vários dispositivos ===== */
+
+/* celular pequeno (iPhone SE) */
+@media (max-width: 375px) {
+  .navbar-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .tesouroHeader {
+    width: 100%;
+    padding-left: 1rem;
+  }
+  
+  .accessibility, .login, .user-logged {
+    margin-top: 10px;
+    width: 100%;
+    justify-content: flex-start;
+  }
+  
+  .dropdown2 {
+    width: 90vw;
+    left: 0;
+  }
+  
+  .img_sefaz {
+    max-height: 80px;
+  }
+  
+  .row {
+    flex-direction: column;
+  }
+  
+  .logo {
+    max-width: 100%;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  
+  .search-wrapper {
+    justify-content: center;
+    padding-right: 0;
+    width: 100%;
+  }
+  
+  .header-menu .menu-list {
+    gap: 0;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 0 0.5rem;
+    justify-content: flex-start;
+  }
+  
+  .header-menu .menu-list li a {
+    font-size: 12px;
+    padding: 0.5em 0.3em;
+  }
+  
+  .fa.fa-angle-right {
+    padding-left: 0.3rem;
+  }
+}
+
+/* Celular de tamanho médio (iPhone XR, Pixel, Galaxy) */
+@media (min-width: 376px) and (max-width: 414px) {
+  .navbar-content {
+    flex-wrap: wrap;
+  }
+  
+  .tesouroHeader {
+    width: 100%;
+    padding-left: 1rem;
+  }
+  
+  .accessibility, .login, .user-logged {
+    margin-top: 5px;
+    justify-content: flex-start;
+  }
+  
+  .dropdown2 {
+    width: 90vw;
+  }
+  
+  .img_sefaz {
+    max-height: 90px;
+  }
+  
+  .row {
+    flex-direction: column;
+  }
+  
+  .logo {
+    max-width: 100%;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  
+  .search-wrapper {
+    justify-content: center;
+    padding-right: 0;
+    width: 100%;
+  }
+  
+  .header-menu .menu-list {
+    gap: 0.3em;
+    overflow-x: auto;
+    justify-content: flex-start;
+  }
+  
+  .header-menu .menu-list li a {
+    font-size: 13px;
+  }
+}
+
+/* Celular grande (iPhone 12 Pro, 14 Pro Max, etc.) */
+@media (min-width: 415px) and (max-width: 430px) {
+  .navbar-content {
+    flex-wrap: wrap;
+  }
+  
+  .tesouroHeader {
+    padding-left: 1rem;
+  }
+  
+  .dropdown2 {
+    width: 90vw;
+  }
+  
+  .row {
+    flex-direction: column;
+  }
+  
+  .logo {
+    max-width: 100%;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  
+  .search-wrapper {
+    justify-content: center;
+    padding-right: 0;
+    width: 100%;
+  }
+  
+  .header-menu .menu-list {
+    gap: 0.5em;
+    overflow-x: auto;
+  }
+}
+
+/* Surface Duo */
+@media (min-width: 431px) and (max-width: 540px) {
+  .navbar-content {
+    flex-wrap: wrap;
+  }
+  
+  .dropdown2 {
+    width: 90vw;
+  }
+  
+  .row {
+    flex-direction: column;
+  }
+  
+  .logo {
+    max-width: 100%;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  
+  .search-wrapper {
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .header-menu .menu-list {
+    gap: 0.8em;
+  }
+}
+
+/* Tablets (iPad Mini) */
+@media (min-width: 541px) and (max-width: 768px) {
+  .navbar-content {
+    justify-content: space-between;
+  }
+  
+  .dropdown2 {
+    width: 75vw;
+  }
+  
+  .row {
+    flex-direction: row;
+  }
+  
+  .logo {
+    max-width: 40%;
+  }
+  
+  .search-wrapper {
+    max-width: 60%;
+  }
+  
+  .header-menu .menu-list {
+    gap: 1em;
+  }
+}
+
+/* Tablets grandes (iPad Air) */
+@media (min-width: 769px) and (max-width: 820px) {
+  .dropdown2 {
+    width: 50vw;
+  }
+  
+  .logo {
+    max-width: 35%;
+  }
+  
+  .search-wrapper {
+    max-width: 65%;
+  }
+  
+  .header-menu .menu-list {
+    gap: 1.5em;
+  }
+}
+
+/* Tablets grandes e notebooks pequenos */
+@media (min-width: 821px) and (max-width: 912px) {
+  .dropdown2 {
+    width: 40vw;
+  }
+  
+  .header-menu .menu-list {
+    gap: 1.8em;
+  }
+}
+
+/* Tablets grandes */
+@media (min-width: 913px) and (max-width: 1024px) {
+  .dropdown2 {
+    width: 35vw;
+  }
+  
+  .header-menu .menu-list {
+    gap: 2em;
+  }
+}
+
+/* Dispositivos grandes (Asus Zenbook Fold, Surface Pro 7) */
+@media (min-width: 1025px) {
+  .dropdown2 {
+    width: 31rem;
+  }
+  
+  .navbar-content {
+    padding: 10px 2em;
+  }
+  
+  .header-menu .menu-list {
+    padding-left: 2em;
+    gap: 1.5em;
+  }
+}
+
+.dropdown {
+  position: relative;
+}
+
+.header-menu .menu-list li a {
+  transform: translate(-53px,1px);
+}
+
+
+.submenu {
+  position: absolute;
+  top: 20%;
+  left: calc(55% + 53px); /* compensa o translate do link */
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  width: 200px;
+  //padding: 0.5rem 0;
+  z-index: 9999;
+  padding-left: 65px
+}
+
+
+.submenu li {
+  padding: 0;
+}
+
+.submenu li a {
+  display: block;
+  color: #01116F;
+  padding: 8px 12px;
+  text-decoration: none;
+}
+
+.submenu li a:hover {
+  background-color: #f5f5f5;
+}
+
+#subMenuArrow,
+.arrowFinanca {
+  padding: 2px
+}
+
+.submenu3 {
+ position: absolute;
+ // top: 20%;
+  //left: calc(55% + 53px); /* compensa o translate do link */
+  transform: translateX(-47px);
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  width: 200px;
+  //padding: 0.5rem 0;
+  z-index: 9999;
+   padding: 0.5rem 0;
+  padding-left: 65px;
+
+}
+
+.submenu3 {
+  list-style: none;  /* remove bullets */
+  padding: 0;
+  margin: 0;
+  margin-left: -10px;
+}
+
+.submenu3 li a {
+  display: block;          /* ocupa todo o li */
+  width: 100%;
+  padding: 0.5em 1em;     /* área clicável grande */
+  text-decoration: none;
+  color: inherit;
+  box-sizing: border-box;
+  transform: none !important; /* anula o transform herdado */
+}
+
+.submenu3 li a:hover {
+  background-color: #808080;
+  color: #fff;
+}
+.submenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 220px; /* ajuste conforme necessário */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.submenu li {
+  /* garante que o &lt;li&gt; não adicione padding extra */
+  padding: 0;
+}
+
+.submenu li a.submenu-link {
+  display: block;          /* ocupa toda a li */
+  width: 100%;
+  padding: 0.5em 1em;      /* área clicável grande */
+  text-decoration: none;
+  color: #01116F;          /* cor padrão do texto */
+  box-sizing: border-box;
+    transform: none !important; /* anula o transform herdado */
+}
+
+.submenu li a.submenu-link:hover {
+  background-color: #808080; /* hover fundo cinza */
+  color: #fff;               /* hover texto branco */
+}
+
+
+
+
+
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>sefaz_header_portal_-_fase_2</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Sefaz Header Portal - Fase 2</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	
+	 var instanceName = gs.getProperty('instance_name');
+    //gs.addInfoMessage('Instance Name (Server): ' + instanceName);
+    data.instanceName = instanceName;
+	
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+data.typeAheadSearch = $sp.getWidget('typeahead_global_sefaz', options.typeahead_search);
+})();
+
+//typeahead_global_sefaz
+//typeahead-search]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-10-09 21:45:56</sys_created_on>
+        <sys_id>8f14cc74fba8321086e7f4045eefdcf4</sys_id>
+        <sys_mod_count>299</sys_mod_count>
+        <sys_name>Sefaz Header Portal - Fase 2</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_8f14cc74fba8321086e7f4045eefdcf4</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-10-11 02:31:36</sys_updated_on>
+        <template><![CDATA[
+
+
+<div class="navbar" ng-class="{'lowercase-text': isLowercase === true, 'uppercase-text': isLowercase === false}">
+    <div class="navbar-content">
+      <!--div class="tesouroHeader"><i id="iconHamb" class="fa fa-bars" aria-hidden="true"></i> <a id="tesouroPointer" href="#">TESOURO NACIONAL</a></div-->
+      
+<div class="tesouroHeader">
+  
+     <div class="logo">
+      <a href="javascript:void(0);" onclick="navigateToHome()">
+        <img class="img_sefaz" src="x_sded9_portal_t_0.logo_sefaz_branco.png" />
+      </a>
+    </div>
+
+</div>
+
+
+
+
+
+      
+      <div class="accessibility">
+        <a href="" aria-label="Acessibilidade" class="linkAccessibility">
+          <b class="accessibilityTexts">ACESSIBILIDADE</b>
+        </a>
+        <a href="" aria-label="Diminuir Fonte" ng-click="adjustFontSize(0.95)" class="linkAccessibility">
+          <b class="accessibilityTexts"><span class="roboto">-</span>A</b>
+        </a>
+        <a href="" aria-label="Aumentar Fonte" ng-click="adjustFontSize(1.05)" class="linkAccessibility">
+          <b class="accessibilityTexts"><span class="roboto">+</span>A</b>
+        </a>
+        
+<a href="" aria-label="Alternar Maiúsculo/Minúsculo" ng-click="toggleCase()" class="linkAccessibility">
+  <b class="accessibilityTexts">aA</b>
+</a>
+
+
+
+
+        <a href="" ng-click="toggleContrast($event)" class="linkAccessibility">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-half" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 0 8 1zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16"/>
+          </svg>
+        </a>
+        
+        <img class="dots9" src="x_sded9_portal_t_0.9dots.png" width="30" height="30"/>
+      </div>
+      <!-- Exibe se o usuário está logado -->
+      <div class="user-logged" ng-if="user.logged_in">
+        <div class="dropdown" ng-click="toggleDropdown()">
+          <div class="user-avatar">
+            <!--span class="user-initials">{{ user.first_name[0] }}{{ user.last_name[0] }}</span>
+            <span class="user-name">{{ user.name }}</span-->
+            <span class="user-initials">{{ user.first_name[0] }}{{ user.last_name[0] }}</span>
+            <span class="user-name"></span>
+          </div>
+          <ul class="dropdown-content" ng-show="dropdownOpen">
+            <li>
+              <a href="#" ng-click="logout()">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Caso o usuário não esteja logado -->
+      <div class="login" ng-if="!user.logged_in">
+        <button ng-click="c.redirect()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+          </svg>
+          <span style="margin-left: 5px;">Entrar</span>
+        </button>
+      </div>
+      
+      <!-- Aqui você pode manter o extra-widget se desejar, ou removê-lo -->
+      <div class="extra-widget">
+         <widget id="Menu portal GFO"></widget>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+
+<script>
+  function navigateToHome() {
+    var pathArray = window.location.pathname.split('/');
+    var portalSegment = pathArray[1]; // Segunda parte do URL após o host
+    var portalHomeUrl = window.location.origin + '/' + portalSegment;
+    console.log("Portal segment:", portalSegment);
+    console.log("Redirecting to portal home:", portalHomeUrl);
+    window.location.href = portalHomeUrl;
+  }
+</script>
+
+
+
+<!-- NOVA DIV COM ITENS DE MENU -->
+<div class="header-menu"
+     ng-if="showHeaderMenu"
+     ng-class="{'lowercase-text': isLowercase === true, 'uppercase-text': isLowercase === false}">
+
+  <ul class="menu-list">
+    <!-- Ícone HOME ou BARS -->
+    <li>
+      <a ng-if="!isHomePage"
+   ng-href="https://{{instanceName}}.service-now.com/sate"
+   aria-hidden="true"
+   style="text-decoration:none;">
+  <i id="iconHamb" class="fa fa-home"></i>
+</a>
+
+<i ng-if="isHomePage"
+   id="iconHamb"
+   class="fa fa-bars"
+   ng-click="toggleMenu()"
+   aria-hidden="true"></i>
+    </li>
+
+    <!-- TESOURO ESTADUAL -->
+    <li class="dropdown">
+      <a id="tesouroPointer"
+         href="#"
+         ng-click="toggleMenu()">
+         TESOURO ESTADUAL
+      </a>
+
+      <ul class="dropdown2" ng-show="menuAberto">
+        <li class="has-submenu">
+          <a class="tesouroHeaderlink"
+             href="#"
+             ng-click="toggleSubmenuFinancas($event)">
+             FINANÇAS DO ESTADO
+            <i id="subMenuArrow"
+   class="fa fa-arrow-right arrowFinanca"
+   aria-hidden="true"
+   ng-class="{'seta-aberta': submenuFinancasAberto}"></i>
+
+          </a>
+
+         <ul class="submenu" ng-show="submenuFinancasAberto">
+  <li>
+    <a class="submenu-link" ng-click="goToPage('indicadores_fiscais')" href="">INDICADORES FISCAIS</a>
+  </li>
+  <li>
+    <a class="submenu-link" ng-click="goToPage('404_sefaz')" href="">RESULTADO FISCAL</a>
+  </li>
+  <li>
+    <a class="submenu-link" ng-click="goTo('https://www5.sefaz.mt.gov.br/convenios')" href="">CONVÊNIO</a>
+  </li>
+  <li>
+    <a class="submenu-link" ng-click="goTo('https://www5.sefaz.mt.gov.br/fundo-de-participacao-dos-municipios')" href="">REPASSES DO ICMS</a>
+  </li>
+  <li>
+    <a class="submenu-link" ng-click="goTo('https://www5.sefaz.mt.gov.br/ajuste-fiscal')" href="">AJUSTE FISCAL</a>
+  </li>
+  <li>
+    <a class="submenu-link" ng-click="goTo('https://www5.sefaz.mt.gov.br/acoes-mt-bird')" href="">AÇÕES DÍVIDA MT/BIRD</a>
+  </li>
+</ul>
+
+        </li>
+
+        <li><a class="tesouroHeaderlink" target="_blank" href="https://www5.sefaz.mt.gov.br/orientacoes-tesouro-estadual">ORIENTAÇÕES DO TESOURO</a></li>
+        <li><a class="tesouroHeaderlink" target="_blank" href="https://www.sefaz.mt.gov.br/ead/">ESCOLA FAZENDÁRIA VIRTUAL</a></li>
+        <li><a class="tesouroHeaderlink" target="_blank" ng-click="goToPage('404_sefaz')" href="">PAINÉIS</a></li>
+        <li><a class="tesouroHeaderlink" target="_blank" href="https://www5.sefaz.mt.gov.br/sobre_a_sefaz">A SEFAZ</a></li>
+        <li><a class="tesouroHeaderlink" href="?id=tesouro_estadual">O TESOURO</a></li>
+      </ul>
+    </li>
+
+    <!-- PRINCIPAIS SISTEMAS -->
+  <li class="dropdown">
+  <a class="tesouroHeaderlink" href="#" ng-click="toggleSubmenuSistemas($event)">
+    PRINCIPAIS SISTEMAS
+    <i id=idArrowPrincipais class="fa fa-arrow-right" aria-hidden="true"
+       ng-class="{'seta-aberta': submenuSistemasAberto}"></i>
+  </a>
+
+  <ul class="submenu3" ng-show="submenuSistemasAberto">
+  <li><a target="_blank" href="https://www.fiplan.mt.gov.br:8443/Fiplan.jsp">FIPLAN</a></li>
+  <li><a target="_blank" href="https://www.sigadoc.mt.gov.br/">SIGADOC</a></li>
+  <li><a target="_blank" href="https://sig.mt.gov.br/BOE/BI">SIG-MT</a></li>
+  <li><a target="_blank" href="https://www.fiplan-gfo.mt.gov.br/fiplangfo/login">GFO</a></li>
+  <li><a target="_blank" href="https://www.sefaz.mt.gov.br/sifimt/">SIFI-MT</a></li>
+</ul>
+
+</li>
+
+
+    <!-- OUTROS LINKS -->
+    <li><a id="aUnderline" target="_blank" ng-click="goToPage('404_sefaz')" href="">PAINÉIS</a></li>
+    <li><a id="aUnderline" target="_blank" href="https://www5.sefaz.mt.gov.br/sobre_a_sefaz">A SEFAZ</a></li>
+    <li><a id="aUnderline" href="?id=tesouro_estadual">O TESOURO</a></li>
+    <li><a id="aUnderline" href="?id=tesouro_estadual">LEGISLAÇÃO DO TESOURO</a></li>
+  </ul>
+  
+  <div class="header-container" ng-class="{'lowercase-text': isLowercase === true, 'uppercase-text': isLowercase === false}">
+  <div class="row">
+  
+
+    <div class="search-wrapper">
+      <div class="search-widget">
+        <sp-widget widget="data.typeAheadSearch"></sp-widget>
+      </div>
+    </div>
+  </div>
+</div>
+  
+</div>
+
+]]></template>
+    </sp_widget>
+</record_update>
