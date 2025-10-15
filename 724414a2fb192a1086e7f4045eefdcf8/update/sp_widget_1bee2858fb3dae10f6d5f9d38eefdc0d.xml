@@ -3,236 +3,357 @@
         <category>custom</category>
         <client_script><![CDATA[function($scope, $rootScope, $timeout) {
     var chartInstance = null;
+    var chartInstanceAnterior = null;
 
     $scope.anoSelecionado = "";
     $scope.exibirGrafico = false;
+    $scope.exibirGraficoAnterior = false;
 
     function carregarDadosDoServer() {
-    var filtros = {
-        ano: $scope.anoSelecionado || ""
-    };
+        console.log('Carregando dados...', $scope.anoSelecionado);
 
-    $scope.server.get(filtros).then(function(response) {
-        var listaDados = response.data.dadosGrafico || [];
+        // IMPORTANTE: Sempre buscar TODOS os dados
+        var filtros = {
+            ano: "" // Sempre buscar todos os anos
+        };
 
-        $timeout(function() {
-            inicializarGrafico(listaDados);
-        }, 500); 
-    });
-}
+        $scope.server.get(filtros).then(function(response) {
+            console.log('Dados recebidos:', response.data);
+            var listaDados = response.data.dadosGrafico || [];
 
+            $timeout(function() {
+                inicializarGraficos(listaDados);
+            }, 300); // Aumentei o timeout para garantir que o HTML esteja renderizado
+        }).catch(function(error) {
+            console.error('Erro ao carregar dados:', error);
+            $scope.exibirGrafico = false;
+            $scope.exibirGraficoAnterior = false;
+            $scope.$applyAsync();
+        });
+    }
 
     $rootScope.$on('filtroAnoIndicadoresSelecionado', function(event, ano) {
+        console.log('Filtro alterado para:', ano);
         $scope.anoSelecionado = ano;
         carregarDadosDoServer();
     });
 
+    // Carregar dados iniciais
     carregarDadosDoServer();
 
-    function inicializarGrafico(listaDados) {
-    if (!listaDados || listaDados.length === 0) {
+    function inicializarGraficos(listaDados) {
+        console.log('Inicializando gráficos com', listaDados.length, 'registros');
+        
+        // Destruir gráficos existentes
+        destruirGraficos();
+
+        if (!listaDados || listaDados.length === 0) {
+            console.log('Nenhum dado disponível');
+            $scope.exibirGrafico = false;
+            $scope.exibirGraficoAnterior = false;
+            $scope.$applyAsync();
+            return;
+        }
+
+        // Criar mapa de dados por ano
+        var dadosPorAno = {};
+        var anosDisponiveis = [];
+        
+        for (var i = 0; i < listaDados.length; i++) {
+            var item = listaDados[i];
+            dadosPorAno[item.ano] = item;
+            anosDisponiveis.push(parseInt(item.ano));
+        }
+
+        // Ordenar anos
+        anosDisponiveis.sort((a, b) => a - b);
+        console.log('Anos disponíveis:', anosDisponiveis);
+
+        if ($scope.anoSelecionado) {
+            // MODO COM FILTRO: Mostrar ano selecionado e ano anterior
+            var anoSelecionadoNum = parseInt($scope.anoSelecionado);
+            var dadosAnoAtual = dadosPorAno[anoSelecionadoNum];
+            var dadosAnoAnterior = dadosPorAno[anoSelecionadoNum - 1];
+
+            console.log('Dados ano atual:', dadosAnoAtual);
+            console.log('Dados ano anterior:', dadosAnoAnterior);
+
+            if (dadosAnoAtual && dadosAnoAnterior) {
+                // Criar ambos os gráficos com delay para garantir que o HTML esteja pronto
+                $timeout(function() {
+                    criarGrafico('graficoIndicadores', dadosAnoAtual, 'Ano ' + dadosAnoAtual.ano);
+                    criarGrafico('graficoIndicadoresAnterior', dadosAnoAnterior, 'Ano ' + dadosAnoAnterior.ano);
+                }, 100);
+                
+                $scope.exibirGrafico = true;
+                $scope.exibirGraficoAnterior = true;
+                console.log('Mostrando 2 gráficos');
+            } else if (dadosAnoAtual) {
+                // Criar apenas gráfico do ano atual
+                $timeout(function() {
+                    criarGrafico('graficoIndicadores', dadosAnoAtual, 'Ano ' + dadosAnoAtual.ano);
+                }, 100);
+                
+                $scope.exibirGrafico = true;
+                $scope.exibirGraficoAnterior = false;
+                console.log('Mostrando 1 gráfico (apenas ano atual)');
+            } else {
+                $scope.exibirGrafico = false;
+                $scope.exibirGraficoAnterior = false;
+                console.log('Nenhum gráfico - dados não encontrados');
+            }
+        } else {
+            // MODO SEM FILTRO: Mostrar soma de todos os anos
+            console.log('Modo sem filtro - calculando soma');
+            
+            var camSoma = 0, cdiSoma = 0, dolarSoma = 0, tjlpSoma = 0;
+            var anosComDados = 0;
+            
+            for (var i = 0; i < listaDados.length; i++) {
+                var item = listaDados[i];
+                if (item.cam) camSoma += item.cam;
+                if (item.cdi) cdiSoma += item.cdi;
+                if (item.dolar_sofr) dolarSoma += item.dolar_sofr;
+                if (item.tjlp) tjlpSoma += item.tjlp;
+                anosComDados++;
+            }
+
+            if (anosComDados > 0) {
+                var dadosSoma = {
+                    cam: camSoma,
+                    cdi: cdiSoma,
+                    dolar_sofr: dolarSoma,
+                    tjlp: tjlpSoma
+                };
+
+                $timeout(function() {
+                    criarGrafico('graficoIndicadores', dadosSoma, 
+                               'Soma Geral ' + anosDisponiveis[0] + '-' + anosDisponiveis[anosDisponiveis.length - 1]);
+                }, 100);
+                
+                $scope.exibirGrafico = true;
+                $scope.exibirGraficoAnterior = false;
+                console.log('Mostrando gráfico de soma');
+            } else {
+                $scope.exibirGrafico = false;
+                $scope.exibirGraficoAnterior = false;
+            }
+        }
+
+        $scope.$applyAsync();
+    }
+
+    function destruirGraficos() {
         if (chartInstance) {
-            chartInstance.destroy();
+            try {
+                chartInstance.destroy();
+            } catch(e) {
+                console.log('Erro ao destruir chartInstance:', e);
+            }
             chartInstance = null;
         }
-        $scope.exibirGrafico = false;
-        $scope.$applyAsync();
-        return;
+        if (chartInstanceAnterior) {
+            try {
+                chartInstanceAnterior.destroy();
+            } catch(e) {
+                console.log('Erro ao destruir chartInstanceAnterior:', e);
+            }
+            chartInstanceAnterior = null;
+        }
+
+        // Destruir gráficos diretamente nos canvases
+        var canvas1 = document.getElementById('graficoIndicadores');
+        var canvas2 = document.getElementById('graficoIndicadoresAnterior');
+        
+        if (canvas1) {
+            var existingChart1 = Chart.getChart(canvas1);
+            if (existingChart1) {
+                existingChart1.destroy();
+            }
+        }
+        if (canvas2) {
+            var existingChart2 = Chart.getChart(canvas2);
+            if (existingChart2) {
+                existingChart2.destroy();
+            }
+        }
     }
 
-    $scope.exibirGrafico = true;
-    $scope.$applyAsync();
+    function criarGrafico(canvasId, dados, titulo) {
+        var canvas = document.getElementById(canvasId);
+        if (!canvas) {
+            console.error('Canvas não encontrado:', canvasId);
+            return null;
+        }
 
-    var labels = [];
-    var camData = [];
-    var cdiData = [];
-    var dolarSofrData = [];
-    var selicData = [];
-    var tjlpData = [];
-    var trData = [];  // NOVO array para TR
+        // Destruir gráfico existente
+        var existingChart = Chart.getChart(canvas);
+        if (existingChart) {
+            existingChart.destroy();
+        }
 
-    for (var i = 0; i < listaDados.length; i++) {
-        labels.push(listaDados[i].ano);
-        camData.push(listaDados[i].cam);
-        cdiData.push(listaDados[i].cdi);
-        dolarSofrData.push(listaDados[i].dolar_sofr);
-        selicData.push(listaDados[i].selic);
-        tjlpData.push(listaDados[i].tjlp);
-        trData.push(listaDados[i].tr); // adiciona os dados de TR
-    }
-
-    var contexto = document.getElementById('graficoIndicadores').getContext('2d');
-
-    if (chartInstance) {
-        chartInstance.destroy();
-    }
-
-    chartInstance = new Chart(contexto, {
-        type: 'bar',
-        data: {
-            labels: labels,
-            datasets: [
-                { 
-                    label: 'CAM (Coeficiente de Atualização Monetária (IPCA + 4% a.ae a variação acumulada taxa Selic)',
-                    data: camData,
-                    backgroundColor: '#4A75B1',
-                    borderColor: '#4A75B1',
-                    borderWidth: 1,
-                    yAxisID: 'y'
+        try {
+            var novoChart = new Chart(canvas.getContext('2d'), {
+                type: 'pie',
+                data: {
+                    labels: [
+                        'CAM (Coeficiente de Atualização Monetária)',
+                        'CDI (Certificado Depósito Bancário)',
+                        'Dólar SOFR (Taxa de Juros Americano)',
+                        'TJLP (Taxa de Juros de Longo Prazo)'
+                    ],
+                    datasets: [{
+                        label: 'Valores em %',
+                        data: [
+                            dados.cam || 0,
+                            dados.cdi || 0,
+                            dados.dolar_sofr || 0,
+                            dados.tjlp || 0
+                        ],
+                        backgroundColor: [
+                            '#4A75B1',
+                            '#6BB7F0',
+                            '#293273',
+                            '#04B4CB'
+                        ],
+                        borderColor: [
+                            '#4A75B1',
+                            '#6BB7F0',
+                            '#293273',
+                            '#04B4CB'
+                        ],
+                        borderWidth: 2
+                    }]
                 },
-                {
-                    label: 'CDI (Certificado deposito bancário)',
-                    data: cdiData,
-                    backgroundColor: '#6BB7F0',
-                    borderColor: '#6BB7F0',
-                    borderWidth: 1,
-                    yAxisID: 'y'
-                },
-                {
-                    label: 'Dólar SOFR (Dólar americano taxa de juros americano)',
-                    data: dolarSofrData,
-                    backgroundColor: '#293273',
-                    borderColor: '#293273',
-                    borderWidth: 1,
-                    yAxisID: 'y'
-                },
-                {
-                    label: 'TJLP (Taxa de Juros de Longo Prazo)',
-                    data: tjlpData,
-                    backgroundColor: '#04B4CB',
-                    borderColor: '#04B4CB',
-                    borderWidth: 1,
-                    yAxisID: 'y'
-                },
-               /* {
-                    label: 'SELIC (Taxa básica de juros da economia)',
-                    data: selicData,
-                    type: 'line', // Linha para destacar
-                    borderColor: '#E66734',
-                    backgroundColor: '#E66734',
-                    borderWidth: 3,
-                    tension: 0.4,
-                    fill: false,
-                    yAxisID: 'y2',
-                    pointBackgroundColor: '#E66734',
-                    pointBorderColor: '#E66734',
-                    pointRadius: 3
-                },
-                {
-                    label: 'TR (Taxa Referencial)',
-                    data: trData,
-                    type: 'line',  // Linha igual SELIC
-                    borderColor: '#137A8F',
-                    backgroundColor: '#137A8F',
-                    borderWidth: 3,
-                    tension: 0.4,
-                    fill: false,
-                    yAxisID: 'y2', 
-                    pointBackgroundColor: '#137A8F',
-                    pointBorderColor: '#137A8F',
-                    pointRadius: 3
-                }*/
-            ]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: {
-                x: {
-                    title: {
-                        display: true,
-                        text: 'Ano'
-                    }
-                },
-                y: {
-                    beginAtZero: true,
-                    title: {
-                        display: true,
-                        text: 'Indicadores (%)'
-                    }
-                },
-                y2: {
-                    beginAtZero: true,
-                    position: 'right',
-                    title: {
-                        display: true,
-                        text: 'SELIC / TR (%)'
-                    },
-                    grid: {
-                        drawOnChartArea: false
-                    }
-                }
-            },
-            plugins: {
-                legend: {
-                    position: 'top'
-                },
-                tooltip: {
-                    callbacks: {
-                        label: function(context) {
-                            return context.dataset.label + ': ' + context.parsed.y + ' %';
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top'
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.label + ': ' + context.raw.toFixed(2) + '%';
+                                }
+                            }
+                        },
+                        title: {
+                            display: true,
+                            text: titulo,
+                            font: {
+                                size: 16,
+                                weight: 'bold'
+                            }
                         }
                     }
                 }
+            });
+
+            // Atualizar referências
+            if (canvasId === 'graficoIndicadores') {
+                chartInstance = novoChart;
+            } else {
+                chartInstanceAnterior = novoChart;
             }
+
+            console.log('Gráfico criado com sucesso:', canvasId);
+            return novoChart;
+        } catch (error) {
+            console.error('Erro ao criar gráfico', canvasId, ':', error);
+            return null;
         }
-    });
-}
-
-}
-]]></client_script>
+    }
+}]]></client_script>
         <controller_as>c</controller_as>
-        <css>canvas {
-  display: block;
-  margin: 0 auto;
+        <css>@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&amp;display=swap');
+
+.chart-wrapper {
+    font-family: 'Roboto Flex', sans-serif;
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
 }
 
-h3, div, span {
- font-family: 'Roboto Flex', sans-serif;
+/* Container principal que envolve todos os gráficos */
+.chart-container {
+    position: relative;
+    width: 100%;
+    height: 400px; /* ALTURA PADRÃO - MESMA PARA 1 OU 2 GRÁFICOS */
 }
 
-/* --- Media Queries para Responsividade --- */
-
-/* Telas Pequenas (Mobile S, M, L - até 767px) */
-@media (max-width: 767px) {
-  canvas {
-    max-width: 90%; /* Ajustar a largura máxima do canvas */
-  }
-  h3 {
-    font-size: 1rem; /* Ajustar o tamanho da fonte do título */
-  }
+/* Container para DOIS gráficos lado a lado */
+.charts-container {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    height: 400px; /* MESMA ALTURA DO CONTAINER ÚNICO */
 }
 
-/* Tablets (iPad Mini, iPad Air, Surface Duo, Galaxy Z Fold 5 - 768px até 1023px) */
-@media (min-width: 768px) and (max-width: 1023px) {
-  canvas {
-    max-width: 80%;
-  }
-  h3 {
-    font-size: 1.1rem;
-  }
+/* Cada gráfico individual dentro do container duplo */
+.chart-box {
+    flex: 1;
+    position: relative;
+    height: 100%; /* OCUPA 100% DA ALTURA DO CONTAINER PAI */
 }
 
-/* Laptops e Telas Maiores (iPad Pro, Surface Pro 7, Laptops, 4K - 1024px em diante) */
-@media (min-width: 1024px) {
-  canvas {
-    max-width: none;
-  }
-  h3 {
-  }
+/* Container para UM gráfico */
+.single-chart-container {
+    position: relative;
+    width: 100%;
+    height: 400px; /* MESMA ALTURA DOS DOIS GRÁFICOS COMBINADOS */
 }
 
-/* Ajustes para o Surface Duo (540x720) */
-@media (width: 540px) and (height: 720px) {
-    canvas {
-        max-width: 95%;
+canvas {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+}
+
+/* Estilos para títulos dos gráficos */
+.chart-title {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Mensagem quando não há dados */
+.report-widget.panel.mensagem {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+}
+
+@media (max-width: 1024px) {
+    .charts-container {
+        flex-direction: column;
+        height: 800px; /* DOBRA A ALTURA EM DISPOSITIVOS MÓVEIS */
+    }
+    
+    .chart-box {
+        height: 50%; /* CADA GRÁFICO OCUPA METADE DA ALTURA */
     }
 }
 
-/* Ajustes para Galaxy Z Fold 5 (max-width: 350px) */
-@media (max-width: 350px) {
-    h3 {
-        font-size: 0.9rem;
+@media (max-width: 768px) {
+    .chart-container,
+    .single-chart-container,
+    .charts-container {
+        height: 350px;
+    }
+    
+    .charts-container {
+        height: 700px; /* DOBRA A ALTURA EM MÓVEIS */
+    }
+    
+    .chart-wrapper {
+        padding: 15px;
     }
 }</css>
         <data_table>sp_instance</data_table>
@@ -276,60 +397,44 @@ h3, div, span {
 	//gs.addInfoMessage(JSON.stringify(listaDados))
 
     data.dadosGrafico = listaDados;
-})();
-]]></script>
+})();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-24 18:43:22</sys_created_on>
         <sys_id>1bee2858fb3dae10f6d5f9d38eefdc0d</sys_id>
-        <sys_mod_count>66</sys_mod_count>
+        <sys_mod_count>127</sys_mod_count>
         <sys_name>Indice de Atualizacao Grafico</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_1bee2858fb3dae10f6d5f9d38eefdc0d</sys_update_name>
         <sys_updated_by>sued.barreto@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-09-26 16:42:39</sys_updated_on>
-        <template><![CDATA[<style>
-  @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
-
-  .chart-wrapper {
-      font-family: 'Roboto Flex', sans-serif;
-      width: 100%;
-      padding: 20px;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      box-sizing: border-box;
-  }
-  .chart-container {
-      position: relative;
-      width: 100%;
-      height: 588px;
-  }
-  canvas {
-      width: 100% !important;
-      height: 100% !important;
-      display: block;
-  }
-</style>
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-<div class="chart-wrapper">
+        <sys_updated_on>2025-10-15 12:38:30</sys_updated_on>
+        <template><![CDATA[<div class="chart-wrapper">
 <h3 style="text-align:center; font-weight: 600; margin-bottom: 16px;">
   Índices de Atualização da Dívida Pública
   <span class="dadosInfo" style="font-weight: 600; color: #333;">
-    {{anoSelecionado ? ' - Ano: ' + anoSelecionado : ' - 2019 a 2024'}}
+    {{anoSelecionado ? ' - Ano: ' + anoSelecionado + ' e ' + (anoSelecionado - 1) : ' - 2019 a 2024'}}
   </span>
 </h3>
 
-<div class="chart-container" ng-show="data.dadosGrafico.length > 0">
+<!-- Container para DOIS gráficos lado a lado -->
+<div class="charts-container" ng-if="exibirGrafico && exibirGraficoAnterior">
+    <div class="chart-box">
+        <canvas id="graficoIndicadores"></canvas>
+    </div>
+    <div class="chart-box">
+        <canvas id="graficoIndicadoresAnterior"></canvas>
+    </div>
+</div>
+
+<!-- Container para UM gráfico -->
+<div class="single-chart-container" ng-if="exibirGrafico && !exibirGraficoAnterior">
     <canvas id="graficoIndicadores"></canvas>
 </div>
 
-<div class="report-widget panel mensagem" ng-show="data.dadosGrafico.length == 0">
+<div class="report-widget panel mensagem" ng-if="!exibirGrafico">
     <div class="panel-heading">
         <h2 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i></h2>
     </div>
@@ -337,7 +442,6 @@ h3, div, span {
         Nenhum dado disponível.
     </div>
 </div>
-</div>
-]]></template>
+</div>]]></template>
     </sp_widget>
 </record_update>
