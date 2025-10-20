@@ -1,0 +1,795 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_header_footer">
+    <sp_header_footer action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $window, $rootScope, $location) {
+    var c = this;
+    
+    // Inicializa o estado de contraste verificando se a classe 'dark-mode' já está no body.
+    $scope.contrastIsActive = document.body.classList.contains('dark-mode');
+
+    // Função para verificar se estamos na página inicial
+    function checkIfHomePage() {
+        var currentUrl = $window.location.href;
+        $scope.isHomePage = currentUrl.endsWith('/sate') || currentUrl.includes('?id=sate');
+    }
+    
+    // Verificar inicialmente
+    checkIfHomePage();
+    
+    // Adicionar listener para detectar mudanças na URL
+    $window.addEventListener('hashchange', checkIfHomePage);
+    $window.addEventListener('popstate', checkIfHomePage);
+    
+    // Sobrescrever o método de redirecionamento nativo para atualizar o estado após navegação
+    var originalPushState = $window.history.pushState;
+    $window.history.pushState = function() {
+        originalPushState.apply(this, arguments);
+        setTimeout(checkIfHomePage, 100); // Pequeno delay para garantir que a URL foi atualizada
+    };
+    
+    $scope.goToPage = function(id) {
+        $scope.menuAberto = false;
+        $scope.submenuFinancasAberto = false;
+        $scope.submenuSistemasAberto = false;
+        window.open("?id=" + id, '_blank');
+    };
+
+    // Inicialização do usuário (dados viriam do servidor em produção)
+    $scope.user = c.data && c.data.user_info ? c.data.user_info : {
+        logged_in: false,
+        name: '',
+        first_name: '',
+        last_name: '',
+        email: ''
+    };
+    
+    // Funcionalidade de login 
+    c.checkUserLoggedIn = function() { 
+        if ($scope.user && $scope.user.logged_in) { 
+            c.loginButtonText = $scope.user.name; 
+            $scope.dropdownOpen = false; 
+            
+            $scope.toggleDropdown = function() { 
+                $scope.dropdownOpen = !$scope.dropdownOpen; 
+            }; 
+            
+            // Função de logout ajustada para desconexão e permanência na mesma página 
+            $scope.logout = function() { 
+                // Executa o logout via GET (isso pode ser modificado dependendo da sua configuração) 
+                var logoutRequest = new XMLHttpRequest(); 
+                logoutRequest.open("GET", "/logout", true); 
+                logoutRequest.onload = function() { 
+                    // Após a requisição de logout, redireciona para a página /gfo 
+                    $window.location.href = '/gfo'; 
+                }; 
+                logoutRequest.send(); 
+            }; 
+            
+            $scope.avatarProfile = { 
+                initials: $scope.user.first_name[0] + $scope.user.last_name[0] 
+            }; 
+        } else { 
+            c.loginButtonText = 'Entrar'; 
+            c.redirect = function() { 
+                $window.location.href = '/login_with_sso.do?glide_sso_id=13e4f3d2fb2bca10f6d5f9d38eefdcce'; 
+            }; 
+        } 
+    }; 
+    
+    // Executa a verificação de login ao inicializar
+    c.checkUserLoggedIn();
+    
+    // Função para redirecionar para "Meus Pedidos" com verificação de login 
+    c.goToPedidos = function() { 
+        if ($scope.user && $scope.user.logged_in) { 
+            // Se estiver logado, redireciona para "Meus Pedidos" 
+            $window.location.href = '?id=gfo_minhas_solicitacoes'; 
+        } else { 
+            // Se não estiver logado, redireciona para o login SSO 
+            $window.location.href = '/login_with_sso.do?glide_sso_id=13e4f3d2fb2bca10f6d5f9d38eefdcce'; 
+        } 
+    };
+
+    // Ajuste de fonte 
+    $scope.adjustFontSize = function(factor) { 
+        var elements = document.querySelectorAll('body, body *'); 
+        elements.forEach(function(element) { 
+            if (element.tagName !== 'IMG' && element.children.length === 0) { 
+                var currentSize = window.getComputedStyle(element).fontSize; 
+                var newSize = parseFloat(currentSize) * factor; 
+                element.style.fontSize = newSize + 'px'; 
+            } 
+        }); 
+    }; 
+    
+    // Estado interno para controle de maiúsculas/minúsculas
+    $scope.letter = 'a';
+    
+    // Função para alternar maiúsculas/minúsculas (versão simples)
+    $scope.toggleCaseSimple = function() { 
+        if ($scope.letter === 'a') { 
+            $scope.letter = 'A'; 
+        } else { 
+            $scope.letter = 'a'; 
+        } 
+        console.log('Letra agora está:', $scope.letter); 
+    }; 
+    
+    // Implementação completa de toggle case com três estados
+    $scope.isLowercase = null; // começa normal 
+    
+    $scope.toggleCase = function() { 
+        if ($scope.isLowercase === null) { 
+            $scope.isLowercase = true;  // minúsculo 
+        } else if ($scope.isLowercase === true) { 
+            $scope.isLowercase = false;  // maiúsculo 
+        } else { 
+            $scope.isLowercase = null;  // normal 
+        } 
+        
+        // Emite o evento para sincronizar nos outros widgets 
+        $scope.$root.$broadcast('toggleCaseEvent', $scope.isLowercase); 
+        
+        console.log('Estado agora:', $scope.isLowercase); 
+    };
+
+    // --- FUNÇÃO DE CONTRASTE (THEMING) ---
+    c.toggleContrast = function() {
+        console.log("Alternando modo de contraste...");
+        
+        // 1. Alterna a classe no corpo do documento
+        document.body.classList.toggle('dark-mode');
+        
+        // 2. Atualiza o estado interno
+        $scope.contrastIsActive = document.body.classList.contains('dark-mode');
+        
+        // 3. EMITE O EVENTO para o outro widget (e qualquer outro que esteja escutando)
+        // O evento esperado pelo seu outro widget é 'sp.contrast.toggled' e o dado é { enabled: boolean }
+        $rootScope.$broadcast('sp.contrast.toggled', {
+            enabled: $scope.contrastIsActive // Envia o novo estado (true/false)
+        });
+        
+        console.log("Modo de contraste ativo:", $scope.contrastIsActive);
+    };
+    
+    // --- FUNÇÕES DE CONTROLE DOS MENUS ---
+    // Inicialização dos estados dos menus
+    $scope.isMainMenuOpen = false;
+    $scope.isFinanceSubmenuOpen = false;
+    
+    // Função para alternar o menu principal
+    $scope.toggleMainMenu = function($event) {
+        if ($event) {
+            $event.preventDefault();
+            $event.stopPropagation();
+        }
+        $scope.isMainMenuOpen = !$scope.isMainMenuOpen;
+        
+        // Fecha o submenu quando o menu principal é fechado
+        if (!$scope.isMainMenuOpen) {
+            $scope.isFinanceSubmenuOpen = false;
+        }
+    };
+    
+    // Função para alternar o submenu de finanças
+    $scope.toggleFinanceSubmenu = function($event) {
+        if ($event) {
+            $event.preventDefault();
+            $event.stopPropagation();
+        }
+        $scope.isFinanceSubmenuOpen = !$scope.isFinanceSubmenuOpen;
+    };
+    
+    // Fecha os menus quando clica fora deles
+    angular.element(document).on('click', function(e) {
+        if (!$(e.target).closest('.dropdown-menu-principal, .submenu-aninhado, #tesouroPointer, .menu-hamburger').length) {
+            $scope.$apply(function() {
+                $scope.isMainMenuOpen = false;
+                $scope.isFinanceSubmenuOpen = false;
+            });
+        }
+    });
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>@font-face {
+  font-family: "UniNeue";
+  src: url("/sys_attachment.do?sys_id=798684f4fba8321086e7f4045eefdcb4");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roboto Flex';
+  src: url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&amp;display=swap');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* -- Barra Superior -- */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #020944, #011272, #020944);
+  padding: 10px 30px;
+  color: white;
+  min-height: 80px; /* Altura mínima para consistência */
+}
+
+.logo-container .logo-img {
+  height: 50px;
+}
+
+.controls-container {
+  display: flex;
+  align-items: center;
+  gap: 25px; /* Aumenta o espaço entre Acessibilidade e Usuário */
+}
+
+.accessibility-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* CORREÇÃO: Reduzindo o tamanho da fonte do label */
+.accessibility-controls .accessibility-label {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.accessibility-controls a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  font-family: Roboto;
+}
+
+/* CORREÇÃO: Estilo para o primeiro 'A' ser menor */
+.accessibility-controls .small-a {
+  font-size: 0.8em; /* Deixa o primeiro 'A' menor */
+  vertical-align: middle;
+}
+
+/* -- Lógica de Usuário -- */
+.user-avatar-container {
+  position: relative;
+}
+
+.user-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  color: #002e6d;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 120%;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  list-style: none;
+  padding: 5px 0;
+  margin: 0;
+  width: 150px;
+  z-index: 1000;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 15px;
+  color: #333;
+  text-decoration: none;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f0f0f0;
+}
+
+.login-button {
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* ===== Login Button Styles ===== */ 
+.login { 
+  display: flex; 
+  gap: 1em; 
+} 
+
+.login button { 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  background-color: #FD5F06; 
+  color: white; 
+  border: none; 
+  cursor: pointer; 
+  border-radius: 20px; 
+  padding: 0.5em 1em; 
+  font-size: 1em; 
+  transition: all 0.3s ease; 
+} 
+
+.login button:hover { 
+  background-color: #e55605; 
+} 
+
+.login button svg { 
+  margin-right: 0.5em; 
+  width: 1.2em; 
+  height: 1.2em; 
+  vertical-align: middle; 
+} 
+
+/* ===== User Dropdown Styles ===== */ 
+.user-logged { 
+  position: relative; 
+} 
+
+.user-avatar { 
+  display: flex; 
+  align-items: center; 
+  cursor: pointer; 
+} 
+
+.user-initials { 
+  font-family: Roboto; 
+  width: 35px; 
+  height: 35px; 
+  border-radius: 50%; 
+  background: white; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  font-weight: bold; 
+  color: #01116F;
+} 
+
+.user-name { 
+  color: white; 
+  font-size: 16px; 
+  font-family: Roboto; 
+} 
+
+.dropdown-content { 
+  position: absolute; 
+  right: 0; 
+  background-color: #293273; 
+  min-width: 160px; 
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); 
+  z-index: 1; 
+  border-radius: 5px; 
+  padding: 0; /* Remover padding padrão */
+  margin: 0; /* Remover margin padrão */
+  list-style-type: none; /* Remover marcadores de lista */
+} 
+
+.dropdown-content::before,
+.dropdown-content::after {
+  display: none; /* Remover qualquer pseudo-elemento que possa estar criando a "ponta" */
+}
+
+.dropdown-content li {
+  width: 100%; /* Garantir que o item ocupe toda a largura */
+  margin: 0; /* Remover margens */
+  padding: 0; /* Remover padding */
+}
+
+.dropdown-content a { 
+  color: #ffffff; 
+  text-decoration: none; 
+  padding: 12px 16px; 
+  display: block; 
+  width: 100%; /* Garantir que o link ocupe toda a largura */
+  box-sizing: border-box; /* Incluir padding na largura total */
+  text-align: left; /* Alinhar texto à esquerda */
+} 
+
+.dropdown-content a:hover { 
+  background-color: #FD5F06; 
+  color: #ffffff; 
+  width: 100%; /* Garantir que o hover ocupe toda a largura */
+} 
+
+.dropdown-content a[href*="logout"] { 
+  color: #ffffff; 
+  width: 100%; /* Garantir que o link ocupe toda a largura */
+} 
+
+.dropdown-content a[href*="logout"]:hover { 
+  color: #ffffff; 
+  background-color: #FD5F06; /* Usar a cor laranja padrão para consistência */
+  width: 100%; /* Garantir que o hover ocupe toda a largura */
+}
+
+/* -- Barra de Menu Inferior -- */
+.main-menu-bar {
+  display: flex;
+  justify-content: space-between; /* CRÍTICO: Empurra o menu para a esquerda e a busca para a direita */
+  align-items: center;
+  background-color: white;
+  padding: 0 30px;
+  border-top: 8px solid #4773c6;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  min-height: 60px;
+  font-family: 'Roboto Flex', sans-serif !important;
+}
+
+.menu-items {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: #002e6d;
+}
+
+.menu-hamburger {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Estilo para o ícone de casa */
+.menu-items a .fa-home {
+  color: #002e6d;
+  font-size: 20px;
+}
+
+.menu-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 25px;
+}
+
+.menu-list a {
+  color: #01116F;
+  text-decoration: none;
+  font-family: 'Roboto Flex', sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+}
+
+.menu-list a:hover {
+  background-color: #01116F;
+  color: white;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+/* Estilos para o menu dropdown principal */
+.menu-list .dropdown {
+  position: relative;
+}
+
+.dropdown-menu-principal {
+  position: absolute;
+  top: 160%;
+  left: -9px;
+  background-color: white;
+  min-width: 270px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1000;
+  border-radius: 4px;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  border-top: 3px solid #002e6d;
+}
+
+.dropdown-menu-principal li {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.dropdown-menu-principal a {
+  color: #002e6d;
+  text-decoration: none;
+  padding: 12px 16px;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+  font-family: 'Roboto Flex', sans-serif !important;
+  font-weight: 400 !important;
+}
+
+.dropdown-menu-principal a:hover {
+  background-color: #081d48;
+  color: white;
+  padding-left: 18px;
+}
+
+/* Estilos para o submenu aninhado */
+.has-submenu {
+  position: relative;
+}
+
+.has-submenu &gt; a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.has-submenu &gt; a i {
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+
+.has-submenu &gt; a i.rotated {
+  transform: rotate(90deg);
+}
+
+.submenu-aninhado {
+  position: absolute;
+  top: 43;
+  left: 86%;
+  background-color: white;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1001;
+  border-radius: 4px;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  border-left: 3px solid #002e6d;
+}
+
+.submenu-aninhado li {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.submenu-aninhado a {
+  color: #002e6d;
+  text-decoration: none;
+  padding: 10px 16px;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+  font-family: 'Roboto Flex', sans-serif !important;
+  font-weight: 400 !important;
+}
+
+.submenu-aninhado a:hover {
+  background-color: #081d48;
+  color: white;
+}
+
+.search-container {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.search-container input {
+  border: none;
+  padding: 8px 15px;
+  outline: none;
+  width: 250px;
+}
+
+.search-container button {
+  border: none;
+  background: none;
+  padding: 0 15px;
+  cursor: pointer;
+  color: #555;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>sate_header_v3</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>SATE HEADER V3</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    /* populate the 'data' object */
+    /* e.g., data.table = $sp.getValue('table'); */
+    
+    var instanceName = gs.getProperty('instance_name');
+    data.instanceName = instanceName;
+    
+    // Adiciona informações do usuário
+    data.user_info = getUserInfo();
+    
+    // Widget de busca
+    data.typeAheadSearch = $sp.getWidget('typeahead_global_sefaz', options.typeahead_search);
+    
+    /**
+     * Obtém informações do usuário logado
+     * @returns {Object} Informações do usuário ou objeto vazio se não estiver logado
+     */
+    function getUserInfo() {
+        var userGR = gs.getUser();
+        
+        if (!userGR || !userGR.getID()) {
+            return {
+                logged_in: false
+            };
+        }
+        
+        // Usuário está logado, retorna as informações
+        var firstName = userGR.getFirstName() || '';
+        var lastName = userGR.getLastName() || '';
+        
+        return {
+            logged_in: true,
+            user_id: userGR.getID(),
+            name: userGR.getDisplayName() || (firstName + ' ' + lastName),
+            first_name: firstName,
+            last_name: lastName,
+            email: userGR.getEmail() || ''
+        };
+    }
+    
+    // Endpoint para logout
+    if (input && input.action === 'logout') {
+        gs.invalidateSession();
+        return {
+            success: true,
+            message: 'Logout realizado com sucesso'
+        };
+    }
+})();]]></script>
+        <servicenow>false</servicenow>
+        <static>false</static>
+        <sys_class_name>sp_header_footer</sys_class_name>
+        <sys_created_by>pk.aba</sys_created_by>
+        <sys_created_on>2025-10-18 13:49:26</sys_created_on>
+        <sys_id>4a1d60ebfb687250f6d5f9d38eefdc35</sys_id>
+        <sys_mod_count>69</sys_mod_count>
+        <sys_name>SATE HEADER V3</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_header_footer_4a1d60ebfb687250f6d5f9d38eefdc35</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-10-20 00:14:34</sys_updated_on>
+        <template><![CDATA[<!-- Barra Superior: Logo e Controles -->
+<div class="top-bar" ng-init="c.checkUserLoggedIn()">
+  <!-- Lado Esquerdo: Logo -->
+  <div class="logo-container">
+    <a href="/sate">
+      <img class="logo-img" src="x_sded9_portal_t_0.logo_sefaz_branco.png" alt="Logo SEFAZ Mato Grosso" />
+    </a>
+  </div>
+
+  <!-- Lado Direito: Acessibilidade e Usuário -->
+  <div class="controls-container">
+    <div class="accessibility-controls">
+      <!-- CORREÇÃO: Texto em um span para controle de tamanho -->
+      <span class="accessibility-label">ACESSIBILIDADE:</span>
+      <a href="" ng-click="adjustFontSize(0.95)" aria-label="Diminuir Fonte">-A</a>
+      <a href="" ng-click="adjustFontSize(1.05)" aria-label="Aumentar Fonte">+A</a>
+      <!-- CORREÇÃO: Estilo para "AA" -->
+      <a href="" ng-click="toggleCase()" aria-label="Alternar Maiúsculo/Minúsculo">
+        <span class="small-a">A</span>A
+      </a>
+      <!-- CORREÇÃO: Ícone de contraste adicionado -->
+     <a href="" ng-click="c.toggleContrast($event)" class="linkAccessibility">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-half" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 0 8 1zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16"/>
+          </svg>
+        </a>
+      <img class="dots9" src="x_sded9_portal_t_0.9dots.png" width="30" height="30"/>
+    </div>
+
+    <!-- Lógica de Login/Logout implementada -->
+    <div class="user-controls">
+      <!-- Exibe se o usuário está logado --> 
+      <div class="user-logged" ng-if="user.logged_in"> 
+        <div class="dropdown" ng-click="toggleDropdown()"> 
+          <div class="user-avatar"> 
+            <span class="user-initials">{{avatarProfile.initials}}</span> 
+          </div> 
+          <ul class="dropdown-content" ng-show="dropdownOpen"> 
+            <li> 
+              <a href="javascript:void(0)" ng-click="logout()">logout</a> 
+            </li> 
+          </ul> 
+        </div> 
+      </div> 
+      
+      <!-- Caso o usuário não esteja logado --> 
+      <div class="login" ng-if="!user.logged_in"> 
+        <button ng-click="c.redirect()"> 
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16"> 
+            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" /> 
+          </svg> 
+          <span style="margin-left: 5px;">Entrar</span> 
+        </button> 
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Barra Inferior: Menu de Navegação -->
+<div class="main-menu-bar">
+  <!-- Lado Esquerdo: Menu -->
+  <div class="menu-items">
+    <!-- Ícone de hambúrguer na página inicial -->
+    <i ng-if="isHomePage" class="fa fa-bars menu-hamburger" ng-click="toggleMainMenu($event)" aria-hidden="true"></i>
+    
+    <!-- Ícone de casa nas outras páginas -->
+    <a href="/sate" ng-if="!isHomePage">
+      <i class="fa fa-home menu-hamburger" aria-hidden="true"></i>
+    </a>
+    
+    <ul class="menu-list">
+      <li class="dropdown">
+        <a id="tesouroPointer" href="" ng-click="toggleMainMenu($event)">
+          TESOURO ESTADUAL
+        </a>
+        
+        <ul class="dropdown-menu-principal" ng-show="isMainMenuOpen">
+          <li class="has-submenu">
+            <a href="" ng-click="toggleFinanceSubmenu($event)">
+              FINANÇAS DO ESTADO
+              <i class="fa fa-chevron-right" ng-class="{'rotated': isFinanceSubmenuOpen}"></i>
+            </a>
+            
+            <ul class="submenu-aninhado" ng-show="isFinanceSubmenuOpen">
+              <li><a ng-click="goToPage('indicadores_fiscais')" href="">INDICADORES FISCAIS</a></li>
+              <li><a ng-click="goToPage('404_sefaz')" href="">RESULTADO FISCAL</a></li>
+              <li><a ng-click="goTo('https://www5.sefaz.mt.gov.br/convenios')" href="">CONVÊNIO</a></li>
+              <li><a ng-click="goTo('https://www5.sefaz.mt.gov.br/fundo-de-participacao-dos-municipios')" href="">REPASSES DO ICMS</a></li>
+              <li><a ng-click="goTo('https://www5.sefaz.mt.gov.br/ajuste-fiscal')" href="">AJUSTE FISCAL</a></li>
+              <li><a ng-click="goTo('https://www5.sefaz.mt.gov.br/acoes-mt-bird')" href="">AÇÕES DÍVIDA MT/BIRD</a></li>
+            </ul>
+          </li>
+          <li><a target="_blank" href="https://www5.sefaz.mt.gov.br/orientacoes-tesouro-estadual">ORIENTAÇÕES DO TESOURO</a></li>
+          <li><a target="_blank" href="https://www.sefaz.mt.gov.br/ead/">ESCOLA FAZENDÁRIA VIRTUAL</a></li>
+          <li><a target="_blank" ng-click="goToPage('404_sefaz')">PAINÉIS</a></li>
+          <li><a target="_blank" href="https://www5.sefaz.mt.gov.br/sobre_a_sefaz">A SEFAZ</a></li>
+          <li><a href="?id=tesouro_estadual">O TESOURO</a></li>
+        </ul>
+      </li>
+      <li><a target="_blank" href="https://www5.sefaz.mt.gov.br/orientacoes-tesouro-estadual">PRINCIPAIS SISTEMAS</a></li>
+      <li><a target="_blank" href="" ng-click="goToPage('404_sefaz')">PAINÉIS</a></li>
+      <li><a target="_blank" href="https://www5.sefaz.mt.gov.br/sobre_a_sefaz">A SEFAZ</a></li>
+      <li><a href="?id=tesouro_estadual">O TESOURO</a></li>
+      <li><a href="?id=tesouro_estadual">LEGISLAÇÃO DO TESOURO</a></li>
+    </ul>
+  </div>
+  
+  <!-- Lado Direito: Busca -->
+  <div class="search-container">
+    <input type="text" placeholder="Olá, o que está procurando hoje?" />
+    <button aria-label="Buscar"><i class="fa fa-search"></i></button>
+  </div>
+</div>]]></template>
+    </sp_header_footer>
+</record_update>
