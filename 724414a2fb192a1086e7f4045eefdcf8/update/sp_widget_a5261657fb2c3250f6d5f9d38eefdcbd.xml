@@ -199,7 +199,7 @@ $content-max-width: 1200px;
 /* ---------------------------------------------------------------------- */
 .tesouro-destaques-compact-container.contrast-mode {
     
-    background-color: #000 !important;  
+    background-color: #101010 !important;  
     
     .destaques-header-compact {
         .header-title {
@@ -263,7 +263,7 @@ $content-max-width: 1200px;
 }]]></link>
         <name>Destaques do Tesouro</name>
         <option_schema/>
-        <public>false</public>
+        <public>true</public>
         <roles/>
         <script><![CDATA[(function() {
     /* populate the 'data' object */
@@ -305,14 +305,14 @@ $content-max-width: 1200px;
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-10-18 02:49:11</sys_created_on>
         <sys_id>a5261657fb2c3250f6d5f9d38eefdcbd</sys_id>
-        <sys_mod_count>66</sys_mod_count>
+        <sys_mod_count>71</sys_mod_count>
         <sys_name>Destaques do Tesouro</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_a5261657fb2c3250f6d5f9d38eefdcbd</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-10-20 00:26:58</sys_updated_on>
+        <sys_updated_on>2025-10-20 04:45:45</sys_updated_on>
         <template><![CDATA[<div class="tesouro-destaques-compact-container" ng-class="{'contrast-mode': contrastIsActive}">
     <div class="tesouro-content-wrapper">
         
@@ -323,7 +323,7 @@ $content-max-width: 1200px;
         
         <div class="row destaques-cards-row d-flex justify-content-center">
             
-            <div class="col-md-4 col-sm-12" ng-click="c.openCapagDetails()">
+            <div class="col-md-5 col-sm-12" ng-click="c.openCapagDetails()">
                 <div class="destaque-card-compact">
                     <h2 class="card-title-compact">{{c.data.card1.title}}</h2>
                     <div class="card-content-compact">
@@ -332,7 +332,7 @@ $content-max-width: 1200px;
                 </div>
             </div>
             <!-- Mudança 19/10 de col-md-6 para 4 -->
-            <div class="col-md-4 col-sm-12" ng-click="c.openCapagDetails()">
+            <div class="col-md-5 col-sm-12" ng-click="c.openCapagDetails()">
                 <div class="destaque-card-compact">
                     <h2 class="card-title-compact">{{c.data.card2.title}}</h2>
                     <div class="card-content-compact">
