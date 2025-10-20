@@ -3,27 +3,27 @@
         <background_color/>
         <background_image/>
         <background_style>default</background_style>
-        <bootstrap_alt>true</bootstrap_alt>
+        <bootstrap_alt>false</bootstrap_alt>
         <class_name/>
         <container_class_name/>
-        <name>Tesouro Estadual MT - Container 10</name>
-        <order>10</order>
+        <name>Tesouro Estadual MT - Container 6</name>
+        <order>6</order>
         <semantic_tag/>
         <sp_page display_value="ec_home_sefaz">1bdfe132fb55aa1086e7f4045eefdcf5</sp_page>
         <subheader>false</subheader>
         <sys_class_name>sp_container</sys_class_name>
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
-        <sys_created_on>2025-05-11 14:14:13</sys_created_on>
-        <sys_id>3da4f44cfba5225086e7f4045eefdc85</sys_id>
-        <sys_mod_count>8</sys_mod_count>
-        <sys_name>Tesouro Estadual MT - Container 10</sys_name>
+        <sys_created_on>2025-10-20 04:23:04</sys_created_on>
+        <sys_id>fdee7cc8fb783650f6d5f9d38eefdc51</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Tesouro Estadual MT - Container 6</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_update_name>sp_container_3da4f44cfba5225086e7f4045eefdc85</sys_update_name>
+        <sys_update_name>sp_container_fdee7cc8fb783650f6d5f9d38eefdc51</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-06-02 21:04:54</sys_updated_on>
+        <sys_updated_on>2025-10-20 04:23:21</sys_updated_on>
         <title/>
-        <width>container</width>
+        <width>container-fluid</width>
     </sp_container>
 </record_update>
