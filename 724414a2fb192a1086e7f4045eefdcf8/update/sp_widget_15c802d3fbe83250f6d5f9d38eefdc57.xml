@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($scope, $window) {
+  var c = this;
+
+  // Função para navegação. Reutilizável.
+  c.navigateTo = function(pageId) {
+    if (pageId) {
+      $window.location.href = '?id=' + pageId;
+    }
+  };
+	
+	$scope.contrastIsActive = false;
+	 var contrastListener = $rootScope.$on('sp.contrast.toggled', function(event, data) {
+        $scope.contrastIsActive = data.enabled; // Atualiza a variável do escopo
+    });
+
+    $scope.$on('$destroy', contrastListener);
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap');
+
+/* Variáveis de Cores */
+$primary-color: #337ab7; // Azul padrão do ServiceNow (para hover/borda)
+$circle-bg-color: #4773C6; // Fundo do círculo
+$text-color: #4773C6; // Cor do texto do título
+$card-bg: #fff;
+$card-border: #e0e0e0;
+$hover-bg: #f5f5f5;
+$secondary-color: #A1A1A1;
+
+.fiscal-dashboard-container {
+    padding: 20px;
+    background-color: $card-bg; 
+    border-radius: 8px;
+    // box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+    .widget-title {
+        font-family: "Poppins", sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        color: $text-color;
+        text-align: center;
+        //text-transform: uppercase;
+        margin-bottom: 30px;
+        padding-bottom: 10px;
+        // border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    // --- CORREÇÃO DE CENTRALIZAÇÃO COM FLEXBOX ---
+    .row {
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: center; // Centraliza os cards, especialmente se a última linha for incompleta.
+    }
+    
+    .dashboard-card {
+        background-color: $card-bg;
+        border: 1px solid $card-border;
+        border-radius: 8px;
+        padding: 25px 20px;
+        text-align: center;
+        margin-bottom: 20px;
+        cursor: pointer;
+        transition: all 0.3s ease; 
+        height: 180px; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &amp;:hover {
+            background-color: $hover-bg;
+            border-color: $primary-color;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            transform: translateY(-3px); 
+        }
+
+        .card-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+            
+            .icon-circle-bg {
+                width: 80px; 
+                height: 80px;
+                background-color: $circle-bg-color; 
+                border-radius: 50%; 
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            i {
+                font-size: 40px; 
+                color: #fff; 
+                line-height: 1; 
+            }
+
+            .custom-icon-image {
+                width: 48px; 
+                height: 48px;
+                object-fit: contain; 
+                display: block; 
+            }
+        }
+
+        .card-title {
+            font-family: "Poppins", sans-serif;
+            font-size: 18px;
+            font-weight: bold;
+            color: $text-color;
+            line-height: 1.3;
+        }
+    }
+}
+
+/* --- ESTILOS DE ALTO CONTRASTE --- */
+
+.fiscal-dashboard-container.contrast-mode {
+    
+    // Fundo do Widget
+    background-color: #000; 
+    box-shadow: none; 
+  	border-radius: 0;
+    
+    .widget-title {
+        color: #fff; 
+        border-bottom-color: #333; 
+    }
+
+    .dashboard-card {
+        background-color: #000; 
+        border-color: #777; 
+        box-shadow: none;
+        
+        &amp;:hover {
+            background-color: #1a1a1a; 
+            border-color: #999; 
+            transform: translateY(-3px); 
+            box-shadow: none;
+        }
+
+        .card-icon {
+            .icon-circle-bg {
+                background-color: $secondary-color !important;
+            }
+            
+            // Ícones Font Awesome
+            i {
+                color: #ccc; 
+            }
+
+            // Imagem Customizada
+            .custom-icon-image {
+                background-color: transparent !important;
+            }
+        }
+
+        .card-title {
+            color: #ccc; 
+            font-weight: 500; 
+        }
+    }
+}
+
+// Responsividade básica
+@media (max-width: 768px) {
+    .fiscal-dashboard-container {
+        .dashboard-card {
+            height: auto; 
+            min-height: 150px;
+        }
+    }
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>acesso_rapido_fase2</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Acesso Rapido</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+
+  data.items = [
+    {
+      id: 'fiscal_indicators', // ID da página de destino
+      title: 'Indicadores Fiscais',
+      // Tipo: 'image'
+      type: 'image', 
+      // Caminho da imagem (verifique o caminho real no seu ServiceNow)
+      src: 'x_sded9_portal_t_0.analytics_fase2.png',
+      page: 'indicadores_fiscais'
+    },
+    {
+      id: 'fiscal_result',
+      title: 'Resultado Fiscal',
+      // Tipo: 'icon'
+      type: 'image', 
+      src: 'x_sded9_portal_t_0.resultadoFiscalFase2.png',
+      page: '404_sefaz'
+    },
+    {
+      id: 'communication',
+      title: 'Comunicação',
+      // Tipo: 'icon'
+      type: 'image', 
+      src: 'x_sded9_portal_t_0.onlineMarketing.png',
+      page: '404_sefaz'
+    }
+  ];
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-10-18 01:50:44</sys_created_on>
+        <sys_id>15c802d3fbe83250f6d5f9d38eefdc57</sys_id>
+        <sys_mod_count>31</sys_mod_count>
+        <sys_name>Acesso Rapido</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_15c802d3fbe83250f6d5f9d38eefdc57</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-10-20 04:46:40</sys_updated_on>
+        <template><![CDATA[<div class="fiscal-dashboard-container" ng-class="{'contrast-mode': contrastIsActive}">
+  
+  <h2 class="widget-title">Acesso rápido</h2>
+  
+  <div class="row">
+    <div class="col-md-3" ng-repeat="item in c.data.items track by item.id">
+      <div class="dashboard-card" ng-click="c.navigateTo(item.page)">
+        
+        <div class="card-icon">
+          <div class="icon-circle-bg">
+            
+            <i ng-if="item.type === 'icon'" class="{{item.icon}}"></i>
+            
+            <img ng-if="item.type === 'image'" ng-src="{{item.src}}" alt="{{item.title}}" class="custom-icon-image">
+            
+          </div>
+        </div>
+        
+        <div class="card-title">
+          {{item.title}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>
