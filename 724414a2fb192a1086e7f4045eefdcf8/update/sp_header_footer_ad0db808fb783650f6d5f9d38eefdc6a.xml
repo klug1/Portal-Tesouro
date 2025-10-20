@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_header_footer">
+    <sp_header_footer action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function($scope, $window, $rootScope, spUtil) {
+    var c = this;
+
+    // --- VARIÁVEIS DE INSTÂNCIA DINÂMICA (Assumindo que o servidor passou a instância) ---
+    var instanceName = c.data.instanceName; 
+    var currentPortalBase = $window.location.protocol + '//' + instanceName + '.service-now.com';
+    var satePortalUrl = currentPortalBase + '/sate';
+
+    // --- DEFINIÇÃO DAS IMAGENS ---
+    var normalLogoUrl = 'x_sded9_portal_t_0.footerImage.png';
+    var darkLogoUrl = 'x_sded9_portal_t_0.footerDarkImage.png';
+
+    // --- CARREGAMENTO DE DADOS (INICIALIZAÇÃO) ---
+    c.data = {
+        logoSrc: normalLogoUrl, 
+
+        contatos: {
+            telefone: { numero: '(65) 3617-2518' },
+            email: { endereco: 'gabinete.sefaz@mt.gov.br' },
+            endereco: {
+                linha1: 'Secretaria de Estado da Fazenda',
+                linha2: 'Centro Político Administrativo',
+                linha3: 'Cuiabá MT, CEP: 78000-000'
+            }
+        },
+
+        // --- LINKS RÁPIDOS ---
+        linksRapidos: [
+            // "Início" tem a URL direta, sem pageId
+            { label: 'Início', href: satePortalUrl }, 
+            { label: 'Transparência', pageId: '404_sefaz' }, 
+            { label: 'O Tesouro', pageId: 'tesouro_estadual' }, 
+            { label: 'Legislação', pageId: 'tesouro_estadual' }
+        ],
+
+        // --- RELATÓRIOS ---
+        relatorios: [
+            // Todos os relatórios usam o pageId temporário '404_sefaz'
+            { label: 'Receita Corrente Líquida', pageId: 'receita_corrente' },
+            { label: 'Resultados Primários', pageId: 'resultado_primario' },
+            { label: 'Despesas de Pessoal', pageId: 'despesa_pessoal' },
+            { label: 'Dívida Pública', pageId: 'divida_publica' },
+            { label: 'Ranking CLP', pageId: '404_sefaz' },
+            { label: 'CAPAG', pageId: '404_sefaz' },
+            { label: 'PAF', pageId: '404_sefaz' },
+            { label: 'Limite de Endividamento', pageId: '404_sefaz' },
+            { label: 'Superavit', pageId: '404_sefaz' },
+            { label: 'Investimento X RCL', pageId: '404_sefaz' }
+        ],
+
+        tesouro: {
+            descricao: 'O Tesouro Estadual é o órgão da Secretaria de Fazenda responsável por garantir que os recursos arrecadados sejam distribuídos conforme o orçamento aprovado pela Assembleia Legislativa.',
+        },
+        copyright: '© 2025 Tesouro do Estado de Mato Grosso. Todos os direitos reservados.'
+    };
+    
+    // --- LÓGICA DE CONTRASTE E TROCA DE IMAGEM ---
+    $scope.contrastIsActive = false;
+	var contrastListener = $rootScope.$on('sp.contrast.toggled', function(event, data) {
+        $scope.contrastIsActive = data.enabled; 
+        
+        if (data.enabled) {
+            c.data.logoSrc = darkLogoUrl;
+        } else {
+            c.data.logoSrc = normalLogoUrl;
+        }
+    });
+    $scope.$on('$destroy', contrastListener); 
+
+    
+    // =========================================================
+    // FUNÇÃO DE ABRIR LINK COM ID (BLANK)
+    // =========================================================
+    c.openLinkInNewTab = function(pageId) {
+        var finalUrl = satePortalUrl + '?id=' + pageId;
+        $window.open(finalUrl, '_blank');
+    };
+	
+		// =========================================================
+    // FUNÇÃO DE ABRIR LINK EXTERNO
+    // =========================================================
+	c.openExternalLink = function(url) {
+        // Usa $window.open para forçar a nova aba, ignorando o href
+        $window.open(url, '_blank');
+    };
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&amp;display=swap');
+
+/* Variáveis de Cor (Modo Normal) */
+$dark-blue-start: #020944;
+$dark-blue-end: #011272;
+$text-color: #ffffff;
+$link-hover-color: #f0f0f0;
+
+/* Dimensões Base do Logo (Usado como max-width para controle) */
+$logo-base-width: 249px;
+$logo-base-height: 472px;
+
+.custom-footer {
+    /* GRADIENTE RADIAL AZUL (Escuro nas bordas, Claro no centro) */
+    background: radial-gradient(circle at center, $dark-blue-end 0%, $dark-blue-start 100%);
+    color: $text-color;
+    padding: 30px 0 0 0;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+}
+
+.footer-content-wrapper {
+    padding: 0 15px;
+}
+
+.footer-main-row {
+    margin-bottom: 20px;
+}
+
+.footer-column {
+    margin-bottom: 20px;
+}
+
+/* --------------------------------------
+   TIPOGRAFIA E LINKS
+   -------------------------------------- */
+
+.column-title {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: $text-color;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.list-unstyled {
+    padding-left: 0;
+}
+
+/* Estilo para links rápidos e relatórios */
+.link-list li {
+    margin-bottom: 2px; 
+
+    a {
+        color: $text-color;
+        text-decoration: none;
+        font-weight: 400;
+        font-size: 0.95rem; 
+        transition: color 0.3s ease;
+
+        &amp;:hover {
+            color: $link-hover-color;
+            text-decoration: underline;
+        }
+    }
+}
+
+/* --------------------------------------
+   COLUNA DE CONTATOS
+   -------------------------------------- */
+
+.contact-list li {
+    display: flex;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    
+    .fa {
+        margin-right: 10px;
+        font-size: 1.1em;
+        position: relative;
+        top: 2px;
+        width: 15px;
+    }
+
+    a, p {
+        color: $text-color;
+        text-decoration: none;
+        margin: 0;
+        line-height: 1.4;
+    }
+}
+
+.address-item {
+    align-items: flex-start; 
+    
+    div {
+        display: block; 
+        width: 100%; 
+        p {
+            margin-bottom: 0;
+            white-space: normal;
+        }
+    }
+}
+
+/* --------------------------------------
+   DIVISOR VERTICAL
+   -------------------------------------- */
+
+.right-division-column {
+    position: relative;
+    padding-right: 20px !important; 
+}
+
+@media (min-width: 992px) { 
+    .right-division-column::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 10px; 
+        width: 1px;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.5); 
+    }
+}
+
+
+/* --------------------------------------
+   COLUNA TESOURO ESTADUAL
+   -------------------------------------- */
+
+@media (min-width: 992px) { 
+    .footer-main-row &gt; div:nth-child(4) { 
+        text-align: center;
+    }
+}
+
+.tesouro-description {
+    font-size: 0.9rem;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* --------------------------------------
+   COLUNA LOGO (AJUSTE DE DIMENSÕES)
+   -------------------------------------- */
+
+.logo-container {
+    margin-top: 0;
+    padding-left: 0;
+    margin-left: auto;
+}
+
+.footer-logo {
+    /* Define o tamanho base para a tag IMG */
+    max-width: 150px; 
+    height: auto;
+    width: 100%;
+    
+    display: block;
+    margin-left: auto;
+}
+
+/* --------------------------------------
+   SOCIAL MEDIA ICONS
+   -------------------------------------- */
+
+.social-icons {
+    margin-bottom: 30px;
+    display: flex; 
+    justify-content: center; 
+    
+    .social-icon-link {
+        color: $text-color;
+        font-size: 1.4rem;
+        margin-right: 15px;
+        transition: color 0.3s ease;
+        
+        &amp;:hover {
+            color: $link-hover-color;
+        }
+    }
+}
+
+/* --------------------------------------
+   COPYRIGHT
+   -------------------------------------- */
+
+.copyright-row {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 0;
+}
+
+.copyright-text {
+    font-size: 0.75rem;
+    margin: 0;
+    opacity: 0.7;
+}
+
+/* =========================================================
+   ESTILOS DE ALTO CONTRASTE
+   ========================================================= */
+
+.custom-footer.contrast-active {
+    /* GRADIENTE RADIAL PRETO/CINZA */
+    background: radial-gradient(circle at center, #393939 0%, #000000 100%) !important;
+    
+    .column-title,
+    .contact-list a,
+    .contact-list p,
+    .link-list a,
+    .tesouro-description,
+    .copyright-text {
+        color: #ffffff !important;
+    }
+    
+    .social-icons .social-icon-link {
+        color: #ffffff !important;
+    }
+
+    .right-division-column::after {
+        background-color: #ffffff !important;
+        opacity: 1 !important;
+    }
+    
+    /* Garante que o texto de copyright fique branco e visível */
+    .copyright-text {
+        color: #ffffff !important;
+        opacity: 1 !important; 
+    }
+}
+
+
+/* --------------------------------------
+   RESPONSIVIDADE (LOGO)
+   -------------------------------------- */
+
+/* MUDANÇA: Centraliza o logo em telas pequenas (até 767px) */
+@media (max-width: 767px) {
+    .logo-container {
+        /* Alinha o texto do container (e o logo, por herança) ao centro */
+        text-align: center; 
+        height: auto; 
+    }
+    .footer-logo {
+        /* Centraliza a imagem (que é um elemento de bloco) */
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 150px;
+        height: auto; 
+    }
+}
+
+/* MANTIDO: Alinhamento padrão à esquerda para colunas SM (768px a 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .logo-container {
+        text-align: left; 
+    }
+    .footer-logo {
+        margin-left: 0;
+        margin-right: auto;
+    }
+}
+
+/* Telas grandes (desktop) */
+@media (min-width: 992px) {
+    .logo-column {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end; 
+    }
+    .footer-logo {
+        margin: 0;
+    }
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>sate_footer_fase2</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Footer Sate Fase 2</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+
+    var instanceName = gs.getProperty('instance_name');
+    
+    // 2. Constrói a URL base do portal SATE (sem o 'id=')
+    // Ex: https://sefazmtdev.service-now.com/sate
+    data.baseUrl = gs.getProperty('glide.servlet.uri') + 'sate';
+    
+    // Opcional, mas útil: Passar apenas o nome da instância se o 'glide.servlet.uri' não funcionar como esperado
+    data.instanceName = instanceName;
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <static>false</static>
+        <sys_class_name>sp_header_footer</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-10-20 04:15:46</sys_created_on>
+        <sys_id>ad0db808fb783650f6d5f9d38eefdc6a</sys_id>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_name>Footer Sate Fase 2</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_header_footer_ad0db808fb783650f6d5f9d38eefdc6a</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-10-20 04:51:11</sys_updated_on>
+        <template><![CDATA[<footer class="custom-footer" ng-class="{'contrast-active': contrastIsActive}">
+    <div class="container footer-content-wrapper">
+        <div class="row footer-main-row">
+
+            <div class="col-md-3 col-sm-6 col-xs-12 footer-column">
+                <h4 class="column-title">Contatos</h4>
+                <ul class="list-unstyled contact-list">
+                    <li>
+                        <span class="fa fa-phone"></span>
+                        <a href="tel:{{c.data.contatos.telefone.numero}}">{{c.data.contatos.telefone.numero}}</a>
+                    </li>
+                    <li>
+                        <span class="fa fa-envelope"></span>
+                        <a href="mailto:{{c.data.contatos.email.endereco}}">{{c.data.contatos.email.endereco}}</a>
+                    </li>
+                    <li class="address-item">
+                        <span class="fa fa-map-marker"></span>
+                        <div>
+                            <p class="address-text">{{c.data.contatos.endereco.linha1}}</p>
+                            <p class="address-text">{{c.data.contatos.endereco.linha2}}</p>
+                            <p class="address-text">{{c.data.contatos.endereco.linha3}}</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+       <div class="col-md-2 col-sm-6 col-xs-12 footer-column">
+    <h4 class="column-title">Links Rápidos</h4>
+    <ul class="list-unstyled link-list">
+        <li ng-repeat="link in c.data.linksRapidos track by $index">
+            
+            <a href="{{link.href}}" 
+               ng-click="link.pageId && c.openLinkInNewTab(link.pageId)">
+                {{link.label}}
+            </a>
+            
+        </li>
+    </ul>
+</div>
+
+           <div class="col-md-2 col-sm-6 col-xs-12 footer-column right-division-column">
+    <h4 class="column-title">Relatórios</h4>
+    <ul class="list-unstyled link-list">
+        <li ng-repeat="link in c.data.relatorios track by $index">
+            <a ng-href="{{link.href || '#'}}" 
+               ng-click="link.pageId && c.openLinkInNewTab(link.pageId)">
+                {{link.label}}
+            </a>
+        </li>
+    </ul>
+</div>
+            
+            <div class="col-md-3 col-sm-6 col-xs-12 footer-column">
+                <h4 class="column-title">Tesouro Estadual</h4>
+                <p class="tesouro-description">
+                    {{c.data.tesouro.descricao}}
+                </p>
+                
+                  <div class="social-icons">
+                      <a target="_blank" href="https://www.instagram.com/sefazmt/"  class="social-icon-link fa fa-instagram" title="Instagram"></a>
+                      <a target="_blank" href="https://www.linkedin.com/company/sefazmt/'" class="social-icon-link fa fa-linkedin" title="LinkedIn"></a>
+                      <a target="_blank" href="https://www.youtube.com/@SefazMatoGrosso_MT"  class="social-icon-link fa fa-youtube-play" title="YouTube"></a>
+                      <a target="_blank" href="https://www.sefaz.mt.gov.br" class="social-icon-link fa fa-twitter" title="Twitter"></a>
+                  </div>
+            </div>
+            
+            <div class="col-md-2 col-sm-6 col-xs-12 footer-column logo-column">
+                <div class="logo-container">
+                    <img ng-src="{{c.data.logoSrc}}" 
+                         alt="Logo Governo de Mato Grosso" 
+                         class="footer-logo">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row copyright-row">
+            <div class="col-xs-12 text-center">
+                <p class="copyright-text">{{c.data.copyright}}</p>
+            </div>
+        </div>
+    </div>
+</footer>]]></template>
+    </sp_header_footer>
+</record_update>
