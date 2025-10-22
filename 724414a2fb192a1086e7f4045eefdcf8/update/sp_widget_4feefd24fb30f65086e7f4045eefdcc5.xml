@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>/* ========================================================== */
+/* WIDGET SCSS (CSS) COMPLETO - COM AJUSTE FINAL DE ALTURA */
+/* ========================================================== */
+
+/* ----------------------------------------------------------- */
+/* 1. Importação das Fontes */
+/* ----------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&amp;display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&amp;display=swap');
+
+/* ----------------------------------------------------------- */
+/* 2. Variáveis de Cores */
+/* ----------------------------------------------------------- */
+$cor-principal-fundo: #F1F4FB; 
+$cor-destaque-fundo: #ffffff;
+$cor-titulo-subtitulo: #4773C6; 
+$cor-valor: #03237E; 
+$cor-descricao-destaque: #001579; 
+$cor-descricao-detalhada: #0C30DC; 
+$cor-link: #337ab7;
+$cor-rodape: #A0BAEC; 
+
+
+/* ----------------------------------------------------------- */
+/* 3. Estilos Globais e Centralização de Conteúdo */
+/* ----------------------------------------------------------- */
+
+
+.widget-tesouro {
+    /* Mantém background-color e padding para ocupar 100% da largura */
+    font-family: 'Poppins', sans-serif; 
+    background-color: $cor-principal-fundo;
+    padding: 30px 15px;
+    //margin-top: 4rem;
+}
+
+/* Classe para centralizar APENAS o CONTEÚDO (títulos e cards) */
+.widget-conteudo-centralizado {
+    max-width: 180rem; /* Limite a largura para ter margens laterais */
+    margin: 0 auto;    /* Centraliza o bloco do conteúdo */
+}
+
+.widget-tesouro h2 {
+    color: $cor-titulo-subtitulo;
+    font-weight: 700;
+}
+
+.text-center{
+	 	color: $cor-titulo-subtitulo;
+  	font-family: 'Roboto Flex', sans-serif; 
+  	font-weight: 500; 
+  
+}
+
+.subtitulo-widget {
+    color: $cor-titulo-subtitulo;
+  	font-family: 'Roboto Flex', sans-serif; 
+    margin-bottom: 40px;
+    font-weight: 400; 
+}
+
+/* ----------------------------------------------------------- */
+/* 4. Layout (Colunas de Altura Igual) */
+/* ----------------------------------------------------------- */
+.display-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+.display-flex &gt; [class*='col-'] {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ----------------------------------------------------------- */
+/* 5. Estilos dos Cards (Caixas) */
+/* ----------------------------------------------------------- */
+
+.card-destaque {
+    background-color: $cor-destaque-fundo;
+    border-radius: 8px;
+    
+    /* AJUSTE AQUI: Aumentando o padding vertical para deixar mais alto */
+    padding: 25px 20px; 
+    
+    margin: 10px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex-grow: 1; 
+    position: relative; 
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card-destaque:hover {
+    /* Move o card 5 pixels para cima */
+    transform: translateY(-5px); 
+    
+    /* Aumenta a sombra para dar um efeito de "elevação" */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); 
+    
+    /* Opcional: Altera o cursor para indicar que é clicável */
+    //cursor: pointer;
+}
+
+/* ----------------------------------------------------------- */
+/* 6. Estilo da Estrela e Título do Item */
+/* ----------------------------------------------------------- */
+
+.star-icon {
+    color: #ffd700; 
+    font-size: 1.2em;
+    font-weight: 700;
+    
+    position: absolute;
+    top: 15px; /* Ajustando a posição para o novo padding (voltou para o valor original) */
+    right: 15px;
+}
+
+.titulo-destaque {
+    color: white; 
+    background-color: $cor-titulo-subtitulo; 
+    padding: 5px 15px;
+    border-radius: 18px; 
+    font-weight: 400;
+    display: block; 
+    width: fit-content; 
+    margin-left: auto; 
+    margin-right: auto; 
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+/* ----------------------------------------------------------- */
+/* 7. Estilo de Valor e Descrição */
+/* ----------------------------------------------------------- */
+
+.valor-principal {
+    font-size: 3em; 
+    font-weight: 700;
+    color: $cor-valor; 
+    margin-bottom: 15px;
+    clear: both; 
+}
+
+.descricao-container {
+    /* AJUSTE AQUI: Aumentando a altura mínima e a margem para deixar mais alto */
+    min-height: 65px; 
+    margin-bottom: 15px; 
+    
+    line-height: 1.4;
+}
+
+.subtitulo-item-destaque {
+    display: block; 
+    color: $cor-descricao-destaque; 
+    font-weight: 400; 
+    font-size: 1em; 
+    margin-bottom: 5px;
+}
+
+.descricao-detalhada {
+    display: block; 
+    color: $cor-descricao-detalhada; 
+    font-size: 0.8em; 
+    font-weight: 500;
+    padding-top: 5px;
+}
+
+/* ----------------------------------------------------------- */
+/* 8. Estilo do Link "Saiba mais" e Rodapé */
+/* ----------------------------------------------------------- */
+
+.saiba-mais-link {
+    font-size: 0.85em; 
+    color: $cor-link;
+    text-decoration: none;
+    font-weight: 600;
+    display: block;
+    text-align: right; 
+    margin-top: 10px; 
+  	transition: transform 0.2s ease-out;
+}
+
+.saiba-mais-link:hover,
+.saiba-mais-link:focus {
+    /* Remove a borda de foco do navegador */
+    outline: none; 
+    
+    /* Move o link 3 pixels para a direita */
+    transform: translateX(3px); 
+    
+    /* Opcional: Garante que a cor permaneça a mesma ou mude sutilmente */
+    color: darken($cor-link, 5%); 
+}
+
+.rodape-widget {
+    margin-top: 30px;
+    color: $cor-rodape;
+}
+
+.rodape-texto {
+    font-size: 0.75em;
+}
+
+.info-icon-rodape {
+    /* Estilização do ! em uma bolinha (com mais espaço interno) */
+    display: inline-block;
+    width: 1.5em; 
+    height: 1.5em;
+    line-height: 1.5em; 
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid $cor-rodape;
+    color: $cor-rodape;
+    font-size: 0.9em;
+    font-weight: 700;
+    margin-right: 5px; 
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>numero_tesouro</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Números do Tesouro Estadual</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    /* Define o exercício como o ano atual menos 1 */
+    var anoAtual = new Date().getFullYear();
+    data.exercicio = anoAtual - 1; 
+    
+    /* Objeto de dados para o ng-repeat */
+    data.destaques = [];
+    
+    // Simulação dos dados com a nova estrutura: subtitulo_item e descricao_detalhada
+    data.destaques.push({
+        titulo: "Destaque nacional",
+        valor: "Nota A",
+        subtitulo_item: "em Gestão Fiscal no País", // NOVA LINHA
+        descricao_detalhada: "Melhor classificação dada pelo Tesouro Nacional", // NOVA LINHA
+        link: "#" 
+    });
+
+    data.destaques.push({
+        titulo: "Controle de Empenho",
+        valor: "R$ 1 BI",
+        subtitulo_item: "em Empenhos Efetivados",
+        descricao_detalhada: "Controle total do volume das despesas realizadas pelo Estado",
+        link: "#" 
+    });
+
+    data.destaques.push({
+        titulo: "Solidez fiscal",
+        valor: "Top 2",
+        subtitulo_item: "em Solidez Fiscal no País",
+        descricao_detalhada: "2º melhor Estado do Brasil em solidez fiscal",
+        link: "#" 
+    });
+    
+    data.destaques.push({
+        titulo: "Maior redução do Brasil",
+        valor: "R$ -0,01 BI",
+        subtitulo_item: "em Redução da Dívida Pública",
+        descricao_detalhada: "A menor dívida líquida do país",
+        link: "#" 
+    });
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-10-21 22:20:16</sys_created_on>
+        <sys_id>4feefd24fb30f65086e7f4045eefdcc5</sys_id>
+        <sys_mod_count>42</sys_mod_count>
+        <sys_name>Números do Tesouro Estadual</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_4feefd24fb30f65086e7f4045eefdcc5</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-10-22 00:10:28</sys_updated_on>
+        <template><![CDATA[<div class="panel-body widget-tesouro">
+    <div class="widget-conteudo-centralizado">
+
+        <h1 class="text-center">{{options.titulo || 'Números do Tesouro Estadual'}}</h1>
+        <p class="text-center subtitulo-widget">{{options.subtitulo || 'Resultados que transformam a gestão pública e impactam a vida dos cidadãos'}}</p>
+
+        <div class="row display-flex">
+            <div class="col-xs-12 col-sm-6 col-md-3" ng-repeat="item in c.data.destaques">
+                <div class="card-destaque text-center">
+                    <span class="star-icon"><i class="fa fa-star-o" aria-hidden="true"></i></span>
+                    
+                    <h4 class="titulo-destaque">{{item.titulo}}</h4>
+                    
+                    <div class="valor-principal">{{item.valor}}</div>
+                    
+                    <p class="descricao-container">
+                        <span class="subtitulo-item-destaque">{{item.subtitulo_item}}</span>
+                        <span class="descricao-detalhada">{{item.descricao_detalhada}}</span>
+                    </p>
+                    
+                    <a ng-href="{{item.link}}" target="_blank" class="saiba-mais-link">
+                        Saiba mais <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center rodape-widget">
+            <small class="rodape-texto">
+                <span class="info-icon-rodape">!</span> 
+                Os números informados referem-se ao exercício de {{c.data.exercicio}}
+            </small>
+        </div>
+        
+    </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>
