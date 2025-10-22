@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>/* CSS ATUALIZADO (Fundo 0.3, Fonte Poppins, Texto Branco) */
+
+/* ATUALIZADO: Importando Poppins e mantendo Roboto Flex para o badge */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&amp;display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&amp;display=swap');
+
+/* Variáveis Globais de Cor (COM --widget-color-main ATUALIZADA) */
+
+  $widget-bg-badge: #E7F0FC;
+  $widget-color-badge: #0B5BAD;
+  
+  /* ATUALIZADO: Cor do texto principal de volta para branco */
+  $widget-color-main: #FFFFFF; 
+
+/* -------------------------------------- */
+/* Estilos Específicos para o BADGE (Topo) */
+/* (Mantido como original)             */
+/* -------------------------------------- */
+.widget-context-badge {
+    display: flex;
+    align-items: center;
+    background-color: $widget-bg-badge; 
+    border-radius: 6px; 
+    padding: 6px 10px;
+    margin-bottom: 20px;
+    width: fit-content;  
+    max-width: 100%;
+}
+
+.badge-icon {
+    width: 16px;  
+    height: 16px;
+    margin-right: 8px;  
+}
+
+.widget-context-title {
+    /* Mantido com Roboto Flex e cor azul para legibilidade */
+    font-family: 'Roboto Flex', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #0B5BAD; 
+    line-height: 1.0;  
+    letter-spacing: 0em;
+    margin: 0;  
+    white-space: nowrap;  
+}
+
+/* -------------------------------------- */
+/* Estilos Base do Widget (Mobile-First) */
+/* -------------------------------------- */
+.compromisso-widget-container {
+    background-image: url('x_sded9_portal_t_0.bannerCompromisso.png');
+    background-size: cover;  
+    background-position: center;  
+    background-repeat: no-repeat;
+    
+    /* ATUALIZADO: Fonte principal para Poppins e cor para branco */
+    font-family: 'Poppins', Arial, sans-serif;
+    color: $widget-color-main; 
+    
+    border-radius: 8px;  
+    position: relative;
+    overflow: hidden;  
+    min-height: 400px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; 
+    padding: 20px;
+}
+
+/* Camada para o Conteúdo (Overlay) */
+.compromisso-widget-overlay {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    
+    /* ATUALIZADO: Opacidade do fundo para 0.1 */
+    background-color: rgba(255, 255, 255, 0.1);
+    
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    
+    padding: 20px;
+    border-radius: 8px; 
+}
+
+
+/* --- TÍTULO PRINCIPAL (DESDE 2018...) --- */
+.widget-main-text {
+    /* ATUALIZADO: Usará Poppins e cor branca herdados */
+    font-family: 'Roboto Flex', Arial, sans-serif;
+    font-size: 32px; 
+    font-weight: 600;
+    color: inherit;
+    margin-bottom: 25px;
+    line-height: 1.0; 
+    letter-spacing: 0;
+}
+/* ----------------------------------------- */
+
+.compromisso-list {
+    list-style: none;
+    margin: 15px 0;
+  /* ATUALIZADO: Removemos o padding: 0 e adicionamos padding-left */
+    padding: 0; /* Zera os outros paddings */
+    padding-left: 30px; /* Joga a lista para a direita. Ajuste 30px como preferir */
+}
+
+.compromisso-item {
+    display: flex;  
+    align-items: center;
+    margin-bottom: 15px;
+    font-weight: 400;
+    font-size: 1.1em;
+    /* ATUALIZADO: Fonte para Poppins */
+    font-family: 'Poppins', Arial, sans-serif;
+  	color: #E7E4E4;
+}
+
+.item-check-icon {
+    width: 20px;  
+    height: 20px;
+    margin-right: 10px;
+}
+
+.widget-footer-info {
+    font-size: 0.8em;
+    opacity: 0.7; /* Aumentei um pouco a opacidade para texto branco */
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* ATUALIZADO: Estilos para o ícone '!' no rodapé (agora transparente com borda) */
+.widget-footer-info::before {
+    content: '!';
+    
+    /* ATUALIZADO: Fundo transparente */
+    background-color: transparent; 
+    
+    /* ATUALIZADO: Borda (1px de espessura, sólida, e herdará a cor do texto) */
+    border: 1px solid; 
+    
+    /* ATUALIZADO: Cor do '!' (herdará do pai, que é branco) */
+    color: inherit; 
+    
+    /* Para fazer o círculo */
+    width: 16px;
+    height: 16px;
+    border-radius: 50%; /* Deixa o fundo redondo */
+    
+    /* Para centralizar o '!' dentro do círculo */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Estilo e espaçamento */
+    font-weight: 700; /* Deixa o '!' em negrito */
+    font-size: 12px;
+    line-height: 1; /* Ajuste para centralização */
+    margin-right: 8px; /* Espaço entre o ícone e o texto */
+    
+    font-family: Arial, sans-serif;
+    
+    /* ADICIONADO: Garante que a borda não aumente o tamanho total do círculo */
+    box-sizing: border-box; 
+}
+
+/* -------------------------------------- */
+/* Media Queries (Responsividade para Desktop) */
+/* -------------------------------------- */
+
+@media (min-width: 768px) {
+    .compromisso-widget-container {
+        padding: 40px 60px;  
+        min-height: 500px;
+    }
+
+    .compromisso-widget-overlay {
+        padding: 40px 60px;
+    }
+
+    .widget-main-text {
+        font-size: 30px;
+        max-width: 80%;
+    }
+
+    .compromisso-item {
+        font-size: 1.3em;
+    }
+}
+@media (max-width: 649px) {
+    .widget-context-title {
+        /* Permite que o texto do badge quebre em múltiplas linhas */
+        white-space: normal;
+    }
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>compromisso_fase2</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Compromisso com Responsabilidade</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+
+    data.tituloHeader = "Compromisso com responsabilidade na gestão dos recursos públicos";
+    data.tituloPrincipal = "Desde 2018, Mato Grosso mantém sua regularidade fiscal como ente federado, reforçando:";
+    data.infoRodape = "Os números informados referem-se ao exercício de 2024";
+
+
+    data.beneficios = [
+        {
+            texto: "Capacidade de investimento público",
+            icone: "x_sded9_portal_t_0.achievement.png"
+        },
+        {
+            texto: "Credibilidade frente a Instituições financeiras e órgãos federais",
+            icone: "x_sded9_portal_t_0.achievement.png"
+        },
+        {
+            texto: "Sustentabilidade fiscal e compromisso com a boa gestão",
+            icone: "x_sded9_portal_t_0.achievement.png"
+        }
+    ];
+
+    // --- Imagem de Background ---
+    data.backgroundImage = 'x_sded9_portal_t_0.bannerCompromisso.png';
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-10-22 00:26:19</sys_created_on>
+        <sys_id>b8db1ee8fbb0f65086e7f4045eefdc59</sys_id>
+        <sys_mod_count>97</sys_mod_count>
+        <sys_name>Compromisso com Responsabilidade</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_b8db1ee8fbb0f65086e7f4045eefdc59</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-10-22 02:41:46</sys_updated_on>
+        <template><![CDATA[<div class="compromisso-widget-container" ng-class="{'widget-bg-loaded': data.backgroundImage}">
+    <div class="compromisso-widget-overlay">
+        
+        <div class="widget-context-badge">
+            <img ng-src="x_sded9_portal_t_0.chartCompromisso.png" alt="Ícone" class="badge-icon">
+            <span class="widget-context-title">{{ data.tituloHeader }}</span>
+        </div>
+        
+        <p class="widget-main-text">{{ data.tituloPrincipal }}</p>
+
+        <ul class="compromisso-list">
+            <li ng-repeat="item in data.beneficios" class="compromisso-item">
+                <img ng-src="{{ item.icone }}" alt="Ícone de Check" class="item-check-icon">
+                <span class="item-text">{{ item.texto }}</span>
+            </li>
+        </ul>
+        <p class="widget-footer-info">{{ data.infoRodape }}</p>
+    </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>
