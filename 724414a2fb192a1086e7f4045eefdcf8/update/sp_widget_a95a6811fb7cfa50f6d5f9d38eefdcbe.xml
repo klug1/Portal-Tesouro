@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($scope) {
+ var c = this;
+
+   c.setActiveTab = function(tabLabel) {
+        $scope.data.activeTab = tabLabel;
+    };
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>/* ========================================================= */
+/* 1. IMPORTAÇÃO DAS FONTES                                  */
+/* ========================================================= */
+/* Importa Roboto Flex para o corpo do widget (mantido) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@100..1000&amp;display=swap');
+/* Importa Roboto Regular para os títulos (NOVO) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&amp;display=swap');
+
+
+/* Variáveis de Cores */
+$blue-primary: #4773C6; // COR ATUALIZADA para Título e Subtítulo
+$link-color: #5a85e6;  
+$gray-icon: #e9ecef; 
+$icon-color: #5555aa;
+$border-color: #4671C4;
+
+.impactos-widget {
+    /* Roboto Flex aplicado como fallback/default para o resto do texto */
+    font-family: 'Roboto Flex', sans-serif; 
+    
+    background-color: #fff; 
+    border: none;
+    box-shadow: none;
+    padding: 20px 0;
+
+    .panel-body {
+        background-color: #fff;
+        padding: 0;
+    }
+
+    // Estilo do Título Principal
+    .header-content {
+        margin-bottom: 40px;
+        
+        .blue-text {
+            /* ESTILOS ESPECÍFICOS PARA h3.blue-text */
+            font-family: 'Roboto', sans-serif; 
+            font-weight: 700; /* Equivalente a Medium */
+            font-size: 40px;
+            color: $blue-primary; // Cor atualizada
+            line-height: 1; /* Equivalente a 100% */
+            letter-spacing: 0;
+            text-align: center;
+          	margin-top: 5.2rem;
+
+        }
+        
+        .sub-text {
+            /* ESTILOS ESPECÍFICOS PARA p.sub-text */
+            font-family: 'Roboto', sans-serif; 
+            font-weight: 500; /* Equivalente a Regular */
+            font-size: 18px;
+            color: $blue-primary; // Cor atualizada
+            line-height: 1; /* Equivalente a 100% */
+            letter-spacing: 0;
+        }
+    }
+
+    // Estilo das Abas (Tabs) - CENTRALIZADO
+    .centered-tabs {
+        //border-bottom: 1px solid #ddd;
+        width: auto; 
+        max-width: 650px;
+        margin: 0 auto 30px auto;
+        text-align: center;
+        
+        &gt; li {
+            float: none;
+            display: inline-block;
+            margin-bottom: 0;
+            
+            &gt; a {
+                color: #777;
+                border: none;
+                padding: 10px 70px;
+                &amp;:hover {
+                    background-color: transparent;
+                }
+            }
+            
+            &amp;.active &gt; a, &amp;.active &gt; a:hover, &amp;.active &gt; a:focus {
+                color: $blue-primary;
+                cursor: default;
+                background-color: transparent;
+                border: none;
+                border-bottom: 4px solid $border-color;
+            }
+        }
+    }
+
+    // Estilo dos Cards
+    .card-grid {
+        margin: 0 auto;
+        max-width: 1200px; 
+
+        .card-item {
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+            min-height: 260px; 
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
+            
+            &amp;:hover {
+                transform: translateY(-5px); 
+                box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); 
+            }
+            
+            .panel-body {
+                padding: 25px;
+                background-color: #fff;
+            }
+            
+            .icon-circle {
+                width: 35px;
+                height: 35px;
+                border-radius: 50%;
+                background-color: $gray-icon;
+                color: $icon-color;
+                display: flex; 
+                justify-content: center; 
+                align-items: center; 
+                margin: 0 auto 15px auto;
+                
+                .card-image {
+                    width: 60%; 
+                    height: 60%; 
+                    object-fit: contain; 
+                    display: block;
+                }
+            }
+
+            .card-title {
+                text-align: center;
+                color: #5555aa;
+                font-size: 20px; 
+                font-weight: 600;
+                min-height: 40px; 
+            }
+
+            .card-desc {
+                text-align: center;
+                color: #777;
+                font-size: 15px; 
+                min-height: 70px; 
+            }
+
+            .saiba-mais-link {
+                float: right; 
+                color: $link-color;
+                font-weight: 600;
+                text-decoration: none;
+                margin-top: 10px;
+                transition: transform 0.2s ease-out, color 0.2s ease-out;
+
+                &amp;:hover,
+                &amp;:focus {
+                    outline: none; 
+                    transform: translateX(3px); 
+                    color: darken($link-color, 5%); 
+                }
+                
+                i {
+                    margin-left: 5px;
+                }
+            }
+        }
+    }
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>impactos_trabalho</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Impactos no Trabalho</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    /*
+        Cria o objeto 'data' que será enviado para o Client Script
+    */
+    data.tabs = [];
+
+    // --- Dados para a Aba 1: Contas Equilibradas ---
+    var tab1 = {
+        label: "Contas Equilibradas",
+        active: true, 
+        cards: [
+            {
+                title: "Ampliação de recursos para Políticas Públicas",
+                desc: "Mais investimento em saúde, educação e segurança, melhorando a qualidade de vida da população.",
+                //icon: "fa-leaf", // Ícone Font Awesome
+							image_url: "x_sded9_portal_t_0.positiveReview.png",
+                link: "sp?id=detalhe_card&sys_id=1"
+            },
+            {
+                title: "Ampliação do volume de investimentos públicos",
+                desc: "Mais obras e infraestrutura, gerando empregos e melhorando a mobilidade urbana.",
+                //icon: "fa-industry",
+							image_url: "x_sded9_portal_t_0.positiveReview.png",
+                link: "sp?id=detalhe_card&sys_id=2"
+            },
+            {
+                title: "Melhora do grau de endividamento",
+                desc: "Redução da dívida pública, permitindo mais investimentos em áreas prioritárias.",
+                //icon: "fa-money",
+							image_url: "x_sded9_portal_t_0.positiveReview.png",
+                link: "sp?id=detalhe_card&sys_id=3"
+            },
+            {
+                title: "Não ampliação da carga tributária",
+                desc: "Manutenção ou redução de impostos, beneficiando cidadãos e empresas.",
+                //icon: "fa-balance-scale",
+							image_url: "x_sded9_portal_t_0.positiveReview.png",
+                link: "sp?id=detalhe_card&sys_id=4"
+            },
+            {
+                title: "Melhora do ambiente de negócios",
+                desc: "Mais investimento em saúde, educação e segurança, melhorando a qualidade de vida da população.",
+                //icon: "fa-briefcase",
+							image_url: "x_sded9_portal_t_0.positiveReview.png",
+                link: "sp?id=detalhe_card&sys_id=5"
+            },
+            {
+                title: "Aumento do investimento privado",
+                desc: "Maior confiança dos investidores e empresários no estado.",
+               // icon: "fa-bank",
+							image_url: "x_sded9_portal_t_0.positiveReview.png",
+                link: "sp?id=detalhe_card&sys_id=6"
+            },
+            {
+                title: "Aumento do volume de emprego",
+                desc: "Mais oportunidades de trabalho para a população.",
+               // icon: "fa-user-plus",
+							image_url: "x_sded9_portal_t_0.positiveReview.png",
+                link: "sp?id=detalhe_card&sys_id=7"
+            },
+            {
+                title: "Aumento da renda das famílias",
+                desc: "Melhoria na qualidade de vida e poder de compra da população.",
+               // icon: "fa-line-chart",
+							image_url: "x_sded9_portal_t_0.positiveReview.png",
+                link: "sp?id=detalhe_card&sys_id=8"
+            },
+            {
+                title: "Aumento do Crescimento Econômico",
+                desc: "Desenvolvimento sustentável e prosperidade para todo o estado.",
+                //icon: "fa-globe",
+							image_url: "x_sded9_portal_t_0.positiveReview.png",
+                link: "sp?id=detalhe_card&sys_id=9"
+            }
+        ]
+    };
+
+    // --- Dados para a Aba 2: Contas Desequilibradas (Exemplo) ---
+    var tab2 = {
+        label: "Contas Desequilibradas",
+        active: false,
+        cards: [
+            {
+                title: "Exemplo de Card da Segunda Aba",
+                desc: "Este é um conteúdo de placeholder para a aba Contas Desequilibradas.",
+                //icon: "fa-warning",
+							image_url: "x_sded9_portal_t_0.positiveReview.png",
+                link: "sp?id=detalhe_card&sys_id=10"
+            }
+        ]
+    };
+
+    data.tabs.push(tab1);
+    data.tabs.push(tab2);
+
+    // Variável para rastrear a aba ativa
+    data.activeTab = data.tabs[0].label;
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-10-24 00:06:09</sys_created_on>
+        <sys_id>a95a6811fb7cfa50f6d5f9d38eefdcbe</sys_id>
+        <sys_mod_count>68</sys_mod_count>
+        <sys_name>Impactos no Trabalho</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_a95a6811fb7cfa50f6d5f9d38eefdcbe</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-10-24 01:34:59</sys_updated_on>
+        <template><![CDATA[<div class="panel panel-default impactos-widget">
+    <div class="panel-body">
+
+        <div class="text-center header-content">
+            <h1 class="h3 blue-text">Impactos do Trabalho do Tesouro na Vida do Cidadão</h1>
+            <p class="sub-text">Resultados que transformam a gestão pública e impactam a vida dos cidadãos</p>
+        </div>
+
+        <ul class="nav nav-tabs tab-links centered-tabs" role="tablist">
+            <li role="presentation"
+                ng-repeat="tab in data.tabs"
+                ng-class="{active: data.activeTab == tab.label}">
+                
+                <a href="javascript:void(0)"
+                   ng-click="c.setActiveTab(tab.label)"
+                   aria-controls="{{::tab.label}}" role="tab">
+                    {{::tab.label}}
+                </a>
+            </li>
+        </ul>
+        
+        <div class="tab-content">
+            <div role="tabpanel"
+                 ng-repeat="tab in data.tabs"
+                 class="tab-pane"
+                 
+                 ng-class="{active: data.activeTab == tab.label}">
+
+                <div class="row card-grid">
+                    <div class="col-md-4 col-sm-6" ng-repeat="card in tab.cards">
+                        <div class="card-item panel panel-default">
+                            <div class="panel-body">
+                                
+                                <!--div class="icon-circle green-bg">
+                                    <i class="fa {{::card.icon}}"></i> 
+                                </div-->
+                              <div class="icon-circle green-bg">
+                                  <img ng-src="{{::card.image_url}}" alt="Review Icon" class="card-image"/>
+                              </div>
+                                
+                                <h4 class="card-title blue-text">{{::card.title}}</h4>
+                                <p class="card-desc">{{::card.desc}}</p>
+                                
+                                <a ng-href="{{::card.link}}" class="saiba-mais-link">
+                                    Saiba mais <i class="fa fa-long-arrow-right"></i>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>
