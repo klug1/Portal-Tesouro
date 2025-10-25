@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&amp;family=Roboto:ital,wght@0,100..900;1,100..900&amp;display=swap');
+
+// VARIÁVEIS GLOBAIS DE CORES
+$color-primary-blue: #4773C6;   // Cor do Título e Legendas
+$color-secondary-blue: #293273; // Cor do Subtítulo
+$font-family: 'Roboto', sans-serif;
+
+.volume-pagamento-widget-simples {
+    font-family: $font-family; 
+    margin-bottom: 20px;
+    background-color: white; 
+    
+    .widget-header-custom {
+        background-color: transparent;
+        border: none;
+        padding: 20px 0 10px 0;
+        
+        h1 {
+            color: $color-primary-blue; 
+            font-size: 2.5em;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        p {
+            color: $color-secondary-blue; 
+            font-size: 1.1em;
+            font-weight: 400;
+        }
+    }
+
+    .main-content-area {
+        min-height: 450px; 
+        width: 100%;
+        padding: 20px;
+        
+        position: relative;
+        overflow: hidden; 
+        
+        background-color: #FFFFFF;
+        border-radius: 4px;
+
+        // Estilos para o .row para garantir a altura e alinhamento das colunas
+        .row {
+            // **MUDANÇA PRINCIPAL AQUI:**
+            // Por padrão, o display é block (para que as colunas se empilhem em mobile)
+            display: block; 
+            height: auto;
+            
+            // A partir de 768px (breakpoint 'sm' do Bootstrap), ativamos o flex
+            @media (min-width: 768px) {
+                height: 100%;
+                display: flex;
+                align-items: stretch; // Estica as colunas para a mesma altura
+            }
+        }
+    }
+
+    /* ------------------------------------- */
+    /* ESTILOS DA COLUNA DA IMAGEM (ESQUERDA) */
+    /* ------------------------------------- */
+    .image-column {
+        min-height: 400px;
+        display: flex;
+        align-items: center; 
+        justify-content: center; 
+        padding: 10px;
+        
+        @media (max-width: 767px) { 
+            margin-bottom: 15px;
+            min-height: 250px;
+        }
+    }
+
+    .gif-content-image-responsive {
+        display: block;
+        max-width: 100%; 
+        height: auto;
+        position: static; 
+        transform: none;
+    }
+
+    /* ------------------------------------- */
+    /* ESTILOS DA COLUNA DA LEGENDA (DIREITA) */
+    /* ------------------------------------- */
+    .legend-column {
+        min-height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        align-items: flex-start;
+        padding: 10px 20px;
+        
+        @media (max-width: 767px) {
+            min-height: auto;
+            padding-top: 0;
+            padding-bottom: 20px; // Adicionado padding para separar do widget inferior
+            align-items: center; // **AJUSTE:** Centraliza a legenda quando está em linha única
+        }
+    }
+
+    .legend-area-right {
+        background-color: transparent;
+        padding: 0;
+        border-radius: 0;
+        box-shadow: none;
+        
+        ul { list-style: none; padding: 0; margin: 0; }
+        
+        li {
+            color: $color-primary-blue; 
+            font-weight: 400;
+            font-size: 0.95em;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            white-space: nowrap; 
+            &amp;:last-child { margin-bottom: 0; }
+            
+            // **AJUSTE:** Permite quebra de linha nas legendas em telas muito pequenas
+            @media (max-width: 480px) { 
+                white-space: normal; 
+                text-align: left; // Alinha o texto à esquerda na quebra
+            }
+        }
+    }
+
+    .legend-dot {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        margin-right: 8px;
+        flex-shrink: 0;
+    }
+
+    /* Cores das Bolinhas da Legenda */
+    .dot-blue { background-color: #6495ED; }
+    .dot-light-blue { background-color: #A9CCE3; }
+    .dot-dark-blue { background-color: #191970; }
+
+    /* RESPONSIVIDADE GERAL */
+    @media (max-width: 768px) {
+        .main-content-area {
+            min-height: auto;
+            padding: 10px;
+        }
+        .widget-header-custom {
+            h1 { font-size: 1.8em; }
+            p { font-size: 1em; }
+        }
+    }
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>volume_pagamento</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Volume de Pagamento</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    // ----------------------------------------------------
+    // LÓGICA DE DATAS E VARIÁVEIS DINÂMICAS
+    // ----------------------------------------------------
+    var anoAtual = new Date().getFullYear();
+    data.anoExibicao = anoAtual.toString();
+    data.exercicio = (anoAtual - 1).toString();
+    
+    // Título e Subtítulo dinâmicos no ano
+    data.titulo = gs.getMessage("Volume de pagamentos em {0}", [data.exercicio]);
+    data.subtitulo = gs.getMessage("O Tesouro garante o pagamento de 100% das obrigações financeiras.");
+    
+   
+    
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-10-21 23:14:35</sys_created_on>
+        <sys_id>ac6bca64fb70f65086e7f4045eefdc55</sys_id>
+        <sys_mod_count>78</sys_mod_count>
+        <sys_name>Volume de Pagamento</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_ac6bca64fb70f65086e7f4045eefdc55</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-10-25 01:53:49</sys_updated_on>
+        <template><![CDATA[<div class="volume-pagamento-widget-simples">
+    
+    <div class="widget-header-custom">
+        <h1 class="text-center">{{::data.titulo}}</h1>
+        <p class="text-center text-muted">{{::data.subtitulo}}</p>
+    </div>
+    
+    <div class="main-content-area">
+        
+        <div class="row">
+            
+            <div class="col-xs-12 col-sm-9 image-column">
+                <img src="x_sded9_portal_t_0.volumePagamento.gif" 
+                     alt="GIF Volume de Pagamentos"
+                     class="gif-content-image-responsive"/>
+            </div>
+            
+            <div class="col-xs-12 col-sm-3 legend-column"> 
+                <div class="legend-area-right">
+                    <ul class="list-unstyled">
+                        <li>
+                            <span class="legend-dot dot-blue"></span>
+                            Total de pagamentos realizados em {{::data.anoExibicao}}
+                        </li>
+                        <li>
+                            <span class="legend-dot dot-light-blue"></span>
+                            Pagamentos realizados com recursos próprios
+                        </li>
+                        <li>
+                            <span class="legend-dot dot-dark-blue"></span>
+                            Total de pagamentos em Investimentos
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>
