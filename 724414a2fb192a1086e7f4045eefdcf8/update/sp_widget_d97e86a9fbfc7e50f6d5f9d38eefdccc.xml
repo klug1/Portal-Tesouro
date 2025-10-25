@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($scope) {
+    /* widget controller */
+    var c = this;
+
+    // 1. Variável para controlar qual aba está ativa.
+    // Inicializa com 'divida' (a primeira aba)
+    c.activeTab = 'divida'; 
+
+    // 2. Função para mudar a aba ativa quando o usuário clica.
+    c.setTab = function(tabName) {
+        c.activeTab = tabName;
+    };
+    
+    // 3. Array com os nomes e chaves das abas para facilitar a renderização
+    c.tabs = [
+        { name: 'Dívida Pública', key: 'divida' },
+        { name: 'Investimentos', key: 'investimentos' },
+        { name: 'Superávit', key: 'superavit' }
+    ];
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&amp;family=Roboto:ital,wght@0,100..900;1,100..900&amp;display=swap');
+
+
+.widget-container {
+    background-color: #FFFFFF; /* Passo 1: Cor Branca para o background do widget */
+    padding: 20px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    border-radius: 8px; 
+    width: 100%; 
+    box-sizing: border-box; 
+    /* NOVO: Aplica a fonte a todos os elementos do widget */
+    font-family: 'Roboto', sans-serif; 
+}
+
+/* --- Estilos do Cabeçalho (Título e Subtítulo) --- */
+
+.header-content {
+    text-align: center; /* Centraliza todo o conteúdo do cabeçalho */
+    margin-bottom: 30px; /* Espaço abaixo do cabeçalho antes das abas */
+}
+
+.main-title {
+    /* font-family: 'Roboto', sans-serif; (Removido, herdado do widget-container) */
+    font-weight: 400; 
+    font-size: 54px;
+    line-height: 100%; 
+    letter-spacing: 0%;
+    color: #4773C6; /* Cor Azul */
+    margin: 0; 
+}
+
+.subtitle {
+    /* font-family: 'Roboto', sans-serif; (Removido, herdado do widget-container) */
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 100%; 
+    letter-spacing: 0%;
+    color: #4773C6; /* Mesma cor do título */
+    margin-top: 10px; /* Espaço entre o título e o subtítulo */
+    margin-bottom: 0;
+}
+
+/* --- Estilos para a Barra de Abas (Tabs) - Visual de Botão/Pílula --- */
+
+.tab-bar {
+    display: flex; 
+    justify-content: center; /* Centraliza o grupo de botões */
+    margin-bottom: 25px; /* Espaço entre as abas e o conteúdo (card) */
+    gap: 15px; /* Adiciona espaçamento entre os botões */
+    flex-wrap: wrap; /* Permite que os botões quebrem a linha em telas pequenas */
+    border-bottom: none; /* Garante que não haja linha divisória na barra */
+}
+
+.tab-button {
+    /* Estilo básico do botão (inativo) */
+    background: #F0F0F0; /* Fundo cinza claro para o botão inativo */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #666666; /* Cor do texto padrão */
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+    
+    /* Arredondamento TOTAL para o visual de pílula/cápsula */
+    border-radius: 50px; 
+    
+    flex-shrink: 0; 
+    text-align: center; /* Garante que o texto dentro do botão esteja centrado */
+}
+
+.tab-button:hover:not(.active) {
+    background-color: #E0E0E0; /* Efeito hover sutil nos inativos */
+}
+
+/* Estilo para a aba ATIVA (Visual da Imagem - Pílula Azul) */
+.tab-button.active {
+    background-color: #4671C4; /* Cor Azul sólida */
+    color: #FFFFFF; /* Cor do texto em branco */
+    font-weight: 600; 
+    border-radius: 50px; /* Mantém o arredondamento total */
+    padding: 10px 20px; /* Mantém o padding consistente */
+}
+
+/* --- Estilos para o Conteúdo das Abas (Cards) --- */
+
+.tab-content {
+    min-height: 150px; 
+    padding-top: 10px;
+}
+
+.tab-card {
+    /* Estilos de Card removidos/ajustados para a imagem */
+    padding: 10px; /* Reduz o padding para dar mais espaço à imagem */
+    border-radius: 6px;
+    font-size: 18px;
+    color: #333333;
+    text-align: center;
+}
+
+/* Regra de responsividade para a imagem */
+.responsive-image {
+    max-width: 100%; /* Garante que a imagem nunca seja maior que o contêiner pai */
+    height: auto;    /* Mantém a proporção correta da imagem */
+    display: block;  
+    margin: 0 auto;  /* Centraliza a imagem dentro do card */
+}
+
+/* --- Estilo para o Disclaimer (Aviso/Nota) --- */
+
+.disclaimer-info {
+    /* Cor e Alinhamento do Bloco */
+    color: #4773C6; /* Cor do texto (principal) */
+    text-align: center; 
+    
+    /* Ajuste de Espaçamento */
+    margin-top: 30px; /* Espaço para separar do conteúdo da aba */
+    margin-bottom: 0; 
+    
+    padding: 5px 10px;
+    font-size: 12px; 
+    /* font-family: 'Roboto', sans-serif; (Removido, herdado) */
+    font-weight: 500;
+}
+
+/* ESTILO PARA O ÍCONE '!' NO CÍRCULO */
+.info-icon-rodape {
+    /* Cor do círculo e do ! (azul claro para o efeito visual) */
+    border: 1px solid #8DA9E3; /* Cor da borda (azul claro) */
+    color: #8DA9E3; /* Cor do ponto de exclamação (azul claro) */
+    
+    /* Estilização do '!' em uma bolinha */
+    display: inline-block;
+    width: 1.5em; /* Largura da bolinha */
+    height: 1.5em; /* Altura da bolinha */
+    
+    /* Centraliza o texto vertical e horizontalmente */
+    line-height: 1.5em; 
+    text-align: center;
+    
+    border-radius: 50%; /* Faz a bolinha */
+    
+    /* Tamanho e peso da fonte do '!' */
+    font-size: 12px; 
+    font-weight: 500; 
+    
+    margin-right: 8px; /* Espaço entre o ícone e o texto */
+    
+    /* Ajuste vertical fino */
+    position: relative;
+    top: -1px; 
+}
+
+
+/* --- Melhores Práticas: Responsividade (Media Query) --- */
+
+@media (max-width: 768px) {
+    /* Ajusta o tamanho das fontes em telas menores (celulares e tablets) */
+    .main-title {
+        font-size: 36px; 
+    }
+    
+    .subtitle {
+        font-size: 18px; 
+    }
+    .disclaimer-info {
+        font-size: 14px;
+    }
+    .info-icon-rodape {
+        /* Reduz o tamanho do ícone proporcionalmente */
+        width: 1.2em;
+        height: 1.2em;
+        line-height: 1.2em;
+    }
+}
+
+@media (max-width: 600px) {
+    .tab-bar {
+        /* Permite que os botões se centralizem melhor quando quebram a linha */
+        justify-content: center; 
+    }
+    .tab-button {
+        /* Reduz o tamanho da fonte e padding dos botões em telas muito pequenas */
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>evolucao_indicadores</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Evolução dos Indicadores</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	 data.title = 'Evolução dos Indicadores';
+	data.subtitle = ' Acompanhe a evolução dos principais indicadores financeiros do estado';
+   data.disclaimer = gs.getMessage("Os números informados referem-se ao exercício de 2024");
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-10-25 02:01:54</sys_created_on>
+        <sys_id>d97e86a9fbfc7e50f6d5f9d38eefdccc</sys_id>
+        <sys_mod_count>35</sys_mod_count>
+        <sys_name>Evolução dos Indicadores</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_d97e86a9fbfc7e50f6d5f9d38eefdccc</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-10-25 04:47:16</sys_updated_on>
+        <template><![CDATA[<div class="widget-container">
+    
+    <div class="header-content">
+        <h1 class="main-title">
+           {{data.title}}
+        </h1>
+        
+        <p class="subtitle">
+           {{data.subtitle}}
+        </p>
+    </div>
+
+    <div class="tab-bar">
+        <button 
+            ng-repeat="tab in c.tabs"
+            ng-click="c.setTab(tab.key)" 
+            ng-class="{'active': c.activeTab === tab.key}"
+            class="tab-button">
+            {{tab.name}}
+        </button>
+    </div>
+
+    <div class="tab-content">
+        
+        <div class="tab-card card-divida" ng-if="c.activeTab === 'divida'">
+           <img 
+                src="x_sded9_portal_t_0.dividaCartaServicos.gif" 
+                alt="Carta de Serviços de Dívida Pública"
+                class="responsive-image"
+                width="750" 
+                height="720"
+            />
+        </div>
+
+        <div class="tab-card card-investimentos" ng-if="c.activeTab === 'investimentos'">
+             <img 
+                src="x_sded9_portal_t_0.volumePagamento.gif" 
+                alt="Carta de Serviços de Dívida Pública"
+                class="responsive-image"
+                width="750" 
+                height="720"
+            />
+        </div>
+
+        <div class="tab-card card-superavit" ng-if="c.activeTab === 'superavit'">
+         <img 
+                src="x_sded9_portal_t_0.dividaCartaServicos.gif" 
+                alt="Carta de Serviços de Dívida Pública"
+                class="responsive-image"
+                width="750" 
+                height="720"
+            />
+        </div>
+
+    </div>
+    
+    <p class="disclaimer-info small-info">
+        <span class="info-icon-rodape" aria-hidden="true">!</span>
+        {{data.disclaimer}}
+    </p>
+    </div>]]></template>
+    </sp_widget>
+</record_update>
