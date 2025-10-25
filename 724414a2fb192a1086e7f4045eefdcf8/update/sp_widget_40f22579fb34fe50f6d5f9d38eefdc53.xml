@@ -318,7 +318,7 @@ $font-family: "Roboto Flex";
 }]]></link>
         <name>Acompanhe a Evolução</name>
         <option_schema/>
-        <public>true</public>
+        <public>false</public>
         <roles/>
         <script><![CDATA[(function() {
 
@@ -369,14 +369,14 @@ $font-family: "Roboto Flex";
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-10-25 17:30:33</sys_created_on>
         <sys_id>40f22579fb34fe50f6d5f9d38eefdc53</sys_id>
-        <sys_mod_count>59</sys_mod_count>
+        <sys_mod_count>60</sys_mod_count>
         <sys_name>Acompanhe a Evolução</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_40f22579fb34fe50f6d5f9d38eefdc53</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-10-25 19:27:54</sys_updated_on>
+        <sys_updated_on>2025-10-25 19:43:24</sys_updated_on>
         <template><![CDATA[<div class="widget-background">
     <div class="container-fluid widget-content-fluid">
         <div class="row align-items-center">
