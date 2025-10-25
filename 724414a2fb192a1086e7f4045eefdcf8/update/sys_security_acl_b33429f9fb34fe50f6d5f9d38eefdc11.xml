@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl">
+    <sys_security_acl action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <admin_overrides>true</admin_overrides>
+        <advanced>false</advanced>
+        <applies_to/>
+        <condition/>
+        <controlled_by_refs/>
+        <decision_type>allow</decision_type>
+        <description>Default access control on x_sded9_portal_t_0_newsletter</description>
+        <local_or_existing>Local</local_or_existing>
+        <name>x_sded9_portal_t_0_newsletter</name>
+        <operation display_value="write">write</operation>
+        <script/>
+        <security_attribute/>
+        <sys_class_name>sys_security_acl</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-10-25 17:35:35</sys_created_on>
+        <sys_id>b33429f9fb34fe50f6d5f9d38eefdc11</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_sded9_portal_t_0_newsletter</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sys_security_acl_b33429f9fb34fe50f6d5f9d38eefdc11</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-10-25 17:35:35</sys_updated_on>
+        <type display_value="record">record</type>
+    </sys_security_acl>
+</record_update>

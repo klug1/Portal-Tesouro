@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_module">
+    <sys_ui_module action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <application display_value="Newsletter SATE">ab34e5f9fb34fe50f6d5f9d38eefdcf7</application>
+        <filter/>
+        <name>Newsletter SATEs</name>
+        <order/>
+        <path/>
+        <path_relative_to_root>false</path_relative_to_root>
+        <roles>snc_external</roles>
+        <sys_class_name>sys_ui_module</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-10-25 17:35:35</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>a334e5f9fb34fe50f6d5f9d38eefdcfa</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Newsletter SATEs</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sys_ui_module_a334e5f9fb34fe50f6d5f9d38eefdcfa</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-10-25 17:35:35</sys_updated_on>
+        <table>x_sded9_portal_t_0_newsletter</table>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+    </sys_ui_module>
+</record_update>
