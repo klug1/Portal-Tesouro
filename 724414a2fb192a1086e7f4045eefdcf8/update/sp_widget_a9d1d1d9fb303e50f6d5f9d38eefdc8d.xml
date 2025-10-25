@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($scope) {
+  /* widget controller */
+  var c = this;
+	
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&amp;family=Roboto:wght@400;500;700;800&amp;display=swap');
+
+// ===============================================
+// VARIÁVEIS SCSS PARA MANUTENÇÃO FÁCIL
+// ===============================================
+
+$banner-color-bg: #fff;
+$background-content-wrapper: linear-gradient(178.36deg, #F8FAFE 2.24%, #FEFEFE 97.55%); // NOVO GRADIENTE
+$background-tagline: #E7F0FC;
+$color-tagline: #0B5BAD; 
+
+$color-h1: #4773C6; 
+$color-h1-weight: 500; 
+
+$color-valor: #011271; 
+$color-valor-weight: 700; 
+$color-valor-size: 90px; 
+
+$color-investimento: #4773C6; 
+$color-investimento-weight: 300; 
+$color-investimento-size: 20px; 
+
+// Cores do botão
+$color-btn-saiba: #4773C6; 
+$color-btn-saiba-weight: 400; 
+$color-btn-saiba-size: 20px; 
+$color-btn-saiba-border: #4773C6; 
+$color-btn-saiba-bg: #fff;
+$color-btn-saiba-hover: #f0f8ff; 
+
+// Disclaimer (AJUSTADO PARA O NOVO DESIGN '!')
+$small-info-text-color: #4773C6; 
+$small-info-icon-color: #8DA9E3; 
+$small-info-weight: 500; 
+$small-info-size: 12px; 
+$small-info-border: #DDDDDD; // Definindo a cor da borda do disclaimer
+ 
+// ===============================================
+// ESTRUTURA E LAYOUT
+// ===============================================
+
+// 1. CONTAINER GERAL (Background, bordas e padding)
+.banner-container {
+    background-color: $banner-color-bg;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 30px; 
+    overflow-x: hidden; 
+}
+
+// O ROW do Bootstrap (content-wrapper)
+.content-wrapper {
+    // === NOVOS ESTILOS PARA GRADIENTE E PADDING ===
+    background: $background-content-wrapper; 
+    padding: 25px; 
+    border-radius: 6px; 
+    // ===============================================
+    
+    max-width: 1200px;
+    margin: 0 auto 2rem auto; 
+    
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+}
+
+// SEÇÃO DE TEXTO
+.text-section {
+    flex-grow: 1;
+    padding-right: 4rem; 
+    margin: 0;
+    text-align: left; 
+}
+
+// Novo estilo para o ícone de imagem
+.tagline-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+// SEÇÃO DE IMAGEM
+.image-section {
+    flex-shrink: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.banner-image {
+    width: 200px;
+    height: auto;
+    display: block;
+}
+
+// ===============================================
+// ESTILOS DE TIPOGRAFIA
+// ===============================================
+
+.tagline {
+    color: $color-tagline; 
+    font-family: 'Roboto', sans-serif; 
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    
+    background-color: $background-tagline;
+    border-radius: 20px;
+    
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    margin-bottom: 10px;
+    
+    &amp;::before {
+        content: none;
+    }
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif; 
+    font-weight: $color-h1-weight; 
+    font-size: 48px; 
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: $color-h1; 
+    
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.valor {
+    font-family: 'Poppins', sans-serif; 
+    font-weight: $color-valor-weight; 
+    font-size: $color-valor-size; 
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: $color-valor; 
+    
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.investimento {
+    font-family: 'Roboto', sans-serif; 
+    font-weight: $color-investimento-weight; 
+    font-size: $color-investimento-size; 
+    line-height: 100%; 
+    letter-spacing: 0%; 
+    color: $color-investimento; 
+    
+    margin-bottom: 25px;
+    line-height: 100%; 
+}
+
+.btn-saiba-mais {
+    font-family: 'Roboto', sans-serif; 
+    font-weight: $color-btn-saiba-weight; 
+    font-size: $color-btn-saiba-size; 
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: $color-btn-saiba; 
+
+    margin-top: 30px; 
+    margin-left: 10rem; 
+    
+    border: 1px solid $color-btn-saiba-border;
+    background-color: $color-btn-saiba-bg;
+    padding: 8px 20px;
+    border-radius: 0.9rem;
+    text-decoration: none;
+    
+    transition: all 0.2s ease-out;
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.1); 
+    
+    display: inline-flex;
+    align-items: center; 
+    
+    &amp;:hover {
+        background-color: $color-btn-saiba-hover;
+        
+        transform: translateY(-3px); 
+        box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.15); 
+    }
+    
+    i {
+        margin-left: 8px;
+        font-size: 18px;
+        
+        transition: transform 0.2s ease-out;
+    }
+    
+    &amp;:hover i {
+        transform: translateX(4px); 
+    }
+}
+
+// DISCLAMER FINAL (AJUSTADO COM BORDER-BOTTOM)
+.small-info {
+    font-family: 'Roboto', sans-serif;
+    font-weight: $small-info-weight; 
+    font-size: $small-info-size; 
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: $small-info-text-color; 
+    
+    text-align: center;
+    padding-right: 0; 
+    
+    margin-top: 20px;
+    display: block;
+    
+    /* NOVO: Borda inferior para separar o disclaimer */
+    border-bottom: 1px solid $small-info-border; 
+    padding-top: 5px; 
+    padding-bottom: 10px; /* Espaço entre o texto e a linha */
+    
+    max-width: 1200px;
+    margin: 20px auto 0 auto; 
+    
+    &amp;::before {
+        content: "!"; 
+        font-family: 'Roboto', sans-serif;
+        font-weight: 700; 
+        font-size: 0.9em; 
+        
+        color: $small-info-icon-color;
+        border: 1px solid $small-info-icon-color;
+        
+        border-radius: 50%;
+        
+        display: inline-block;
+        width: 1.5em; 
+        height: 1.5em;
+        line-height: 1.5em;
+        text-align: center;
+        
+        margin-right: 8px;
+        
+        vertical-align: middle;
+        position: relative;
+        top: -1px; 
+    }
+}
+
+// ===============================================
+// MEDIA QUERY (RESPONSIVIDADE)
+// ===============================================
+
+@media (max-width: 991px) {
+    .banner-container {
+        padding: 20px;
+    }
+    
+    .content-wrapper {
+        flex-direction: column;
+        max-width: none;
+        padding: 20px 0; 
+        margin-bottom: 20px;
+    }
+    
+    .small-info {
+        max-width: none;
+        margin: 0;
+        padding-right: 0;
+        text-align: center; 
+        
+        font-size: 14px; 
+        
+        &amp;::before {
+             width: 1.2em;
+             height: 1.2em;
+             line-height: 1.2em;
+        }
+    }
+    
+    .text-section {
+        padding-right: 0;
+        padding-bottom: 20px;
+        text-align: center; 
+    }
+    
+    .image-section {
+        order: -1;
+        .banner-image {
+            width: 150px;
+            margin: 0 auto 20px auto;
+        }
+    }
+    
+    h1 {
+        font-size: 32px;
+    }
+    
+    .valor {
+        font-size: 60px;
+    }
+    
+    .investimento {
+        font-size: 16px;
+    }
+    
+    .btn-saiba-mais {
+        font-size: 16px;
+        margin-top: 15px; 
+        margin-left: 0 !important; 
+        margin-right: 0;
+        display: inline-flex;
+    }
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>celebramos_banner</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Celebramos Banner</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+
+    // Dados da Tagline
+    data.tagline_text = gs.getMessage("Mais que números, transformações");
+    data.tagline_icon = "x_sded9_portal_t_0.currency.png";
+    data.tagline_icon_alt = gs.getMessage("Ícone de moeda");
+
+    // Dados Principais
+    data.titulo = gs.getMessage("Celebramos 1390 instrumentos de Política Pública em 2024");
+    data.valor_principal = gs.getMessage("R$ 152 Milhões");
+    data.investimento_descricao = gs.getMessage("Em investimento promovendo melhorias significativas na qualidade de vida dos cidadãos, somando um total de R$ 152.155.357,13");
+
+    // Dados do Botão "Saiba Mais"
+    data.btn_text = gs.getMessage("Saiba mais");
+    data.btn_link = "#"; // URL para onde o botão deve levar
+    data.btn_icon = "fa fa-long-arrow-right";
+
+    // Imagem Principal
+    data.imagem_principal = "x_sded9_portal_t_0.celebramosBanner.png";
+    data.imagem_principal_alt = gs.getMessage("Mulher sorrindo");
+
+    // Disclaimer
+    data.disclaimer = gs.getMessage("Os números informados referem-se ao exercício de 2024");
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-10-24 02:58:37</sys_created_on>
+        <sys_id>a9d1d1d9fb303e50f6d5f9d38eefdc8d</sys_id>
+        <sys_mod_count>56</sys_mod_count>
+        <sys_name>Celebramos Banner</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_a9d1d1d9fb303e50f6d5f9d38eefdc8d</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-10-25 04:52:36</sys_updated_on>
+        <template><![CDATA[<div class="banner-container">
+    
+    <div class="row content-wrapper">
+        
+        <div class="text-section">
+            <p class="tagline">
+                <img ng-src="{{data.tagline_icon}}" alt="{{data.tagline_icon_alt}}" class="tagline-icon">
+                {{data.tagline_text}}
+            </p>
+            
+            <h1>{{data.titulo}}</h1>
+            
+            <p class="valor">{{data.valor_principal}}</p>
+            
+            <p class="investimento">
+                {{data.investimento_descricao}}
+            </p>
+            
+            <a href="{{data.btn_link}}" class="btn-saiba-mais">
+                {{data.btn_text}} <i class="{{data.btn_icon}}"></i>
+            </a>
+        </div>
+        
+        <div class="image-section">
+            <img ng-src="{{data.imagem_principal}}" alt="{{data.imagem_principal_alt}}" class="banner-image">
+        </div>
+        
+    </div>
+    
+    <p class="small-info">{{data.disclaimer}}</p>
+    
+</div>]]></template>
+    </sp_widget>
+</record_update>
