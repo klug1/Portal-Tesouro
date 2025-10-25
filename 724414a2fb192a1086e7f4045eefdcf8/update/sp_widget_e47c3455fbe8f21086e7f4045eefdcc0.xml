@@ -1,0 +1,1417 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function($scope, $interval, $window, $timeout, $rootScope) { // Adicionado $timeout
+   
+	 var c = this;
+	  
+	  // Escuta o evento emitido
+$rootScope.$on('sp.contrast.toggled', function(event, data) {
+	console.log('Contraste alterado:', data.enabled);
+  // Pega o container principal do carrossel
+  var viewport = document.querySelector('.card-viewport');
+	var statCards  = document.querySelectorAll('.stat-card');
+	var mainTitle = document.querySelector('.main-title');
+	var subTitle = document.querySelector('.sub-title');
+	var btnMore = document.querySelector('.btn-more');
+	var indicadoresPontos = document.querySelectorAll('.indicadoresPontos');
+	var badge = document.querySelector('.badge-cat');
+	var bannerBg = document.querySelector('.banner-bg');
+	var bannerOverlay = document.querySelector('.banner-overlay');
+  if (!viewport) return;
+
+  if (data.enabled) {
+    viewport.classList.add('high-contrast');
+		 statCards.forEach(function(card) {
+      card.classList.add('high-contrast');
+    });
+		mainTitle.classList.add('high-contrast');
+		subTitle.classList.add('high-contrast');
+		btnMore.classList.add('high-contrast');
+
+		indicadoresPontos.forEach(function(card) {
+      card.classList.add('high-contrast');
+    });
+			badge.classList.add('high-contrast');
+			
+		// Trocar imagem de fundo para modo contraste
+		if (bannerBg) {
+			bannerBg.style.backgroundImage = "url('/x_sded9_portal_t_0.imgContrastbanner.png')";
+		}
+		
+		// Adicionar classe high-contrast ao overlay
+		if (bannerOverlay) {
+			bannerOverlay.classList.add('high-contrast');
+		}
+		
+  } else {
+    viewport.classList.remove('high-contrast');
+		statCards.forEach(function(card) {
+      card.classList.remove('high-contrast');
+    });
+		mainTitle.classList.remove('high-contrast');
+		subTitle.classList.remove('high-contrast');
+		btnMore.classList.remove('high-contrast');
+		
+		indicadoresPontos.forEach(function(card) {
+      card.classList.remove('high-contrast');
+    });
+			badge.classList.remove('high-contrast');
+			
+		// Voltar para imagem de fundo normal
+		if (bannerBg) {
+			bannerBg.style.backgroundImage = "url('/x_sded9_portal_t_0.img_sefaz.png')";
+		}
+		
+		// Remover classe high-contrast do overlay
+		if (bannerOverlay) {
+			bannerOverlay.classList.remove('high-contrast');
+		}
+  }
+});
+
+
+	/*===============================*/
+	var autoRotateInterval;
+
+    // Dados unificados para todos os cards
+    $scope.cardData = [
+        {
+            id: 1,
+            badge_icon: "fa-solid fa-medal",
+            badge_text: "DESTAQUE NACIONAL",
+            title: "NOTA A",
+            subtitle: "EM GESTÃO FISCAL NO PAÍS",
+            description: "Melhor classificação entre os estados brasileiros"
+        },
+        {
+            id: 2,
+            badge_icon: "fa-chart-line",
+            badge_text: "MAIOR REDUÇÃO DO BRASIL",
+            title: "-4,77 bi",
+            subtitle: "REDUÇÃO DA DÍVIDA PÚBLICA",
+            description: "A menor dívida líquida do país"
+        },
+        {
+            id: 3,
+            badge_icon: "fa-plus-circle",
+            badge_text: "SOLIDEZ FISCAL",
+            title: "Top 2",
+            subtitle: "EM SOLIDEZ FISCAL NO PAÍS",
+            description: "2º melhor Estado do Brasil em solidez fiscal"
+        },
+        {
+            id: 4,
+            badge_icon: "fa-solid fa-money-bill-trend-up",
+            badge_text: "CONTROLE DE EMPENHO",
+            title: "R$ 39 BI",
+            subtitle: "EM EMPENHOS EFETIVADOS",
+            description: "Controle total do volume das despesas realizadas pelo Estado"
+        }
+    ];
+
+    $scope.activeIndex = 0;
+    $scope.sideCards = [];
+
+    // Função para atualizar os cards da direita
+    $scope.updateSideCards = function() {
+        $scope.sideCards = [];
+        
+        // Obter os próximos 3 cards após o ativo (com loop circular)
+        for (var i = 1; i <= 3; i++) {
+            var index = ($scope.activeIndex + i) % $scope.cardData.length;
+            $scope.sideCards.push($scope.cardData[index]);
+        }
+    };
+
+    // Função para determinar a classe de cada card no carrossel principal
+    $scope.getCardClass = function(index) {
+        if (index === $scope.activeIndex) {
+            return 'is-main';
+        } else if ((index - $scope.activeIndex + $scope.cardData.length) % $scope.cardData.length === 1) {
+            return 'is-side-1';
+        } else if ((index - $scope.activeIndex + $scope.cardData.length) % $scope.cardData.length === 2) {
+            return 'is-side-2';
+        } else if ((index - $scope.activeIndex + $scope.cardData.length) % $scope.cardData.length === 3) {
+            return 'is-side-3';
+        } else {
+            return 'is-hidden';
+        }
+    };
+
+    // Nova função centralizada para trocar de slide
+    $scope.changeSlide = function(newIndex) {
+        // 1. Identificar o card que está saindo (o atual principal)
+        var outgoingCard = $scope.cardData[$scope.activeIndex];
+        // 2. Marcar esse card para animação
+        outgoingCard.shouldAnimate = true;
+
+        // 3. Atualizar o índice ativo
+        $scope.activeIndex = newIndex;
+        // 4. Atualizar a lista de cards da direita
+        $scope.updateSideCards();
+
+        // 5. Limpar a flag de animação após um curto período
+        // Isso garante que a animação só ocorra uma vez
+        $timeout(function() {
+            outgoingCard.shouldAnimate = false;
+        }, 1000); // Tempo deve ser >= duração da animação CSS
+    };
+
+    $scope.goToCard = function(index) {
+        $scope.changeSlide(index);
+    };
+
+    $scope.nextSlide = function() {
+        var newIndex = ($scope.activeIndex + 1) % $scope.cardData.length;
+        $scope.changeSlide(newIndex);
+    };
+
+    $scope.prevSlide = function() {
+        var newIndex = ($scope.activeIndex - 1 + $scope.cardData.length) % $scope.cardData.length;
+        $scope.changeSlide(newIndex);
+    };
+
+    // Nova função para lidar com cliques nos cards da direita
+    $scope.goToSideCard = function(index) {
+        var targetIndex = ($scope.activeIndex + index + 1) % $scope.cardData.length;
+        $scope.goToCard(targetIndex);
+    };
+
+    // Função para abrir o link "Saiba mais" do card principal
+    $scope.openMoreInfo = function(event) {
+        event.stopPropagation();
+        var instanceName = window.location.hostname.split('.')[0];
+        var url = 'https://' + instanceName + '.service-now.com/sate?id=404_sefaz';
+        $window.open(url, '_blank');
+    };
+
+    // Rotação Automática
+    function startAutoRotate() {
+        stopAutoRotate();
+        autoRotateInterval = $interval(function() {
+            $scope.nextSlide();
+        }, 5000);
+    }
+
+    function stopAutoRotate() {
+        if (angular.isDefined(autoRotateInterval)) {
+            $interval.cancel(autoRotateInterval);
+            autoRotateInterval = undefined;
+        }
+    }
+    
+    $scope.pauseAutoRotate = function() {
+        stopAutoRotate();
+    };
+
+    $scope.resumeAutoRotate = function() {
+        startAutoRotate();
+    };
+
+    // Inicializar os cards da direita
+    $scope.updateSideCards();
+
+    startAutoRotate();
+
+    $scope.$on('$destroy', function() {
+        stopAutoRotate();
+    });
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>/* === Adiciona Font Awesome para ícones === */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css');
+@font-face {
+  font-family: 'Roboto Flex';
+  /* src: url('...'); */
+  font-weight: 400;
+  font-style: normal;
+}
+/* === Container Principal e Reset === */
+.mt-fiscal-banner {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  font-family: "Roboto Flex", Arial, sans-serif;
+  color: white;
+  z-index: 5;
+  margin-top: -24px
+}
+
+.mt-fiscal-banner * {
+  box-sizing: border-box;
+  font-family: 'Roboto Flex', sans-serif !important;
+}
+
+/* === Fundo e Gradiente === */
+.mt-fiscal-banner .banner-bg {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background-image: url('/x_sded9_portal_t_0.img_sefaz.png');
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+.mt-fiscal-banner .banner-overlay {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: radial-gradient(circle, rgba(16, 51, 117, 0.85) 0%, rgba(8, 25, 66, 0.95) 100%);
+  z-index: 2;
+}
+
+.mt-fiscal-banner .banner-overlay.high-contrast {
+  background: radial-gradient(circle, rgba(2, 2, 2, 0.55) 0%, rgba(0, 0, 0, 0.95) 100%) !important;
+}
+
+/* === Layout Flexbox === */
+.mt-fiscal-banner .main-content {
+  position: relative; z-index: 10; height: 100%;
+  display: flex; align-items: center; padding: 0 4%;
+  gap: 2%;
+}
+
+.mt-fiscal-banner .left-column {
+  flex-basis: 60%;
+  display: flex; flex-direction: column; justify-content: center;
+}
+
+.mt-fiscal-banner .right-column {
+  flex-basis: 15%;
+  display: flex; flex-direction: column; justify-content: center;
+  gap: 16px;
+}
+
+/* Animação para os cards da direita */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+.mt-fiscal-banner .stat-card.animate-in {
+  animation: slideInRight 0.5s ease forwards;
+}
+
+.mt-fiscal-banner .stat-card.animate-out {
+  animation: slideOutLeft 0.5s ease forwards;
+}
+
+
+@media screen and (max-width: 1600px) {
+  .mt-fiscal-banner .main-content,
+  .mt-fiscal-banner.high-contrast .main-content {
+    padding: 20px 2%;
+  }
+  
+  .mt-fiscal-banner .left-column,
+  .mt-fiscal-banner.high-contrast .left-column {
+    flex-basis: 65%;
+  }
+  
+  .mt-fiscal-banner .right-column,
+  .mt-fiscal-banner.high-contrast .right-column {
+    flex-basis: 30%;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .mt-fiscal-banner,
+  .mt-fiscal-banner.high-contrast {
+    height: 500px;
+  }
+  
+  .mt-fiscal-banner .main-content,
+  .mt-fiscal-banner.high-contrast .main-content {
+    padding: 15px 1%;
+    position: relative;
+    z-index: 10;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 4%;
+    gap: 2%;
+  }
+  
+  .mt-fiscal-banner .left-column,
+  .mt-fiscal-banner.high-contrast .left-column {
+    flex-basis: 100%;
+    margin-bottom: -25px;
+  }
+  
+  .mt-fiscal-banner .right-column,
+  .mt-fiscal-banner.high-contrast .right-column {
+    display: none; /* Oculta os cards da direita em telas menores */
+  }
+  
+  .mt-fiscal-banner .card-viewport,
+  .mt-fiscal-banner.high-contrast .card-viewport {
+    height: 220px;
+  }
+  
+  .mt-fiscal-banner .info-card,
+  .mt-fiscal-banner.high-contrast .info-card {
+    padding: 20px 25px;
+  }
+  
+  /* Garante que apenas o card principal seja visível */
+  .mt-fiscal-banner .info-card:not(.is-main),
+  .mt-fiscal-banner.high-contrast .info-card:not(.is-main) {
+    display: none;
+  }
+  
+  .mt-fiscal-banner .main-title,
+  .mt-fiscal-banner.high-contrast .main-title {
+    font-size: 3rem;
+  }
+  
+  .mt-fiscal-banner .sub-title,
+  .mt-fiscal-banner.high-contrast .sub-title {
+    font-size: 1.4rem;
+  }
+  
+  .mt-fiscal-banner .banner-header,
+  .mt-fiscal-banner.high-contrast .banner-header {
+    margin-left: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .mt-fiscal-banner .indicators,
+  .mt-fiscal-banner.high-contrast .indicators {
+    padding-left: 0;
+    justify-content: center;
+    margin-top: 30px;
+  }
+}
+
+/* Correção específica para o range 481px-769px para evitar texto cortado */
+@media screen and (min-width: 481px) and (max-width: 769px) {
+  .mt-fiscal-banner .main-title,
+  .mt-fiscal-banner.high-contrast .main-title {
+    font-size: 2.8rem;
+    line-height: 1.1;
+  }
+  
+  .mt-fiscal-banner .sub-title,
+  .mt-fiscal-banner.high-contrast .sub-title {
+    font-size: 1.3rem;
+    line-height: 1.2;
+  }
+  
+  .mt-fiscal-banner .banner-header,
+  .mt-fiscal-banner.high-contrast .banner-header {
+    margin-left: 15px;
+    margin-bottom: 25px;
+  }
+  
+  .mt-fiscal-banner,
+  .mt-fiscal-banner.high-contrast {
+    height: 520px; /* Aumenta ligeiramente a altura para acomodar melhor o texto */
+  }
+  
+  /* High-contrast rules for 481px-769px */
+  .mt-fiscal-banner .main-title.high-contrast,
+  .mt-fiscal-banner .sub-title.high-contrast {
+    //color: #000000 !important;
+  }
+  
+  .mt-fiscal-banner .badge-cat.high-contrast {
+    background-color: #838383 !important;
+    color: black !important;
+  }
+  
+  .mt-fiscal-banner .badge-cat.high-contrast .yellow {
+    color: white !important;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .mt-fiscal-banner,
+  .mt-fiscal-banner.high-contrast {
+    height: 450px;
+  }
+  
+  .mt-fiscal-banner .main-content,
+  .mt-fiscal-banner.high-contrast .main-content {
+    padding: 10px 1%;
+  }
+  
+  .mt-fiscal-banner .left-column,
+  .mt-fiscal-banner.high-contrast .left-column {
+    flex-basis: 100%;
+    margin-bottom: 90px;
+  }
+  
+  .mt-fiscal-banner .right-column,
+  .mt-fiscal-banner.high-contrast .right-column {
+    display: none; /* Oculta os cards da direita */
+  }
+  
+  .mt-fiscal-banner .card-viewport,
+  .mt-fiscal-banner.high-contrast .card-viewport {
+    height: 200px;
+  }
+  
+  .mt-fiscal-banner .info-card,
+  .mt-fiscal-banner.high-contrast .info-card {
+    padding: 15px 20px;
+  }
+  
+  /* Garante que apenas o card principal seja visível */
+  .mt-fiscal-banner .info-card:not(.is-main),
+  .mt-fiscal-banner.high-contrast .info-card:not(.is-main) {
+    display: none;
+  }
+  
+  .mt-fiscal-banner .nav-btn,
+  .mt-fiscal-banner.high-contrast .nav-btn {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .mt-fiscal-banner .main-title,
+  .mt-fiscal-banner.high-contrast .main-title {
+    font-size: 2.8rem;
+  }
+  
+  .mt-fiscal-banner .sub-title,
+  .mt-fiscal-banner.high-contrast .sub-title {
+    font-size: 1.3rem;
+  }
+  
+  .mt-fiscal-banner .badge-cat,
+  .mt-fiscal-banner.high-contrast .badge-cat {
+    font-size: 1.5rem;
+    padding: 6px 12px;
+  }
+  
+  .mt-fiscal-banner .indicators,
+  .mt-fiscal-banner.high-contrast .indicators {
+    padding-left: 0;
+    justify-content: center;
+    margin-top: 25px;
+  }
+  
+  /* Regra específica para mover botão "Saiba mais" para baixo nos cards "-4,77 bi" e "top 2" */
+  .mt-fiscal-banner .info-card .btn-more,
+  .mt-fiscal-banner.high-contrast .info-card .btn-more {
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+}
+
+/* === Cabeçalho === */
+.mt-fiscal-banner .banner-header {
+  margin-bottom: 30px;
+  background: transparent !important;
+  margin-left: 48px;
+}
+
+.mt-fiscal-banner .main-title,
+.mt-fiscal-banner .sub-title {
+  color: white !important;
+}
+
+.mt-fiscal-banner .main-title {
+  font-size: 5rem; font-weight: 900; margin: 0; line-height: 1; text-transform: uppercase;
+}
+.mt-fiscal-banner .sub-title {
+  font-size: 2.2rem; font-weight: normal; margin: 5px 0 15px 0; opacity: 0.9;
+}
+.mt-fiscal-banner .badge-cat {
+  display: inline-block; background-color: #808bb8;
+  padding: 8px 15px; border-radius: 8px; font-weight: 700;
+  font-size: 1.9rem;
+}
+.mt-fiscal-banner .yellow { color: #f0f32e; }
+
+/* === Carrossel === */
+.mt-fiscal-banner .carousel-wrapper {
+  display: flex; align-items: center; max-width: 550px;
+}
+.mt-fiscal-banner .nav-btn {
+  background: transparent; border: 2px solid rgba(255,255,255,0.8);
+  color: white; width: 45px; height: 45px; border-radius: 50%;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: all 0.3s; flex-shrink: 0;
+  position: relative;
+}
+.mt-fiscal-banner .nav-btn:hover { background: rgba(255,255,255,0.2); }
+.mt-fiscal-banner .nav-btn.prev { 
+  z-index: 20;
+}
+.mt-fiscal-banner .nav-btn.next { 
+  z-index: 20;
+}
+.mt-fiscal-banner .card-viewport {
+  flex-grow: 1; position: relative; height: 330px;
+}
+
+/* === Cartões com Animações === */
+.mt-fiscal-banner .info-card {
+  background: white; color: #333; border-radius: 25px;
+  padding: 30px 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  transition: all 0.7s cubic-bezier(0.25, 0.8, 0.25, 1);
+  z-index: 1;
+  opacity: 0;
+  transform: scale(0.9) translateY(20px);
+  display: flex;
+  flex-direction: column;
+}
+
+.mt-fiscal-banner .info-card.is-main {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  z-index: 3;
+}
+
+.mt-fiscal-banner .info-card.is-hidden {
+  opacity: 0;
+  transform: scale(0.8) translateX(-100px);
+  z-index: 0;
+  display: none; /* Esconde completamente os cards ocultos */
+}
+
+.mt-fiscal-banner .info-card.is-side-1 {
+  opacity: 0.8;
+  transform: scale(0.9) translateY(10px);
+  z-index: 2;
+}
+
+.mt-fiscal-banner .info-card.is-side-2 {
+  opacity: 0.7;
+  transform: scale(0.85) translateY(20px);
+  z-index: 1;
+}
+
+.mt-fiscal-banner .info-card.is-side-3 {
+  opacity: 0.6;
+  transform: scale(0.8) translateY(30px);
+  z-index: 0;
+}
+
+/* === Conteúdo Interno do Card Principal === */
+.mt-fiscal-banner .card-badge {
+  background-color: #1a4b8c; color: white; padding: 6px 12px;
+  border-radius: 10px; font-size: 1.0rem; display: inline-flex;
+  align-items: center; margin-bottom: 15px;
+  max-width: 194px;
+}
+.mt-fiscal-banner .card-badge i { margin-right: 8px; font-size: 1.1em; }
+.mt-fiscal-banner .card-title {
+  font-size: 5rem; font-weight: 900; line-height: 1.1; color: #03237e;
+  margin: 10px 0;
+}
+.mt-fiscal-banner .card-subtitle {
+  font-size: 1.8rem; font-weight: bold; color: #2c4894; margin-top: 5px;
+  text-transform: uppercase;
+}
+.mt-fiscal-banner .card-desc {
+  font-size: 1.6rem; color: #7380c7; margin: -6px 0 25px 0;
+}
+/* === .mt-fiscal-banner .text-blue { color: #1d4e9e !important; } === */
+.mt-fiscal-banner .btn-more {
+  background: transparent; border: 1px solid #c9d5e3; color: #3b6cb9;
+  padding: 10px 25px; border-radius: 5px; cursor: pointer;
+  transition: all 0.3s; font-weight: bold;
+  margin-top: auto;
+  align-self: flex-start;
+}
+.mt-fiscal-banner .btn-more:hover { 
+  background: #f7faff; 
+  color: #4773C6;
+}
+.mt-fiscal-banner .btn-more.small {
+  padding: 5px 12px; font-size: 0.7rem; width: auto; margin: 0 auto;
+  display: inline-block;
+}
+.mt-fiscal-banner .indicators {
+  display: flex;
+  margin-top: 20px; padding-left: 246px;
+}
+.mt-fiscal-banner .indicators span {
+  width: 9px; height: 9px; border-radius: 50%; background: rgba(255,255,255,0.4);
+  margin: 0 4px; cursor: pointer; transition: all 0.3s;
+}
+.mt-fiscal-banner .indicators span.active { background: white; }
+
+/* === Estilos para os cards da direita === */
+.mt-fiscal-banner .stat-card {
+  background: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  overflow: hidden;
+  transition: all 0.7s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: pointer;
+  opacity: 0;
+  transform: scale(0.9) translateY(20px);
+}
+
+.mt-fiscal-banner .stat-card.visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  max-height: 188px;
+}
+
+.mt-fiscal-banner .stat-card.hidden {
+  opacity: 0;
+  transform: scale(0.8) translateY(30px);
+}
+
+.mt-fiscal-banner .stat-header {
+  padding: 10px 15px;
+  margin: 10px 15px 5px -5px;
+  width: calc(100% - 30px);
+}
+
+.mt-fiscal-banner .stat-badge {
+  background-color: #1a4b8c; color: white; padding: 6px 12px;
+  border-radius: 10px; font-size: 0.8rem; display: inline-flex;
+  align-items: center;
+}
+.mt-fiscal-banner .stat-badge i { margin-right: 8px; font-size: 1.1em; }
+
+.mt-fiscal-banner .stat-body {
+  padding: 5px 15px 15px;
+  text-align: center;
+}
+
+.mt-fiscal-banner .stat-value {
+  color: #0a2674; font-size: 2.5rem; font-weight: 900;
+  margin: 5px 0;
+  text-align: left;
+  transform: translate(0px, -26px);
+}
+
+.mt-fiscal-banner .stat-title {
+  color: #405593; font-size: 1.2rem; font-weight: bold;
+  margin: 5px 0;
+  text-transform: uppercase;
+  text-align: left;
+  transform: translate(0px, -26px);
+}
+
+.mt-fiscal-banner .stat-desc-small {
+  color: #98a1d1; font-size: 0.95rem; margin-top: 3px;
+  margin-bottom: 10px;
+  text-align: left;
+  transform: translate(0px, -33px);
+}
+
+.mt-fiscal-banner .btn-more.small {
+  padding: 5px 12px; font-size: 0.7rem; width: auto; margin: 0 auto;
+  display: inline-block;
+  background: transparent; border: 1px solid #c9d5e3; color: #3b6cb9;
+  border-radius: 5px; cursor: pointer;
+  transition: all 0.3s; font-weight: bold;
+  transform: translate(0px, -16px);
+}
+.mt-fiscal-banner .btn-more.small:hover { background: #f7faff; }
+
+/* === Rodapé === */
+.mt-fiscal-banner .image-credit {
+  position: absolute; bottom: 10px; right: 20px;
+  font-size: 0.7rem; color: rgba(255,255,255,0.5); z-index: 20;
+}
+
+@media screen and (max-width: 480px) {
+  .mt-fiscal-banner,
+  .mt-fiscal-banner.high-contrast {
+    height: 420px;
+    font-size: 5px
+  }
+  
+  .mt-fiscal-banner .main-content,
+  .mt-fiscal-banner.high-contrast .main-content {
+    flex-direction: column;
+    padding: 10px 2%;
+  }
+  
+  .mt-fiscal-banner .left-column,
+  .mt-fiscal-banner.high-contrast .left-column {
+    flex-basis: 100%;
+  }
+  
+  .mt-fiscal-banner .right-column,
+  .mt-fiscal-banner.high-contrast .right-column {
+    display: none; /* Oculta os cards da direita */
+  }
+  
+  /* Garante que apenas o card principal seja visível */
+  .mt-fiscal-banner .info-card:not(.is-main),
+  .mt-fiscal-banner.high-contrast .info-card:not(.is-main) {
+    display: none;
+  }
+  
+  .mt-fiscal-banner .main-title,
+  .mt-fiscal-banner.high-contrast .main-title {
+    font-size: 2.5rem;
+  }
+  
+  .mt-fiscal-banner .sub-title,
+  .mt-fiscal-banner.high-contrast .sub-title {
+    font-size: 1.2rem;
+  }
+  
+  .mt-fiscal-banner .badge-cat,
+  .mt-fiscal-banner.high-contrast .badge-cat {
+    font-size: 1.2rem;
+    padding: 5px 10px;
+  }
+  
+  .mt-fiscal-banner .banner-header,
+  .mt-fiscal-banner.high-contrast .banner-header {
+    margin-left: 5px;
+    margin-bottom: 15px;
+  }
+  
+  .mt-fiscal-banner .card-title,
+  .mt-fiscal-banner.high-contrast .card-title {
+    font-size: 3rem;
+    transform: translate(0px, -22px);
+  }
+  
+  .mt-fiscal-banner .card-subtitle,
+  .mt-fiscal-banner.high-contrast .card-subtitle {
+    font-size: 1.2rem;
+    transform: translate(0px, -27px);
+  }
+  
+  .mt-fiscal-banner .card-desc,
+  .mt-fiscal-banner.high-contrast .card-desc {
+    font-size: 1.2rem;
+    transform: translate(0px, -26px);
+  }
+  
+  .mt-fiscal-banner .info-card,
+  .mt-fiscal-banner.high-contrast .info-card {
+    padding: 15px 30px;
+    //font-size: 10px;
+  }
+  
+  .mt-fiscal-banner .card-viewport,
+  .mt-fiscal-banner.high-contrast .card-viewport {
+    height: 190px;
+  }
+  
+  .mt-fiscal-banner .nav-btn,
+  .mt-fiscal-banner.high-contrast .nav-btn {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .mt-fiscal-banner .indicators,
+  .mt-fiscal-banner.high-contrast .indicators {
+    margin-top: 15px;
+    padding-left: 0;
+    justify-content: center;
+  }
+  
+  /* Regra específica para mover botão "Saiba mais" para baixo nos cards "-4,77 bi" e "top 2" */
+  .mt-fiscal-banner .info-card .btn-more,
+  .mt-fiscal-banner.high-contrast .info-card .btn-more {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    transform: translate(23px, 0px);
+    font-size: 1rem;
+  }
+  
+  /* High-contrast rules for 480px */
+  .mt-fiscal-banner .main-title.high-contrast,
+  .mt-fiscal-banner .sub-title.high-contrast {
+    //color: #000000 !important;
+  }
+  
+  .mt-fiscal-banner .badge-cat.high-contrast {
+    background-color: #838383 !important;
+    color: black !important;
+  }
+  
+  .mt-fiscal-banner .badge-cat.high-contrast .yellow {
+    color: white !important;
+  }
+  
+  .mt-fiscal-banner .card-viewport.high-contrast .info-card {
+    background-color: #fff !important;
+    color: #484848 !important;
+  }
+  
+  .mt-fiscal-banner .card-viewport.high-contrast .card-badge {
+    background-color: #838383 !important;
+    color: white !important;
+  }
+  
+  .mt-fiscal-banner .card-viewport.high-contrast .btn-more {
+    background-color: transparent !important;
+    color: #484848 !important;
+    border-color: #484848 !important;
+    margin-top: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .mt-fiscal-banner .indicadoresPontos.high-contrast {
+    background-color: #fff !important;
+    border: 1px solid #aaa !important;
+  }
+  
+  .mt-fiscal-banner .indicadoresPontos.high-contrast.active {
+    background-color: #888 !important;
+    border: 1px solid #555 !important;
+  }
+}
+
+/* === Media Queries para Dispositivos Móveis Pequenos === */
+@media screen and (max-width: 375px) {
+  .mt-fiscal-banner,
+  .mt-fiscal-banner.high-contrast {
+    height: 420px;
+    font-size: 5px
+  }
+  
+  .mt-fiscal-banner .right-column,
+  .mt-fiscal-banner.high-contrast .right-column {
+    display: none; /* Oculta os cards da direita */
+  }
+  
+  /* Garante que apenas o card principal seja visível */
+  .mt-fiscal-banner .info-card:not(.is-main),
+  .mt-fiscal-banner.high-contrast .info-card:not(.is-main) {
+    display: none;
+  }
+  
+  .mt-fiscal-banner .main-title,
+  .mt-fiscal-banner.high-contrast .main-title {
+    font-size: 2.2rem;
+  }
+  
+  .mt-fiscal-banner .sub-title,
+  .mt-fiscal-banner.high-contrast .sub-title {
+    font-size: 1rem;
+  }
+  
+    .mt-fiscal-banner .card-badge,
+    .mt-fiscal-banner.high-contrast .card-badge {
+      font-size: 7px;
+  }
+  
+  .mt-fiscal-banner .badge-cat,
+  .mt-fiscal-banner.high-contrast .badge-cat {
+    font-size: 1rem;
+    padding: 4px 8px;
+  }
+  
+  .mt-fiscal-banner .card-title,
+  .mt-fiscal-banner.high-contrast .card-title {
+    font-size: 1.5rem;
+    transform: translate(0px, -16px);
+  }
+  
+  .mt-fiscal-banner .card-subtitle,
+  .mt-fiscal-banner.high-contrast .card-subtitle {
+    font-size: 1rem;
+    transform: translate(0px, -17px);
+  }
+  
+  .mt-fiscal-banner .card-desc,
+  .mt-fiscal-banner.high-contrast .card-desc {
+    font-size: 1rem;
+    margin: 10px 0 15px 0;
+    transform: translate(0px, -29px);
+  }
+  
+  .mt-fiscal-banner .card-viewport,
+  .mt-fiscal-banner.high-contrast .card-viewport {
+    height: 160px;
+  }
+  
+  .mt-fiscal-banner .indicators,
+  .mt-fiscal-banner.high-contrast .indicators {
+    padding-left: 0;
+    justify-content: center;
+  }
+  
+  /* Regra específica para mover botão "Saiba mais" para baixo nos cards "-4,77 bi" e "top 2" */
+  .mt-fiscal-banner .info-card .btn-more,
+  .mt-fiscal-banner.high-contrast .info-card .btn-more {
+    margin-top: 25px;
+    margin-bottom: 20px;
+    transform: translate(15px, 0px);
+  }
+  
+  /* High-contrast rules for 375px */
+  .mt-fiscal-banner .main-title.high-contrast,
+  .mt-fiscal-banner .sub-title.high-contrast {
+    //color: #000000 !important;
+  }
+  
+  .mt-fiscal-banner .badge-cat.high-contrast {
+    background-color: #838383 !important;
+    color: black !important;
+  }
+  
+  .mt-fiscal-banner .badge-cat.high-contrast .yellow {
+    color: white !important;
+  }
+  
+  .mt-fiscal-banner .card-viewport.high-contrast .info-card {
+    background-color: #fff !important;
+    color: #484848 !important;
+  }
+  
+  .mt-fiscal-banner .card-viewport.high-contrast .card-badge {
+    background-color: #838383 !important;
+    color: white !important;
+  }
+  
+  .mt-fiscal-banner .card-viewport.high-contrast .btn-more {
+    background-color: transparent !important;
+    color: #484848 !important;
+    border-color: #484848 !important;
+    margin-top: 25px;
+    margin-bottom: 20px;
+  }
+  
+  .mt-fiscal-banner .indicadoresPontos.high-contrast {
+    background-color: #fff !important;
+    border: 1px solid #aaa !important;
+  }
+  
+  .mt-fiscal-banner .indicadoresPontos.high-contrast.active {
+    background-color: #888 !important;
+    border: 1px solid #555 !important;
+  }
+}
+
+/* === Media Queries para iPhone SE e Dispositivos Muito Pequenos === */
+@media screen and (max-width: 320px) {
+  .mt-fiscal-banner,
+  .mt-fiscal-banner.high-contrast {
+    height: 400px;
+  }
+  
+  .mt-fiscal-banner .right-column,
+  .mt-fiscal-banner.high-contrast .right-column {
+    display: none; /* Oculta os cards da direita */
+  }
+  
+  /* Garante que apenas o card principal seja visível */
+  .mt-fiscal-banner .info-card:not(.is-main),
+  .mt-fiscal-banner.high-contrast .info-card:not(.is-main) {
+    display: none;
+  }
+  
+  .mt-fiscal-banner .main-title,
+  .mt-fiscal-banner.high-contrast .main-title {
+    font-size: 2rem;
+  }
+  
+  .mt-fiscal-banner .sub-title,
+  .mt-fiscal-banner.high-contrast .sub-title {
+    font-size: 0.9rem;
+  }
+  
+  .mt-fiscal-banner .badge-cat,
+  .mt-fiscal-banner.high-contrast .badge-cat {
+    font-size: 0.9rem;
+    padding: 3px 6px;
+  }
+  
+  .mt-fiscal-banner .card-title,
+  .mt-fiscal-banner.high-contrast .card-title {
+    font-size: 2.2rem;
+  }
+  
+  .mt-fiscal-banner .card-subtitle,
+  .mt-fiscal-banner.high-contrast .card-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .mt-fiscal-banner .card-desc,
+  .mt-fiscal-banner.high-contrast .card-desc {
+    font-size: 0.9rem;
+    margin: 8px 0 12px 0;
+  }
+  
+  .mt-fiscal-banner .card-viewport,
+  .mt-fiscal-banner.high-contrast .card-viewport {
+    height: 190px;
+  }
+  
+  .mt-fiscal-banner .indicators,
+  .mt-fiscal-banner.high-contrast .indicators {
+    padding-left: 0;
+    justify-content: center;
+  }
+  
+  .mt-fiscal-banner .nav-btn,
+  .mt-fiscal-banner.high-contrast .nav-btn {
+    width: 25px;
+    height: 25px;
+  }
+  
+  /* Regra específica para mover botão "Saiba mais" para baixo nos cards "-4,77 bi" e "top 2" */
+  .mt-fiscal-banner .info-card .btn-more,
+  .mt-fiscal-banner.high-contrast .info-card .btn-more {
+    margin-top: 30px;
+    margin-bottom: 25px;
+    transform: translate(3px, 0px);
+  }
+  
+  /* High-contrast rules for 320px */
+  .mt-fiscal-banner .main-title.high-contrast,
+  .mt-fiscal-banner .sub-title.high-contrast {
+    //color: #000000 !important;
+  }
+  
+  .mt-fiscal-banner .badge-cat.high-contrast {
+    background-color: #838383 !important;
+    color: black !important;
+  }
+  
+  .mt-fiscal-banner .badge-cat.high-contrast .yellow {
+    color: white !important;
+  }
+  
+  .mt-fiscal-banner .card-viewport.high-contrast .info-card {
+    background-color: #fff !important;
+    color: #484848 !important;
+  }
+  
+  .mt-fiscal-banner .card-viewport.high-contrast .card-badge {
+    background-color: #838383 !important;
+    color: white !important;
+  }
+  
+  .mt-fiscal-banner .card-viewport.high-contrast .btn-more {
+    background-color: transparent !important;
+    color: #484848 !important;
+    border-color: #484848 !important;
+    margin-top: 30px;
+    margin-bottom: 25px;
+  }
+  
+  .mt-fiscal-banner .indicadoresPontos.high-contrast {
+    background-color: #fff !important;
+    border: 1px solid #aaa !important;
+  }
+  
+  .mt-fiscal-banner .indicadoresPontos.high-contrast.active {
+    background-color: #888 !important;
+    border: 1px solid #555 !important;
+  }
+}
+
+/* Animação para o card que se move para o final */
+.mt-fiscal-banner .stat-card.animate-move-to-end {
+  animation: moveToLast 0.8s ease-out;
+}
+
+@keyframes moveToLast {
+  0% {
+    transform: scale(1) translateY(0);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  }
+  50% {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  }
+}
+
+.card-viewport.high-contrast {
+  background-color: #fff !important;
+  color: #484848 !important;
+}
+
+.card-viewport.high-contrast .info-card {
+  background-color: #fff !important;
+  color: #484848 !important;
+  border-radius: 25px !important;
+  //overflow: hidden !important;
+}
+
+.card-viewport.high-contrast .info-card * {
+  background-color: transparent !important;
+  color: #484848 !important;
+}
+
+.card-viewport.high-contrast .card-badge {
+  background-color: #838383 !important;
+  color: white !important;
+}
+
+.card-viewport.high-contrast .card-badge * {
+  background-color: transparent !important;
+  color: white !important;
+}
+
+.card-viewport.high-contrast .btn-more {
+  background-color: transparent !important;
+  color: #484848 !important;
+  border-color: #484848 !important;
+}
+
+.card-viewport {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.stat-card.high-contrast {
+  background-color: #fff !important;
+  color: #484848 !important;
+}
+
+.stat-card.high-contrast .stat-badge {
+  background-color: #838383 !important;
+  color: white !important;
+}
+
+.stat-card.high-contrast .stat-badge * {
+  background-color: transparent !important;
+  color: white !important;
+}
+
+.stat-card.high-contrast * {
+  background-color: transparent !important;
+  color: #484848 !important;
+}
+
+.stat-card.high-contrast .btn-more.small {
+  background-color: transparent !important;
+  color: #484848 !important;
+  border-color: #484848 !important;
+}
+
+.stat-card.high-contrast .btn-more.small:hover {
+  background-color: #484848 !important;
+  color: white !important;
+  border-color: #484848 !important;
+}
+
+.stat-card {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+
+.card-viewport.high-contrast .btn-more:hover {
+    background-color: #484848 !important; /* força o background */
+    color: white !important; /* força a cor do texto */
+    border-color: #484848 !important;
+}
+
+/* === Indicadores no modo contraste === */
+.indicadoresPontos.high-contrast {
+  background-color: #fff !important; /* pontos brancos */
+  border: 1px solid #aaa !important; /* opcional, dá definição */
+}
+
+.indicadoresPontos.high-contrast.active {
+  background-color: #888 !important; /* ponto ativo em cinza */
+  border: 1px solid #555 !important;
+}
+
+/* ===== BADGE no modo contraste ===== */
+.badge-cat.high-contrast {
+  background-color: #838383 !important;
+  color: black !important;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+@media screen and (max-width: 320px) {
+  .mt-fiscal-banner.high-contrast .main-title,
+  .mt-fiscal-banner.high-contrast .sub-title {
+    color: #000 !important;
+    text-shadow: none !important;
+  }
+}
+
+.badge-cat.high-contrast .yellow {
+  background-color: #838383 !important; /* remove fundo amarelo */
+  color: white !important; /* mantém o texto em amarelo */
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>banner_sefaz_v2</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+
+}]]></link>
+        <name>Banner Sefaz v2</name>
+        <option_schema>[{"displayValue":"Carousel Slide","hint":"Select the slides to be displayed. Configure slide background image, title and URL on sp_carousel_slide table","name":"slides","display_value_list":[],"section":"Data","default_value":"7f6a3df2437cb110c27380a7fab8f25b,d38bf176437cb110c27380a7fab8f28d,be9b7976437cb110c27380a7fab8f2ad","label":"Slides","type":"glide_list","value":"sp_carousel_slide","ed":{"reference":"sp_carousel_slide"}},{"hint":"Title colour will be same for all slides","name":"title_colour","section":"Presentation","default_value":"#FFFFFF","label":"Title Colour","type":"string"},{"hint":"Alignment will be same for all slides","name":"alignment","section":"Presentation","default_value":"left","label":"Alignment","type":"choice","choices":[{"label":"left","value":"left"},{"label":"center","value":"center"}]}]</option_schema>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	
+	 var instanceName = gs.getProperty('instance_name');
+    //gs.addInfoMessage('Instance Name (Server): ' + instanceName);
+    data.instanceName = instanceName;
+	
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+})();
+
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>pk.aba</sys_created_by>
+        <sys_created_on>2025-10-11 15:09:02</sys_created_on>
+        <sys_id>e47c3455fbe8f21086e7f4045eefdcc0</sys_id>
+        <sys_mod_count>282</sys_mod_count>
+        <sys_name>Banner Sefaz v2</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_e47c3455fbe8f21086e7f4045eefdcc0</sys_update_name>
+        <sys_updated_by>pk.aba</sys_updated_by>
+        <sys_updated_on>2025-10-25 18:15:52</sys_updated_on>
+        <template><![CDATA[<div class="mt-fiscal-banner" ng-controller="bannerController">
+
+  <!-- Fundo e Overlay -->
+  <div class="banner-bg"></div>
+  <div class="banner-overlay"></div>
+
+  <!-- Conteúdo Principal em Grade Flex -->
+  <div class="main-content">
+
+    <!-- Lado Esquerdo: Títulos e Carrossel -->
+    <div class="left-column">
+
+      <!-- Cabeçalho -->
+      <header class="banner-header">
+        <h1 class="main-title">MATO GROSSO</h1>
+        <h2 class="sub-title">NO TESOURO NACIONAL EM GESTÃO FISCAL</h2>
+        <div class="badge-cat">CATEGORIA <span class="yellow">A+</span></div>
+      </header>
+
+      <!-- Área do Carrossel (Seta + Card + Seta) -->
+      <div class="carousel-wrapper" ng-mouseover="pauseAutoRotate()" ng-mouseleave="resumeAutoRotate()">
+
+        <!-- Botão Anterior -->
+        <button class="nav-btn prev" ng-click="prevSlide()">
+          <i class="fa fa-chevron-left"></i>
+        </button>
+
+        <!-- Container do Card Branco -->
+        <div class="card-viewport">
+          <div class="info-card" 
+               ng-repeat="card in cardData track by $index" 
+               ng-class="getCardClass($index)"
+               ng-click="goToCard($index)">
+            
+            <div class="card-badge">
+              <!-- Ícone de medalha para o card "nota A" -->
+              <svg ng-if="card.id == 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="16" height="16" style="fill: currentColor; margin-right: 8px;">
+                <path d="M320.3 192L235.7 51.1C229.2 40.3 215.6 36.4 204.4 42L117.8 85.3C105.9 91.2 101.1 105.6 107 117.5L176.6 256.6C146.5 290.5 128.3 335.1 128.3 384C128.3 490 214.3 576 320.3 576C426.3 576 512.3 490 512.3 384C512.3 335.1 494 290.5 464 256.6L533.6 117.5C539.5 105.6 534.7 91.2 522.9 85.3L436.2 41.9C425 36.3 411.3 40.3 404.9 51L320.3 192zM351.1 334.5C352.5 337.3 355.1 339.2 358.1 339.6L408.2 346.9C415.9 348 418.9 357.4 413.4 362.9L377.1 398.3C374.9 400.5 373.9 403.5 374.4 406.6L383 456.5C384.3 464.1 376.3 470 369.4 466.4L324.6 442.8C321.9 441.4 318.6 441.4 315.9 442.8L271.1 466.4C264.2 470 256.2 464.2 257.5 456.5L266.1 406.6C266.6 403.6 265.6 400.5 263.4 398.3L227.1 362.9C221.5 357.5 224.6 348.1 232.3 346.9L282.4 339.6C285.4 339.2 288.1 337.2 289.4 334.5L311.8 289.1C315.2 282.1 325.1 282.1 328.6 289.1L351 334.5z"/>
+              </svg>
+              
+              <!-- Ícone de gráfico para o card "maior redução do Brasil" -->
+              <svg ng-if="card.id == 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="16" height="16" style="fill: currentColor; margin-right: 8px;">
+                <path d="M64 64c0-17.7-14.3-32-32-32S0 46.3 0 64V400c0 44.2 35.8 80 80 80H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H80c-8.8 0-16-7.2-16-16V64zm406.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L320 210.7l-57.4-57.4c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L240 221.3l57.4 57.4c12.5 12.5 32.8 12.5 45.3 0l128-128z"/>
+              </svg>
+              
+              <!-- Ícone de círculo com sinal de mais para o card "solidez fiscal" -->
+              <svg ng-if="card.id == 3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="16" height="16" style="fill: currentColor; margin-right: 8px;">
+                <path d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM296 408L296 344L232 344C218.7 344 208 333.3 208 320C208 306.7 218.7 296 232 296L296 296L296 232C296 218.7 306.7 208 320 208C333.3 208 344 218.7 344 232L344 296L408 296C421.3 296 432 306.7 432 320C432 333.3 421.3 344 408 344L344 344L344 408C344 421.3 333.3 432 320 432C306.7 432 296 421.3 296 408z"/>
+              </svg>
+              
+              <!-- Ícone de dinheiro para o card "controle de empenho" -->
+              <svg ng-if="card.id == 4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="16" height="16" style="fill: currentColor; margin-right: 8px;">
+                <path d="M544 72C544 58.7 533.3 48 520 48L418.2 48C404.9 48 394.2 58.7 394.2 72C394.2 85.3 404.9 96 418.2 96L462.1 96L350.8 207.3L255.7 125.8C246.7 118.1 233.5 118.1 224.5 125.8L112.5 221.8C102.4 230.4 101.3 245.6 109.9 255.6C118.5 265.6 133.7 266.8 143.7 258.2L240.1 175.6L336.5 258.2C346 266.4 360.2 265.8 369.1 256.9L496.1 129.9L496.1 173.8C496.1 187.1 506.8 197.8 520.1 197.8C533.4 197.8 544.1 187.1 544.1 173.8L544 72zM112 320C85.5 320 64 341.5 64 368L64 528C64 554.5 85.5 576 112 576L528 576C554.5 576 576 554.5 576 528L576 368C576 341.5 554.5 320 528 320L112 320zM159.3 376C155.9 396.1 140.1 412 119.9 415.4C115.5 416.1 111.9 412.5 111.9 408.1L111.9 376.1C111.9 371.7 115.5 368.1 119.9 368.1L151.9 368.1C156.3 368.1 160 371.7 159.2 376.1zM159.3 520.1C160 524.5 156.4 528.1 152 528.1L120 528.1C115.6 528.1 112 524.5 112 520.1L112 488.1C112 483.7 115.6 480 120 480.8C140.1 484.2 156 500 159.4 520.2zM520 480.7C524.4 480 528 483.6 528 488L528 520C528 524.4 524.4 528 520 528L488 528C483.6 528 479.9 524.4 480.7 520C484.1 499.9 499.9 484 520.1 480.6zM480.7 376C480 371.6 483.6 368 488 368L520 368C524.4 368 528 371.6 528 376L528 408C528 412.4 524.4 416.1 520 415.3C499.9 411.9 484 396.1 480.6 375.9zM256 448C256 412.7 284.7 384 320 384C355.3 384 384 412.7 384 448C384 483.3 355.3 512 320 512C284.7 512 256 483.3 256 448z"/>
+              </svg>
+              <span>{{card.badge_text}}</span>
+            </div>
+            
+            <h3 class="card-title" ng-class="{'text-blue': card.id != 1}">{{card.title}}</h3>
+            <h4 class="card-subtitle">{{card.subtitle}}</h4>
+            <p class="card-desc">{{card.description}}</p>
+            
+            <button class="btn-more" ng-click="openMoreInfo($event)">Saiba mais</button>
+          </div>
+        </div>
+
+        <!-- Botão Próximo -->
+        <button class="nav-btn next" ng-click="nextSlide()">
+          <i class="fa fa-chevron-right"></i>
+        </button>
+
+      </div>
+
+      <!-- Indicadores (Pontinhos) -->
+      <div class="indicators">
+        <span ng-repeat="card in cardData" 
+              ng-class="{'active': $index == activeIndex}" 
+              ng-click="goToCard($index)"
+              class="indicadoresPontos"></span>
+      </div>
+
+    </div>
+
+    <!-- Lado Direito: Cards Interativos -->
+    <div class="right-column">
+      <div class="stat-card" 
+           ng-repeat="card in sideCards track by $index" 
+       		 ng-class="{'visible': true, 'animate-move-to-end': card.shouldAnimate}"
+       		 ng-click="goToSideCard($index)">
+        <div class="stat-header">
+          <div class="stat-badge">
+            <!-- Ícones SVG para os cards da direita -->
+            <svg ng-if="card.id == 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="16" height="16" style="fill: currentColor; margin-right: 8px;">
+              <path d="M320.3 192L235.7 51.1C229.2 40.3 215.6 36.4 204.4 42L117.8 85.3C105.9 91.2 101.1 105.6 107 117.5L176.6 256.6C146.5 290.5 128.3 335.1 128.3 384C128.3 490 214.3 576 320.3 576C426.3 576 512.3 490 512.3 384C512.3 335.1 494 290.5 464 256.6L533.6 117.5C539.5 105.6 534.7 91.2 522.9 85.3L436.2 41.9C425 36.3 411.3 40.3 404.9 51L320.3 192zM351.1 334.5C352.5 337.3 355.1 339.2 358.1 339.6L408.2 346.9C415.9 348 418.9 357.4 413.4 362.9L377.1 398.3C374.9 400.5 373.9 403.5 374.4 406.6L383 456.5C384.3 464.1 376.3 470 369.4 466.4L324.6 442.8C321.9 441.4 318.6 441.4 315.9 442.8L271.1 466.4C264.2 470 256.2 464.2 257.5 456.5L266.1 406.6C266.6 403.6 265.6 400.5 263.4 398.3L227.1 362.9C221.5 357.5 224.6 348.1 232.3 346.9L282.4 339.6C285.4 339.2 288.1 337.2 289.4 334.5L311.8 289.1C315.2 282.1 325.1 282.1 328.6 289.1L351 334.5z"/>
+            </svg>
+            
+            <svg ng-if="card.id == 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="16" height="16" style="fill: currentColor; margin-right: 8px;">
+              <path d="M64 64c0-17.7-14.3-32-32-32S0 46.3 0 64V400c0 44.2 35.8 80 80 80H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H80c-8.8 0-16-7.2-16-16V64zm406.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L320 210.7l-57.4-57.4c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L240 221.3l57.4 57.4c12.5 12.5 32.8 12.5 45.3 0l128-128z"/>
+            </svg>
+            
+            <svg ng-if="card.id == 3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="16" height="16" style="fill: currentColor; margin-right: 8px;">
+              <path d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM296 408L296 344L232 344C218.7 344 208 333.3 208 320C208 306.7 218.7 296 232 296L296 296L296 232C296 218.7 306.7 208 320 208C333.3 208 344 218.7 344 232L344 296L408 296C421.3 296 432 306.7 432 320C432 333.3 421.3 344 408 344L344 344L344 408C344 421.3 333.3 432 320 432C306.7 432 296 421.3 296 408z"/>
+            </svg>
+            
+            <svg ng-if="card.id == 4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="16" height="16" style="fill: currentColor; margin-right: 8px;">
+              <path d="M544 72C544 58.7 533.3 48 520 48L418.2 48C404.9 48 394.2 58.7 394.2 72C394.2 85.3 404.9 96 418.2 96L462.1 96L350.8 207.3L255.7 125.8C246.7 118.1 233.5 118.1 224.5 125.8L112.5 221.8C102.4 230.4 101.3 245.6 109.9 255.6C118.5 265.6 133.7 266.8 143.7 258.2L240.1 175.6L336.5 258.2C346 266.4 360.2 265.8 369.1 256.9L496.1 129.9L496.1 173.8C496.1 187.1 506.8 197.8 520.1 197.8C533.4 197.8 544.1 187.1 544.1 173.8L544 72zM112 320C85.5 320 64 341.5 64 368L64 528C64 554.5 85.5 576 112 576L528 576C554.5 576 576 554.5 576 528L576 368C576 341.5 554.5 320 528 320L112 320zM159.3 376C155.9 396.1 140.1 412 119.9 415.4C115.5 416.1 111.9 412.5 111.9 408.1L111.9 376.1C111.9 371.7 115.5 368.1 119.9 368.1L151.9 368.1C156.3 368.1 160 371.7 159.2 376.1zM159.3 520.1C160 524.5 156.4 528.1 152 528.1L120 528.1C115.6 528.1 112 524.5 112 520.1L112 488.1C112 483.7 115.6 480 120 480.8C140.1 484.2 156 500 159.4 520.2zM520 480.7C524.4 480 528 483.6 528 488L528 520C528 524.4 524.4 528 520 528L488 528C483.6 528 479.9 524.4 480.7 520C484.1 499.9 499.9 484 520.1 480.6zM480.7 376C480 371.6 483.6 368 488 368L520 368C524.4 368 528 371.6 528 376L528 408C528 412.4 524.4 416.1 520 415.3C499.9 411.9 484 396.1 480.6 375.9zM256 448C256 412.7 284.7 384 320 384C355.3 384 384 412.7 384 448C384 483.3 355.3 512 320 512C284.7 512 256 483.3 256 448z"/>
+            </svg>
+            <span>{{card.badge_text}}</span>
+          </div>
+        </div>
+        <div class="stat-body">
+          <p class="stat-value">{{ card.title }}</p>
+          <p class="stat-title">{{ card.subtitle }}</p>
+          <p class="stat-desc-small">{{ card.description }}</p>
+          <button class="btn-more small">Saiba mais</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Créditos e Marca d'água -->
+  <div class="image-credit">Palácio Paiaguás / Foto: Michel Alvim - SECOM/MT</div>
+
+</div>]]></template>
+    </sp_widget>
+</record_update>
