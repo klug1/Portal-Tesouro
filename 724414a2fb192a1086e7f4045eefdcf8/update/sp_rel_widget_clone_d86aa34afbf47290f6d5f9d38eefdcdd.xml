@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_rel_widget_clone">
+    <sp_rel_widget_clone action="INSERT_OR_UPDATE">
+        <child display_value="Copy of Captcha for RP">d46aa34afbf47290f6d5f9d38eefdcdb</child>
+        <cloned>2025-10-26 22:00:07</cloned>
+        <last_validated>2025-10-26 22:00:07</last_validated>
+        <parent display_value="Captcha for RP">d1b001d677525110230afd708e5a9979</parent>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;sp_widget&gt;&lt;category&gt;custom&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[function ($scope, $rootScope, $timeout, spUtil, $location) {
+	var c = this;
+	
+	c.captchaVerified = false;
+	
+	$scope.$on('captchaVerified', function(event, obj) {
+		c.captchaVerified = obj.captchaVerified;
+		c.grc = obj.grc;
+		scope.$apply();
+	});
+	
+	$scope.registrationInit = function(){};
+}]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css&gt;.text-muted {&amp;#13;
+     font-weight 500px;&amp;#13;
+  	color: $gray-dark;&amp;#13;
+}&amp;#13;
+.field-decoration-indicator{&amp;#13;
+  padding-right: 2.5px;&amp;#13;
+}&amp;#13;
+.field-decoration-indicator-text{&amp;#13;
+  margin-bottom: 25px;&amp;#13;
+}&amp;#13;
+&amp;#13;
+.form_link a {&amp;#13;
+  text-decoration: underline;&amp;#13;
+}&amp;#13;
+&amp;#13;
+input[type="checkbox"]:focus{&amp;#13;
+  outline-width:3px;&amp;#13;
+  outline-color:$input-border-focus;&amp;#13;
+  outline-style:solid;&amp;#13;
+}&amp;#13;
+&amp;#13;
+.form_link a:focus {&amp;#13;
+  outline-width:3px;&amp;#13;
+  outline-color:$input-border-focus;&amp;#13;
+  outline-style:solid;&amp;#13;
+  outline-offset:2px;&amp;#13;
+}&amp;#13;
+&amp;#13;
+.adjust-label{&amp;#13;
+  padding-top: 0px;&amp;#13;
+  margin-bottom: 7px;&amp;#13;
+}&amp;#13;
+  input:focus{&amp;#13;
+    outline-style:solid;&amp;#13;
+    outline-width:1px;&amp;#13;
+  }&amp;#13;
+&amp;#13;
+@media () {&amp;#13;
+     #html_element{&amp;#13;
+         transform:scale(0.8);&amp;#13;
+         -webkit-transform:scale(0.8);&amp;#13;
+         transform-origin:0 0;&amp;#13;
+         -webkit-transform-origin:0 0;&amp;#13;
+    }&amp;#13;
+}&amp;#13;
+&amp;#13;
+a{&amp;#13;
+  color : $link-color !important;&amp;#13;
+}&amp;#13;
+&amp;#13;
+ input[type=text]::-ms-clear {&amp;#13;
+     display: none;&amp;#13;
+}&amp;#13;
+ input::-ms-clear {&amp;#13;
+     display: none;&amp;#13;
+}&amp;#13;
+ .exiting-username {&amp;#13;
+     padding: 10px;&amp;#13;
+     margin-bottom: 10px;&amp;#13;
+}&amp;#13;
+&amp;#13;
+&amp;#13;
+#reg-form{&amp;#13;
+   .text-success {&amp;#13;
+     color: $field-success-text;&amp;#13;
+   }&amp;#13;
+     .reg-header {&amp;#13;
+         height: 27px;&amp;#13;
+         font-size: 23px;&amp;#13;
+         font-weight: 500;&amp;#13;
+         line-height: 27px;&amp;#13;
+         margin-bottom: 28px;&amp;#13;
+    }&amp;#13;
+     .registration-label {&amp;#13;
+         font-size: 16px;&amp;#13;
+         line-height: 19px;&amp;#13;
+    }&amp;#13;
+     .inpt-fields {&amp;#13;
+         position: relative;&amp;#13;
+         padding: 5px;&amp;#13;
+         padding-left: 0px;&amp;#13;
+    }&amp;#13;
+     .inner-addon .glyphicon {&amp;#13;
+         position: absolute;&amp;#13;
+         padding: 10px;&amp;#13;
+         pointer-events: none;&amp;#13;
+         padding-right: 15px;&amp;#13;
+         right: 0px;&amp;#13;
+    }&amp;#13;
+     .inpt-fields input {&amp;#13;
+         padding-right: 30px;&amp;#13;
+    }&amp;#13;
+     .glyphicon {&amp;#13;
+         top: inherit;&amp;#13;
+    }&amp;#13;
+     .glyphicon-ok {&amp;#13;
+         color:$text-success;&amp;#13;
+    }&amp;#13;
+     .glyphicon-remove {&amp;#13;
+         color:$text-danger;&amp;#13;
+    }&amp;#13;
+     .has-success .form-control {&amp;#13;
+         border-color:$text-success;&amp;#13;
+    }&amp;#13;
+     .has-error .form-control {&amp;#13;
+         border-color:$text-danger;&amp;#13;
+    }&amp;#13;
+     .form-validation-rules{&amp;#13;
+         padding:15px;&amp;#13;
+         padding-bottom:10px;&amp;#13;
+         background-color: $gray-lighter;&amp;#13;
+         font-size: 14px;&amp;#13;
+    }&amp;#13;
+     .icon {&amp;#13;
+         display: table-cell;&amp;#13;
+         vertical-align: middle;&amp;#13;
+    }&amp;#13;
+     .rules-outer{&amp;#13;
+         padding-left:10px;&amp;#13;
+         padding-bottom:5px;&amp;#13;
+    }&amp;#13;
+     .rules-text {&amp;#13;
+         padding-left:10px;&amp;#13;
+         padding-right: 10px;&amp;#13;
+         display: table-cell;&amp;#13;
+         vertical-align: top;&amp;#13;
+         font-size: 14px;&amp;#13;
+         line-height: 19px;&amp;#13;
+    }&amp;#13;
+     .form-group{&amp;#13;
+         padding:5px;&amp;#13;
+    }&amp;#13;
+  &amp;#13;
+  	.form-column{&amp;#13;
+      width: 50%;&amp;#13;
+      float: left;&amp;#13;
+  	}&amp;#13;
+      .form-row:after {&amp;#13;
+      content: "";&amp;#13;
+      display: table;&amp;#13;
+      clear: both;&amp;#13;
+    }&amp;#13;
+  &amp;#13;
+     .account-existing{&amp;#13;
+         padding-top:10px;&amp;#13;
+         text-align: center;&amp;#13;
+         vertical-align: middle;&amp;#13;
+    }&amp;#13;
+     .form-link .icon{&amp;#13;
+         position:absolute;&amp;#13;
+    }&amp;#13;
+     .policy-check{&amp;#13;
+         font-size:14px;&amp;#13;
+         padding-top: 3px;&amp;#13;
+         padding-left: 15px;&amp;#13;
+    }&amp;#13;
+     .form-link{&amp;#13;
+         display:table;&amp;#13;
+         padding-left:5px;&amp;#13;
+         margin-bottom:0px;&amp;#13;
+         font-size: 16px;&amp;#13;
+         line-height: 24px;&amp;#13;
+    }&amp;#13;
+     .link-text{&amp;#13;
+         padding-left:5px;&amp;#13;
+    }&amp;#13;
+     #password-rule .fa{&amp;#13;
+         font-size:7px;&amp;#13;
+    } &amp;#13;
+     input.ng-pristine{&amp;#13;
+         -webkit-box-shadow: none;&amp;#13;
+         -ms-box-shadow: none;&amp;#13;
+         box-shadow:none;&amp;#13;
+    }&amp;#13;
+     .form_link a {&amp;#13;
+         color: -webkit-link;&amp;#13;
+         text-decoration: underline &amp;#13;
+    }&amp;#13;
+    .form_link a:focus {&amp;#13;
+        outline: auto -webkit-focus-ring-color !important &amp;#13;
+    }&amp;#13;
+    input[type="checkbox"]:focus{&amp;#13;
+       outline:5px solid $input-border-focus !important;&amp;#13;
+    }&amp;#13;
+   .terms-and-conditions-text{&amp;#13;
+     margin-left: 10px;&amp;#13;
+}&amp;#13;
+   .terms-conditions-label {&amp;#13;
+     font-size: 15px;&amp;#13;
+     display: inline;&amp;#13;
+   }&amp;#13;
+ #html_element{&amp;#13;
+     transform:scale(1.05);&amp;#13;
+     -webkit-transform:scale(1.05);&amp;#13;
+     transform-origin:0 5;&amp;#13;
+     -webkit-transform-origin:0 0;&amp;#13;
+}&amp;#13;
+ @media () {&amp;#13;
+     #html_element{&amp;#13;
+         transform:scale(0.8);&amp;#13;
+         -webkit-transform:scale(0.8);&amp;#13;
+         transform-origin:0 0;&amp;#13;
+         -webkit-transform-origin:0 0;&amp;#13;
+    }&amp;#13;
+}&amp;#13;
+  &amp;#13;
+ .g-recaptcha{&amp;#13;
+   padding-bottom: 10px;&amp;#13;
+}&amp;#13;
+ #captcha_form_group{&amp;#13;
+     margin-bottom:0px;&amp;#13;
+   #captchaVerified{&amp;#13;
+     display:none;&amp;#13;
+   }&amp;#13;
+}&amp;#13;
+   &amp;#13;
+     &lt;/css&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description/&gt;&lt;docs/&gt;&lt;field_list/&gt;&lt;has_preview&gt;false&lt;/has_preview&gt;&lt;id&gt;gsm-captcha&lt;/id&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link&gt;&lt;![CDATA[function($document, $element) {
+    var tag = angular.element('&lt;script/&gt;').attr('src', "https://www.google.com/recaptcha/api.js?onload=onloadCallback&amp;render=explicit&amp;hl=" + g_lang).attr('defer', 'true').attr('async', 'true');
+    $element.append(tag);
+}]]&gt;&lt;/link&gt;&lt;name&gt;Captcha for RP&lt;/name&gt;&lt;option_schema&gt;[{"name":"login_page","default_value":"","section":"other","label":"Login Page","type":"string"},&amp;#13;
+{"name":"title","section":"Presentation","label":"Title","type":"string"},&amp;#13;
+{"name":"submit_btn_title","section":"Presentation","label":"Submit Button Title","type":"string"},&amp;#13;
+{"name":"tooltip_reg_code","section":"Presentation","label":"Registration Code Tooltip","type":"string"}]&lt;/option_schema&gt;&lt;public&gt;true&lt;/public&gt;&lt;roles/&gt;&lt;script&gt;&lt;![CDATA[(function($sp, input, data, options) {
+	"use strict";
+	data.is_logged_in = gs.getSession().isLoggedIn();
+	data.is_logged_in = false;
+	data.sys_id = '-1';
+	data.captch_url= 'https://www.google.com/recaptcha/api.js?onload=onloadCallback&amp;render=explicit&amp;hl=' + gs.getSession().getLanguage();
+	data.enableCaptcha = gs.getProperty('sn_gsm.captchaEnabled', 'true');
+	data.captchaSiteKey = gs.getProperty('google.captcha.site_key');
+	
+})($sp, input, data, options);]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2022-10-04 16:44:31&lt;/sys_created_on&gt;&lt;sys_id&gt;d1b001d677525110230afd708e5a9979&lt;/sys_id&gt;&lt;sys_mod_count&gt;12&lt;/sys_mod_count&gt;&lt;sys_name&gt;Captcha for RP&lt;/sys_name&gt;&lt;sys_package display_value="Public Sector Digital Services Core" source="sn_gsm"&gt;1973cb4153333010e897ddeeff7b129f&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Public Sector Digital Services Core"&gt;1973cb4153333010e897ddeeff7b129f&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_d1b001d677525110230afd708e5a9979&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2022-10-11 17:41:14&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;div id="reg-form" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 wrapper panel" style="margin:20px;" ng-init="registrationInit()"&gt;
+   &lt;!-- header --&gt;
+ 
+
+    &lt;div ng-if="data.captcha_error == true" class="alert alert-danger" role="alert"&gt;
+      &lt;div ng-if="data.captcha_error == true" &gt;${Please verify the security code}&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div ng-if="data.error == true" class="alert alert-danger" role="alert"&gt;
+      &lt;div ng-if="data.error == true" &gt;${Error processing request}&lt;/div&gt;
+    &lt;/div&gt;
+  
+    &lt;!-- reCaptcha --&gt;
+    &lt;input id="sitekey" type="hidden" value={{c.data.captchaSiteKey}}&gt;
+    &lt;script&gt;
+      (function(){ 
+        var e = $('.password-input');
+        var lang = g_lang || window.NOW.language;
+        var d = document.createElement("script");
+        d.src = "https://www.google.com/recaptcha/api.js?onload=onloadCallback&amp;render=explicit";
+        if(lang)
+          d.src +='&amp;hl='+lang;
+        d.type = "text/javascript"; 
+        d.async = true;
+        d.defer = true;
+        e.after(d);
+      })();
+      var onloadCallback = function() {
+        jQuery('#g-recaptcha-response').attr('aria-hidden', true);
+        jQuery('#g-recaptcha-response').attr('aria-label', true);
+        var captchaVerified;
+        var captchaWidget;
+        var verifyCallback = function(grc) {
+          if ((grc == "") || (grc == undefined))
+            captchaVerified = false;
+          else 
+            captchaVerified = true;
+          jQuery("#captchaVerified").attr("value",captchaVerified);
+          angular.element('#captchaVerified').scope().$root.$broadcast('captchaVerified',{captchaVerified:captchaVerified,grc:grc});
+        };
+        var sitekey = jQuery("#sitekey").val();
+        /*if check has been added so that the recaptcha render will not happen 
+            second time even with the element present resulting in 
+            'recaptch has been already rendered' console error */                
+        if($('#html_element').html() == ''){
+          captchaWidget = grecaptcha.render('html_element', {
+            'sitekey' : sitekey,
+            'callback' : verifyCallback,
+            'theme' : 'light',
+            'expired-callback' :  captchaExpired
+          });
+        }
+      };
+      var captchaExpired = function(){
+        captchaVerified = false;
+        jQuery("#captchaVerified").attr("value",captchaVerified);
+        angular.element('#captchaVerified').scope().$root.$broadcast('captchaVerified',{captchaVerified:captchaVerified,grc:null});
+      };
+    &lt;/script&gt;
+    &lt;!-- Google Recaptcha ng-if="data.enableCaptcha == 'true'" ng-if="c.data.enableCaptcha == true"--&gt;
+    &lt;div  ng-if="c.data.enableCaptcha == 'true' || c.data.enableCaptcha == true" id="captcha_form_group"  class="form-group"&gt;
+      &lt;input ng-model="c.captchaVerified" type="checkbox" name="captchaVerified" id="captchaVerified" style="" class="form-control" aria-label="captcha-verify"&gt;
+    	&lt;form action="?" method="POST"&gt;
+    		&lt;div class="g-recaptcha" id="html_element"&gt;&lt;/div&gt; 
+      &lt;/form&gt;
+   	&lt;/div&gt;
+    &lt;div style="clear:both"&gt;
+    &lt;/div&gt;
+  
+ 
+&lt;/div&gt;]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;</payload>
+        <sys_class_name>sp_rel_widget_clone</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-10-26 22:00:07</sys_created_on>
+        <sys_id>d86aa34afbf47290f6d5f9d38eefdcdd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>d46aa34afbf47290f6d5f9d38eefdcdb</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_rel_widget_clone_d86aa34afbf47290f6d5f9d38eefdcdd</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-10-26 22:00:07</sys_updated_on>
+    </sp_rel_widget_clone>
+</record_update>
