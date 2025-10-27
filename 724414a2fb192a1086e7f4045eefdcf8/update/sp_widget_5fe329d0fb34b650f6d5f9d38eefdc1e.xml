@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($scope, spUtil) {
+    /* widget controller */
+    var c = this;
+
+    // A lista de slides (c.slides) já foi carregada do Server Script para c.data.slides.
+    c.slides = c.data.slides || [];
+    c.currentSlide = 0;
+    c.animating = false;
+
+    // >>> 1. Inicialização da URL da Imagem <<<
+    // Define a URL da imagem inicial (do slide 0), garantindo que a imagem apareça no carregamento.
+    if (c.slides.length > 0) {
+        c.pointing_image_url = c.slides[0].imageUrl;
+    } else {
+        // Fallback caso não haja slides, mantendo a variável definida
+        c.pointing_image_url = ''; 
+    }
+
+    // Função para atualizar os dados visíveis no HTML
+    c.updateData = function() {
+        if (c.slides.length === 0) return;
+        
+        var slide = c.slides[c.currentSlide];
+        
+        // Atualiza o texto do slide
+        c.data.title = slide.title;
+        c.data.subtitle = slide.subtitle;
+        c.data.buttonText = slide.buttonText;
+        
+        // >>> 2. Troca Dinâmica da URL da Imagem <<<
+        // Atualiza a propriedade que o ng-src no HTML está usando.
+        c.pointing_image_url = slide.imageUrl; 
+        
+        // O $scope.$applyAsync() é importante para garantir que o AngularJS atualize o HTML rapidamente.
+        $scope.$applyAsync();
+    };
+    
+    // Funções de Animação e Navegação
+    
+    c.animateSlide = function(callback) {
+        c.animating = true;
+        $scope.$applyAsync();
+
+        // 1. Oculta o conteúdo
+        setTimeout(function() {
+            // 2. Troca os dados do slide
+            callback();
+            $scope.$applyAsync();
+
+            // 3. Re-exibe o conteúdo após a transição
+            setTimeout(function() {
+                c.animating = false;
+                $scope.$applyAsync();
+            }, 200); // Duração da transição (mesmo tempo do CSS)
+        }, 150); // Tempo antes da troca de slide
+    };
+
+    c.prevSlide = function() {
+        c.animateSlide(function() {
+            c.currentSlide = (c.currentSlide - 1 + c.slides.length) % c.slides.length;
+            c.updateData();
+        });
+    };
+
+    c.nextSlide = function() {
+        c.animateSlide(function() {
+            c.currentSlide = (c.currentSlide + 1) % c.slides.length;
+            c.updateData();
+        });
+    };
+
+    c.goToSlide = function(index) {
+        c.animateSlide(function() {
+            c.currentSlide = index;
+            c.updateData();
+        });
+    };
+
+
+    // Função do botão "Saiba mais"
+    c.saibaMais = function() {
+        console.log("Clicou em Saiba Mais para o slide: " + c.slides[c.currentSlide].title);
+        // Implemente a navegação ou ação do botão aqui
+        // Exemplo: $window.location.href = c.slides[c.currentSlide].link;
+    };
+    
+    // Inicializa os dados com o slide 0 e a imagem
+    c.updateData();
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&amp;display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&amp;display=swap');
+
+/* Variáveis baseadas em rem */
+$font-family-primary: 'Roboto Flex', sans-serif;
+$primary-color: #5b46d8;
+$button-border-color: #4773C6; 
+$title-color: #03237E;
+$subtitle-color: #3B4DB1;
+$text-color: #333;
+$background-color: #ffffff;
+$arrow-color: #4773C6; 
+$border-radius: 0.75rem;
+$padding-compact: 1.25rem;
+$card-max-width: 120rem; 
+$arrow-offset: 5rem; /* AFASTA AS SETAS DO CARD NO DESKTOP */
+
+/* Variáveis para a seta */
+$arrow-border-thickness: 0.125rem; 
+$arrow-container-size: 2.5rem; 
+
+
+/* Aplica a fonte a todo o container do widget */
+.widget-background {
+    font-family: $font-family-primary; 
+    background-color: #fff;
+    padding: 2rem 0;F
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    position: relative; 
+    overflow: hidden;
+    width: 100%;
+  	outline: none;
+  -webkit-user-select: none; 
+    -moz-user-select: none;    
+    -ms-user-select: none;     
+    user-select: none;         
+    cursor: default;
+}
+
+/* CONTAINER CENTRALIZADOR */
+.card-carousel-container {
+    max-width: $card-max-width; 
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    display: flex; 
+    align-items: center; 
+}
+
+
+/* 2. Estilo do container principal do Card (35rem de altura) */
+.tesouro-estadual-widget {
+    background-color: $background-color;
+    border-radius: $border-radius;
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+    padding: $padding-compact;
+    
+    min-height: 35rem;
+    height: 35rem; 
+    max-height: 35rem;
+    
+    margin: 0 6rem; /* Aumentado para 6rem para afastar as setas */
+    width: calc(100% - 12rem); /* Ajusta a largura com base na nova margem */
+    
+    position: relative; 
+    z-index: 5;
+    flex-shrink: 0;
+
+    display: block;
+    
+    &gt; .row { 
+        display: flex;
+        margin: 0;
+        align-items: flex-start; /* Conteúdo alinhado ao topo */
+        padding-top: 1rem; /* Espaçamento do topo */
+    }
+    
+    .content-area, .image-area {
+        height: auto; 
+        display: block; 
+        flex-direction: initial;
+        justify-content: initial;
+    }
+}
+
+/* Estilo do conteúdo (texto e botão) */
+.content-area {
+    padding-right: 1.25rem;
+    
+    /* Estilos de fonte do Desktop */
+    h1 {
+        font-size: 4rem;
+        font-weight: 700; 
+        color: $title-color; 
+        margin-bottom: 0.5rem; 
+        text-align: left;
+    }
+
+    p {
+        font-size: 1.75rem;
+        line-height: 1.4; 
+        color: $subtitle-color; 
+        margin-bottom: 1.5rem; 
+        text-align: left;
+    }
+    
+    .btn-primary {
+        background-color: transparent;
+        color: $button-border-color;
+        
+        border: 0.0875rem solid $button-border-color;
+        border-radius: 0.25rem;
+        
+        width: 14.625rem;
+        padding: 0.375rem 0;
+        
+        text-align: center;
+        display: inline-block; 
+        white-space: nowrap; 
+     	 outline: none; 
+        
+        font-size: 1.25rem; /* Tamanho de fonte padrão para o botão */
+        
+        &amp;:hover {
+            background-color: $button-border-color;
+            color: $background-color;
+            border-color: $button-border-color;
+        }
+      &amp;:focus { 
+            outline: none;
+            box-shadow: none; // Opcional, remove algumas sombras que o Bootstrap possa adicionar.
+        }
+    }
+}
+
+/* Área da Imagem (Mão) */
+.image-area {
+    display: block;
+    
+    .pointing-hand-image {
+        height: 32rem; 
+        width: auto;    
+        max-height: 100%;
+        object-fit: contain;
+        -webkit-user-select: none; /* Chrome, Safari, Opera */
+        -moz-user-select: none;    /* Firefox */
+        -ms-user-select: none;     /* IE/Edge */
+        user-select: none;         /* Padrão */
+        
+        /* 2. Define o cursor para a seta padrão em vez do cursor de texto (I-beam) */
+        cursor: default;
+        float: right; 
+      
+    }
+}
+
+
+/* 3. Estilo das Setas de Navegação (Carrossel) - LAYOUT DESKTOP (FORA DO CARD) */
+.arrow-nav {
+    position: absolute;
+    top: 50%; 
+    transform: translateY(-50%);
+    z-index: 20;
+    
+    width: $arrow-container-size; 
+    height: $arrow-container-size;
+    border-radius: 50%; 
+    background-color: transparent; 
+    border: $arrow-border-thickness solid $arrow-color; 
+    
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    
+    color: $arrow-color; 
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+    
+    opacity: 0.85;
+    transition: all 0.2s ease;
+  	outline: none; 
+
+    &amp;:hover,
+    &amp;:focus, 
+    &amp;:active { /* Garante que a cor se mantenha no clique/toque (resolve o "sumiço") */
+        opacity: 1;
+        background-color: $arrow-color;
+        color: $background-color; 
+        outline: none; 
+    }
+
+    &amp;.left-arrow {
+        left: -$arrow-offset; // Usa 5rem negativo
+    }
+
+    &amp;.right-arrow {
+        right: -$arrow-offset; // Usa 5rem negativo
+    }
+}
+
+/* Indicadores de Slide (os pontos inferiores) */
+.slider-indicators {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    
+    .indicator-dot {
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        background-color: #ccc;
+        margin: 0 0.5rem;
+        cursor: pointer;
+        
+        &amp;.active {
+            background-color: $button-border-color; 
+        }
+    }
+}
+
+.fade-in-out {
+    opacity: 0;
+    transform: translateX(10px);
+    transition: all 0.2s ease-in-out;
+}
+
+.fade-in-out.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+/* ------------------------------------------------ */
+/* RESPONSIVIDADE (Telas Menores que 992px / 62rem) */
+/* ------------------------------------------------ */
+@media (max-width: 62rem) { 
+    
+    /* 1. Ajusta o container para mobile */
+    .card-carousel-container {
+        max-width: none;
+        width: 100%;
+        flex-direction: column; 
+        align-items: center; 
+        padding: 0 $padding-compact;
+    }
+
+    /* 2. Ajusta o Card */
+    .tesouro-estadual-widget {
+        width: 100%;
+        margin: 0; // Remove a margem para as setas ficarem DENTRO
+        order: 1; 
+        min-height: 27rem;
+        height: auto;
+        max-height: none;
+        padding-bottom: 3rem; 
+        
+        &gt; .row {
+            padding-top: 0; 
+        }
+    }
+    
+    .image-area {
+        display: none; 
+    }
+    
+    /* Ajuste de conteúdo para mobile */
+    .content-area {
+        padding-right: 0;
+        
+        /* MUDANÇA: Usamos text-align: center para centralizar H1 e P */
+        text-align: center; 
+        display: block; /* Volta para o comportamento de bloco padrão no mobile */
+        
+        h1 {
+            font-size: 2rem; // Redução do Título
+            /* text-align: center herdado do pai */
+        }
+        p {
+            font-size: 1rem; // Redução do Subtítulo
+            /* text-align: center herdado do pai */
+        }
+        
+        .btn-primary {
+            font-size: 1rem; /* Redução do texto do botão */
+            
+            /* CENTRALIZAÇÃO ROBUSTA COM MARGIN: AUTO */
+            margin-left: auto;
+            margin-right: auto;
+            display: block; /* Essencial para que margin: auto funcione em um elemento de largura fixa */
+            
+            width: 14.625rem;
+            max-width: 100%; /* Garante que não ultrapasse a largura da tela */
+        }
+    }
+
+
+    /* 3. Posicionamento Mobile das Setas (DENTRO do Card) */
+    .arrow-nav {
+        // Redefine a posição para dentro do card
+        
+        &amp;.left-arrow {
+            left: 0.5rem; 
+            right: auto; 
+            //background-color: rgba($background-color, 0.9); 
+        }
+
+        &amp;.right-arrow {
+            right: 0.5rem; 
+            left: auto; 
+           // background-color: rgba($background-color, 0.9); 
+        }
+        
+        z-index: 30; 
+    }
+    
+    /* Ajustes para o Indicador de Slide */
+    .slider-indicators {
+         bottom: 0.5rem;
+    }
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>banner_carta</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Banner Carta de Serviços</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    
+    // NOTA: Ao verificar !options.slides, você verifica se a opção está VAZIA.
+    // Se a opção NÃO for preenchida no backend, ela vem como NULL, o que funciona bem.
+    
+    if (!options.slides) { // Verifique se a opção 'slides' não está definida ou é null/vazia
+        
+        // Define data.slides como um array de objetos (sem aninhamento)
+      data.slides = [ 
+            {
+                "title": "O Tesouro Estadual",
+                "subtitle": "Conheça o impacto do trabalho...",
+                "buttonText": "Saiba mais",
+                // SLIDE 1: Imagem original
+                "imageUrl": "x_sded9_portal_t_0.point2.png" 
+            },
+            {
+                "title": "Gestão fiscal sólida e responsável",
+                "subtitle": "Refletindo positivamente em diversas áreas...",
+                "buttonText": "Saiba mais",
+                // SLIDE 2: Nova Imagem
+                "imageUrl": "x_sded9_portal_t_0.gestaoFiscalImage.png" 
+            },
+            {
+                "title": "Contas em ordem, futuro em construção",
+                "subtitle": "Transparência Total: Acompanhe a queda da dívida...",
+                "buttonText": "Saiba mais",
+                // SLIDE 3: Nova Imagem
+                "imageUrl": "x_sded9_portal_t_0.contasEmOrdem.png" 
+            }
+        ];
+        
+    } else {
+        // As opções complexas (JSON) chegam como string, é necessário fazer o parse.
+        try {
+            // Tenta converter a string JSON da opção em um objeto (array)
+            data.slides = JSON.parse(options.slides);
+            
+        } catch (e) {
+            // Em caso de erro de JSON, define um único slide de erro.
+            data.slides = [
+                { 
+                    title: "Erro de Configuração", 
+                    subtitle: "Formato JSON inválido nas opções do widget. Verifique a sintaxe.", 
+                    buttonText: "Erro" 
+                }
+            ];
+            // É útil adicionar um log de advertência aqui:
+            gs.warn("Erro ao fazer parsing da opção 'slides' do widget.");
+        }
+    }
+    
+    // Inicializa o data object com o primeiro slide para o carregamento inicial.
+    // Isso garante que o HTML tenha dados iniciais antes do controller rodar.
+    if (data.slides && data.slides.length > 0) {
+        data.title = data.slides[0].title;
+        data.subtitle = data.slides[0].subtitle;
+        data.buttonText = data.slides[0].buttonText;
+    } else {
+         // Se a lista estiver vazia por algum motivo, use um fallback final.
+         data.title = "Atenção";
+         data.subtitle = "Nenhum slide foi carregado.";
+         data.buttonText = "Revisar";
+    }
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-10-21 01:43:45</sys_created_on>
+        <sys_id>5fe329d0fb34b650f6d5f9d38eefdc1e</sys_id>
+        <sys_mod_count>175</sys_mod_count>
+        <sys_name>Banner Carta de Serviços</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_5fe329d0fb34b650f6d5f9d38eefdc1e</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-10-27 03:02:31</sys_updated_on>
+        <template><![CDATA[<div class="widget-background"> 
+    <div class="card-carousel-container">
+        <div class="panel panel-default tesouro-estadual-widget">
+            
+            <button type="button" class="arrow-nav left-arrow desktop-out-mobile-in" ng-click="c.prevSlide()">
+                <i class="fa fa-angle-left"></i> 
+            </button>
+            
+            <button type="button" class="arrow-nav right-arrow desktop-out-mobile-in" ng-click="c.nextSlide()">
+                <i class="fa fa-angle-right"></i> 
+            </button>
+            
+            <div class="row">
+                <div class="col-xs-12 col-md-7 content-area"  ng-class="{'fade-in-out': c.animating, 'active': !c.animating}">
+                    <h1>{{data.title}}</h1>
+                    <p>{{data.subtitle}}</p>
+                    <button type="button" class="btn btn-primary" ng-click="c.saibaMais()">
+                        {{data.buttonText}}
+                    </button>
+                </div>
+
+                <div class="col-xs-12 col-md-5 image-area hidden-xs hidden-sm">
+                    <img ng-src="{{c.pointing_image_url}}" alt="Mão apontando para dados" class="pointing-hand-image" draggable="false">
+                </div>
+            </div>
+            
+            <div class="slider-indicators">
+                <div class="indicator-dot" ng-class="{'active': $index == c.currentSlide}" 
+                     ng-repeat="slide in c.slides track by $index" ng-click="c.goToSlide($index)"></div>
+            </div>
+        </div>
+        
+        </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>
