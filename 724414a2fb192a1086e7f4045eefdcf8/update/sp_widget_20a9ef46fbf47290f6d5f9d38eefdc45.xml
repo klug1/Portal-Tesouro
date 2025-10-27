@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($scope, $timeout) {
+    /* widget controller */
+    var c = this;
+	
+c.data.pekas = false;
+$scope.changelink = function() {
+	c.data.pekas = true;
+	console.log('mudou pekas')
+
+};
+	
+	
+
+    // Inicializa variáveis no objeto de dados (data) que serão enviadas para o Server Script
+    c.data.emailInput = "";
+    c.data.isSubmitting = false;
+    c.data.message = "";
+    c.data.success = false;
+
+    // Função de Inscrição chamada pelo ng-click="c.subscribeEmail()"
+    c.subscribeEmail = function() { // Renomeado para c.subscribeEmail
+        
+        // 1. Limpa mensagens anteriores
+        c.data.message = "";
+        c.data.success = false;
+        
+        // Validação simples de campo vazio
+        if (!c.data.emailInput) {
+            c.data.message = "Por favor, insira um endereço de e-mail.";
+            c.data.success = false;
+            return;
+        }
+
+        // Validação básica de formato de email (Regex simples)
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(c.data.emailInput)) {
+             c.data.message = "O formato do e-mail é inválido.";
+            c.data.success = false;
+            return;
+        }
+
+        // 2. Define a variável de ação para o Server Script e sinaliza que está enviando
+        c.data.action = 'subscribe';
+        c.data.isSubmitting = true; // Desabilita o botão
+
+        // 3. Chama o Server Script
+        c.server.update().then(function(response) {
+            // Ação concluída, reabilita o botão
+            c.data.isSubmitting = false; 
+
+            // 4. Recebe a resposta do servidor
+            c.data.message = c.data.responseMessage;
+            c.data.success = c.data.responseSuccess;
+            
+            // Se for sucesso, limpa o campo de email
+            if (c.data.success) {
+                c.data.emailInput = "";
+            }
+            
+            // Limpa a mensagem após 5 segundos, se houver mensagem
+            if (c.data.message) {
+                $timeout(function() {
+                    c.data.message = "";
+                    c.data.success = false;
+                }, 5000);
+            }
+        });
+    }
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@100..1000&amp;display=swap');
+/* Importa Roboto Regular para os títulos (NOVO) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&amp;display=swap');
+
+$font-family: "Roboto Flex";
+
+/* Estilo para o background englobando todo o conteúdo */
+.widget-background {
+    background-color: #4773C6;
+    min-height: 100px;
+    padding: 30px 0; /* Padding vertical mantido */
+    display: flex;
+    align-items: center;
+}
+
+/* Container que envolve o conteúdo: Substitui o padding fixo por margens no próprio container */
+.widget-content-fluid {
+    /* Usa a classe .container-fluid do Bootstrap (100% de largura) */
+    width: 100%; 
+    /* Margem para simular o espaçamento de 10rem na esquerda e 15rem na direita */
+    /* ATENÇÃO: Esses rems podem ainda ser problemáticos em resoluções específicas. 
+       Se houver quebra de layout, use valores menores (ex: 3rem) ou classes Bootstrap. */
+    margin-left: 10rem; 
+    margin-right: 15rem;
+}
+
+/* 1. CONTEÚDO DA ESQUERDA: Texto */
+.header-content {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  	font-size: 0;
+}
+
+/* Estilo para o TÍTULO (Mantido) */
+.widget-title {
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #C7C7C7;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo para o SUBTÍTULO (Mantido) */
+.widget-subtitle {
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #FFF;
+    margin-top: 5px;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+/* 2. CONTEÚDO DA DIREITA: Input e Botão */
+.email-form-content {
+    display: flex;
+    align-items: center;
+    gap: 0; 
+    border: 1px solid #4773C6;
+    border-radius: 0 10px 10px 0; /* Arredondamento apenas na direita */
+    overflow: hidden;
+    width: 80%; /* Garante que ocupe a largura total da coluna Bootstrap */
+		font-size: 0;
+}
+
+.email-input {
+    padding: 8px 15px;
+    border: none;
+    border-right: 1px solid #4773C6;
+    min-width: 300px;
+    font-size: 16px;
+    outline: none;
+    background-color: #FFF;
+    color: #555;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    flex-grow: 1; /* CHAVE: Permite que o input preencha o espaço restante */
+}
+
+/* Estilo para o Placeholder em Itálico (Mantido) */
+.email-input::placeholder {
+    font-style: italic;
+    color: #999;
+}
+
+.email-input, .subscribe-button {
+    /* NOVA REGRA (Se usar font-size: 0 acima, você precisa restaurar o tamanho da fonte nos elementos) */
+    font-size: 16px; 
+}
+
+.subscribe-button {
+    padding: 8px 3.5rem;
+    background-color: #C7C7C7;
+    color: #4773C6;
+    border: none;
+    border-radius: 0; 
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    height: 3.89rem;
+    white-space: nowrap;
+    flex-shrink: 0; /* Garante que o botão não encolha */
+}
+
+.subscribe-button:hover {
+    background-color: #B0B0B0;
+}
+
+/* NOVO BLOCO: Ajuste Fino para Monitores (1700px até 992px) */
+@media (max-width: 1700px) and (min-width: 992px) {
+    /* Reduz ainda mais o min-width do input para caber na coluna */
+    .email-input {
+        min-width: 180px; 
+    }
+    /* Reduz o padding do botão se o 10px não for suficiente */
+    .subscribe-button {
+        padding: 8px 8px; 
+    }
+  .email-form-content{
+  	width: 100%;
+  }
+}
+
+/* --- REGRAS DE RESPONSIVIDADE (MOBILE) --- */
+
+/* REGRA DE AJUSTE VERTICAL EM DESKTOP (BASEADO NA SUA SUGESTÃO) */
+@media (min-width: 992px) {
+    /* col-md-5: Ocupa 5/12 = 41.66667% */
+    .col-md-5 { 
+        /* Aplica o ajuste de alinhamento vertical */
+        transform: translateY(-47px); 
+    }
+}
+
+
+/* Ajustes em telas menores que 992px (limite para col-md-*) */
+@media (max-width: 991px) {
+    /* Remove a transformação para não quebrar o layout mobile */
+    .col-md-5 { 
+        transform: none; 
+    }
+    .widget-content-fluid {
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+}
+
+/* Ajustes em telas menores que 992px (limite para col-md-*) */
+@media (max-width: 991px) {
+    /* Reduz o espaçamento geral para liberar espaço */
+    .widget-content-fluid {
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+}
+
+
+/* Ajustes em telas menores que 768px (sm) */
+@media (max-width: 767px) {
+    /* 1. Ajuste das fontes em Mobile */
+    .widget-title {
+        font-size: 24px; /* Diminui o título */
+    }
+    .widget-subtitle {
+        font-size: 16px; /* Diminui o subtítulo */
+        margin-bottom: 15px; /* Adiciona espaço abaixo do subtítulo quando empilhado */
+    }
+
+    /* 2. Formulário - Garante 100% de largura */
+    .email-form-content {
+        width: 100%; /* Ocupa 100% da coluna (que em mobile é 100% da tela) */
+        border-radius: 4px; /* Arredondamento total em mobile, já que não está na direita */
+    }
+    
+    /* 3. Ajuste do Input para caber o botão */
+    .email-input {
+        min-width: auto; /* Remove o min-width fixo */
+        border-radius: 4px 0 0 4px; /* Arredondamento na esquerda */
+        flex-grow: 1;
+    }
+    
+    /* 4. Ajuste do Botão */
+    .subscribe-button {
+        padding: 8px 10px; /* Reduz o padding do botão para dar mais espaço */
+    }
+}
+
+/* ... código anterior omitido ... */
+
+/* BLOCO: Ajustes em telas MUITO pequenas (max-width: 575px - Mobile Portrait) */
+@media (max-width: 575px) {
+    /* 1. CENTRALIZAÇÃO DE TEXTO */
+    .header-content {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    /* 2. Diminui a fonte */
+    .widget-title {
+        font-size: 20px;
+    }
+    .widget-subtitle {
+        font-size: 14px;
+    }
+    
+    /* NOVO AJUSTE: Diminui a fonte do placeholder */
+    .email-input::placeholder {
+        font-size: 14px; /* Reduz a fonte do placeholder */
+    }
+
+    /* 3. Ajuste do tamanho do INPUT (85% e centralizado) */
+    .email-form-content {
+        width: 85%; 
+        margin: 0 auto;
+        border-radius: 4px; 
+    }
+
+    /* 4. Ajuste do padding do widget e margens do container */
+    .widget-background {
+        padding: 20px 0;
+    }
+    .widget-content-fluid {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    /* 5. Ajuste fino do botão para caber o texto "Inscreva-se" */
+    .subscribe-button {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+  .g-recaptcha{
+	//transform: translateX(28px);
+}
+}
+
+
+.g-recaptcha{
+	margin-top: 2rem;
+}
+
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>captcha_sate</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Captcha</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+
+    var table_name = 'x_sded9_portal_t_0_newsletter'; // Sua tabela
+    
+    // Verifica se a ação 'subscribe' foi enviada pelo Client Script
+    if (input && input.action == 'subscribe' && input.emailInput) {
+        var email = input.emailInput.toLowerCase().trim();
+        
+        // 1. Prevenção de Inscrições Duplicadas
+        var grCheck = new GlideRecord(table_name);
+        grCheck.addQuery('u_email', email); // Seu campo de email
+        grCheck.query();
+        
+        if (grCheck.next()) {
+            // E-mail já existe
+            data.responseSuccess = false;
+            data.responseMessage = "Este e-mail já está inscrito em nossa newsletter.";
+            return;
+        }
+        
+        // 2. Inserção do Novo Registro
+        var grInsert = new GlideRecord(table_name);
+        grInsert.initialize();
+        
+        // Mapeamento do campo
+        grInsert.setValue('u_email', email);
+				var currentDateTime = new GlideDateTime();
+				grInsert.setValue('u_data_registro', currentDateTime.getLocalDate());
+        
+        // Inserir
+        var sysId = grInsert.insert();
+        
+        if (sysId) {
+            // Sucesso
+            data.responseSuccess = true;
+            data.responseMessage = "Inscrição realizada com sucesso! Obrigado.";
+        } else {
+            // Erro na inserção
+            data.responseSuccess = false;
+            data.responseMessage = "Erro ao processar sua inscrição. Verifique se a ACL permite a inserção.";
+        }
+    }
+
+
+data.sitekey = gs.getProperty('x_sded9_portal_t_0.recaptcha.site-key');
+	//gs.addInfoMessage(data.sitekey);
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-10-26 21:57:32</sys_created_on>
+        <sys_id>20a9ef46fbf47290f6d5f9d38eefdc45</sys_id>
+        <sys_mod_count>54</sys_mod_count>
+        <sys_name>Captcha</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_20a9ef46fbf47290f6d5f9d38eefdc45</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-10-27 00:30:15</sys_updated_on>
+        <template><![CDATA[<div class="widget-background">
+    <div class="container-fluid widget-content-fluid">
+        <div class="row align-items-center">
+
+            <div class="col-md-7 header-content left-content">
+                <h1 class="widget-title">Acompanhe a evolução dos principais indicadores financeiros do estado</h1>
+                <p class="widget-subtitle">Receba atualizações sobre relatórios, indicadores e notícias diretamente no seu e-mail.</p>
+            </div>
+
+            <div class="col-md-5">
+                <div ng-if="c.data.message" 
+                     class="alert widget-alert" 
+                     ng-class="{'alert-success': c.data.success, 'alert-danger': !c.data.success}">
+                    {{c.data.message}}
+                </div>
+              
+              <!--div ng-if="!c.data.pekas" 
+     class="alert widget-alert alert-info"> Preencha o captcha para poder inscrever-se
+</div-->
+                
+                <div class="email-form-content right-content">
+                    <input type="email" 
+                           id="email_input" 
+                           placeholder="digite aqui seu email" 
+                           class="email-input"
+                           ng-model="c.data.emailInput">
+                    <button class="subscribe-button" 
+                            ng-click="c.subscribeEmail()"
+                            ng-disabled="!c.data.pekas || c.data.isSubmitting"> 
+                        <span ng-if="!c.data.isSubmitting">Inscreva-se</span>
+                        <span ng-if="c.data.isSubmitting">Aguarde...</span>
+                    </button>
+                </div>
+              <div class="g-recaptcha" data-callback="captchaCallback" data-sitekey="{{data.sitekey}}"></div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<script src="https://www.google.com/recaptcha/api.js"></script>
+
+
+
+<input type="text" style=" display: none;"id="myText" name="message" ng-model = "c.message" ng-change="changelink()">
+
+
+<script type="text/javascript">
+
+function captchaCallback() {
+
+var resp = grecaptcha.getResponse();
+
+if(resp){
+
+document.getElementById("myText").value = "true";
+
+var element = document.getElementById('myText');
+
+var event = new Event('change');
+
+element.dispatchEvent(event);
+
+}
+
+}
+
+</script> ]]></template>
+    </sp_widget>
+</record_update>
