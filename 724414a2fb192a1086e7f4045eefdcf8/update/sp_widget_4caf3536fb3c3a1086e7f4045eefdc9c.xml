@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($scope, $window) {
+    var c = this;
+    
+    
+    c.detailPages = {
+        rcl_id_001: 'receita_corrente',
+        resultado_id_002: 'resultado_primario',
+        despesa_id_003: 'despesa_pessoal',
+        divida_id_004: 'divida_publica'
+    };
+
+    // Função chamada ao clicar no botão "Detalhar"
+    c.detalhar = function(card) {
+        // 1. Obtém o nome da página de destino com base no sys_id
+        var pageId = c.detailPages[card.sys_id];
+        
+        if (pageId) {
+            // 2. Constrói o URL e abre em uma nova aba
+            // O URL é: ?id=<pageId>&sys_id=<sys_id_do_card>
+            // Adicionamos o sys_id do card ao URL para que a página de destino saiba qual índice exibir.
+            var url = "?id=" + pageId + "&sys_id=" + card.sys_id;
+            
+            $window.open(url, '_blank');
+        } else {
+            console.error("Página de destino não configurada para o card:", card.title);
+            alert("Detalhes não disponíveis no momento.");
+        }
+    };
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>/* 1. Estilos do Título Principal */
+.main-title {
+    font-family: 'Roboto', sans-serif; /* Assumindo que a fonte Roboto está disponível ou deve ser importada/configurada */
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 100%; /* Ajuste para o line-height desejado */
+    color: #4671C4;
+    margin-bottom: 40px; /* Espaço após o título e antes dos cards */
+    padding: 10px 0;
+  	
+}
+
+/* 2. Estilos dos Cards */
+.cards-row {
+    margin-bottom: 20px; /* Espaçamento entre as linhas de cards */
+}
+
+.card-wrapper {
+    padding: 10px; /* Espaço entre os cards */
+}
+
+.index-card {
+    border: none;
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para o efeito de elevação */
+    padding: 15px;
+    height: 100%; /* Garante que os cards da mesma linha tenham a mesma altura */
+}
+
+.card-title-index {
+    font-size: 18px;
+    font-weight: bold;
+    color:#4671C4;
+    margin-bottom: 15px;
+    text-align: center; /* Centraliza o título dentro do card, se necessário */
+}
+
+/* 3. Estilo para a Área do Gráfico/Imagem */
+.chart-image-placeholder {
+    /* Simulando o espaço que o gráfico/imagem ocuparia */
+    //background-color: #f7f9fc;
+    border: 1px solid #eee;
+     height: 24rem;/* Altura de exemplo para o gráfico */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* 4. Estilo do Botão Detalhar */
+.btn-detalhar {
+    background-color: transparent;
+    border: 1px solid #4671C4;
+    color: #4671C4;
+    font-weight: 600;
+    padding: 5px 15px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.btn-detalhar:hover {
+    background-color: #4671C4;
+    color: #ffffff;
+   transform: translateY(-5px); 
+   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* 5. Centralização vertical e ajustes gerais (se necessário) */
+.widget-container {
+    max-width: 1200px; /* Limita a largura do conteúdo, se desejar */
+    margin: auto;
+    padding: 20px;
+  	background-color: white;
+}
+
+.card-body &gt; .text-end { /* Seleciona a div que contém o botão */
+    display: flex;
+    justify-content: flex-end; /* Alinha o item (botão) à direita */
+    width: 100%; /* Garante que a div ocupe todo o espaço disponível */
+    margin-top: 15px; /* Manter o espaço acima do botão */
+}
+
+/* ... SEU CSS ANTERIOR ... */
+
+/* Novo estilo para garantir que a imagem preencha a div */
+.chart-image-placeholder {
+    /* ... estilos anteriores ... */
+    height: 180px; /* Altura de exemplo para o gráfico */
+    padding: 10px; /* Adiciona um pequeno padding interno */
+}
+
+.chart-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Garante que a imagem caiba sem distorcer */
+    display: block; /* Remove margem inferior indesejada */
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>indicadores_cards</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Indicadores Cards</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	
+	data.cards = [
+        {
+            title: "Receita Corrente Líquida (RCL)",
+            imageName: "x_sded9_portal_t_0.rclCard.png",
+            // Você pode adicionar qualquer outro dado necessário aqui, como sys_id para o 'Detalhar'
+            sys_id: "rcl_id_001" 
+        },
+        {
+            title: "Resultado Primário",
+            imageName: "x_sded9_portal_t_0.resultadoCard.png",
+            sys_id: "resultado_id_002"
+        },
+        {
+            title: "Despesas com o Pessoal",
+            imageName: "x_sded9_portal_t_0.despesaCard.png",
+            sys_id: "despesa_id_003"
+        },
+        {
+            title: "Dívida Pública",
+            imageName: "x_sded9_portal_t_0.dividaCard.png",
+            sys_id: "divida_id_004"
+        }
+    ];
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-10-28 22:09:25</sys_created_on>
+        <sys_id>4caf3536fb3c3a1086e7f4045eefdc9c</sys_id>
+        <sys_mod_count>14</sys_mod_count>
+        <sys_name>Indicadores Cards</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_4caf3536fb3c3a1086e7f4045eefdc9c</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-10-28 22:57:04</sys_updated_on>
+        <template><![CDATA[<div class="container widget-container">
+    
+    <div class="row justify-content-center">
+        <div class="col-12 text-center">
+            <h1 class="main-title">Conheça os principais índices do Estado</h1>
+        </div>
+    </div>
+    
+    <div class="row justify-content-center cards-row">
+        
+        <div ng-repeat="card in data.cards" 
+             class="col-lg-6 col-md-10 col-sm-12 card-wrapper"
+             ng-class="{'mt-4': $index >= 2}"> <div class="card index-card">
+                <div class="card-body">
+                    <h2 class="card-title-index">{{::card.title}}</h2>
+                    
+                    <div class="chart-image-placeholder">
+                        <img ng-src="{{'/' + card.imageName}}" alt="{{::card.title}} Chart" class="chart-image"/>
+                    </div>
+                    
+                    <div class="text-end mt-3">
+                        <button class="btn btn-detalhar" ng-click="c.detalhar(card)">Detalhar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>
