@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="" section_id="a1edd669fbe92210f6d5f9d38eefdc9c" sys_domain="global" table="x_sded9_portal_t_0_u_despesa_pessoal" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.begin_split</element>
+            <position>0</position>
+            <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-16 13:44:56</sys_created_on>
+            <sys_id>29edd669fbe92210f6d5f9d38eefdca3</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_sded9_portal_t_0_u_despesa_pessoal" sys_domain="global" view="Default view">a1edd669fbe92210f6d5f9d38eefdc9c</sys_ui_section>
+            <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-16 13:44:56</sys_updated_on>
+            <sys_user/>
+            <type>.begin_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_despesa_bruta_pessoal</element>
+            <position>1</position>
+            <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-16 13:44:56</sys_created_on>
+            <sys_id>a5edd669fbe92210f6d5f9d38eefdca4</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_sded9_portal_t_0_u_despesa_pessoal" sys_domain="global" view="Default view">a1edd669fbe92210f6d5f9d38eefdc9c</sys_ui_section>
+            <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-16 13:44:56</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_despesa_pessoal_ativo</element>
+            <position>2</position>
+            <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-16 13:44:56</sys_created_on>
+            <sys_id>6dedd669fbe92210f6d5f9d38eefdca4</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_sded9_portal_t_0_u_despesa_pessoal" sys_domain="global" view="Default view">a1edd669fbe92210f6d5f9d38eefdc9c</sys_ui_section>
+            <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-16 13:44:56</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_despesa_inativos_pensionistas</element>
+            <position>3</position>
+            <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-16 13:44:56</sys_created_on>
+            <sys_id>25edd669fbe92210f6d5f9d38eefdca5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_sded9_portal_t_0_u_despesa_pessoal" sys_domain="global" view="Default view">a1edd669fbe92210f6d5f9d38eefdc9c</sys_ui_section>
+            <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-16 13:44:56</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_despesa_pessoal_terceirizado</element>
+            <position>4</position>
+            <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-16 13:44:56</sys_created_on>
+            <sys_id>e9edd669fbe92210f6d5f9d38eefdca5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_sded9_portal_t_0_u_despesa_pessoal" sys_domain="global" view="Default view">a1edd669fbe92210f6d5f9d38eefdc9c</sys_ui_section>
+            <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-16 13:44:56</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_despesa_deducoes</element>
+            <position>5</position>
+            <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-16 13:44:56</sys_created_on>
+            <sys_id>a1edd669fbe92210f6d5f9d38eefdca6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_sded9_portal_t_0_u_despesa_pessoal" sys_domain="global" view="Default view">a1edd669fbe92210f6d5f9d38eefdc9c</sys_ui_section>
+            <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-16 13:44:56</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_despesa_indenizacoes_demissoes</element>
+            <position>6</position>
+            <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-16 13:44:56</sys_created_on>
+            <sys_id>69edd669fbe92210f6d5f9d38eefdca6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_sded9_portal_t_0_u_despesa_pessoal" sys_domain="global" view="Default view">a1edd669fbe92210f6d5f9d38eefdc9c</sys_ui_section>
+            <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-16 13:44:56</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_despesa_decisao_judicial</element>
+            <position>7</position>
+            <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-16 13:44:56</sys_created_on>
+            <sys_id>21edd669fbe92210f6d5f9d38eefdca7</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_sded9_portal_t_0_u_despesa_pessoal" sys_domain="global" view="Default view">a1edd669fbe92210f6d5f9d38eefdc9c</sys_ui_section>
+            <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-16 13:44:56</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_despesas_exercicio_anteriores</element>
+            <position>8</position>
+            <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-16 13:44:56</sys_created_on>
+            <sys_id>f5edd669fbe92210f6d5f9d38eefdca7</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_sded9_portal_t_0_u_despesa_pessoal" sys_domain="global" view="Default view">a1edd669fbe92210f6d5f9d38eefdc9c</sys_ui_section>
+            <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-16 13:44:56</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>9</position>
+            <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-16 13:44:56</sys_created_on>
+            <sys_id>75edd669fbe92210f6d5f9d38eefdcb4</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_sded9_portal_t_0_u_despesa_pessoal" sys_domain="global" view="Default view">a1edd669fbe92210f6d5f9d38eefdc9c</sys_ui_section>
+            <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-16 13:44:56</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_despesa_inativos_pensionistas_vinculados</element>
+            <position>10</position>
+            <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-16 13:44:56</sys_created_on>
+            <sys_id>3dedd669fbe92210f6d5f9d38eefdcb4</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_sded9_portal_t_0_u_despesa_pessoal" sys_domain="global" view="Default view">a1edd669fbe92210f6d5f9d38eefdc9c</sys_ui_section>
+            <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-16 13:44:56</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_despesa_liquida_pedidos</element>
+            <position>11</position>
+            <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-16 13:44:56</sys_created_on>
+            <sys_id>f1edd669fbe92210f6d5f9d38eefdcb5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_sded9_portal_t_0_u_despesa_pessoal" sys_domain="global" view="Default view">a1edd669fbe92210f6d5f9d38eefdc9c</sys_ui_section>
+            <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-16 13:44:56</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_receita_corrente_liquida</element>
+            <position>12</position>
+            <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-16 13:44:56</sys_created_on>
+            <sys_id>b9edd669fbe92210f6d5f9d38eefdcb5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_sded9_portal_t_0_u_despesa_pessoal" sys_domain="global" view="Default view">a1edd669fbe92210f6d5f9d38eefdc9c</sys_ui_section>
+            <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-16 13:44:56</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_comprometimento_rcl</element>
+            <position>13</position>
+            <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-16 13:44:56</sys_created_on>
+            <sys_id>71edd669fbe92210f6d5f9d38eefdcb6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_sded9_portal_t_0_u_despesa_pessoal" sys_domain="global" view="Default view">a1edd669fbe92210f6d5f9d38eefdc9c</sys_ui_section>
+            <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-16 13:44:56</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_limite_maximo</element>
+            <position>14</position>
+            <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-16 13:44:56</sys_created_on>
+            <sys_id>39edd669fbe92210f6d5f9d38eefdcb6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_sded9_portal_t_0_u_despesa_pessoal" sys_domain="global" view="Default view">a1edd669fbe92210f6d5f9d38eefdc9c</sys_ui_section>
+            <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-16 13:44:56</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_limite_prudencial</element>
+            <position>15</position>
+            <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-16 13:44:56</sys_created_on>
+            <sys_id>fdedd669fbe92210f6d5f9d38eefdcb6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_sded9_portal_t_0_u_despesa_pessoal" sys_domain="global" view="Default view">a1edd669fbe92210f6d5f9d38eefdc9c</sys_ui_section>
+            <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-16 13:44:56</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_limite_de_alerta</element>
+            <position>16</position>
+            <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-16 13:44:56</sys_created_on>
+            <sys_id>b5edd669fbe92210f6d5f9d38eefdcb7</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_sded9_portal_t_0_u_despesa_pessoal" sys_domain="global" view="Default view">a1edd669fbe92210f6d5f9d38eefdc9c</sys_ui_section>
+            <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-16 13:44:56</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_ano</element>
+            <position>17</position>
+            <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-16 13:44:56</sys_created_on>
+            <sys_id>7dedd669fbe92210f6d5f9d38eefdcb7</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_sded9_portal_t_0_u_despesa_pessoal" sys_domain="global" view="Default view">a1edd669fbe92210f6d5f9d38eefdc9c</sys_ui_section>
+            <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-16 13:44:56</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.end_split</element>
+            <position>18</position>
+            <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-16 13:44:56</sys_created_on>
+            <sys_id>35edd669fbe92210f6d5f9d38eefdcb8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_sded9_portal_t_0_u_despesa_pessoal" sys_domain="global" view="Default view">a1edd669fbe92210f6d5f9d38eefdc9c</sys_ui_section>
+            <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-16 13:44:56</sys_updated_on>
+            <sys_user/>
+            <type>.end_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_despesa_liquida_pessoal</element>
+            <position>19</position>
+            <sys_created_by>jesse.biscarde@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-10-28 16:58:12</sys_created_on>
+            <sys_id>1578b07efbbc3690f6d5f9d38eefdc31</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_sded9_portal_t_0_u_despesa_pessoal" sys_domain="global" view="Default view">a1edd669fbe92210f6d5f9d38eefdc9c</sys_ui_section>
+            <sys_updated_by>jesse.biscarde@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-10-28 16:58:12</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_variacao_despesa_liquida_pessoal</element>
+            <position>20</position>
+            <sys_created_by>jesse.biscarde@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-10-28 17:05:51</sys_created_on>
+            <sys_id>293a7cfefbbc3690f6d5f9d38eefdc90</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_sded9_portal_t_0_u_despesa_pessoal" sys_domain="global" view="Default view">a1edd669fbe92210f6d5f9d38eefdc9c</sys_ui_section>
+            <sys_updated_by>jesse.biscarde@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-10-28 17:05:51</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_poder</element>
+            <position>21</position>
+            <sys_created_by>jesse.biscarde@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-10-28 17:49:14</sys_created_on>
+            <sys_id>4124c97efbfc3690f6d5f9d38eefdc0d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_sded9_portal_t_0_u_despesa_pessoal" sys_domain="global" view="Default view">a1edd669fbe92210f6d5f9d38eefdc9c</sys_ui_section>
+            <sys_updated_by>jesse.biscarde@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-10-28 17:49:14</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_despesa_liquida_pessoal_executivo</element>
+            <position>22</position>
+            <sys_created_by>jesse.biscarde@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-10-28 18:23:03</sys_created_on>
+            <sys_id>dcebc5bafb307690f6d5f9d38eefdcab</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_sded9_portal_t_0_u_despesa_pessoal" sys_domain="global" view="Default view">a1edd669fbe92210f6d5f9d38eefdc9c</sys_ui_section>
+            <sys_updated_by>jesse.biscarde@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-10-28 18:23:03</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_despesa_liquida_pessoal_consolidado</element>
+            <position>23</position>
+            <sys_created_by>jesse.biscarde@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-10-28 18:31:04</sys_created_on>
+            <sys_id>29bd897efb307690f6d5f9d38eefdcae</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_sded9_portal_t_0_u_despesa_pessoal" sys_domain="global" view="Default view">a1edd669fbe92210f6d5f9d38eefdc9c</sys_ui_section>
+            <sys_updated_by>jesse.biscarde@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-10-28 18:31:04</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_despesa_liquida_pessoal_executivio</element>
+            <position>24</position>
+            <sys_created_by>jesse.biscarde@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-10-28 18:37:12</sys_created_on>
+            <sys_id>ab1f0d72fb707690f6d5f9d38eefdca4</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_sded9_portal_t_0_u_despesa_pessoal" sys_domain="global" view="Default view">a1edd669fbe92210f6d5f9d38eefdc9c</sys_ui_section>
+            <sys_updated_by>jesse.biscarde@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-10-28 18:37:12</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>varia_o_da_despesa_l_quida_com_pessoal_consolidado</element>
+            <position>25</position>
+            <sys_created_by>jesse.biscarde@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-10-28 18:41:11</sys_created_on>
+            <sys_id>8a0051b6fb707690f6d5f9d38eefdc7e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_sded9_portal_t_0_u_despesa_pessoal" sys_domain="global" view="Default view">a1edd669fbe92210f6d5f9d38eefdc9c</sys_ui_section>
+            <sys_updated_by>jesse.biscarde@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-10-28 18:41:11</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_variacao_despesa_liquida_pessoal_executivio</element>
+            <position>26</position>
+            <sys_created_by>jesse.biscarde@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-10-28 18:46:15</sys_created_on>
+            <sys_id>d431d97afb707690f6d5f9d38eefdc69</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_sded9_portal_t_0_u_despesa_pessoal" sys_domain="global" view="Default view">a1edd669fbe92210f6d5f9d38eefdc9c</sys_ui_section>
+            <sys_updated_by>jesse.biscarde@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-10-28 18:46:15</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_variacao_despesa_liquida_pessoal_consolidado</element>
+            <position>27</position>
+            <sys_created_by>jesse.biscarde@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-10-28 18:48:28</sys_created_on>
+            <sys_id>f0b155bafb707690f6d5f9d38eefdc91</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_sded9_portal_t_0_u_despesa_pessoal" sys_domain="global" view="Default view">a1edd669fbe92210f6d5f9d38eefdc9c</sys_ui_section>
+            <sys_updated_by>jesse.biscarde@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-10-28 18:48:28</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_variacao_despesa_liquida_pessoal_executivo</element>
+            <position>28</position>
+            <sys_created_by>jesse.biscarde@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-10-28 18:52:33</sys_created_on>
+            <sys_id>98a21d3efb707690f6d5f9d38eefdcd8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_sded9_portal_t_0_u_despesa_pessoal" sys_domain="global" view="Default view">a1edd669fbe92210f6d5f9d38eefdc9c</sys_ui_section>
+            <sys_updated_by>jesse.biscarde@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-10-28 18:52:33</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption/>
+            <header>false</header>
+            <name>x_sded9_portal_t_0_u_despesa_pessoal</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-16 13:44:56</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>a1edd669fbe92210f6d5f9d38eefdc9c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_sded9_portal_t_0_u_despesa_pessoal</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+            <sys_update_name>sys_ui_section_a1edd669fbe92210f6d5f9d38eefdc9c</sys_update_name>
+            <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-16 13:44:56</sys_updated_on>
+            <sys_user/>
+            <title>true</title>
+            <view display_value="Exibição padrão" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>
