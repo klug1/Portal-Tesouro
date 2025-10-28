@@ -209,7 +209,7 @@ $secondary-color: #A1A1A1;
       // Tipo: 'icon'
       type: 'image', 
       src: 'x_sded9_portal_t_0.resultadoFiscalFase2.png',
-      page: '404_sefaz'
+      page: 'resultados_fiscais'
     },
     {
       id: 'communication',
@@ -227,14 +227,14 @@ $secondary-color: #A1A1A1;
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-10-18 01:50:44</sys_created_on>
         <sys_id>15c802d3fbe83250f6d5f9d38eefdc57</sys_id>
-        <sys_mod_count>31</sys_mod_count>
+        <sys_mod_count>32</sys_mod_count>
         <sys_name>Acesso Rapido</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_15c802d3fbe83250f6d5f9d38eefdc57</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-10-20 04:46:40</sys_updated_on>
+        <sys_updated_on>2025-10-28 22:58:05</sys_updated_on>
         <template><![CDATA[<div class="fiscal-dashboard-container" ng-class="{'contrast-mode': contrastIsActive}">
   
   <h2 class="widget-title">Acesso rápido</h2>

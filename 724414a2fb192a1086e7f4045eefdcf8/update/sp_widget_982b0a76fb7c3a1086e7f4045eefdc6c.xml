@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $location) {
+  $scope.goTo = function(id) {
+    //$location.url("?id=" + id);
+		window.open("?id=" + id, '_blank');
+  };
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>/* Container principal do widget */
+.banner-fiscal-widget {
+    position: relative;
+    /* Define a altura mínima do banner. Ajuste este valor se quiser mais ou menos "achatado" */
+    min-height: 300px; /* Valor base de 300px */
+    width: 100%;
+    
+    /* Propriedades da Imagem de Fundo */
+    background-image: url('/x_sded9_portal_t_0.bannerResultadosFiscais.png'); /* SEU URL DA IMAGEM */
+    background-size: cover; 
+    background-position: center center; 
+    background-repeat: no-repeat;
+    
+    /* Efeito de sobreposição escura para destacar o texto, se desejar: */
+    background-color: rgba(0, 0, 0, 0.4); 
+    background-blend-mode: darken; 
+  	user-select: none;
+}
+
+/* Container do Conteúdo de Texto (usa Flexbox para alinhamento vertical) */
+.banner-content-container {
+    height: 100%; /* Ocupa a altura total do banner-fiscal-widget */
+    display: flex;
+    align-items: center; /* Centraliza o conteúdo (bloco de texto) verticalmente */
+    justify-content: flex-start; /* Mantém o bloco de texto alinhado à esquerda, respeitando o offset/padding */
+    
+    padding: 0 80px 80px 80px;
+    
+    position: absolute; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+/* Área de Texto (col-lg-6 offset-lg-1) */
+.banner-text-area {
+    /* Garante que a área de texto não tenha padding-left fixo que atrapalhe o offset/responsividade */
+    padding-left: 0; 
+    margin-left: 0;
+}
+
+/* Estilos do Título Principal: Resultados Fiscais */
+.banner-title {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400; 
+    font-size: 60px; /* Tamanho base (desktop grande) */
+    line-height: 100%;
+    color: #F8F6F6; 
+    margin-bottom: 15px; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+  	user-select: none; 
+    -webkit-user-select: none;
+}
+
+/* Estilos do Subtítulo */
+.banner-subtitle {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400; 
+    font-size: 24px; /* Tamanho base (desktop grande) */
+    line-height: 1.4; 
+    color: #F8F6F6;
+    
+    /* Propriedades para garantir a quebra de linha normal (sem reticências) */
+    white-space: normal;
+    overflow: visible;
+    
+    max-width: 750px; /* Largura máxima para controlar o ponto de quebra de linha */
+    
+    margin-top: 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+ 		user-select: none; 
+    -webkit-user-select: none;
+}
+
+/* -------------------------------------- */
+/* AJUSTES DE RESPONSIVIDADE (MEDIA QUERIES) */
+/* -------------------------------------- */
+
+/* Ajuste para Telas Médias (Ex: Tablets, até 992px) */
+@media (max-width: 992px) {
+    .banner-content-container {
+        padding: 0 30px; /* Mantém um bom padding lateral em tablets */
+    }
+    .banner-title {
+        font-size: 50px; 
+    }
+    .banner-subtitle {
+        font-size: 20px; 
+        max-width: 90%; 
+    }
+}
+
+/* Ajuste para Telas Pequenas (Ex: Mobile, até 768px) */
+@media (max-width: 768px) {
+    .banner-fiscal-widget {
+        min-height: 250px; 
+    }
+    .banner-content-container {
+        /* Aumentado para 30px para dar um "respiro" maior (descolar da borda) no mobile */
+        padding: 0 30px; 
+    }
+    /* Para anular o offset-lg-1 e garantir o alinhamento correto em mobile */
+    .banner-text-area {
+        margin-left: 0 !important; 
+    }
+    .banner-title {
+        font-size: 36px; 
+    }
+    .banner-subtitle {
+        font-size: 16px; 
+        line-height: 1.3;
+        /* Em mobile, a largura é dada principalmente pelo padding do container */
+        max-width: 100%; 
+    }
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>resultados_fiscais_banner</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Resultados Fiscais Banner</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-10-28 22:59:24</sys_created_on>
+        <sys_id>982b0a76fb7c3a1086e7f4045eefdc6c</sys_id>
+        <sys_mod_count>22</sys_mod_count>
+        <sys_name>Resultados Fiscais Banner</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_982b0a76fb7c3a1086e7f4045eefdc6c</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-10-28 23:21:23</sys_updated_on>
+        <template><![CDATA[<div class="banner-fiscal-widget">
+    <div class="container-fluid banner-content-container">
+        <div class="col-lg-6 offset-lg-1 col-md-8 col-sm-12 banner-text-area">
+            
+            <h1 class="banner-title">
+                Resultados Fiscais
+            </h1>
+            
+            <p class="banner-subtitle">
+                Mostram a situação financeira do governo, garantindo transparência, controle e apoio à gestão pública eficiente
+            </p>
+            
+        </div>
+    </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>
