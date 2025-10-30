@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($location, spAriaFocusManager, spUtil) {
+
+	var c = this;
+	c.options.glyph = c.options.glyph || 'search';
+//	c.options.title = c.options.title || "${Welcome to Knowledge}";
+	c.keyword = "";
+	
+	c.submitSearch = function() {
+		if(!((!c.data.allow_empty_search && c.keyword == "") || (c.keyword && c.keyword.length < c.data.min_search_char))) {		
+			var url= $location.search({
+				id: 'kb_search',
+				query: c.keyword
+			});	
+
+			spAriaFocusManager.navigateToLink(url.url());
+		}
+		else if(c.keyword && c.keyword.length < c.data.min_search_char) 
+			spUtil.addInfoMessage(c.data.messages.MIN_CHARS_REQUIRED);
+	};
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>/* Estilos responsivos (mantidos do seu original) */
+@media screen and (max-width: 992px){
+  .kb-banner-{{::c.data.instanceid}} .cm-main-search{
+    height: inherit;
+    margin:0 -2.5rem;
+  }
+  .kb-banner-{{::c.data.instanceid}} .cm-search-box{
+    width:100%;
+    padding:2rem;
+  }
+}
+@media screen and (max-width: 640px){
+  .kb-banner-{{::c.data.instanceid}} .cm-main-search{
+    margin:0 -1.5rem;
+  }
+}
+
+/* ---------------------------------------------------------------------- */
+/* ESTILOS PRINCIPAIS: ADAPTAÇÃO PARA PÍLULA USANDO INPUT-GROUP           */
+/* ---------------------------------------------------------------------- */
+
+.cm-main-search {
+    color: $sp-tagline-color;
+  	width: 100rem;
+  
+  /* 2. TELAS MÉDIAS (992px a 768px) */
+    @media (max-width: 992px) and (min-width: 768px) {
+        width: 50rem; 
+        margin: 0 auto;
+    }
+    
+    /* 3. TELAS PEQUENAS (Abaixo de 768px) */
+    @media (max-width: 767px) {
+        width: 25rem;
+        margin: 0 auto;
+    }
+
+    .cm-welcome-msg {
+        h2 {
+            font-size: 36px;
+            font-weight: 300;
+            text-align: center;
+            margin-top: 0px;
+            margin-bottom: 15px;
+        }
+    }
+
+    .cm-search-box {
+        .input-group {
+            max-width: 100rem; /* Altere para o tamanho desejado */
+            margin: 0 auto;
+            
+            // Define o contêiner do Input Group como arredondado
+            border-radius: 30px; 
+            height: 60px; /* Altura da caixa de pesquisa */
+            
+            // Aplica a sombra e borda ao input-group
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            transition: box-shadow 0.3s, border-color 0.3s; 
+            background-color: #fff;
+            
+            // Anula bordas padrão e usa o flexbox
+            display: flex;
+            align-items: center;
+
+            // Efeito de Foco (usando o foco do input como gatilho)
+            &amp;:focus-within {
+                border-color: #004d99; /* Azul principal */
+                box-shadow: 0 4px 12px rgba(0,77,153,0.3); 
+            }
+        }
+        
+        // INPUT (Campo de Texto)
+        .input-group input[name="query"] {
+            flex: 1; /* Ocupa o máximo de espaço */
+            height: 100%;
+            border: none; /* Remove a borda padrão */
+            background: none;
+            box-shadow: none;
+            outline: none;
+            
+            // Define o padding interno para alinhamento
+            padding-left: 25px; /* Mais espaço à esquerda do texto */
+            padding-right: 5px; 
+            font-size: 1.2em;
+
+            // Remove raios nas laterais que não queremos
+            border-radius: 30px 0 0 30px; /* Garante o raio na ponta esquerda */
+
+            &amp;:focus {
+                outline: none !important;
+                box-shadow: none !important;
+            }
+        }
+        
+        // PLACEHOLDER
+        ::placeholder {
+            font-size: 16px;
+            line-height: 25px;
+        }
+        :-ms-input-placeholder {
+            font-size: 16px;
+            line-height: 25px;
+        }
+
+        // BOTÃO (Lado Direito)
+        .input-group .input-group-btn {
+            height: 100%;
+            width: auto;
+            
+            &gt; button {
+                height: 100%;
+                min-width: 60px; /* Largura mínima para o botão */
+                border: none; /* Remove a borda padrão do botão */
+                background: none;
+                
+                // Garante o raio na ponta direita
+                border-radius: 0 30px 30px 0; 
+                
+                padding: 0 20px; /* Espaçamento interno */
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
+                i {
+                    font-size: 1.5em; /* Tamanho do ícone */
+                    color: #004d99; /* Cor do ícone */
+                }
+            }
+        }
+    }
+
+    .cm-community-summary {
+        text-align: center;
+
+        ul{
+            padding:0px;
+        }
+        .summary {
+            font-size: 18px;
+            display: inline-block;
+            text-align: center;
+            padding: 20px 30px 0px;
+            margin-top: 4px;
+            margin-bottom: 0px;
+        }
+    }
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list>title,glyph,css</field_list>
+        <has_preview>false</has_preview>
+        <id>knowlegde_homepage_search_sate</id>
+        <internal>false</internal>
+        <link><![CDATA[function(scope,element,attr){
+	var c = scope.c;
+	if (window && window.parent && window.parent.NOW && window.parent.NOW.CustomEvent && window.parent.NOW.CustomEvent.fireTop) {
+	    window.parent.NOW.CustomEvent.fireTop(
+	        'magellanNavigator.permalink.set', {
+	            title: window.document.title,
+	            relativePath: window.location.pathname + window.location.search + window.location.hash
+	        }
+	    );
+	}
+	function openedInIframe () {
+		if(window.parent && window.parent.location.pathname == '/gtb.do' )
+			return false;
+		try {
+			return ((window.self !== window.top) && (window.top.location.href.includes('now/nav') || window.top.location.href.includes('nav_to')
+))||(window.opener && window.opener.document.getElementById("section_form_id") != null && c.data.sysparm_kb_search_table);
+		} catch (e) {
+			return false;
+		}
+	}
+	
+	if(openedInIframe())
+		$("header nav").css("display","none");
+		
+	if(scope.data.set_foccus)
+		setTimeout(function(){
+			element.find('input[name=query]').focus();
+		},0);
+}]]></link>
+        <name>Knowlegde Homepage Search SATE</name>
+        <option_schema>[{"hint":"Placeholder text for search","name":"placeholder","default_value":"","label":"Search Placeholder","type":"string"},{"hint":"Allow search with empty or blank string in search box (Default to system property : glide.knowman.allow_empty_search)","name":"allow_empty_search","default_value":"Use system property","label":"Allow Empty Search","type":"choice","choices":[{"label":"Yes","value":"Yes"},{"label":"No","value":"No"},{"label":"Use system property","value":"Use system property"}]},{"hint":"Minimum number of characters for search (Default to system property : glide.knowman.search_character_limit)","name":"min_search_char","label":"Minimum Number of Characters for Search","type":"string"}]</option_schema>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	if(input) 
+		return;
+	else {
+	data.instanceid = $sp.getDisplayValue("sys_id");
+
+	data.sysparm_kb_search_table = $sp.getParameter('sysparm_kb_search_table');
+	//options will be given precedence if value exit
+	data.set_foccus = gs.getProperty('glide.knowman.portal_search_focus') == 'true' || false;
+	data.min_search_char = parseInt(options.min_search_char || gs.getProperty('glide.knowman.search_character_limit') || 3);
+	data.allow_empty_search = options.allow_empty_search ? (options.allow_empty_search == 'Use system property' ?  gs.getProperty('glide.knowman.allow_empty_search') == 'true' : options.allow_empty_search == 'Yes') : gs.getProperty('glide.knowman.allow_empty_search') == 'true' || false;
+	//options.placeholder = options.placeholder || gs.getMessage('Search (minimum {0} characters)',data.min_search_char+'');
+		options.placeholder = options.placeholder || "Pesquisar legislação";
+	data.messages = {};
+	data.messages.MIN_CHARS_REQUIRED = gs.getMessage('Include at least {0} characters in your search query.',data.min_search_char+'');
+	data.messages.searchMsg = gs.getMessage("Search");
+	data.sqa_ui_active = GlidePluginManager.isActive('com.snc.knowledge.social_qa.ui');
+	}
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-10-30 03:21:07</sys_created_on>
+        <sys_id>73905453fb78f690f6d5f9d38eefdcac</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_name>Knowlegde Homepage Search SATE</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_73905453fb78f690f6d5f9d38eefdcac</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-10-30 05:37:48</sys_updated_on>
+        <template><![CDATA[<div class="kb-banner-{{::c.data.instanceid}}">
+  <div class="cm-main-search">
+    <div class="cm-welcome-msg hidden-sm hidden-xs">
+      <h2 ng-bind="::options.title"></h2>
+    </div>
+    <div class="cm-search-box">
+      <div class="banner-search">
+        <form id="kb_home_search_form" ng-submit="c.submitSearch()" class="ng-pristine ng-valid" role="form" _lpchecked="1">
+          <input name="id" value="kb_search" type="hidden"/>
+          <div class="input-group input-group-{{::c.options.size || 'lg'}}" role="presentation">
+            <input name="query" ng-model="c.keyword" type="text" aria-label="${Search}" 
+                   placeholder="{{::options.placeholder}}" class="form-control">
+            <span class="input-group-btn">
+              <button name="search" type="submit" class="btn btn-{{::c.options.color}}"
+                      aria-label="${search}" data-toggle="tooltip" data-placement="bottom" title="{{::c.data.messages.searchMsg}}">
+                <i ng-if="::c.options.glyph" class="fa fa-{{::c.options.glyph}}" aria-hidden="true"></i>
+              </button>
+            </span>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="cm-community-summary hidden-sm hidden-xs">
+      <ul class="list-unstyled">
+        <!--li class="summary"> ${{{$root.kb_count}} Knowledge Bases}</li>
+        <li class="summary">${{{$root.articles_count}} Articles}</li-->
+        <li class="summary" ng-if="c.data.sqa_ui_active">${{{$root.socialqa_count}} Q&amp;A}</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<style>
+  @media screen and (max-width: 992px){
+    .kb-banner-{{::c.data.instanceid}} .cm-main-search{
+      height: inherit;
+      margin:0 -2.5rem;
+    }
+    .kb-banner-{{::c.data.instanceid}} .cm-search-box{
+      width:100%;
+      padding:2rem;
+    }
+  }
+  @media screen and (max-width: 640px){
+    .kb-banner-{{::c.data.instanceid}} .cm-main-search{
+      margin:0 -1.5rem;
+    }
+  }
+</style>]]></template>
+    </sp_widget>
+</record_update>
