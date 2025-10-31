@@ -172,12 +172,63 @@
 }
 ]]></client_script>
         <controller_as>c</controller_as>
-        <css>div, h3, h2, h1, h4 {
+        <css>@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&amp;display=swap');
+
+div, h3, h2, h1, h4 {
 	 font-family: 'Roboto Flex', sans-serif;
 }
 
+/* ---------------------------------------------------------------------- */
+/* ESTILOS BASE (APLICADOS EM TODAS AS TELAS - MOBILE FIRST: &lt; 576px)     */
+/* ---------------------------------------------------------------------- */
+#titulo-organorgama {
+    /* Tipografia e Cor */
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600; /* SemiBold */
+    color: #4671C4;
 
-</css>
+    /* Centralização (Flexbox) */
+    display: flex;
+    justify-content: center; /* Centraliza Horizontalmente */
+    align-items: center;     /* Centraliza Verticalmente */
+    text-align: center;
+    line-height: 1.2;
+
+    /* Tamanho e Altura para Telas Muito Pequenas (Exemplo: iPhone SE) */
+    font-size: 28px;
+    height: 150px; /* Altura menor para telas mais estreitas */
+}
+
+
+
+/* ---------------------------------------------------------------------- */
+/* RESPONSIVIDADE (MEDIA QUERIES)                                         */
+/* ---------------------------------------------------------------------- */
+
+/* 1. Telas Pequenas (sm: a partir de 576px - a maioria dos celulares) */
+@media (min-width: 576px) { 
+    /* Usamos '576px' que é o ponto de interrupção 'sm' do Bootstrap */
+    #titulo-organorgama {
+        font-size: 36px;
+        height: 70px;
+    }
+}
+
+/* 2. Telas Médias (md: a partir de 768px - tablets) */
+@media (min-width: $screen-sm-min) {
+    #titulo-organorgama {
+        font-size: 40px;
+        height: 80px;
+    }
+}
+
+/* 3. Telas Grandes (lg: a partir de 992px - desktops) */
+@media (min-width: $screen-md-min) {
+    #titulo-organorgama {
+        font-size: 48px; /* O tamanho original que você solicitou */
+        height: 150px;
+    }
+}</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -305,14 +356,14 @@ angular.module('sn.$sp').directive('orgChart', function($compile) {
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-25 16:25:06</sys_created_on>
         <sys_id>e3d8dde8fbf9661086e7f4045eefdcc7</sys_id>
-        <sys_mod_count>183</sys_mod_count>
+        <sys_mod_count>223</sys_mod_count>
         <sys_name>Organograma Tesouro Clone v2</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_e3d8dde8fbf9661086e7f4045eefdcc7</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-06-24 21:49:04</sys_updated_on>
+        <sys_updated_on>2025-10-31 02:53:44</sys_updated_on>
         <template><![CDATA[<style>
   #container .highcharts-point {
     filter: drop-shadow(0 0 0 white) drop-shadow(0 0 0 white);
@@ -356,32 +407,163 @@ angular.module('sn.$sp').directive('orgChart', function($compile) {
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 </style>
 
+<div id="titulo-organorgama">
+  Organograma do Tesouro Estadual
+</div>
+
 <div class='containerOrg' id="container" style="min-width: 310px; max-width: 100%; height: 800px; margin: 0 auto"></div>
 
 <!-- Modal Template -->
 <script type="text/ng-template" id="modalTemplate">
   <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">Informações do Departamento</h4>
+    <div class="panel-heading clearfix">
+      <h4 class="panel-title pull-left" style="
+          font-family: Poppins, sans-serif; 
+          font-weight: 600; 
+          font-size: 20px;
+          color: #4671C4;
+          line-height: 1; 
+          vertical-align: middle;
+      ">Informações do Departamento</h4>
+      
+      <button type="button" class="close pull-right" aria-label="Fechar" ng-click="closeModal()">
+        <span aria-hidden="true" style="color: #4671C4; opacity: 1;">&times;</span>
+      </button>
     </div>
     <div class="panel-body wrapper-xl">
-      <p><b>Nome:</b> {{modalData.name}}</p>
-      <p><b>Sigla:</b> {{modalData.title}}</p>
-      <p><b>Descrição:</b> {{modalData.desc || 'Sem descrição'}}</p>
-      <p><b>Gestor Titular:</b> {{modalData.gestorTitular}}</p>
-      <p><b>Gestor Substituto 1:</b> {{modalData.gestorSub1}}</p>
-      <p><b>Gestor Substituto 2:</b> {{modalData.gestorSub2}}</p>
-      <p><b>Servidores:</b><br> 
-        <span ng-if="modalData.users" ng-bind-html="modalData.users"></span>
-        <span ng-if="!modalData.users"><i>Sem usuários cadastrados</i></span>
+      
+      <p><b style="
+          font-family: Roboto, sans-serif; 
+          font-weight: 700; 
+          font-size: 18px;
+          color: #3F63A8;
+          line-height: 1;
+          vertical-align: middle;
+      ">Nome:</b> <span style="
+          font-family: Roboto, sans-serif; 
+          font-weight: 400; 
+          font-size: 15px;
+          color: #3F63A8;
+          line-height: 1.2; /* Ajustado para funcionalidade */
+          vertical-align: middle;
+          text-transform: uppercase;
+      ">{{modalData.name}}</span></p>
+      
+      <p><b style="
+          font-family: Roboto, sans-serif; 
+          font-weight: 700; 
+          font-size: 18px;
+          color: #3F63A8;
+          line-height: 1;
+          vertical-align: middle;
+      ">Sigla:</b> <span style="
+          font-family: Roboto, sans-serif; 
+          font-weight: 400; 
+          font-size: 15px;
+          color: #3F63A8;
+          line-height: 1.2;
+          vertical-align: middle;
+          text-transform: uppercase;
+      ">{{modalData.title}}</span></p>
+      
+      <p><b style="
+          font-family: Roboto, sans-serif; 
+          font-weight: 700; 
+          font-size: 18px;
+          color: #3F63A8;
+          line-height: 1;
+          vertical-align: middle;
+      ">Descrição:</b> <span style="
+          font-family: Roboto, sans-serif; 
+          font-weight: 400; 
+          font-size: 15px;
+          color: #3F63A8;
+          line-height: 1.2;
+          vertical-align: middle;
+          text-transform: uppercase;
+      ">{{modalData.desc || 'Sem descrição'}}</span></p>
+      
+      <p><b style="
+          font-family: Roboto, sans-serif; 
+          font-weight: 700; 
+          font-size: 18px;
+          color: #3F63A8;
+          line-height: 1;
+          vertical-align: middle;
+      ">Gestor Titular:</b> <span style="
+          font-family: Roboto, sans-serif; 
+          font-weight: 400; 
+          font-size: 15px;
+          color: #3F63A8;
+          line-height: 1.2;
+          vertical-align: middle;
+          text-transform: uppercase;
+      ">{{modalData.gestorTitular}}</span></p>
+      
+      <p><b style="
+          font-family: Roboto, sans-serif; 
+          font-weight: 700; 
+          font-size: 18px;
+          color: #3F63A8;
+          line-height: 1;
+          vertical-align: middle;
+      ">Gestor Substituto 1:</b> <span style="
+          font-family: Roboto, sans-serif; 
+          font-weight: 400; 
+          font-size: 15px;
+          color: #3F63A8;
+          line-height: 1.2;
+          vertical-align: middle;
+          text-transform: uppercase;
+      ">{{modalData.gestorSub1}}</span></p>
+      
+      <p><b style="
+          font-family: Roboto, sans-serif; 
+          font-weight: 700; 
+          font-size: 18px;
+          color: #3F63A8;
+          line-height: 1;
+          vertical-align: middle;
+      ">Gestor Substituto 2:</b> <span style="
+          font-family: Roboto, sans-serif; 
+          font-weight: 400; 
+          font-size: 15px;
+          color: #3F63A8;
+          line-height: 1.2;
+          vertical-align: middle;
+          text-transform: uppercase;
+      ">{{modalData.gestorSub2}}</span></p>
+      
+      <p><b style="
+          font-family: Roboto, sans-serif; 
+          font-weight: 700; 
+          font-size: 18px;
+          color: #3F63A8;
+          line-height: 1;
+          vertical-align: middle;
+      ">Servidores:</b><br>
+        <span ng-if="modalData.users" ng-bind-html="modalData.users" style="
+          font-family: Roboto, sans-serif; 
+          font-weight: 400; 
+          font-size: 15px;
+          color: #3F63A8;
+          line-height: 1.2;
+          vertical-align: middle;
+          text-transform: uppercase;
+      "></span>
+        <span ng-if="!modalData.users" style="
+          font-family: Roboto, sans-serif; 
+          font-weight: 400; 
+          font-size: 15px;
+          color: #3F63A8;
+          line-height: 1.2;
+          vertical-align: middle;
+          text-transform: uppercase;
+      "><i>Sem usuários cadastrados</i></span>
       </p>
-    </div>
-    <div class="panel-footer text-right">
-      <button class="btn btn-primary" ng-click="closeModal()">Fechar</button>
     </div>
   </div>
 </script>
-
 
 ]]></template>
     </sp_widget>
