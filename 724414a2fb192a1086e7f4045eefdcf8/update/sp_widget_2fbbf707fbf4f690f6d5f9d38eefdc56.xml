@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($scope, $location, $uibModal) {
+    var c = this;
+
+    c.data.search_term = c.data.search_term || "";
+    c.advancedFilters = c.advancedFilters || {}; 
+    c.modalInstance = null; 
+
+    c.searchKB = function(term) {
+        if (term && term.trim() !== '') {
+            var url = "search?q=" + encodeURIComponent(term);
+            if (c.advancedFilters.assunto) {
+                url += "&assunto=" + c.advancedFilters.assunto; 
+            }
+            $location.url(url); 
+        }
+    };
+    
+    c.openModal = function() {
+        c.tempFilters = angular.copy(c.advancedFilters); // Salva filtros antes de abrir
+
+        c.modalInstance = $uibModal.open({
+            templateUrl: 'modalAdvancedSearch', 
+            scope: $scope, 
+            size: 'md',
+            windowClass: 'custom-modal-window' // Nova classe para estilizar o container do modal
+        });
+        
+        c.modalInstance.result.then(function (selectedItem) {
+            // Se fechou com applyFiltersAndClose
+            if (c.data.search_term) {
+                c.searchKB(c.data.search_term); 
+            }
+        }, function () {
+            // Se fechou com X, ESC, ou cancelModal
+            c.advancedFilters = c.tempFilters; // Reverte os filtros
+        });
+    };
+    
+    c.applyFiltersAndClose = function() {
+        c.modalInstance.close();
+    }
+    
+    c.clearFilters = function() {
+        c.advancedFilters = {}; // Limpa os filtros
+    }
+
+    // NOVA FUNÇÃO: Para o botão 'X' de fechar o modal
+    c.cancelModal = function() {
+        c.modalInstance.dismiss('cancel'); // Fecha o modal como 'cancelado'
+    };
+
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>body {
+    /* Define que a rolagem horizontal deve ser escondida */
+    overflow-x: hidden; 
+    /* Isso garante que nada que se estenda além da tela seja visível */
+}
+
+/* Container Principal do Banner */
+.banner-container {
+    padding: 60px 80px 30px 80px; 
+    background-color: #ffffff;
+    max-width: 1200px; 
+    margin: 0 auto;
+}
+
+/* Seção Principal (Texto e Imagem Lado a Lado) */
+.banner-main-section {
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px; 
+}
+
+/* Conteúdo (Título, Subtítulo) */
+.banner-content {
+    flex: 1; 
+    max-width: 60%;
+}
+
+.banner-title {
+    font-size: 3.5em; 
+    font-weight: 600;
+    color: #004d99; /* Azul principal */
+    margin-bottom: 10px;
+}
+
+.banner-subtitle {
+    font-size: 1.2em;
+    color: #4a4a4a;
+    margin-bottom: 0;
+}
+
+/* Container da Imagem */
+.banner-image-container {
+    flex-shrink: 0; 
+    width: 350px; 
+    height: 350px; 
+}
+
+.banner-image {
+    width: 65%;
+    height: 100%;
+    /* Sua imagem de ilustração */
+    background-image: url('x_sded9_portal_t_0.legislacaoBanner.png');
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center bottom; 
+}
+
+/* --- ESTILOS DA PESQUISA ARREDONDADA E ÍCONES --- */
+
+/* Seção da Caixa de Pesquisa */
+.banner-search-section {
+    display: flex;
+    justify-content: center; 
+    width: 100%;
+}
+
+.search-form {
+    max-width: 800px; 
+    width: 100%; 
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    
+    /* Borda totalmente arredondada (pílula) */
+    border-radius: 30px; 
+    
+    height: 60px; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15); 
+    background-color: #fff;
+    transition: box-shadow 0.3s, border-color 0.3s; 
+    padding: 0; 
+}
+
+/* Efeito de Foco (quando o input está ativo) */
+.search-box:focus-within { 
+    border-color: #004d99; /* Muda a borda para azul ao focar */
+    box-shadow: 0 4px 12px rgba(0,77,153,0.3); 
+}
+
+/* Estilo do Campo de Entrada (input) */
+.search-input {
+    flex: 1; /* Ocupa o máximo de espaço possível */
+    border: none;
+    padding: 0 5px; /* Pequeno padding horizontal no meio */
+    font-size: 1.2em;
+    height: 100%;
+    outline: none;
+    background: none;
+}
+
+/* Estilo do Ícone de Pesquisa (Lupa) à esquerda */
+.search-icon {
+    background: none;
+    border: none;
+    color: #777;
+    font-size: 1.5em;
+    height: 100%;
+    cursor: pointer;
+    outline: none;
+    padding: 0 10px 0 20px; /* Padding: 20px no início */
+    display: flex;
+    align-items: center;
+    flex-shrink: 0; 
+}
+
+/* Estilo do Ícone de Configurações à direita */
+.settings-icon {
+    background: none;
+    border: none;
+    height: 100%; 
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    align-items: center;
+    padding: 0 20px 0 10px; /* Padding: 20px no final */
+    flex-shrink: 0; 
+}
+
+.settings-icon img {
+    height: 24px; /* Tamanho da imagem do ícone */
+    width: auto; 
+}
+
+.widgetNovo{
+	transform: translateY(-10rem);
+}
+
+
+
+/* ==============================================
+   1. ESTILOS BASE (MAIOR QUE 992PX)
+   ============================================== */
+/* ... Estilos base aqui ... */
+
+
+/* ==============================================
+   2. MEDIA QUERY: TELAS MÉDIAS (992px)
+      Aplica 'none' na faixa de 704px a 991.98px.
+   ============================================== */
+@media (min-width: 704px) and (max-width: 991.98px) {
+    .widgetNovo {
+        transform: none !important;
+    }
+}
+
+/* ==============================================
+   3. MEDIA QUERY: TELAS PEQUENAS (Max-width: 704px)
+      Esta regra cobre DE 703.98px PARA BAIXO.
+   ============================================== */
+@media (max-width: 703.98px) {
+    .banner-title {
+        font-size: 2.5em; /* Valor padrão para telas pequenas/médias */ 
+    }
+    .banner-subtitle {
+        font-size: 1.2rem;
+    }
+    /* Aqui também garantiríamos que o widgetNovo não tenha transform, se necessário. */
+}
+
+/* ==============================================
+   4. MEDIA QUERY: SMARTPHONES GERAIS (Max-width: 580px)
+      Sobrescreve a regra de 704px e se aplica para telas de 579.98px PARA BAIXO.
+   ============================================== */
+@media (max-width: 579.98px) {
+  	
+  .banner-container {
+        /* Padding mínimo em celulares (ex: 10px em todos os lados) */
+        padding: 10px 10px 10px 6rem !important;
+    }
+  
+    .banner-image {
+        width: 90% !important;  
+        height: 80% !important; 
+    }
+    .banner-title {
+        font-size: 1.5em; /* Sobrescreve 2.5em */
+    }
+    .banner-subtitle {
+        font-size: 0.6em; /* Sobrescreve 1.2rem */
+    }
+    .widgetNovo {
+        transform: translateY(-110px) !important;
+    }
+}
+
+/* ==============================================
+   5. AJUSTE MAIS RESTRITIVO (Max-width: 470px)
+      Esta regra tem maior prioridade e COBRE TUDO ABAIXO de 470px.
+      **Ajustei o seu valor para 460px conforme seu último pedido.**
+   ============================================== */
+@media (max-width: 469.98px) { 
+    .banner-image {
+        width: 70% !important;  
+        height: 75% !important;  
+    }
+  .banner-container{
+  	padding: 0 !important;
+    transform: translateX(45px);
+  }
+  
+    .banner-title {
+        font-size: 1em;  /* Sobrescreve 1.5em */
+    }
+    .banner-subtitle {
+        font-size: 0.6em; /* Sobrescreve 0.6em */
+    }
+    .widgetNovo {
+        transform: translateY(-110px) translateX(-5rem) !important;
+    }
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>lesgislacao_banner</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Legislação Banner</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    /* Código de Servidor */
+    data.search_term = data.search_term || "";
+	
+	data.meuWidgetEmbutido = $sp.getWidget('knowlegde_homepage_search_sate', {
+		});
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-10-30 01:50:17</sys_created_on>
+        <sys_id>2fbbf707fbf4f690f6d5f9d38eefdc56</sys_id>
+        <sys_mod_count>72</sys_mod_count>
+        <sys_name>Legislação Banner</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_2fbbf707fbf4f690f6d5f9d38eefdc56</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-10-31 01:30:00</sys_updated_on>
+        <template><![CDATA[<div class="banner-container">
+    
+    <div class="banner-main-section">
+        
+        <div class="banner-content">
+            <h1 class="banner-title">Legislação do Tesouro</h1>
+            <p class="banner-subtitle">Acesso público à legislação que rege as finanças do Estado. Transparência começa com acesso.</p>
+        </div>
+        
+        <div class="banner-image-container">
+            <div class="banner-image"></div>
+        </div>
+        
+    </div>
+    
+    <div class="banner-search-section">
+        <!--form ng-submit="c.searchKB(c.data.search_term)" class="search-form">
+            <div class="search-box">
+                
+                <button type="submit" class="search-icon start-icon" title="Pesquisar">
+                    <i class="fa fa-search"></i>
+                </button>
+                
+                <input type="text" 
+                       ng-model="c.data.search_term" 
+                       class="search-input" 
+                       placeholder="Pesquisar Legislação"
+                       aria-label="Campo de pesquisa da legislação">
+                
+                <button type="button" class="settings-icon" ng-click="c.openModal()" title="Abrir configurações de pesquisa">
+                    <img src="x_sded9_portal_t_0.settingsLegislacao.png" alt="Configurações">
+                </button>
+                
+            </div>
+        </form-->
+      <div class="widgetNovo">
+    <sp-widget widget="data.meuWidgetEmbutido"></sp-widget>
+  
+    </div>
+    
+</div>
+
+]]></template>
+    </sp_widget>
+</record_update>
