@@ -34,14 +34,15 @@
         window.open("?id=" + id, '_blank');
     };
 
-    // Inicialização do usuário (dados viriam do servidor em produção)
-    $scope.user = c.data && c.data.user_info ? c.data.user_info : {
-        logged_in: false,
-        name: '',
-        first_name: '',
-        last_name: '',
-        email: ''
+    $scope.goToLogin = function() {
+        $window.location.href = '/login.do';
     };
+
+    // Inicialização do usuário (dados viriam do servidor em produção)
+    $scope.user = c.data && c.data.user_info ? c.data.user_info : {};
+    if ($scope.user.logged_in === undefined) {
+        $scope.user.logged_in = false;
+    }
     
     // Funcionalidade de login 
     c.checkUserLoggedIn = function() { 
@@ -59,20 +60,23 @@
                 var logoutRequest = new XMLHttpRequest(); 
                 logoutRequest.open("GET", "/logout", true); 
                 logoutRequest.onload = function() { 
-                    // Após a requisição de logout, redireciona para a página /gfo 
-                    $window.location.href = '/gfo'; 
+                    // Após a requisição de logout, redireciona para a página /sate 
+                    $window.location.href = '/sate'; 
                 }; 
                 logoutRequest.send(); 
             }; 
             
-            $scope.avatarProfile = { 
-                initials: $scope.user.first_name[0] + $scope.user.last_name[0] 
-            }; 
+            // Não precisamos mais do avatarProfile já que usamos diretamente user.first_name[0] e user.last_name[0] no HTML
+            
         } else { 
             c.loginButtonText = 'Entrar'; 
-            c.redirect = function() { 
-                $window.location.href = '/login_with_sso.do?glide_sso_id=13e4f3d2fb2bca10f6d5f9d38eefdcce'; 
+            $scope.dropdownOpen = false;
+            
+            // Função para alternar dropdown mesmo quando deslogado
+            $scope.toggleDropdown = function() { 
+                $scope.dropdownOpen = !$scope.dropdownOpen; 
             }; 
+            
         } 
     }; 
     
@@ -83,24 +87,55 @@
     c.goToPedidos = function() { 
         if ($scope.user && $scope.user.logged_in) { 
             // Se estiver logado, redireciona para "Meus Pedidos" 
-            $window.location.href = '?id=gfo_minhas_solicitacoes'; 
+            $window.location.href = ''; 
         } else { 
             // Se não estiver logado, redireciona para o login SSO 
-            $window.location.href = '/login_with_sso.do?glide_sso_id=13e4f3d2fb2bca10f6d5f9d38eefdcce'; 
+            $window.location.href = '';
         } 
     };
 
-    // Ajuste de fonte 
+    // Ajuste de fonte com limite de 3 passos para mais e para menos 
+    $scope.fontAdjustStep = 0; // -3 a +3 
+    $scope.fontAdjustInitialized = false; 
+
     $scope.adjustFontSize = function(factor) { 
+        // direção: +1 aumenta, -1 diminui. Adaptado para aceitar 'increase'/'decrease'
+        var direction = factor === 'increase' ? 1 : -1; 
+
+        // aplica limites 
+        var nextStep = $scope.fontAdjustStep + direction; 
+        if (nextStep > 3 || nextStep < -3) { 
+            console.log('Limite de ajuste atingido:', $scope.fontAdjustStep); 
+            return; 
+        } 
+        $scope.fontAdjustStep = nextStep; 
+
+        // inicializa e armazena tamanhos originais (uma única vez) 
         var elements = document.querySelectorAll('body, body *'); 
+        if (!$scope.fontAdjustInitialized) { 
+            elements.forEach(function(element) { 
+                // Exclui ícones, imagens e os próprios controles de acessibilidade do ajuste
+                if (element.tagName !== 'IMG' && element.tagName !== 'svg' && element.tagName !== 'I' && !element.closest('.accessibility-controls')) { 
+                    var currentSize = window.getComputedStyle(element).fontSize; 
+                    element.dataset.originalFontSize = currentSize; 
+                } 
+            }); 
+            $scope.fontAdjustInitialized = true; 
+        } 
+
+        // calcula escala baseada no número de passos 
+        var scale = Math.pow(1.05, $scope.fontAdjustStep); 
+
+        // aplica novo tamanho com base no tamanho original 
         elements.forEach(function(element) { 
-            if (element.tagName !== 'IMG' && element.children.length === 0) { 
-                var currentSize = window.getComputedStyle(element).fontSize; 
-                var newSize = parseFloat(currentSize) * factor; 
-                element.style.fontSize = newSize + 'px'; 
+            // Aplica apenas nos elementos que foram inicializados
+            if (element.dataset.originalFontSize) { 
+                var originalSize = parseFloat(element.dataset.originalFontSize);
+                var newSize = originalSize * scale; 
+                element.style.fontSize = newSize.toFixed(2) + 'px'; 
             } 
         }); 
-    }; 
+    };
     
     // Estado interno para controle de maiúsculas/minúsculas
     $scope.letter = 'a';
@@ -116,46 +151,108 @@
     }; 
     
     // Implementação completa de toggle case com três estados
-    $scope.isLowercase = null; // começa normal 
-    
-    $scope.toggleCase = function() { 
-        if ($scope.isLowercase === null) { 
-            $scope.isLowercase = true;  // minúsculo 
-        } else if ($scope.isLowercase === true) { 
-            $scope.isLowercase = false;  // maiúsculo 
-        } else { 
-            $scope.isLowercase = null;  // normal 
-        } 
-        
-        // Emite o evento para sincronizar nos outros widgets 
-        $scope.$root.$broadcast('toggleCaseEvent', $scope.isLowercase); 
-        
-        console.log('Estado agora:', $scope.isLowercase); 
+    $scope.caseState = 0; // 0: normal, 1: minúsculo, 2: maiúsculo
+
+    $scope.toggleCase = function() {
+        $scope.caseState = ($scope.caseState + 1) % 3;
+        var textTransform = 'none';
+        if ($scope.caseState === 1) {
+            textTransform = 'lowercase';
+        } else if ($scope.caseState === 2) {
+            textTransform = 'uppercase';
+        }
+
+        document.body.style.textTransform = textTransform;
     };
 
     // --- FUNÇÃO DE CONTRASTE (THEMING) ---
     c.toggleContrast = function() {
         console.log("Alternando modo de contraste...");
         
-        // 1. Alterna a classe no corpo do documento
-        document.body.classList.toggle('dark-mode');
-        
-        // 2. Atualiza o estado interno
-        $scope.contrastIsActive = document.body.classList.contains('dark-mode');
-        
-        // 3. EMITE O EVENTO para o outro widget (e qualquer outro que esteja escutando)
-        // O evento esperado pelo seu outro widget é 'sp.contrast.toggled' e o dado é { enabled: boolean }
-        $rootScope.$broadcast('sp.contrast.toggled', {
-            enabled: $scope.contrastIsActive // Envia o novo estado (true/false)
-        });
-        
-        console.log("Modo de contraste ativo:", $scope.contrastIsActive);
+        // 1. Alterna a classe no contêiner do widget em vez do body
+        var headerWidget = document.querySelector('.header-widget');
+        if (headerWidget) {
+            headerWidget.classList.toggle('dark-mode');
+            
+            // 2. Atualiza o estado interno
+            $scope.contrastIsActive = headerWidget.classList.contains('dark-mode');
+            
+            // 3. Altera a imagem da logo com base no modo de contraste
+            var logoImg = document.querySelector('.logo-img');
+            if (logoImg) {
+                if ($scope.contrastIsActive) {
+                    // Modo escuro ativado - usar imagem de contraste
+                    logoImg.src = 'x_sded9_portal_t_0.imgContrast.png';
+                } else {
+                    // Modo normal - usar imagem padrão
+                    logoImg.src = 'x_sded9_portal_t_0.logo_sefaz_branco.png';
+                }
+            }
+            
+            // 4. EMITE O EVENTO para o outro widget (e qualquer outro que esteja escutando)
+            // O evento esperado pelo seu outro widget é 'sp.contrast.toggled' e o dado é { enabled: boolean }
+            $rootScope.$broadcast('sp.contrast.toggled', {
+                enabled: $scope.contrastIsActive // Envia o novo estado (true/false)
+            });
+            
+            console.log("Modo de contraste ativo:", $scope.contrastIsActive);
+        } else {
+            console.error("Elemento .header-widget não encontrado");
+        }
     };
     
     // --- FUNÇÕES DE CONTROLE DOS MENUS ---
     // Inicialização dos estados dos menus
     $scope.isMainMenuOpen = false;
-    $scope.isFinanceSubmenuOpen = false;
+    $scope.submenus = {
+        financeSubmenu: false,
+        systemsSubmenu: false,
+		systemsSubmenuHamburguer: false
+    };
+
+    // --- FUNÇÕES DE CONTROLE DO MODAL DE SISTEMAS ---
+    $scope.isSystemsModalOpen = false;
+    $scope.activeMenu = 'sistemas'; // Menu inicial ativo
+
+    $scope.setActiveMenu = function(menu) {
+        if (!$scope.user.logged_in && (menu === 'paineis' || menu === 'servicos')) {
+            $scope.activeMenu = 'sistemas';
+        } else {
+            $scope.activeMenu = menu;
+        }
+    };
+
+    $scope.getActiveMenuTitle = function() {
+        switch ($scope.activeMenu) {
+            case 'sistemas':
+                return 'Sistemas e Aplicativos';
+            case 'paineis':
+                return 'Painéis';
+            case 'servicos':
+                return 'Serviços';
+            default:
+                return '';
+        }
+    };
+
+    $scope.getSeparatorPosition = function() {
+        var menuItems = {
+            'sistemas': '23px',
+            'paineis': '113px',
+            'servicos': '198px'
+        };
+        var index = menuItems[$scope.activeMenu];
+        // Assumindo que cada item do menu tem 80px de altura (padding + altura do ícone e texto)
+        return { 'top': menuItems[$scope.activeMenu] || '23px' };
+    };
+
+    $scope.toggleSystemsModal = function() {
+        $scope.isSystemsModalOpen = !$scope.isSystemsModalOpen;
+    };
+
+    $scope.closeSystemsModal = function() {
+        $scope.isSystemsModalOpen = false;
+    };
     
     // Função para alternar o menu principal
     $scope.toggleMainMenu = function($event) {
@@ -164,28 +261,65 @@
             $event.stopPropagation();
         }
         $scope.isMainMenuOpen = !$scope.isMainMenuOpen;
-        
-        // Fecha o submenu quando o menu principal é fechado
+
+        // Se o menu principal (hamburguer) for aberto, fecha o submenu de sistemas da barra.
+        if ($scope.isMainMenuOpen) {
+            $scope.submenus.systemsSubmenu = false;
+        }
+
+        // Fecha os submenus internos (do hamburguer) quando o menu principal é fechado.
         if (!$scope.isMainMenuOpen) {
-            $scope.isFinanceSubmenuOpen = false;
+            $scope.submenus.financeSubmenu = false;
+            $scope.submenus.systemsSubmenuHamburguer = false;
         }
     };
-    
-    // Função para alternar o submenu de finanças
-    $scope.toggleFinanceSubmenu = function($event) {
+
+    // Função para alternar um submenu específico
+    $scope.toggleSubmenu = function($event, submenu) {
         if ($event) {
             $event.preventDefault();
             $event.stopPropagation();
         }
-        $scope.isFinanceSubmenuOpen = !$scope.isFinanceSubmenuOpen;
+
+        // Se o submenu de sistemas da barra for aberto, fecha o menu principal (hamburguer)
+        if (submenu === 'systemsSubmenu' && !$scope.submenus.systemsSubmenu) {
+            $scope.isMainMenuOpen = false;
+        }
+
+        // Fecha outros submenus abertos
+        for (var key in $scope.submenus) {
+            if (key !== submenu) {
+                $scope.submenus[key] = false;
+            }
+        }
+        $scope.submenus[submenu] = !$scope.submenus[submenu];
+    };
+    
+    $scope.handleHover = function() {
+        document.getElementById('tesouroPointer').classList.add('hover');
+        document.querySelector('.menu-hamburger').classList.add('hover');
+    };
+
+    $scope.removeHover = function() {
+        document.getElementById('tesouroPointer').classList.remove('hover');
+        document.querySelector('.menu-hamburger').classList.remove('hover');
     };
     
     // Fecha os menus quando clica fora deles
     angular.element(document).on('click', function(e) {
-        if (!$(e.target).closest('.dropdown-menu-principal, .submenu-aninhado, #tesouroPointer, .menu-hamburger').length) {
+        if (!$(e.target).closest('.dropdown-menu-principal, #tesouroPointer, .menu-hamburger').length) {
             $scope.$apply(function() {
                 $scope.isMainMenuOpen = false;
-                $scope.isFinanceSubmenuOpen = false;
+                for (var key in $scope.submenus) {
+                    $scope.submenus[key] = false;
+                }
+            });
+        }
+
+        // Adicionado para fechar o modal de sistemas ao clicar fora
+        if ($scope.isSystemsModalOpen && !$(e.target).closest('.systems-modal, .dots9').length) {
+            $scope.$apply(function() {
+                $scope.closeSystemsModal();
             });
         }
     });
@@ -205,6 +339,11 @@
 }
 
 /* -- Barra Superior -- */
+
+a:focus {
+  box-shadow: none !important;
+}
+
 .top-bar {
   display: flex;
   justify-content: space-between;
@@ -215,8 +354,18 @@
   min-height: 80px; /* Altura mínima para consistência */
 }
 
+/* Regras para o modo escuro */
+.header-widget.dark-mode .top-bar {
+  background: linear-gradient(to right, #000000, #393939, #000000);
+}
+
 .logo-container .logo-img {
   height: 50px;
+}
+
+/* Filtro de escala de cinza para a logo no modo escuro */
+.header-widget.dark-mode .logo-container .logo-img {
+  filter: grayscale(100%);
 }
 
 .controls-container {
@@ -245,13 +394,28 @@
   font-family: Roboto;
 }
 
+/* Garantir que o texto e links permaneçam brancos no modo escuro */
+.header-widget.dark-mode .accessibility-controls .accessibility-label,
+.header-widget.dark-mode .accessibility-controls a {
+  color: #FFFFFF;
+}
+
+.header-widget.dark-mode .search-container {
+  border: none;
+}
+
+.header-widget.dark-mode .search-container input {
+  background-color: #333333;
+  color: #FFFFFF;
+}
+
 /* CORREÇÃO: Estilo para o primeiro 'A' ser menor */
 .accessibility-controls .small-a {
   font-size: 0.8em; /* Deixa o primeiro 'A' menor */
   vertical-align: middle;
 }
 
-/* -- Lógica de Usuário -- */
+/* -- Lógica de Usuário (Antigos) -- */
 .user-avatar-container {
   position: relative;
 }
@@ -296,6 +460,7 @@
   background-color: #f0f0f0;
 }
 
+/* ===== Login Button Styles (Antigos - Podem ser removidos se não usados) ===== */
 .login-button {
   background-color: transparent;
   border: 1px solid white;
@@ -306,38 +471,59 @@
   font-weight: bold;
 }
 
-/* ===== Login Button Styles ===== */ 
+/* ===== Login Container Styles ===== */ 
 .login { 
   display: flex; 
   gap: 1em; 
+}
+
+/* Estilo específico para o ícone SVG quando deslogado */
+.login .user-avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: white !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.login .user-avatar .user-icon {
+  width: 20px !important;
+  height: 20px !important;
+  fill: #01116F !important;
+  color: #01116F !important;
 } 
 
-.login button { 
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
-  background-color: #FD5F06; 
-  color: white; 
-  border: none; 
-  cursor: pointer; 
-  border-radius: 20px; 
-  padding: 0.5em 1em; 
-  font-size: 1em; 
-  transition: all 0.3s ease; 
+/* ===== NOVO: Estilo para o Link &lt;a&gt; de "Entrar" (Substitui o estilo do &lt;button&gt;) ===== */
+.login .login-button-link {
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    background-color: #FD5F06; 
+    color: white; 
+    text-decoration: none; /* Crucial para o &lt;a&gt; não parecer um link padrão */
+    border: none; 
+    cursor: pointer; 
+    border-radius: 20px; 
+    padding: 0.5em 1em; 
+    font-size: 1em; 
+    transition: all 0.3s ease; 
+}
+
+.login .login-button-link:hover { 
+    background-color: #e55605; 
 } 
 
-.login button:hover { 
-  background-color: #e55605; 
+.login .login-button-link svg { 
+    margin-right: 0.5em; 
+    width: 1.2em; 
+    height: 1.2em; 
+    vertical-align: middle; 
 } 
 
-.login button svg { 
-  margin-right: 0.5em; 
-  width: 1.2em; 
-  height: 1.2em; 
-  vertical-align: middle; 
-} 
 
-/* ===== User Dropdown Styles ===== */ 
+/* ===== User Dropdown Styles (LOGADO) ===== */ 
 .user-logged { 
   position: relative; 
 } 
@@ -375,20 +561,20 @@
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); 
   z-index: 1; 
   border-radius: 5px; 
-  padding: 0; /* Remover padding padrão */
-  margin: 0; /* Remover margin padrão */
-  list-style-type: none; /* Remover marcadores de lista */
+  padding: 0; 
+  margin: 0; 
+  list-style-type: none; 
 } 
 
 .dropdown-content::before,
 .dropdown-content::after {
-  display: none; /* Remover qualquer pseudo-elemento que possa estar criando a "ponta" */
+  display: none; 
 }
 
 .dropdown-content li {
-  width: 100%; /* Garantir que o item ocupe toda a largura */
-  margin: 0; /* Remover margens */
-  padding: 0; /* Remover padding */
+  width: 100%; 
+  margin: 0; 
+  padding: 0; 
 }
 
 .dropdown-content a { 
@@ -396,32 +582,32 @@
   text-decoration: none; 
   padding: 12px 16px; 
   display: block; 
-  width: 100%; /* Garantir que o link ocupe toda a largura */
-  box-sizing: border-box; /* Incluir padding na largura total */
-  text-align: left; /* Alinhar texto à esquerda */
+  width: 100%; 
+  box-sizing: border-box; 
+  text-align: left; 
 } 
 
 .dropdown-content a:hover { 
   background-color: #FD5F06; 
   color: #ffffff; 
-  width: 100%; /* Garantir que o hover ocupe toda a largura */
+  width: 100%; 
 } 
 
 .dropdown-content a[href*="logout"] { 
   color: #ffffff; 
-  width: 100%; /* Garantir que o link ocupe toda a largura */
+  width: 100%; 
 } 
 
 .dropdown-content a[href*="logout"]:hover { 
   color: #ffffff; 
-  background-color: #FD5F06; /* Usar a cor laranja padrão para consistência */
-  width: 100%; /* Garantir que o hover ocupe toda a largura */
+  background-color: #FD5F06; 
+  width: 100%; 
 }
 
 /* -- Barra de Menu Inferior -- */
 .main-menu-bar {
   display: flex;
-  justify-content: space-between; /* CRÍTICO: Empurra o menu para a esquerda e a busca para a direita */
+  justify-content: space-between; 
   align-items: center;
   background-color: white;
   padding: 0 30px;
@@ -431,6 +617,12 @@
   font-family: 'Roboto Flex', sans-serif !important;
 }
 
+/* Modo escuro para a barra de menu principal */
+.header-widget.dark-mode .main-menu-bar {
+  background-color: #000000;
+  border-top-color: #555555;
+}
+
 .menu-items {
   display: flex;
   align-items: center;
@@ -438,15 +630,52 @@
   color: #002e6d;
 }
 
+.dropdown-menu-principal,
+.submenu-aninhado {
+    list-style: none;
+}
+
+
 .menu-hamburger {
   font-size: 20px;
   cursor: pointer;
+}
+
+.menu-hamburger.hover,
+#tesouroPointer.hover {
+  opacity: 0.4;
 }
 
 /* Estilo para o ícone de casa */
 .menu-items a .fa-home {
   color: #002e6d;
   font-size: 20px;
+}
+
+.menu-list {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-list li a {
+    color: #4773c6;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.menu-list li a:hover {
+    //color: white;
+}
+/* Modo escuro para ícones e links do menu */
+.header-widget.dark-mode .menu-hamburger,
+.header-widget.dark-mode .menu-items a .fa-home {
+  color: #FFFFFF;
 }
 
 .menu-list {
@@ -457,21 +686,21 @@
   gap: 25px;
 }
 
-.menu-list a {
-  color: #01116F;
+.menu-list &gt; li &gt; a {
+  color: #01116f;
   text-decoration: none;
   font-family: 'Roboto Flex', sans-serif !important;
   font-weight: 500 !important;
   font-size: 14px !important;
 }
 
-.menu-list a:hover {
-  background-color: #01116F;
-  color: white;
-  padding-bottom: 10px;
-  padding-top: 10px;
-  padding-left: 5px;
-  padding-right: 5px;
+/* Modo escuro para os links do menu */
+.header-widget.dark-mode .menu-list &gt; li &gt; a {
+  color: #FFFFFF;
+}
+
+.menu-list &gt; li &gt; a:not(#tesouroPointer):hover {
+  opacity: 0.4;
 }
 
 /* Estilos para o menu dropdown principal */
@@ -482,7 +711,7 @@
 .dropdown-menu-principal {
   position: absolute;
   top: 160%;
-  left: -9px;
+  left: -69px;
   background-color: white;
   min-width: 270px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -491,7 +720,35 @@
   padding: 0;
   margin: 0;
   list-style-type: none;
-  border-top: 3px solid #002e6d;
+  border: 1px solid #4773c6;
+  color: #4773c6;
+}
+
+/* Modo escuro para os dropdowns e submenus */
+.header-widget.dark-mode .dropdown-menu-principal {
+  background-color: #222222;
+  border-top-color: #555555;
+}
+
+.header-widget.dark-mode .dropdown-menu-principal a {
+  color: #FFFFFF;
+  border-bottom-color: #444444;
+}
+
+.header-widget.dark-mode .dropdown-menu-principal a:hover {
+  background-color: #444444;
+}
+
+.header-widget.dark-mode .submenu-aninhado {
+ background-color: #444444 
+}
+
+.header-widget.dark-mode .submenu-aninhado a:hover {
+ background-color: #222222;
+}
+
+.header-widget.dark-mode .submenu-aninhado li a {
+ background-color: #444444;
 }
 
 .dropdown-menu-principal li {
@@ -499,6 +756,7 @@
   margin: 0;
   padding: 0;
   position: relative;
+  color: #4773c6;
 }
 
 .dropdown-menu-principal a {
@@ -509,7 +767,7 @@
   width: 100%;
   box-sizing: border-box;
   text-align: left;
-  border-bottom: 1px solid #eee;
+  //border-bottom: 1px solid #eee;
   font-family: 'Roboto Flex', sans-serif !important;
   font-weight: 400 !important;
 }
@@ -541,43 +799,56 @@
 }
 
 .submenu-aninhado {
-  position: absolute;
-  top: 43;
-  left: 86%;
-  background-color: white;
-  min-width: 200px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1001;
-  border-radius: 4px;
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
-  border-left: 3px solid #002e6d;
-}
-
-.submenu-aninhado li {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-.submenu-aninhado a {
-  color: #002e6d;
-  text-decoration: none;
-  padding: 10px 16px;
   display: block;
-  width: 100%;
-  box-sizing: border-box;
-  text-align: left;
-  border-bottom: 1px solid #eee;
-  font-family: 'Roboto Flex', sans-serif !important;
-  font-weight: 400 !important;
+  background-color: #F1F4FB;
 }
 
-.submenu-aninhado a:hover {
-  background-color: #081d48;
+.submenu-aninhado li a {
+  color: #4773c6;
+  background-color: #F1F4FB
+}
+
+.submenu-aninhado li a:hover {
+  background-color: #0056b3; /* Cor de fundo no hover */
   color: white;
 }
+
+.dropdown-menu-principal &gt; li &gt; a:hover, .dropdown-menu-principal &gt; li.has-submenu &gt; a:hover {
+    background-color: #0056b3;
+    color: white;
+}
+  color: white;
+}
+
+@media (max-width: 390px) {
+    .dropdown-menu-principal {
+        left: -52px !important;
+      	top: 180%;
+    }
+}
+
+
+@media (max-width: 375px) {
+    .dropdown-menu-principal {
+         transform: translate(1px, 22px);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .dropdown-menu-principal {
+        top: 100% !important;
+    }
+
+    .menu-list {
+        gap: 15px !important;
+    }
+
+    .search-container input {
+        width: 250px !important;
+    }
+}
+
+
 
 .search-container {
   display: flex;
@@ -586,11 +857,16 @@
   overflow: hidden;
 }
 
+/* Ocultar a barra de pesquisa no modo escuro */
+.header-widget.dark-mode .search-container {
+  //display: none;
+}
+
 .search-container input {
   border: none;
   padding: 8px 15px;
   outline: none;
-  width: 250px;
+  width: 284px;
 }
 
 .search-container button {
@@ -599,6 +875,778 @@
   padding: 0 15px;
   cursor: pointer;
   color: #555;
+}
+
+/* -- Estilos do Modal de Sistemas -- */
+.systems-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.systems-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 450px; /* Aumentado para acomodar o novo layout */
+    height: 100%;
+    background-color: #f4f4f4;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+    z-index: 1001;
+    display: flex; /* Alterado para flex */
+    flex-direction: row; /* Layout em linha */
+}
+
+.systems-modal-menu {
+    width: 120px;
+    background-color: #e9e9e9;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 0;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    border-radius: 4px;
+}
+
+.menu-item:not(.active):hover {
+    background-color: #e0e0e0;
+}
+
+.menu-item.active {
+    background-color: #fff;
+}
+
+.menu-item img {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 5px;
+    transition: opacity 0.3s ease;
+}
+
+.menu-item:not(.active):hover img {
+    opacity: 0.7;
+}
+
+.menu-item span {
+    font-size: 12px;
+    color: #333;
+}
+
+.separator {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 4px;
+    height: 80px; /* Altura do item de menu */
+    background-color: #567ecb;
+    transition: top 0.3s ease;
+}
+
+.systems-modal-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    width: 88%;
+    position: relative; /* Adicionado para posicionar o botão de fechar */
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover {
+    color: #333;
+}
+
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    color: #4874c6;
+}
+
+.content-header h3 {
+    margin: 9px;
+    font-size: 16px;
+}
+
+.content-header .close-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.content-body {
+    padding: 20px;
+    overflow-y: auto;
+    transition: opacity 0.3s ease;
+}
+
+
+.icon-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.icon-item {
+    text-align: center;
+}
+
+.icon-item a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s ease;
+}
+
+.icon-item img {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 8px;
+    transition: opacity 0.3s ease;
+}
+
+.icon-item span {
+    font-size: 12px;
+}
+
+.icon-item a:hover img {
+    opacity: 0.7;
+}
+
+.icon-item a:hover {
+    background-color: #e0e0e0;
+    border-radius: 4px;
+}
+
+/* =========================================================
+    RESPONSIVIDADE NATIVA
+    ========================================================= */
+
+/* Tablets Horizontais (Até 991px) - Ajustes de Espaçamento */
+@media (max-width: 991px) {
+    .top-bar {
+        padding: 10px 20px;
+    }
+    
+    /* Oculta o label de acessibilidade para economizar espaço em tablet */
+    .accessibility-controls .accessibility-label {
+        display: none;
+    }
+}
+
+
+/* Mobile Vertical (Até 767px) - CORREÇÃO DE MARGEM */
+@media (max-width: 767px) {
+    
+    /* 1. QUEBRA E REORGANIZAÇÃO NA BARRA SUPERIOR */
+    .top-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; 
+        padding: 15px 10px;
+        height: auto;
+    }
+    
+    /* 2. CENTRALIZAÇÃO E LARGURA DOS BLOCOS PAIS */
+    .logo-container {
+        width: auto;  
+        text-align: left; 
+        margin-bottom: 0; 
+    }
+    
+    .logo-container .logo-img {
+        max-width: 150px;  
+        height: auto;
+        margin-left: 0;
+        margin-right: 0;  
+    }
+
+    /* 3. CONTROLES SECUNDÁRIOS ABAIXO DO LOGO (SOLUÇÃO DE CENTRALIZAÇÃO) */
+    .controls-container {
+        width: auto;  
+        justify-content: flex-end;  
+        gap: 15px; 
+        margin-bottom: 0;
+    }
+    
+    /* 4. VISIBILIDADE DOS CONTROLES */
+    .accessibility-controls {
+        margin: 0;
+        min-width: fit-content; 
+    }
+    
+    .user-controls {
+        margin: 0; 
+        min-width: fit-content;
+    }
+    
+    .accessibility-controls .accessibility-label {
+        display: none;
+    }
+    
+    .login {
+        display: flex;
+        align-items: center;
+        margin: 0;
+    }
+    
+    /* [Ajustes para Menu/Busca] */
+    .main-menu-bar {
+        flex-wrap: wrap; 
+        padding: 0 10px;
+    }
+    
+    .search-container {
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      	display: none;
+    }
+    
+    .search-container input {
+        width: 100%;
+    }
+}
+
+/* =========================================================
+    PONTOS DE QUEBRA DO MENU (Responsividade)
+    ========================================================= */
+
+/* Tablet Horizontal (Até 1199px) - Ajusta Espaçamento */
+@media (max-width: 1199px) {
+    .menu-list {
+        gap: 15px; 
+    }
+    .search-container input {
+        width: 180px; 
+    }
+}
+
+
+
+
+
+/* Mobile Vertical (Até 767px) - Quebra a Busca para 100% */
+@media (max-width: 767px) {
+    .main-menu-bar {
+        flex-flow: column;
+        padding: 10px;
+        height: auto;
+        min-height: 60px;
+    }
+
+    .menu-list li a {
+        font-size: 13px;
+    }
+    
+    .menu-items {
+        flex-shrink: 0;
+        margin-right: 10px;  
+    }
+    
+    /* 2. BUSCA: Força a Busca a quebrar e ocupar a largura total */
+    .search-container {
+        width: calc(100% - 20px); 
+        margin: 10px 0;
+        display: none; 
+    }
+    
+    .search-container input {
+        width: 100%; 
+    }
+
+    .menu-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .menu-hamburger {
+        display: block;
+    }
+
+    .has-submenu .submenu-aninhado {
+        position: static;
+        display: block;
+        width: 100%;
+        border: none;
+    }
+
+    .has-submenu.open .submenu-aninhado {
+        display: block;
+    }
+}
+
+/* Mobile (até 575.98px) */
+@media (max-width: 575.98px) {
+    .systems-modal {
+        flex-direction: column; /* Empilha o menu e o conteúdo */
+    }
+
+    .systems-modal-menu {
+        //flex-direction: row; /* Menu na horizontal */
+        width: 100%;
+        //overflow-x: auto; /* Permite rolagem horizontal */
+        white-space: nowrap; /* Impede que os itens quebrem a linha */
+        -webkit-overflow-scrolling: touch; /* Melhora a experiência de rolagem em iOS */
+        scrollbar-width: none; /* Oculta a barra de rolagem no Firefox */
+    }
+
+    .systems-modal-menu::-webkit-scrollbar {
+        display: none; /* Oculta a barra de rolagem no Chrome, Safari e Opera */
+    }
+
+    .menu-item {
+        flex: 0 0 auto; /* Impede que os itens encolham */
+        padding: 10px 15px;
+    }
+
+    .separator {
+        display: none; /* Oculta o separador vertical */
+    }
+
+    .systems-modal-content {
+        width: 100%;
+        height: calc(100% - 80px); /* Ajusta a altura para preencher o espaço restante */
+    }
+
+    .close-button {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: #888;
+        cursor: pointer;
+        z-index: 1000;
+        transition: color 0.3s ease;
+    }
+
+    .close-button:hover {
+        color: #333;
+    }
+}
+
+
+
+/* Pixel 7 (412x915) e dispositivos similares */
+@media (max-width: 412px) and (min-height: 900px) {
+    .systems-modal {
+        flex-direction: column;
+        width: 100%;
+        right: 0;
+        left: 0;
+    }
+
+    .systems-modal-menu {
+        //flex-direction: row;
+        width: 100%;
+        height: auto;
+        //overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding: 10px 0;
+    }
+
+    .systems-modal-menu::-webkit-scrollbar {
+        display: none;
+    }
+
+    .menu-item {
+        flex: 0 0 auto;
+        padding: 10px 15px;
+        min-width: 80px;
+    }
+
+    .separator {
+        display: none;
+    }
+
+    .systems-modal-content {
+        width: 100%;
+        height: calc(100% - 80px);
+        overflow-y: auto;
+    }
+
+    .content-body {
+        padding: 15px;
+    }
+
+    .icon-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        transform: translate(21px, 0px);
+    }
+
+    .content-header {
+        transform: translate(35px, 0px);
+    }
+
+    .close-button {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: #888;
+        cursor: pointer;
+        z-index: 1000;
+        transition: color 0.3s ease;
+    }
+
+    .close-button:hover {
+        color: #333;
+    }
+}
+
+/* Galaxy S8+ (360x740) */
+@media (max-width: 360px) and (min-height: 740px) {
+    .systems-modal {
+        flex-direction: column;
+        width: 100%;
+        right: 0;
+        left: 0;
+    }
+
+    .systems-modal-menu {
+        //flex-direction: row;
+        width: 100%;
+        height: auto;
+        //overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding: 10px 0;
+    }
+
+    .systems-modal-menu::-webkit-scrollbar {
+        display: none;
+    }
+
+    .menu-item {
+        flex: 0 0 auto;
+        padding: 10px 15px;
+        min-width: 80px;
+    }
+
+    .separator {
+        display: none;
+    }
+
+    .systems-modal-content {
+        width: 100%;
+        height: calc(100% - 80px);
+        overflow-y: auto;
+    }
+
+    .content-body {
+        padding: 15px;
+    }
+
+    .icon-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        transform: translate(39px, 0px);
+    }
+
+    .content-header {
+        transform: translate(44px, 0px);
+    }
+
+    .close-button {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: #888;
+        cursor: pointer;
+        z-index: 1000;
+        transition: color 0.3s ease;
+    }
+
+    .close-button:hover {
+        color: #333;
+    }
+}
+
+/* Galaxy Z Fold 5 (344x822) */
+@media (max-width: 344px) and (min-height: 822px) {
+    .systems-modal {
+        flex-direction: column;
+        width: 100%;
+        right: 0;
+        left: 0;
+    }
+
+    .systems-modal-menu {
+//flex-direction: row;
+        width: 100%;
+        height: auto;
+        //overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding: 10px 0;
+    }
+
+    .systems-modal-menu::-webkit-scrollbar {
+        display: none;
+    }
+
+    .menu-item {
+        flex: 0 0 auto;
+        padding: 10px 15px;
+        min-width: 80px;
+    }
+
+    .separator {
+        display: none;
+    }
+
+    .systems-modal-content {
+        width: 100%;
+        height: calc(100% - 80px);
+        overflow-y: auto;
+    }
+
+    .content-body {
+        padding: 15px;
+    }
+
+    .icon-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        transform: translate(50px, 0px);
+    }
+
+    .content-header {
+        transform: translate(55px, 0px);
+    }
+
+    .close-button {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: #888;
+        cursor: pointer;
+        z-index: 1000;
+        transition: color 0.3s ease;
+    }
+
+    .close-button:hover {
+        color: #333;
+    }
+}
+
+@media (width: 375px) {
+    .systems-modal {
+        flex-direction: column; /* Empilha o menu e o conteúdo */
+    }
+
+    .systems-modal-menu {
+        width: 100%;
+        //overflow-x: auto; /* Permite rolagem horizontal */
+        white-space: nowrap; /* Impede que os itens quebrem a linha */
+        -webkit-overflow-scrolling: touch; /* Melhora a experiência de rolagem em iOS */
+        scrollbar-width: none; /* Oculta a barra de rolagem no Firefox */
+    }
+
+    .systems-modal-menu::-webkit-scrollbar {
+        display: none; /* Oculta a barra de rolagem no Chrome, Safari e Opera */
+    }
+
+    .menu-item {
+        flex: 0 0 auto; /* Impede que os itens encolham */
+        padding: 10px 15px;
+    }
+
+    .separator {
+        display: none; /* Oculta o separador vertical */
+    }
+
+    .systems-modal-content {
+        width: 100%;
+        height: calc(100% - 80px); /* Ajusta a altura para preencher o espaço restante */
+    }
+  
+  .icon-grid {
+    transform: translate(57px, 0px);
+  }
+  
+  .content-header {
+    transform: translate(68px, 0px);
+  }
+
+    .close-button {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: #888;
+        cursor: pointer;
+        z-index: 1000;
+        transition: color 0.3s ease;
+    }
+
+    .close-button:hover {
+        color: #333;
+    }
+  
+}
+
+@media (width: 390px) {
+    .systems-modal {
+        flex-direction: column; /* Empilha o menu e o conteúdo */
+    }
+
+    .systems-modal-menu {
+        width: 100%;
+        //overflow-x: auto; /* Permite rolagem horizontal */
+        white-space: nowrap; /* Impede que os itens quebrem a linha */
+        -webkit-overflow-scrolling: touch; /* Melhora a experiência de rolagem em iOS */
+        scrollbar-width: none; /* Oculta a barra de rolagem no Firefox */
+    }
+
+    .systems-modal-menu::-webkit-scrollbar {
+        display: none; /* Oculta a barra de rolagem no Chrome, Safari e Opera */
+    }
+
+    .menu-item {
+        flex: 0 0 auto; /* Impede que os itens encolham */
+        padding: 10px 15px;
+    }
+
+    .separator {
+        display: none; /* Oculta o separador vertical */
+    }
+
+    .systems-modal-content {
+        width: 100%;
+        height: calc(100% - 80px); /* Ajusta a altura para preencher o espaço restante */
+    }
+  
+  .icon-grid {
+    transform: translate(39px, 0px);
+  }
+  
+  .content-header {
+    transform: translate(44px, 0px);
+  }
+
+    .close-button {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: #888;
+        cursor: pointer;
+        z-index: 1000;
+        transition: color 0.3s ease;
+    }
+
+    .close-button:hover {
+        color: #333;
+    }
+  
+}
+
+@media (width: 414px) {
+    .systems-modal {
+        flex-direction: column; /* Empilha o menu e o conteúdo */
+    }
+
+    .systems-modal-menu {
+        width: 100%;
+        //overflow-x: auto; /* Permite rolagem horizontal */
+        white-space: nowrap; /* Impede que os itens quebrem a linha */
+        -webkit-overflow-scrolling: touch; /* Melhora a experiência de rolagem em iOS */
+        scrollbar-width: none; /* Oculta a barra de rolagem no Firefox */
+    }
+
+    .systems-modal-menu::-webkit-scrollbar {
+        display: none; /* Oculta a barra de rolagem no Chrome, Safari e Opera */
+    }
+
+    .menu-item {
+        flex: 0 0 auto; /* Impede que os itens encolham */
+        padding: 10px 15px;
+    }
+
+    .separator {
+        display: none; /* Oculta o separador vertical */
+    }
+
+    .systems-modal-content {
+        width: 100%;
+        height: calc(100% - 80px); /* Ajusta a altura para preencher o espaço restante */
+    }
+  
+  .icon-grid {
+    transform: translate(21px, 0px);
+  }
+  
+  .content-header {
+    transform: translate(35px, 0px);
+  }
+
+    .close-button {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: #888;
+        cursor: pointer;
+        z-index: 1000;
+        transition: color 0.3s ease;
+    }
+
+    .close-button:hover {
+        color: #333;
+    } 
 }</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
@@ -635,7 +1683,7 @@
     function getUserInfo() {
         var userGR = gs.getUser();
         
-        if (!userGR || !userGR.getID()) {
+        if (!userGR || !userGR.getID() || userGR.getName() == 'guest') {
             return {
                 logged_in: false
             };
@@ -670,126 +1718,252 @@
         <sys_created_by>pk.aba</sys_created_by>
         <sys_created_on>2025-10-18 13:49:26</sys_created_on>
         <sys_id>4a1d60ebfb687250f6d5f9d38eefdc35</sys_id>
-        <sys_mod_count>69</sys_mod_count>
+        <sys_mod_count>325</sys_mod_count>
         <sys_name>SATE HEADER V3</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_header_footer_4a1d60ebfb687250f6d5f9d38eefdc35</sys_update_name>
-        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-10-20 00:14:34</sys_updated_on>
-        <template><![CDATA[<!-- Barra Superior: Logo e Controles -->
-<div class="top-bar" ng-init="c.checkUserLoggedIn()">
-  <!-- Lado Esquerdo: Logo -->
-  <div class="logo-container">
-    <a href="/sate">
-      <img class="logo-img" src="x_sded9_portal_t_0.logo_sefaz_branco.png" alt="Logo SEFAZ Mato Grosso" />
-    </a>
-  </div>
-
-  <!-- Lado Direito: Acessibilidade e Usuário -->
-  <div class="controls-container">
-    <div class="accessibility-controls">
-      <!-- CORREÇÃO: Texto em um span para controle de tamanho -->
-      <span class="accessibility-label">ACESSIBILIDADE:</span>
-      <a href="" ng-click="adjustFontSize(0.95)" aria-label="Diminuir Fonte">-A</a>
-      <a href="" ng-click="adjustFontSize(1.05)" aria-label="Aumentar Fonte">+A</a>
-      <!-- CORREÇÃO: Estilo para "AA" -->
-      <a href="" ng-click="toggleCase()" aria-label="Alternar Maiúsculo/Minúsculo">
-        <span class="small-a">A</span>A
-      </a>
-      <!-- CORREÇÃO: Ícone de contraste adicionado -->
-     <a href="" ng-click="c.toggleContrast($event)" class="linkAccessibility">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-half" viewBox="0 0 16 16">
-            <path d="M8 15A7 7 0 1 0 8 1zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16"/>
-          </svg>
-        </a>
-      <img class="dots9" src="x_sded9_portal_t_0.9dots.png" width="30" height="30"/>
-    </div>
-
-    <!-- Lógica de Login/Logout implementada -->
-    <div class="user-controls">
-      <!-- Exibe se o usuário está logado --> 
-      <div class="user-logged" ng-if="user.logged_in"> 
-        <div class="dropdown" ng-click="toggleDropdown()"> 
-          <div class="user-avatar"> 
-            <span class="user-initials">{{avatarProfile.initials}}</span> 
-          </div> 
-          <ul class="dropdown-content" ng-show="dropdownOpen"> 
-            <li> 
-              <a href="javascript:void(0)" ng-click="logout()">logout</a> 
-            </li> 
-          </ul> 
-        </div> 
-      </div> 
-      
-      <!-- Caso o usuário não esteja logado --> 
-      <div class="login" ng-if="!user.logged_in"> 
-        <button ng-click="c.redirect()"> 
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16"> 
-            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" /> 
-          </svg> 
-          <span style="margin-left: 5px;">Entrar</span> 
-        </button> 
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Barra Inferior: Menu de Navegação -->
-<div class="main-menu-bar">
-  <!-- Lado Esquerdo: Menu -->
-  <div class="menu-items">
-    <!-- Ícone de hambúrguer na página inicial -->
-    <i ng-if="isHomePage" class="fa fa-bars menu-hamburger" ng-click="toggleMainMenu($event)" aria-hidden="true"></i>
-    
-    <!-- Ícone de casa nas outras páginas -->
-    <a href="/sate" ng-if="!isHomePage">
-      <i class="fa fa-home menu-hamburger" aria-hidden="true"></i>
-    </a>
-    
-    <ul class="menu-list">
-      <li class="dropdown">
-        <a id="tesouroPointer" href="" ng-click="toggleMainMenu($event)">
-          TESOURO ESTADUAL
-        </a>
-        
-        <ul class="dropdown-menu-principal" ng-show="isMainMenuOpen">
-          <li class="has-submenu">
-            <a href="" ng-click="toggleFinanceSubmenu($event)">
-              FINANÇAS DO ESTADO
-              <i class="fa fa-chevron-right" ng-class="{'rotated': isFinanceSubmenuOpen}"></i>
+        <sys_updated_by>pk.aba</sys_updated_by>
+        <sys_updated_on>2025-11-04 21:00:42</sys_updated_on>
+        <template><![CDATA[<div class="header-widget">
+    <div class="top-bar" ng-init="c.checkUserLoggedIn()">
+        <div class="logo-container">
+            <a href="/sate">
+                <img class="logo-img" src="x_sded9_portal_t_0.logo_sefaz_branco.png" alt="Logo SEFAZ Mato Grosso" />
             </a>
-            
-            <ul class="submenu-aninhado" ng-show="isFinanceSubmenuOpen">
-              <li><a ng-click="goToPage('indicadores_fiscais')" href="">INDICADORES FISCAIS</a></li>
-              <li><a ng-click="goToPage('404_sefaz')" href="">RESULTADO FISCAL</a></li>
-              <li><a ng-click="goTo('https://www5.sefaz.mt.gov.br/convenios')" href="">CONVÊNIO</a></li>
-              <li><a ng-click="goTo('https://www5.sefaz.mt.gov.br/fundo-de-participacao-dos-municipios')" href="">REPASSES DO ICMS</a></li>
-              <li><a ng-click="goTo('https://www5.sefaz.mt.gov.br/ajuste-fiscal')" href="">AJUSTE FISCAL</a></li>
-              <li><a ng-click="goTo('https://www5.sefaz.mt.gov.br/acoes-mt-bird')" href="">AÇÕES DÍVIDA MT/BIRD</a></li>
+        </div>
+
+        <div class="controls-container">
+            <div class="accessibility-controls">
+                <span class="accessibility-label">ACESSIBILIDADE:</span>
+                <a href="javascript:void(0)" ng-click="adjustFontSize('decrease')" aria-label="Diminuir Fonte">-A</a>
+                <a href="javascript:void(0)" ng-click="adjustFontSize('increase')" aria-label="Aumentar Fonte">+A</a>
+                <a href="javascript:void(0)" ng-click="toggleCase()" aria-label="Alternar Maiúsculo/Minúsculo">
+                    <span class="small-a">A</span>A
+                </a>
+                <a href="javascript:void(0)" ng-click="c.toggleContrast($event)" class="linkAccessibility" aria-label="Alternar Contraste">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-half" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 0 8 1zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16"/>
+                    </svg>
+                </a>
+                <img class="dots9" src="x_sded9_portal_t_0.9dots.png" width="30" height="30" alt="Menu de aplicativos" ng-click="toggleSystemsModal()" />
+            </div>
+
+            <div class="user-controls">
+                <!-- USUÁRIO LOGADO -->
+                <div class="user-logged" ng-if="user.logged_in">
+                    <div class="dropdown" ng-click="toggleDropdown()">
+                        <div class="user-avatar">
+                            <span class="user-initials">{{ user.first_name[0] }}{{ user.last_name[0] }}</span>
+                            <span class="user-name"></span>
+                        </div>
+                        <ul class="dropdown-content" ng-show="dropdownOpen">
+                            <li>
+                                <a href="" ng-click="logout()">Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- USUÁRIO DESLOGADO -->
+                <div class="login" ng-if="!user.logged_in">
+                    <div class="dropdown" ng-click="toggleDropdown()">
+                        <div class="user-avatar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="user-icon" viewBox="0 0 16 16">
+                                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                            </svg>
+                        </div>
+                        <ul class="dropdown-content" ng-show="dropdownOpen">
+                            <li>
+                                <a href="" ng-click="goToLogin()">Entrar</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-menu-bar">
+        <div class="menu-items">
+            <i ng-if="isHomePage" class="fa fa-bars menu-hamburger" ng-click="toggleMainMenu($event)" ng-mouseover="handleHover()" ng-mouseleave="removeHover()" aria-hidden="true"></i>
+            <a href="/sate" ng-if="!isHomePage">
+                <i class="fa fa-home menu-hamburger" aria-hidden="true"></i>
+            </a>
+
+            <ul class="menu-list">
+                <li class="dropdown">
+                    <a id="tesouroPointer" ng-click="toggleMainMenu($event)" ng-mouseover="handleHover()" ng-mouseleave="removeHover()">
+                        TESOURO ESTADUAL
+                    </a>
+
+                    <ul class="dropdown-menu-principal" ng-show="isMainMenuOpen">
+                        <li><a target="_blank" href="https://www5.sefaz.mt.gov.br/sobre_a_sefaz">A SEFAZ</a></li>
+                        <li><a a ng-click="goToPage('carta_servicos')">O TESOURO</a></li>
+                        <li class="has-submenu">
+                            <a href="javascript:void(0)" ng-click="toggleSubmenu($event, 'financeSubmenu')">
+                                FINANÇAS DO ESTADO
+                                <i class="fa fa-chevron-right" ng-class="{'rotated': submenus.financeSubmenu}"></i>
+                            </a>
+                            <ul class="submenu-aninhado" ng-show="submenus.financeSubmenu">
+                                <li><a ng-click="goToPage('indicadores_fiscais')" href="javascript:void(0)">INDICADORES FISCAIS</a></li>
+                                <li><a ng-click="goToPage('404_sefaz')" href="javascript:void(0)">RESULTADO FISCAL</a></li>
+                                <li><a target="_blank" ng-click="goTo('https://www5.sefaz.mt.gov.br/convenios')">CONVÊNIO</a></li>
+                                <li><a target="_blank" ng-click="goTo('https://www5.sefaz.mt.gov.br/fundo-de-participacao-dos-municipios')">REPASSES DO ICMS</a></li>
+                                <li><a target="_blank" ng-click="goTo('https://www5.sefaz.mt.gov.br/ajuste-fiscal')">AJUSTE FISCAL</a></li>
+                                <li><a target="_blank" ng-click="goTo('https://www5.sefaz.mt.gov.br/acoes-mt-bird')">AÇÕES DÍVIDA MT/BIRD</a></li>
+                            </ul>
+                        </li>
+                       <!-- <li><a ng-click="goToPage('paineis')" href="javascript:void(0)">PAINÉIS</a></li> -->
+                        <li class="has-submenu">
+                            <a href="javascript:void(0)" ng-click="toggleSubmenu($event, 'systemsSubmenuHamburguer')">
+                                PRINCIPAIS SISTEMAS
+                                <i class="fa fa-chevron-right" ng-class="{'rotated': submenus.systemsSubmenuHamburguer}"></i>
+                            </a>
+                            <ul class="submenu-aninhado" ng-show="submenus.systemsSubmenuHamburguer">
+								<li><a target="_blank" href="http://www.fiplan.mt.gov.br/sistemas/fiplan/index.jsf">FIPLAN</a></li>
+								<li><a target="_blank" href="https://www.sigadoc.mt.gov.br/sigadoc-web/login.jsf">SIGADOC</a></li>
+								<li><a target="_blank" href="https://www.sig.mt.gov.br/login">SIG-MT</a></li>
+								<li><a target="_blank" href="http://www.gfo.mt.gov.br/gfo/comum/index.jsp">GFO</a></li>
+								<li><a target="_blank" href="http://www.sifi.mt.gov.br/sifi/comum/index.jsp">SIFI-MT</a></li>
+                            </ul>
+                        </li>
+                        <li><a target="_blank" href="https://www5.sefaz.mt.gov.br/orientacoes-tesouro-estadual">ORIENTAÇÕES DO TESOURO</a></li>
+                        <li><a target="_blank" href="https://www.sefaz.mt.gov.br/ead/">ESCOLA FAZENDÁRIA VIRTUAL</a></li>
+                       <!-- <li><a href="?id=tesouro_estadual">LEGISLAÇÃO DO TESOURO</a></li>
+                        <li><a href="?id=tesouro_estadual">ORGANOGRAMA</a></li> -->
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" ng-click="toggleSubmenu($event, 'systemsSubmenu')">
+                        PRINCIPAIS SISTEMAS
+                    </a>
+                    <ul class="dropdown-menu-principal" ng-show="submenus.systemsSubmenu">
+                        <li><a target="_blank" href="http://www.fiplan.mt.gov.br/sistemas/fiplan/index.jsf">FIPLAN</a></li>
+                        <li><a target="_blank" href="https://www.sigadoc.mt.gov.br/sigadoc-web/login.jsf">SIGADOC</a></li>
+                        <li><a target="_blank" href="https://www.sig.mt.gov.br/login">SIG-MT</a></li>
+                        <li><a target="_blank" href="http://www.gfo.mt.gov.br/gfo/comum/index.jsp">GFO</a></li>
+                        <li><a target="_blank" href="http://www.sifi.mt.gov.br/sifi/comum/index.jsp">SIFI-MT</a></li>
+                    </ul>
+                </li>
+                <!-- <li><a ng-click="goToPage('paineis')" href="javascript:void(0)">PAINÉIS</a></li> -->
+                <li><a target="_blank" href="https://www5.sefaz.mt.gov.br/sobre_a_sefaz">A SEFAZ</a></li>
+                <li><a a ng-click="goToPage('carta_servicos')">O TESOURO</a></li>
+               <!-- <li><a href="?id=tesouro_estadual">LEGISLAÇÃO DO TESOURO</a></li> -->
             </ul>
-          </li>
-          <li><a target="_blank" href="https://www5.sefaz.mt.gov.br/orientacoes-tesouro-estadual">ORIENTAÇÕES DO TESOURO</a></li>
-          <li><a target="_blank" href="https://www.sefaz.mt.gov.br/ead/">ESCOLA FAZENDÁRIA VIRTUAL</a></li>
-          <li><a target="_blank" ng-click="goToPage('404_sefaz')">PAINÉIS</a></li>
-          <li><a target="_blank" href="https://www5.sefaz.mt.gov.br/sobre_a_sefaz">A SEFAZ</a></li>
-          <li><a href="?id=tesouro_estadual">O TESOURO</a></li>
-        </ul>
-      </li>
-      <li><a target="_blank" href="https://www5.sefaz.mt.gov.br/orientacoes-tesouro-estadual">PRINCIPAIS SISTEMAS</a></li>
-      <li><a target="_blank" href="" ng-click="goToPage('404_sefaz')">PAINÉIS</a></li>
-      <li><a target="_blank" href="https://www5.sefaz.mt.gov.br/sobre_a_sefaz">A SEFAZ</a></li>
-      <li><a href="?id=tesouro_estadual">O TESOURO</a></li>
-      <li><a href="?id=tesouro_estadual">LEGISLAÇÃO DO TESOURO</a></li>
-    </ul>
-  </div>
-  
-  <!-- Lado Direito: Busca -->
-  <div class="search-container">
-    <input type="text" placeholder="Olá, o que está procurando hoje?" />
-    <button aria-label="Buscar"><i class="fa fa-search"></i></button>
-  </div>
+        </div>
+        
+        <div class="search-container" ng-if="user.logged_in">
+            <input type="text" placeholder="Olá, o que está procurando hoje?" aria-label="Campo de busca" />
+            <button aria-label="Buscar"><i class="fa fa-search"></i></button>
+        </div>
+    </div>
+
+    <!-- Modal de Sistemas -->
+    <div class="systems-modal-overlay" ng-show="isSystemsModalOpen" ng-click="closeSystemsModal()"></div>
+    <div class="systems-modal" ng-show="isSystemsModalOpen">
+        <div class="systems-modal-menu">
+            <div class="menu-item" ng-class="{active: activeMenu === 'sistemas'}" ng-click="setActiveMenu('sistemas')">
+                <img src="x_sded9_portal_t_0.appsMenu.png" alt="Sistemas e Aplicativos">
+                <span>Sistemas e Aplicativos</span>
+            </div>
+            <div class="menu-item" ng-if="user.logged_in" ng-class="{active: activeMenu === 'paineis'}" ng-click="setActiveMenu('paineis')">
+                <img src="x_sded9_portal_t_0.painesMenu.png" alt="Painéis">
+                <span>Painéis</span>
+            </div>
+            <div class="menu-item" ng-if="user.logged_in" ng-class="{active: activeMenu === 'servicos'}" ng-click="setActiveMenu('servicos')">
+                <img src="x_sded9_portal_t_0.servicosMenu.png" alt="Serviços">
+                <span>Serviços</span>
+            </div>
+            <div class="separator" ng-style="getSeparatorPosition()"></div>
+        </div>
+        <div class="systems-modal-content">
+            <button class="close-button" ng-click="closeSystemsModal()">×</button>
+            <div class="content-header">
+                <h3>{{getActiveMenuTitle()}}</h3>
+            </div>
+            <div class="content-body">
+                <!-- Conteúdo para Sistemas e Aplicativos -->
+                <div class="icon-grid" ng-if="activeMenu === 'sistemas'">
+                    <div class="icon-item">
+                        <a href="javascript:void(0)">
+                            <img src="x_sded9_portal_t_0.gfoMenu.png" alt="GFO">
+                            <span>GFO</span>
+                        </a>
+                    </div>
+                    <div class="icon-item">
+                        <a href="javascript:void(0)">
+                            <img src="x_sded9_portal_t_0.gmaMenu.png" alt="GMA">
+                            <span>GMA</span>
+                        </a>
+                    </div>
+                    <div class="icon-item">
+                        <a href="javascript:void(0)">
+                            <img src="x_sded9_portal_t_0.sifiMenu.png" alt="SIFI-MT">
+                            <span>SIFI-MT</span>
+                        </a>
+                    </div>
+                    <div class="icon-item">
+                        <a href="javascript:void(0)">
+                            <img src="x_sded9_portal_t_0.gatMenu.png" alt="Gestão de Acessos">
+                            <span>Gestão de Acessos</span>
+                        </a>
+                    </div>
+                    <div class="icon-item">
+                        <a href="javascript:void(0)">
+                            <img src="x_sded9_portal_t_0.portalGfoMenu.png" alt="Portal GFO">
+                            <span>Portal GFO</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Conteúdo para Painéis -->
+                <div class="icon-grid" ng-if="activeMenu === 'paineis'">
+                    <div class="icon-item">
+                        <a href="javascript:void(0)">
+                            <img src="x_sded9_portal_t_0.convenioMenu.png" alt="Convênios">
+                            <span>Convênios</span>
+                        </a>
+                    </div>
+                    <div class="icon-item">
+                        <a href="javascript:void(0)">
+                            <img src="x_sded9_portal_t_0.lotacionogramaMenu.png" alt="Lotaciograma SATE">
+                            <span>Lotaciograma SATE</span>
+                        </a>
+                    </div>
+                    <div class="icon-item">
+                        <a href="javascript:void(0)">
+                            <img src="x_sded9_portal_t_0.registroMenu.png" alt="Registro de Receitas">
+                            <span>Registro de Receitas</span>
+                        </a>
+                    </div>
+                    <div class="icon-item">
+                        <a href="javascript:void(0)">
+                            <img src="x_sded9_portal_t_0.obrigacoesMenu.png" alt="Monitoramento das obrigações tributárias">
+                            <span>Monitoramento das obrigações tributárias</span>
+                        </a>
+                    </div>
+                    <div class="icon-item">
+                        <a href="javascript:void(0)">
+                            <img src="x_sded9_portal_t_0.acoesMenu.png" alt="Ações da SATE">
+                            <span>Ações da SATE</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Conteúdo para Serviços -->
+                <div class="icon-grid" ng-if="activeMenu === 'servicos'">
+                    <div class="icon-item">
+                        <a href="javascript:void(0)">
+                            <img src="x_sded9_portal_t_0.legislacaoMenu.png" alt="Legislação">
+                            <span>Legislação</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>]]></template>
     </sp_header_footer>
 </record_update>
