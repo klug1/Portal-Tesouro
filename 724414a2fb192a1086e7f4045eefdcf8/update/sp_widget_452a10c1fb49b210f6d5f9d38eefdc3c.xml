@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $rootScope, $timeout) {
+  var chartInstance = null;
+
+  var dadosGraficos = $scope.data.dados || [];
+
+  $scope.exibirGrafico = dadosGraficos.length > 0;
+  $scope.exibir = $scope.exibirGrafico;
+
+  var MESES_NOMES = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
+
+  function inicializarGrafico(listaDados) {
+    if (!listaDados || listaDados.length === 0) {
+      if (chartInstance) { chartInstance.destroy(); chartInstance = null; }
+      $scope.exibirGrafico = false;
+      $scope.exibir = false;
+      $scope.$applyAsync();
+      return;
+    }
+
+    $scope.exibirGrafico = true;
+    $scope.exibir = true;
+    $scope.$applyAsync();
+
+    var anosUnicos = Array.from(new Set(listaDados.map(function(it){ return it.ano; })));
+    var visaoMensal = (anosUnicos.length === 1); // se veio 1 ano, mostra meses
+
+    var labels, serieBruta, serieLiquida, tituloEixoX, sufixoRotulo;
+
+    if (visaoMensal) {
+      labels = MESES_NOMES.slice();
+      tituloEixoX = 'Mês';
+      sufixoRotulo = ' - Mensal';
+
+      var bruta = new Array(12).fill(0);
+      var liquida = new Array(12).fill(0);
+
+      listaDados.forEach(function(r){
+        var m = Number(r.mes);
+        if (m >= 1 && m <= 12) {
+          var i = m - 1;
+          var v = Number(r.valor) || 0;
+          if (Number(r.tipo) === 1) bruta[i]   += v; // Bruta
+          if (Number(r.tipo) === 2) liquida[i] += v; // Líquida
+        }
+      });
+
+      serieBruta = bruta;
+      serieLiquida = liquida;
+
+    } else {
+      // visão agregada por ano (total da soma de cada ano por tipo)
+      var anos = anosUnicos.sort(function(a,b){ return a - b; });
+      labels = anos;
+      tituloEixoX = 'Ano';
+      sufixoRotulo = ' - Anual';
+
+      var bruta = anos.map(function(){ return 0; });
+      var liquida = anos.map(function(){ return 0; });
+
+      listaDados.forEach(function(r){
+        var idx = anos.indexOf(r.ano);
+        if (idx > -1) {
+          var v = Number(r.valor) || 0;
+          if (Number(r.tipo) === 1) bruta[idx]   += v;
+          if (Number(r.tipo) === 2) liquida[idx] += v;
+        }
+      });
+
+      serieBruta = bruta;
+      serieLiquida = liquida;
+    }
+
+    var contexto = document.getElementById('graficoDespesaPessoal').getContext('2d');
+
+    if (chartInstance) { chartInstance.destroy(); }
+
+    chartInstance = new Chart(contexto, {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [
+          {
+            label: 'Despesa Bruta com Pessoal' + sufixoRotulo,
+            data: serieBruta,
+            backgroundColor: '#4A75B1',
+            yAxisID: 'eixoEsquerdo'
+          },
+          {
+            label: 'Despesa Líquida com Pessoal' + sufixoRotulo,
+            data: serieLiquida,
+            backgroundColor: '#6BB7F0',
+            yAxisID: 'eixoEsquerdo'
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        layout: { padding: { left: 20, right: 20 } },
+        scales: {
+          x: { title: { display: true, text: tituloEixoX }, offset: true },
+          eixoEsquerdo: {
+            type: 'linear',
+            position: 'left',
+            beginAtZero: true,
+            title: { display: true, text: 'Valores em R$' },
+            ticks: {
+              padding: 15,
+              callback: function(value) {
+                return Number(value).toLocaleString('pt-BR');
+              }
+            }
+          }
+        },
+        plugins: {
+          legend: { position: 'top' },
+          tooltip: {
+            callbacks: {
+              // 2 casas decimais SOMENTE no hover
+              label: function(context) {
+                var v = Number(context.parsed.y) || 0;
+                var s = v.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+                return context.dataset.label + ': R$ ' + s;
+              }
+            }
+          }
+        }
+      }
+    });
+  }
+
+  function obterDadosPorAno(ano) {
+    if (!ano) {
+      return dadosGraficos;
+    }
+    return dadosGraficos.filter(function(item) {
+      return item.ano == ano;
+    });
+  }
+
+  $rootScope.$on('anoSelecionado', function(evento, anoSelecionado) {
+    var dadosFiltrados = obterDadosPorAno(anoSelecionado);
+    inicializarGrafico(dadosFiltrados);
+  });
+
+  $timeout(function() {
+    inicializarGrafico(obterDadosPorAno(null));
+  }, 300);
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>dblp_grafico</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>DBLP Gráfico</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function () {
+  var gr = new GlideRecord('x_sded9_portal_t_0_despesa_bruta_e_liquida_com_pessoal');
+  gr.addQuery('u_exercicio', '>=', 2019);
+  gr.addQuery('u_exercicio', '<=', 2024);
+  gr.orderBy('u_exercicio');
+  gr.orderBy('u_mes');
+  gr.query();
+
+  var out = [];
+  while (gr.next()) {
+    out.push({
+      ano: Number(gr.getValue('u_exercicio')),              // ex.: 2021
+      mes: Number(gr.getValue('u_mes')),                    // 1..12
+      tipo: Number(gr.getValue('u_tipo_de_informacao')),    // 1=Bruta, 2=Líquida
+      valor: Number(gr.getValue('u_valor'))                 // valor exato
+    });
+  }
+
+  // payload único e simples
+  data.dados = out;
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-04 14:32:05</sys_created_on>
+        <sys_id>452a10c1fb49b210f6d5f9d38eefdc3c</sys_id>
+        <sys_mod_count>39</sys_mod_count>
+        <sys_name>DBLP Gráfico</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_452a10c1fb49b210f6d5f9d38eefdc3c</sys_update_name>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-04 23:44:14</sys_updated_on>
+        <template><![CDATA[<style>
+  .chart-wrapper{width:100%;padding:20px;background:#fff;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,.1);box-sizing:border-box}
+  .chart-container{position:relative;width:100%;height:588px}
+  @media (max-width:768px){.chart-container{height:400px}}
+  @media (max-width:480px){.chart-container{height:320px}}
+  .report-widget.panel.mensagem{text-align:center;font-size:1.1em;padding:20px;background:#f8f8f8;border-radius:8px;margin-top:12px}
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<h3 style="text-align:center; font-weight: 600; margin-bottom: 16px;">
+    Despesa Bruta e Líquida com pessoal - Consolidado - Mensal
+</h3>
+
+<div class="chart-container" ng-show="exibir">
+  <canvas id="graficoDespesaPessoal"></canvas>
+</div>
+<div class="report-widget panel mensagem" ng-show="!exibir">
+  <div class="panel-heading"><h2 class="panel-title"><i class="fa fa-bar-chart"></i></h2></div>
+  <div class="panel-body">Nenhum dado disponível para o filtro aplicado.</div>
+</div>
+]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>452a10c1fb49b210f6d5f9d38eefdc3c</id>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-04 14:32:05</sys_created_on>
+        <sys_id>892a10c1fb49b210f6d5f9d38eefdc3e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-04 14:32:05</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>
