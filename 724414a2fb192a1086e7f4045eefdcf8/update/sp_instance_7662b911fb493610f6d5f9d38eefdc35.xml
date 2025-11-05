@@ -10,48 +10,48 @@
         <roles/>
         <short_description/>
         <size>md</size>
-        <sp_column display_value="2">46427111fb493610f6d5f9d38eefdca8</sp_column>
-        <sp_widget display_value="ldpe - grafico">c5cfba45fb49f210f6d5f9d38eefdc5f</sp_widget>
+        <sp_column display_value="1">02427111fb493610f6d5f9d38eefdca7</sp_column>
+        <sp_widget display_value="Limite com Despesas Executivo SemiDonut">b62ee199fb093610f6d5f9d38eefdcc9</sp_widget>
         <sys_class_name>sp_instance</sys_class_name>
         <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
-        <sys_created_on>2025-11-05 03:03:50</sys_created_on>
-        <sys_id>5536838dfb49f210f6d5f9d38eefdcc8</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_created_on>2025-11-05 15:36:14</sys_created_on>
+        <sys_id>7662b911fb493610f6d5f9d38eefdc35</sys_id>
+        <sys_mod_count>0</sys_mod_count>
         <sys_name/>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_update_name>sp_instance_5536838dfb49f210f6d5f9d38eefdcc8</sys_update_name>
+        <sys_update_name>sp_instance_7662b911fb493610f6d5f9d38eefdc35</sys_update_name>
         <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-11-05 15:35:46</sys_updated_on>
+        <sys_updated_on>2025-11-05 15:36:14</sys_updated_on>
         <title/>
         <url/>
         <widget_parameters/>
     </sp_instance>
-    <sys_translated_text action="delete_multiple" query="documentkey=5536838dfb49f210f6d5f9d38eefdcc8"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=7662b911fb493610f6d5f9d38eefdc35"/>
     <sys_translated_text action="INSERT_OR_UPDATE">
-        <documentkey>5536838dfb49f210f6d5f9d38eefdcc8</documentkey>
+        <documentkey>7662b911fb493610f6d5f9d38eefdc35</documentkey>
         <fieldname>short_description</fieldname>
         <language>PB</language>
         <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
-        <sys_created_on>2025-11-05 15:35:46</sys_created_on>
-        <sys_id>c4527911fb493610f6d5f9d38eefdc5e</sys_id>
+        <sys_created_on>2025-11-05 15:36:14</sys_created_on>
+        <sys_id>7e62b911fb493610f6d5f9d38eefdc35</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-11-05 15:35:46</sys_updated_on>
+        <sys_updated_on>2025-11-05 15:36:14</sys_updated_on>
         <tablename>sp_instance</tablename>
         <value/>
     </sys_translated_text>
     <sys_translated_text action="INSERT_OR_UPDATE">
-        <documentkey>5536838dfb49f210f6d5f9d38eefdcc8</documentkey>
+        <documentkey>7662b911fb493610f6d5f9d38eefdc35</documentkey>
         <fieldname>title</fieldname>
         <language>PB</language>
         <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
-        <sys_created_on>2025-11-05 15:35:47</sys_created_on>
-        <sys_id>48527911fb493610f6d5f9d38eefdc5f</sys_id>
+        <sys_created_on>2025-11-05 15:36:15</sys_created_on>
+        <sys_id>3a62b911fb493610f6d5f9d38eefdc37</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-11-05 15:35:47</sys_updated_on>
+        <sys_updated_on>2025-11-05 15:36:15</sys_updated_on>
         <tablename>sp_instance</tablename>
         <value/>
     </sys_translated_text>

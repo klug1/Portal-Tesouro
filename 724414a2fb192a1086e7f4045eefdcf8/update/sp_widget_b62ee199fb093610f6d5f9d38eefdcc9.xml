@@ -1,0 +1,736 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function ($scope, $rootScope, spUtil, $timeout) {
+  $scope.anoSelecionado = "";
+  $scope.latestYear = null;
+  $scope.dadosVisiveis = null;
+  $scope.isFading = false;
+  var currentAngle = 0;
+  var animationFrameId = null;
+  var chartInstance = null;
+
+  // ========================
+  // FUNÇÕES DE UTILIDADE
+  // ========================
+  function truncateDecimal(value, decimals) {
+    if (typeof value !== 'number') return value;
+    const factor = Math.pow(10, decimals);
+    return Math.floor(value * factor) / factor;
+  }
+
+  function hexToRgb(hex) {
+    hex = hex.replace('#', '');
+    if (hex.length === 3)
+      hex = hex.split('').map(h => h + h).join('');
+    var bigint = parseInt(hex, 16);
+    return { r: (bigint >> 16) & 255, g: (bigint >> 8) & 255, b: bigint & 255 };
+  }
+
+  function rgbToHex(r, g, b) {
+    return '#' + [r, g, b].map(x => {
+      const s = x.toString(16);
+      return s.length === 1 ? '0' + s : s;
+    }).join('');
+  }
+
+  function interpolateColor(colorA, colorB, t) {
+    const a = hexToRgb(colorA);
+    const b = hexToRgb(colorB);
+    const r = Math.round(a.r + (b.r - a.r) * t);
+    const g = Math.round(a.g + (b.g - a.g) * t);
+    const bl = Math.round(a.b + (b.b - a.b) * t);
+    return rgbToHex(r, g, bl);
+  }
+
+  // ========================
+  // CHART.JS LOADER
+  // ========================
+  function loadChartJs() {
+    return new Promise(function (resolve) {
+      if (window.Chart) {
+        resolve();
+        return;
+      }
+      var script = document.createElement("script");
+      script.src = "https://cdn.jsdelivr.net/npm/chart.js";
+      script.onload = resolve;
+      document.head.appendChild(script);
+    });
+  }
+
+  // ========================
+  // ÂNGULOS
+  // ========================
+  function mapValueToAngle(realValue) {
+    var limitedValue = Math.max(0, Math.min(realValue, 100));
+    var relativeAngleDeg = (limitedValue / 100) * 180;
+    return relativeAngleDeg * (Math.PI / 180);
+  }
+
+  // ========================
+  // CANVAS DO PONTEIRO
+  // ========================
+  function syncPointerCanvasSize() {
+    var chartCanvas = document.getElementById("gaugeChartExec");
+    var pointerCanvas = document.getElementById("gaugePointerExec");
+    if (!chartCanvas || !pointerCanvas) return;
+    pointerCanvas.width = chartCanvas.offsetWidth;
+    pointerCanvas.height = chartCanvas.offsetHeight;
+  }
+
+  function drawPointerAtAngle(angle, percentual) {
+    var canvas = document.getElementById("gaugePointerExec");
+    var ctx = canvas.getContext("2d");
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    var width = canvas.width;
+    var height = canvas.height;
+    var cx = width / 2;
+    var cy = height;
+    var length = height * 0.75;
+
+    var tipX = cx + length * Math.cos(Math.PI - angle);
+    var tipY = cy - length * Math.sin(Math.PI - angle);
+
+    // linha principal
+    ctx.beginPath();
+    ctx.moveTo(cx, cy);
+    ctx.lineTo(tipX, tipY);
+    ctx.strokeStyle = "#333";
+    ctx.lineWidth = 3;
+    ctx.stroke();
+
+    // ponta da seta
+    var arrowHeadLength = height * 0.08;
+    var arrowHeadWidth = height * 0.05;
+
+    var ux = Math.cos(Math.PI - angle);
+    var uy = -Math.sin(Math.PI - angle);
+
+    var baseX = tipX - arrowHeadLength * ux;
+    var baseY = tipY - arrowHeadLength * uy;
+
+    var leftX = baseX + (arrowHeadWidth / 2) * uy;
+    var leftY = baseY + (arrowHeadWidth / 2) * -ux;
+
+    var rightX = baseX - (arrowHeadWidth / 2) * uy;
+    var rightY = baseY - (arrowHeadWidth / 2) * -ux;
+
+    ctx.beginPath();
+    ctx.moveTo(tipX, tipY);
+    ctx.lineTo(leftX, leftY);
+    ctx.lineTo(rightX, rightY);
+    ctx.closePath();
+    ctx.fillStyle = "#333";
+    ctx.fill();
+
+    // círculo central
+    ctx.beginPath();
+    ctx.arc(cx, cy, 5, 0, 2 * Math.PI);
+    ctx.fill();
+
+    // percentual na ponta
+    if (percentual !== undefined && percentual !== null) {
+      const valorTruncado = truncateDecimal(percentual, 2);
+      ctx.font = "bold 18px Arial";
+      ctx.fillStyle = "#333";
+      ctx.textAlign = "center";
+      ctx.textBaseline = "bottom";
+      ctx.fillText(valorTruncado.toFixed(2) + "%", tipX, tipY - height * 0.05);
+    }
+  }
+
+  function animatePointer(toAngle, percentual) {
+    if (animationFrameId) cancelAnimationFrame(animationFrameId);
+
+    var duration = 600;
+    var startAngle = currentAngle;
+    var delta = toAngle - startAngle;
+    var startTime = performance.now();
+
+    function step(now) {
+      var elapsed = now - startTime;
+      var progress = Math.min(elapsed / duration, 1);
+      currentAngle = startAngle + delta * (1 - Math.pow(1 - progress, 3));
+      drawPointerAtAngle(currentAngle, percentual);
+      if (progress < 1) {
+        animationFrameId = requestAnimationFrame(step);
+      }
+    }
+
+    requestAnimationFrame(step);
+  }
+
+  // ========================
+  // ARCS (THRESHOLDS COMO ARCO)
+  // ========================
+  var arcs = [
+    { start: 0.0000, end: 0.4409, color: "#8BC34A" },   // 0% até 44.09%
+    { start: 0.4410, end: 0.4655, color: "#FFEB3B" },   // 44.10% até 46.55%
+    { start: 0.4655, end: 0.4900, color: "#FF9800" },   // 46.55% até 49%
+    { start: 0.4900, end: 1.0000, color: "#F44336" }    // 49% até 100%
+  ];
+
+  function renderGauge(comprometimento) {
+    var canvas = document.getElementById("gaugeChartExec");
+    if (!canvas) return;
+    var ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    if (chartInstance) {
+      try { chartInstance.destroy(); } catch (e) {}
+      chartInstance = null;
+    }
+
+    var segments = 180;
+    var dataArr = new Array(segments).fill(1);
+    var bgColors = [];
+
+    for (var i = 0; i < segments; i++) {
+      var pos = i / (segments - 1);
+      var color = "#ccc"; // cor default
+      for (var j = 0; j < arcs.length; j++) {
+        if (pos >= arcs[j].start && pos <= arcs[j].end) {
+          color = arcs[j].color;
+          break;
+        }
+      }
+      bgColors.push(color);
+    }
+
+    chartInstance = new Chart(ctx, {
+      type: "doughnut",
+      data: {
+        labels: new Array(segments).fill(""),
+        datasets: [{
+          data: dataArr,
+          backgroundColor: bgColors,
+          borderWidth: 0,
+          circumference: 180,
+          rotation: 270,
+          cutout: "70%"
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        animation: { duration: 0 },
+        plugins: { legend: { display: false }, tooltip: { enabled: false } }
+      }
+    });
+
+    syncPointerCanvasSize();
+    var targetAngle = mapValueToAngle(comprometimento);
+    animatePointer(targetAngle, comprometimento);
+  }
+
+  // ========================
+  // FUNÇÃO PARA BUSCAR ÚLTIMO ANO DISPONÍVEL
+  // ========================
+  function buscarUltimoAnoDisponivel() {
+    return new Promise(function(resolve, reject) {
+      // Busca todos os anos disponíveis sem filtro
+      spUtil.get("widget_limite_com_despesas_semidonut", { filtro_ano: "" }).then(function(response) {
+        if (response.data && response.data.dados && response.data.dados.length > 0) {
+          // Extrai anos únicos dos dados
+          var anos = [...new Set(response.data.dados.map(item => item.ano))].sort();
+          var ultimoAno = anos[anos.length - 1];
+          resolve(ultimoAno);
+        } else {
+          resolve(null);
+        }
+      }).catch(function(error) {
+        console.error("Erro ao buscar anos disponíveis:", error);
+        reject(error);
+      });
+    });
+  }
+
+  // ========================
+  // ATUALIZAÇÃO DE DADOS
+  // ========================
+  function atualizarDados(ano) {
+    $scope.isFading = true;
+
+    $timeout(function () {
+      if (!ano) {
+        // Se não tem ano, busca o último ano disponível
+        buscarUltimoAnoDisponivel().then(function(ultimoAno) {
+          if (ultimoAno) {
+            // Atualiza com o último ano encontrado
+            $scope.anoSelecionado = ultimoAno.toString();
+            carregarDadosDoAno(ultimoAno);
+          } else {
+            // Não há dados disponíveis
+            $scope.latestYear = null;
+            $scope.dadosVisiveis = null;
+            limparCanvas();
+            $scope.isFading = false;
+          }
+        });
+        return;
+      }
+
+      carregarDadosDoAno(ano);
+    }, 500);
+  }
+
+  function carregarDadosDoAno(ano) {
+    spUtil.get("limite_com_despesas_executivo_semidonut", { filtro_ano: ano }).then(function (response) {
+      if (response.data && response.data.dados && response.data.dados.length > 0) {
+        $scope.dadosVisiveis = response.data.dados[0];
+        $scope.latestYear = ano;
+
+        $timeout(function () {
+          renderGauge($scope.dadosVisiveis.comprometimento);
+          $timeout(function () {
+            syncPointerCanvasSize();
+            var targetAngle = mapValueToAngle($scope.dadosVisiveis.comprometimento);
+            drawPointerAtAngle(targetAngle, $scope.dadosVisiveis.comprometimento);
+            $scope.isFading = false;
+          }, 600);
+        }, 100);
+      } else {
+        $scope.dadosVisiveis = null;
+        $scope.latestYear = null;
+        limparCanvas();
+        $scope.isFading = false;
+      }
+    }).catch(function (error) {
+      console.error("Erro ao buscar dados:", error);
+      limparCanvas();
+      $scope.isFading = false;
+    });
+  }
+
+  function limparCanvas() {
+    if (chartInstance) { 
+      chartInstance.destroy(); 
+      chartInstance = null; 
+    }
+    var ctxPointer = document.getElementById("gaugePointerExec");
+    if (ctxPointer) { 
+      ctxPointer.getContext("2d").clearRect(0, 0, ctxPointer.width, ctxPointer.height); 
+    }
+  }
+
+  // ========================
+  // EVENTOS E RESIZE
+  // ========================
+  $scope.anoChanged = function () {
+    if ($scope.anoSelecionado && ($scope.anoSelecionado < 2000 || $scope.anoSelecionado > new Date().getFullYear())) {
+      console.warn("Ano fora do intervalo permitido.");
+      return;
+    }
+    $rootScope.$broadcast("anoSelecionado", $scope.anoSelecionado);
+  };
+
+  loadChartJs().then(function () {
+    // Inicializa com o último ano disponível
+    buscarUltimoAnoDisponivel().then(function(ultimoAno) {
+      if (ultimoAno) {
+        $scope.anoSelecionado = ultimoAno.toString();
+        $rootScope.$broadcast("anoSelecionado", $scope.anoSelecionado);
+      }
+    });
+
+    $rootScope.$on("anoSelecionado", function (evt, ano) {
+      $scope.anoSelecionado = ano;
+      atualizarDados(ano);
+    });
+
+    var resizeTimeout;
+    window.addEventListener("resize", function () {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(function () {
+        if ($scope.dadosVisiveis && $scope.dadosVisiveis.comprometimento != null) {
+          syncPointerCanvasSize();
+          renderGauge($scope.dadosVisiveis.comprometimento);
+          $timeout(function () {
+            syncPointerCanvasSize();
+            var angle = mapValueToAngle($scope.dadosVisiveis.comprometimento);
+            drawPointerAtAngle(angle, $scope.dadosVisiveis.comprometimento);
+          }, 300);
+        }
+      }, 250);
+    });
+  });
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>/* VERSÃO MINIMALISTA - Como na imagem */
+.gauge-scale {
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+.scale-min, .scale-max {
+  font-family: 'Roboto Flex', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  background: white;
+  padding: 2px 6px;
+  white-space: nowrap;
+}
+
+.scale-min {
+  margin-left: 5px;
+}
+
+.scale-max {
+  margin-right: 5px;
+}
+
+.chart-container {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  margin-bottom: 40px;
+}
+
+.report-widget {
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  background-color: #fff;
+  margin-top: 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Roboto Flex', sans-serif;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+.report-widget.panel.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+}
+
+.panel-heading {
+  background-color: #e0e0e0;
+  padding: 12px 16px;
+  border-bottom: 1px solid #ccc;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.panel-title {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.panel-body {
+  padding: 16px;
+  flex: 1;
+  width: 100%;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.chart-container-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.chart-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  height: 250px;
+  margin: 0 auto;
+}
+
+canvas {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.legenda-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.legenda {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  font-family: 'Roboto Flex', sans-serif;
+  font-size: 14px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.legenda-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.legenda-color {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.legenda-text {
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+.comprometimento {
+  text-align: center;
+  margin-top: 25px;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.mensagem {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out, transform 0.5s ease-in-out;
+  height: 0;
+  overflow: hidden;
+}
+
+.mensagem.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  height: auto;
+}
+
+/* --- Media Queries para Responsividade --- */
+@media (max-width: 767px) {
+  .report-widget {
+    margin-top: 1rem;
+  }
+  
+  .panel-title {
+    font-size: 1.1rem;
+  }
+  
+  .panel-body {
+    padding: 12px;
+  }
+  
+  .chart-container {
+    height: 180px;
+    margin-bottom: 30px;
+  }
+  
+  .legenda {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 12px;
+  }
+  
+  .legenda-item {
+    margin-bottom: 5px;
+  }
+  
+  .legenda-text {
+    font-size: 11px;
+    white-space: normal;
+  }
+  
+  .comprometimento {
+    margin-top: 20px;
+    font-size: 14px;
+    padding: 8px;
+  }
+  
+  .scale-min, .scale-max {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .report-widget {
+    margin-top: 1.5rem;
+  }
+  
+  .panel-title {
+    font-size: 1.3rem;
+  }
+  
+  .chart-container {
+    height: 220px;
+  }
+  
+  .legenda {
+    gap: 20px;
+  }
+  
+  .legenda-text {
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .report-widget {
+    margin-top: 24px;
+  }
+  
+  .panel-title {
+    font-size: 1.4rem;
+  }
+  
+  .chart-container {
+    height: 250px;
+  }
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>limite_com_despesas_executivo_semidonut</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Limite com Despesas Executivo SemiDonut</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  var anoFiltrado = (typeof input !== 'undefined' && input.filtro_ano) ? input.filtro_ano : '';
+  var gr = new GlideRecord('x_sded9_portal_t_0_u_despesa_pessoal');
+
+  if (anoFiltrado) {
+    gr.addQuery('u_ano', anoFiltrado);
+  }
+
+  gr.orderByDesc('u_ano');
+  gr.query();
+
+  var dados = [];
+  while (gr.next()) {
+    dados.push({
+      ano: gr.getValue('u_ano'),
+      comprometimento: parseFloat(gr.getValue('comprometimento_executivo')) || 0
+    });
+  }
+	
+	//gs.addInfoMessage(JSON.stringify(dados));
+
+  data.dados = dados;
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-05 15:17:40</sys_created_on>
+        <sys_id>b62ee199fb093610f6d5f9d38eefdcc9</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>Limite com Despesas Executivo SemiDonut</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_b62ee199fb093610f6d5f9d38eefdcc9</sys_update_name>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-05 15:42:17</sys_updated_on>
+        <template><![CDATA[<!-- Fonte -->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+</style>
+
+<!-- Com ano selecionado e dados visíveis -->
+<div class="report-widget panel" 
+     ng-show="anoSelecionado !== '' && anoSelecionado != null && dadosVisiveis"
+     ng-class="{'fade-out': isFading}">
+  <div class="panel-heading">
+    <h2 class="panel-title">
+      <i class="fa fa-tachometer m-r"></i>
+      {{::c.options.title || 'Despesa com Pessoal - Executivo'}}
+    </h2>
+  </div>
+
+  <div class="panel-body">
+    <div class="chart-container-wrapper">
+      <div class="chart-container">
+        <canvas id="gaugeChartExec" width="800" height="250"></canvas>
+        <canvas id="gaugePointerExec" width="800" height="250" style="position: absolute; top: 0; left: 0;"></canvas>
+        
+        <!-- ESCALA NO HTML -->
+        <div class="gauge-scale">
+          <span class="scale-min">0%</span>
+          <span class="scale-max">100%</span>
+        </div>
+      </div>
+      
+      <div class="legenda-container">
+        <div class="legenda">
+          <div class="legenda-item">
+            <div class="legenda-color" style="background-color: #8BC34A;"></div>
+            <span class="legenda-text">Abaixo do Limite de Alerta - 0 a 44,09%</span>
+          </div>
+          <div class="legenda-item">
+            <div class="legenda-color" style="background-color: #FFEB3B;"></div>
+            <span class="legenda-text">Limite de Alerta - 44,10 a 46,54%</span>
+          </div>
+          <div class="legenda-item">
+            <div class="legenda-color" style="background-color: #FF9800;"></div>
+            <span class="legenda-text">Limite Prudencial - 46,55 a 48,99%</span>
+          </div>
+          <div class="legenda-item">
+            <div class="legenda-color" style="background-color: #F44336;"></div>
+            <span class="legenda-text">Limite Máximo - 49%</span>
+          </div>
+          <div class="legenda-item">
+            <div class="legenda-color" style="background-color: #B71C1C;"></div>
+            <span class="legenda-text">Acima do Limite Máximo - 49,01 a 100%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="comprometimento">
+        <strong>{{latestYear}}</strong> - Comprometimento RCL com Pessoal: <strong>{{dadosVisiveis.comprometimento}}%</strong>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Sem ano selecionado ou sem dado -->
+<div class="report-widget panel mensagem" 
+     ng-show="anoSelecionado == '' || anoSelecionado == null || !dadosVisiveis" 
+     ng-class="{'show': anoSelecionado == '' || anoSelecionado == null || !dadosVisiveis}">
+  <div class="panel-heading">
+    <h2 class="panel-title">
+      <i class="fa fa-tachometer m-r"></i>
+      {{::c.options.title || 'Limites com Despesas de Pessoal'}}
+    </h2>
+  </div>
+  <div class="panel-body">
+    <p class="dadosInfo">Nenhum dado disponível para o ano selecionado.</p>
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>
