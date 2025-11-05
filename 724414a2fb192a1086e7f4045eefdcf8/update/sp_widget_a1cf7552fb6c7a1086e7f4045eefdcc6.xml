@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[	function ($scope, $rootScope) {
+    var chartDividaPublicaInstance = null;
+
+    $scope.anoSelecionadoDividaPublica = "";
+    $scope.exibirGraficoDividaPublica = false;
+    $scope.tipoGraficoDividaPublica = 'bar';
+    $scope.dadosDividaPublica = [];
+
+    function carregarDadosDividaPublica() {
+        var filtros = {
+            ano: $scope.anoSelecionadoDividaPublica || ""
+        };
+
+        $scope.server.get(filtros).then(function (response) {
+            $scope.dadosDividaPublica = response.data.dadosDividaPublica || [];
+
+            setTimeout(function () {
+                inicializarGraficoDividaPublica($scope.dadosDividaPublica);
+            }, 300);
+        });
+    }
+
+    $rootScope.$on('filtroAnoIndicadoresSelecionado', function (event, ano) {
+        $scope.anoSelecionadoDividaPublica = ano;
+        $scope.tipoGraficoDividaPublica = ano ? 'bar' : 'bar';
+        carregarDadosDividaPublica();
+    });
+
+    carregarDadosDividaPublica();
+
+    // Função para formatar números com separadores de milhar
+    function formatarNumero(numero) {
+        return numero.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    }
+
+    function inicializarGraficoDividaPublica(listaDividaPublica) {
+        if (!listaDividaPublica || listaDividaPublica.length === 0) {
+					
+            if (chartDividaPublicaInstance) {
+                chartDividaPublicaInstance.destroy();
+                chartDividaPublicaInstance = null;
+            }
+            $scope.exibirGraficoDividaPublica = false;
+            $scope.$applyAsync();
+            return;
+        }
+
+        $scope.exibirGraficoDividaPublica = true;
+        $scope.$applyAsync();
+
+        var anosSet = new Set();
+        var credoresSet = new Set();
+        listaDividaPublica.forEach(function (item) {
+            anosSet.add(item.ano);
+            credoresSet.add(item.credor); 
+        });
+
+        var labels = Array.from(anosSet).sort(); 
+        var credores = Array.from(credoresSet).sort(); 
+
+        var idxPorAno = {};
+        labels.forEach(function(a, i) { idxPorAno[a] = i; });
+
+        var palette = ['#6BB7F0','#4A75B1','#293273','#137A8F','#04B4CB','#4A75B1','#6BB7F0','#293273','#7AA36F','#C97A7A','#B08BEB','#FFB74D','#26A69A','#8D6E63','#5C6BC0','#9CCC65','#FFA726','#42A5F5','#EC407A','#AB47BC'];
+
+        var datasets = credores.map(function(credor, i){
+            var cor = palette[i % palette.length];
+            return {
+                label: credor, 
+                data: Array(labels.length).fill(0),
+                borderColor: cor,
+                backgroundColor: ($scope.tipoGraficoDividaPublica === 'bar') ? cor : 'transparent',
+                borderWidth: 2,
+                fill: false,
+                tension: 0.4,
+                pointRadius: 3,
+                yAxisID: 'y'
+            };
+        });
+			
+			var saldoMap = {};          
+			var maxSaldo = 0;           
+
+			var totalPorAno = {}; 
+			
+			if ($scope.anoSelecionadoDividaPublica) {
+				var anoF = $scope.anoSelecionadoDividaPublica;
+				var total = totalPorAno[anoF] || 0;
+				credores.forEach(function(cred) {
+					var iAno = labels.indexOf(anoF);
+					var iCred = credores.indexOf(cred);
+					if (iAno > -1 && iCred > -1) {
+						var p = datasets[iCred].data[iAno];
+						var p100 = p <= 1 ? p * 100 : p;
+						var s = saldoMap[anoF + '||' + cred] || 0;
+						var calc = total ? (s / total) * 100 : 0;
+						if (Math.abs(calc - p100) > 0.5) {
+							console.warn('Desalinhado:', {ano: anoF, credor: cred, percentual: p100, saldo: s, total: total, esperado: calc});
+						}
+					}
+				});
+			}
+
+
+			listaDividaPublica.forEach(function(item){
+				var iAno = idxPorAno[item.ano];
+				var iCredor = credores.indexOf(item.credor);
+				if (iAno > -1 && iCredor > -1) {
+					datasets[iCredor].data[iAno] = item.percentual || 0;
+
+					var saldo = item.saldo_devedor || 0;
+					saldoMap[item.ano + '||' + item.credor] = saldo;
+
+					totalPorAno[item.ano] = (totalPorAno[item.ano] || 0) + saldo;
+
+					if (saldo > maxSaldo) maxSaldo = saldo; 
+					
+				}
+			});
+
+
+        var canvas = document.getElementById('graficoDividaPublicaAtt');
+        if (!canvas) {
+            console.error("Elemento canvas 'graficoDividaPublica' não encontrado.");
+            return;
+        }
+
+        var ctx = canvas.getContext('2d');
+
+        if (chartDividaPublicaInstance) {
+            chartDividaPublicaInstance.destroy();
+        }
+
+				var mostrarY2 = !!$scope.anoSelecionadoDividaPublica;
+
+				if (mostrarY2) {
+					maxSaldo = totalPorAno[$scope.anoSelecionadoDividaPublica] || 0;
+				} else {
+					maxSaldo = 0;
+				}
+
+
+			
+        chartDividaPublicaInstance = new Chart(ctx, {
+            type: $scope.tipoGraficoDividaPublica,
+						data: {
+							labels: labels,          
+							datasets: datasets       
+						},
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+									x: {
+										title: { display: true, text: 'Ano' },
+										offset: true
+									},
+									y: {
+										beginAtZero: true,
+										max: 100, // fixo em 100 para % (evita arredondamento “nice”)
+										title: { display: true, text: 'Percentual (%)' },
+										ticks: {
+											callback: function (value) {
+												var v = Number(value);
+												if (v <= 1) v = v * 100;
+												return v.toFixed(0) + '%';
+											}
+										}
+									},
+									y2: {
+										display: !!$scope.anoSelecionadoDividaPublica, // some no multi-ano
+										position: 'right',
+										beginAtZero: true,
+										max: maxSaldo, // tem que ser o TOTAL DO ANO (ver item 2)
+										grid: { drawOnChartArea: false },
+										title: { display: !!$scope.anoSelecionadoDividaPublica, text: 'Saldo (R$)' },
+										ticks: {
+											callback: function (value) {
+												var v = Number(value) || 0;
+												if (v >= 1000000000) return 'R$ ' + (v/1000000000).toFixed(1).replace('.', ',') + ' bi';
+												if (v >= 1000000)     return 'R$ ' + (v/1000000).toFixed(1).replace('.', ',') + ' mi';
+												if (v >= 1000)         return 'R$ ' + (v/1000).toFixed(0).replace('.', ',') + ' mil';
+												return 'R$ ' + v.toFixed(2).replace('.', ',').replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+											}
+										}
+									}
+
+								},
+                plugins: {
+                    legend: {
+                        position: 'top'
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+														var percRaw = Number(context.parsed.y) || 0;
+														var percFmt = percRaw.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + '%';
+
+
+														var ano = context.label;
+														var cred = context.dataset.label;
+														var chave = ano + '||' + cred;
+														var saldo = saldoMap[chave] || 0;
+
+														var temDecimal = Math.abs(saldo - Math.trunc(saldo)) > 0;
+														var saldoFmt = 'R$ ' + saldo.toLocaleString(
+															'pt-BR',
+															{ minimumFractionDigits: temDecimal ? 1 : 0, maximumFractionDigits: 10 }
+														);
+
+														return context.dataset.label + ': ' + percFmt + ' — ' + saldoFmt;
+
+													}
+
+
+                        }
+                    }
+                }
+            }
+        });
+    }
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>canvas {
+  display: block;
+  margin: 0 auto;
+}
+
+h3, div, span {
+ font-family: 'Roboto Flex', sans-serif;
+}
+
+/* --- Media Queries para Responsividade --- */
+
+/* Telas Pequenas (Mobile S, M, L - até 767px) */
+@media (max-width: 767px) {
+  canvas {
+    max-width: 90%; /* Ajustar a largura máxima do canvas */
+  }
+  h3 {
+    font-size: 1rem; /* Ajustar o tamanho da fonte do título */
+  }
+}
+
+/* Tablets (iPad Mini, iPad Air, Surface Duo, Galaxy Z Fold 5 - 768px até 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  canvas {
+    max-width: 80%;
+  }
+  h3 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Laptops e Telas Maiores (iPad Pro, Surface Pro 7, Laptops, 4K - 1024px em diante) */
+@media (min-width: 1024px) {
+  canvas {
+    max-width: none;
+  }
+  h3 {
+  }
+}
+
+/* Ajustes para o Surface Duo (540x720) */
+@media (width: 540px) and (height: 720px) {
+    canvas {
+        max-width: 95%;
+    }
+}
+
+/* Ajustes para Galaxy Z Fold 5 (max-width: 350px) */
+@media (max-width: 350px) {
+    h3 {
+        font-size: 0.9rem;
+    }
+}
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&amp;display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+.report-widget {
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  background-color: #fff;
+  margin-top: 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Roboto Flex', sans-serif;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+.panel-heading {
+  background-color: #e0e0e0;
+  padding: 12px 16px;
+  border-bottom: 1px solid #ccc;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.panel-title {
+  margin: 0;
+  font-size: 1.6rem;
+  color: #333;
+  text-align: center;
+}
+
+.panel-body {
+  padding: 16px;
+  flex: 1;
+  width: 100%;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+/* Animação de entrada e saída */
+.mensagem {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  height: 0;
+  overflow: hidden;
+}
+
+.mensagem.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  height: auto;
+}
+
+/* Responsividade */
+@media (max-width: 767px) {
+  .report-widget {
+    margin-top: 1rem;
+  }
+  .panel-title {
+    font-size: 1.4rem;
+  }
+  .panel-body {
+    padding: 8px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .panel-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .panel-title {
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .panel-heading {
+    padding: 14px 18px;
+  }
+  .panel-body {
+    padding: 20px;
+  }
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>iadp_grafico</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>IADP Grafico</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+ 
+	  input = input || {};
+    var anoFiltro = input.ano || "";
+
+    var gr = new GlideRecord('x_sded9_portal_t_0_u_tesouro_divida_publica_credor');
+    if (anoFiltro !== "") {
+        gr.addQuery('u_ano', anoFiltro);
+    }
+    gr.orderBy('u_ano');
+    gr.query();
+
+    var listaDividaPublica = [];
+
+    while (gr.next()) {
+        listaDividaPublica.push({
+            ano: gr.getValue('u_ano'),
+            saldo_devedor: parseFloat(gr.getValue('u_saldo_devedor')) / 1 || 0,
+            percentual: parseFloat(gr.getValue('u_percentual')) / 1 || 0,
+            credor: gr.getDisplayValue('u_credor') || gr.getValue('u_credor') || '—'
+        });
+    }
+
+    data.dadosDividaPublica = listaDividaPublica;
+	
+	
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-10-14 22:37:07</sys_created_on>
+        <sys_id>a1cf7552fb6c7a1086e7f4045eefdcc6</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name>IADP Grafico</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_a1cf7552fb6c7a1086e7f4045eefdcc6</sys_update_name>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-05 01:51:58</sys_updated_on>
+        <template><![CDATA[<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+
+  .chart-wrapper {
+      font-family: 'Roboto Flex', sans-serif;
+      width: 100%;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+  }
+
+  .chart-container {
+      position: relative;
+      width: 100%;
+      height: 588px;
+  }
+
+  canvas {
+      width: 100% !important;
+      height: 100% !important;
+      display: block;
+  }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<div class="chart-wrapper">
+  <h3 style="text-align:center; font-weight: 600; margin-bottom: 16px;">
+  Estoque da Dívida Pública por Credor
+    <span  class="dadosInfo" style="font-weight: 600; color: #333;">
+      {{anoSelecionadoDividaPublica ? ' - Ano: ' + anoSelecionadoDividaPublica : ' - 2019 a 2024'}}
+    </span>
+  </h3>
+
+  <div class="chart-container" ng-show="exibirGraficoDividaPublica">
+    <canvas id="graficoDividaPublicaAtt"></canvas>
+  </div>
+
+  <div class="report-widget panel mensagem" ng-class="{'show': !exibirGraficoDividaPublica && dadosDividaPublica.length === 0}">
+  <!--div class="panel-heading">
+    <h2 class="panel-title">
+      <i class="fa fa-bar-chart" aria-hidden="true"></i> Estoque da Dívida Pública
+    </h2>
+  </div-->
+  <div class="panel-body" style="text-align: center; font-size: 1.2em;">
+    Nenhum dado disponível para o ano selecionado.
+  </div>
+</div>
+
+</div>
+]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>a1cf7552fb6c7a1086e7f4045eefdcc6</id>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-10-14 22:37:07</sys_created_on>
+        <sys_id>adcf7552fb6c7a1086e7f4045eefdcc8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-10-14 22:37:07</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>
