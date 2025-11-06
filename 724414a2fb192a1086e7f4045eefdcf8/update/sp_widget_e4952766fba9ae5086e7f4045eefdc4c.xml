@@ -2,611 +2,516 @@
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
         <client_script><![CDATA[function ($scope, $rootScope, spUtil, $timeout) {
+  // ========================
+  // ESTADO
+  // ========================
   $scope.anoSelecionado = "";
   $scope.latestYear = null;
   $scope.dadosVisiveis = null;
   $scope.isFading = false;
+
+  var chartInstance = null;
   var currentAngle = 0;
   var animationFrameId = null;
-  var chartInstance = null;
+  var resizeTimer = null;
+  var offAnoListener = null;
 
   // ========================
-  // FUNÇÕES DE UTILIDADE
+  // CORES — conforme legenda oficial
   // ========================
-  function truncateDecimal(value, decimals) {
-    if (typeof value !== 'number') return value;
-    const factor = Math.pow(10, decimals);
-    return Math.floor(value * factor) / factor;
-  }
-
-  function hexToRgb(hex) {
-    hex = hex.replace('#', '');
-    if (hex.length === 3)
-      hex = hex.split('').map(h => h + h).join('');
-    var bigint = parseInt(hex, 16);
-    return { r: (bigint >> 16) & 255, g: (bigint >> 8) & 255, b: bigint & 255 };
-  }
-
-  function rgbToHex(r, g, b) {
-    return '#' + [r, g, b].map(x => {
-      const s = x.toString(16);
-      return s.length === 1 ? '0' + s : s;
-    }).join('');
-  }
-
-  function interpolateColor(colorA, colorB, t) {
-    const a = hexToRgb(colorA);
-    const b = hexToRgb(colorB);
-    const r = Math.round(a.r + (b.r - a.r) * t);
-    const g = Math.round(a.g + (b.g - a.g) * t);
-    const bl = Math.round(a.b + (b.b - a.b) * t);
-    return rgbToHex(r, g, bl);
-  }
+  var COLOR_GREEN  = "#8BC34A"; // 0–54%
+  var COLOR_YELLOW = "#FFEB3B"; // 54–57%
+  var COLOR_ORANGE = "#FF9800"; // 57–60%
+  var COLOR_RED_LT = "#F44336"; // 60% (tick + marcador)
+  var COLOR_RED_DK = "#8C0C03"; // 60–100%
 
   // ========================
-  // CHART.JS LOADER
+  // UTIL
   // ========================
+  function clampPct(p) { return Math.max(0, Math.min(p, 100)); }
+  function mapValueToAngle(percent) { return (clampPct(percent) / 100) * Math.PI; }
+  function truncate2(x) { if (typeof x !== 'number') return x; return (Math.floor(x * 100) / 100).toFixed(2); }
+
   function loadChartJs() {
     return new Promise(function (resolve) {
-      if (window.Chart) {
-        resolve();
-        return;
-      }
-      var script = document.createElement("script");
-      script.src = "https://cdn.jsdelivr.net/npm/chart.js";
-      script.onload = resolve;
-      document.head.appendChild(script);
+      if (window.Chart) return resolve();
+      var s = document.createElement("script");
+      s.src = "https://cdn.jsdelivr.net/npm/chart.js";
+      s.onload = resolve;
+      document.head.appendChild(s);
     });
   }
 
   // ========================
-  // ÂNGULOS
+  // CHART.JS — 5 FATIAS exatas
   // ========================
-  function mapValueToAngle(realValue) {
-    var limitedValue = Math.max(0, Math.min(realValue, 100));
-    var relativeAngleDeg = (limitedValue / 100) * 180;
-    return relativeAngleDeg * (Math.PI / 180);
+  function buildDataset() {
+    return {
+      data: [54, 3, 3, 0.2, 39.8], // 0–54 / 54–57 / 57–60 / 60 / >60
+      backgroundColor: [
+        COLOR_GREEN,
+        COLOR_YELLOW,
+        COLOR_ORANGE,
+        COLOR_RED_LT,
+        COLOR_RED_DK
+      ],
+      borderWidth: 0,
+      circumference: 180,
+      rotation: 270,
+      cutout: "70%"
+    };
+  }
+
+  function renderGauge(percentual) {
+    var canvas = document.getElementById("gaugeChart");
+    if (!canvas) return;
+    var ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    Chart.defaults.elements.arc.borderWidth = 0;
+    Chart.defaults.elements.arc.borderColor = "rgba(0,0,0,0)";
+    Chart.defaults.plugins.legend.display = false;
+
+    if (chartInstance) { try { chartInstance.destroy(); } catch(e){} chartInstance = null; }
+
+    chartInstance = new Chart(ctx, {
+      type: "doughnut",
+      data: {
+        labels: ["Verde", "Amarelo", "Laranja", "Vermelho Claro", "Vermelho Escuro"],
+        datasets: [ buildDataset() ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        animation: { duration: 0 },
+        elements: { arc: { borderWidth: 0 } },
+        plugins: { legend: { display: false }, tooltip: { enabled: false } }
+      }
+    });
+
+    syncPointerCanvasSize();
+    animatePointer(mapValueToAngle(percentual || 0), percentual || 0);
   }
 
   // ========================
-  // CANVAS DO PONTEIRO
+  // PONTEIRO (canvas separado)
   // ========================
   function syncPointerCanvasSize() {
     var chartCanvas = document.getElementById("gaugeChart");
     var pointerCanvas = document.getElementById("gaugePointer");
     if (!chartCanvas || !pointerCanvas) return;
-    pointerCanvas.width = chartCanvas.offsetWidth;
-    pointerCanvas.height = chartCanvas.offsetHeight;
+
+    var dpr = window.devicePixelRatio || 1;
+    var cssW = chartCanvas.offsetWidth;
+    var cssH = chartCanvas.offsetHeight;
+
+    pointerCanvas.width  = Math.max(1, Math.floor(cssW * dpr));
+    pointerCanvas.height = Math.max(1, Math.floor(cssH * dpr));
+    pointerCanvas.style.width  = cssW + "px";
+    pointerCanvas.style.height = cssH + "px";
+
+    var ctx = pointerCanvas.getContext("2d");
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+
+  // Tick visual de 60%
+  function drawLimitTickAt(percent, color) {
+    var canvas = document.getElementById("gaugePointer");
+    if (!canvas) return;
+    var ctx = canvas.getContext("2d");
+    var W = parseFloat(canvas.style.width) || canvas.width;
+    var H = parseFloat(canvas.style.height) || canvas.height;
+    var cx = W / 2;
+    var cy = H;
+
+    var outerR = Math.min(W, H * 2) / 2 - 10;
+    var innerR = outerR * 0.70;
+    var midR   = innerR + (outerR - innerR) * 0.5;
+
+    var a = mapValueToAngle(percent);
+    var delta = (3 * Math.PI) / 180;
+
+    var start = Math.PI - (a + delta);
+    var end   = Math.PI - (a - delta);
+
+    ctx.beginPath();
+    ctx.arc(cx, cy, midR, start, end, false);
+    ctx.strokeStyle = color;
+    ctx.lineWidth = Math.max(4, Math.floor(H * 0.02));
+    ctx.lineCap = "round";
+    ctx.stroke();
   }
 
   function drawPointerAtAngle(angle, percentual) {
     var canvas = document.getElementById("gaugePointer");
+    if (!canvas) return;
     var ctx = canvas.getContext("2d");
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    var W = parseFloat(canvas.style.width) || canvas.width;
+    var H = parseFloat(canvas.style.height) || canvas.height;
 
-    var width = canvas.width;
-    var height = canvas.height;
-    var cx = width / 2;
-    var cy = height;
-    var length = height * 0.75;
+    ctx.clearRect(0, 0, W, H);
 
-    var tipX = cx + length * Math.cos(Math.PI - angle);
-    var tipY = cy - length * Math.sin(Math.PI - angle);
+    var cx = W / 2;
+    var cy = H;
+    var length = H * 0.75;
 
-    // linha principal
+    var theta = Math.PI - angle;
+    var tipX = cx + length * Math.cos(theta);
+    var tipY = cy - length * Math.sin(theta);
+
+    var pointerColor = "#333";
+
+    // haste
     ctx.beginPath();
     ctx.moveTo(cx, cy);
     ctx.lineTo(tipX, tipY);
-    ctx.strokeStyle = "#333";
+    ctx.strokeStyle = pointerColor;
     ctx.lineWidth = 3;
     ctx.stroke();
 
-    // ponta da seta
-    var arrowHeadLength = height * 0.08;
-    var arrowHeadWidth = height * 0.05;
-
-    var ux = Math.cos(Math.PI - angle);
-    var uy = -Math.sin(Math.PI - angle);
-
-    var baseX = tipX - arrowHeadLength * ux;
-    var baseY = tipY - arrowHeadLength * uy;
-
-    var leftX = baseX + (arrowHeadWidth / 2) * uy;
-    var leftY = baseY + (arrowHeadWidth / 2) * -ux;
-
-    var rightX = baseX - (arrowHeadWidth / 2) * uy;
-    var rightY = baseY - (arrowHeadWidth / 2) * -ux;
+    // ponta
+    var ahLen = H * 0.08;
+    var ahWid = H * 0.05;
+    var ux = Math.cos(theta), uy = -Math.sin(theta);
+    var baseX = tipX - ahLen * ux, baseY = tipY - ahLen * uy;
+    var leftX  = baseX + (ahWid / 2) * uy, leftY  = baseY + (ahWid / 2) * -ux;
+    var rightX = baseX - (ahWid / 2) * uy, rightY = baseY - (ahWid / 2) * -ux;
 
     ctx.beginPath();
     ctx.moveTo(tipX, tipY);
     ctx.lineTo(leftX, leftY);
     ctx.lineTo(rightX, rightY);
     ctx.closePath();
-    ctx.fillStyle = "#333";
+    ctx.fillStyle = pointerColor;
     ctx.fill();
 
-    // círculo central
+    // pivô
     ctx.beginPath();
-    ctx.arc(cx, cy, 5, 0, 2 * Math.PI);
+    ctx.arc(cx, cy, 5, 0, Math.PI * 2);
+    ctx.fillStyle = pointerColor;
     ctx.fill();
 
-    // percentual na ponta
-    if (percentual !== undefined && percentual !== null) {
-      const valorTruncado = truncateDecimal(percentual, 2);
-      ctx.font = "bold 18px Arial";
-      ctx.fillStyle = "#333";
-      ctx.textAlign = "center";
-      ctx.textBaseline = "bottom";
-      ctx.fillText(valorTruncado.toFixed(2) + "%", tipX, tipY - height * 0.05);
-    }
+    // label
+    ctx.font = "bold 18px Arial";
+    ctx.fillStyle = "#333";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "bottom";
+    ctx.fillText(truncate2(percentual) + "%", tipX, tipY - H * 0.05);
+
+    // tick vermelho-claro (60%)
+    drawLimitTickAt(60, COLOR_RED_LT);
   }
 
   function animatePointer(toAngle, percentual) {
     if (animationFrameId) cancelAnimationFrame(animationFrameId);
-
-    var duration = 600;
+    var duration = 500;
     var startAngle = currentAngle;
     var delta = toAngle - startAngle;
     var startTime = performance.now();
 
     function step(now) {
-      var elapsed = now - startTime;
-      var progress = Math.min(elapsed / duration, 1);
-      currentAngle = startAngle + delta * (1 - Math.pow(1 - progress, 3));
+      var t = Math.min((now - startTime) / duration, 1);
+      currentAngle = startAngle + delta * (1 - Math.pow(1 - t, 3));
       drawPointerAtAngle(currentAngle, percentual);
-      if (progress < 1) {
-        animationFrameId = requestAnimationFrame(step);
-      }
+      if (t < 1) animationFrameId = requestAnimationFrame(step);
     }
-
-    requestAnimationFrame(step);
+    animationFrameId = requestAnimationFrame(step);
   }
 
   // ========================
-  // ARCS (THRESHOLDS COMO ARCO)
+  // DADOS (ServiceNow)
   // ========================
-  var arcs = [
-    { start: 0.0000, end: 0.4409, color: "#8BC34A" },   // 0% até 44.09%
-    { start: 0.4410, end: 0.4655, color: "#FFEB3B" },   // 44.10% até 46.55%
-    { start: 0.4655, end: 0.4900, color: "#FF9800" },   // 46.55% até 49%
-    { start: 0.4900, end: 1.0000, color: "#F44336" }    // 49% até 100%
-  ];
+  var ultimoAnoCache = null;
 
-  function renderGauge(comprometimento) {
-    var canvas = document.getElementById("gaugeChart");
-    if (!canvas) return;
-    var ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    if (chartInstance) {
-      try { chartInstance.destroy(); } catch (e) {}
-      chartInstance = null;
-    }
-
-    var segments = 180;
-    var dataArr = new Array(segments).fill(1);
-    var bgColors = [];
-
-    for (var i = 0; i < segments; i++) {
-      var pos = i / (segments - 1);
-      var color = "#ccc"; // cor default
-      for (var j = 0; j < arcs.length; j++) {
-        if (pos >= arcs[j].start && pos <= arcs[j].end) {
-          color = arcs[j].color;
-          break;
-        }
-      }
-      bgColors.push(color);
-    }
-
-    chartInstance = new Chart(ctx, {
-      type: "doughnut",
-      data: {
-        labels: new Array(segments).fill(""),
-        datasets: [{
-          data: dataArr,
-          backgroundColor: bgColors,
-          borderWidth: 0,
-          circumference: 180,
-          rotation: 270,
-          cutout: "70%"
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        animation: { duration: 0 },
-        plugins: { legend: { display: false }, tooltip: { enabled: false } }
-      }
-    });
-
-    syncPointerCanvasSize();
-    var targetAngle = mapValueToAngle(comprometimento);
-    animatePointer(targetAngle, comprometimento);
-  }
-
-  // ========================
-  // FUNÇÃO PARA BUSCAR ÚLTIMO ANO DISPONÍVEL
-  // ========================
   function buscarUltimoAnoDisponivel() {
-    return new Promise(function(resolve, reject) {
-      // Busca todos os anos disponíveis sem filtro
-      spUtil.get("widget_limite_com_despesas_semidonut", { filtro_ano: "" }).then(function(response) {
-        if (response.data && response.data.dados && response.data.dados.length > 0) {
-          // Extrai anos únicos dos dados
-          var anos = [...new Set(response.data.dados.map(item => item.ano))].sort();
-          var ultimoAno = anos[anos.length - 1];
-          resolve(ultimoAno);
-        } else {
-          resolve(null);
-        }
-      }).catch(function(error) {
-        console.error("Erro ao buscar anos disponíveis:", error);
-        reject(error);
-      });
-    });
-  }
-
-  // ========================
-  // ATUALIZAÇÃO DE DADOS
-  // ========================
-  function atualizarDados(ano) {
-    $scope.isFading = true;
-
-    $timeout(function () {
-      if (!ano) {
-        // Se não tem ano, busca o último ano disponível
-        buscarUltimoAnoDisponivel().then(function(ultimoAno) {
-          if (ultimoAno) {
-            // Atualiza com o último ano encontrado
-            $scope.anoSelecionado = ultimoAno.toString();
-            carregarDadosDoAno(ultimoAno);
-          } else {
-            // Não há dados disponíveis
-            $scope.latestYear = null;
-            $scope.dadosVisiveis = null;
-            limparCanvas();
-            $scope.isFading = false;
-          }
-        });
-        return;
-      }
-
-      carregarDadosDoAno(ano);
-    }, 500);
+    if (ultimoAnoCache) return Promise.resolve(ultimoAnoCache);
+    return spUtil.get("widget_limite_com_despesas_semidonut", { filtro_ano: "" })
+      .then(function(resp){
+        var dados = (resp.data && resp.data.dados) || [];
+        if (!dados.length) return null;
+        var anos = Array.from(new Set(dados.map(i => i.ano))).sort();
+        ultimoAnoCache = anos[anos.length - 1] || null;
+        return ultimoAnoCache;
+      })
+      .catch(err => { console.error("Erro ao buscar anos disponíveis:", err); return null; });
   }
 
   function carregarDadosDoAno(ano) {
-    spUtil.get("widget_limite_com_despesas_semidonut", { filtro_ano: ano }).then(function (response) {
-      if (response.data && response.data.dados && response.data.dados.length > 0) {
-        $scope.dadosVisiveis = response.data.dados[0];
+    return spUtil.get("widget_limite_com_despesas_semidonut", { filtro_ano: ano })
+      .then(function(resp){
+        var dados = (resp.data && resp.data.dados) || [];
+        if (!dados.length) {
+          $scope.dadosVisiveis = null;
+          $scope.latestYear = null;
+          limparCanvas();
+          return null;
+        }
+        $scope.dadosVisiveis = dados[0];
         $scope.latestYear = ano;
 
-        $timeout(function () {
-          renderGauge($scope.dadosVisiveis.comprometimento);
-          $timeout(function () {
-            syncPointerCanvasSize();
-            var targetAngle = mapValueToAngle($scope.dadosVisiveis.comprometimento);
-            drawPointerAtAngle(targetAngle, $scope.dadosVisiveis.comprometimento);
-            $scope.isFading = false;
-          }, 600);
-        }, 100);
-      } else {
-        $scope.dadosVisiveis = null;
-        $scope.latestYear = null;
-        limparCanvas();
-        $scope.isFading = false;
-      }
-    }).catch(function (error) {
-      console.error("Erro ao buscar dados:", error);
-      limparCanvas();
-      $scope.isFading = false;
-    });
+        var p = ($scope.dadosVisiveis.comprometimento != null) ? $scope.dadosVisiveis.comprometimento : 0;
+        renderGauge(p);
+        return p;
+      })
+      .catch(err => { console.error("Erro ao buscar dados:", err); limparCanvas(); return null; })
+      .finally(() => { $scope.isFading = false; });
+  }
+
+  function atualizarDados(ano) {
+    $scope.isFading = true;
+    if (!ano) {
+      buscarUltimoAnoDisponivel().then(function(ultimo){
+        if (ultimo) {
+          $scope.anoSelecionado = String(ultimo);
+          carregarDadosDoAno(ultimo);
+        } else {
+          $scope.latestYear = null; $scope.dadosVisiveis = null;
+          limparCanvas(); $scope.isFading = false;
+        }
+      });
+      return;
+    }
+    carregarDadosDoAno(ano);
   }
 
   function limparCanvas() {
-    if (chartInstance) { 
-      chartInstance.destroy(); 
-      chartInstance = null; 
+    var c = document.getElementById("gaugePointer");
+    if (c) {
+      var ctx = c.getContext("2d");
+      var w = parseFloat(c.style.width) || c.width;
+      var h = parseFloat(c.style.height) || c.height;
+      ctx.clearRect(0, 0, w, h);
     }
-    var ctxPointer = document.getElementById("gaugePointer");
-    if (ctxPointer) { 
-      ctxPointer.getContext("2d").clearRect(0, 0, ctxPointer.width, ctxPointer.height); 
-    }
+    if (chartInstance) { try { chartInstance.destroy(); } catch(e){} chartInstance = null; }
   }
 
   // ========================
-  // EVENTOS E RESIZE
+  // EVENTOS
   // ========================
   $scope.anoChanged = function () {
-    if ($scope.anoSelecionado && ($scope.anoSelecionado < 2000 || $scope.anoSelecionado > new Date().getFullYear())) {
+    var y = parseInt($scope.anoSelecionado, 10);
+    var thisYear = new Date().getFullYear();
+    if ($scope.anoSelecionado && (y < 2000 || y > thisYear)) {
       console.warn("Ano fora do intervalo permitido.");
       return;
     }
     $rootScope.$broadcast("anoSelecionado", $scope.anoSelecionado);
   };
 
+  function onResize() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () {
+      if ($scope.dadosVisiveis && $scope.dadosVisiveis.comprometimento != null) {
+        renderGauge($scope.dadosVisiveis.comprometimento);
+      }
+    }, 150);
+  }
+
+  // ========================
+  // BOOTSTRAP
+  // ========================
   loadChartJs().then(function () {
-    // Inicializa com o último ano disponível
-    buscarUltimoAnoDisponivel().then(function(ultimoAno) {
+    buscarUltimoAnoDisponivel().then(function(ultimoAno){
       if (ultimoAno) {
-        $scope.anoSelecionado = ultimoAno.toString();
+        $scope.anoSelecionado = String(ultimoAno);
         $rootScope.$broadcast("anoSelecionado", $scope.anoSelecionado);
       }
     });
 
-    $rootScope.$on("anoSelecionado", function (evt, ano) {
+    offAnoListener = $rootScope.$on("anoSelecionado", function (evt, ano) {
       $scope.anoSelecionado = ano;
       atualizarDados(ano);
     });
 
-    var resizeTimeout;
-    window.addEventListener("resize", function () {
-      clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(function () {
-        if ($scope.dadosVisiveis && $scope.dadosVisiveis.comprometimento != null) {
-          syncPointerCanvasSize();
-          renderGauge($scope.dadosVisiveis.comprometimento);
-          $timeout(function () {
-            syncPointerCanvasSize();
-            var angle = mapValueToAngle($scope.dadosVisiveis.comprometimento);
-            drawPointerAtAngle(angle, $scope.dadosVisiveis.comprometimento);
-          }, 300);
-        }
-      }, 250);
-    });
+    window.addEventListener("resize", onResize);
   });
-}]]></client_script>
+
+  // ========================
+  // CLEANUP
+  // ========================
+  $scope.$on("$destroy", function(){
+    if (offAnoListener) offAnoListener();
+    window.removeEventListener("resize", onResize);
+    if (animationFrameId) cancelAnimationFrame(animationFrameId);
+    limparCanvas();
+  });
+}
+]]></client_script>
         <controller_as>c</controller_as>
-        <css>/* VERSÃO MINIMALISTA - Como na imagem */
+        <css>/* =========================
+   Base &amp; painel
+========================= */
+:root{
+  --bg:#fff;
+  --ink:#202124;
+  --muted:#6b7280;
+  --line:#eceff1;
+  --card:#fafafa;
+  --shadow:0 1px 2px rgba(0,0,0,.04);
+  --shadow-lg:0 6px 18px rgba(0,0,0,.08);
+}
+
+.report-widget{
+  background:var(--bg);
+  border-radius:14px;
+  box-shadow:0 2px 6px rgba(0,0,0,.06);
+  overflow:hidden;
+  font-family:'Roboto Flex',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  transition:.35s ease;
+}
+
+.report-widget.fade-out{opacity:.35;filter:grayscale(.25)}
+.report-widget.panel.empty .panel-body{padding:28px;text-align:center}
+
+.panel-heading{
+  background:#e5e7eb;
+  border-bottom:1px solid #d9dde3;
+  padding:12px 16px;
+}
+.panel-title{
+  margin:0;
+  font-weight:700;
+  font-size:18px;
+  color:var(--ink);
+  text-align:center;
+}
+.panel-body{padding:16px 16px 18px}
+
+/* =========================
+   Gauge area
+========================= */
+.chart-wrap{display:flex;justify-content:center}
+.chart-container{
+  position:relative;
+  width:100%;
+  max-width:860px;
+  height:240px;               /* altura confortável */
+  margin:2px auto 22px;
+}
+.pointer-canvas{
+  position:absolute;top:0;left:0;display:block;width:100%;height:100%;
+}
+canvas{display:block;margin:0 auto;max-width:100%;height:auto}
+
+/* =========================
+   Escala (0% e 100%)
+========================= */
 .gauge-scale {
   position: absolute;
-  bottom: -15px;
   left: 0;
+  bottom: 0; /* alinhado exatamente com a base do semidonut */
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 0;
-  box-sizing: border-box;
+  align-items: flex-end;
   pointer-events: none;
+  transform: translateY(50%); /* empurra levemente para baixo do arco */
 }
 
-.scale-min, .scale-max {
-  font-family: 'Roboto Flex', Arial, sans-serif;
-  font-size: 14px;
-  font-weight: bold;
-  color: #333;
-  background: white;
-  padding: 2px 6px;
-  white-space: nowrap;
-}
-
-.scale-min {
-  margin-left: 5px;
-}
-
+.scale-min,
 .scale-max {
-  margin-right: 5px;
-}
-
-.chart-container {
-  position: relative;
-  width: 100%;
-  height: 250px;
-  margin-bottom: 40px;
-}
-
-.report-widget {
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-  background-color: #fff;
-  margin-top: 24px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  font-family: 'Roboto Flex', sans-serif;
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out, visibility 0.5s ease-in-out;
-}
-
-.report-widget.panel.fade-out {
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(20px);
-}
-
-.panel-heading {
-  background-color: #e0e0e0;
-  padding: 12px 16px;
-  border-bottom: 1px solid #ccc;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-}
-
-.panel-title {
-  margin: 0;
-  font-size: 18px;
-  color: #333;
-  text-align: center;
-  font-size: 1.2em;
-}
-
-.panel-body {
-  padding: 16px;
-  flex: 1;
-  width: 100%;
-  text-align: center;
-  font-size: 1.2em;
-}
-
-.chart-container-wrapper {
-  position: relative;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-
-.chart-container {
-  position: relative;
-  width: 100%;
-  max-width: 800px;
-  height: 250px;
-  margin: 0 auto;
-}
-
-canvas {
-  display: block;
-  margin: 0 auto;
-  max-width: 100%;
-  height: auto;
-}
-
-.legenda-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.legenda {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 6px;
-  font-family: 'Roboto Flex', sans-serif;
-  font-size: 14px;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.legenda-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 8px;
-}
-
-.legenda-color {
-  width: 16px;
-  height: 16px;
-  margin-right: 8px;
-  border-radius: 3px;
-  flex-shrink: 0;
-}
-
-.legenda-text {
-  white-space: nowrap;
-  font-size: 12px;
-}
-
-.comprometimento {
-  text-align: center;
-  margin-top: 25px;
-  padding: 10px;
-  background-color: #f8f9fa;
+  font-weight: 700;
+  color: #2b2f33;
+  background: #fff;
   border-radius: 6px;
-  font-size: 16px;
+  padding: 2px 6px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .06);
+  font-size: 13px;
 }
 
-.mensagem {
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out, transform 0.5s ease-in-out;
-  height: 0;
-  overflow: hidden;
+/* =========================
+   Legend as cards
+========================= */
+.legend{
+  width:100%;
+  max-width:920px;
+  margin:0 auto 6px;
+  display:flex;
+  flex-direction:column;      /* 1 por linha */
+  gap:4px;                    /* pouco espaço entre itens */
+}
+.legend-item{
+  display:grid;
+  grid-template-columns:22px 1fr;
+  align-items:flex-start;
+  gap:5px;
+  border:1px solid var(--line);
+  background:var(--card);
+  border-radius:12px;
+  padding:10px 12px;
+  box-shadow:var(--shadow);
+}
+.legend-item:hover{box-shadow:var(--shadow-lg);background:#fff}
+
+.legend-dot{
+  width:18px;height:18px;border-radius:6px;
+  background:var(--dot, #ccc);
+  box-shadow:inset 0 0 0 1px rgba(0,0,0,.06);
+}
+.legend-text h4{
+  margin:0 0 3px 0;
+  font-weight:800;
+  color:var(--ink);
+  font-size:15px;
+  line-height:1.25;
+}
+.legend-text p{
+  margin:0;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.45;
 }
 
-.mensagem.show {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-  height: auto;
+/* =========================
+   Resume (ano + valor)
+========================= */
+.resume{
+  text-align:center;
+  margin-top:18px;
+  padding:12px 14px;
+  background:#f6f7f9;
+  border:1px solid var(--line);
+  border-radius:12px;
+  font-size:16px;
+  font-weight:600;
 }
 
-/* --- Media Queries para Responsividade --- */
-@media (max-width: 767px) {
-  .report-widget {
-    margin-top: 1rem;
-  }
-  
-  .panel-title {
-    font-size: 1.1rem;
-  }
-  
-  .panel-body {
-    padding: 12px;
-  }
-  
-  .chart-container {
-    height: 180px;
-    margin-bottom: 30px;
-  }
-  
-  .legenda {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-    font-size: 12px;
-  }
-  
-  .legenda-item {
-    margin-bottom: 5px;
-  }
-  
-  .legenda-text {
-    font-size: 11px;
-    white-space: normal;
-  }
-  
-  .comprometimento {
-    margin-top: 20px;
-    font-size: 14px;
-    padding: 8px;
-  }
-  
-  .scale-min, .scale-max {
-    font-size: 12px;
+/* =========================
+   Empty state
+========================= */
+.nodata{margin:0;font-size:15px;color:var(--muted)}
+
+/* =========================
+   Responsivo
+========================= */
+@media (max-width:1024px){
+  .chart-container{height:210px;margin-bottom:18px}
+  .legend-text h4{font-size:14.5px}
+  .legend-text p{font-size:12.5px}
+  .resume{font-size:15px}
+}
+@media (max-width:768px){
+  .chart-container{height:190px}
+  .legend{gap:7px}
+  .legend-item{padding:9px 11px}
+  .legend-text h4{font-size:14px}
+  .legend-text p{
+    font-size:12px;
+    display:-webkit-box;
+    -webkit-line-clamp:2;     /* corta descrições longas no mobile */
+    -webkit-box-orient:vertical;
+    overflow:hidden;
   }
 }
-
-@media (min-width: 768px) and (max-width: 1023px) {
-  .report-widget {
-    margin-top: 1.5rem;
-  }
-  
-  .panel-title {
-    font-size: 1.3rem;
-  }
-  
-  .chart-container {
-    height: 220px;
-  }
-  
-  .legenda {
-    gap: 20px;
-  }
-  
-  .legenda-text {
-    font-size: 13px;
-  }
+@media (max-width:480px){
+  .chart-container{height:170px}
+  .scale-min,.scale-max{font-size:12px}
+  .legend-dot{width:16px;height:16px;border-radius:5px}
+  .legend-text h4{font-size:13.5px}
+  .legend-text p{font-size:11.5px}
+  .resume{font-size:14.5px;padding:10px 12px}
 }
-
-@media (min-width: 1024px) {
-  .report-widget {
-    margin-top: 24px;
-  }
-  
-  .panel-title {
-    font-size: 1.4rem;
-  }
-  
-  .chart-container {
-    height: 250px;
-  }
-}</css>
+</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -649,23 +554,21 @@ canvas {
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-19 21:32:00</sys_created_on>
         <sys_id>e4952766fba9ae5086e7f4045eefdc4c</sys_id>
-        <sys_mod_count>340</sys_mod_count>
+        <sys_mod_count>367</sys_mod_count>
         <sys_name>Widget Limite com Despesas SemiDonut</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_e4952766fba9ae5086e7f4045eefdc4c</sys_update_name>
         <sys_updated_by>sued.barreto@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-10-20 15:00:52</sys_updated_on>
+        <sys_updated_on>2025-11-06 01:42:40</sys_updated_on>
         <template><![CDATA[<!-- Fonte -->
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,400;600;700&display=swap" rel="stylesheet">
 
-<!-- Com ano selecionado e dados visíveis -->
-<div class="report-widget panel" 
+<div class="report-widget panel"
      ng-show="anoSelecionado !== '' && anoSelecionado != null && dadosVisiveis"
      ng-class="{'fade-out': isFading}">
+
   <div class="panel-heading">
     <h2 class="panel-title">
       <i class="fa fa-tachometer m-r"></i>
@@ -674,54 +577,78 @@ canvas {
   </div>
 
   <div class="panel-body">
-    <div class="chart-container-wrapper">
+    <!-- Gauge -->
+    <div class="chart-wrap">
       <div class="chart-container">
         <canvas id="gaugeChart" width="800" height="250"></canvas>
-        <canvas id="gaugePointer" width="800" height="250" style="position: absolute; top: 0; left: 0;"></canvas>
-        
-        <!-- ESCALA NO HTML -->
+        <canvas id="gaugePointer" width="800" height="250" class="pointer-canvas"></canvas>
+
+        <!-- escala 0% / 100% -->
         <div class="gauge-scale">
           <span class="scale-min">0%</span>
           <span class="scale-max">100%</span>
         </div>
       </div>
-      
-      <div class="legenda-container">
-        <div class="legenda">
-          <div class="legenda-item">
-            <div class="legenda-color" style="background-color: #8BC34A;"></div>
-            <span class="legenda-text">Abaixo do Limite de Alerta - 0 a 44,09%</span>
-          </div>
-          <div class="legenda-item">
-            <div class="legenda-color" style="background-color: #FFEB3B;"></div>
-            <span class="legenda-text">Limite de Alerta - 44,10 a 46,54%</span>
-          </div>
-          <div class="legenda-item">
-            <div class="legenda-color" style="background-color: #FF9800;"></div>
-            <span class="legenda-text">Limite Prudencial - 46,55 a 48,99%</span>
-          </div>
-          <div class="legenda-item">
-            <div class="legenda-color" style="background-color: #F44336;"></div>
-            <span class="legenda-text">Limite Máximo - 49%</span>
-          </div>
-          <div class="legenda-item">
-            <div class="legenda-color" style="background-color: #B71C1C;"></div>
-            <span class="legenda-text">Acima do Limite Máximo - 49,01 a 100%</span>
-          </div>
-        </div>
-      </div>
+    </div>
 
-      <div class="comprometimento">
-        <strong>{{latestYear}}</strong> - Comprometimento RCL com Pessoal: <strong>{{dadosVisiveis.comprometimento}}%</strong>
-      </div>
+    <!-- Legenda (cards) -->
+    <section class="legend">
+      <!-- Item Verde -->
+      <article class="legend-item">
+        <span class="legend-dot" style="--dot:#8BC34A"></span>
+        <div class="legend-text">
+          <h4>Verde — Abaixo do Alerta (0%–54,00%)</h4>
+          <p>Despesas sob controle. Há folga para manter equilíbrio e planejar aumentos com segurança.</p>
+        </div>
+      </article>
+
+      <!-- Item Amarelo -->
+      <article class="legend-item">
+        <span class="legend-dot" style="--dot:#FFEB3B"></span>
+        <div class="legend-text">
+          <h4>Amarelo — Limite de Alerta (54%–57%)</h4>
+          <p>Sinal de atenção. Tribunal de Contas alerta para conter o avanço dos gastos com pessoal.</p>
+        </div>
+      </article>
+
+      <!-- Item Laranja -->
+      <article class="legend-item">
+        <span class="legend-dot" style="--dot:#FF9800"></span>
+        <div class="legend-text">
+          <h4>Laranja — Limite Prudencial (57%–60%)</h4>
+          <p>Risco fiscal. A lei restringe reajustes, novos cargos e contratações.</p>
+        </div>
+      </article>
+
+      <!-- Item Vermelho Claro -->
+      <article class="legend-item">
+        <span class="legend-dot" style="--dot:#F44336"></span>
+        <div class="legend-text">
+          <h4>Vermelho Claro — Limite Máximo (60%)</h4>
+          <p>Teto legal da LRF atingido. Não pode ser ultrapassado.</p>
+        </div>
+      </article>
+
+      <!-- Item Vermelho Escuro -->
+      <article class="legend-item">
+        <span class="legend-dot" style="--dot:#8C0C03"></span>
+        <div class="legend-text">
+          <h4>Vermelho Escuro — Acima do Limite (60%–100%)</h4>
+          <p>Situação crítica. Estado deve cortar despesas e fica impedido de contratar novos empréstimos e receber transferência voluntária.</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- Valor/ano -->
+    <div class="resume">
+      <strong>{{latestYear}}</strong> – Comprometimento RCL com Pessoal:
+      <strong>{{dadosVisiveis.comprometimento}}%</strong>
     </div>
   </div>
 </div>
 
-<!-- Sem ano selecionado ou sem dado -->
-<div class="report-widget panel mensagem" 
-     ng-show="anoSelecionado == '' || anoSelecionado == null || !dadosVisiveis" 
-     ng-class="{'show': anoSelecionado == '' || anoSelecionado == null || !dadosVisiveis}">
+<!-- Estado sem dados -->
+<div class="report-widget panel empty" ng-show="!dadosVisiveis">
   <div class="panel-heading">
     <h2 class="panel-title">
       <i class="fa fa-tachometer m-r"></i>
@@ -729,8 +656,9 @@ canvas {
     </h2>
   </div>
   <div class="panel-body">
-    <p class="dadosInfo">Nenhum dado disponível para o ano selecionado.</p>
+    <p class="nodata">Nenhum dado disponível para o ano selecionado.</p>
   </div>
-</div>]]></template>
+</div>
+]]></template>
     </sp_widget>
 </record_update>
