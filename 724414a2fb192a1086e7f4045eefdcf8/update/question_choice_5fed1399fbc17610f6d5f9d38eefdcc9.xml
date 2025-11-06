@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="question_choice">
+    <question_choice action="INSERT_OR_UPDATE">
+        <inactive>false</inactive>
+        <order>500</order>
+        <published_ref/>
+        <question display_value="Mês">5add5f59fbc17610f6d5f9d38eefdc7a</question>
+        <sys_class_name>question_choice</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-05 23:26:02</sys_created_on>
+        <sys_id>5fed1399fbc17610f6d5f9d38eefdcc9</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Maio</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>question_choice_5fed1399fbc17610f6d5f9d38eefdcc9</sys_update_name>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-05 23:29:19</sys_updated_on>
+        <text>Maio</text>
+        <value>5</value>
+    </question_choice>
+    <fx_price action="delete_multiple" query="id=5fed1399fbc17610f6d5f9d38eefdcc9"/>
+</record_update>
