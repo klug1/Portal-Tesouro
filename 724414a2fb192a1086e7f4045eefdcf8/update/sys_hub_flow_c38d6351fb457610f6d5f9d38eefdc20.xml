@@ -1,0 +1,2593 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=67089000,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>27000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from>216b4dedfb756210f6d5f9d38eefdc7a</copied_from>
+        <copied_from_name>Primary Revenue and Expenditure </copied_from_name>
+        <description/>
+        <display_name_after_preview/>
+        <flow_priority>MEDIUM</flow_priority>
+        <generation_source/>
+        <internal_name>copy_of_despesa_bruta_e_liquida_com_pessoal</internal_name>
+        <label_cache>[{"name":"flow_variable.var_exercicio","label":"Flow Variables➛var_exercicio","type":"string","base_type":"string","usedInstances":{"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf":["conditions"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"29ca2957-23b3-4103-9919-e6fb3f0315e9"}},{"name":"flow_variable.var_tipo_de_informacao","label":"Flow Variables➛var_tipo_de_informacao","type":"string","base_type":"string","usedInstances":{"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf":["conditions"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"6b2668ca-0fd2-4479-9c4e-bf80f6649a45"}},{"name":"7a5418ac-94b7-4d9e-aa2a-30eca3999ced.ano","label":"18 - Get MRVS Values (Primary Revenue and Expenditure)➛Ano","reference_display":"Ano","type":"string","base_type":"string","usedInstances":{"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_ano"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"7facceb0-a44f-4f91-a772-4353cdeadc45"}},{"name":"7a5418ac-94b7-4d9e-aa2a-30eca3999ced.rpps","label":"18 - Get MRVS Values (Primary Revenue and Expenditure)➛RPPS","reference_display":"RPPS","type":"boolean","base_type":"boolean","usedInstances":{"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_rpps"]},"attributes":{"uiType":"boolean","uiTypeLabel":"True/False","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"50549c4c-803c-4ecc-97fa-1ad6de17086a"}},{"name":"7a5418ac-94b7-4d9e-aa2a-30eca3999ced.bimestre","label":"18 - Get MRVS Values (Primary Revenue and Expenditure)➛Bimestre","reference_display":"Bimestre","type":"string","base_type":"string","usedInstances":{"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_bimestre"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"93cd234b-2888-4c83-a94d-895c3c90b8a4"}},{"name":"7a5418ac-94b7-4d9e-aa2a-30eca3999ced.resultado_primario","label":"18 - Get MRVS Values (Primary Revenue and Expenditure)➛Resultado Primario","reference_display":"Resultado Primario","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_resultado_primario"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_resultado_primario"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"52d478d9-7af9-4f3e-abf2-28881f681601"}},{"name":"7a5418ac-94b7-4d9e-aa2a-30eca3999ced.despesa_primaria","label":"18 - Get MRVS Values (Primary Revenue and Expenditure)➛Despesa Primaria","reference_display":"Despesa Primaria","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_despesa_primaria_total"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_despesa_primaria_total"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"a31b41dd-ec2e-4c89-8009-c97a7c3a4638"}},{"name":"7a5418ac-94b7-4d9e-aa2a-30eca3999ced.receita_primaria","label":"18 - Get MRVS Values (Primary Revenue and Expenditure)➛Receita Primaria","reference_display":"Receita Primaria","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_receita_primaria_total"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_receita_primaria_total"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"f39dd8de-3de1-44a8-b8c8-72cfec1fe81f"}},{"name":"flow_variable.var_rpps","label":"Flow Variables➛var_rpps","reference":"","reference_display":"","type":"boolean","base_type":"boolean","column_name":"","choices":[],"usedInstances":{},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"d7cbe4fe-a090-4ba1-b6bd-d3e948e273cf","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"flow_variable.var_mes","label":"Flow Variables➛var_mes","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf":["conditions"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"3576bc47-0baa-4380-a20c-7f6e4ce1a770"}},{"name":"flow_variable.var_ano","label":"Flow Variables➛var_ano","type":"string","base_type":"string","usedInstances":{},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"72f2355b-0329-4d8c-b4dc-3cb07f54ba9d"}},{"name":"flow_variable.var_count1","label":"Flow Variables➛var_count","reference":"","reference_display":"","type":"integer","base_type":"integer","column_name":"","usedInstances":{"b6f98993-2de4-48f4-9d42-7ad52358075f":["condition"],"3c031a62-dd97-42a9-ae1e-b0b41c896ded":["condition"],"e0441a5d-de7b-4465-8283-c2d239ca3641":["condition"]},"attributes":{"uiType":"integer","uiTypeLabel":"Integer","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"9fc98cf4-2f8f-46ca-a232-6c078f64d1d2"}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.item_option_new.name","label":"3 - For Each➛Multi Row Question Answer Record➛Question➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"item_option_new","column_name":"name","usedInstances":{"cfdc988b-b11d-4942-b9bf-11cea3ddb70f":["condition"],"fefe5d28-2611-4ce7-9f3a-4b1127da7629":["condition"],"7b5c4780-d3a5-467a-a4b8-6c282af57221":["condition"]}},{"name":"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf.__action_status__","label":"17 - Look Up Record➛Action Status","reference_display":"Action Status","type":"object","base_type":"object","usedInstances":{},"attributes":{"uiType":"object","co_type_name":"FD23f9eb2d1ec9b6105766fdf5db236322","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf.status","label":"17 - Look Up Record➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Error","value":"1","order":0.0},{"label":"Success","value":"0","order":1.0}],"usedInstances":{"cc765906-5769-430a-b4ae-373f078cb540":["condition"]},"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf.Record","label":"17 - Look Up Record➛Despesa Bruta e Liquida com Pessoal Record","reference":"x_sded9_portal_t_0_despesa_bruta_e_liquida_com_pessoal","reference_display":"Despesa Bruta e Liquida com Pessoal","type":"reference","base_type":"reference","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["record"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.row_index","label":"3 - For Each➛Multi Row Question Answer Record➛Row index","reference":"","reference_display":"Row index","type":"long","base_type":"long","parent_table_name":"sc_multi_row_question_answer","column_name":"row_index","usedInstances":{"0a53884c-6d3f-4926-b143-7aebb7b97d97":["conditions"],"7a5418ac-94b7-4d9e-aa2a-30eca3999ced":["multirow_record"],"153b44d9-04de-4920-9255-b4009e7f09e8":["multirow_record"]}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.value","label":"3 - For Each➛Multi Row Question Answer Record➛Value","reference":"","reference_display":"Value","type":"string","base_type":"string","parent_table_name":"sc_multi_row_question_answer","column_name":"value","usedInstances":{"3283fd25-754f-4540-a6dc-42c1d8b9e628":["conditions"],"45e87eb4-1522-46c8-928c-4e868bc4e337":["var_ano-0","var_exercicio-0"],"509ab718-88ae-46b1-9886-0418f90aabbf":["var_mes-0"],"43175a16-f870-4ccd-b780-63e52089e443":["var_rpps-0"],"3866f7bc-4596-4ecc-b5ab-abdbbde58ec9":["condition"],"dc468fb6-94dd-438c-bd3a-a2ead88f8537":["var_tipo_de_informacao-0"]}},{"name":"b1c3d1ce-831a-4bfb-b59b-fac37677e4f9.Records","label":"1 - Look Up Records➛Multi Row Question Answer Records","reference":"sc_multi_row_question_answer","reference_display":"Multi Row Question Answer","type":"records","base_type":"records","usedInstances":{"20fde648-3ced-4596-b1ac-b39b687a2a96":["items"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"subflow.record","label":"Input➛Record","reference":"x_sded9_portal_t_0_registro_de_cargas_tesouro","reference_display":"Treasury Cargo Registration","type":"reference","base_type":"reference","column_name":"","usedInstances":{"b1c3d1ce-831a-4bfb-b59b-fac37677e4f9":["conditions"],"0a53884c-6d3f-4926-b143-7aebb7b97d97":["conditions"],"39268173-2ed3-4659-805a-84b15f1045a3":["parent_sys_id"],"c89a2cab-c4b6-4d9a-a522-66df72662c5e":["parent_sys_id"],"fb48067c-f6f5-45ab-b1f7-87e39e2b4f53":["parent_sys_id"],"83c6e11f-e93b-467c-9b7f-38bab9ae0a3b":["parent_sys_id"],"b68068aa-2262-4839-a185-5e13cd917f72":["parent_sys_id"],"d54d22bc-061e-44b3-8b1e-9ed82884ca5f":["parent_sys_id"],"7a5418ac-94b7-4d9e-aa2a-30eca3999ced":["parent_sys_id"],"153b44d9-04de-4920-9255-b4009e7f09e8":["parent_sys_id"]},"attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"f4b7b973-3190-4871-8403-baaef11efe7b","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"153b44d9-04de-4920-9255-b4009e7f09e8.valor","label":"18 - Get MRVS Values (Despesa Bruta e Liquida com Pessoal)➛Valor","reference_display":"Valor","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_valor"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_valor"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"f1be8340-e813-45f1-a355-1bc396211745"}},{"name":"153b44d9-04de-4920-9255-b4009e7f09e8.mes","label":"18 - Get MRVS Values (Despesa Bruta e Liquida com Pessoal)➛Mês","reference_display":"Mês","type":"string","base_type":"string","usedInstances":{"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_mes"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"c2735c55-d0bf-41e2-ba27-2699c3ada34d"}},{"name":"153b44d9-04de-4920-9255-b4009e7f09e8.tipo_de_informacao","label":"18 - Get MRVS Values (Despesa Bruta e Liquida com Pessoal)➛Tipo de Informação","reference_display":"Tipo de Informação","type":"string","base_type":"string","usedInstances":{"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_tipo_de_informacao"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"c89699f5-93a4-4590-addf-5bfce1ad1b48"}},{"name":"153b44d9-04de-4920-9255-b4009e7f09e8.exercicio","label":"18 - Get MRVS Values (Despesa Bruta e Liquida com Pessoal)➛Exercício","reference_display":"Exercício","type":"string","base_type":"string","usedInstances":{"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_exercicio"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"0a5a3d7f-1a49-4add-b679-99a080c693ed"}}]</label_cache>
+        <master_snapshot>8ff9ab2dfbc9b610f6d5f9d38eefdcc9</master_snapshot>
+        <master_snapshot_digest/>
+        <name>Despesa Bruta e Liquida com Pessoal</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id/>
+        <run_as>system</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>published</status>
+        <substatus/>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 00:34:12</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>c38d6351fb457610f6d5f9d38eefdc20</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_name>Despesa Bruta e Liquida com Pessoal</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sys_hub_flow_c38d6351fb457610f6d5f9d38eefdc20</sys_update_name>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 19:12:27</sys_updated_on>
+        <type>subflow</type>
+        <updation_source/>
+        <version>2</version>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=c38d6351fb457610f6d5f9d38eefdc20"/>
+    <sys_variable_value action="delete_multiple" query="document_key=c38d6351fb457610f6d5f9d38eefdc20"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=c38d6351fb457610f6d5f9d38eefdc20"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=c38d6351fb457610f6d5f9d38eefdc20^sys_idNOT IN438d6351fb457610f6d5f9d38eefdc21"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>c38d6351fb457610f6d5f9d38eefdc20</id>
+        <name>Copy of Despesa Bruta e Liquida com Pessoal</name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 00:34:12</sys_created_on>
+        <sys_id>438d6351fb457610f6d5f9d38eefdc21</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 00:34:12</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=438d6351fb457610f6d5f9d38eefdc21"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=c38d6351fb457610f6d5f9d38eefdc20^sys_idNOT IN178def51fb457610f6d5f9d38eefdc9e"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference,uiUniqueId=f4b7b973-3190-4871-8403-baaef11efe7b</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table>x_sded9_portal_t_0_registro_de_cargas_tesouro</choice_table>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>record</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Despesa Bruta e Liquida com Pessoal">c38d6351fb457610f6d5f9d38eefdc20</model>
+        <model_id>c38d6351fb457610f6d5f9d38eefdc20</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_c38d6351fb457610f6d5f9d38eefdc20</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="x_sded9_portal_t_0_registro_de_cargas_tesouro">x_sded9_portal_t_0_registro_de_cargas_tesouro</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 00:34:13</sys_created_on>
+        <sys_id>178def51fb457610f6d5f9d38eefdc9e</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 00:34:13</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=178def51fb457610f6d5f9d38eefdc9e"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=c38d6351fb457610f6d5f9d38eefdc20"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=c38d6351fb457610f6d5f9d38eefdc20"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=c38d6351fb457610f6d5f9d38eefdc20"/>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=c38d6351fb457610f6d5f9d38eefdc20^sys_idNOT IN9f8def51fb457610f6d5f9d38eefdcbd,a38def51fb457610f6d5f9d38eefdcbe,6f8def51fb457610f6d5f9d38eefdcbe,238def51fb457610f6d5f9d38eefdcbf,1599632dfbc9b610f6d5f9d38eefdc0c"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Records">43400a1587003300663ca1bb36cb0b4b</action_type>
+        <action_type_parent display_value="Look Up Records">d1c56ec50b30030085c083eb37673a50</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>43400a1587003300663ca1bb36cb0b4b</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Despesa Bruta e Liquida com Pessoal">c38d6351fb457610f6d5f9d38eefdc20</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 00:34:13</sys_created_on>
+        <sys_id>9f8def51fb457610f6d5f9d38eefdcbd</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 19:12:15</sys_updated_on>
+        <ui_id>b1c3d1ce-831a-4bfb-b59b-fac37677e4f9</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/9VXUU/bMBD+K1GeqyihpTDeEAhpD1CtoL0wsBzHaa05dmY7baHqf985TtLQllK6boNHn8933919n+Pcz32W+Gf+adoLQxwdn56EYbcbhv1+l+Aojrt9EodxL/Y7vsAZBU+DY05hOcG8sGtNUFZww5CSU/SroNowKRAWekoVuCVM5xw/fa+8r62rN5RT71vl6p3XrmTMeKKo8M/uHzp+jhUkNLBzNl/ZMk85RRzHlEPEO4vHu7HgOjvX8uLwem02Qb1EwoWWKrFYwo5PZ4aKhEKqFHNNO36GRYKNVE+NRVGcDARfGsZMGIjoW+eZZs8Q/jS0fimFsgh1e80SVW1zZjKWjNBBbtvlLA6o25S8yMSNK8A2nKYYmlw3HCyFhng0t5gtiApRejuW02Gd8IqJsrxqk0uCebPCxigWF4ZqOwvKaQaBUIbznIkRypWcsPIwYMmCEYdFkHJgQ0I1G4kAEws8gBbh4Arsl6X5O1bMVnENYcrxp4zDtJFrupaFKrsyQYQXutxQQCoXy1+UvQK6WZSu6qo+5FoEDpoolptzODChVSmLzk50Pw6XlCBSJMzm1C3OM0MzJMt5IEGngfX9UUCoZILojCrCCJOPg+E2v4zqNzwMyyX0EDGRSpVhguUjiMLWyBLnM5/rIratDhQlQNDFYl1xHxrrfpK/aM9k13luPLxpyJX4X9gq8UcHEz/A/U/yN6r4eOp/S8+u4DdETU62kuB4OW8tlUGucy1V2w+YbcRsXUTtrf04e8UoT158pnaAWx8eWPp58dNrFVSUTW2Ole/V0af/Xn1IwgKgBLl+M8GZKJ8LAPQwTA63X2dfVnhQjr/1IrM2rMk6jbFnpPe8/71bzrXm7w4g64O3gMi7cyg3AK9v3Dp8Rd3uwajbPXofdYE49/MGfdO1DQ2uX4V2dLX/s/XHq/7ArtaBaPHQUP9iv5zRe3Me2Zwr2uy+S5xtZrmdy1cIduA35yti6/xNdY9Z+Z6x+ZATK5qyZETNMnvtlUgzxfznpv2KXY2GyvL++P3a26q9frTUGWgAKaphVO0HbATPj/XrIQqceb/b4aswdFQ2b1eI9clrPPOGDcaNwKsrgjU5Kk73Dvgi+xeft7rxG9VT9/9T/LDtS+GH34ILQ/1zEAAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=9f8def51fb457610f6d5f9d38eefdcbd"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Despesa Bruta e Liquida com Pessoal">c38d6351fb457610f6d5f9d38eefdc20</flow>
+        <generation_source/>
+        <order>17</order>
+        <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 00:34:14</sys_created_on>
+        <sys_id>a38def51fb457610f6d5f9d38eefdcbe</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 19:12:16</sys_updated_on>
+        <ui_id>f55fbb1c-5a9e-441e-ba14-6cf57444d9bf</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/9VY227bOBD9FUHPjlfy3XlrGxgo0G0WbbYv2SxBkVRMLEUqJJWb4X/foSjJju9xXDR9M8m5nJk5M6R8PQs5Dc9DOo7G6XjcHw2jqNuNosGgS3CcJN0BSaIE98JWKHHGQNLiRDBY3mNRuPUjMpTRMcqVtlggiyJEmcmZwSjRhcWIIcHvCk4xIipDcGAUFmCAcpML/PSjsnPhlYKPTilgwRevFIBS8FejRKZcUM1keH590wpzrAGUZTo8n60c2accHOOECbB95TAHX10ArYPjfaG8Hr9zUC+R9KaVpg5L1ArZo2US8hKep1gY1gozLCm2Sj81O5pheinFYmPKpQWLoRN+NPwZzI8iJ5cyCIswf9YsUZVAv02mihN2mVuupN/xQP2hEkUmv/oAXOpZigth69TDTmHAHssdZgeiQpR+n6qHb7XDCZdleNWhUARKUq+wtZonhWXG1YIJloEhlOE85/IW5Vrd81IZsGTtWwGLdirUg+MKv5VtTBzwNqQItyewf1Fu/8Cauyj+BDOgDIC4gGojn3SjCl1m5R4RUZjyQGNpvK1wXuYK3RUOpY+6ig/5FIGAIZrn9gMo3LMqlHmrbon+ToqMF5QgSlLufJqlviiQ5bmC+BCXqdIZJlj9U4ApOpuVkd9XwbXhxwbZ+fzfArFHpgknfIdmI1IqZMxsF4XD+Xy9894x0uPa/dNyPQ6t5UblTQWuGv/FXtX48ckavxdFv6j1rS7eX+fv62Uf8J6GjulOEtBFvQ3cZchnbqmj1zvnaIZOOBP0xYV0ALha+dKRLUietuGtCJo6Hys3U+e3v5neJT0BEEU+31wKLsuHAQA9DW/7O6mRxCs8KMu/YG25hw1ZZy8OrAqej5+yZV1r/h4Aslb8DoiCK49yA/B6vtbmK+p2T0bdbud11AXiXM8a9E3WNiS4fv+50tXyz04er8oDu5YU4vlNQ/1Px/mMX+uz43yu9Gb3Vc25zCx/crGFYCd+XW5pttbP7O4pL988zh/yzYoeOL1lduG9lqLKPmDx36bzil1ND5XhvfmlGu/8mEmWXqo8RRnUiefwfNaMABUMwpqhVBWSourhvPSGhbqlXBtbCa/PkG/MFloGClousFMWlNJBI32KyXJAdLXi5zSow6swmADCC8rwgia81yVjyzzqnfCt95Z5NMFclKmHD6B8qXZMa6W3zKQ9VdtR/gMH1oGg4pOCevtE28T3jZNtD9bf4mv6rVOHMJz0Ongw7MZxFMURHUaj4TAeDZJ0gIe9dNFoCBlJYCyC5RSIAeZRTYS6qvH6aKmm5pH/+IDyH5NyurYOhlsrXyjpPk07Qxs4vFDmoMa7P6JqXCRKCYblgp39XzYv3sufQgW/Ws2N3/qyqWg/6y4v+N+S3xXssyPFiEWdUUzJ2WgYD896KR2cjSnun+Fx0h92KSO99Pjr+eZ/dGUuy10VAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=a38def51fb457610f6d5f9d38eefdcbe"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Despesa Bruta e Liquida com Pessoal">c38d6351fb457610f6d5f9d38eefdc20</flow>
+        <generation_source/>
+        <order>20</order>
+        <parent_ui_id>cc765906-5769-430a-b4ae-373f078cb540</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 00:34:14</sys_created_on>
+        <sys_id>6f8def51fb457610f6d5f9d38eefdcbe</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 19:12:16</sys_updated_on>
+        <ui_id>30bd6918-a95f-4a24-b688-772ee9e9bf9e</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VUU/bMBD+K1Gem8hpEiB921QhTdpgYhMvDFl2fAFLThwcp9BV/e87J04pjDHEkKZJe6nqs7+777v7Yl9sQinCRZiBIEmRHJRpkqZzQuZHWcIPUp7MRcoAknAWNqwGPGmg1EbgesVU7wKbTZXnFedJGeWsgCjLEog4S7LooKzywyzLRMGr+GzAbbeIFLJrFVuf+wQYKa+lEgaacHFxOQtbZrCWBRMuNo+27LoFqhgHhcClLvsaGht8WGKOl+qY0GeTkMfCXA1cC5+dShfELccnIbMQ7iw0ArBcxVQHs7BmjWBWm3W4sKbHgAEmThu13p24lo0dldbsrpPfMX9G3LkKUFrpu7BbUt+hqTlalnDaWqmbMWIZV1PntOrr5mSU4HoLFeuV3ett32E+aB1lR2JkWH251rdnU71j2QzqPFulS6Z2K2atkby30LlxgIKhKTVrW9lc0dbolRzASKWOrxQu4krpW6zZyasmZqXjHWODWHyM8eUQPmdGOhGfMA2Ct4N4etO7uqMMT5gOmgfBdBgUHu1KI1v7DhOvwNPczryRef6cAcrift57Oe/NfEc7nGxBW20sU9RS4nS00DHKTW8ZRffJm14KRlEuxY1OI+efPL0cQcF7Bwog+DiCAgQFn3eg19n+qyMenIzEXyr6AfgXTfDGfxDzvs/fzPdHf8n3ntE/Zvzf2Z3Mn73v9iY9OLzbs3pP8Z8233pCUrHZJHnK3VUdkUzgJV7MSVTM8zziGSEFHFb4cxQPiKfu8D9L9srvAGqkYCEYScxe3JEpwbEEJbonWjR9CL4AXfkCu0fgDV8B8v8deMt34PIHRkXcvdIIAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=6f8def51fb457610f6d5f9d38eefdcbe"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Create Record">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent display_value="Create Record">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Despesa Bruta e Liquida com Pessoal">c38d6351fb457610f6d5f9d38eefdc20</flow>
+        <generation_source/>
+        <order>22</order>
+        <parent_ui_id>bbf158a1-4051-412a-803b-c34c3913e71b</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 00:34:14</sys_created_on>
+        <sys_id>238def51fb457610f6d5f9d38eefdcbf</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 19:12:16</sys_updated_on>
+        <ui_id>070c3028-da05-4dc4-afc6-b2410b50b51a</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Vy27bMBD8FYFn2aAs2bV8axH41CZFW+SSJgQlrmIClKiQlGPX0L93qYebJxAXBYoCvRjgcmd2drheXR2IFGRFFhHQeRot8jiK4xmls2USZYs4i2Yi5gAJCUnFS8BMxzMFrDuEZMtV44M7ZgWIlNXaOK6YY5QJsDVYzjLTOM6AKXnXSMFZrkuGF1ZzhQRC2lrx/eXAc9aDgg8eFEDwsQcFCAo+H0H5RiphoCKrq+uQ1NygGAeGrA5Prty+xsI8A4Xc37zw4LwX/tamH4FfMcFXeRrTRnhBNCSwc1ChOWRVcGUhJCWvBHfa7MnKmQYDBri4qNT+mLGRlUNC4nN3Vv5A9iX1eQVgazn0d8cjG0zsw/lGyxwuaid11Uc6YcOlVk1ZnfdNePuh4I1yo/0YaSzyQe0lexGDouLrRt9/GQuuZdV1N1wqneOzjCfunJFZ48D69wAFJRKxkte1rG5ZbfRWdmDUUk5vFR6mhdL3fl7kbTXluRc+RYf4dI3xsy58yY30XXxCGgS3XffsrvF1+z4GxaxvGhNsbmTt3iPdFgZxbThOuwCavvrwUfbrobsBtw8mvWEl2O8NpbE4HKJ5nCWJSCc0ETBJ0hmdpLP5fJIllKbwrsCf5RTz2/amYU7WGrtksiq0KXnO9Uk0z+EdK+rS5iSiDtFhYQcml7k8TcgR1bbP/8D/7Xlsz2+uKijRVAdBb2v45qkdCdYSlLAvjPG4q4YCbDsUGPZV9Kf2FTrylzZWr/EfW1gPvh0vr64xiBLb9vonLWNp3rYHAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=238def51fb457610f6d5f9d38eefdcbf"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Get MRVS Values (Despesa Bruta e Liquida com Pessoal)">3e72ab51fb057610f6d5f9d38eefdc5f</action_type>
+        <action_type_parent display_value="Get MRVS Values (Despesa Bruta e Liquida com Pessoal)">c1ef975dfbc17610f6d5f9d38eefdca5</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Despesa Bruta e Liquida com Pessoal">c38d6351fb457610f6d5f9d38eefdc20</flow>
+        <generation_source/>
+        <order>18</order>
+        <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 18:55:21</sys_created_on>
+        <sys_id>1599632dfbc9b610f6d5f9d38eefdc0c</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 19:12:16</sys_updated_on>
+        <ui_id>153b44d9-04de-4920-9255-b4009e7f09e8</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/8VU227bMAz9lcDPseH4GudtWFGgwLYObdeXojBoi04EyJYryW28IP8+KnaypFiLrhu2R/F2yEMe3W0czpyFUwVpAEU8qwo/TpOZXyUsrjIWzhErViYzZ+o0UCNF1p0wXMmnXGEpFSPHI4jOejabwK8YJtHcDUtkbhRniVvMoHSLMCuSeQoBZInHDdaeLcAbhuvtliowrlsB/e0fFypXXDCFjbO4u586LSjq2aByFptnLtO3mAsoUBDetVG8WVL6W6nYJ17Jp8mFBX+NHgtFDr0HIavtaDZ1cG2Qsgm0AqFx6tTQMDBS9c7CqI4MCoFdNqI/RKx4Y6iYY2PXmn+nynPf921khTRdiYP38MxHbgdzuZK8xMvWcNkMFgOFGHNKKbq6+TLMYbeCFdA0+62QpdNUD1vbtG1j7Km6Xsmnqz3gud2GOjiFLEEcXmCIhaIzqO1KOn7zjJvB8un5XlBgTYh5DW1LlrxV8pHvUKjp2lsKeniVINYZar5sPCjthB6RCd452c925ltQ3I77mcpQsoX71vCHDi/s3oMKsjBLYzfFFNwI0sjNwqhyC0CWpvM4SPzS2e6ozR86O9RA0khHPjBKAbpUvDUfqIVHHCffTt+ms+jnIdHx2qq61zk/VZnuCjurN1zYrwT0biUctvhGMURHYvi6a3hy3evJxdnLc4xyUEdIoyKCv6WIMDjVwzrXVDPLW6kMiNzkPqlzyenqJB1MXoJags7pKGWn5AviuSFg3al+8pGi5eRqyIedkF7T1e9i/z8RHm/kVIfHV/FPpJiljCVJHLszCBM3ipLYnWc+ff9JUGRplLEgCt8txfsfbiiA8PQGAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=1599632dfbc9b610f6d5f9d38eefdc0c"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=c38d6351fb457610f6d5f9d38eefdc20"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=c38d6351fb457610f6d5f9d38eefdc20^sys_idNOT INd38def51fb457610f6d5f9d38eefdcb9,9199632dfbc9b610f6d5f9d38eefdc0b,db8def51fb457610f6d5f9d38eefdcbd,db8def51fb457610f6d5f9d38eefdca5,938def51fb457610f6d5f9d38eefdca7,5b8def51fb457610f6d5f9d38eefdcbc,938def51fb457610f6d5f9d38eefdcbd,db8def51fb457610f6d5f9d38eefdca7,d78def51fb457610f6d5f9d38eefdca6,9b8def51fb457610f6d5f9d38eefdcb8,138def51fb457610f6d5f9d38eefdcbc,178def51fb457610f6d5f9d38eefdca8,5f8def51fb457610f6d5f9d38eefdca8,978def51fb457610f6d5f9d38eefdca9,df8def51fb457610f6d5f9d38eefdca9,df8def51fb457610f6d5f9d38eefdcb6,1b8def51fb457610f6d5f9d38eefdcb7,538def51fb457610f6d5f9d38eefdcb8"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">2b1d41a1fbb56210f6d5f9d38eefdc65</block>
+        <comment/>
+        <connected_to>cfdc988b-b11d-4942-b9bf-11cea3ddb70f</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Despesa Bruta e Liquida com Pessoal">c38d6351fb457610f6d5f9d38eefdc20</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
+        <order>14</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 00:34:13</sys_created_on>
+        <sys_id>d38def51fb457610f6d5f9d38eefdcb9</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 19:12:21</sys_updated_on>
+        <ui_id>7b5c4780-d3a5-467a-a4b8-6c282af57221</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1UTY/TMBD9KyjnNMpHW9reVqCVkICV2NVeYBVN7Elr4djGdtotVf8743y0FbsrEBKcuFTxc2bmvZd5PUS69ab17k5fOSfWKlp9fogjoQJGz4dIQYPRKmJaceGFVmUHxNEWZBsu6JELZyTs788I2wjJLQ7dDFiq8Wij1eGnK783WEqoUFLhrbdCralccDrVKdTZkmWsyOdFnqb5YppV86LKcl4AQk7vjYVvRnKv3ndI/CLrMI9wN07SlgdaWRpH+OhRcaTRNUiHcdSA4uC13Z8Qi8BvlDwDG6F8r7iBRye+U+98Ngsv1kga2WDH6VgOVo0uacHwxgSCPeKhkqOFWraN+tjrCCZjDa30Fya3jvqhCaQDi4FSfbvRu0/jwGuhOoHDpdQM5OkEnmyoWo8ufBiU2FCjsgFjyJzSWL0VXTFxaZK1pENSS72joWFTEmCBeEIeQXJN+NsOvgcrgooP1IaKe5oVOMHKbquonbck4djZUn5rA6Fe4CCl7N2gFxyzwvgrmrPFgfUxfrqSF9t4OORpzXE+XUwKhnwynS3nkyoDNqmKZTVfvIYclvNEeGy6n1Kbfj1wl4S2x+OXNk0Lvi29MJqUEula2wYY6Keb/pen/YMUZc+l6Jn8vByd/BfRCR/7N5OTpun/6FxGR7iyj8CgrRv+x8l5CDHpJ7h+bzgy4YjIXcDejf/54WJPCyDYJbTT9muQcMaOPwBmdWGIPQYAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">9d99632dfbc9b610f6d5f9d38eefdc0a</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Despesa Bruta e Liquida com Pessoal">c38d6351fb457610f6d5f9d38eefdc20</flow>
+        <flow_variables_assigned>var_tipo_de_informacao</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>15</order>
+        <outputs_assigned/>
+        <parent_ui_id>7b5c4780-d3a5-467a-a4b8-6c282af57221</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 18:55:21</sys_created_on>
+        <sys_id>9199632dfbc9b610f6d5f9d38eefdc0b</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 19:12:21</sys_updated_on>
+        <ui_id>dc468fb6-94dd-438c-bd3a-a2ead88f8537</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1V32vbMBD+X/QcG9dxXDtvhVEobCusWV9GMWfplIjJkivLSbOQ/30n20lHYGxjr3nzfffru093+MBs79vedyt713Vqbdjy28uMKRMw+j4wAw2yJduCq7xqbSWwUkZa1wAHy2bk0H0IOBzSRArMsyKacxRRtijzqL4BHtXzss6LW0ihzGPlsYmHnOORsoXqWg375/8qwjdKC4cT9xYcUfbo2PJw4fL7FisNNWrq9eSdMmtKV4KsoizLdJ4KWXNqdJPIXCxkKeYFohQcM4o7Jf5Wij9JFdqTvzs1tk4ElsmM4ZtHI5CISNAdzlgDRoC3bn9GHIJ4NPod2CjjqRoLwW+d+kGliyRJQqREGpnj6D2b1ST2CPONVRwfW6+sGREPtZ5yuNV9Yz6P84RnQgm99qdnIqTvqB62gXWgMXGSTxu7+3JqeK/MMODk1JaDPlvgSYa699iFd+rV6kKcEfl4+ViosaGOVQNtS0jVOrtVQxci3cRrTUYstd0Ru7DPMfAwYUxqQnxP+IcBfganwrifqAwlh3ZfjXrt8SEsQ16neV5wiGgZ0yjLbsuo5BlGtSxoMfKshGzBjoO01WsfhhpFmuSoRkUpoONOtf6OKGxxmvz4Em5m7D5e2LB/f7E+10u7Xtr10v7t0gRy1RGrVaDwcPqrBceedkjxX6Gddd/DPO/Y8Sfrm7SeHwcAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">e7790d2dfb756210f6d5f9d38eefdc15</block>
+        <comment>Limpando Variables</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Despesa Bruta e Liquida com Pessoal">c38d6351fb457610f6d5f9d38eefdc20</flow>
+        <flow_variables_assigned>var_mes,var_ano,var_rpps</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>23</order>
+        <outputs_assigned/>
+        <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 00:34:13</sys_created_on>
+        <sys_id>db8def51fb457610f6d5f9d38eefdcbd</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 19:12:21</sys_updated_on>
+        <ui_id>6deb7984-2b14-4d0a-a4e7-d189ebcd7d31</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+2YX0/bMBTFv0uem85t0iblDQkhIW1DGh0vE4r85xqsOXZwHKBDfPddN0kLbcUDGkhoeYuPY/vc45/Sqz5GtvFV4+ulPa5rdW2io19Xo0iZoOHzY2RoCdFRdEddUUIdjfBJN0HBR6HqStPV5VbhN0oLB902FXW42oOLjh53pvyqgkJTBhoXXninzDUuVwJHOcsFyNlEsnSWzSdEzsVMLkSSA0jBE4bv9Qu3rvZshgNQqPutrRPBBxlF8ODBCMCjJNU1jKKSGkG9dauN4oCKc6O3wo0yvq2wpA+1+oNb54SQ8KYELIp39W+GRZdNH4tVHM4rr6xpFU+Z7jOzuinN97aAkCpI2mj/LNWmxv2gCq6Djc6TvLix9z/6A0+VWRfYTWrLqd6MqMcYWOMxGbyJRi13wmmVr7vXARpKPLEoaVWhUlTO3qn1KWi6HF9rHIyltvfoLsAzpjxUOMY06fgU9ZO1fEmdCuV+w21wcTjup1G3DZyF607wkhlPs5gwSuM0yUlMp4THmZxDymFCs4xET+toi9smFNWG1MVRtIniCzV3qvLHaOEOusqfRi8ApsZ+BMBYw2sAyx2AW1d7NgeAPwnA2VROk9mMxSSZLuJU5DxmqeBxwhnJ5CxldCH+EcCuqp5/gsk+wutVb+Z46Rr4ctptsWZZvPoxTic7LHcG9y13NDNrNVDzHjinHwJzn28nnxxO/71438b3EvgX9/Yh0IuMM0glxJQsSIyMT2I2ZyIWCSzSHKZZwuWbob8KiLent03IGsVDv/JDMzJ8yz9TM3IA5KEpGUD+fE3JAZCH5mRoTv6P5kQAVzW6WgYLZ/1/JWFihXAp/ly6t+53qGerPf0F3iYdD3URAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">a7790d2dfb756210f6d5f9d38eefdc0e</block>
+        <comment>Setando o count em 0</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Despesa Bruta e Liquida com Pessoal">c38d6351fb457610f6d5f9d38eefdc20</flow>
+        <flow_variables_assigned>var_count1</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 00:34:13</sys_created_on>
+        <sys_id>db8def51fb457610f6d5f9d38eefdca5</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 19:12:21</sys_updated_on>
+        <ui_id>f4620f47-34ec-411b-af22-18f36db78b5b</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1UXW/aMBT9L36GKNAQAm+VpkpI2ypttC9TFRn7Gqw5tusPKEX8910nIVTt9gMm9S33+Pqec4+PciImBhuDX5tb7+VWk+WvpxGROmH4fSKaNkCWZE9dzUzUYUJGWKiYwBy/ufRW0ePjG4jtpOIO+lmWOhwRwJHl6d1ROFqoFd2AwpsrHWCLXcjOsZzNKw5iNhGbYjYvJ7ko+Uws+E0FIDgrCuy73By0IfY3uYkGMTkQGMeTnHxE4CWA5oCEgioPI9JQzWkw7jggDii/1+oK7HAQjiOp+cXLV5xd5KlPAG7GoDsbyrp3qIPZzkgG9zZIozsk0I3q7zCjYqO/dyskb0HQqMLFW0Six3lgk+Ykolckfu7M4ceF8E7qdr3+UBlG1VDREJzcxAA+PUeU6/fedNDXD48CChrkrBtqrdTb2jqzly0Pym6yrcIiE8ocUF8KUkZZ2jFDN2l2h/iXFn6kTqaFv+GYnu9By+cIq/ToC8EWFRPFeCoqMS5KRsd0ejMdlyyfV6Is+IRPybk1t36Oaa3Opt6QuvMUGzxz0oZblLCHfvfzUwpux95Fu83ZPzLzGfHPiP+XEefApEdV6yRhdfmPp4MjBkeyt9DBuN9pnyt2/gMQXu5iEQYAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">6b790d2dfb756210f6d5f9d38eefdc0f</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Despesa Bruta e Liquida com Pessoal">c38d6351fb457610f6d5f9d38eefdc20</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>4</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 00:34:13</sys_created_on>
+        <sys_id>938def51fb457610f6d5f9d38eefdca7</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 19:12:21</sys_updated_on>
+        <ui_id>b6f98993-2de4-48f4-9d42-7ad52358075f</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1UXWvbMBT9K0PPxsh2Hda8lY3CYFthLX3ZirmW5ERMljx9JM1M/vuu/JGENWWl9HFv0rm6955zfHBPTPBd8O7OXDknV5osvz8kROqI4bknGlpBloQZzaWXRlcDkJANqBALeOTSdQp290eEraXiVkzTOrDY44Uly/6vkt91olJQC4WNt95KvcJ2yfHWUGiyS5axIl8UOaX5+4usXhR1lvMCBBT4bm78MJN793lAkmdZx32Iu3mTsTzSymhCxKMXmgtc3YByIiEtaA7e2N0BsQL4jVZHYC21HxW38Ojkb5ydl2V82AjUyCY7Dtdqsmp2yUgmbrpIcEQ81Gq20KjQ6q+jjmiyaCAof2JycDhPdJF0ZDFRam7XZvttXngt9SBwKirDQB1u4NGGOnjh4ocRSrQ4qGqh69CcqrNmI4dm5NKmK4WXtFFmi0tjUlJgkXiKHkF6jfjHAb4HK6OKLzgGm0eaNTjJqiFVOM5blLAfbKl+hUhoFDhJqUY38IFjVnb+CvdsxMR6nzyN5Eka+35guJlIpHiomAnaZ/v9j0BpwenTwL6s6S0yfQllU2a0PJ/pi8W5TJ9J8/NBzv8R5Gj9C3NMKf0f5NMgS1eNgZy0DctfneOHGNpxgxtzwwWTDoncRezT/AeOhR0GQLJTaGvszyjhiO3/AG3f7sTLBQAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">612b3741fbf1621086e7f4045eefdcde</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Despesa Bruta e Liquida com Pessoal">c38d6351fb457610f6d5f9d38eefdc20</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>19</order>
+        <outputs_assigned/>
+        <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 00:34:13</sys_created_on>
+        <sys_id>5b8def51fb457610f6d5f9d38eefdcbc</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 19:12:21</sys_updated_on>
+        <ui_id>cc765906-5769-430a-b4ae-373f078cb540</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Uy27TQBT9Fctrx/IzkOwioBISUIlG3UBlXc8jGTGeMTPjpCHKv3PHjzaiqYCKJTvPua9z7j3yMdSdaztn13plrdiocPnlLgqF8hh+H0MFDQuXIdGKCie0qnogCncgOx+4BalNQFmwUjp4pzDPGaA6UBCsoWYSgiuhQGIFFbaVcLj960KyFZIaNnJrwSADx0y4PP4ScoeWVdIXY/8bZ4TaYLmg+OIJ8HRBUpJn8zxLkux1kdbzvE4zmgODHPOmwjeT1OBDj0TP7sDPQ9xOk7ShnlaaRCG7d0xRhqM5SMuisAFFwWlzeEAMA3qt5COwFcphu9An31vxA3tnZekTOUONhA3Bh2c1bnSAyVYLwq5bT3BAHNRyrCFado36NOjwt2AcOummWyDSWezHWk/asxgp8Zut3n+eBuJBeoFjUGqC95le4HANdeeY9YdhkjXYqGqgbXE5VWv0TvTFyKWJNxIfMZd6j0O972IgnniMO4L4CvG3PXwLRngVH7ENFg80a7CCVL1HsZ0zKOHUr6X63nlCg8BRSjVsAxMsMaJ1K5yzYyPrU/TU4GfePh55WfK6TsmshAWbFUXKZjWkxWxOePmqKAq6qHlsHbjOnk5fuyTJafLU6i/u8y+cv4CSl2lSXnZ+Mb/k/Auef97u2W/s7g/0h25PkuS/3c/tLmw12HbU1g9/sdvvvLWHCXbwDWVEWCSy9tj76a/vAwc0gCDn0F6bb17CI3b6CQQGB94/BgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">f7ee3f85fbf1621086e7f4045eefdc51</block>
+        <comment/>
+        <connected_to>cc765906-5769-430a-b4ae-373f078cb540</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Despesa Bruta e Liquida com Pessoal">c38d6351fb457610f6d5f9d38eefdc20</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>21</order>
+        <outputs_assigned/>
+        <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 00:34:13</sys_created_on>
+        <sys_id>938def51fb457610f6d5f9d38eefdcbd</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 19:12:21</sys_updated_on>
+        <ui_id>bbf158a1-4051-412a-803b-c34c3913e71b</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">e3790d2dfb756210f6d5f9d38eefdc10</block>
+        <comment>Setando em 1</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Despesa Bruta e Liquida com Pessoal">c38d6351fb457610f6d5f9d38eefdc20</flow>
+        <flow_variables_assigned>var_count1</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>5</order>
+        <outputs_assigned/>
+        <parent_ui_id>b6f98993-2de4-48f4-9d42-7ad52358075f</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 00:34:13</sys_created_on>
+        <sys_id>db8def51fb457610f6d5f9d38eefdca7</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 19:12:21</sys_updated_on>
+        <ui_id>3443d07f-a146-41ae-ab16-99e00768f4e4</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1U0W7aMBT9Fz9DBDSEwFulqRLStkob68tURca+BmuO7To2lCH+ffcmIa3a7QMm9S33+Pqec4+PcmYuRZ9is3G3TaN3lq1+Po6YtoTh95lZXgNbsQMPlXDJxikbYWESgfQtdeMNPz28gsReGxmgn+V5wBERAlud3xzFk4fK8C0YvLm2EXbYhewSy/milKDmU7XN54tiOlGFnKulvCkBlBR5jn3Xm4M2xP4ml2gQ0wOBC5LkTEYMniNYCUiouGlgxGpuJY8unAYkAJf31rwAexyE4xg1Pzf6N87OJ9SnADcT0J0NZdU71MFi77SAex+1sx0S+db0d4QzqbZfuxXIW1A8mXj1FpHU4DzwpJlE9IrU9707frsS3mnbrtcfGie4GSoeY9DbFKGh50h689abDvr87lHAQI2cVc2913ZX+eAOuuVB2XW2M1hkyrgj6qMgZVzQjhm6ybM7xD+18AMPmhb+gmN6vh9WPyVY06MvlViWQuXjmSrVOC8EH/PZzWxciMmiVEUup3LGLq251VOitTqbekOqzlNsaETQPt6ihAP0u18eKbgdexftNmf/yMxHxD8i/l9GXILQDarakIT19T9OBycMjhavoaMLv2ifF+zyB1CcDM4RBgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">212b3741fbf1621086e7f4045eefdcdc</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Despesa Bruta e Liquida com Pessoal">c38d6351fb457610f6d5f9d38eefdc20</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="For Each">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
+        <order>3</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 00:34:13</sys_created_on>
+        <sys_id>d78def51fb457610f6d5f9d38eefdca6</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 19:12:21</sys_updated_on>
+        <ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/51STW/bMAz9Lzonhj+ypM6twFCgh61AV/QyFAYl0YkwWdIkOaln+L+Pip106HEnm4/k43siR2b76PoYXux9COpg2P7n24opkzD6H5mBDtmeqYhdYCt2At2neBx5ISpZCFzfVQWsN7zla/6l5usWRLXb7na4aevsGYX1MkwTtUoVnIbh9f8ZxFFp6XER6cCTtoie7cdPqTg4bDRw1DRoYaB+JSksatnWRV6LqtxWZZ6Xd5uCbytelLIClFuqu3Y+LqY/vUFip9DfeOmTVJT5iuF7RCORBrWgA65YB0ZCtH5g++h7AjyCfDJ6uFUclYlEx1Lte1B/iLvI81TYIjkSOCdvYbM85AyLo1UCn1xU1sxIBK6XHmF135nvs/y0Amyh1/G6AkL6QHzokuakYpHU/jja8/N14IMyF39LUlsB+hZBjF7xPmJIa0CNHRE1HTinzKFx3p7UpZm0dNlBU5C12p5paDq3DEQSntETQfZA+NcL/ApeJRffiIaap4v75nef5s4+FsXNbJoKgvDKxXuiO+EibnpL9zozhfkwJAoVaOBLwh6vV54SAy1ZiX+hs/W/ktQPbPoLPlHA5y8DAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">67790d2dfb756210f6d5f9d38eefdc13</block>
+        <comment>Popula o mês</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Despesa Bruta e Liquida com Pessoal">c38d6351fb457610f6d5f9d38eefdc20</flow>
+        <flow_variables_assigned>var_mes</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>13</order>
+        <outputs_assigned/>
+        <parent_ui_id>fefe5d28-2611-4ce7-9f3a-4b1127da7629</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 00:34:13</sys_created_on>
+        <sys_id>9b8def51fb457610f6d5f9d38eefdcb8</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 19:12:21</sys_updated_on>
+        <ui_id>509ab718-88ae-46b1-9886-0418f90aabbf</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VwY7aMBD9F59JFEhIAreVqpVWartSl+6lWkUTewxWHTvrOLAU8e8dkwAV7a1XbvEbz8x7bzzKgdnet73vVvah69TasOWPtwlTJmD0fWAGGmRLtgVXNdixCX3pPiCHwyyRAvOsjFKOIsrmizyqp8CjOl3UeVnADBZ5rDw28SnneKRsobpWw/71v4rwjdLC4Ui2BUccPTq2PNyE/L7FSkONmnq9eKfMmtKVoFNZlwLlfCrrbF7k00TmYi4XIi0RpeBpTffOiVftf5kRGhDQnUtbJwKPZMLww6MRSK0k6A4nrAEjwFu3vyAOQTwbfQU2yniqxsLlj079otJlkiThpkQSxXGIXo7VaOcA841VHJ9br6wZEA+1HnO41X1jvg4CwiBQQq/9eRCE9B3VwzawDjRGTvJlY3ffzg0flTkJHIPactCXE3iyoe49OUOT6NXqxpwB+Xw7DtTYUMeqgbYlpGqd3apTFyLdxGtNh1hquyN24YnGwIPCmNyE+JHwTyf4FZwKcr9QGUoO7b4b9d7jUxh3SkOueVZESQ0QZWmZRDBLeFTIHDOOUyiKhB1P1lbvfRA1mDTaUQ2O0oWOO9X6B6KwxVH58S1sxdB9WJrTC/vXe7kvz3157stzuzwCueqI1SpQeDr/e0JgT49G8T+hnXU/g54rdvwN8tGSGMUGAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">6f790d2dfb756210f6d5f9d38eefdc13</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Despesa Bruta e Liquida com Pessoal">c38d6351fb457610f6d5f9d38eefdc20</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>16</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 00:34:13</sys_created_on>
+        <sys_id>138def51fb457610f6d5f9d38eefdcbc</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 19:12:21</sys_updated_on>
+        <ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+2Uz27bMAzGX6XQ2TBkuwnW3IoOBQZsK7AWvWyFQUt0IkyWPElOmgV5oD3HXmyU/6RBl2LFsONu0keR/Ej/4B2zXWi74O/spfdqadji80PClIkanXfMQINswYQ1UgVlTdkLCVuD7mLgynYmnP38ccZJlMq3Grb3p2JipbR0OHZowVGdgI4tds9CYdtiqaFCTSVug1NmSelK0q3mUGcXIhNFPi9yzvM351k1L6oslwUgFPRuSryaDJ+975XkxUliP9L91Mk6GW1lPGH4GNBIpNY1aI8Ja8BICNZtD4pDkDdGPwkrZQKVY/Hxo1ffqXY+m8WHNdKMAofg4VqOSxtksbJK4E0bDQ5KgEqPOcLqrjEfhzniurGGTodp3aR0nuphG01HF6Ol+nZlN5+mhtfK9AOOQW0F6MMNAq2h6gL6+GFQY0OFygbalpZTts6uVZ9MXpp0qemS1tpuqGmkJwURjae0I0ivSX/by/fgVJziA5Wh5MFmBV6JsieNygVHI+z7tZTfumhoGHAcpRy2QQ+8cKoNl9RnjaPrffI7pkeE7na9w/VoIqVDKSKZ2X7/peO8kCfQfV3Sv2D6Amb1LOOz00yfz08xfYLml0HO/wByXP0rOeac/wf5GGTlywHIcba++V9z/BChHTr4gRuJQnkyche1d9NfOQa2BIASx9LGuq9xhCdt/wsKQ4JR3wUAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">e31d41a1fbb56210f6d5f9d38eefdc62</block>
+        <comment/>
+        <connected_to>b6f98993-2de4-48f4-9d42-7ad52358075f</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Despesa Bruta e Liquida com Pessoal">c38d6351fb457610f6d5f9d38eefdc20</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
+        <order>6</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 00:34:13</sys_created_on>
+        <sys_id>178def51fb457610f6d5f9d38eefdca8</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 19:12:21</sys_updated_on>
+        <ui_id>e0441a5d-de7b-4465-8283-c2d239ca3641</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1UTWvcMBD9K0VnY/zRhHZvoSVQaBtoQi5tEGNJ3hWVJVUfu9ka//eO/LG7NAkNOeTUm/RGM/Pe88M9MTHYGPyNufBerjVZfb/LiNQJw3NPNHSCrAgzmssgjaYjkJEtqJgKeOTSWwX72yPCNlJxJ+ZpFhz2BOHIqv+rFPZWUAWNUNh4HZzUa2yXHG9tAW35npWsrs7rqiiqd2/L5rxuyorXIKDCd0vjh4Xcm88jkj3JOu1D3C+bjOOJVllkRNwHobnA1S0oLzLSgeYQjNsfECeAX2l1BDZSh0lxB/de/sbZ1dlZetgK1MhmOw5XOlu1uGQkE1c2EZyQAI1aLDQqdvrrpCOZLFqIKpyYHD3OEzaRTixmSu31xuy+LQsvpR4FzkVlGKjDDQLa0MQgfPowQokOB9EOrEVzqHVmK8dm5NLla4WXvFVmh0tTUnJgiXiOHkF+ifjHEb4FJ5OKLzgGmyeaDXjJ6JgqHBccShhGW+ivmAhNAmcpdHIDH3jmpA0XuGcrZtZD9jCSJ2ns+5HhdiaR44EyE3Uoh+FHLIqalw8D+7ymV8h0+VimH0nz00Gu/hHkZP0zc1wUxf8gnwZZejoFctY2Ln9xju9SaKcNfsoNF0x6JHKTsE/LHzgV9hgAyU6hnXE/k4QjNvwBPUsE1MsFAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">a31d41a1fbb56210f6d5f9d38eefdc63</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Despesa Bruta e Liquida com Pessoal">c38d6351fb457610f6d5f9d38eefdc20</flow>
+        <flow_variables_assigned>var_count1</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>7</order>
+        <outputs_assigned/>
+        <parent_ui_id>e0441a5d-de7b-4465-8283-c2d239ca3641</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 00:34:13</sys_created_on>
+        <sys_id>5f8def51fb457610f6d5f9d38eefdca8</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 19:12:21</sys_updated_on>
+        <ui_id>26bc65d4-7174-419d-bffb-8c2a18337402</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1UXWvjMBD8L3pOTOI6jpO3wlEIXFtoc305ilGkVSJOllR9JM2F/Pdb2Y5b2rsfcNA372i1MzsafCImBhuDX5tr7+VWk+XP5xGROmH4fSKaNkCWZE9dzUzUYUpGWKiYwBy/ufRW0ePTO4jtpOIO+lmWOhwRwJHl6cNROFqoFd2AwpsrHWCLXcjOsZzNKw5iNhWbYjYvpxNR8plY8KsKQHBWFNh3uTloQ+xvchMNYnIgMI4nOZMRgdcAmgMSCqo8jEhDNafBuOOAOKD8Xqs3YIeDcBxJza9e/sbZxST1CcDNGHRnQ1n3DnUw2xnJ4N4GaXSHBLpR/R1mVGz0XbdC8hYEjSpcvEUkepwHNmlOInpF4nFnDg8Xwhup2/X6Q2UYVUNFQ3ByEwP49BxRrj9600HfPz0KKGiQs26otVJva+vMXrY8KLvJtgqLTChzQH0pSBllaccM3aTZDeLfWviJOpkWvsUxPd8PLV8irNKjLwRbVEwU41xUYlyUjI5pfpWPSzaZV6Is+JTn5NyaW7/EtFZnU29I3XmKDZ45acM1SthDv/v5OQW3Y++i3ebsH5n5ivhXxP/LiHNg0qOqdZKwuvzH08ERgyPZe+hg3K+0zxt2/gPR3FrgEQYAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">eb790d2dfb756210f6d5f9d38eefdc10</block>
+        <comment/>
+        <connected_to>b6f98993-2de4-48f4-9d42-7ad52358075f</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Despesa Bruta e Liquida com Pessoal">c38d6351fb457610f6d5f9d38eefdc20</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>8</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 00:34:13</sys_created_on>
+        <sys_id>978def51fb457610f6d5f9d38eefdca9</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 19:12:21</sys_updated_on>
+        <ui_id>9293447b-4381-4d7b-bfa2-d1373275d096</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">e3790d2dfb756210f6d5f9d38eefdc11</block>
+        <comment>Setando em 0</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Despesa Bruta e Liquida com Pessoal">c38d6351fb457610f6d5f9d38eefdc20</flow>
+        <flow_variables_assigned>var_count1</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>9</order>
+        <outputs_assigned/>
+        <parent_ui_id>9293447b-4381-4d7b-bfa2-d1373275d096</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 00:34:13</sys_created_on>
+        <sys_id>df8def51fb457610f6d5f9d38eefdca9</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 19:12:21</sys_updated_on>
+        <ui_id>6352d366-f036-48f1-8001-aafb42a31f7f</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1UXW/aMBT9L36GKNAQAm+VpkpI2ypttC9TFRn7Gqw5tusPKEX8910nIVTt9gMm9S33+Pqec4+PciImBhuDX5tb7+VWk+WvpxGROmH4fSKaNkCWZE9dzUzUYUJGWKiYwBy/ufRW0ePjG4jtpOIO+lmWOhwRwJHl6d1ROFqoFd2AwpsrHWCLXcjOsZzNKw5iNhGbYjYvJ7ko+Uws+E0FIDgrCuy73By0IfY3uYkGMTkQGMeTnHxE4CWA5oCEgioPI9JQzWkw7jggDii/1+oK7HAQjiOp+cXLV5xd5KlPAG7GoDsbyrp3qIPZzkgG9zZIozsk0I3q7zCjYqO/dyskb0HQqMLFW0Six3lgk+Ykolckfu7M4ceF8E7qdr3+UBlG1VDREJzcxAA+PUeU6/fedNDXD48CChrkrBtqrdTb2jqzly0Pym6yrcIiE8ocUF8KUkZZ2jFDN2l2h/iXFn6kTqaFv+GYnu9By+cIq/ToC8EWFRPFeCoqMS5KRsd0ejMdlyyfV6Is+IRPybk1t36Oaa3Opt6QuvMUGzxz0oZblLCHfvfzUwpux95Fu83ZPzLzGfHPiP+XEefApEdV6yRhdfmPp4MjBkeyt9DBuN9pnyt2/gMQXu5iEQYAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">eb790d2dfb756210f6d5f9d38eefdc11</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Despesa Bruta e Liquida com Pessoal">c38d6351fb457610f6d5f9d38eefdc20</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>10</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 00:34:13</sys_created_on>
+        <sys_id>df8def51fb457610f6d5f9d38eefdcb6</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 19:12:21</sys_updated_on>
+        <ui_id>cfdc988b-b11d-4942-b9bf-11cea3ddb70f</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1U247TMBD9FZTnNMqlDW3fVqCVkICV2NW+wCqa2JPWwrGD7fRC1X9nnEtbsV2BELzxUsXHmZlzTub0EOjWNa2zD/rGWrFSwfLzUxgI5TF6PgQKagyWAdOKCye0KjogDDYgW39Bj1zYRsL+8YywtZDc4NCtAUM1Dk2wPPx05fYNFhJKlFR474xQKyoXnE5VDFWyYAnL0jxL4zidT5Myz8ok5RkgZPTeWPhmJPfqfYeEL7L28wi34yRtuKeVxGGAO4eKI42uQFoMgxoUB6fN/oQYBH6n5BlYC+V6xTXsrPhOvdPZzL9YIWlkgx2nYzFYNbqkBcO7xhPsEQelHC3Usq3Vx16HNxkraKW7MLm11A8bT9qzGChV92u9/TQOvBWqEzhcSs1Ank7gyIaydWj9h0GJNTUqamgaMqdojN6Irpi41NFK0iGqpN7SUL8pETBPPCKPILol/G0HP4IRXsUHakPFPc0SrGBFt1XUzhmScOxsKb61nlAvcJBS9G7QC5YZ0bgbmrPBgfUxfL6SF9t4OKRxxTGfzicZQz6Zzhb5pEyATcpsUebz15DCIo+Ew7r7KXTTrwduI9/2ePzSxnHGNwXu0DDBhH6+4P9myN/IzAJm1SyJZ9czM82vZeZKWl4OSvqLoPhP+5s5ieP4f1AugyJs0S/8oK0b/sc5efKh6CfYfm84MmGJyIPH3o3/8P5iTwsg2CW01earl3DGjj8A+lobbisGAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">e3790d2dfb756210f6d5f9d38eefdc12</block>
+        <comment>Popula o ano</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Despesa Bruta e Liquida com Pessoal">c38d6351fb457610f6d5f9d38eefdc20</flow>
+        <flow_variables_assigned>var_exercicio</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>11</order>
+        <outputs_assigned/>
+        <parent_ui_id>cfdc988b-b11d-4942-b9bf-11cea3ddb70f</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 00:34:13</sys_created_on>
+        <sys_id>1b8def51fb457610f6d5f9d38eefdcb7</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 19:12:21</sys_updated_on>
+        <ui_id>45e87eb4-1522-46c8-928c-4e868bc4e337</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Vy27bMBD8F54tQQ9bMX0LUAQI0DZA4+ZSBAJFLm2iFKlQlB81/O9d6uEEBtJLr75ph9yd2VkudCK2803n27W9b1u1MWT163VGlAkYfp+IYTWQFdkxV8IBHFdcWTLDWHcBP52yRAoo5sso5yCi+YIWUZUyHlU5rYrlHcsYLWLloY77nPMZs4VqG82OL/9VhG+VFg5GyQ1zqNSDI6vT1ZE/NlBqVoFGrmfvlNlguhIYLQWlWZ4JWXEkShNZiIWkIl8CSMEhxXtT4rUDnxgTyBBuJxrrRNCUzAgcPBgBSCuZbmFGamYE89YdL4gDJp6Mfge2ynisRsLlQ6v+YOllkiThpgRskMNwegnL0doB5lurODw1XlkzIJ5VeszhVne1+T60EYYCknXaT0NBpGuxHjRBdZAxapLPW7v/MRE+KNM3OB5qy5m+RMyjDVXnoQ1T6dT6ypwB+Xo9GtBQI2NZs6ZBpGyc3ameBUXX8UZjEEtt96guPNqY8dBhjG6y+AHxLz38wpwK7X7DMpgc6H4a9dbBYxh9RjnL6OIuyvIqj+ZpkkeUpjSCQla5TPJ0AZSce2vLty40NZg02lEOjuKFljvV+HuUsIOx8/Nr2JCBfVij/rV9/mpu63Rbp9s6/WudBHDVoqp1kPA4/Z/CwRGfjuIfob11v0M/79j5L/4+Ji3pBgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">eb790d2dfb756210f6d5f9d38eefdc12</block>
+        <comment/>
+        <connected_to>cfdc988b-b11d-4942-b9bf-11cea3ddb70f</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Despesa Bruta e Liquida com Pessoal">c38d6351fb457610f6d5f9d38eefdc20</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
+        <order>12</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 00:34:13</sys_created_on>
+        <sys_id>538def51fb457610f6d5f9d38eefdcb8</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 19:12:21</sys_updated_on>
+        <ui_id>fefe5d28-2611-4ce7-9f3a-4b1127da7629</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1UTY/TMBD9KyjnNMpHG9reVqCVkICV2NVeYBVN7Elr4djBdtotUf8743y0FbsrEEKcuFTxc2bmvZd57QLduqZ19k5fWSs2Klh/fggDoTxGz12goMZgHTCtuHBCq6IHwmAHsvUX9MiFbSQc7s8I2wrJDY7dGjBU49AE6+6nK3dosJBQoqTCW2eE2lC54HSqYqiSFUtYluZZGsfpcp6UeVYmKc8AIaX3psI3E7lX73skfJG1n0e4nSZpwz2tJA4DfHSoONLoCqTFMKhBcXDaHE6IQeA3Sp6BrVBuUFzDoxXfqXe6WPgXKySNbLTjdCxGqyaXtGB403iCA+KglJOFWra1+jjo8CZjBa10Fya3lvph40l7FiOl6nar95+mgddC9QLHS6kZyNMJHNlQtg6t/zAosaZGRQ1NQ+YUjdE70RcTlzraSDpEldR7Guo3JQLmiUfkEUTXhL/t4Xswwqv4QG2oeKBZghWs6LeK2jlDEo69LcW31hMaBI5SisENesEyIxp3RXN2OLI+hk9X8mIbuy6NK475fDnLGPLZfLHKZ2UCbFZmqzJfvoYUVnkkHNb9T6GbYT1wH/m2x+OXNo4zvitqcuXJav/t9v8gJ8lzOXkmIS+HI/1FOPzn/M1sxHH8PxyX4RC2GJZ81NYP/+NsPPggDBPssDccmbBE5M5j76Z/dX9xoAUQ7BLaa/PVSzhjxx+X5fYWHwYAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=c38d6351fb457610f6d5f9d38eefdc20"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=c38d6351fb457610f6d5f9d38eefdc20^sys_idNOT IN438def51fb457610f6d5f9d38eefdc3f,578def51fb457610f6d5f9d38eefdc44,8999232dfbc9b610f6d5f9d38eefdce4,8b8def51fb457610f6d5f9d38eefdc3b,8d99232dfbc9b610f6d5f9d38eefdce1,db8def51fb457610f6d5f9d38eefdc41"/>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=72f2355b-0329-4d8c-b4dc-3cb07f54ba9d</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>var_ano</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>var_ano</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Despesa Bruta e Liquida com Pessoal">c38d6351fb457610f6d5f9d38eefdc20</model>
+        <model_id>c38d6351fb457610f6d5f9d38eefdc20</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_variable_c38d6351fb457610f6d5f9d38eefdc20</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 00:34:12</sys_created_on>
+        <sys_id>438def51fb457610f6d5f9d38eefdc3f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 00:34:12</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=integer,uiTypeLabel=Integer,uiUniqueId=9fc98cf4-2f8f-46ca-a232-6c078f64d1d2</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>var_count1</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Integer">integer</internal_type>
+        <label>var_count</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Despesa Bruta e Liquida com Pessoal">c38d6351fb457610f6d5f9d38eefdc20</model>
+        <model_id>c38d6351fb457610f6d5f9d38eefdc20</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_variable_c38d6351fb457610f6d5f9d38eefdc20</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 00:34:13</sys_created_on>
+        <sys_id>578def51fb457610f6d5f9d38eefdc44</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 00:34:13</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=6b2668ca-0fd2-4479-9c4e-bf80f6649a45</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>var_tipo_de_informacao</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>var_tipo_de_informacao</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Despesa Bruta e Liquida com Pessoal">c38d6351fb457610f6d5f9d38eefdc20</model>
+        <model_id>c38d6351fb457610f6d5f9d38eefdc20</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_variable_c38d6351fb457610f6d5f9d38eefdc20</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 18:55:20</sys_created_on>
+        <sys_id>8999232dfbc9b610f6d5f9d38eefdce4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 18:55:20</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=3576bc47-0baa-4380-a20c-7f6e4ce1a770</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>var_mes</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>var_mes</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Despesa Bruta e Liquida com Pessoal">c38d6351fb457610f6d5f9d38eefdc20</model>
+        <model_id>c38d6351fb457610f6d5f9d38eefdc20</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_variable_c38d6351fb457610f6d5f9d38eefdc20</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 00:34:12</sys_created_on>
+        <sys_id>8b8def51fb457610f6d5f9d38eefdc3b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 00:34:12</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=29ca2957-23b3-4103-9919-e6fb3f0315e9</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>var_exercicio</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>var_exercicio</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Despesa Bruta e Liquida com Pessoal">c38d6351fb457610f6d5f9d38eefdc20</model>
+        <model_id>c38d6351fb457610f6d5f9d38eefdc20</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_variable_c38d6351fb457610f6d5f9d38eefdc20</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 18:55:20</sys_created_on>
+        <sys_id>8d99232dfbc9b610f6d5f9d38eefdce1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 18:55:20</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=boolean,uiTypeLabel=True/False,uiUniqueId=d7cbe4fe-a090-4ba1-b6bd-d3e948e273cf</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value>false</default_value>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>var_rpps</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">boolean</internal_type>
+        <label>var_rpps</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Despesa Bruta e Liquida com Pessoal">c38d6351fb457610f6d5f9d38eefdc20</model>
+        <model_id>c38d6351fb457610f6d5f9d38eefdc20</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_variable_c38d6351fb457610f6d5f9d38eefdc20</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 00:34:13</sys_created_on>
+        <sys_id>db8def51fb457610f6d5f9d38eefdc41</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 19:12:21</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>record</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_c38d6351fb457610f6d5f9d38eefdc20</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 00:34:13</sys_created_on>
+        <sys_id>138def51fb457610f6d5f9d38eefdca1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 00:34:13</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_c38d6351fb457610f6d5f9d38eefdc20"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_c38d6351fb457610f6d5f9d38eefdc20"/>
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=613704000,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>27000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from>216b4dedfb756210f6d5f9d38eefdc7a</copied_from>
+        <copied_from_name/>
+        <description/>
+        <flow_priority>MEDIUM</flow_priority>
+        <internal_name>copy_of_despesa_bruta_e_liquida_com_pessoal</internal_name>
+        <label_cache>[{"name":"flow_variable.var_exercicio","label":"Flow Variables➛var_exercicio","type":"string","base_type":"string","usedInstances":{"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf":["conditions"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"29ca2957-23b3-4103-9919-e6fb3f0315e9"}},{"name":"flow_variable.var_tipo_de_informacao","label":"Flow Variables➛var_tipo_de_informacao","type":"string","base_type":"string","usedInstances":{"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf":["conditions"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"6b2668ca-0fd2-4479-9c4e-bf80f6649a45"}},{"name":"7a5418ac-94b7-4d9e-aa2a-30eca3999ced.ano","label":"18 - Get MRVS Values (Primary Revenue and Expenditure)➛Ano","reference_display":"Ano","type":"string","base_type":"string","usedInstances":{"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_ano"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"7facceb0-a44f-4f91-a772-4353cdeadc45"}},{"name":"7a5418ac-94b7-4d9e-aa2a-30eca3999ced.rpps","label":"18 - Get MRVS Values (Primary Revenue and Expenditure)➛RPPS","reference_display":"RPPS","type":"boolean","base_type":"boolean","usedInstances":{"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_rpps"]},"attributes":{"uiType":"boolean","uiTypeLabel":"True/False","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"50549c4c-803c-4ecc-97fa-1ad6de17086a"}},{"name":"7a5418ac-94b7-4d9e-aa2a-30eca3999ced.bimestre","label":"18 - Get MRVS Values (Primary Revenue and Expenditure)➛Bimestre","reference_display":"Bimestre","type":"string","base_type":"string","usedInstances":{"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_bimestre"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"93cd234b-2888-4c83-a94d-895c3c90b8a4"}},{"name":"7a5418ac-94b7-4d9e-aa2a-30eca3999ced.resultado_primario","label":"18 - Get MRVS Values (Primary Revenue and Expenditure)➛Resultado Primario","reference_display":"Resultado Primario","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_resultado_primario"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_resultado_primario"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"52d478d9-7af9-4f3e-abf2-28881f681601"}},{"name":"7a5418ac-94b7-4d9e-aa2a-30eca3999ced.despesa_primaria","label":"18 - Get MRVS Values (Primary Revenue and Expenditure)➛Despesa Primaria","reference_display":"Despesa Primaria","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_despesa_primaria_total"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_despesa_primaria_total"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"a31b41dd-ec2e-4c89-8009-c97a7c3a4638"}},{"name":"7a5418ac-94b7-4d9e-aa2a-30eca3999ced.receita_primaria","label":"18 - Get MRVS Values (Primary Revenue and Expenditure)➛Receita Primaria","reference_display":"Receita Primaria","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_receita_primaria_total"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_receita_primaria_total"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"f39dd8de-3de1-44a8-b8c8-72cfec1fe81f"}},{"name":"flow_variable.var_rpps","label":"Flow Variables➛var_rpps","reference":"","reference_display":"","type":"boolean","base_type":"boolean","column_name":"","choices":[],"usedInstances":{},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"d7cbe4fe-a090-4ba1-b6bd-d3e948e273cf","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"flow_variable.var_mes","label":"Flow Variables➛var_mes","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf":["conditions"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"3576bc47-0baa-4380-a20c-7f6e4ce1a770"}},{"name":"flow_variable.var_ano","label":"Flow Variables➛var_ano","type":"string","base_type":"string","usedInstances":{},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"72f2355b-0329-4d8c-b4dc-3cb07f54ba9d"}},{"name":"flow_variable.var_count1","label":"Flow Variables➛var_count","reference":"","reference_display":"","type":"integer","base_type":"integer","column_name":"","usedInstances":{"b6f98993-2de4-48f4-9d42-7ad52358075f":["condition"],"3c031a62-dd97-42a9-ae1e-b0b41c896ded":["condition"],"e0441a5d-de7b-4465-8283-c2d239ca3641":["condition"]},"attributes":{"uiType":"integer","uiTypeLabel":"Integer","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"9fc98cf4-2f8f-46ca-a232-6c078f64d1d2"}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.item_option_new.name","label":"3 - For Each➛Multi Row Question Answer Record➛Question➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"item_option_new","column_name":"name","usedInstances":{"cfdc988b-b11d-4942-b9bf-11cea3ddb70f":["condition"],"fefe5d28-2611-4ce7-9f3a-4b1127da7629":["condition"],"7b5c4780-d3a5-467a-a4b8-6c282af57221":["condition"]}},{"name":"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf.__action_status__","label":"17 - Look Up Record➛Action Status","reference_display":"Action Status","type":"object","base_type":"object","usedInstances":{},"attributes":{"uiType":"object","co_type_name":"FD23f9eb2d1ec9b6105766fdf5db236322","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf.status","label":"17 - Look Up Record➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Error","value":"1","order":0.0},{"label":"Success","value":"0","order":1.0}],"usedInstances":{"cc765906-5769-430a-b4ae-373f078cb540":["condition"]},"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf.Record","label":"17 - Look Up Record➛Despesa Bruta e Liquida com Pessoal Record","reference":"x_sded9_portal_t_0_despesa_bruta_e_liquida_com_pessoal","reference_display":"Despesa Bruta e Liquida com Pessoal","type":"reference","base_type":"reference","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["record"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.row_index","label":"3 - For Each➛Multi Row Question Answer Record➛Row index","reference":"","reference_display":"Row index","type":"long","base_type":"long","parent_table_name":"sc_multi_row_question_answer","column_name":"row_index","usedInstances":{"0a53884c-6d3f-4926-b143-7aebb7b97d97":["conditions"],"7a5418ac-94b7-4d9e-aa2a-30eca3999ced":["multirow_record"],"153b44d9-04de-4920-9255-b4009e7f09e8":["multirow_record"]}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.value","label":"3 - For Each➛Multi Row Question Answer Record➛Value","reference":"","reference_display":"Value","type":"string","base_type":"string","parent_table_name":"sc_multi_row_question_answer","column_name":"value","usedInstances":{"3283fd25-754f-4540-a6dc-42c1d8b9e628":["conditions"],"45e87eb4-1522-46c8-928c-4e868bc4e337":["var_ano-0","var_exercicio-0"],"509ab718-88ae-46b1-9886-0418f90aabbf":["var_mes-0"],"43175a16-f870-4ccd-b780-63e52089e443":["var_rpps-0"],"3866f7bc-4596-4ecc-b5ab-abdbbde58ec9":["condition"],"dc468fb6-94dd-438c-bd3a-a2ead88f8537":["var_tipo_de_informacao-0"]}},{"name":"b1c3d1ce-831a-4bfb-b59b-fac37677e4f9.Records","label":"1 - Look Up Records➛Multi Row Question Answer Records","reference":"sc_multi_row_question_answer","reference_display":"Multi Row Question Answer","type":"records","base_type":"records","usedInstances":{"20fde648-3ced-4596-b1ac-b39b687a2a96":["items"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"subflow.record","label":"Input➛Record","reference":"x_sded9_portal_t_0_registro_de_cargas_tesouro","reference_display":"Treasury Cargo Registration","type":"reference","base_type":"reference","column_name":"","usedInstances":{"b1c3d1ce-831a-4bfb-b59b-fac37677e4f9":["conditions"],"0a53884c-6d3f-4926-b143-7aebb7b97d97":["conditions"],"39268173-2ed3-4659-805a-84b15f1045a3":["parent_sys_id"],"c89a2cab-c4b6-4d9a-a522-66df72662c5e":["parent_sys_id"],"fb48067c-f6f5-45ab-b1f7-87e39e2b4f53":["parent_sys_id"],"83c6e11f-e93b-467c-9b7f-38bab9ae0a3b":["parent_sys_id"],"b68068aa-2262-4839-a185-5e13cd917f72":["parent_sys_id"],"d54d22bc-061e-44b3-8b1e-9ed82884ca5f":["parent_sys_id"],"7a5418ac-94b7-4d9e-aa2a-30eca3999ced":["parent_sys_id"],"153b44d9-04de-4920-9255-b4009e7f09e8":["parent_sys_id"]},"attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"f4b7b973-3190-4871-8403-baaef11efe7b","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"153b44d9-04de-4920-9255-b4009e7f09e8.valor","label":"18 - Get MRVS Values (Despesa Bruta e Liquida com Pessoal)➛Valor","reference_display":"Valor","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["u_valor"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_valor"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"f1be8340-e813-45f1-a355-1bc396211745"}},{"name":"153b44d9-04de-4920-9255-b4009e7f09e8.mes","label":"18 - Get MRVS Values (Despesa Bruta e Liquida com Pessoal)➛Mês","reference_display":"Mês","type":"string","base_type":"string","usedInstances":{"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_mes"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"c2735c55-d0bf-41e2-ba27-2699c3ada34d"}},{"name":"153b44d9-04de-4920-9255-b4009e7f09e8.tipo_de_informacao","label":"18 - Get MRVS Values (Despesa Bruta e Liquida com Pessoal)➛Tipo de Informação","reference_display":"Tipo de Informação","type":"string","base_type":"string","usedInstances":{"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_tipo_de_informacao"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"c89699f5-93a4-4590-addf-5bfce1ad1b48"}},{"name":"153b44d9-04de-4920-9255-b4009e7f09e8.exercicio","label":"18 - Get MRVS Values (Despesa Bruta e Liquida com Pessoal)➛Exercício","reference_display":"Exercício","type":"string","base_type":"string","usedInstances":{"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_exercicio"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"0a5a3d7f-1a49-4add-b679-99a080c693ed"}}]</label_cache>
+        <master>true</master>
+        <name>Despesa Bruta e Liquida com Pessoal</name>
+        <natlang/>
+        <outputs/>
+        <parent_flow display_value="Despesa Bruta e Liquida com Pessoal">c38d6351fb457610f6d5f9d38eefdc20</parent_flow>
+        <remote_trigger_id/>
+        <run_as>system</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 18:57:07</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>8ff9ab2dfbc9b610f6d5f9d38eefdcc9</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 19:12:26</sys_updated_on>
+        <type>subflow</type>
+        <version>2</version>
+    </sys_hub_flow_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=8ff9ab2dfbc9b610f6d5f9d38eefdcc9"/>
+    <sys_variable_value action="delete_multiple" query="document_key=8ff9ab2dfbc9b610f6d5f9d38eefdcc9"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=8ff9ab2dfbc9b610f6d5f9d38eefdcc9"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=8ff9ab2dfbc9b610f6d5f9d38eefdcc9^sys_idNOT IN4ff9ab2dfbc9b610f6d5f9d38eefdcca"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>8ff9ab2dfbc9b610f6d5f9d38eefdcc9</id>
+        <name>Copy of Despesa Bruta e Liquida com Pessoal</name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 18:57:07</sys_created_on>
+        <sys_id>4ff9ab2dfbc9b610f6d5f9d38eefdcca</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 18:57:07</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=4ff9ab2dfbc9b610f6d5f9d38eefdcca"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=8ff9ab2dfbc9b610f6d5f9d38eefdcc9^sys_idNOT IN8bf9ab2dfbc9b610f6d5f9d38eefdccb"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference,uiUniqueId=f4b7b973-3190-4871-8403-baaef11efe7b</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table>x_sded9_portal_t_0_registro_de_cargas_tesouro</choice_table>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>record</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Despesa Bruta e Liquida com Pessoal">8ff9ab2dfbc9b610f6d5f9d38eefdcc9</model>
+        <model_id>8ff9ab2dfbc9b610f6d5f9d38eefdcc9</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_8ff9ab2dfbc9b610f6d5f9d38eefdcc9</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="x_sded9_portal_t_0_registro_de_cargas_tesouro">x_sded9_portal_t_0_registro_de_cargas_tesouro</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 18:57:07</sys_created_on>
+        <sys_id>8bf9ab2dfbc9b610f6d5f9d38eefdccb</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 18:57:07</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=8bf9ab2dfbc9b610f6d5f9d38eefdccb"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=8ff9ab2dfbc9b610f6d5f9d38eefdcc9"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=8ff9ab2dfbc9b610f6d5f9d38eefdcc9"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=8ff9ab2dfbc9b610f6d5f9d38eefdcc9"/>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=8ff9ab2dfbc9b610f6d5f9d38eefdcc9^sys_idNOT INd3f9eb2dfbc9b610f6d5f9d38eefdc1c,5bf9eb2dfbc9b610f6d5f9d38eefdc1c,9ff9eb2dfbc9b610f6d5f9d38eefdc1c,53f9eb2dfbc9b610f6d5f9d38eefdc1d,17f9eb2dfbc9b610f6d5f9d38eefdc1d"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Records">43400a1587003300663ca1bb36cb0b4b</action_type>
+        <action_type_parent display_value="Look Up Records">d1c56ec50b30030085c083eb37673a50</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>43400a1587003300663ca1bb36cb0b4b</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Despesa Bruta e Liquida com Pessoal">8ff9ab2dfbc9b610f6d5f9d38eefdcc9</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 18:57:08</sys_created_on>
+        <sys_id>d3f9eb2dfbc9b610f6d5f9d38eefdc1c</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 18:57:08</sys_updated_on>
+        <ui_id>b1c3d1ce-831a-4bfb-b59b-fac37677e4f9</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VXTU/jMBD9K1HOVZTSUlhuCIS0ElAtIC4sWI7jtNY6dtZ2+kHV/77jOEmjNpRWKlLRHj0ztt/MvDdxXhY+i/0L/zzphyHunp6fhWGvF4aDQY/gbhT1BiQKo37kd3yBUwqRBkecwnKCeW7XmqA054YhJafob061YVIgLPSUKgiLmc44nj+X0Xc21HuQU+9XGepdVqFkzHisqPAvXl47foYVXGjAc7FYc+2KmOOIcgh9KiGvZWDmWb1Ehc/ZbpvbvHvnkCq2UMKOT2eGipgChgRzTTt+ikWMjVTz2qIojoeCrwxjJgyc6NvgmWbvcO95aOMSClkR6nz1EpVVc+bkGhv8aFROTK7KUDKWjFDt6hHTBENdr5o2FzDMbIndFpe22y15nop7Vw6/PqBqElhyDSBoZhO1yMs0ksexnD5UKG+YKGpSOrkkmNcrbIxiUW4snoVPOU3hIJTiLGNihDIlJ6zYDFjSYMRhESQcGBRTzUYiwMQCD6CuOLgB+3VhfsaK2Szu4JiCMgnjwBDkWqhlropSThDhuS4cCojozvKXHV/P9RXHWq8yh5IDaS1uV4cyY+SKZrcQxTJzCUdMaJncsrOTaE7DFeWIFDGzKHRDOczQFMmiQ0jQaWBjf+dwVDxBdEYVYYTJt+HDtriU6k8iDMskVBUxkUiVYoLlG0jL5shiF7NY6DyyxQ8UJcDz5XJTt0eN9ZCDo+haNTiumm1ra2U5QjZst20HlCOke7ARAnl8pyEClx/fDNl/KrgSfDIayNlWkp2u+KSlMsjVsjEb7MfUlma2KcWmaz/m7wCqYv7QctWL5h/hLImfMMrjtm/njXWsfTtP/s9v51HSHgDFyHWPCc5E8RACoF+lh3D70P2xxrOCXo03prVhTTbFgD0jvfe9lbADnEoJj3C39+TwtECsvgAFZdanf2UsBdA7mAB6J4cRwKJOsy5kS82rt6/tZhX/buPxejxQsLGhu2wT2F53dve982S5KeDeXgpuks15rj/g3IEfyR8osvOVI2DMiueWvQ85/aIpi0fUrG6vomJpppj/afOXjENVo4r0vuDB3d8q20F3JVFQClJUQ/OaL+4uPJg2Z0g3cOb9RsgOWKpy3OGZ91CDaUVYjhFQOh0VvWnOkZ+1tSR5/4BPyKP9klbNatVg1bNv8Z96OCG8/gPAVhXDsBEAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=d3f9eb2dfbc9b610f6d5f9d38eefdc1c"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Despesa Bruta e Liquida com Pessoal">8ff9ab2dfbc9b610f6d5f9d38eefdcc9</flow>
+        <generation_source/>
+        <order>17</order>
+        <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 18:57:08</sys_created_on>
+        <sys_id>5bf9eb2dfbc9b610f6d5f9d38eefdc1c</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 18:57:08</sys_updated_on>
+        <ui_id>f55fbb1c-5a9e-441e-ba14-6cf57444d9bf</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VY227jNhD9FUHPjiv57ry1CQwskG6KTbov2y1BkVRMlCYVknIuhv+9Q1GSDVuxLdQBEvTNJGfIMzNnDin/WIWchpchnUbTdDodTsZR1O9H0WjUJzhOkv6IJFGCB2EnlHjBwNLiRDAYLrHI3fgZGcroFGVKWyyQRRGizGTMYJTo3GLEkOCPOacYEbVAsGAUFrAB5SYT+OV7uc+1dwp+c04BC268UwBOwR+1E5lzQTWT4eWPn50wwxpAWabDy9XO0qlRCZwwAab3ZVg7UdqXrB6iYs3P3Wy7BV/9gtLUQYk6IXu2TEJawssUC8M64QJLiq3SL/WMZpjeSrGZmHNpYcfQGT8b/grnTiJnlzKIijC/Vg9RmT8/nV5ji++szonNdWlK5ooTZnw+KEtxLuzV9pw3uM0sV9K7+LC9txL5Qn716QjrDapywUxuAATLXKAOeRlGejdXT98qlDMui5yUi0IRKGM1wtZqnuTW4VmFTLAFbIQWOMu4fECZVkteOAOWRfdBwKCbCvXk+MUfZBcTB7wLecXdGcxfF9PfseYuit9hG3AGQFwAQ5AvoVG5LlK5RETkpljQWBq/V7juhObFXAlszCZySDl6zB1un4cyYuST5lyI5pn9FbZYsjK4dadqrOFBCk43lCNKUu5QmK3uypHlmYKIEZep0gtMsPorh63oalXkYlmG24UfDbbr9d85Ys9ME074Ac/apHBYMPO2KSyu1/v9+4GRthSN4xWrRONqu2RNZSzlY2/upmmDUj7is8nHIIo+k4DA4R9PP9orgk/BEVmI6UGS0Q2fDNyryOdySxf2+681z0+AUPH81jEzSF7eQlXSPOVM0KZbcuYWdm7J3v/zlvyQJAdAFPnqcSm4LJ48APS92D88SL0k3uFZQa8N94s5bMh+D+DAquC1dSecAKfqhDs4O7j3eBogVnpfUGZX66vJsgH6Z2uAfu88DbCqw6wT2ZDz6pXrqlnZvzp7vGsPFNxyiNdNDdbqzLjtmb31fgP3W3XwNtn8yvUbnDvzc/iNjuy8pwTMefEkc+ch37/oidMHZjenV1ZU2Scs/mlaLxmHqkIV4b3D0zo++HWXbD2teYoWUDmewReAZgTIYRDWDKUqlxSVb/+tRzdUMuXa2NJ4X2i+MegfGShozMDOWVBYB7V1y4v4eBxVKr+kQRVIeZoJIJCgCCSoA2kXdhvRGpzxcXpu0ZphLopqwGddtlVOprXSbwjXkUIeYMSJqnYiqPisoP677DW1QKP8HcH6Kf4jOL80EYaTQQ+Pxv04jqI4ouNoMh7Hk1GSjvB4kG56FCEjCagp7JwCVWB7VFGjqnO8rz+l2LbTmRNAVQy8VtJ9VvfGNnCooLxBheo47lJPEqUEw3JHUO4B+S+z4kao6Tr8cKLyKf4wy/n9bqb9VGOu3+vZkPM/JX/M2RdHsQmLepOYkovJOB5fDFI6uphSPLzA02Q47lNGBuk5XwI//wXEnZq8vxYAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=5bf9eb2dfbc9b610f6d5f9d38eefdc1c"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Get MRVS Values (Despesa Bruta e Liquida com Pessoal)">3e72ab51fb057610f6d5f9d38eefdc5f</action_type>
+        <action_type_parent display_value="Get MRVS Values (Despesa Bruta e Liquida com Pessoal)">c1ef975dfbc17610f6d5f9d38eefdca5</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>3e72ab51fb057610f6d5f9d38eefdc5f</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Despesa Bruta e Liquida com Pessoal">8ff9ab2dfbc9b610f6d5f9d38eefdcc9</flow>
+        <generation_source/>
+        <order>18</order>
+        <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 18:57:08</sys_created_on>
+        <sys_id>9ff9eb2dfbc9b610f6d5f9d38eefdc1c</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 18:57:08</sys_updated_on>
+        <ui_id>153b44d9-04de-4920-9255-b4009e7f09e8</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/71V22rbQBD9FbPPlpB1tfxWEgKBtil22pcQxGgv9sLqkt1VYtfk3ztryY6dNiWlJo871zNn5rB3WyIZmRERZiGUyUSUQZKlk0CkLBE5i6acC0bTCRmTGiqOkVWnrNTNU6E5bTRDxyOoznm22zAQjKfx1IsoZ16c5KlXToB6ZZSX6TSDEPLUl5ZXvisga8bXz89YgUnTKtj8+O9CdCUV07wms7v7MWlBI2bLNZltX7neO7SCkisMnTdPo2vX5m9E2E3rHMZqWS+H9+ehwGJvxFAHaDImfG05lkQkApThY1JBzcA2ekNmVndo0BzYTa02h4iVrC0WIy52beRPbDcNgsBFCo7DUd57D89ioLY3i0uwgEg6ajs9hNJVIyk3PS2MC8CxLo5tfcBNa2VT9ykWSrXPblRX1V97RsihwH6TaOkMguCtm9RhHwYRi1XzNN+jvHIb1AenaiiowwssUld21uHZkk7evmK5t/zGM1e8wo5FBW2LlqLVzaPcdUHQlb9U+PCFwv0xbuSy9oG6CX3cAPhXaL/cmX+Alm7cL1gGk12777V86Pi1u6BQQB7lWeJlPAMvhiz28igWXgmcZdk0CdOAkucxMRtzocCYF6JwQ8VD58bsaRsIKnqOXQrVsrWfENQjH7h4Hr9PrfHLkaIEXFXsX8hTrZqudNP7/fX+SYbn1lN8pKdvO1yjxcaMri/fhjso6uW6T0U1P7IPugrPpasoPFXVujBYMy/aRltQhS0CFP5S4hk2eEEFBb0EU+CVNp1u3pDgLTY2nd6MLjC6Gc37fNgp6+zq/FfAHyBlseCg6epKcuXupe6qcqepNyR+vPZTlR8v/kOEnmeMpWmSeBOIUi+O08Sb5gF+SGlY5lmcszCOzij0+18/Jyi9mAcAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=9ff9eb2dfbc9b610f6d5f9d38eefdc1c"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Despesa Bruta e Liquida com Pessoal">8ff9ab2dfbc9b610f6d5f9d38eefdcc9</flow>
+        <generation_source/>
+        <order>20</order>
+        <parent_ui_id>cc765906-5769-430a-b4ae-373f078cb540</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 18:57:08</sys_created_on>
+        <sys_id>53f9eb2dfbc9b610f6d5f9d38eefdc1d</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 18:57:08</sys_updated_on>
+        <ui_id>30bd6918-a95f-4a24-b688-772ee9e9bf9e</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VVXU/bMBT9K1Gem8hpEiB926iQJjGYYOKFIcuJb8CS84HtAF3U/77rxAkVIAYaL2gvVX2vj33OqU/vZe8L7q/8BDiJsmiviKM4XhKyPEiifC/OoyWPGUDkL/yaVYA7FRSN4ri+Y7Kzhb4v07TM86gIUpZBkCQRBDmLkmCvKNP9JEl4lpfh2YDbbhHJhW4l21y4A7BS3AjJFdT+6vJq4bdM4V0GlL/qn7TeSlayHCRuPZvYPmVvNq1d86boKqgNFVPx2CHXruN9W2MHQZZORBY+PBioOSCRkkkNC79iNWemURt/ZVSHBQWMn9ZyM++4EbUZhVbsQYvfeHNC7L4SUFnhTJiX1Bk0lss1M+wcTy5Mp2a/GlGAHj3hULJOmsPd2rjhtDWiqUeIYbmc0I3sqvpkdMSfD9j5PTqNJKC1Oi3zUVZ5ftPcn00kj0Q9WOIkyqZgcl4xY5TIO2Pp9D5IGDyuWNuK+pq2qrkTAxipVOG1xEVYyuYe79Tiug5ZYXmH6CoLj7C+HsoXTAkr4jseg+DtwtcbfSiZ1o9S0EN621kmozAngQ4uDBbQ4SVYcKFEa77gVXfgiG8XLg55+toLK7LHB7Vz5mMkHqjGB5LRtlGGSWooscpa0IzmqjOMApXithOcUTSAYkM3yPlZMtYjyPtqQR54xyPIQ5D3Ywa9LzxvkDaF5+fwZF6W6vLzrHa8i/VOxoZLT/ph6Tn4TOlxMj59fP4WGrJ89W955yUNOdE7gekofmvUr46QmPd9lMa5HRsBSTgOlGxJgmyZpkGeEJLBfokfB+GAeGme/Nth70vTGzRPaToSILl+wYQpSlChCgN0NOVJnFzTu3DNeSB94EQinylV/81MuvoD4bpiVKQJAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=53f9eb2dfbc9b610f6d5f9d38eefdc1d"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Create Record">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent display_value="Create Record">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Despesa Bruta e Liquida com Pessoal">8ff9ab2dfbc9b610f6d5f9d38eefdcc9</flow>
+        <generation_source/>
+        <order>22</order>
+        <parent_ui_id>bbf158a1-4051-412a-803b-c34c3913e71b</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 18:57:08</sys_created_on>
+        <sys_id>17f9eb2dfbc9b610f6d5f9d38eefdc1d</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 18:57:08</sys_updated_on>
+        <ui_id>070c3028-da05-4dc4-afc6-b2410b50b51a</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VTW/bMAz9K4bOTmDHTtfktrXoqWuHdeil6wTaohsBsuVKcpss8H8f5Y806we2ALsU2CWASD76vSeKudkyKdiSHcUYzRfxUZ7ESTKLotlxGmdHSRbPRAKIKQtZBSVSpYNMIe8OIXsA1fjgmluBYsFrbRwo7njEBdoaLfDMNA44ciXvGymA57rklLAaFDUQ0tYKNtdDn9MeFHzyoACD8x4UECj4sgPlK6mEwYotb25DVoMhMg4NW26fpf5WmoIMFZV+89rekOo29aux831scNEntBGeTxQyXDusyBu2LEBZDFkJlQCnzYYtnWkoYBDEZaU2u4qVrBw1ZL52beVP+uxx5OsKJGU59rndkQ8e9uHiFBxcUefcNWYozVda5mh7TwQW0Ch3sh/rCy5rJ3XVQzqZA1qrpqwuekvYrsF4ZRRpLJHA2uv0zAcZxdVKP34dWZ7JqrNkSCqd01WOJ3DOyKxxns+WocKSGvES6lpWd7w2+kF2YOJSTu8UHaaF0o9+xuRdNYXcE5+SrTA9o/hpF74GI72Kz9SGwG3I7MaeKLD2SQuZyO8bz6RXNmjgvQ0ekhtZu4/0gQcc6Lbh+GYERos3ByvOngapeyZ27700vET7vYmiRGy38TzJ0lQsJlEqcJIuZtFkMZvPJ1kaRQv8UNDP8ZTq2/ZHw52sNenmsiq0KSEHfVCbl/CuK/HS5qBGHaLD4hpNLnN5GJEdqm1froH/9vxuz4EL789zOS68M4lK2FcGddx2WNK9OOT94D7beEMyuB6Sw9aL/9XWI0Pe097rhb37tbf3D/f6AhyDRLptb38B7raTT0IIAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=17f9eb2dfbc9b610f6d5f9d38eefdc1d"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=8ff9ab2dfbc9b610f6d5f9d38eefdcc9"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=8ff9ab2dfbc9b610f6d5f9d38eefdcc9^sys_idNOT INdff9eb2dfbc9b610f6d5f9d38eefdc1a,57f9eb2dfbc9b610f6d5f9d38eefdc1b,dbf9eb2dfbc9b610f6d5f9d38eefdc1b,5ff9eb2dfbc9b610f6d5f9d38eefdc16,d3f9eb2dfbc9b610f6d5f9d38eefdc1a,5bf9eb2dfbc9b610f6d5f9d38eefdc1a,13f9eb2dfbc9b610f6d5f9d38eefdc15,5bf9eb2dfbc9b610f6d5f9d38eefdc15,53f9eb2dfbc9b610f6d5f9d38eefdc16,d7f9eb2dfbc9b610f6d5f9d38eefdc16,d3f9eb2dfbc9b610f6d5f9d38eefdc17,5bf9eb2dfbc9b610f6d5f9d38eefdc17,dff9eb2dfbc9b610f6d5f9d38eefdc17,57f9eb2dfbc9b610f6d5f9d38eefdc18,dbf9eb2dfbc9b610f6d5f9d38eefdc18,53f9eb2dfbc9b610f6d5f9d38eefdc19,d7f9eb2dfbc9b610f6d5f9d38eefdc19,5ff9eb2dfbc9b610f6d5f9d38eefdc19"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">612b3741fbf1621086e7f4045eefdcde</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Despesa Bruta e Liquida com Pessoal">8ff9ab2dfbc9b610f6d5f9d38eefdcc9</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>19</order>
+        <outputs_assigned/>
+        <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 18:57:08</sys_created_on>
+        <sys_id>dff9eb2dfbc9b610f6d5f9d38eefdc1a</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 19:12:26</sys_updated_on>
+        <ui_id>cc765906-5769-430a-b4ae-373f078cb540</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VXW/TMBT9K5Gf0yppkkL7NnVMQhpMYtNe2BTd+KO1cO1gO9tK1P/OdT7aiRXBgEfe4uN7r8859lFaYhpfN97dmDPn5FqT5ef7mEgdMPxuiYYtJ0tCjWbSS6PLDojJA6gmbNyCMjZiPDrTJnqnsc5bYCbSEN1AxRVEF1KDwg4mXa1gd/vqRrqRilk+cKvBIgPPLVm2P2xJhnNFAiJd0JRms3k2S5LZ2zyt5lmVzlgGHDIcqMJ8LF2NoqLLDol/qtbv6oA7b6VeD+vLYcr1CBrLAqs0iQl/8lwzjnwEKMdjsgXNwBu7OyCWA7vS6ghspPY4joTiJye/4YGzogiFgqNEyvvNw7IcDO1hcQ4ekEpDfWOHUroxknLXm8O4gEb51XOsL7iqg9S+xUOlxm6jmq3+2DtCDgPG+0OkcUiC10FpoD7oENcb8/hpZImX2LkybCpD8U7HFXj0rmp84NMSrvgWB5VbqGt0tKyteZBdM3LZTtcKF1OhzCMeGt7qFGggPkVjYXqB+HkH34KVQcUHHIPNPc0KnKRl965xHNrEyT4mbudWCpw7ikR3y69NoNhLHsSVvT+hhVpZ+zM8+YEPOvbxy5g8S0jbiqIQVZXSSQELPsnzlE8qSPPJnIriTZ7nbFGJqfPgG7ff3zVJkrHkZWD+eM7r8rOAQhRpUpzOTz4/lZ8TyXllaGa/CE24sd/MTJIk/0Pz16GRruyf+qCtO/wfZuY+BKQ/8+A1lQ6p3QTs/fgHChs7fFySPocejf0SRB2x/XegvCDnywYAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">f7ee3f85fbf1621086e7f4045eefdc51</block>
+        <comment/>
+        <connected_to>cc765906-5769-430a-b4ae-373f078cb540</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Despesa Bruta e Liquida com Pessoal">8ff9ab2dfbc9b610f6d5f9d38eefdcc9</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>21</order>
+        <outputs_assigned/>
+        <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 18:57:08</sys_created_on>
+        <sys_id>57f9eb2dfbc9b610f6d5f9d38eefdc1b</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 19:12:26</sys_updated_on>
+        <ui_id>bbf158a1-4051-412a-803b-c34c3913e71b</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">e7790d2dfb756210f6d5f9d38eefdc15</block>
+        <comment>Limpando Variables</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Despesa Bruta e Liquida com Pessoal">8ff9ab2dfbc9b610f6d5f9d38eefdcc9</flow>
+        <flow_variables_assigned>var_mes,var_ano,var_rpps</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>23</order>
+        <outputs_assigned/>
+        <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 18:57:08</sys_created_on>
+        <sys_id>dbf9eb2dfbc9b610f6d5f9d38eefdc1b</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 19:12:26</sys_updated_on>
+        <ui_id>6deb7984-2b14-4d0a-a4e7-d189ebcd7d31</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1YXWvbMBT9L3qOMyd2YidvpaVQ2FZYs76MEq6kq1ZMtlxJTpuF/vdJsfPRpBQG7eiY36IjX91zz9VBl6yIrl1VOzvTJ9bK25JMf9z0iCwD5n+viORkSkiPlFCg/7UAMy/QemABqsZmj0tbKVhe7xB2JxU32B5XgfHRDg2Zrg621sfnNOcoRgNB01E2HsRizEdiwpMcUXCWUH+gAorqWf4jQm5ZBcA6I8vbdv25DbvagNrwQCPuEXx0WHL0+QUoiz1SQMnBabPcIgaBX5ZqB9zJ0jUFFvBo5S+fL4/jOHwp0NfE2vK3y3krTQOLM3DgqdTM1WarlJYMbaOGVwFq5U73seaDy8pJXTYhDqjaRGtVF+XXRgqyPWCvE7X1JLAKpQbubSHi6k4/fNuwPJflWpV2U2kGarsC57WjtQt8VqSWswOZG+RIaFRY+IzzAqrKI/PK6IVcZ/Gki/6t8ou+UPrBswsXrw8sVNj3LYD+ucfP1vA1GBnK/eKP8cEh3fdS3td4ES5O4q8LZWkWxRQgSpM8jmAYsygTY0wZDiDLYvLUI3ZpTxVYuxPKd2h+X4cyG9lageaNxiGEGVm5E09qga0WT70X7QClfls7+Dpes4M4sEOT/4hQZ4f/zg7ZUAyT0YhGcTKcRCnPWURTzqKE0TgTo5TChL+7HUxV7T8P8bEh1tF/7Ar+6iORDg5c0dI4Jtb6gmqtEMoDY8xMjZ/OW35vbo7041pj05MWPnu5Y+/lnl0zntvnWTv+ioV4xiimAiOIJ3HkHTOI6JjyiCc4SXMcZgkTb2ihm2CUhk83bnXvywd/X7pxqxu3Ojt041Y3bnXj1r86bnFk0nqes0DqYvM/V9hY+ssr2T70oM3PUOEOe/oNuA01RzETAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">e31d41a1fbb56210f6d5f9d38eefdc62</block>
+        <comment/>
+        <connected_to>b6f98993-2de4-48f4-9d42-7ad52358075f</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Despesa Bruta e Liquida com Pessoal">8ff9ab2dfbc9b610f6d5f9d38eefdcc9</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
+        <order>6</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 18:57:08</sys_created_on>
+        <sys_id>5ff9eb2dfbc9b610f6d5f9d38eefdc16</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 19:12:25</sys_updated_on>
+        <ui_id>e0441a5d-de7b-4465-8283-c2d239ca3641</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VTWvcMBD9K0VnY2xvE9q9hQ2BQtpAE3JpgxlL8q6oLLn62M3W7H/vyJK9S5PSlObYm/RGM/Pe8wweiPau987e6QtrxVqR5ZeHjAgVMDwPREHHyZJQrZhwQqt6BDKyBelDAI9M2F7C/v6I0I2QzPBUrQeDOY4bshx+CQmGCW0BbfmelnRRnS+qoqjevS2b80VTVmwBHCosKKHhEp+uJhpvrkck+y0/t+8Dbp0Rap3u16nK7QRqwwKrssgIf3RcMY58WpCWZ6QDxcBps58Rw4HdKHkENkK5KLiDRyt+YMPq7Cw8bDlKpMmN+VonpyLcXoIDpOKp82Y2TgvKbTSH8Ra8dKtTLD646YPUmOKgkVO2lr5Tn6IjZC5w8mG8RRK8D0oD9aSjvd3o3eeJ5ZVQoyspKDUFOd/AoXeNd4HPQLjkHRaqO+h7dLTujd6KMRm5dPla4iVvpd5h0zBdOdBAPEdjIb9C/HKE78GIoOIjlsHkSLMBK2g9TiKWQ5s4OWTE7u1KgrVHkehu/d0HilFyEldHf0IKNaJ3F9h5y5OOQ/Z0sE9mehhGzttEK8dDTbVXrjwcvvqiWLDy6di/LOlVN6N8bjOe2Ym/XIfqD+sQvsULt6Eoiv/r8M/rIGwdhzhpG5u/4jY8hNGPPWevqbBI7S5gH6a/QQjscbgEPYV22nwLoo7Y4ScA0RdeVwYAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">9d99632dfbc9b610f6d5f9d38eefdc0a</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Despesa Bruta e Liquida com Pessoal">8ff9ab2dfbc9b610f6d5f9d38eefdcc9</flow>
+        <flow_variables_assigned>var_tipo_de_informacao</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>15</order>
+        <outputs_assigned/>
+        <parent_ui_id>7b5c4780-d3a5-467a-a4b8-6c282af57221</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 18:57:08</sys_created_on>
+        <sys_id>d3f9eb2dfbc9b610f6d5f9d38eefdc1a</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 19:12:26</sys_updated_on>
+        <ui_id>dc468fb6-94dd-438c-bd3a-a2ead88f8537</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VwW7bMAz9F51jI00c186taFGgwLYCa9bLUBi0RCXCZMmV5KRZkH8fFTtJ0QHbYZcdcjMfReq9RxHeMduFtgt+YW+8V0vD5t9fRkyZiNH3jinB5oyNmIEG6WsNrgqqtZXAShlpXQMcLOXXoLt4YLebjKXAPCuSKUeRZLMyT+or4Ek9Leu8uIYJlHmqAjbpoWa/p2qhfKth+/xPTfhKaeFw0NCCI8oBHZvvPqQOmoqyLCfTiZA1p5ZXY5mLmSzFtECUgmNGDTXUqP8k+m+mhG0b8z44ZZZD/Glo+nQErROR5HjE8C2gEUjsJGiPI9aAERCs254QhyAejT4DK2VCP6EG3rz6SfcV4/E4npRIijn22VNYDV73sLyDAESl46Fzw1G+soqj770SKKHT4fY91h94bIOypi8JUOtjtdVdY770zrBTg+NoCek8kcA2So3cByHyaWU3X48s75U5uDIkteWgTxEE8q7uQuSzY51afLC5R34zGjU2dGPVQNsSUrXOrtXhFiLdpEtNQSq13RC7uAsp8KgwpRFAek/43QF+Bqei3M/Uhorjdd+Meu3wIT6rvJ7kecEhoQc8SbLsukxKnmFSy4KeWJ6VkM3YfsT81t9q8P5sFE2oeu2izN62waCq9ziWcKfacEOk1jh4sX+Jm9fzuezrZV8v+/r/76tArjzxXERSD8c/bUxs6X0q/h7aWPcjKjxj+19E9tV0swcAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">6f790d2dfb756210f6d5f9d38eefdc13</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Despesa Bruta e Liquida com Pessoal">8ff9ab2dfbc9b610f6d5f9d38eefdcc9</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>16</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 18:57:08</sys_created_on>
+        <sys_id>5bf9eb2dfbc9b610f6d5f9d38eefdc1a</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 19:12:26</sys_updated_on>
+        <ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Vy27bMBD8FYNnQdAjNhrfAgcBCqQN0AS5tIGwoiibKEWqfNhxBX9Qv6M/1qVIP9C6aIL22Js4y92dHe5AA1HO9s6aB3VlDF9KMv/4lBAuPYbfA5HQMTInVMmGW65kNQIJWYNwPrBQTtrJ92+TDMGGm17A9vFcjK64aDSLHXrQWMcyTebDTyHeYGqbQZtf0pyWxawssqx4c5HXs7LOi6YEBiUWFFAzMXaJ1Ca3I5L8lrPd9h43VnO5jOfbWOV+DyrdeFZ5lhD2bJlsGPJpQRiWkA5kA1bp7QHRDJo7KY7AikuL5Yi//Gz4V2xYTKf+YstwRMpC8HCsomYBbq/BAlJx1Dodr9KV4pSZIE7DWnDCLk6xcOGu96OGFAu12Gcr4Tr5PihCDgX2T4SIM0iC9X5STz3O0d6v1ObDnuUNl6MqMSgUBXE4gUXtamc9n4EwwTosVHXQ96ho1Wu15mMycunSpcBD2gq1waZ+41KgnniKwkJ6g/j1CD+C5n6Kd1gGkwPNGgyn1bidWA5lYmSXELM1CwHGHIdEdasvzlMMI8fhqqCPT6Ga9/YKO69ZnGOX/LrsJ3s+DCPndaSV4kdF/X7nu90nl2Vlc8YAL0t6nTMuYdpO82x63hkXs3POOOOJV9qh+IMd/Fu80A1Zlv23w1/bgZsqLHGcbWz+D93w5Fc/9DxoTblBag8ee7v/Q/jAFpeL01Noo/RnP9QR2/0AAAV/dWsGAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">a7790d2dfb756210f6d5f9d38eefdc0e</block>
+        <comment>Setando o count em 0</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Despesa Bruta e Liquida com Pessoal">8ff9ab2dfbc9b610f6d5f9d38eefdcc9</flow>
+        <flow_variables_assigned>var_count1</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 18:57:08</sys_created_on>
+        <sys_id>13f9eb2dfbc9b610f6d5f9d38eefdc15</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 19:12:25</sys_updated_on>
+        <ui_id>f4620f47-34ec-411b-af22-18f36db78b5b</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+2V224aMRCG38XXsAKyHO+iRJGQ2kZqaG6qaDXYY7DqtTc+QCji3TvGy0Gp2ifgzv7Gnvnnty3vmY2hicEv7L33amXY7OdbhymTGI33TAk2Y6zDDNRIow24ittoQp/YBnRMsEdjoXyjYfd6hfhaaeGwzdmAoxQBHZvtP4WONYbjiUA57MtlORyP+j05EkM5FXcTRCl4WVJCDUvU1yL+oSvsmsSUCbiiehl8aTfPz9Q6kdT0Ogw/AhqBJEOC9thhNRgBwbrdmTgE8Wz0Bawpfbamhg+vflPFspfWSaTGOObYeVq1BmUsHyHAS3CRh+japXxtFUefLSErIOrwcM3ygucmKGvylgBLfdptdazNt+wGOyc4nQeR6EkENqnRpLxtQ76s7fb7SeWTMkdP2qC2HPR5BiE4tYwh6dmzqBafbc7ob6NRY001qxqaRplV1Ti7Ucc6JLsuVpomhdR2S/rSJSyApx4LOgIonog/HvErOJUa/kpp2no/jHqPOE/3Zyr5dMJl2R3IieyWIw5dGNwNuiPeG0/kqBR9MWCHDvM7/6DB+4tVdEbVe0yNZuNai6rsctrCnWrCPYnaYOvG4S1d/6zn9lBuD+X2UP7zUARy5UnnIoman/6WFNjRrVT8Gm2t+5U6vLDDH9MZtvelBgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">212b3741fbf1621086e7f4045eefdcdc</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Despesa Bruta e Liquida com Pessoal">8ff9ab2dfbc9b610f6d5f9d38eefdcc9</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="For Each">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
+        <order>3</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 18:57:08</sys_created_on>
+        <sys_id>5bf9eb2dfbc9b610f6d5f9d38eefdc15</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 19:12:25</sys_updated_on>
+        <ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/51TXW+jMBD8L34miI9cUvJWtapU6e4qpVVfThVa7CWxzticbZJyiP9+60Bo1cd7gh3vzs4MZmCm823n3Yu5dU4eNNv9eouY1AGj94FpaJDtmPTYOBaxE6gu1MNQpTwXKcfVTZ7Cal3V1ar6VlSrGni+3Wy3uK6LeI/cWOHGkUaFdK2C/vX/GfhRKmFxFtmCJW0eLdsNX46koAVpIeoiTQqeZ5s8S5LsZp1Wm7xKM5EDig0RKqhQUevj7O6LWd+3obSThBn4Ps/sF5QeQUSWRAzfPWqBtL4G5TBiDWgB3tie7bztCLAI4kmrfuk4Su2JjoXedyf/0sY0SUJjjWSI43S4lOWc4wTX9+Dhmai57+zcyo9GcnRTFAJr6JS/+4xNDU+tl0ZPIx4qdZ02qmv0zykJthBcPxshnSMR2AajQfrso34+mvP+qvJB6kso86EyHNRSgfdWVp0PegaGChsiKhtoW6kPZWvNSV6GSUsTHxQVca3MmZaGKxoDD8JjyhXiB8LvL/ArWBlc/CAaGh4j5np3p8C5Dy8UYvmnC0omZ7OHcoohjHArW39LC044yx3fwq2fuJdMuXQk4SVgj9d/JRz0dIMk/wydjf0dxH9g4z8Uu0oRdQMAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">6b790d2dfb756210f6d5f9d38eefdc0f</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Despesa Bruta e Liquida com Pessoal">8ff9ab2dfbc9b610f6d5f9d38eefdcc9</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>4</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 18:57:08</sys_created_on>
+        <sys_id>53f9eb2dfbc9b610f6d5f9d38eefdc16</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 19:12:25</sys_updated_on>
+        <ui_id>b6f98993-2de4-48f4-9d42-7ad52358075f</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VXWvbMBT9K0PPxsh2E9a8lZTCoFthLX3ZirmW5ERMljx9JM1M/vuubMcJa8Zatse9SUe6V+cc34M7YoJvg3cP5so5udJk8eUpIVJHDNcd0dAIsiDMaC69NLrsgYRsQIV4gEsuXatg93hE2FoqbsXYrQWLNV5Ysuh+OZIcC2oKdXbJMlbk8yKnNH9/kVXzospyXoCAAhsqqITCq8sDjXe3PZL8lp/ftRF33kq9Gve3Y5f7A2gsj6wymhDx7IXmAvnUoJxISAOagzd2NyFWAL/T6gispfaD4AaenfyBD+azWbxYC5TIRjembTk6NcD1NXhAKoH5YCfjjGTCDeZwUUNQfnmKDRfu2ih1KPFQqUO1UaHRnwZHyNTg5MMEhyREG5VG6qOO+n5ttp8PLG+k7l0ZD5VhoKYdePSuCj7y6YhQosFGZQNti46WrTUb2RcjlyZdKdyktTJbfDROVwosEk/RWEhvEL/u4UewMqr4iG2weKBZgZOs7CcR26FNguwT4nZuqcC5o0h0t/weIsVB8iiuHPyJJczK1l/hyxsx6tgnLwf7ZKa7rue8GWmluCiZCdpn+/3XQGnB6cuxf13R25JxCbN6ltHZ+WRczM8l40wm3hiH/A9xiN/ilWmglP6Pw1/HQbpyGOJRW//4P0zDUxz94c3JayYdUnuI2IfD3yAe7HC4JDuFtsZ+i6KO2P4n3OlZ2VcGAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">e3790d2dfb756210f6d5f9d38eefdc10</block>
+        <comment>Setando em 1</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Despesa Bruta e Liquida com Pessoal">8ff9ab2dfbc9b610f6d5f9d38eefdcc9</flow>
+        <flow_variables_assigned>var_count1</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>5</order>
+        <outputs_assigned/>
+        <parent_ui_id>b6f98993-2de4-48f4-9d42-7ad52358075f</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 18:57:08</sys_created_on>
+        <sys_id>d7f9eb2dfbc9b610f6d5f9d38eefdc16</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 19:12:25</sys_updated_on>
+        <ui_id>3443d07f-a146-41ae-ab16-99e00768f4e4</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+2V224aMRCG38XXsAKyHO+iRJGQ2kZqaG6qaDXYY7DqtTc+QCji3TvGy0Gp2ifgzv7Gnvnnty3vmY2hicEv7L33amXY7OdbhymTGI33TAk2Y6zDDNRIow24ittoQp/YBnRMMI2F8o2G3esV4mulhcM2ZwOOUgR0bLb/FDrWGI4nAuWwL5flcDzq9+RIDOVU3E0QpeBlSQk1LFFfi/iHrrBrElMm4IrqZfCl3Tw/U+tEUtPrMPwIaASSDAnaY4fVYAQE63Zn4hDEs9EXsKb02ZoaPrz6TRXLXlonkRrjmGPnadUalLF8hAAvwUUeomuX8rVVHH22hKyAqMPDNcsLnpugrMlbAiz1abfVsTbfshvsnOB0HkSiJxHYpEaT8rYN+bK22+8nlU/KHD1pg9py0OcZhODUMoakZ8+iWny2OaO/jUaNNdWsamgaZVZV4+xGHeuQ7LpYaZoUUtst6UuXsACeeizoCKB4Iv54xK/gVGr4K6Vp6/0w6j3iPN2fqeTTCZdldyAnsluOOHRhcDfojnhvPJGjUvTFgB06zO/8gwbvL1bRGVXvMTWajWstqrLLaQt3qgn3JGqDrRuHt3T9s57bQ7k9lNtD+c9DEciVJ52LJGp++ltSYEe3UvFrtLXuV+rwwg5/AO6oEu2lBgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">a31d41a1fbb56210f6d5f9d38eefdc63</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Despesa Bruta e Liquida com Pessoal">8ff9ab2dfbc9b610f6d5f9d38eefdcc9</flow>
+        <flow_variables_assigned>var_count1</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>7</order>
+        <outputs_assigned/>
+        <parent_ui_id>e0441a5d-de7b-4465-8283-c2d239ca3641</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 18:57:08</sys_created_on>
+        <sys_id>d3f9eb2dfbc9b610f6d5f9d38eefdc17</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 19:12:25</sys_updated_on>
+        <ui_id>26bc65d4-7174-419d-bffb-8c2a18337402</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+2V224aMRCG38XXsAKyHO+iRJGQ2kZqaG6qaDXYY7DqtTc+QCji3TvGy0Gp2ifgzv7Gnvnnty3vmY2hicEv7L33amXY7OdbhymTGI33TAk2Y6zDDNRIow24ittoQp/YBnRMcEBjoXyjYfd6hfhaaeGwzdmAoxQBHZvtP4WONYbjiUA57MtlORyP+j05EkM5FXcTRCl4WVJCDUvU1yL+oSvsmsSUCbiiehl8aTfPz9Q6kdT0Ogw/AhqBJEOC9thhNRgBwbrdmTgE8Wz0Bawpfbamhg+vflPFspfWSaTGOObYeVq1BmUsHyHAS3CRh+japXxtFUefLSErIOrwcM3ygucmKGvylgBLfdptdazNt+wGOyc4nQeR6EkENqnRpLxtQ76s7fb7SeWTMkdP2qC2HPR5BiE4tYwh6dmzqBafbc7ob6NRY001qxqaRplV1Ti7Ucc6JLsuVpomhdR2S/rSJSyApx4LOgIonog/HvErOJUa/kpp2no/jHqPOE/3Zyr5dMJl2R3IieyWIw5dGNwNuiPeG0/kqBR9MWCHDvM7/6DB+4tVdEbVe0yNZuNai6rsctrCnWrCPYnaYOvG4S1d/6zn9lBuD+X2UP7zUARy5UnnIoman/6WFNjRrVT8Gm2t+5U6vLDDH6l7/8KlBgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">eb790d2dfb756210f6d5f9d38eefdc10</block>
+        <comment/>
+        <connected_to>b6f98993-2de4-48f4-9d42-7ad52358075f</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Despesa Bruta e Liquida com Pessoal">8ff9ab2dfbc9b610f6d5f9d38eefdcc9</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>8</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 18:57:08</sys_created_on>
+        <sys_id>5bf9eb2dfbc9b610f6d5f9d38eefdc17</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 19:12:25</sys_updated_on>
+        <ui_id>9293447b-4381-4d7b-bfa2-d1373275d096</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">e3790d2dfb756210f6d5f9d38eefdc11</block>
+        <comment>Setando em 0</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Despesa Bruta e Liquida com Pessoal">8ff9ab2dfbc9b610f6d5f9d38eefdcc9</flow>
+        <flow_variables_assigned>var_count1</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>9</order>
+        <outputs_assigned/>
+        <parent_ui_id>9293447b-4381-4d7b-bfa2-d1373275d096</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 18:57:08</sys_created_on>
+        <sys_id>dff9eb2dfbc9b610f6d5f9d38eefdc17</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 19:12:25</sys_updated_on>
+        <ui_id>6352d366-f036-48f1-8001-aafb42a31f7f</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+2V224aMRCG38XXsAKyHO+iRJGQ2kZqaG6qaDXYY7DqtTc+QCji3TvGy0Gp2ifgzv7Gnvnnty3vmY2hicEv7L33amXY7OdbhymTGI33TAk2Y6zDDNRIow24ittoQp/YBnRMsEdjoXyjYfd6hfhaaeGwzdmAoxQBHZvtP4WONYbjiUA57MtlORyP+j05EkM5FXcTRCl4WVJCDUvU1yL+oSvsmsSUCbiiehl8aTfPz9Q6kdT0Ogw/AhqBJEOC9thhNRgBwbrdmTgE8Wz0Bawpfbamhg+vflPFspfWSaTGOObYeVq1BmUsHyHAS3CRh+japXxtFUefLSErIOrwcM3ygucmKGvylgBLfdptdazNt+wGOyc4nQeR6EkENqnRpLxtQ76s7fb7SeWTMkdP2qC2HPR5BiE4tYwh6dmzqBafbc7ob6NRY001qxqaRplV1Ti7Ucc6JLsuVpomhdR2S/rSJSyApx4LOgIonog/HvErOJUa/kpp2no/jHqPOE/3Zyr5dMJl2R3IieyWIw5dGNwNuiPeG0/kqBR9MWCHDvM7/6DB+4tVdEbVe0yNZuNai6rsctrCnWrCPYnaYOvG4S1d/6zn9lBuD+X2UP7zUARy5UnnIoman/6WFNjRrVT8Gm2t+5U6vLDDH9MZtvelBgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">eb790d2dfb756210f6d5f9d38eefdc11</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Despesa Bruta e Liquida com Pessoal">8ff9ab2dfbc9b610f6d5f9d38eefdcc9</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>10</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 18:57:08</sys_created_on>
+        <sys_id>57f9eb2dfbc9b610f6d5f9d38eefdc18</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 19:12:25</sys_updated_on>
+        <ui_id>cfdc988b-b11d-4942-b9bf-11cea3ddb70f</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Vy27bMBD8lYJnWdDDUm3fAgcBCqQN0AS5tIGwIqmYKEWqJOVHDf97l5IsG42LNmh768UQh9rdmdEOvCe6dU3r7IO+slY8K7L49BQQoTyGz3uioOZkQahWTDihVdEBAVmDbP0FPjJhGwm7xxNCV0Iyw4duDRiscdyQxf6HK8GwoIqgiuc0pmmSp0kUJbNpXOZpGScsBQ4pNpRQcomvLo803tx2SPBTfm7XeNw6I9TzcL4dutwfQW2YZxVHAeFbxxXjyKcCaXlAalAMnDa7ETEc2J2SJ2AllOsF17C14hsOTLLMv1hxlEgHN8ZjMTjVw9U1OEAqLXWtGY3TgnLbm8N4Ba10y3Osf+Gu8VL7EgelPFZr2dbqQ+8IGRucfZjWIgneeKWe+qCjul/pzccjyxuhOleGS6kpyPEEDr0rW+f57AmXvMZGRQ1Ng44WjdFr0RUjlzp8lngIK6k3ONRvVwjUEw/RWAhvEL/u4Ecwwqt4j22wuKdZghW06DYR26FNnBwCYnd2KcHak0h0t/jaeoq95EFc0fvjS6gRjbvCyWs+6DgELxf7bKf3+ySqGM+ns0lKOZtMs3k+KWOgkzKdl/nsLSQwz0PheN39FLrpV49vQt/2cPjcRlHK1gXfckMFFfplTP7NkNclbw5ZlcVRdjl50/xS8i5k7pVxS34RN/+tfzNtURT9j9sfx03Yog/JoK0b/hfT9uSj1c8cvabCIrUHj707/tv4ix0ul6Dn0EabL17UCTt8B0FrrJi3BgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">e3790d2dfb756210f6d5f9d38eefdc12</block>
+        <comment>Popula o ano</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Despesa Bruta e Liquida com Pessoal">8ff9ab2dfbc9b610f6d5f9d38eefdcc9</flow>
+        <flow_variables_assigned>var_exercicio</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>11</order>
+        <outputs_assigned/>
+        <parent_ui_id>cfdc988b-b11d-4942-b9bf-11cea3ddb70f</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 18:57:08</sys_created_on>
+        <sys_id>dbf9eb2dfbc9b610f6d5f9d38eefdc18</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 19:12:25</sys_updated_on>
+        <ui_id>45e87eb4-1522-46c8-928c-4e868bc4e337</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VTW/bMAz9LzrHhj+SNM6taFGgwLYCa9bLUAS0RCXCZMuV5HzMyH8fFTtJ0W2nXXbIzXwUyfeeRLhjpvVN693C3DqnVjWbf38dMVUHjL47pgSbMzZiNVRIXxuwS9yh5YorQ/AGdBvwrssSKXA6nkU5RxGNJ8U0KlPgUZkX5XR2AxkU01h5rOJjzeFA1UK5RsP+5Z+a8LXSwuJAvQFLTD1aNu8+pI5SZqIosjwTsuTUMk3kVExkIfIZohQcU2qooUT9B61/scDvmwA7b1W9GuJPQ4vnE2isCJSSEcOdx1ogcZGgHY5YBbUAb+z+jFgE8VTrC7BWte+voYKdUz9p3ixJknBSIunj2GfP4XJwtoflPXggKi33rR2O8rVRHF3vjEAJrfZ377H+wFPjlan7Eg+lPlUb3Vb1l94Qdm5wukhCWkcksAlSA/dBiHxem+3XE8sHVR9dGZLacNDnCDx5V7Y+8OlYqxYfbO6R34xGjRVNXFbQNIQsG2s26jiFSFfxSlMQS222xC48+Bh4UBjTFUD8QPj9EX4Bq4Lcz9SGisO4b7V6a/ExPKKs4JAVk5soy8s8GqdJHhVFWkQ4lWUukzydYMEOI+b27k6Dcxej6IaWb22Q2ds2GLTsPQ4l3KrG3xKpDQ5eHF7DnvV8rkt5XcrrUv4nSymQK0c8F4HU4+mfGRJ7epaKv4e2xv4ICi/Y4RdfvOIYfQcAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">eb790d2dfb756210f6d5f9d38eefdc12</block>
+        <comment/>
+        <connected_to>cfdc988b-b11d-4942-b9bf-11cea3ddb70f</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Despesa Bruta e Liquida com Pessoal">8ff9ab2dfbc9b610f6d5f9d38eefdcc9</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
+        <order>12</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 18:57:08</sys_created_on>
+        <sys_id>53f9eb2dfbc9b610f6d5f9d38eefdc19</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 19:12:26</sys_updated_on>
+        <ui_id>fefe5d28-2611-4ce7-9f3a-4b1127da7629</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VXWvbMBT9K0PPjvFH4iV5KymFQbfCWvqyFXMtyYmYLHmSnDQz+e+7sh0ntB3bWB73Yqwj3atzju/BLdGNqxtnH/SVtWKtyPLLU0CE8hi+t0RBxcmSUK2YcEKrvAMCsgXZ+A18ZcLWEvaPJ4RuhGSGD91qMFjjuCHL9sWWYFhQRlDGCxrTNMnSJIqS+TQusrSIE5YChwQbSii4xKOrI413tx0S/JKf29cet84ItR7Wt0OX+yOoDfOs4igg/NlxxTjyKUFaHpAKFAOnzX5EDAd2p+QJ2AjlesEVPFvxAy9MZjN/sOQokQ5ujMt8cKqHy2twgFQa6hozGqcF5bY3h/ESGulW51h/4K72UvsSB4U8VmvZVOpT7wgZG5x9mMYiCV57pZ76oKO83+jd5yPLG6E6V4ZNqSnIcQUOvSsa5/m0hEteYaO8grpGR/Pa6K3oipFLFa4lLsJS6h1e6qcrBOqJh2gshDeIX3fwIxjhVXzENljc0yzACpp3k4jt0CZODgGxe7uSYO1JJLqbf288xV7yIC7v/fEl1IjaXeHNWz7oOASvB/tspts2iUrGs+l8klLOJtPZIpsUMdBJkS6KbP4eElhkoXC86h65rvvR47vQtz0cvjZRlLJtXqFPrwJy6fYXTVv8VtreyNlfRiz5TcT89/3DhEVR9D9i/xwxYfM+GIO27vILJuzJx6m/c/SaCovUHjz24fiH8Rt7HC5Bz6GdNt+8qBN2+AlpliKQqwYAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">67790d2dfb756210f6d5f9d38eefdc13</block>
+        <comment>Popula o mês</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Despesa Bruta e Liquida com Pessoal">8ff9ab2dfbc9b610f6d5f9d38eefdcc9</flow>
+        <flow_variables_assigned>var_mes</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>13</order>
+        <outputs_assigned/>
+        <parent_ui_id>fefe5d28-2611-4ce7-9f3a-4b1127da7629</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 18:57:08</sys_created_on>
+        <sys_id>d7f9eb2dfbc9b610f6d5f9d38eefdc19</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 19:12:26</sys_updated_on>
+        <ui_id>509ab718-88ae-46b1-9886-0418f90aabbf</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VTW/bMAz9LzrHhhM7tpNb0aJAgW0F1qyXoTBoiUqEyR+V5KSZkf8+KnaSrj3usEtu5qMovvdEwj1rOtd2zq6aG2vVumbLny8TpmqP0XfPlGBLxiashgrpawumqNASsAXdeaTvZ5EUmCZ5EHMUQTJfpEE5BR6U8aJM8wxmsEhD5bAKjzWHA1ULZVsN++d/uoRvlBYGR9ItGOLo0LBl/yF1FJGXuUA5n8oymWfpNJKpmMuFiHNEKXhc0oUaStR/qfwk2+1bD1hnVL0e4y9j2dMJbIzwNKIJwzeHtUDqL0FbnLAKagGuMfszYhDEY60vwEbVbjC9gjerflO/PIoif1IiaeI4ZM9hMbo5wPIOHBCVjrvOjEf5plEc7eAGuQCddrfvseHAY+tUUw8lDkp9qm50V9XfBivY+YLT4xHSWSKBrZfquY9C5NOm2X0/sbxX9dGVMakbDvocgSPvys55Pj3r1OqDzQPyyWjUWFHHooK2JaRoTbNVxy5EugrXmoJQ6mZH7Px4h8C9wpCeAMJ7wu+O8DMY5eV+pWuo2Lf7UavXDh/84MQ0LiVPsiAqAYIkzqMAZhEPMpliwnEKWRaxw4TZvb3VYO3FKHqh4rXzMgfbRoOKwWNfwo1q3Q2R2uLoxeHF79bA57qC1xW8ruB/WUGBXFniufKkHk7/Q5/Y00Aq/h7aNeaXV3jBDn8AQTkBBlkHAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">2b1d41a1fbb56210f6d5f9d38eefdc65</block>
+        <comment/>
+        <connected_to>cfdc988b-b11d-4942-b9bf-11cea3ddb70f</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Despesa Bruta e Liquida com Pessoal">8ff9ab2dfbc9b610f6d5f9d38eefdcc9</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
+        <order>14</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 18:57:08</sys_created_on>
+        <sys_id>5ff9eb2dfbc9b610f6d5f9d38eefdc19</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 19:12:26</sys_updated_on>
+        <ui_id>7b5c4780-d3a5-467a-a4b8-6c282af57221</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VXW/TMBT9K8jPaZSPNrR9mzpNQhpMYtNeYIpubGe1cOxgO+1K1f/OdZymFRsCxHjjpYqPc+895+QedU9059rO2Tt9Ya14VGT56SEiQnkMn/dEQcPJklCtmHBCq7IHIrIB2fkLfGTCthJ29yeEroVkhg/dWjBY47ghy/0PV4JhQZ1AnS5oSvOsyLMkyebTtCryKs1YDhwybCih4hJfXR1pvLnukein/Nyu9bh1RqjH4Xw9dLk9gtowzypNIsKfHFeMI58apOURaUAxcNrsRsRwYDdKnoC1UC4IbuDJim84MJvN/Is1R4l0cGM8loNTAa4vwQFS6ajrzGicFpTbYA7jNXTSrc6x8MJN66WGEgeVPFZr2TXqQ3CEjA3OPkxnkQRvvVJPfdBR36719uOR5ZVQvSvDpdQU5HgCh95VnfN89oRL3mCjsoG2RUfL1uiN6IuRSxM/SjzEtdRbHOq3KwbqicdoLMRXiF/28D0Y4VW8xzZYHGhWYAUt+03EdmgTJ4eI2J1dSbD2JBLdLb92nmKQPIgrgz++hBrRugucvOGDjkP0fLHPdnq/z5Ka8WI6n+SUs8l0tigmVQp0UuWLqpi/hQwWRSwcb/qfUrdh9fg29m0Ph89dkuRsUzrRatSOMmptGqCgn+flH0971SymL2XxhRT+YQCzXwTQf/3fzF+SJP8D+NcBFLYMsRm09cNfMX8PPmxh5ug1FRap3Xns3fH/x1/scLkEPYe22nzxok7Y4TvviT8IyQYAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=8ff9ab2dfbc9b610f6d5f9d38eefdcc9"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=8ff9ab2dfbc9b610f6d5f9d38eefdcc9^sys_idNOT IN03f9ab2dfbc9b610f6d5f9d38eefdcf2,13f9ab2dfbc9b610f6d5f9d38eefdcf7,1ff9ab2dfbc9b610f6d5f9d38eefdcf3,8ff9ab2dfbc9b610f6d5f9d38eefdcee,97f9ab2dfbc9b610f6d5f9d38eefdcf5,9bf9ab2dfbc9b610f6d5f9d38eefdcf8"/>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=integer,uiTypeLabel=Integer,uiUniqueId=9fc98cf4-2f8f-46ca-a232-6c078f64d1d2</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>var_count1</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Integer">integer</internal_type>
+        <label>var_count</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Despesa Bruta e Liquida com Pessoal">8ff9ab2dfbc9b610f6d5f9d38eefdcc9</model>
+        <model_id>8ff9ab2dfbc9b610f6d5f9d38eefdcc9</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_variable_8ff9ab2dfbc9b610f6d5f9d38eefdcc9</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 18:57:07</sys_created_on>
+        <sys_id>03f9ab2dfbc9b610f6d5f9d38eefdcf2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 18:57:07</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=29ca2957-23b3-4103-9919-e6fb3f0315e9</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>var_exercicio</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>var_exercicio</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Despesa Bruta e Liquida com Pessoal">8ff9ab2dfbc9b610f6d5f9d38eefdcc9</model>
+        <model_id>8ff9ab2dfbc9b610f6d5f9d38eefdcc9</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_variable_8ff9ab2dfbc9b610f6d5f9d38eefdcc9</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 18:57:08</sys_created_on>
+        <sys_id>13f9ab2dfbc9b610f6d5f9d38eefdcf7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 18:57:08</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=6b2668ca-0fd2-4479-9c4e-bf80f6649a45</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>var_tipo_de_informacao</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>var_tipo_de_informacao</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Despesa Bruta e Liquida com Pessoal">8ff9ab2dfbc9b610f6d5f9d38eefdcc9</model>
+        <model_id>8ff9ab2dfbc9b610f6d5f9d38eefdcc9</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_variable_8ff9ab2dfbc9b610f6d5f9d38eefdcc9</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 18:57:07</sys_created_on>
+        <sys_id>1ff9ab2dfbc9b610f6d5f9d38eefdcf3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 18:57:07</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=72f2355b-0329-4d8c-b4dc-3cb07f54ba9d</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>var_ano</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>var_ano</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Despesa Bruta e Liquida com Pessoal">8ff9ab2dfbc9b610f6d5f9d38eefdcc9</model>
+        <model_id>8ff9ab2dfbc9b610f6d5f9d38eefdcc9</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_variable_8ff9ab2dfbc9b610f6d5f9d38eefdcc9</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 18:57:07</sys_created_on>
+        <sys_id>8ff9ab2dfbc9b610f6d5f9d38eefdcee</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 18:57:07</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=3576bc47-0baa-4380-a20c-7f6e4ce1a770</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>var_mes</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>var_mes</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Despesa Bruta e Liquida com Pessoal">8ff9ab2dfbc9b610f6d5f9d38eefdcc9</model>
+        <model_id>8ff9ab2dfbc9b610f6d5f9d38eefdcc9</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_variable_8ff9ab2dfbc9b610f6d5f9d38eefdcc9</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 18:57:08</sys_created_on>
+        <sys_id>97f9ab2dfbc9b610f6d5f9d38eefdcf5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 18:57:08</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=boolean,uiTypeLabel=True/False,uiUniqueId=d7cbe4fe-a090-4ba1-b6bd-d3e948e273cf</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>var_rpps</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">boolean</internal_type>
+        <label>var_rpps</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Despesa Bruta e Liquida com Pessoal">8ff9ab2dfbc9b610f6d5f9d38eefdcc9</model>
+        <model_id>8ff9ab2dfbc9b610f6d5f9d38eefdcc9</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_variable_8ff9ab2dfbc9b610f6d5f9d38eefdcc9</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 18:57:08</sys_created_on>
+        <sys_id>9bf9ab2dfbc9b610f6d5f9d38eefdcf8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 18:57:08</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>record</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_8ff9ab2dfbc9b610f6d5f9d38eefdcc9</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 18:57:07</sys_created_on>
+        <sys_id>cff9ab2dfbc9b610f6d5f9d38eefdcd9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 18:57:07</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_8ff9ab2dfbc9b610f6d5f9d38eefdcc9"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_8ff9ab2dfbc9b610f6d5f9d38eefdcc9"/>
+    <sys_hub_flow action="UPDATE">
+        <sys_id>c38d6351fb457610f6d5f9d38eefdc20</sys_id>
+        <latest_snapshot>8ff9ab2dfbc9b610f6d5f9d38eefdcc9</latest_snapshot>
+        <compiler_build>glide-yokohama-12-18-2024__patch7-hotfix2-09-18-2025_09-21-2025_1435.zip</compiler_build>
+    </sys_hub_flow>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=c38d6351fb457610f6d5f9d38eefdc20"/>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=c38d6351fb457610f6d5f9d38eefdc20^sys_idNOT IN23f9eb2dfbc9b610f6d5f9d38eefdc24"/>
+    <sys_flow_subflow_plan action="INSERT_OR_UPDATE">
+        <plan>com.snc.process_flow.engine.ProcessPlan@27aa2606</plan>
+        <plan_id display_value="Despesa Bruta e Liquida com Pessoal">c38d6351fb457610f6d5f9d38eefdc20</plan_id>
+        <snapshot>8ff9ab2dfbc9b610f6d5f9d38eefdcc9</snapshot>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-06 18:57:09</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>23f9eb2dfbc9b610f6d5f9d38eefdc24</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-06 19:12:27</sys_updated_on>
+    </sys_flow_subflow_plan>
+</record_update>
