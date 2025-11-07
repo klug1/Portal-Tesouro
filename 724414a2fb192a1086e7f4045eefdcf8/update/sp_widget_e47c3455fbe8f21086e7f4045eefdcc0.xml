@@ -327,7 +327,9 @@ $rootScope.$on('sp.contrast.toggled', function(event, data) {
   
   .mt-fiscal-banner .right-column,
   .mt-fiscal-banner.high-contrast .right-column {
-    flex-basis: 30%;
+    flex-basis: 265px;
+    flex-grow: 0;
+    flex-shrink: 0;
   }
 }
 
@@ -759,6 +761,18 @@ $rootScope.$on('sp.contrast.toggled', function(event, data) {
     display: none;
   }
   
+  .mt-fiscal-banner .card-title {
+   font-size: 3rem; 
+  }
+  
+  .mt-fiscal-banner .card-subtitle {
+   font-size: 1rem; 
+  }
+  
+  .mt-fiscal-banner .card-desc {
+   font-size: 1rem; 
+  }
+  
   .mt-fiscal-banner .main-title,
   .mt-fiscal-banner.high-contrast .main-title {
     font-size: 2.5rem;
@@ -796,9 +810,9 @@ $rootScope.$on('sp.contrast.toggled', function(event, data) {
   /* Regra específica para mover botão "Saiba mais" para baixo nos cards "-4,77 bi" e "top 2" */
   .mt-fiscal-banner .info-card .btn-more,
   .mt-fiscal-banner.high-contrast .info-card .btn-more {
-    margin-top: 20px;
+    margin-top: 50px;
     margin-bottom: 15px;
-    transform: translate(23px, 0px);
+    transform: translate(38px, 0px);
     font-size: 1rem;
   }
   
@@ -1291,14 +1305,14 @@ $rootScope.$on('sp.contrast.toggled', function(event, data) {
         <sys_created_by>pk.aba</sys_created_by>
         <sys_created_on>2025-10-11 15:09:02</sys_created_on>
         <sys_id>e47c3455fbe8f21086e7f4045eefdcc0</sys_id>
-        <sys_mod_count>296</sys_mod_count>
+        <sys_mod_count>302</sys_mod_count>
         <sys_name>Banner Sefaz v2</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_e47c3455fbe8f21086e7f4045eefdcc0</sys_update_name>
         <sys_updated_by>pk.aba</sys_updated_by>
-        <sys_updated_on>2025-10-27 21:52:22</sys_updated_on>
+        <sys_updated_on>2025-11-07 09:28:25</sys_updated_on>
         <template><![CDATA[<div class="mt-fiscal-banner" ng-controller="bannerController">
 
   <!-- Fundo e Overlay -->
