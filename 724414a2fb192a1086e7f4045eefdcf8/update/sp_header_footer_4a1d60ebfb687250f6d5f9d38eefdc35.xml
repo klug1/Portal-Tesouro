@@ -1718,14 +1718,14 @@ a:focus {
         <sys_created_by>pk.aba</sys_created_by>
         <sys_created_on>2025-10-18 13:49:26</sys_created_on>
         <sys_id>4a1d60ebfb687250f6d5f9d38eefdc35</sys_id>
-        <sys_mod_count>325</sys_mod_count>
+        <sys_mod_count>326</sys_mod_count>
         <sys_name>SATE HEADER V3</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_header_footer_4a1d60ebfb687250f6d5f9d38eefdc35</sys_update_name>
-        <sys_updated_by>pk.aba</sys_updated_by>
-        <sys_updated_on>2025-11-04 21:00:42</sys_updated_on>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-07 01:42:06</sys_updated_on>
         <template><![CDATA[<div class="header-widget">
     <div class="top-bar" ng-init="c.checkUserLoggedIn()">
         <div class="logo-container">
@@ -1887,31 +1887,31 @@ a:focus {
                 <!-- Conteúdo para Sistemas e Aplicativos -->
                 <div class="icon-grid" ng-if="activeMenu === 'sistemas'">
                     <div class="icon-item">
-                        <a href="javascript:void(0)">
+                        <a target="_blank" href="https://www.fiplan-gma.mt.gov.br/fiplangma/login">
                             <img src="x_sded9_portal_t_0.gfoMenu.png" alt="GFO">
                             <span>GFO</span>
                         </a>
                     </div>
                     <div class="icon-item">
-                        <a href="javascript:void(0)">
+                        <a target="_blank" href="https://www.fiplan-gma.mt.gov.br/fiplangma/login">
                             <img src="x_sded9_portal_t_0.gmaMenu.png" alt="GMA">
                             <span>GMA</span>
                         </a>
                     </div>
                     <div class="icon-item">
-                        <a href="javascript:void(0)">
+                        <a target="_blank" href="https://www.sefaz.mt.gov.br/sifimt/">
                             <img src="x_sded9_portal_t_0.sifiMenu.png" alt="SIFI-MT">
                             <span>SIFI-MT</span>
                         </a>
                     </div>
                     <div class="icon-item">
-                        <a href="javascript:void(0)">
+                        <a target="_blank" href="https://www.sefaz.mt.gov.br/gestaodeacessos/">
                             <img src="x_sded9_portal_t_0.gatMenu.png" alt="Gestão de Acessos">
                             <span>Gestão de Acessos</span>
                         </a>
                     </div>
                     <div class="icon-item">
-                        <a href="javascript:void(0)">
+                        <a target="_blank" href="https://conecta.sefaz.mt.gov.br/gfo">
                             <img src="x_sded9_portal_t_0.portalGfoMenu.png" alt="Portal GFO">
                             <span>Portal GFO</span>
                         </a>
@@ -1921,31 +1921,31 @@ a:focus {
                 <!-- Conteúdo para Painéis -->
                 <div class="icon-grid" ng-if="activeMenu === 'paineis'">
                     <div class="icon-item">
-                        <a href="javascript:void(0)">
+                        <a target="_blank" href="https://lookerstudio.google.com/reporting/b59a6cf3-1516-40ee-9df4-9fe68bd39a21/page/p_5cnsnj22od">
                             <img src="x_sded9_portal_t_0.convenioMenu.png" alt="Convênios">
                             <span>Convênios</span>
                         </a>
                     </div>
                     <div class="icon-item">
-                        <a href="javascript:void(0)">
+                        <a target="_blank" href="https://lookerstudio.google.com/s/j0JAh_oT_DY">
                             <img src="x_sded9_portal_t_0.lotacionogramaMenu.png" alt="Lotaciograma SATE">
                             <span>Lotaciograma SATE</span>
                         </a>
                     </div>
                     <div class="icon-item">
-                        <a href="javascript:void(0)">
+                        <a target="_blank" href="https://lookerstudio.google.com/s/jQ0wR4Tp-Mk">
                             <img src="x_sded9_portal_t_0.registroMenu.png" alt="Registro de Receitas">
                             <span>Registro de Receitas</span>
                         </a>
                     </div>
                     <div class="icon-item">
-                        <a href="javascript:void(0)">
+                        <a target="_blank" href="https://lookerstudio.google.com/s/ruicmPY3BJA">
                             <img src="x_sded9_portal_t_0.obrigacoesMenu.png" alt="Monitoramento das obrigações tributárias">
                             <span>Monitoramento das obrigações tributárias</span>
                         </a>
                     </div>
                     <div class="icon-item">
-                        <a href="javascript:void(0)">
+                        <a target="_blank" href="https://sites.google.com/sefaz.mt.gov.br/gestaosate/atualizar-a%C3%A7%C3%A3o">
                             <img src="x_sded9_portal_t_0.acoesMenu.png" alt="Ações da SATE">
                             <span>Ações da SATE</span>
                         </a>
