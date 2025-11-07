@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($scope, $window, $rootScope) {
+  /* widget controller */
+  var c = this;
+	
+	  $scope.contrastIsActive = false;
+    
+    var contrastListener = $rootScope.$on('sp.contrast.toggled', function(event, data) {
+        $scope.contrastIsActive = data.enabled; 
+        //updateImageContrast(data.enabled);
+    });
+
+    $scope.$on('$destroy', contrastListener);
+	
+	
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&amp;display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&amp;display=swap');
+
+
+// ----------------------------------------------------
+// DEFINIÇÃO DE VARIÁVEIS DE COR E ESTRUTURAIS
+// ----------------------------------------------------
+$primary-color: #4773C6; // Cor do Título Principal (data.titulo)
+$title-color: #293273; // Cor do Título do Card
+$description-color: #333333; // Cor da Descrição
+$bg-color: #ffffff; // Fundo esticado (branco)
+
+// Variáveis estruturais
+$content-max-width: 1200px;
+$card-border-radius: 8px;
+$card-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+$card-hover-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+$icon-circle-size: 45px;
+
+// ----------------------------------------------------
+// 1. CONTAINER FULL-WIDTH E BACKGROUND ESTICADO
+// ----------------------------------------------------
+.panel.dashboard-widget {
+    border: none;
+    box-shadow: none;
+    margin-bottom: 0;
+    
+    // APLICAÇÃO DA FONTE PRINCIPAL (Poppins)
+    font-family: 'Poppins', sans-serif;
+    
+    // Aplica o background branco
+    background-color: $bg-color; 
+    padding-top: 30px; 
+    padding-bottom: 30px;
+}
+
+// ----------------------------------------------------
+// 2. WRAPPER DE CONTEÚDO CENTRALIZADO E LIMITADO
+// ----------------------------------------------------
+.content-wrapper {
+    max-width: $content-max-width;
+    margin: 0 auto; 
+    padding: 0 15px; 
+}
+
+
+// ----------------------------------------------------
+// 3. ESTILOS DO TÍTULO E CARDS
+// ----------------------------------------------------
+
+.panel-heading {
+    background-color: transparent;
+    border-bottom: none;
+    padding-top: 0;
+    padding-bottom: 20px;
+    
+    .panel-title {
+        color: $primary-color; 
+        font-weight: 700; // Poppins Bold para destaque
+        font-size: 2.4rem;
+        text-align: center;
+      	font-family: "Roboto Flex", sans-serif;
+    }
+}
+
+// Configuração do Grid (Flexbox para altura igual)
+.row.cards-row {
+    display: flex;
+    flex-wrap: wrap; 
+    margin-left: -10px; 
+    margin-right: -10px;
+}
+
+.card-col {
+    display: flex; 
+    padding-left: 10px; 
+    padding-right: 10px;
+    margin-bottom: 20px; 
+}
+
+.widget-card {
+    display: flex; 
+    width: 100%; 
+    text-decoration: none !important; 
+    color: inherit;
+    padding: 0;
+}
+
+// O conteúdo do card (Centralização Horizontal e Layout Vertical)
+.card-content {
+    width: 100%;
+    height: 100%; 
+    
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
+    
+    background-color: #ffffff;
+    border-radius: $card-border-radius;
+    padding: 25px 20px;
+    box-shadow: $card-shadow;
+    border: 1px solid #f0f0f0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &amp;:hover {
+        transform: translateY(-5px); 
+        box-shadow: $card-hover-shadow;
+    }
+}
+
+// ----------------------------------------------------
+// 4. ESTILOS DA IMAGEM/ÍCONE (COM FUNDO REDONDO)
+// ----------------------------------------------------
+
+.icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $icon-circle-size;
+    height: $icon-circle-size;
+    border-radius: 50%;
+    background-color: lighten($primary-color, 40%);
+    color: $primary-color; 
+    
+    margin-bottom: 15px;
+    
+    .card-image-asset {
+        max-width: 60%; 
+        max-height: 60%;
+        height: auto;
+        display: block;
+    }
+}
+
+.card-title {
+    h4 {
+        color: $title-color; 
+        font-weight: 600; // Poppins Semi-Bold
+        margin-top: 5px; 
+        margin-bottom: 10px;
+    }
+}
+
+.card-description {
+    p {
+        color: $description-color; 
+        // Usando Roboto Flex para o corpo do texto para dar variedade e legibilidade
+        font-family: 'Poppins', sans-serif; 
+        font-weight: 400; 
+        font-size: 0.9em;
+        line-height: 1.4;
+        margin-bottom: 0;
+    }
+}
+
+
+// ----------------------------------------------------
+// ESTILOS DE ACESSIBILIDADE - MODO CONTRASTE
+// ----------------------------------------------------
+
+.contrast-active {
+    // Título Principal ({{data.titulo}})
+    .panel-heading .panel-title {
+        color: #ffffff !important; // Cor branca para o título principal
+    }
+
+    // Título do Card ({{item.titulo}})
+    .card-title h4 {
+        color: #ffffff !important; // Cor branca para o título do card
+    }
+
+    // Descrição do Card ({{item.descricao}})
+    .card-description p {
+        color: #ffffff !important; // Cor branca para a descrição
+    }
+
+    // Opcional: Ajuste o fundo do card para um contraste melhor
+    .widget-card .card-content {
+        background-color: #000000; // Por exemplo, fundo preto
+        border-color: #ffffff; // Borda branca
+        box-shadow: none; // Remove a sombra
+    }
+    
+    // Opcional: Ajuste o fundo do container principal para contraste
+    &amp;.dashboard-widget {
+        background-color: #000000 !important; // Fundo preto no widget
+      	border-radius: 0 !important;
+    }
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>navegue_finan_as_fase2</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Navegue por finanças</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    /* define os dados do lado do servidor */
+    data.titulo = "Navegue por finanças do estado";
+    
+    // Usando o nome completo do arquivo de imagem (incluindo o prefixo do escopo)
+    data.cards = [
+        {
+            titulo: "Convênios",
+            descricao: "Parcerias firmadas entre o Estado e outras entidades para repasse de recursos e realização de projetos de interesse público",
+            imagem: "x_sded9_portal_t_0.convenioNavegue.png", 
+            link: "https://lookerstudio.google.com/reporting/b59a6cf3-1516-40ee-9df4-9fe68bd39a21/page/DfRLD"
+        },
+        {
+            titulo: "Repasse do ICMS",
+            descricao: "Calendário de repasses do Imposto sobre Circulação de Mercadorias e Prestação de Serviços para os Municípios",
+            imagem: "x_sded9_portal_t_0.repasseNavegue.png",
+            link: "https://www5.sefaz.mt.gov.br/fundo-de-participacao-dos-municipios"
+        },
+        {
+            titulo: "Ajuste Fiscal",
+            descricao: "Programa de Reestruturação e Ajuste Fiscal do Estado de Mato Grosso",
+            imagem: "x_sded9_portal_t_0.ajusteFiscalNavegue.png",
+            link: "https://www5.sefaz.mt.gov.br/ajuste-fiscal"
+        },
+        {
+            titulo: "Ações Dívida MT/BIRD",
+            descricao: "Ações jurídicas que possibilitaram a reestruturação da dívida do Estado.",
+            imagem: "x_sded9_portal_t_0.acoesDividaNavegue.png",
+            link: "https://www5.sefaz.mt.gov.br/acoes-mt-bird"
+        },
+        {
+            titulo: "Indicadores Fiscais",
+            descricao: "Números da saúde financeira do estado que ajudam a planejar e acompanhar as contas públicas",
+            imagem: "x_sded9_portal_t_0.indicadoresNavegue.png",
+            link: "?id=indicadores_fiscais"
+        },
+        {
+            titulo: "Resultado Fiscal",
+            descricao: "Indica a diferença entre as receitas e despesas do Estado, revelando se houve sobra de recursos ou falta de recursos em determinado período.",
+            imagem: "x_sded9_portal_t_0.resultadoFiscalNavegue.png",
+            link: "?id=resultados_fiscais"
+        }
+    ];
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-10-19 01:55:05</sys_created_on>
+        <sys_id>a123d367fb28b250f6d5f9d38eefdc01</sys_id>
+        <sys_mod_count>33</sys_mod_count>
+        <sys_name>Navegue por finanças</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_a123d367fb28b250f6d5f9d38eefdc01</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-07 01:34:28</sys_updated_on>
+        <template><![CDATA[<div class="panel panel-default dashboard-widget" ng-class="{'contrast-active': contrastIsActive}">
+    <div class="content-wrapper">
+        <div class="panel-heading text-center">
+            <h3 class="panel-title">{{data.titulo}}</h3>
+        </div>
+        
+        <div class="panel-body">
+            <div class="row cards-row">
+                
+                <div ng-repeat="item in data.cards" 
+                    class="col-lg-4 col-md-4 col-sm-6 col-xs-12 card-col">
+                    
+                    <a target="_blank "href="{{item.link}}" class="widget-card">
+                        <div class="card-content card-content-flex">
+                            
+                            <div class="icon-container image-icon">
+                                <img ng-src="{{item.imagem}}" alt="{{item.titulo}}" class="card-image-asset">
+                            </div>
+                            
+                            <div class="card-title">
+                                <h4>{{item.titulo}}</h4>
+                            </div>
+                            <div class="card-description">
+                                <p>{{item.descricao}}</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

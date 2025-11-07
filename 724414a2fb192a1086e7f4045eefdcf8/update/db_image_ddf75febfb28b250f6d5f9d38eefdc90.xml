@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="db_image">
+    <db_image action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category/>
+        <format>png</format>
+        <height>256</height>
+        <image>53a54539fbc1f610f6d5f9d38eefdcc8</image>
+        <name>x_sded9_portal_t_0.ajusteFiscalNavegue.png</name>
+        <size_bytes>3164</size_bytes>
+        <sys_class_name>db_image</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-10-19 02:14:58</sys_created_on>
+        <sys_id>ddf75febfb28b250f6d5f9d38eefdc90</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>x_sded9_portal_t_0.ajusteFiscalNavegue.png</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>db_image_ddf75febfb28b250f6d5f9d38eefdc90</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-07 01:37:43</sys_updated_on>
+        <thumbnail/>
+        <width>256</width>
+    </db_image>
+    <sys_attachment action="INSERT_OR_UPDATE">
+        <average_image_color>#66</average_image_color>
+        <chunk_size_bytes>700000</chunk_size_bytes>
+        <compressed>true</compressed>
+        <content_type>image/png</content_type>
+        <encryption_context/>
+        <file_name>image</file_name>
+        <hash>7ffda4a9b6743615b76adab5ad726e413be90146b585fd9320866ddbab99d2f2</hash>
+        <image_height>256</image_height>
+        <image_width>256</image_width>
+        <size_bytes>3164</size_bytes>
+        <size_compressed>2742</size_compressed>
+        <state>available</state>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-07 01:37:43</sys_created_on>
+        <sys_id>53a54539fbc1f610f6d5f9d38eefdcc8</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-07 01:37:43</sys_updated_on>
+        <table_name>ZZ_YYdb_image</table_name>
+        <table_sys_id>ddf75febfb28b250f6d5f9d38eefdc90</table_sys_id>
+    </sys_attachment>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>H4sIAAAAAAAA/w==</data>
+        <length>16</length>
+        <position>0</position>
+        <sys_attachment display_value="image" sys_id="53a54539fbc1f610f6d5f9d38eefdcc8">53a54539fbc1f610f6d5f9d38eefdcc8</sys_attachment>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-07 01:37:43</sys_created_on>
+        <sys_id>93a54539fbc1f610f6d5f9d38eefdcc8</sys_id>
+    </sys_attachment_doc>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>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</data>
+        <length>3644</length>
+        <position>1</position>
+        <sys_attachment display_value="image" sys_id="53a54539fbc1f610f6d5f9d38eefdcc8">53a54539fbc1f610f6d5f9d38eefdcc8</sys_attachment>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-07 01:37:43</sys_created_on>
+        <sys_id>17a54539fbc1f610f6d5f9d38eefdcc8</sys_id>
+    </sys_attachment_doc>
+</record_update>
