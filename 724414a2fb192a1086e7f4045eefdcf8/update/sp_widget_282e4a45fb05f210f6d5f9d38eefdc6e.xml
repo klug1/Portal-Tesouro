@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, spUtil, $rootScope, $timeout) {
+    var c = this;
+
+    // Ação principal: Logar o acesso e notificar o outro widget
+    function logAndNotify() {
+        
+        // 1. Obtém o Page ID e Identificador
+        var pageId = $rootScope.page.id || 'page_id_desconhecida';
+        var isLoggedIn = c.data.isLoggedIn;
+        var anonymousId = null;
+
+        if (!isLoggedIn) {
+            anonymousId = localStorage.getItem('sn_portal_anonymous_id');
+            if (!anonymousId) {
+                anonymousId = 'anon-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9); 
+                localStorage.setItem('sn_portal_anonymous_id', anonymousId);
+            }
+        }
+        
+        // 2. Dispara a chamada AJAX para registrar
+        c.server.get({
+            action: 'log_access',
+            isLoggedIn: isLoggedIn, // Indica o tipo de usuário
+            anonId: anonymousId, 
+            contextPageId: pageId 
+        }).then(function(response) {
+            if (response.data.success) {
+                // 3. EMITE O SINAL: Avisa ao Receptor para atualizar os dados
+                $rootScope.$broadcast('portal_access_logged', {
+                    updated: true 
+                });
+            }
+        });
+    }
+
+    // Usamos $timeout para garantir que o $rootScope.page.id esteja preenchido
+    $timeout(logAndNotify, 100); 
+
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>acesso_portal</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Acessos Portal</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    // Adicionado: Variável para determinar o intervalo de tempo mínimo entre registros (em segundos)
+    var ACCESS_THROTTLE_SECONDS = 30; // Ex: 30 segundos
+
+    data.isLoggedIn = gs.isLoggedIn();
+    
+    // --- FUNÇÕES AUXILIARES ---
+    var TABLE_NAME = 'x_sded9_portal_t_0_acessos_do_portal';
+    
+    // --- 1. LÓGICA DE REGISTRO (Executada APENAS se houver input) ---
+    if (input && input.action === 'log_access') {
+        var currentIdentifier = null;
+        var queryField = null;
+        
+        if (input.isLoggedIn) {
+            currentIdentifier = gs.getUserID();
+            queryField = 'u_usuario';
+        } else if (input.anonId) {
+            currentIdentifier = input.anonId;
+            queryField = 'u_anonimo_id';
+        }
+
+        if (currentIdentifier) {
+            var pageId = input.contextPageId || 'page_id_desconhecido';
+            var now = new GlideDateTime();
+
+            // --- LÓGICA DE VERIFICAÇÃO DE DUPLICAÇÃO ---
+            var grCheck = new GlideRecord(TABLE_NAME);
+            grCheck.addQuery(queryField, currentIdentifier); // Busca pelo identificador
+            grCheck.addQuery('u_pagina_url', pageId); // E pela URL
+            grCheck.orderByDesc('u_hora_do_acesso'); // Pega o mais recente
+            grCheck.setLimit(1);
+            grCheck.query();
+
+            if (grCheck.next()) {
+                // 1. Pega o último acesso como um objeto GlideDateTime
+                var lastAccessDT = new GlideDateTime(grCheck.getValue('u_hora_do_acesso'));
+                
+                // 2. Cria uma cópia do tempo atual para fazer a subtração
+                var nowCopy = new GlideDateTime(now);
+                
+                // 3. Usa o método subtract() na cópia do tempo atual, subtraindo o último acesso
+                var duration = nowCopy.subtract(lastAccessDT);
+                
+                // 4. Obtém o resultado em segundos (corrigido para o método GlideDuration)
+                var diffSeconds = duration.getNumericValue() / 1000; // Retorna milissegundos, divide por 1000 para segundos
+
+                // Se o último acesso foi DENTRO do intervalo de 30 segundos, não registra
+                if (diffSeconds < ACCESS_THROTTLE_SECONDS) {
+                    data.success = false; // Sinaliza que não houve registro (por throttle)
+                    return; // Sai da função sem inserir o registro
+                }
+            }
+            // --- FIM DA LÓGICA DE VERIFICAÇÃO ---
+					
+					var session = gs.getSession();
+					var addr = session.getClientIP();
+					gs.info(addr);
+
+            // Se passou na verificação (ou não havia registro anterior), insere o novo
+            var gr = new GlideRecord(TABLE_NAME);
+            gr.initialize();
+            gr.setValue(queryField, currentIdentifier);
+            gr.setValue('u_hora_do_acesso', now); // Usa o tempo atual
+            gr.setValue('u_pagina_url', pageId);
+						gr.setValue('u_ip', addr);
+            gr.insert();
+            
+            data.success = true; // Registro bem-sucedido
+        } else {
+            data.success = false;
+        }
+    }
+    
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-04 22:59:10</sys_created_on>
+        <sys_id>282e4a45fb05f210f6d5f9d38eefdc6e</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_name>Acessos Portal</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_282e4a45fb05f210f6d5f9d38eefdc6e</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-07 03:49:55</sys_updated_on>
+        <template><![CDATA[<div class="">
+   
+
+</div>]]></template>
+    </sp_widget>
+</record_update>
