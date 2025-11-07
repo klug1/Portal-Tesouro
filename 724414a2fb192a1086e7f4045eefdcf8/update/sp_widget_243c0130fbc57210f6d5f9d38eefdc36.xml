@@ -117,7 +117,6 @@ $ranking-title-color: #021770;     // Cor do título
     }
 }
 
-
 /*----------------------------*/
 /* --- Estilos Completos para o Card de Informações --- */
 
@@ -202,21 +201,21 @@ $ranking-title-color: #021770;     // Cor do título
         <docs/>
         <field_list/>
         <has_preview>true</has_preview>
-        <id>resultado_primario_fase_2</id>
+        <id>ranking_geral_grafico_fase2</id>
         <internal>false</internal>
         <link><![CDATA[function link(scope, element, attrs, controller) {
   
 }]]></link>
-        <name>Resultado Primario Fase 2</name>
+        <name>Ranking Geral CLP</name>
         <option_schema/>
         <public>true</public>
         <roles/>
         <script><![CDATA[(function() {
-   
     data.rankingData = []; // Array para armazenar os dados do gráfico
 
-    // 1. Filtro para o tipo de ranking específico
-    var rankingTypeSysId = gs.getProperty('x_sded9_portal_t_0.resultado_primario') ||'bce805b8fb857210f6d5f9d38eefdcb3';
+    // Filtro para o tipo de ranking específico
+    var rankingType = 'fce84d38fb857210f6d5f9d38eefdc5e';
+	  var rankingTypeSysId = 'fce84d38fb857210f6d5f9d38eefdc5e';
     
 
 
@@ -232,73 +231,67 @@ $ranking-title-color: #021770;     // Cor do título
         data.atualizacao = 'Atualização não disponível.';
     }
     // =========================================================
-
-
+	
+	
     var gr = new GlideRecord('x_sded9_portal_t_0_dados_do_ranking');
-    gr.addQuery('u_tipo_de_ranking', rankingTypeSysId);
-    
-  
-    
+    gr.addQuery('u_tipo_de_ranking', rankingType);
     gr.query();
 
     while (gr.next()) {
-        
-         var estadoNome = gr.u_estado.getDisplayValue();
-        var posicaoStr = gr.u_posicao.toString();
-        var posicaoNum = parseInt(posicaoStr.replace(/\D/g, ''), 10);
+        var estadoNome = gr.u_estado.getDisplayValue();
         var porcentagemStr = gr.u_porcentagem.toString(); 
         var cleanedStr = porcentagemStr.replace(/,/g, '.'); 
-        var porcentagemParaBarra = parseFloat(cleanedStr); 
+        var porcentagemParaOrdenar = parseFloat(cleanedStr); 
         
-        if (isNaN(porcentagemParaBarra)) {
-             porcentagemParaBarra = 0;
+        // fallback caso a conversão falhe
+        if (isNaN(porcentagemParaOrdenar)) {
+             porcentagemParaOrdenar = 0;
         }
 
         data.rankingData.push({
             nome: estadoNome,
-            posicao_str: posicaoStr, 
-            posicao_num: posicaoNum, 
-            porcentagem_num: porcentagemParaBarra
+            porcentagem_num: porcentagemParaOrdenar, 
+            porcentagem_str: porcentagemStr 
         });
     }
 
+    // Ordena o array usando o campo NUMÉRICO criado para garantir a ordem correta.
     data.rankingData.sort(function(a, b) {
-        return a.posicao_num - b.posicao_num; 
-    });
+        // Ordem decrescente (maior para o menor)
+        return b.porcentagem_num - a.porcentagem_num; 
+    });
 
 })();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
-        <sys_created_on>2025-11-06 01:03:44</sys_created_on>
-        <sys_id>bb44fb9dfb89761086e7f4045eefdca1</sys_id>
-        <sys_mod_count>2</sys_mod_count>
-        <sys_name>Resultado Primario Fase 2</sys_name>
+        <sys_created_on>2025-11-03 23:32:50</sys_created_on>
+        <sys_id>243c0130fbc57210f6d5f9d38eefdc36</sys_id>
+        <sys_mod_count>39</sys_mod_count>
+        <sys_name>Ranking Geral CLP</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_update_name>sp_widget_bb44fb9dfb89761086e7f4045eefdca1</sys_update_name>
+        <sys_update_name>sp_widget_243c0130fbc57210f6d5f9d38eefdc36</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-11-07 02:52:43</sys_updated_on>
+        <sys_updated_on>2025-11-07 02:52:57</sys_updated_on>
         <template><![CDATA[<div class="panel panel-default">
     <div class="panel-heading">
-        <h3 class="panel-title">Resultado Primário</h3>
+        <h3 class="panel-title">RANKING GERAL CLP</h3>
     </div>
     <div class="panel-body">
         
         <div ng-repeat="item in c.data.rankingData" class="ranking-bar-container">
             
-            <div class="ranking-label">
-                <span class="ranking-position-label">{{item.posicao_str}}°</span>
-                {{item.nome}}
-            </div>
+            <div class="ranking-label">{{item.nome}}</div>
             
             <div class="ranking-bar-wrapper">
                 <div class="ranking-bar" ng-style="{ 'width': item.porcentagem_num + '%' }">
                 </div>
             </div>
             
-            </div>
+            <span class="ranking-value">{{item.porcentagem_str}}%</span> 
+        </div>
         
     </div>
 </div>
