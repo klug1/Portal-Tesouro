@@ -3,7 +3,8 @@
         <category>custom</category>
         <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
         <controller_as>c</controller_as>
-        <css>/* Título da caixa */
+        <css>
+/* Título da caixa */
 .info-title {
     background-color: #e0e0e0;
     color: #000;
@@ -28,6 +29,7 @@
     line-height: 1.4;
     max-width: 100%;
     box-sizing: border-box;
+  	margin-bottom: 2rem;
 }
 
 .info-box p {
@@ -150,14 +152,14 @@
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-06-25 00:23:28</sys_created_on>
         <sys_id>d3066d1afb92e650f6d5f9d38eefdc56</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_name>novo info limite despesa</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_d3066d1afb92e650f6d5f9d38eefdc56</sys_update_name>
         <sys_updated_by>sued.barreto@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-10-22 13:52:13</sys_updated_on>
+        <sys_updated_on>2025-11-11 13:52:09</sys_updated_on>
         <template><![CDATA[<style>
  @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 </style>
