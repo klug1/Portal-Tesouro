@@ -45,14 +45,14 @@
         <map_to_field>false</map_to_field>
         <mask_use_confirmation>false</mask_use_confirmation>
         <mask_use_encryption>false</mask_use_encryption>
-        <name>v_receita_corrente_liquidos_sel_7406a_fibo_de_medidas</name>
+        <name>v_limite_de_alerta_executivo</name>
         <not_available_conversation>false</not_available_conversation>
-        <order>1100</order>
+        <order>2200</order>
         <post_insert_script/>
         <price_if_checked>0</price_if_checked>
         <pricing_implications>false</pricing_implications>
         <published_ref/>
-        <question_text>Net Current Revenue, SEL: 7406A FIBO DE MEDIDAS</question_text>
+        <question_text>Limite de Alerta - Executivo</question_text>
         <read_only>false</read_only>
         <read_roles/>
         <read_script/>
@@ -79,17 +79,17 @@
         <sp_widget/>
         <summary_macro/>
         <sys_class_name>item_option_new</sys_class_name>
-        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
-        <sys_created_on>2025-05-13 12:26:50</sys_created_on>
-        <sys_id>682fa26cfb69e25086e7f4045eefdc7b</sys_id>
-        <sys_mod_count>5</sys_mod_count>
-        <sys_name>Net Current Revenue, SEL: 7406A FIBO DE MEDIDAS</sys_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-11 04:19:53</sys_created_on>
+        <sys_id>b6019a8ffb4df21086e7f4045eefdcf5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Limite de Alerta - Executivo</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_update_name>item_option_new_682fa26cfb69e25086e7f4045eefdc7b</sys_update_name>
+        <sys_update_name>item_option_new_b6019a8ffb4df21086e7f4045eefdcf5</sys_update_name>
         <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-11-11 04:16:08</sys_updated_on>
+        <sys_updated_on>2025-11-11 04:19:53</sys_updated_on>
         <table/>
         <tooltip/>
         <topic_block/>
@@ -109,126 +109,74 @@
         <visible_summary>true</visible_summary>
         <write_roles/>
     </item_option_new>
-    <sys_translated_text action="delete_multiple" query="documentkey=682fa26cfb69e25086e7f4045eefdc7b"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=b6019a8ffb4df21086e7f4045eefdcf5"/>
     <sys_translated_text action="INSERT_OR_UPDATE">
-        <documentkey>682fa26cfb69e25086e7f4045eefdc7b</documentkey>
-        <fieldname>conversational_label</fieldname>
-        <language>es</language>
-        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
-        <sys_created_on>2025-05-20 20:49:41</sys_created_on>
-        <sys_id>2e75e40ffb212a10f6d5f9d38eefdc1b</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-20 20:49:41</sys_updated_on>
-        <tablename>item_option_new</tablename>
-        <value/>
-    </sys_translated_text>
-    <sys_translated_text action="INSERT_OR_UPDATE">
-        <documentkey>682fa26cfb69e25086e7f4045eefdc7b</documentkey>
+        <documentkey>b6019a8ffb4df21086e7f4045eefdcf5</documentkey>
         <fieldname>conversational_label</fieldname>
         <language>pb</language>
-        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
-        <sys_created_on>2025-05-20 20:50:39</sys_created_on>
-        <sys_id>6cb5e00ffb212a10f6d5f9d38eefdcd4</sys_id>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-11 04:19:54</sys_created_on>
+        <sys_id>8e211e43fb8df21086e7f4045eefdca7</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-20 20:50:39</sys_updated_on>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-11 04:19:54</sys_updated_on>
         <tablename>item_option_new</tablename>
         <value/>
     </sys_translated_text>
     <sys_translated_text action="INSERT_OR_UPDATE">
-        <documentkey>682fa26cfb69e25086e7f4045eefdc7b</documentkey>
-        <fieldname>help_text</fieldname>
-        <language>es</language>
-        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
-        <sys_created_on>2025-05-20 20:49:41</sys_created_on>
-        <sys_id>a275e40ffb212a10f6d5f9d38eefdc1b</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-20 20:49:41</sys_updated_on>
-        <tablename>item_option_new</tablename>
-        <value/>
-    </sys_translated_text>
-    <sys_translated_text action="INSERT_OR_UPDATE">
-        <documentkey>682fa26cfb69e25086e7f4045eefdc7b</documentkey>
+        <documentkey>b6019a8ffb4df21086e7f4045eefdcf5</documentkey>
         <fieldname>help_text</fieldname>
         <language>pb</language>
-        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
-        <sys_created_on>2025-05-20 20:50:39</sys_created_on>
-        <sys_id>e0b5e00ffb212a10f6d5f9d38eefdcd4</sys_id>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-11 04:19:54</sys_created_on>
+        <sys_id>4e211e43fb8df21086e7f4045eefdca5</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-20 20:50:39</sys_updated_on>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-11 04:19:54</sys_updated_on>
         <tablename>item_option_new</tablename>
         <value/>
     </sys_translated_text>
     <sys_translated_text action="INSERT_OR_UPDATE">
-        <documentkey>682fa26cfb69e25086e7f4045eefdc7b</documentkey>
-        <fieldname>instructions</fieldname>
-        <language>es</language>
-        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
-        <sys_created_on>2025-05-20 20:49:42</sys_created_on>
-        <sys_id>f275e40ffb212a10f6d5f9d38eefdc1e</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-20 20:49:42</sys_updated_on>
-        <tablename>item_option_new</tablename>
-        <value/>
-    </sys_translated_text>
-    <sys_translated_text action="INSERT_OR_UPDATE">
-        <documentkey>682fa26cfb69e25086e7f4045eefdc7b</documentkey>
+        <documentkey>b6019a8ffb4df21086e7f4045eefdcf5</documentkey>
         <fieldname>instructions</fieldname>
         <language>pb</language>
-        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
-        <sys_created_on>2025-05-20 20:50:39</sys_created_on>
-        <sys_id>74b5e00ffb212a10f6d5f9d38eefdcd7</sys_id>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-11 04:19:54</sys_created_on>
+        <sys_id>06211e43fb8df21086e7f4045eefdca9</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-20 20:50:39</sys_updated_on>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-11 04:19:54</sys_updated_on>
         <tablename>item_option_new</tablename>
         <value/>
     </sys_translated_text>
     <sys_translated_text action="INSERT_OR_UPDATE">
-        <documentkey>682fa26cfb69e25086e7f4045eefdc7b</documentkey>
-        <fieldname>rich_text</fieldname>
-        <language>es</language>
-        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
-        <sys_created_on>2025-05-20 20:49:42</sys_created_on>
-        <sys_id>7a75e40ffb212a10f6d5f9d38eefdc1d</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-20 20:49:42</sys_updated_on>
-        <tablename>item_option_new</tablename>
-        <value/>
-    </sys_translated_text>
-    <sys_translated_text action="INSERT_OR_UPDATE">
-        <documentkey>682fa26cfb69e25086e7f4045eefdc7b</documentkey>
+        <documentkey>b6019a8ffb4df21086e7f4045eefdcf5</documentkey>
         <fieldname>rich_text</fieldname>
         <language>pb</language>
-        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
-        <sys_created_on>2025-05-20 20:50:39</sys_created_on>
-        <sys_id>e8b5e00ffb212a10f6d5f9d38eefdcd6</sys_id>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-11 04:19:54</sys_created_on>
+        <sys_id>8a211e43fb8df21086e7f4045eefdca8</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-20 20:50:39</sys_updated_on>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-11 04:19:54</sys_updated_on>
         <tablename>item_option_new</tablename>
         <value/>
     </sys_translated_text>
-    <fx_price action="delete_multiple" query="id=682fa26cfb69e25086e7f4045eefdc7b"/>
+    <fx_price action="delete_multiple" query="id=b6019a8ffb4df21086e7f4045eefdcf5"/>
     <fx_price action="INSERT_OR_UPDATE">
         <amount>0</amount>
         <currency display_value="BRL">BRL</currency>
         <field>price_if_checked</field>
-        <id>682fa26cfb69e25086e7f4045eefdc7b</id>
+        <id>b6019a8ffb4df21086e7f4045eefdcf5</id>
         <parent/>
         <reference_amount>0</reference_amount>
         <reference_currency display_value="BRL">BRL</reference_currency>
-        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
-        <sys_created_on>2025-05-13 12:26:50</sys_created_on>
-        <sys_id>984f2a2cfb69e25086e7f4045eefdca7</sys_id>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-11 04:19:54</sys_created_on>
+        <sys_id>46211e43fb8df21086e7f4045eefdca6</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-13 12:26:50</sys_updated_on>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-11 04:19:54</sys_updated_on>
         <table>item_option_new</table>
         <type>calculated</type>
     </fx_price>
@@ -236,16 +184,16 @@
         <amount>0</amount>
         <currency display_value="BRL">BRL</currency>
         <field>rec_price_if_checked</field>
-        <id>682fa26cfb69e25086e7f4045eefdc7b</id>
+        <id>b6019a8ffb4df21086e7f4045eefdcf5</id>
         <parent/>
         <reference_amount>0</reference_amount>
         <reference_currency display_value="BRL">BRL</reference_currency>
-        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
-        <sys_created_on>2025-05-13 12:26:50</sys_created_on>
-        <sys_id>944f2a2cfb69e25086e7f4045eefdca7</sys_id>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-11 04:19:54</sys_created_on>
+        <sys_id>c6211e43fb8df21086e7f4045eefdca5</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-13 12:26:50</sys_updated_on>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-11 04:19:54</sys_updated_on>
         <table>item_option_new</table>
         <type>calculated</type>
     </fx_price>
