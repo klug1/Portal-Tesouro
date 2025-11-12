@@ -1,9 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller=function() {
-  /* widget controller */
-  var c = this;
+        <client_script><![CDATA[api.controller=function($scope, $rootScope, spUtil) {
+    /* widget controller */
+    var c = this;
+    
+    // Certifique-se que c.data é inicializado, especialmente c.data.anoSelecionado
+    if (!c.data.anoSelecionado) {
+        c.data.anoSelecionado = '';
+    }
+
+    // Escuta o evento 'anoSelecionado' enviado pelo outro widget
+    var listener = $rootScope.$on('anoSelecionado', function(event, ano) {
+        c.data.anoSelecionado = ano; // Armazena o ano ('2025' ou '' para Todos)
+        
+        // Chama o servidor (Server Script) para recarregar os dados
+        c.server.update().then(function() {
+            console.log('Taxa de Investimento atualizada para o ano:', ano || 'Todos');
+        });
+    });
+
+    // Limpa o listener quando o escopo do widget é destruído para evitar vazamento de memória
+    $scope.$on('$destroy', function() {
+        if (listener) {
+            listener();
+        }
+    });
 };]]></client_script>
         <controller_as>c</controller_as>
         <css>@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&amp;display=swap');
@@ -126,7 +148,7 @@ $ranking-title-color: #021770;     // Cor do título
     border: 1px solid #C8C5C5; 
     border-radius: 4px;
     margin-bottom: 20px; 
-    border-top: none; 
+    border-top: none;
 }
 
 /* 2. Cabeçalho do Card (Contém o Título) */
@@ -166,7 +188,6 @@ $ranking-title-color: #021770;     // Cor do título
 
 /* 5. Parágrafos dentro do corpo */
 .ranking-info-body p {
-    margin-bottom: 5px; 
     line-height: 100%; 
 }
 
@@ -195,7 +216,8 @@ $ranking-title-color: #021770;     // Cor do título
     vertical-align: bottom; 
     
     font-style: normal;
-}</css>
+}
+</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -209,62 +231,94 @@ $ranking-title-color: #021770;     // Cor do título
 }]]></link>
         <name>Taxa de Investimento</name>
         <option_schema/>
-        <public>false</public>
+        <public>true</public>
         <roles/>
         <script><![CDATA[(function() {
-   
-    data.rankingData = []; // Array para armazenar os dados do gráfico
+    
+    data.rankingData = []; 
 
-    // 1. Filtro para o tipo de ranking específico
-    var rankingTypeSysId = 'f8e84d38fb857210f6d5f9d38eefdc5f';
-    
+    // Inicialização segura do filtro de ano
+    var anoFiltro = (input && input.anoSelecionado) ? input.anoSelecionado : ''; 
+    data.anoSelecionado = anoFiltro;
+
+    // Filtro para o tipo de ranking específico
+    var rankingTypeSysId = 'f8e84d38fb857210f6d5f9d38eefdc5f';
+    
+
+    var grTipo = new GlideRecord('x_sded9_portal_t_0_tipos_de_ranking_area'); 
+    if (grTipo.get(rankingTypeSysId)) {
+        data.descricao = grTipo.u_descricao.toString();
+        data.fonte = grTipo.u_fonte.getDisplayValue();
+        data.atualizacao = grTipo.u_atualizacao.toString();
+    } else {
+        data.descricao = 'Descrição não disponível.';
+        data.fonte = 'Fonte não disponível.';
+        data.atualizacao = 'Atualização não disponível.';
+    }
+    // =========================================================
 
 
-    var grTipo = new GlideRecord('x_sded9_portal_t_0_tipos_de_ranking_area'); 
-    if (grTipo.get(rankingTypeSysId)) {
-        data.descricao = grTipo.u_descricao.toString();
-        data.fonte = grTipo.u_fonte.getDisplayValue();
-        data.atualizacao = grTipo.u_atualizacao.toString();
-    } else {
-        // Fallback caso o registro não seja encontrado
-        data.descricao = 'Descrição não disponível.';
-        data.fonte = 'Fonte não disponível.';
-        data.atualizacao = 'Atualização não disponível.';
-    }
-    // =========================================================
+    var gr = new GlideRecord('x_sded9_portal_t_0_dados_do_ranking');
+    gr.addQuery('u_tipo_de_ranking', rankingTypeSysId);
+    
+    // Aplica o filtro de ano
+    if (anoFiltro) {
+        gr.addQuery('u_ano', anoFiltro);
+    }
+    
+    // Adiciona ordenação por ano se for "Todos"
+    if (!anoFiltro) {
+        gr.orderByDesc('u_ano');
+    }
+    
+    gr.query();
 
+    while (gr.next()) {
+        
+        var estadoNome = gr.u_estado.getDisplayValue();
+        var posicaoStr = gr.u_posicao.toString();
+        
+        // ]]>🚨<![CDATA[ CORREÇÃO AQUI: Remove ".0" e o símbolo de grau antes de armazenar
+        // Primeiro remove o ".0" (se existir)
+        var cleanedPosicaoStr = posicaoStr.replace(/\.0/g, ''); 
+        
+        // Opcional: Se o símbolo de grau vier da base, remova-o também
+        cleanedPosicaoStr = cleanedPosicaoStr.replace(/°/g, '');
+        
+        // Adiciona o símbolo de grau apenas no final, garantindo que não tenha .0
+        cleanedPosicaoStr = cleanedPosicaoStr + '°'; 
+        
+        
+        // Garante que a posição é um número para ordenação
+        var posicaoNum = parseInt(cleanedPosicaoStr.replace(/\D/g, ''), 10);
+        var porcentagemStr = gr.u_porcentagem.toString(); 
+        var cleanedStr = porcentagemStr.replace(/,/g, '.'); 
+        var porcentagemParaBarra = parseFloat(cleanedStr); 
+        
+        var anoDoRegistro = gr.u_ano.toString();
+        
+        if (isNaN(porcentagemParaBarra)) {
+             porcentagemParaBarra = 0;
+        }
 
-    var gr = new GlideRecord('x_sded9_portal_t_0_dados_do_ranking');
-    gr.addQuery('u_tipo_de_ranking', rankingTypeSysId);
-    
-  
-    
-    gr.query();
+        data.rankingData.push({
+            nome: estadoNome,
+            // Usa a string limpa e corrigida
+            posicao_str: cleanedPosicaoStr, 
+            posicao_num: posicaoNum, 
+            porcentagem_num: porcentagemParaBarra,
+            ano_registro: anoDoRegistro
+        });
+    }
 
-    while (gr.next()) {
-        
-         var estadoNome = gr.u_estado.getDisplayValue();
-        var posicaoStr = gr.u_posicao.toString();
-        var posicaoNum = parseInt(posicaoStr.replace(/\D/g, ''), 10);
-        var porcentagemStr = gr.u_porcentagem.toString(); 
-        var cleanedStr = porcentagemStr.replace(/,/g, '.'); 
-        var porcentagemParaBarra = parseFloat(cleanedStr); 
-        
-        if (isNaN(porcentagemParaBarra)) {
-             porcentagemParaBarra = 0;
-        }
+    // Ordenação do maior para o menor (27º, 26º... 1º)
+    data.rankingData.sort(function(a, b) {
+        return b.posicao_num - a.posicao_num; 
+    });
 
-        data.rankingData.push({
-            nome: estadoNome,
-            posicao_str: posicaoStr, 
-            posicao_num: posicaoNum, 
-            porcentagem_num: porcentagemParaBarra
-        });
-    }
-
-    data.rankingData.sort(function(a, b) {
-        return b.posicao_num - a.posicao_num; 
-    });
+    // ]]>🚨<![CDATA[ ADICIONE ESTA LINHA: Define a variável de verificação de dados vazios.
+    // 'anoFiltro' garante que a mensagem só aparece se um ano específico foi selecionado.
+    data.noData = data.rankingData.length === 0 && anoFiltro;
 
 })();]]></script>
         <servicenow>false</servicenow>
@@ -272,25 +326,33 @@ $ranking-title-color: #021770;     // Cor do título
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-11-04 00:05:52</sys_created_on>
         <sys_id>20e319b8fbc57210f6d5f9d38eefdc1a</sys_id>
-        <sys_mod_count>15</sys_mod_count>
+        <sys_mod_count>37</sys_mod_count>
         <sys_name>Taxa de Investimento</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_20e319b8fbc57210f6d5f9d38eefdc1a</sys_update_name>
-        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-11-04 00:32:52</sys_updated_on>
+        <sys_updated_by>pk.aba</sys_updated_by>
+        <sys_updated_on>2025-11-12 21:06:00</sys_updated_on>
         <template><![CDATA[<div class="panel panel-default">
     <div class="panel-heading">
         <h3 class="panel-title">Taxa de Investimento</h3>
     </div>
     <div class="panel-body">
+      
+        <div ng-if="c.data.noData" class="alert alert-info">
+            Não há registro para o ano selecionado ({{c.data.anoSelecionado}}).
+        </div>
         
         <div ng-repeat="item in c.data.rankingData" class="ranking-bar-container">
             
             <div class="ranking-label">
-                <span class="ranking-position-label">{{item.posicao_str}}°</span>
+                <span class="ranking-position-label">{{item.posicao_str}}</span>
                 {{item.nome}}
+                
+                <span ng-if="!c.data.anoSelecionado" class="ranking-ano-registro">
+                   ({{item.ano_registro}})
+                </span>
             </div>
             
             <div class="ranking-bar-wrapper">
@@ -298,10 +360,11 @@ $ranking-title-color: #021770;     // Cor do título
                 </div>
             </div>
             
-            </div>
+        </div>
         
     </div>
 </div>
+
 
 <div class="ranking-info-card">
     <div class="ranking-info-heading">
@@ -321,6 +384,23 @@ $ranking-title-color: #021770;     // Cor do título
             <span class="ranking-info-content">{{c.data.atualizacao}}</span>
         </p>
     </div>
-</div>]]></template>
+</div>
+
+<style>
+/* Estilo opcional para diferenciar o ano */
+.ranking-ano-registro {
+    font-size: 0.85em;
+    color: #6c757d; 
+    margin-left: 5px;
+}
+  .alert-info {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #b8daff;
+    border-radius: 4px;
+    color: #0c5460;
+    background-color: #d1ecf1;
+}
+</style>]]></template>
     </sp_widget>
 </record_update>
