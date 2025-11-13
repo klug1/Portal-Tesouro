@@ -1,9 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller=function() {
-  /* widget controller */
-  var c = this;
+        <client_script><![CDATA[api.controller=function($scope, $rootScope, spUtil) {
+    /* widget controller */
+    var c = this;
+
+    // Escuta o evento 'anoSelecionado' enviado pelo outro widget
+    var listener = $rootScope.$on('anoSelecionado', function(event, ano) {
+        c.data.anoSelecionado = ano; // Armazena o ano no objeto data do cliente
+        
+        // Chama o servidor (Server Script) para recarregar os dados
+        c.server.update().then(function() {
+            // Opcional: Adicionar lógica após a atualização, se necessário.
+            console.log('Ranking atualizado para o ano:', ano || 'Todos');
+        });
+    });
+
+    // Limpa o listener quando o escopo do widget é destruído para evitar vazamento de memória
+    $scope.$on('$destroy', function() {
+        listener();
+    });
 };]]></client_script>
         <controller_as>c</controller_as>
         <css>@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&amp;display=swap');
@@ -194,7 +210,29 @@ $ranking-title-color: #021770;     // Cor do título
     vertical-align: bottom; 
     
     font-style: normal;
-}</css>
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -211,30 +249,42 @@ $ranking-title-color: #021770;     // Cor do título
         <public>true</public>
         <roles/>
         <script><![CDATA[(function() {
-    data.rankingData = []; // Array para armazenar os dados do gráfico
-
-    // Filtro para o tipo de ranking específico
-    var rankingType = 'fce84d38fb857210f6d5f9d38eefdc5e';
-	  var rankingTypeSysId = 'fce84d38fb857210f6d5f9d38eefdc5e';
+    data.rankingData = []; 
     
+    // Inicialização segura do filtro de ano, protegendo contra 'input' indefinido
+    var anoFiltro = (input && input.anoSelecionado) ? input.anoSelecionado : ''; 
 
-
+    // O ano selecionado é sempre enviado de volta para o cliente para uso condicional no HTML
+    data.anoSelecionado = anoFiltro;
+		
+		var p = gs.getProperty('x_sded9_portal_t_0.ranking_clp');    // Filtro para o tipo de ranking específico
+    var rankingType = p;
+    var rankingTypeSysId = p;
+    
+    // Busca informações de descrição/fonte
     var grTipo = new GlideRecord('x_sded9_portal_t_0_tipos_de_ranking_area'); 
     if (grTipo.get(rankingTypeSysId)) {
         data.descricao = grTipo.u_descricao.toString();
         data.fonte = grTipo.u_fonte.getDisplayValue();
         data.atualizacao = grTipo.u_atualizacao.toString();
     } else {
-        // Fallback caso o registro não seja encontrado
         data.descricao = 'Descrição não disponível.';
         data.fonte = 'Fonte não disponível.';
         data.atualizacao = 'Atualização não disponível.';
     }
     // =========================================================
-	
-	
+    
+    
     var gr = new GlideRecord('x_sded9_portal_t_0_dados_do_ranking');
     gr.addQuery('u_tipo_de_ranking', rankingType);
+    
+    // Aplica o filtro de ano: só filtra se anoFiltro não for string vazia ("")
+    if (anoFiltro) {
+        gr.addQuery('u_ano', anoFiltro);
+    }
+    
+    // Adiciona ordenação para garantir que os resultados do "Todos" fiquem ordenados por ano
+    gr.orderByDesc('u_ano');
     gr.query();
 
     while (gr.next()) {
@@ -242,6 +292,9 @@ $ranking-title-color: #021770;     // Cor do título
         var porcentagemStr = gr.u_porcentagem.toString(); 
         var cleanedStr = porcentagemStr.replace(/,/g, '.'); 
         var porcentagemParaOrdenar = parseFloat(cleanedStr); 
+        
+        // Obtém o ano do registro para exibição condicional no cliente
+        var anoDoRegistro = gr.u_ano.toString(); 
         
         // fallback caso a conversão falhe
         if (isNaN(porcentagemParaOrdenar)) {
@@ -251,39 +304,53 @@ $ranking-title-color: #021770;     // Cor do título
         data.rankingData.push({
             nome: estadoNome,
             porcentagem_num: porcentagemParaOrdenar, 
-            porcentagem_str: porcentagemStr 
+            porcentagem_str: porcentagemStr,
+            // Variável usada no HTML para exibir o ano
+            ano_registro: anoDoRegistro
         });
     }
 
-    // Ordena o array usando o campo NUMÉRICO criado para garantir a ordem correta.
+    // Ordena o array usando o campo NUMÉRICO criado para garantir a ordem correta do ranking.
     data.rankingData.sort(function(a, b) {
         // Ordem decrescente (maior para o menor)
         return b.porcentagem_num - a.porcentagem_num; 
     });
 
+	data.noData = data.rankingData.length === 0 && anoFiltro;
+	
 })();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-11-03 23:32:50</sys_created_on>
         <sys_id>243c0130fbc57210f6d5f9d38eefdc36</sys_id>
-        <sys_mod_count>39</sys_mod_count>
+        <sys_mod_count>56</sys_mod_count>
         <sys_name>Ranking Geral CLP</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_243c0130fbc57210f6d5f9d38eefdc36</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-11-07 02:52:57</sys_updated_on>
+        <sys_updated_on>2025-11-13 22:06:59</sys_updated_on>
         <template><![CDATA[<div class="panel panel-default">
     <div class="panel-heading">
         <h3 class="panel-title">RANKING GERAL CLP</h3>
     </div>
     <div class="panel-body">
-        
+      
+        <div ng-if="c.data.noData" class="alert alert-info">
+            Não há registro para o ano selecionado ({{c.data.anoSelecionado}}).
+        </div>
+      
         <div ng-repeat="item in c.data.rankingData" class="ranking-bar-container">
             
-            <div class="ranking-label">{{item.nome}}</div>
+            <div class="ranking-label">
+                {{item.nome}}
+                
+                <span ng-if="!c.data.anoSelecionado" class="ranking-ano-registro">
+                   ({{item.ano_registro}})
+                </span>
+            </div>
             
             <div class="ranking-bar-wrapper">
                 <div class="ranking-bar" ng-style="{ 'width': item.porcentagem_num + '%' }">
@@ -314,6 +381,26 @@ $ranking-title-color: #021770;     // Cor do título
             <span class="ranking-info-content">{{c.data.atualizacao}}</span>
         </p>
     </div>
-</div>]]></template>
+</div>
+
+<style>
+/* Estilo opcional para diferenciar o ano */
+.ranking-ano-registro {
+    font-size: 0.85em;
+    color: #6c757d; 
+    margin-left: 5px;
+}
+  
+  .alert-info {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #b8daff;
+    border-radius: 4px;
+    color: #0c5460;
+    background-color: #d1ecf1;
+}
+</style>
+
+]]></template>
     </sp_widget>
 </record_update>
