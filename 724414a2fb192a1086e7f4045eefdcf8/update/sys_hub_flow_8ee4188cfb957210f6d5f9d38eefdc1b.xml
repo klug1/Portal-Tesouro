@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=226000,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>27000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <display_name_after_preview/>
+        <flow_priority>MEDIUM</flow_priority>
+        <generation_source/>
+        <internal_name>delete_records__cache_portal</internal_name>
+        <label_cache>[{"name":"6917489e-b653-450c-a056-b18376a18ea8.item","label":"2 - For Each➛Acessos do Portal Record","reference":"x_sded9_portal_t_0_acessos_do_portal","reference_display":"Acessos do Portal","type":"reference","base_type":"reference","usedInstances":{"9b151759-39fa-4834-b88f-9b9c8a6ba374":["record"]},"attributes":{"pills_draggable_inside_block":"true","pills_draggable_outside_block":"false"}},{"name":"2cf1acf4-e5a0-4a9d-b7d7-b5c9cf0e6076.Records","label":"1 - Look Up Records➛Acessos do Portal Records","reference":"x_sded9_portal_t_0_acessos_do_portal","reference_display":"Acessos do Portal","type":"records","base_type":"records","usedInstances":{"6917489e-b653-450c-a056-b18376a18ea8":["items"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"6917489e-b653-450c-a056-b18376a18ea8.item.number","label":"2 - For Each➛Acessos do Portal Record➛Number","reference":"","reference_display":"Number","type":"string","base_type":"string","parent_table_name":"x_sded9_portal_t_0_acessos_do_portal","column_name":"number","usedInstances":{"c793fb5a-6446-4077-a675-f14d85099121":["log_message"]}}]</label_cache>
+        <master_snapshot>5dc51000fbd57210f6d5f9d38eefdcd5</master_snapshot>
+        <master_snapshot_digest/>
+        <name>Delete Records - Cache Portal Anonimo</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id>69c51000fbd57210f6d5f9d38eefdcf2</remote_trigger_id>
+        <run_as>system</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>published</status>
+        <substatus/>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-13 21:50:58</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>8ee4188cfb957210f6d5f9d38eefdc1b</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Delete Records - Cache Portal Anonimo</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sys_hub_flow_8ee4188cfb957210f6d5f9d38eefdc1b</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-13 21:54:45</sys_updated_on>
+        <type>flow</type>
+        <updation_source/>
+        <version>2</version>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=8ee4188cfb957210f6d5f9d38eefdc1b"/>
+    <sys_variable_value action="delete_multiple" query="document_key=8ee4188cfb957210f6d5f9d38eefdc1b"/>
+    <sys_flow_timer_trigger action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <day_of_month>1</day_of_month>
+        <day_of_week/>
+        <name/>
+        <published_version/>
+        <run_period/>
+        <run_start>2025-11-13 21:54:45</run_start>
+        <sys_class_name>sys_flow_timer_trigger</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-13 21:54:45</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>69c51000fbd57210f6d5f9d38eefdcf2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-13 21:54:45</sys_updated_on>
+        <time>1970-01-01 04:00:00</time>
+        <timer_type>11</timer_type>
+        <trigger_definition/>
+    </sys_flow_timer_trigger>
+    <sys_flow_trigger_auto_script action="delete_multiple" query="name=Trigger:69c51000fbd57210f6d5f9d38eefdcf2^sys_idNOT INedc51000fbd57210f6d5f9d38eefdcf2"/>
+    <sys_flow_trigger_auto_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <business_calendar/>
+        <condition/>
+        <conditional>false</conditional>
+        <entered_time/>
+        <max_drift/>
+        <name>Trigger:69c51000fbd57210f6d5f9d38eefdcf2</name>
+        <offset/>
+        <offset_type>0</offset_type>
+        <run_as display_value="Patrick Almeida">beed153efb99aa10f6d5f9d38eefdcb9</run_as>
+        <run_as_tz/>
+        <run_dayofmonth>1</run_dayofmonth>
+        <run_dayofweek/>
+        <run_period/>
+        <run_start>2025-11-13 21:54:45</run_start>
+        <run_time>1970-01-01 04:00:00</run_time>
+        <run_type>daily</run_type>
+        <script><![CDATA[sn_flow_trigger.FlowTriggerAPI.fireTimerTrigger('69c51000fbd57210f6d5f9d38eefdcf2');]]></script>
+        <sys_class_name>sys_flow_trigger_auto_script</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-13 21:54:45</sys_created_on>
+        <sys_id>edc51000fbd57210f6d5f9d38eefdcf2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-13 21:54:45</sys_updated_on>
+        <time_zone/>
+        <trigger display_value="">69c51000fbd57210f6d5f9d38eefdcf2</trigger>
+        <upgrade_safe>true</upgrade_safe>
+    </sys_flow_trigger_auto_script>
+    <sys_trigger_runner_mapping action="delete_multiple" query="identifier=8ee4188cfb957210f6d5f9d38eefdc1b"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=8ee4188cfb957210f6d5f9d38eefdc1b"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=8ee4188cfb957210f6d5f9d38eefdc1b^sys_idNOT IN82e4188cfb957210f6d5f9d38eefdc1e"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>8ee4188cfb957210f6d5f9d38eefdc1b</id>
+        <name>Delete Records - Cache Portal</name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-13 21:50:58</sys_created_on>
+        <sys_id>82e4188cfb957210f6d5f9d38eefdc1e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-13 21:50:58</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=82e4188cfb957210f6d5f9d38eefdc1e"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=8ee4188cfb957210f6d5f9d38eefdc1b"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=8ee4188cfb957210f6d5f9d38eefdc1b"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=8ee4188cfb957210f6d5f9d38eefdc1b"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=8ee4188cfb957210f6d5f9d38eefdc1b^sys_idNOT INb385d8ccfb957210f6d5f9d38eefdc09"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Delete Records - Cache Portal Anonimo">8ee4188cfb957210f6d5f9d38eefdc1b</flow>
+        <generation_source/>
+        <name>Daily</name>
+        <published_version/>
+        <remote_sys_id/>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-13 21:53:49</sys_created_on>
+        <sys_id>b385d8ccfb957210f6d5f9d38eefdc09</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-13 21:54:44</sys_updated_on>
+        <trigger_definition display_value="Daily">89142dc0c32222002841b63b12d3ae8a</trigger_definition>
+        <trigger_inputs>H4sIAAAAAAAA/21SXU/cMBD8K5Wfj8i5o4XmDQmdxEOLVE68IBRt7M2dpfVHHecgIP4768ScWlrLLzvrnZ0Z+eFVEHRIohE7Y1GshHEJowPaTQEZ3ZPR2KalZ8FpSD5OoklxxJXoo7c7tIEg8eMeaGDQR41RNLWUK3EEGvFuGm40czGDA5tZC9/c5bL+fiHPZM33i5TNfLmrDoZ0RCeah8eVCBB5NmXm108tk8k3oM9RK6k2az5Sri/P6+7bpqvXegOIX5nwk9O/taT/+P3TCT4ndBr1yeY/YUQEfetoOr04cJaLbQvPg3nBQhWxRxavcGmeylabgaOcFlgdvFF4G5LxbkESdFRmlKfRup+LA6419jBSui+BMjIOzIcha84qiqT+7uCffn0s3Bo3GyxN8groVEFK0XRjwiEnjoSWiVoLIRi3b0P0RzMPsxZbzbFVPfknXjqYvatAZeEVRwTVlvHrGb6HaLKLH0zDw2+z+/b3mPcuPoridjHND0ooW4NUPtGgognpihccP37d2+M7vozADsoCAAA=</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>daily</trigger_type>
+        <updation_source/>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=8ee4188cfb957210f6d5f9d38eefdc1b^sys_idNOT IN7f85d8ccfb957210f6d5f9d38eefdc0b,7385d8ccfb957210f6d5f9d38eefdc0a,7785d8ccfb957210f6d5f9d38eefdc0b"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Delete Record">c3e09916c31332002841b63b12d3aedf</action_type>
+        <action_type_parent display_value="Delete Record">a8f274c8c3c232002841b63b12d3aee9</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Delete Records - Cache Portal Anonimo">8ee4188cfb957210f6d5f9d38eefdc1b</flow>
+        <generation_source/>
+        <order>4</order>
+        <parent_ui_id>6917489e-b653-450c-a056-b18376a18ea8</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-13 21:53:50</sys_created_on>
+        <sys_id>7f85d8ccfb957210f6d5f9d38eefdc0b</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-13 21:53:50</sys_updated_on>
+        <ui_id>9b151759-39fa-4834-b88f-9b9c8a6ba374</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/41Ry27CMBD8lcpniBICIXCrhCr10FZqJS6oijb2Biw5tus4FIr4967zQBWnHne8Mzsz3l2YFGzN4hLj1SrJeJqk6SyOZ/k8KbO0TGYiBcSETZiGGmnTITdO0HwE1QbgcslWyXKer3BaZot0Ol/EfArxIpuWSZ4uM0hyhDySHuvrlXhCNlbBeTvQCeEHqYRDzda7zwmz4OiSR8fWl7snf7ZYKChREXFjeFuj9g/PG9L4b4qR/T7GuI8VbtAsBvVCBpCegp94wvDkUQukaxWoBiesBi3AG3dma+9aAhyCeNPqfNs4SO37oDWcGvlD8vM47FVIyfhQwm0shoLGbozk+Ga9NLpHPJRqLM6ottavfYJQLVbQKv+n2rYhPbTBcjDRO6w+Dub7fbz3JHUXbnCrDAd1m8B7J8vWYxN+AxV2ndRgrdT7wjpzlB2ZrNTRXtEQVcp8081G7nUEPPiOqCCIngjfdPAWnAwhXkiGyNcufPHVhrt9jMFw0WXuAhfdP9Fqw520/pGEjzjYvH7+Ag4UTqDHAgAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=7f85d8ccfb957210f6d5f9d38eefdc0b"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Records">43400a1587003300663ca1bb36cb0b4b</action_type>
+        <action_type_parent display_value="Look Up Records">d1c56ec50b30030085c083eb37673a50</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Delete Records - Cache Portal Anonimo">8ee4188cfb957210f6d5f9d38eefdc1b</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-13 21:53:49</sys_created_on>
+        <sys_id>7385d8ccfb957210f6d5f9d38eefdc0a</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-13 21:54:44</sys_updated_on>
+        <ui_id>2cf1acf4-e5a0-4a9d-b7d7-b5c9cf0e6076</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/9VX207jMBD9lSjPVZXQUti+IVgkHrgIENIKIcuJ3dZa187aTi8g/n3HsZ2WNkDpdnfh0eO5nJk5M3Hun2JG4n58OOgmCU73Dw+SpNNJkl6vk+M0yzq9PEuybha3YoHHFDQNzjiF4wTz0p5nSBNKvqFCKoM5MihBOKdaS42I9FJQJ0wXHM/vvNWRU4mIjK6CSj5inCgq4v79QysusIKAhqq4/7RyZeYFRRxnlIOnW4snurDgWhvn8sJ4PTcbIByRcK6lIhZL0orpzFABOcf9AeaatuIxFgQbqea1RFFMLgVfCEZMGPAYW+WZZo/g/jCxegMKaeXU3dVH5MvlxPlIspxeFoZJ4SQOqLuUvByLC5eALTQd4JKbUGiQlBr80cJitiA8osHNSE6vQ8BTJqr0/CWXObQknLAximWlodr2gnI6BkdojIuCiSEqlJywyhiwjNtDDof2gMspBNVsKNo4t8DbUCLcPgX5SSW+w4rZLM7BDRgDIMah28gVXctSVVWZoJyXurpQWGjnK36uaoV+lRaly9rnh1yJQEHnihXmCAwm1Kfy3NqI7vvJghK5FITZmHqJ8yUqdQn45dnN9/Or2x/r/G7Q2I7ex8vxN8XeaNyUkCf6C5knerozogPc/0R1o8rPx/T3uOsSfofA+cGbJNhf9FvDekWucksMXmfs1gw9ZZSTFwt4A3DB+NKSLcrmr+H1BB3YGCubeO/Lb+JPSU8ARJCrNxOciepDCEB3w9vk7eX1bYUHVfsXrK1kWOfr7MWRkdHj9lu26mvg7wYgg+ENIIpuHcoG4GG/Bveeup2dUbez9zHqAnHun2r0ddUaChzeO7Z1Qf/R6uNVfWDXkkH6/FBT/3i7mOlHY+7ZmCuz2fnQcC4zy92cvEKwHb+mXhm21t+c7hGY+njIDSuaMjKkZhE9aBFpppj/bLr37KpnqErvj19m3Tdnr5cu5gxmACmqoVXLT7MUHhvr6yFtO/F22+FMGDqsircpxGB5jmfRdY2xEbhfEayO4Tnd3eH761983kLhG6cn1P9L/IpsS+GH38/pVepNDwAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=7385d8ccfb957210f6d5f9d38eefdc0a"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Log">5bc1bcc6531003003bf1d9109ec587d4</action_type>
+        <action_type_parent display_value="Log">0e0ae8c2531003003bf1d9109ec587c8</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Delete Records - Cache Portal Anonimo">8ee4188cfb957210f6d5f9d38eefdc1b</flow>
+        <generation_source/>
+        <order>3</order>
+        <parent_ui_id>6917489e-b653-450c-a056-b18376a18ea8</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-13 21:53:50</sys_created_on>
+        <sys_id>7785d8ccfb957210f6d5f9d38eefdc0b</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-13 21:54:44</sys_updated_on>
+        <ui_id>c793fb5a-6446-4077-a675-f14d85099121</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/91UTWvjMBD9K0Hn2NhJnK9babawsG1hC9lDKUaWx4lAlryynDQb8t93ZMtO0u2WZOlpQZd5mhm9Nx963hOekjmJEhYmjI2jYRgEQzxJFqazMJgBi6aTdEL6RNIc0FOoVSxgAwKhDRWVxbZUSzRTXhaC7pYO/YEolyu8YGsuUg2SzJ9f+qSgGlMZ0GS+f3NldgXEgiaYfU5u14ozwPBLGbaB3xy9dxjbBxBibWqlU8sj6BN4NSBTwKcyKkrok5zKlBqldx2igaaPUhyBNZcGsxHr/FryX5h6FFi/DFASg+auM2NXoAZuOJQofN8x97zeg5LQ87yT6p6BLeFD/xj1VWbqxJ83pvMMTz2PLXnTOuc8OHX+orXSJ67gbOc7PGDDUshoJcztpVr+wutDBYNrFAyvUDCyCpo2PBaGKxxCEtohoYlwZJkSVS4fmkEind7lOVGHLs7n34mqSmw8FHa47LS40cme1mr7vZ2MOy5rRu5SKEZFZ1FjNE8qY+u7JyAgx0RxTosCCxEXWm14HYxkc38l0PAzobb4aMlX0qfMSvNxlql/h/iihpdUcyvzHtNg8KEe0/hnZd9thDrGcV0W61AyzQtzg+k24MjZYtfbORh+tJ0QnW9jDmVJV3DSmQXKMrhwqqehXPHSaDXv7ffjWTgZTWfgJZjZG0UB82gQjb0knA4nYxpOgU59biD3ZZUnoA+HP7+hz0z9bx/ZE/avHtlLS9UG3nd1erd47jMr2/TtZn3aZzaIout+s26Nrtqi/31JXn4Dz7t7AWYHAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=7785d8ccfb957210f6d5f9d38eefdc0b"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=8ee4188cfb957210f6d5f9d38eefdc1b"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=8ee4188cfb957210f6d5f9d38eefdc1b^sys_idNOT IN3f85d8ccfb957210f6d5f9d38eefdc0a"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">3b85d8ccfb957210f6d5f9d38eefdc0a</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Delete Records - Cache Portal Anonimo">8ee4188cfb957210f6d5f9d38eefdc1b</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="For Each">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-13 21:53:49</sys_created_on>
+        <sys_id>3f85d8ccfb957210f6d5f9d38eefdc0a</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-13 21:54:44</sys_updated_on>
+        <ui_id>6917489e-b653-450c-a056-b18376a18ea8</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/51SwW7bMAz9F50Tw3ZSZ86twFCgh61AV/QyFAYtUYkwWdIkOaln+N9HxU469LiTzUfy8T2RI7N9dH0ML/Y+BHUwbP/zbcWUSRj9j8xAh2zPVMQusBU7ge5TPI4llwVwuV3jHeTrLdRi3e7Ebt3e8ZrLHKt8V2XPyK0XYZqoVajgNAyv/8/Aj0oLj4tIB560RfRsP35KxcFho6FFTYMWBupXgsKiFrIu8ppvympT5nn5ZVu01aYtSrEBFBXVXTsfF9Of3iCxU+hvvPRJKsp8xfA9ohFIgyTogCvWgREQrR/YPvqeAI8gnowebhVHZSLRsVT7HtQf4i7yPBVKJEcc5+QtbJaHnGF+tIrjk4vKmhmJ0Oqlh1vdd+b7LD+tACX0Ol5XQEgfiA9d0pxULJLkj6M9P18HPihz8bckteWgbxHE6FXbRwxpDaixI6KmA+eUOTTO25O6NJOWLjtoCjKp7ZmGpnPLgCfhGT0RZA+Ef73Ar+BVcvGNaKh5urhvfvdp7uxjUdzMpqkgcK9cvCe6Ey7iprd0rzNTmA9DIFeBBr4k7PF65Skx0JIV/xc6W/8rSf3Apr8m/0MNLwMAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=8ee4188cfb957210f6d5f9d38eefdc1b"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=8ee4188cfb957210f6d5f9d38eefdc1b"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_8ee4188cfb957210f6d5f9d38eefdc1b"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_8ee4188cfb957210f6d5f9d38eefdc1b"/>
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>27000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <flow_priority>MEDIUM</flow_priority>
+        <internal_name>delete_records__cache_portal</internal_name>
+        <label_cache>[{"name":"6917489e-b653-450c-a056-b18376a18ea8.item","label":"2 - For Each➛Acessos do Portal Record","reference":"x_sded9_portal_t_0_acessos_do_portal","reference_display":"Acessos do Portal","type":"reference","base_type":"reference","usedInstances":{"9b151759-39fa-4834-b88f-9b9c8a6ba374":["record"]},"attributes":{"pills_draggable_inside_block":"true","pills_draggable_outside_block":"false"}},{"name":"2cf1acf4-e5a0-4a9d-b7d7-b5c9cf0e6076.Records","label":"1 - Look Up Records➛Acessos do Portal Records","reference":"x_sded9_portal_t_0_acessos_do_portal","reference_display":"Acessos do Portal","type":"records","base_type":"records","usedInstances":{"6917489e-b653-450c-a056-b18376a18ea8":["items"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"6917489e-b653-450c-a056-b18376a18ea8.item.number","label":"2 - For Each➛Acessos do Portal Record➛Number","reference":"","reference_display":"Number","type":"string","base_type":"string","parent_table_name":"x_sded9_portal_t_0_acessos_do_portal","column_name":"number","usedInstances":{"c793fb5a-6446-4077-a675-f14d85099121":["log_message"]}}]</label_cache>
+        <master>true</master>
+        <name>Delete Records - Cache Portal Anonimo</name>
+        <natlang/>
+        <outputs/>
+        <parent_flow display_value="Delete Records - Cache Portal Anonimo">8ee4188cfb957210f6d5f9d38eefdc1b</parent_flow>
+        <remote_trigger_id/>
+        <run_as>system</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-13 21:54:45</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>5dc51000fbd57210f6d5f9d38eefdcd5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-13 21:54:45</sys_updated_on>
+        <type>flow</type>
+        <version>2</version>
+    </sys_hub_flow_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=5dc51000fbd57210f6d5f9d38eefdcd5"/>
+    <sys_variable_value action="delete_multiple" query="document_key=5dc51000fbd57210f6d5f9d38eefdcd5"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=5dc51000fbd57210f6d5f9d38eefdcd5"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=5dc51000fbd57210f6d5f9d38eefdcd5^sys_idNOT IN1dc51000fbd57210f6d5f9d38eefdcd6"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>5dc51000fbd57210f6d5f9d38eefdcd5</id>
+        <name>Delete Records - Cache Portal Anonimo</name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-13 21:54:45</sys_created_on>
+        <sys_id>1dc51000fbd57210f6d5f9d38eefdcd6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-13 21:54:45</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=1dc51000fbd57210f6d5f9d38eefdcd6"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=5dc51000fbd57210f6d5f9d38eefdcd5"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=5dc51000fbd57210f6d5f9d38eefdcd5"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=5dc51000fbd57210f6d5f9d38eefdcd5"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=5dc51000fbd57210f6d5f9d38eefdcd5^sys_idNOT IN15c51000fbd57210f6d5f9d38eefdcea"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Delete Records - Cache Portal Anonimo">5dc51000fbd57210f6d5f9d38eefdcd5</flow>
+        <generation_source/>
+        <name>Daily</name>
+        <published_version/>
+        <remote_sys_id/>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-13 21:54:45</sys_created_on>
+        <sys_id>15c51000fbd57210f6d5f9d38eefdcea</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-13 21:54:45</sys_updated_on>
+        <trigger_definition display_value="Daily">89142dc0c32222002841b63b12d3ae8a</trigger_definition>
+        <trigger_inputs>H4sIAAAAAAAA/21SXU/cMBD8K5Wfj8i5o4XmDQmdxEOLVE68IBRt7M2dpfVHHecgIP4768ScWlrLLzvrnZ0Z+eFVEHRIohE7Y1GshHEJowPaTQEZ3ZPR2KalZ8FpSD5OoklxxJXoo7c7tIEg8eMeaGDQR41RNLWUK3EEGvFuGm40czGDA5tZC9/c5bL+fiHPZM33i5TNfLmrDoZ0RCeah8eVCBB5NmXm108tk8k3oM9RK6k2az5Sri/P6+7bpqvXegOIX5nwk9O/taT/+P3TCT4ndBr1yeY/YUQEfetoOr04cJaLbQvPg3nBQhWxRxavcGmeylabgaOcFlgdvFF4G5LxbkESdFRmlKfRup+LA6419jBSui+BMjIOzIcha84qiqT+7uCffn0s3Bo3GyxN8groVEFK0XRjwiEnjoSWiVoLIRi3b0P0RzMPsxZbzbFVPfknXjqYvatAZeEVRwTVlvHrGb6HaLKLH0zDw2+z+/b3mPcuPoridjHND0ooW4NUPtGgognpihccP37d2+M7vozADsoCAAA=</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>daily</trigger_type>
+        <updation_source/>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=5dc51000fbd57210f6d5f9d38eefdcd5^sys_idNOT IN1dc51000fbd57210f6d5f9d38eefdcdc,51c51000fbd57210f6d5f9d38eefdcdd,55c51000fbd57210f6d5f9d38eefdcdd"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Records">43400a1587003300663ca1bb36cb0b4b</action_type>
+        <action_type_parent display_value="Look Up Records">d1c56ec50b30030085c083eb37673a50</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>43400a1587003300663ca1bb36cb0b4b</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Delete Records - Cache Portal Anonimo">5dc51000fbd57210f6d5f9d38eefdcd5</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-13 21:54:45</sys_created_on>
+        <sys_id>1dc51000fbd57210f6d5f9d38eefdcdc</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-13 21:54:45</sys_updated_on>
+        <ui_id>2cf1acf4-e5a0-4a9d-b7d7-b5c9cf0e6076</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VX22rjMBD9FaPnEOwmTS9vpd1CoTeasrCUImRLTsQqlleSc2nIv+/YkhyTuN0EUmjZR41mpDMz54zllyXiFJ2j07QfhiQ6Pj0Jw14vDAeDXkKiOO4NkjiM+zHqoIxMGHgaEgsGyykRRbmeY00ZPcO5VIYIbHCIScK0lhpT6azgTrnOBVn8dFEX1iWgMnj0LsmYC6pYhs5fXjsoJwouNEyh8+XG1q6IBYmZANdnB3kjA7PI6yWu9qztthkW3NsNqWgJJewgNjcsg5TReUqEZh00IRklRqpFbVGM0IdMrA1jnhk4EZXOc83f4N7TsPRLGWSVMLtXL7GrljWnV8SQoVFFYgrlXJOx5FBCWw/KUlIIc9m0WYeH3HCZ2RCbto2Wophk97YcqD7ANwcshQYQLC8TLZG7NNLhWM6ePMprnlU1cZtCJtBGvyLGKB4XpsSzREywCRyEJyTPeTbCuZJTXgUDlkl3JGDRTYWcwaWaj7IuSUrgXagr6V6D/aoy/ySKl1ncwTEQDIC4AIZg20ItC1WVcooTUehqQ5FM27PQqoP0Ql8KovU6cyg5/lOUuG0dXMbYFq0MSRTPzQUcMWUuuVVnJ9Ech2vKJTKjvEShG8opcKELyEjeDH/cPT7/2lZJi8chRVIh9CK5bEJsg+3ksmW7bTvAySU6mFwgj+8kGLj86+llfwXYEvxDBsnJhyQ7XvNJw6jHtpYNHWzzfm+e7wDB8/yhZGYQL95D5WieciZo21fhutzY+Coc/Z9fhS9JcgBEse0ezwTPqk88AP0s9ocfj9izDZ5V9Fpzv7IRnWxrgARGBm97K2EHOF4JQ7g7eLZ4WiD6eV9RZnPWe6MTQO9gAugdHUYAyzrNupAtNfevurKb3v+t9Ceb/kDBRkC0ahPYXndG+955tNoWcG8vBTfJZneu3uHcgZ9/7yiy85kjYAyh7j5s9YtnnI6YWd/uvag0MyJ+t+07xmHfqCq9T3hK9j+U7SBaSxSUghXT0LzmWzKC59H2DIm61rzfCNkBiy/HHZkHTzWYVoRujIDS2ajqTXOO3NRWR/L+AR+MX/ZL6pvVqkHfs2/xB3Y4Ibz+BTKdwMGKEAAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=1dc51000fbd57210f6d5f9d38eefdcdc"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Log">5bc1bcc6531003003bf1d9109ec587d4</action_type>
+        <action_type_parent display_value="Log">0e0ae8c2531003003bf1d9109ec587c8</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>5bc1bcc6531003003bf1d9109ec587d4</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Delete Records - Cache Portal Anonimo">5dc51000fbd57210f6d5f9d38eefdcd5</flow>
+        <generation_source/>
+        <order>3</order>
+        <parent_ui_id>6917489e-b653-450c-a056-b18376a18ea8</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-13 21:54:45</sys_created_on>
+        <sys_id>51c51000fbd57210f6d5f9d38eefdcdd</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-13 21:54:45</sys_updated_on>
+        <ui_id>c793fb5a-6446-4077-a675-f14d85099121</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VUTY/aMBD9K8hnEiVA+LpV0JUq7YdUpO1htUKOMwFLjp3aDixF/PeOiYGwiyqQuFXKZZ5fxu+NZ+ZtS3hGxiRJWZwy1k+6cRR18UvzOBvF0QhYMhxkA9ImkhaATKEWcwErEAitqKgctqZaYphxUwq6efXoL0S5XOABW3KRaZBk/PbeJiXVmMqCJuPtp6NrtQiaooAxefRCLmizm9JBbKk4Ax8/+t8mB1DpzMmI2gQ+LMgM8P6cCgNtUlCZUav05ohooNmLFCdgyaXFbMSRPwz/g/f1IsfLAR0xqM+O4dzXp4bzKbV0ZnXFbKU9tRZrsBbbo8UgaD0rCa0gaBS8IX3XPnF/yFw1WLwOPTNuMk9v8+kNPbnTJH/XWukGFXzsud0dvlwGOa2EndzuIL7aQecWB90bHPScg7r4L6XlCruRxK5naCoOT6NEVcjnus/I0e/ruVCPTs8HwZuqDLYAlK7NXN/4JspnS7X+eeiRBy73ivyhUIyKY0St1TytrKvvloCAAhPNC1qWWIh5qdWK739GsUW4EBiEuVBrvNTwhQwpc9ZC7GoaPiA+3cOvVHNn8wnT4M+7NjEbMxHUmJNZbOH578opqa17D/N9ofa/MM1L+w0vWIGX68q/H+dO91/jDMn5+BZgDF1A462maNTiMKqWBrPgxmo1bm23/VE86A1HEKSYOeglEQtolPSDNB52B30aD4EOQ26hCGVVpKB3u68b6p6pb9txVxTl0LtPx4pcLJPfc6i9nobmnpsdwMOo3W3PdZLkPovu0ur4Oow3zeL/N2rvfwGXm0/wxwcAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=51c51000fbd57210f6d5f9d38eefdcdd"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Delete Record">c3e09916c31332002841b63b12d3aedf</action_type>
+        <action_type_parent display_value="Delete Record">a8f274c8c3c232002841b63b12d3aee9</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>c3e09916c31332002841b63b12d3aedf</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Delete Records - Cache Portal Anonimo">5dc51000fbd57210f6d5f9d38eefdcd5</flow>
+        <generation_source/>
+        <order>4</order>
+        <parent_ui_id>6917489e-b653-450c-a056-b18376a18ea8</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-13 21:54:45</sys_created_on>
+        <sys_id>55c51000fbd57210f6d5f9d38eefdcdd</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-13 21:54:45</sys_updated_on>
+        <ui_id>9b151759-39fa-4834-b88f-9b9c8a6ba374</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/42SQW+jMBCF/8rKZ4IgJJTktmpUqVJ3K7VSL1WFBntILBmbtU1aFuW/7xgIrXra4zzPs7/34HVgUrA9SypMdrs051maZeskWRebtMqzKl2LDBBTFjENDdKmRW6soPkMqgvCMOS79GZT7HBV5dtstdkmfAXJNl9VaZHd5JAWCEUsPTaXC/mEdK2C/mW2k8JPUgmLmu1f3yLWgqWXPFq2H74d/S+qggoVrT5dWb+z+74NszC8a1D7Ul7Fh9l5mE9+3B/ohEwBJ4kYfnjUAomjBuUwYg1oAd7Ynu297UiwCOJRq37ZOEntp5wNfDj5lx7eJGGvRgrG5w6WsZz7meT6AB6e6WbuO7vUZSRHN1UisIZO+duv2rTw2Hpp9GTxUKmr26iu0b+nQthywZfP0TmCwDbkDORTrPr5ZN6frpB3Uo+NzBGV4aCWCby3sup8wBkYKhwrbqBtpT6WrTVnOZoJpYmPioa4Vuad3nTyqGPggTumViG+I/0wyi9gZQjxi64h8yVirne3Cpz7jEIdln+6QDIFmyOUYwtjBeX4IwQzt7L1P+mpM87gl7d/XD0kaA0DAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=55c51000fbd57210f6d5f9d38eefdcdd"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=5dc51000fbd57210f6d5f9d38eefdcd5"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=5dc51000fbd57210f6d5f9d38eefdcd5^sys_idNOT IN51c51000fbd57210f6d5f9d38eefdcdc"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">3b85d8ccfb957210f6d5f9d38eefdc0a</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Delete Records - Cache Portal Anonimo">5dc51000fbd57210f6d5f9d38eefdcd5</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="For Each">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-13 21:54:45</sys_created_on>
+        <sys_id>51c51000fbd57210f6d5f9d38eefdcdc</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-13 21:54:45</sys_updated_on>
+        <ui_id>6917489e-b653-450c-a056-b18376a18ea8</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/51TwW6jMBD9F58JApKSJbeqVaVKu1sprXpZVWiwh8RaY7O2Scoi/n3HgdCqxz3BPM+8ee9hBmY633bevZhb5+RBs92vt4hJHTB6H5iGBtmOSY+NYxE7gepCPQwZr1Pg9WaFN5CsNlCIVbUV21V1wwteJ5gn2zzeIzdWuHGkUSFdq6B//X8GfpRKWJxFtmBJm0fLdsOXIyloQVqIukiTgq+zfJ0lSfZtk1b5ukozsQYUOREqqFBR6+Ps7otZ37ehtJOEGfg+z+wXlB5BRJZEDN89aoG0vgblMGINaAHe2J7tvO0IsAjiSat+6ThK7YmOhd53J//SxjRJQmONZIjjdLiU5ZzjBNf34OGZqLnv7NzKj0ZydFMUAmvolL/7jE0NT62XRk8jHip1nTaqa/TPKQm2EFw/GyGdIxHYBqNB+uyjfj6a8/6q8kHqSyjzoTIc1FKB91ZWnQ96BoYKGyIqG2hbqQ9la81JXoZJSxMfFBVxrcyZloYrGgMPwmPKFeIHwu8v8CtYGVz8IBoaHiPmenenwLkPLxRi+acLSiZns4dyiiGMcCtbf0sLTjjLHd/CrZ+4l0y5dCThJWCP138lHPR0gyT/DJ2N/R3Ef2DjP22uc5R1AwAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=5dc51000fbd57210f6d5f9d38eefdcd5"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=5dc51000fbd57210f6d5f9d38eefdcd5"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_5dc51000fbd57210f6d5f9d38eefdcd5"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_5dc51000fbd57210f6d5f9d38eefdcd5"/>
+    <sys_hub_flow action="UPDATE">
+        <sys_id>8ee4188cfb957210f6d5f9d38eefdc1b</sys_id>
+        <latest_snapshot>5dc51000fbd57210f6d5f9d38eefdcd5</latest_snapshot>
+        <compiler_build/>
+    </sys_hub_flow>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=8ee4188cfb957210f6d5f9d38eefdc1b^sys_idNOT IN69c51000fbd57210f6d5f9d38eefdcf3"/>
+    <sys_flow_trigger_plan action="INSERT_OR_UPDATE">
+        <binding_strategy>com.snc.process_flow.engine.binding.RunAlways</binding_strategy>
+        <plan/>
+        <plan_id>8ee4188cfb957210f6d5f9d38eefdc1b</plan_id>
+        <snapshot>5dc51000fbd57210f6d5f9d38eefdcd5</snapshot>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-13 21:54:45</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>69c51000fbd57210f6d5f9d38eefdcf3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-13 21:54:45</sys_updated_on>
+        <trigger display_value="">69c51000fbd57210f6d5f9d38eefdcf2</trigger>
+    </sys_flow_trigger_plan>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=8ee4188cfb957210f6d5f9d38eefdc1b"/>
+</record_update>

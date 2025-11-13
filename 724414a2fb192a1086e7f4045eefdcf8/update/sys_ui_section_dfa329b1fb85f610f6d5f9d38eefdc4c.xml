@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="" section_id="dfa329b1fb85f610f6d5f9d38eefdc4c" sys_domain="global" table="x_sded9_portal_t_0_acessos_do_portal" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_usuario</element>
+            <position>0</position>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-07 03:49:18</sys_created_on>
+            <sys_id>7ac3adb1fb85f610f6d5f9d38eefdc92</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_sded9_portal_t_0_acessos_do_portal" sys_domain="global" view="Default view">dfa329b1fb85f610f6d5f9d38eefdc4c</sys_ui_section>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-07 03:49:18</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>1</position>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-07 03:49:18</sys_created_on>
+            <sys_id>bec3adb1fb85f610f6d5f9d38eefdc92</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_sded9_portal_t_0_acessos_do_portal" sys_domain="global" view="Default view">dfa329b1fb85f610f6d5f9d38eefdc4c</sys_ui_section>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-07 03:49:18</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_hora_do_acesso</element>
+            <position>2</position>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-07 03:49:18</sys_created_on>
+            <sys_id>b2c3adb1fb85f610f6d5f9d38eefdc93</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_sded9_portal_t_0_acessos_do_portal" sys_domain="global" view="Default view">dfa329b1fb85f610f6d5f9d38eefdc4c</sys_ui_section>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-07 03:49:18</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.end_split</element>
+            <position>3</position>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-07 03:49:18</sys_created_on>
+            <sys_id>b6c3adb1fb85f610f6d5f9d38eefdc93</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_sded9_portal_t_0_acessos_do_portal" sys_domain="global" view="Default view">dfa329b1fb85f610f6d5f9d38eefdc4c</sys_ui_section>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-07 03:49:18</sys_updated_on>
+            <sys_user/>
+            <type>.end_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_pagina_url</element>
+            <position>4</position>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-07 03:49:18</sys_created_on>
+            <sys_id>bac3adb1fb85f610f6d5f9d38eefdc93</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_sded9_portal_t_0_acessos_do_portal" sys_domain="global" view="Default view">dfa329b1fb85f610f6d5f9d38eefdc4c</sys_ui_section>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-07 03:49:18</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_anonimo_id</element>
+            <position>5</position>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-07 03:49:18</sys_created_on>
+            <sys_id>bec3adb1fb85f610f6d5f9d38eefdc93</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_sded9_portal_t_0_acessos_do_portal" sys_domain="global" view="Default view">dfa329b1fb85f610f6d5f9d38eefdc4c</sys_ui_section>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-07 03:49:18</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_ip</element>
+            <position>6</position>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-07 03:49:18</sys_created_on>
+            <sys_id>b2c3adb1fb85f610f6d5f9d38eefdc94</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_sded9_portal_t_0_acessos_do_portal" sys_domain="global" view="Default view">dfa329b1fb85f610f6d5f9d38eefdc4c</sys_ui_section>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-07 03:49:18</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>number</element>
+            <position>7</position>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-13 21:53:40</sys_created_on>
+            <sys_id>ed8518ccfb957210f6d5f9d38eefdcbb</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_sded9_portal_t_0_acessos_do_portal" sys_domain="global" view="Default view">dfa329b1fb85f610f6d5f9d38eefdc4c</sys_ui_section>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-13 21:53:40</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption/>
+            <header>false</header>
+            <name>x_sded9_portal_t_0_acessos_do_portal</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-07 03:48:48</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>dfa329b1fb85f610f6d5f9d38eefdc4c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_sded9_portal_t_0_acessos_do_portal</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+            <sys_update_name>sys_ui_section_dfa329b1fb85f610f6d5f9d38eefdc4c</sys_update_name>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-07 03:48:48</sys_updated_on>
+            <sys_user/>
+            <title>true</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

@@ -1,0 +1,619 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($scope, spUtil, $rootScope, $element) {
+    var c = this;
+    
+    // *** Variável para armazenar o estado do contraste ***
+    $scope.contrastIsActive = false; 
+
+    // Obter o elemento DOM principal do widget
+    var widgetContainer = $element; 
+    var CONTRAST_CLASS = 'widget-contraste-ativo';
+
+
+    // Função para mudar a aba ativa
+    c.setTab = function(tabName) {
+        if (c.data.currentTab !== tabName) {
+            c.data.currentTab = tabName;
+            
+            // Se mudou para a aba 'recent' e não tem dados para anônimo, tenta buscar
+            if (tabName === 'recent' && !c.data.isLoggedIn && c.data.recentItems.length === 0) {
+                 checkAnonymousAccesses();
+            }
+        }
+    };
+
+    // --- LISTENER DO CONTRASTE ---
+    var contrastListener = $rootScope.$on('sp.contrast.toggled', function(event, data) {
+        
+        $scope.contrastIsActive = data.enabled; // Atualiza a variável do escopo
+        
+        if ($scope.contrastIsActive) {
+            widgetContainer.addClass(CONTRAST_CLASS);
+        } else {
+            widgetContainer.removeClass(CONTRAST_CLASS);
+        }
+    });
+
+    $scope.$on('$destroy', contrastListener);
+    
+    // --- LÓGICA DE ACESSOS RECENTES COM CACHE PARA ANÔNIMOS ---
+
+    // 1. LÓGICA DE ATUALIZAÇÃO VIA EVENTO (Escuta um possível logger de acessos)
+    $rootScope.$on('portal_access_logged', function(event, data) {
+        // Força a atualização do widget para recarregar a lista de acessos
+        spUtil.refresh($scope);
+    });
+
+    // Função para buscar acessos anônimos (lógica de cache)
+    function checkAnonymousAccesses() {
+        // Verifica se não está logado E se o server script não encontrou nenhum acesso
+        if (!c.data.isLoggedIn && c.data.recentItems.length === 0) {
+            var anonymousId = localStorage.getItem('sn_portal_anonymous_id');
+            
+            if (anonymousId) {
+                // Chama o servidor para buscar os dados com o ID anônimo
+                c.server.get({
+                    anonId: anonymousId 
+                }).then(function(response) {
+                    // Se o servidor retornar dados atualizados, atualiza o widget
+                    if (response.data && response.data.recentItems) {
+                        c.data.recentItems = response.data.recentItems;
+                        // Força a re-renderização do Angular
+                        $scope.$applyAsync(); 
+                    }
+                });
+            }
+        }
+    }
+    
+    // Executa a verificação na carga inicial
+    checkAnonymousAccesses();
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap');
+
+/* 1. Definição da Fonte (Presume que Roboto Flex é carregada via Tema do Portal) */
+@font-face {
+  font-family: 'Poppins';
+  /* src: url('...'); */
+  font-weight: 400;
+  font-style: normal;
+}
+
+.bgNovo{
+	background-color: #fff;
+}
+
+/* NOVO CSS: Para o seu SVG incorporado (Ícone Chama) */
+.custom-icon-svg-flame {
+    display: inline-flex; 
+    width: 12px;   
+    height: 12px;  
+    margin-right: 5px; 
+    vertical-align: middle;
+    line-height: 0;
+    
+    /* CORREÇÃO DE ALINHAMENTO VERTICAL */
+    position: relative;
+    top: -1px; 
+}
+
+.custom-icon-svg-flame svg {
+    width: 100%;
+    height: 100%;
+    fill: #4773C6; /* Cor padrão do ícone (aba inativa) */
+}
+
+/* MUDANÇA: Cor do ícone da Chama no hover */
+.widget-tabs .nav-tabs &gt; li:hover .custom-icon-svg-flame svg {
+    fill: #DD0000; /* Vermelho no hover */
+}
+/* MUDANÇA: Cor do ícone da Chama na aba ativa */
+.widget-tabs .nav-tabs &gt; li.active &gt; a .custom-icon-svg-flame svg {
+    fill: #293273; /* Cor escura na aba ativa */
+}
+
+/* MUDANÇA: Cor Padrão do Ícone de Estrela (aba inativa) */
+.fa-star {
+    color: #4a6fae; /* Cor azul sutil, igual ao texto da aba inativa */
+    margin-right: 5px;
+  	margin-bottom: 1px;
+}
+
+/* MUDANÇA: Cor do Ícone de Estrela no HOVER e quando a ABA está ATIVA */
+.widget-tabs .nav-tabs &gt; li:hover .fa-star,
+.widget-tabs .nav-tabs &gt; li.active .fa-star {
+    color: #FFD700; /* Amarelo no hover e ativo */
+  	margin-bottom: 1px;
+}
+
+
+/* Estilo geral do painel para o widget */
+.custom-widget {
+    /* APLICAÇÃO DA FONTE */
+    font-family: 'Roboto Flex', Arial, Helvetica, sans-serif;
+    
+    border: none;
+    background-color: transparent;
+
+    /* --- TAMANHO E CENTRALIZAÇÃO --- */
+    max-width: 1000px; 
+    width: 100%;     
+    margin: 0 auto;  
+}
+.custom-widget .titulo {
+    color: #4671C4; /* Cor Branca */
+    text-align: center;
+    /* Padding lateral para o texto e espaço superior/inferior */
+    padding: 20px 20px; 
+}
+.custom-widget .titulo h4 {
+    /* Remove margens extras do H4 padrão do Bootstrap */
+    margin: 0;
+    
+    /* Aplica a fonte e estilo */
+    color: #4671C4; 
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-size: 26px; 
+    font-weight: 700;
+  	margin-bottom: 40px;
+  	margin-top: 40px;
+}
+/* Garante que todos os textos internos sigam a mesma fonte */
+.widget-tabs .nav-tabs &gt; li &gt; a, 
+.numbered-list a.item-link {
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+/* Estilo do cabeçalho das abas */
+.widget-tabs {
+    background-color: transparent;
+    border-bottom: none;
+    padding: 0;
+}
+
+/* 1. Força a largura igual e remove margens internas do Service Portal */
+.widget-tabs .nav-tabs {
+    display: flex;
+    border-bottom: 2px solid #e0e0e0; 
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    position: relative;
+    z-index: 1; 
+}
+
+/* Estilo dos itens da aba (li) */
+.widget-tabs .nav-tabs &gt; li {
+    flex-grow: 1;
+    text-align: center;
+    margin-bottom: 0;
+    border-radius: 5px 5px 0 0;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Estilo do link da aba (a) */
+.widget-tabs .nav-tabs &gt; li &gt; a {
+    border: none;
+    background-color: transparent;
+    color: #4a6fae; /* Cor dos links INATIVOS nas abas */
+    font-weight: 500;
+    font-size: 14px;
+    padding: 10px 15px;
+    margin: 0;
+    /* Alinhamento para o ícone e texto */
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px 5px 0 0;
+    text-decoration: none; 
+   transition: color 0.3s ease, background-color 0.3s ease; 
+}
+
+
+
+/* Estilo da aba ATIVA (li.active) - Efeito Card Elevado com Borda e Fundo Cinza */
+.widget-tabs .nav-tabs &gt; li.active {
+    background-color: #f8f8f8; /* Fundo cinza claro para a aba ativa */
+    margin-top: -5px; /* Move o card 5px para cima */
+    margin-bottom: -2px; 
+    
+    box-shadow: 0 -3px 6px -3px rgba(0, 0, 0, 0.1); 
+    z-index: 10; 
+
+    border: 1px solid #e0e0e0; 
+    border-bottom: none; 
+}
+
+/* Estilo do link na aba ATIVA */
+.widget-tabs .nav-tabs &gt; li.active &gt; a,
+.widget-tabs .nav-tabs &gt; li.active &gt; a:hover,
+.widget-tabs .nav-tabs &gt; li.active &gt; a:focus {
+    color: #293273; /* Cor do texto da aba ATIVA */
+    background-color: transparent;
+    font-weight: 600;
+    border-color: transparent;
+    text-decoration: none; 
+}
+
+/* Estilo da aba inativa ao passar o mouse */
+.widget-tabs .nav-tabs &gt; li:not(.active) &gt; a:hover {
+    background-color: #f0f0f0;
+    border-color: transparent;
+}
+
+
+/* --- Estilização da Lista --- */
+
+.widget-content {
+    padding-top: 20px;
+}
+
+.numbered-list {
+    counter-reset: item;
+    padding-left: 0;
+}
+
+.numbered-list li {
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+    margin-left: 0;
+}
+
+.item-number {
+    counter-increment: item;
+    font-size: 16px;
+    font-weight: 600;
+    color: #a7c0de;
+    margin-right: 15px;
+    width: 20px;
+    text-align: right;
+}
+
+.item-link {
+    color: #293273; 
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.item-link:hover {
+    text-decoration: underline;
+    color: #293273; 
+}
+
+/* A regra .fa é mantida por segurança, mas .fa-star é mais específico */
+.fa {
+    margin-right: 5px;
+}
+
+
+
+/* ------------------------------------------------------------------ */
+/* CLASSE RACIONALIZADA PARA O ALTO CONTRASTE (Corrigido)             */
+/* ------------------------------------------------------------------ */
+
+.bgNovo-widget-contraste-ativo{
+	background-color: #000000 !important; 
+}
+
+.widget-contraste-ativo {
+    /* 1. CONTAINER GERAL: Fundo Preto, Texto Branco */
+    background-color: #000000 !important; 
+    color: #ffffff !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.widget-contraste-ativo .titulo h4 {
+    color: #ffffff !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* ------------------------------------------------------------------ */
+/* 2. HEADERS (ABAS) - CORREÇÃO DE ESTADO INATIVO                     */
+/* ------------------------------------------------------------------ */
+
+/* Fundo da seção de abas e borda de separação */
+.widget-contraste-ativo .panel-heading.widget-tabs {
+    background-color: #000000 !important;
+    //border-bottom: 1px solid #ffffff !important; 
+}
+
+/* Aba INATIVA (li) - GARANTE FUNDO PRETO E SEM BORDAS VAZIAS */
+.widget-contraste-ativo .nav-tabs li {
+    background-color: #000000 !important;
+    border: none !important;
+    box-shadow: none !important;
+    /* Anula o margin-top / margin-bottom do li.active para não quebrar o layout */
+    margin-top: 0 !important; 
+    margin-bottom: 0 !important; 
+ 		transition: all 0.3s ease !important;
+}
+
+/* Links das abas (ATIVA, INATIVA, GERAL) - GARANTE TEXTO BRANCO E FUNDO TRANSPARENTE */
+.widget-contraste-ativo .nav-tabs li a {
+    color: #ffffff !important; /* TEXTO BRANCO EM TODOS OS LINKS DE ABAS */
+    background-color: transparent !important; 
+    border: none !important;
+   transition: color 0.3s ease, background-color 0.3s ease !important; 
+}
+
+/* Aba ATIVA - Ajusta a borda inferior (o 'sublinhado') */
+.widget-contraste-ativo .nav-tabs li.active a {
+    /* Mantém o texto branco (já definido acima) */
+    /* Garante que o fundo da aba ATIVA (li.active) seja preto */
+    background-color: #000000 !important;
+    //border-bottom: 1px solid #ffffff !important; /* Borda branca como sublinhado */
+}
+
+/* Aba INATIVA no HOVER - Feedback visual para o clique */
+.widget-contraste-ativo .nav-tabs &gt; li:not(.active) &gt; a:hover {
+    background-color: #333333 !important; 
+    color: #ffffff !important;
+}
+
+/* ------------------------------------------------------------------ */
+/* 3. ÍCONES (SVG e ESTRELA) - GARANTIA BRANCA                         */
+/* ------------------------------------------------------------------ */
+
+/* SVG (Flame) */
+.widget-contraste-ativo .custom-icon-svg-flame svg path {
+    fill: #ffffff !important; 
+}
+/* Estrela (Font Awesome) */
+.widget-contraste-ativo .fa-star {
+    color: #ffffff !important; 
+}
+
+/* ------------------------------------------------------------------ */
+/* 4. CONTEÚDO DA LISTA (BODY)                                        */
+/* ------------------------------------------------------------------ */
+
+.widget-contraste-ativo .panel-body.widget-content {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+}
+
+/* Números da lista (1, 2, 3...) */
+.widget-contraste-ativo .item-number {
+    color: #ffffff !important;
+}
+
+/* Links e HOVER da lista */
+.widget-contraste-ativo .item-link {
+    color: #ffffff !important;
+    text-decoration: none !important;
+    background-color: transparent !important;
+  
+}
+
+.widget-contraste-ativo .item-link:hover,
+.widget-contraste-ativo .numbered-list li:hover .item-number {
+    color: #000000 !important;        
+    background-color: #ffffff !important; 
+}
+
+.widget-contraste-ativo .nav-tabs li {
+    /* Mantém o fundo preto, mas remove as margens que anulavam o efeito de card */
+    background-color: #000000 !important;
+    border: none !important; 
+    margin-top: 0 !important; 
+    margin-bottom: 0 !important; 
+}
+
+/* ** ESTA REGRA RECRIA O EFEITO DE CARD NA ABA ATIVA *** */
+.widget-contraste-ativo .nav-tabs &gt; li.active {
+    /* Fundo preto */
+    background-color: #000000 !important; 
+    
+    /* Borda Branca para dar a forma de card (substitui o #e0e0e0) */
+    border: 1px solid #ffffff !important; 
+    border-bottom: none !important; /* Remove a borda inferior para parecer elevado */
+    
+    margin-top: -5px !important; 
+    margin-bottom: -2px !important;
+  
+    /* NOVO: RECRIA A ELEVAÇÃO com sombra branca (ou borda 3D) */
+    box-shadow: 0 -3px 6px -3px rgba(255, 255, 255, 0.3) !important; 
+    z-index: 10 !important;
+    
+    /* Mantenha o arredondamento original se existir no seu tema: */
+    border-radius: 5px 5px 0 0 !important; 
+}
+
+/* O link da aba ATIVA precisa ter o background transparente */
+.widget-contraste-ativo .nav-tabs li.active a {
+    color: #ffffff !important;
+    background-color: transparent !important; /* Garante que o fundo LI apareça */
+    //border-bottom: 1px solid #ffffff !important; /* Borda branca como sublinhado */
+}
+/* ------------------------------------------------------------------ */
+/* CORREÇÃO DO FOCO (BORDA AZUL) NO MODO CONTRASTE                    */
+/* ------------------------------------------------------------------ */
+
+/* 1. Remove a borda azul padrão do link ATIVO */
+.widget-contraste-ativo .nav-tabs li.active a:focus,
+.widget-contraste-ativo .nav-tabs li.active a:hover,
+.widget-contraste-ativo .nav-tabs li.active a:active {
+    /* O outline é a borda tracejada/azul do navegador */
+    outline: none !important; 
+    /* Garante que a borda do link não seja azul */
+    border-color: transparent !important; 
+    box-shadow: none !important;
+}
+
+/* 2. Remove a borda azul do link INATIVO */
+.widget-contraste-ativo .nav-tabs li:not(.active) a:focus,
+.widget-contraste-ativo .nav-tabs li:not(.active) a:active {
+  box-shadow: none !important;
+    outline: none !important;
+    border-color: transparent !important;
+}
+
+/* 3. Se desejar manter o foco para acessibilidade, mas com outra cor (BRANCO): */
+.widget-contraste-ativo .nav-tabs li a:focus {
+    /* O anel branco é o padrão para foco em alto contraste */
+    box-shadow: none !important;
+    outline: 2px solid #ffffff !important; 
+    outline-offset: -2px !important; /* Move o anel para dentro */
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>servicos_home_com_cache</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Servicos Home com Cache</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    // FUNÇÕES AUXILIARES DE FORMATAÇÃO
+    function formatPageId(id) {
+        if (!id) return 'Página Inicial';
+        var formatted = id.replace(/_/g, ' ');
+        formatted = formatted.toLowerCase().replace(/\b(\w)/g, function(s) { return s.toUpperCase(); });
+        return formatted;
+    }
+    
+    // --- VARIÁVEIS DE BUSCA E INICIALIZAÇÃO ---
+    var TABLE_NAME = 'x_sded9_portal_t_0_acessos_do_portal';
+    data.isLoggedIn = gs.isLoggedIn();
+    data.popularItems = [];
+    data.recentItems = []; // Array para os acessos recentes
+    
+    // 1. Inicializa a aba ativa
+    if (!input) {
+        data.currentTab = options.default_tab || 'popular';
+    } else {
+        data.currentTab = input.currentTab;
+    }
+
+    // 2. Lógica para "Mais Acessados" (Artigos da Base de Conhecimento por Visualizações)
+    var kb = new GlideRecord('kb_knowledge');
+    
+    kb.addActiveQuery(); 
+    kb.addQuery('workflow_state', 'published'); 
+    kb.orderByDesc('sys_view_count');  
+    kb.setLimit(6); 
+    kb.query();
+
+    while (kb.next()) {
+        data.popularItems.push({
+            name: kb.getDisplayValue('short_description'),  
+            link: '?id=kb_article&sys_id=' + kb.getUniqueValue()
+        });
+    }
+
+    // 3. Lógica para "Últimos Acessos" (Com lógica de cache de anônimo)
+    var currentIdentifier = gs.isLoggedIn() ? gs.getUserID() : null;
+    var queryField = 'u_usuario';
+
+    // Se usuário não está logado, tenta obter o ID anônimo do Client Script (input)
+    if (!data.isLoggedIn && typeof input !== 'undefined' && input && input.anonId) {
+        currentIdentifier = input.anonId;
+        queryField = 'u_anonimo_id';
+    }
+
+    // --- BUSCA DOS ACESSOS ---
+    if (currentIdentifier && queryField) {
+        var grAccess = new GlideRecord(TABLE_NAME);
+        grAccess.addQuery(queryField, currentIdentifier);
+        grAccess.orderByDesc('u_hora_do_acesso');
+        grAccess.setLimit(6);
+        grAccess.query();
+
+        while (grAccess.next()) {
+            var pageUrlId = grAccess.u_pagina_url.toString();
+            
+            data.recentItems.push({
+                name: formatPageId(pageUrlId),  
+                link: '?id=' + pageUrlId, 
+                time: grAccess.u_hora_do_acesso.getDisplayValue(), // Adicionado display value
+                time_ago: gs.daysAgo(grAccess.u_hora_do_acesso) // Adicionado tempo decorrido
+            });
+        }
+    }
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-07 01:47:00</sys_created_on>
+        <sys_id>4fc70db9fbc1f610f6d5f9d38eefdc03</sys_id>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_name>Servicos Home com Cache</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_4fc70db9fbc1f610f6d5f9d38eefdc03</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-13 21:35:30</sys_updated_on>
+        <template><![CDATA[<div class=bgNovo ng-class="{'widget-contraste-ativo': contrastIsActive}">
+    <div class="panel panel-default custom-widget" ng-class="{'widget-contraste-ativo': contrastIsActive}">
+        <div class="titulo">
+            <h4>
+                Serviços para você
+            </h4>
+            
+            <div class="panel-heading widget-tabs">
+                <ul class="nav nav-tabs">
+                    <li ng-class="{active: c.data.currentTab == 'popular'}">
+                        <a href="javascript:void(0)" ng-click="c.setTab('popular')">
+                            <span class="custom-icon-svg-flame">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M216 23.86c0-23.8-30.65-32.77-44.15-13.04C48 191.85 224 200 224 288c0 35.63-29.11 64.46-64.85 63.99-35.17-.45-63.15-29.77-63.15-64.94v-85.51c0-21.7-26.47-32.23-41.43-16.5C27.8 213.16 0 261.33 0 320c0 105.87 86.13 192 192 192s192-86.13 192-192c0-170.29-168-193-168-296.14z"/></svg>
+                            </span> Mais acessados
+                        </a>
+                    </li>
+                    <li ng-class="{active: c.data.currentTab == 'recent'}">
+                        <a href="javascript:void(0)" ng-click="c.setTab('recent')">
+                            <span class="fa fa-star"></span> Últimos acessos
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="panel-body widget-content">
+                <div ng-if="c.data.currentTab == 'popular'">
+                    <ol class="list-unstyled numbered-list">
+                        <li ng-repeat="item in c.data.popularItems track by $index">
+                            <span class="item-number">{{$index + 1}}</span>
+                            <a href="{{item.link}}" class="item-link">{{item.name}}</a>
+                        </li>
+                    </ol>
+                    <div ng-if="!c.data.popularItems.length" class="text-center text-muted">
+                        Nenhum Artigo Popular encontrado.
+                    </div>
+                </div>
+
+                <div ng-if="c.data.currentTab == 'recent'">
+                    <ol class="list-unstyled numbered-list">
+                        <li ng-repeat="item in c.data.recentItems track by $index">
+                            <span class="item-number">{{$index + 1}}</span>
+                            <a href="{{item.link}}" class="item-link">
+                                <span class="item-link">{{item.name}}</span>
+                            </a>
+                            <br>
+                            <!--small class="text-muted">{{item.time_ago}} ({{item.time}})</small-->
+                        </li>
+                    </ol>
+                    <div ng-if="!c.data.recentItems.length" class="text-center text-muted">
+                        <span ng-if="c.data.isLoggedIn">Ainda não há histórico de acessos registrados.</span>
+                        <span ng-if="!c.data.isLoggedIn">Nenhum acesso recente encontrado nesta sessão.</span>
+                    </div>
+                </div>
+            </div>
+            
+        </div> 
+    </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

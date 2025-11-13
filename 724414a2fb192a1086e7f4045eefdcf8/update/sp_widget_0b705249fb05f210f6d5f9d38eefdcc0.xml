@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, spUtil, $rootScope) {
+    var c = this;
+
+    // ]]>🔄<![CDATA[ Atualiza quando outro widget dispara o evento de log de acesso
+    $rootScope.$on('portal_access_logged', function(event, data) {
+        spUtil.refresh($scope);
+    });
+
+    // ]]>👤<![CDATA[ Garante dados para o visitante anônimo
+    if (!c.data.isLoggedIn && (!c.data.accesses || c.data.accesses.length === 0)) {
+        var anonymousId = localStorage.getItem('sn_portal_anonymous_id');
+        console.log('Pekas>>> Anon ID no localStorage:', anonymousId);
+
+        if (anonymousId) {
+            // Consulta o servidor enviando o anonId
+            c.server.get({ anonId: anonymousId }).then(function(response) {
+                console.log('Pekas>>> Dados recebidos do servidor:', response);
+
+                // Atualiza a lista de acessos com os dados do servidor
+                if (response && response.data && response.data.accesses) {
+                    c.data.accesses = response.data.accesses;
+                    $scope.$applyAsync(); // força renderização Angular
+                    console.log('Pekas>>> Lista atualizada com', c.data.accesses.length, 'registros.');
+                } else {
+                    console.warn('Pekas>>> Nenhum dado retornado do servidor.');
+                }
+            }).catch(function(err) {
+                console.error('Pekas>>> Erro ao consultar servidor:', err);
+            });
+        } else {
+            console.warn('Pekas>>> Nenhum ID anônimo encontrado no localStorage.');
+        }
+    } else {
+        console.log('Pekas>>> Usuário logado ou já possui acessos em cache.');
+    }
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>acesso_portal_exibicao</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Acesso Portal Exibicao</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    // ]]>🧩<![CDATA[ FUNÇÃO AUXILIAR DE FORMATAÇÃO
+    function formatPageId(id) {
+        if (!id) return 'Página Inicial';
+        var formatted = id.replace(/_/g, ' ');
+        formatted = formatted.toLowerCase().replace(/\b(\w)/g, function(s) { return s.toUpperCase(); });
+        return formatted;
+    }
+
+    // ]]>🧩<![CDATA[ VARIÁVEIS INICIAIS
+    var TABLE_NAME = 'x_sded9_portal_t_0_acessos_do_portal';
+    data.isLoggedIn = gs.isLoggedIn();
+    data.accesses = [];
+
+    var currentIdentifier = gs.isLoggedIn() ? gs.getUserID() : null;
+    var queryField = 'u_usuario';
+
+    // ]]>🧩<![CDATA[ LOG DE DEBUG
+    gs.info('Pekas>>> Execução do Server Script | Usuário logado: ' + gs.isLoggedIn() + ' | user=' + gs.getUserName());
+
+    // ]]>🧩<![CDATA[ SEGURANÇA: verifica se input existe antes de tentar acessar
+    if (!data.isLoggedIn) {
+        if (typeof input !== 'undefined' && input && input.anonId) {
+            currentIdentifier = input.anonId;
+            queryField = 'u_anonimo_id';
+            gs.info('Pekas>>> ID anônimo recebido: ' + input.anonId);
+        } else {
+            gs.info('Pekas>>> Nenhum anonId recebido do client.');
+        }
+    }
+
+    if (currentIdentifier && queryField) {
+    var grAccess = new GlideRecord(TABLE_NAME);
+    grAccess.addQuery(queryField, currentIdentifier);
+    grAccess.orderByDesc('u_hora_do_acesso');
+    grAccess.setLimit(6);
+    grAccess.query();
+
+    var count = 0;
+    while (grAccess.next()) {
+        count++;
+        var pageUrlId = grAccess.u_pagina_url.toString();
+
+        data.accesses.push({
+            page_id: pageUrlId,
+            page_display_name: formatPageId(pageUrlId),
+            time: grAccess.u_hora_do_acesso.getDisplayValue(),
+            time_ago: ''
+        });
+    }
+
+    gs.info('Pekas>>> Registros encontrados: ' + count + ' | QueryField=' + queryField + ' | Identifier=' + currentIdentifier);
+} else {
+    gs.info('Pekas>>> Nenhum identificador definido (provável execução inicial sem input).');
+}
+
+var session = gs.getSession();
+var addr = session.getClientIP();
+gs.info("IP Pekas>> " + addr);
+
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-04 23:09:07</sys_created_on>
+        <sys_id>0b705249fb05f210f6d5f9d38eefdcc0</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>Acesso Portal Exibicao</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_0b705249fb05f210f6d5f9d38eefdcc0</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-13 21:33:20</sys_updated_on>
+        <template><![CDATA[<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">Últimos Acessos</h4>
+    </div>
+    <div class="panel-body">
+        <ul class="list-group">
+            <li ng-repeat="access in data.accesses" class="list-group-item">
+                <p>
+                    <a ng-href="?id={{access.page_id}}">
+                        <strong>{{access.page_display_name}}</strong>
+                    </a>
+                    <br>
+                    <small class="text-muted">{{access.time_ago}} ({{access.time}})</small>
+                </p>
+            </li>
+            <li ng-if="data.accesses.length == 0" class="list-group-item">
+                <span ng-if="data.isLoggedIn">Ainda não há histórico de acessos registrados.</span>
+                <span ng-if="!data.isLoggedIn">Nenhum acesso recente encontrado nesta sessão.</span>
+            </li>
+        </ul>
+    </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>
