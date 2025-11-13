@@ -30,6 +30,7 @@
 	const TH_PRUD    = 46.55;
 	const TH_MAX     = 49.00;
 
+	
 	// largura das fatias
 	const SL_GREEN  = TH_ALERT;                    // 44.10
 	const SL_YELLOW = TH_PRUD - TH_ALERT;          // 2.45
@@ -558,6 +559,7 @@ canvas{display:block;margin:0 auto;max-width:100%;height:auto}
   gr.orderByDesc('u_ano');
   gr.query();
 
+	
   var dados = [];
   while (gr.next()) {
     dados.push({
@@ -576,14 +578,14 @@ canvas{display:block;margin:0 auto;max-width:100%;height:auto}
         <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
         <sys_created_on>2025-11-05 15:17:40</sys_created_on>
         <sys_id>b62ee199fb093610f6d5f9d38eefdcc9</sys_id>
-        <sys_mod_count>12</sys_mod_count>
+        <sys_mod_count>14</sys_mod_count>
         <sys_name>Limite com Despesas Executivo SemiDonut</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_b62ee199fb093610f6d5f9d38eefdcc9</sys_update_name>
         <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-11-06 20:46:41</sys_updated_on>
+        <sys_updated_on>2025-11-13 19:34:52</sys_updated_on>
         <template><![CDATA[<!-- Fonte -->
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,400;600;700&display=swap" rel="stylesheet">
 

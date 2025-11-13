@@ -26,7 +26,7 @@
         <value/>
         <value_action>ignore</value_action>
         <variable>v_despesa_bruta_com_pessoal</variable>
-        <variable_set display_value="Despesa Pessoal">d97c6a28fb69e25086e7f4045eefdcc9</variable_set>
+        <variable_set display_value="Personal Expenses">d97c6a28fb69e25086e7f4045eefdcc9</variable_set>
         <visible>ignore</visible>
     </catalog_ui_policy_action>
     <sys_translated_text action="delete_multiple" query="documentkey=f5723aa0fba9e25086e7f4045eefdc0a"/>

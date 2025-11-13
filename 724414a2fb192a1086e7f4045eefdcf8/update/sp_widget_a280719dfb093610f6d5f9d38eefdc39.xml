@@ -191,6 +191,7 @@
   if (anoFiltrado) {
     gr.addQuery('u_ano', anoFiltrado);
   }
+	
 
   gr.orderByDesc('u_ano');
   gr.query();
@@ -228,14 +229,14 @@
         <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
         <sys_created_on>2025-11-05 15:28:02</sys_created_on>
         <sys_id>a280719dfb093610f6d5f9d38eefdc39</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>widget despesa comprometimento Executivo</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_a280719dfb093610f6d5f9d38eefdc39</sys_update_name>
         <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-11-05 15:31:23</sys_updated_on>
+        <sys_updated_on>2025-11-13 19:34:30</sys_updated_on>
         <template><![CDATA[<!-- Fonte -->
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
