@@ -31,7 +31,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>8d7b8495fb35621086e7f4045eefdc95</sys_id>
-        <sys_mod_count>36</sys_mod_count>
+        <sys_mod_count>40</sys_mod_count>
         <sys_name>Get MRVS Values (Personal Expenses)</sys_name>
         <sys_overrides/>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
@@ -39,7 +39,7 @@
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sys_hub_action_type_definition_8d7b8495fb35621086e7f4045eefdc95</sys_update_name>
         <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-11-11 15:28:04</sys_updated_on>
+        <sys_updated_on>2025-11-14 12:18:18</sys_updated_on>
         <system_level>false</system_level>
         <type/>
     </sys_hub_action_type_definition>
@@ -120,10 +120,10 @@
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-27 19:11:45</sys_created_on>
         <sys_id>d03290ddfb35621086e7f4045eefdcb8</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-27 19:11:45</sys_updated_on>
-        <value>{"version":"1.0","complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":""}},"message":{"$cv":{"$c":"java.lang.String","$v":""}}},"complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"794bc342-9c9d-444b-a3f2-dd4b6a5a0173\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}},"serializationFormat":"JSON"}</value>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-14 12:18:14</sys_updated_on>
+        <value>{"version":"1.0","complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"794bc342-9c9d-444b-a3f2-dd4b6a5a0173\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}},"complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":""}},"message":{"$cv":{"$c":"java.lang.String","$v":""}}},"serializationFormat":"JSON"}</value>
         <variable display_value="Action Status">bf2290ddfb35621086e7f4045eefdc7e</variable>
     </sys_variable_value>
     <sys_element_mapping action="delete_multiple" query="id=8d7b8495fb35621086e7f4045eefdc95"/>
@@ -229,11 +229,11 @@
         <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
         <sys_created_on>2025-11-11 04:37:59</sys_created_on>
         <sys_id>cb45924ffb8df21086e7f4045eefdc79</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-11-11 15:27:59</sys_updated_on>
+        <sys_updated_on>2025-11-14 12:18:14</sys_updated_on>
         <table>var__m_sys_hub_action_output_8d7b8495fb35621086e7f4045eefdc95</table>
-        <value>{"version":"1.0","complexObject":{"despesa_liquida_pessoal_executivo":{"$cv":{"$c":"java.lang.String","$v":""}},"variacao_despesa_liquida_pessoal_executivo":{"$cv":{"$c":"java.lang.String","$v":""}},"limite_de_alerta_executivo":{"$cv":{"$c":"java.lang.String","$v":""}},"despesa_total_com_pessoal_executivo_anual":{"$cv":{"$c":"java.lang.String","$v":""}},"variacao_despesa_liquida_pessoal_consolidado":{"$cv":{"$c":"java.lang.String","$v":""}},"comprometimento_executivo":{"$cv":{"$c":"java.lang.String","$v":""}},"despesa_liquida_pessoal_consolidado":{"$cv":{"$c":"java.lang.String","$v":""}},"receita_corrente_liquida_rcl":{"$cv":{"$c":"java.lang.String","$v":""}}},"complexObjectSchema":{"FlowDesigner:FD3245924fd08df2109a23c887ee55ee48":{"despesa_liquida_pessoal_executivo":"String","despesa_liquida_pessoal_executivo.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"string\",\"choiceOption\":\"\",\"mapped\":\"{\\\"despesa_liquida_pessoal_executivo\\\":\\\"{{step[3d30f5c6-720f-4e4a-9cb9-be3e613c5f43].executivo_obj.despesa_liquida_pessoal_executivo}}\\\"}\",\"default_value\":null,\"label\":\"despesa_liquida_pessoal_executivo\",\"mandatory\":\"false\",\"order\":\"5\",\"max_length\":\"0\"}"},"variacao_despesa_liquida_pessoal_executivo":"String","variacao_despesa_liquida_pessoal_executivo.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"string\",\"choiceOption\":\"\",\"mapped\":\"{\\\"variacao_despesa_liquida_pessoal_executivo\\\":\\\"{{step[3d30f5c6-720f-4e4a-9cb9-be3e613c5f43].executivo_obj.variacao_despesa_liquida_pessoal_executivo}}\\\"}\",\"default_value\":null,\"label\":\"variacao_despesa_liquida_pessoal_executivo\",\"mandatory\":\"false\",\"order\":\"7\",\"max_length\":\"0\"}"},"limite_de_alerta_executivo":"String","limite_de_alerta_executivo.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"mapped\":\"{\\\"limite_de_alerta_executivo\\\":\\\"{{step[3d30f5c6-720f-4e4a-9cb9-be3e613c5f43].executivo_obj.limite_de_alerta_executivo}}\\\"}\",\"default_value\":\"\",\"label\":\"limite_de_alerta_executivo\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"0\",\"uiUniqueId\":\"4939dfff-dfee-4791-a4f0-83106e5c1224\"}"},"despesa_total_com_pessoal_executivo_anual":"String","despesa_total_com_pessoal_executivo_anual.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"mapped\":\"{\\\"despesa_total_com_pessoal_executivo_anual\\\":\\\"{{step[3d30f5c6-720f-4e4a-9cb9-be3e613c5f43].executivo_obj.despesa_total_com_pessoal_executivo_anual}}\\\"}\",\"default_value\":\"\",\"label\":\"despesa_total_com_pessoal_executivo_anual\",\"mandatory\":\"false\",\"order\":\"4\",\"max_length\":\"0\",\"uiUniqueId\":\"2f1d5d68-1ccb-4e29-94de-55f0178b9dc5\"}"},"variacao_despesa_liquida_pessoal_consolidado":"String","variacao_despesa_liquida_pessoal_consolidado.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"string\",\"choiceOption\":\"\",\"mapped\":\"{\\\"variacao_despesa_liquida_pessoal_consolidado\\\":\\\"{{step[3d30f5c6-720f-4e4a-9cb9-be3e613c5f43].executivo_obj.variacao_despesa_liquida_pessoal_consolidado}}\\\"}\",\"default_value\":null,\"label\":\"variacao_despesa_liquida_pessoal_consolidado\",\"mandatory\":\"false\",\"order\":\"6\",\"max_length\":\"0\"}"},"comprometimento_executivo":"String","comprometimento_executivo.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"mapped\":\"{\\\"comprometimento_executivo\\\":\\\"{{step[3d30f5c6-720f-4e4a-9cb9-be3e613c5f43].executivo_obj.comprometimento_executivo}}\\\"}\",\"default_value\":\"\",\"label\":\"comprometimento_executivo\",\"mandatory\":\"false\",\"order\":\"3\",\"max_length\":\"0\",\"uiUniqueId\":\"4725d2c0-6123-474c-8455-f0d1e60254d1\"}"},"despesa_liquida_pessoal_consolidado":"String","despesa_liquida_pessoal_consolidado.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"string\",\"choiceOption\":\"\",\"mapped\":\"{\\\"despesa_liquida_pessoal_consolidado\\\":\\\"{{step[3d30f5c6-720f-4e4a-9cb9-be3e613c5f43].executivo_obj.despesa_liquida_pessoal_consolidado}}\\\"}\",\"default_value\":null,\"label\":\"despesa_liquida_pessoal_consolidado\",\"mandatory\":\"false\",\"order\":\"8\",\"max_length\":\"0\"}"},"receita_corrente_liquida_rcl":"String","receita_corrente_liquida_rcl.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"mapped\":\"{\\\"receita_corrente_liquida_rcl\\\":\\\"{{step[3d30f5c6-720f-4e4a-9cb9-be3e613c5f43].executivo_obj.receita_corrente_liquida_rcl}}\\\"}\",\"default_value\":\"\",\"label\":\"receita_corrente_liquida_rcl\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"926b2cb8-a08c-43db-b5a9-9a08c19cac85\"}"}},"FlowDesigner:FD3245924fd08df2109a23c887ee55ee48.$type_facets":{"SimpleMapFacet":"{\"sourceId\":\"\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"Executivo Obj\",\"mandatory\":\"false\",\"uiUniqueId\":\"a191885f-f466-4a49-ba9c-9e7b338b5709\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FD3245924fd08df2109a23c887ee55ee48\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"sourceType\":\"\",\"sourceUiUniqueId\":\"\",\"hint\":\"\",\"uiType\":\"object\",\"order\":\"19\",\"max_length\":\"65000\"}"}},"serializationFormat":"JSON"}</value>
+        <value>{"version":"1.0","complexObjectSchema":{"FlowDesigner:FD3245924fd08df2109a23c887ee55ee48":{"despesa_liquida_pessoal_executivo":"String","despesa_liquida_pessoal_executivo.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"mapped\":\"{\\\"despesa_liquida_pessoal_executivo\\\":\\\"{{step[3d30f5c6-720f-4e4a-9cb9-be3e613c5f43].executivo_obj.despesa_liquida_pessoal_executivo}}\\\"}\",\"default_value\":\"\",\"label\":\"despesa_liquida_pessoal_executivo\",\"mandatory\":\"false\",\"order\":\"5\",\"max_length\":\"0\"}"},"variacao_despesa_liquida_pessoal_executivo":"String","variacao_despesa_liquida_pessoal_executivo.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"mapped\":\"{\\\"variacao_despesa_liquida_pessoal_executivo\\\":\\\"{{step[3d30f5c6-720f-4e4a-9cb9-be3e613c5f43].executivo_obj.variacao_despesa_liquida_pessoal_executivo}}\\\"}\",\"default_value\":\"\",\"label\":\"variacao_despesa_liquida_pessoal_executivo\",\"mandatory\":\"false\",\"order\":\"7\",\"max_length\":\"0\"}"},"limite_de_alerta_executivo":"String","limite_de_alerta_executivo.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"mapped\":\"{\\\"limite_de_alerta_executivo\\\":\\\"{{step[3d30f5c6-720f-4e4a-9cb9-be3e613c5f43].executivo_obj.limite_de_alerta_executivo}}\\\"}\",\"default_value\":\"\",\"label\":\"limite_de_alerta_executivo\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"0\",\"uiUniqueId\":\"4939dfff-dfee-4791-a4f0-83106e5c1224\"}"},"despesa_total_com_pessoal_executivo_anual":"String","despesa_total_com_pessoal_executivo_anual.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"mapped\":\"{\\\"despesa_total_com_pessoal_executivo_anual\\\":\\\"{{step[3d30f5c6-720f-4e4a-9cb9-be3e613c5f43].executivo_obj.despesa_total_com_pessoal_executivo_anual}}\\\"}\",\"default_value\":\"\",\"label\":\"despesa_total_com_pessoal_executivo_anual\",\"mandatory\":\"false\",\"order\":\"4\",\"max_length\":\"0\",\"uiUniqueId\":\"2f1d5d68-1ccb-4e29-94de-55f0178b9dc5\"}"},"variacao_despesa_liquida_pessoal_consolidado":"String","variacao_despesa_liquida_pessoal_consolidado.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"mapped\":\"{\\\"variacao_despesa_liquida_pessoal_consolidado\\\":\\\"{{step[3d30f5c6-720f-4e4a-9cb9-be3e613c5f43].executivo_obj.variacao_despesa_liquida_pessoal_consolidado}}\\\"}\",\"default_value\":\"\",\"label\":\"variacao_despesa_liquida_pessoal_consolidado\",\"mandatory\":\"false\",\"order\":\"6\",\"max_length\":\"0\"}"},"comprometimento_executivo":"String","comprometimento_executivo.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"mapped\":\"{\\\"comprometimento_executivo\\\":\\\"{{step[3d30f5c6-720f-4e4a-9cb9-be3e613c5f43].executivo_obj.comprometimento_executivo}}\\\"}\",\"default_value\":\"\",\"label\":\"comprometimento_executivo\",\"mandatory\":\"false\",\"order\":\"3\",\"max_length\":\"0\",\"uiUniqueId\":\"4725d2c0-6123-474c-8455-f0d1e60254d1\"}"},"despesa_liquida_pessoal_consolidado":"String","despesa_liquida_pessoal_consolidado.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"mapped\":\"{\\\"despesa_liquida_pessoal_consolidado\\\":\\\"{{step[3d30f5c6-720f-4e4a-9cb9-be3e613c5f43].executivo_obj.despesa_liquida_pessoal_consolidado}}\\\"}\",\"default_value\":\"\",\"label\":\"despesa_liquida_pessoal_consolidado\",\"mandatory\":\"false\",\"order\":\"8\",\"max_length\":\"0\"}"},"receita_corrente_liquida_rcl":"String","receita_corrente_liquida_rcl.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"mapped\":\"{\\\"receita_corrente_liquida_rcl\\\":\\\"{{step[3d30f5c6-720f-4e4a-9cb9-be3e613c5f43].executivo_obj.receita_corrente_liquida_rcl}}\\\"}\",\"default_value\":\"\",\"label\":\"receita_corrente_liquida_rcl\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"926b2cb8-a08c-43db-b5a9-9a08c19cac85\"}"}},"FlowDesigner:FD3245924fd08df2109a23c887ee55ee48.$type_facets":{"SimpleMapFacet":"{\"sourceId\":\"\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"Executivo Obj\",\"mandatory\":\"false\",\"uiUniqueId\":\"a191885f-f466-4a49-ba9c-9e7b338b5709\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FD3245924fd08df2109a23c887ee55ee48\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"hint\":\"\",\"uiType\":\"object\",\"order\":\"19\",\"max_length\":\"65000\"}"}},"complexObject":{"despesa_liquida_pessoal_executivo":{"$cv":{"$c":"java.lang.String","$v":""}},"variacao_despesa_liquida_pessoal_executivo":{"$cv":{"$c":"java.lang.String","$v":""}},"limite_de_alerta_executivo":{"$cv":{"$c":"java.lang.String","$v":""}},"despesa_total_com_pessoal_executivo_anual":{"$cv":{"$c":"java.lang.String","$v":""}},"variacao_despesa_liquida_pessoal_consolidado":{"$cv":{"$c":"java.lang.String","$v":""}},"comprometimento_executivo":{"$cv":{"$c":"java.lang.String","$v":""}},"despesa_liquida_pessoal_consolidado":{"$cv":{"$c":"java.lang.String","$v":""}},"receita_corrente_liquida_rcl":{"$cv":{"$c":"java.lang.String","$v":""}}},"serializationFormat":"JSON"}</value>
     </sys_element_mapping>
     <sys_element_mapping action="INSERT_OR_UPDATE">
         <field>exerc_cios_anteriores</field>
@@ -373,10 +373,10 @@
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-27 19:11:42</sys_created_on>
         <sys_id>5b2290ddfb35621086e7f4045eefdc55</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-11-11 15:22:28</sys_updated_on>
+        <sys_updated_on>2025-11-14 12:18:14</sys_updated_on>
     </sys_hub_step_instance>
     <sys_variable_value action="delete_multiple" query="document_key=5b2290ddfb35621086e7f4045eefdc55"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -387,9 +387,9 @@
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-27 19:11:43</sys_created_on>
         <sys_id>b72290ddfb35621086e7f4045eefdc7d</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-11-11 15:22:28</sys_updated_on>
+        <sys_updated_on>2025-11-14 12:18:14</sys_updated_on>
         <value>(function execute(inputs, outputs) {&#13;
    var fieldMapping = {&#13;
        "v_despesa_bruta_com_pessoal": "despesa_bruta",&#13;
@@ -408,6 +408,7 @@
        "v_porcentagem_do_limite_prudencial_de_rcl": "porcentagem_limite_prudencial",&#13;
        "v_porcentagem_de_limite_de_alerta_de_rcl": "porcentagem_alerta",&#13;
        "v_ano": "ano",&#13;
+       &#13;
 &#13;
        //obj&#13;
        "v_receita_corrente_liquida_rcl": "receita_corrente_liquida_rcl",&#13;
@@ -736,7 +737,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>579492cbfb8df21086e7f4045eefdc10</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>11</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
@@ -744,7 +745,7 @@
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name/>
         <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-11-11 15:27:58</sys_updated_on>
+        <sys_updated_on>2025-11-14 12:18:13</sys_updated_on>
         <type>complex_object_schema</type>
     </sys_complex_object>
     <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
@@ -3725,14 +3726,14 @@
         <name>FD3245924fd08df2109a23c887ee55ee48</name>
         <namespace>FlowDesigner</namespace>
         <scope_name>724414a2fb192a1086e7f4045eefdcf8</scope_name>
-        <serialized_content>{"FlowDesigner:FD3245924fd08df2109a23c887ee55ee48":{"despesa_liquida_pessoal_executivo":"String","despesa_liquida_pessoal_executivo.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":null,\"label\":\"despesa_liquida_pessoal_executivo\",\"mandatory\":\"false\",\"order\":\"5\",\"max_length\":\"0\"}"},"variacao_despesa_liquida_pessoal_executivo":"String","variacao_despesa_liquida_pessoal_executivo.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":null,\"label\":\"variacao_despesa_liquida_pessoal_executivo\",\"mandatory\":\"false\",\"order\":\"7\",\"max_length\":\"0\"}"},"limite_de_alerta_executivo":"String","limite_de_alerta_executivo.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"mapped\":\"{\\\"limite_de_alerta_executivo\\\":\\\"{{step[3d30f5c6-720f-4e4a-9cb9-be3e613c5f43].executivo_obj.limite_de_alerta_executivo}}\\\"}\",\"default_value\":\"\",\"label\":\"limite_de_alerta_executivo\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"0\",\"uiUniqueId\":\"4939dfff-dfee-4791-a4f0-83106e5c1224\"}"},"despesa_total_com_pessoal_executivo_anual":"String","despesa_total_com_pessoal_executivo_anual.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"mapped\":\"{\\\"despesa_total_com_pessoal_executivo_anual\\\":\\\"{{step[3d30f5c6-720f-4e4a-9cb9-be3e613c5f43].executivo_obj.despesa_total_com_pessoal_executivo_anual}}\\\"}\",\"default_value\":\"\",\"label\":\"despesa_total_com_pessoal_executivo_anual\",\"mandatory\":\"false\",\"order\":\"4\",\"max_length\":\"0\",\"uiUniqueId\":\"2f1d5d68-1ccb-4e29-94de-55f0178b9dc5\"}"},"variacao_despesa_liquida_pessoal_consolidado":"String","variacao_despesa_liquida_pessoal_consolidado.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":null,\"label\":\"variacao_despesa_liquida_pessoal_consolidado\",\"mandatory\":\"false\",\"order\":\"6\",\"max_length\":\"0\"}"},"comprometimento_executivo":"String","comprometimento_executivo.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"mapped\":\"{\\\"comprometimento_executivo\\\":\\\"{{step[3d30f5c6-720f-4e4a-9cb9-be3e613c5f43].executivo_obj.comprometimento_executivo}}\\\"}\",\"default_value\":\"\",\"label\":\"comprometimento_executivo\",\"mandatory\":\"false\",\"order\":\"3\",\"max_length\":\"0\",\"uiUniqueId\":\"4725d2c0-6123-474c-8455-f0d1e60254d1\"}"},"despesa_liquida_pessoal_consolidado":"String","despesa_liquida_pessoal_consolidado.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":null,\"label\":\"despesa_liquida_pessoal_consolidado\",\"mandatory\":\"false\",\"order\":\"8\",\"max_length\":\"0\"}"},"receita_corrente_liquida_rcl":"String","receita_corrente_liquida_rcl.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"mapped\":\"{\\\"receita_corrente_liquida_rcl\\\":\\\"{{step[3d30f5c6-720f-4e4a-9cb9-be3e613c5f43].executivo_obj.receita_corrente_liquida_rcl}}\\\"}\",\"default_value\":\"\",\"label\":\"receita_corrente_liquida_rcl\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"926b2cb8-a08c-43db-b5a9-9a08c19cac85\"}"}},"FlowDesigner:FD3245924fd08df2109a23c887ee55ee48.$type_facets":{"SimpleMapFacet":"{\"sourceId\":\"\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"Executivo Obj\",\"mandatory\":\"false\",\"uiUniqueId\":\"a191885f-f466-4a49-ba9c-9e7b338b5709\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FD3245924fd08df2109a23c887ee55ee48\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"sourceType\":\"\",\"sourceUiUniqueId\":\"\",\"hint\":\"\",\"uiType\":\"object\",\"order\":\"19\",\"max_length\":\"65000\"}"}}</serialized_content>
+        <serialized_content>{"FlowDesigner:FD3245924fd08df2109a23c887ee55ee48":{"despesa_liquida_pessoal_executivo":"String","despesa_liquida_pessoal_executivo.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"despesa_liquida_pessoal_executivo\",\"mandatory\":\"false\",\"order\":\"5\",\"max_length\":\"0\"}"},"variacao_despesa_liquida_pessoal_executivo":"String","variacao_despesa_liquida_pessoal_executivo.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"variacao_despesa_liquida_pessoal_executivo\",\"mandatory\":\"false\",\"order\":\"7\",\"max_length\":\"0\"}"},"limite_de_alerta_executivo":"String","limite_de_alerta_executivo.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"mapped\":\"{\\\"limite_de_alerta_executivo\\\":\\\"{{step[3d30f5c6-720f-4e4a-9cb9-be3e613c5f43].executivo_obj.limite_de_alerta_executivo}}\\\"}\",\"default_value\":\"\",\"label\":\"limite_de_alerta_executivo\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"0\",\"uiUniqueId\":\"4939dfff-dfee-4791-a4f0-83106e5c1224\"}"},"despesa_total_com_pessoal_executivo_anual":"String","despesa_total_com_pessoal_executivo_anual.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"mapped\":\"{\\\"despesa_total_com_pessoal_executivo_anual\\\":\\\"{{step[3d30f5c6-720f-4e4a-9cb9-be3e613c5f43].executivo_obj.despesa_total_com_pessoal_executivo_anual}}\\\"}\",\"default_value\":\"\",\"label\":\"despesa_total_com_pessoal_executivo_anual\",\"mandatory\":\"false\",\"order\":\"4\",\"max_length\":\"0\",\"uiUniqueId\":\"2f1d5d68-1ccb-4e29-94de-55f0178b9dc5\"}"},"variacao_despesa_liquida_pessoal_consolidado":"String","variacao_despesa_liquida_pessoal_consolidado.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"variacao_despesa_liquida_pessoal_consolidado\",\"mandatory\":\"false\",\"order\":\"6\",\"max_length\":\"0\"}"},"comprometimento_executivo":"String","comprometimento_executivo.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"mapped\":\"{\\\"comprometimento_executivo\\\":\\\"{{step[3d30f5c6-720f-4e4a-9cb9-be3e613c5f43].executivo_obj.comprometimento_executivo}}\\\"}\",\"default_value\":\"\",\"label\":\"comprometimento_executivo\",\"mandatory\":\"false\",\"order\":\"3\",\"max_length\":\"0\",\"uiUniqueId\":\"4725d2c0-6123-474c-8455-f0d1e60254d1\"}"},"despesa_liquida_pessoal_consolidado":"String","despesa_liquida_pessoal_consolidado.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"despesa_liquida_pessoal_consolidado\",\"mandatory\":\"false\",\"order\":\"8\",\"max_length\":\"0\"}"},"receita_corrente_liquida_rcl":"String","receita_corrente_liquida_rcl.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"mapped\":\"{\\\"receita_corrente_liquida_rcl\\\":\\\"{{step[3d30f5c6-720f-4e4a-9cb9-be3e613c5f43].executivo_obj.receita_corrente_liquida_rcl}}\\\"}\",\"default_value\":\"\",\"label\":\"receita_corrente_liquida_rcl\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"926b2cb8-a08c-43db-b5a9-9a08c19cac85\"}"}},"FlowDesigner:FD3245924fd08df2109a23c887ee55ee48.$type_facets":{"SimpleMapFacet":"{\"sourceId\":\"\",\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"Executivo Obj\",\"mandatory\":\"false\",\"uiUniqueId\":\"a191885f-f466-4a49-ba9c-9e7b338b5709\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FD3245924fd08df2109a23c887ee55ee48\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"hint\":\"\",\"uiType\":\"object\",\"order\":\"19\",\"max_length\":\"65000\"}"}}</serialized_content>
         <sys_class_name>sys_complex_object</sys_class_name>
         <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
         <sys_created_on>2025-11-11 04:37:59</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>f245924ffb8df21086e7f4045eefdc48</sys_id>
-        <sys_mod_count>9</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
@@ -3740,7 +3741,7 @@
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name/>
         <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-11-11 15:27:59</sys_updated_on>
+        <sys_updated_on>2025-11-14 12:18:14</sys_updated_on>
         <type>complex_object_schema</type>
     </sys_complex_object>
     <sys_hub_action_output action="INSERT_OR_UPDATE">
@@ -4156,14 +4157,14 @@
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-27 19:11:44</sys_created_on>
         <sys_id>772290ddfb35621086e7f4045eefdc83</sys_id>
-        <sys_mod_count>25</sys_mod_count>
+        <sys_mod_count>27</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name/>
         <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-11-11 15:27:59</sys_updated_on>
+        <sys_updated_on>2025-11-14 12:18:14</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -5771,17 +5772,17 @@
     <sys_hub_action_plan action="INSERT_OR_UPDATE">
         <action_id display_value="Get MRVS Values (Personal Expenses)">8d7b8495fb35621086e7f4045eefdc95</action_id>
         <plan>{"type":"PlanProxy","persistor":{"@class":".ChunkingPlanPersistor","table":"sys_hub_action_plan","id":"af3214ddfb35621086e7f4045eefdc09","name":"plan","plan_signature":null}}</plan>
-        <snapshot>36d8ec17fbcd361086e7f4045eefdca0</snapshot>
+        <snapshot>691aec97fbcd361086e7f4045eefdc2c</snapshot>
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-27 19:11:59</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>af3214ddfb35621086e7f4045eefdc09</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_overrides/>
         <sys_scope/>
         <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-11-11 15:22:43</sys_updated_on>
+        <sys_updated_on>2025-11-11 15:28:06</sys_updated_on>
     </sys_hub_action_plan>
     <sys_hub_action_type_snapshot action="INSERT_OR_UPDATE">
         <access>public</access>
@@ -5867,6 +5868,20 @@
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>sys_hub_action_type_snapshot</document>
         <document_key>9632d0ddfb35621086e7f4045eefdc7e</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-27 19:11:57</sys_created_on>
+        <sys_id>0b3214ddfb35621086e7f4045eefdc03</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-14 12:18:18</sys_updated_on>
+        <value>{"version":"1.0","complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"794bc342-9c9d-444b-a3f2-dd4b6a5a0173\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}},"complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":""}},"message":{"$cv":{"$c":"java.lang.String","$v":""}}},"serializationFormat":"JSON"}</value>
+        <variable display_value="Action Status">3e32d0ddfb35621086e7f4045eefdcb3</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_type_snapshot</document>
+        <document_key>9632d0ddfb35621086e7f4045eefdc7e</document_key>
         <order>3</order>
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
@@ -5877,20 +5892,6 @@
         <sys_updated_on>2025-05-27 19:11:57</sys_updated_on>
         <value>0</value>
         <variable display_value="Don't Treat as Error">fe32d0ddfb35621086e7f4045eefdcb7</variable>
-    </sys_variable_value>
-    <sys_variable_value action="INSERT_OR_UPDATE">
-        <document>sys_hub_action_type_snapshot</document>
-        <document_key>9632d0ddfb35621086e7f4045eefdc7e</document_key>
-        <order>1</order>
-        <sys_class_name>sys_variable_value</sys_class_name>
-        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
-        <sys_created_on>2025-05-27 19:11:57</sys_created_on>
-        <sys_id>0b3214ddfb35621086e7f4045eefdc03</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-27 19:11:57</sys_updated_on>
-        <value>{"version":"1.0","complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":""}},"message":{"$cv":{"$c":"java.lang.String","$v":""}}},"complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"794bc342-9c9d-444b-a3f2-dd4b6a5a0173\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}},"serializationFormat":"JSON"}</value>
-        <variable display_value="Action Status">3e32d0ddfb35621086e7f4045eefdcb3</variable>
     </sys_variable_value>
     <sys_element_mapping action="delete_multiple" query="id=9632d0ddfb35621086e7f4045eefdc7e"/>
     <sys_element_mapping action="INSERT_OR_UPDATE">
@@ -5995,11 +5996,11 @@
         <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
         <sys_created_on>2025-11-11 04:38:04</sys_created_on>
         <sys_id>0055d24ffb8df21086e7f4045eefdc5e</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-11-11 15:28:04</sys_updated_on>
+        <sys_updated_on>2025-11-14 12:18:18</sys_updated_on>
         <table>var__m_sys_hub_action_output_9632d0ddfb35621086e7f4045eefdc7e</table>
-        <value>{"version":"1.0","complexObject":{"despesa_liquida_pessoal_executivo":{"$cv":{"$c":"java.lang.String","$v":""}},"variacao_despesa_liquida_pessoal_executivo":{"$cv":{"$c":"java.lang.String","$v":""}},"limite_de_alerta_executivo":{"$cv":{"$c":"java.lang.String","$v":""}},"despesa_total_com_pessoal_executivo_anual":{"$cv":{"$c":"java.lang.String","$v":""}},"variacao_despesa_liquida_pessoal_consolidado":{"$cv":{"$c":"java.lang.String","$v":""}},"comprometimento_executivo":{"$cv":{"$c":"java.lang.String","$v":""}},"despesa_liquida_pessoal_consolidado":{"$cv":{"$c":"java.lang.String","$v":""}},"receita_corrente_liquida_rcl":{"$cv":{"$c":"java.lang.String","$v":""}}},"complexObjectSchema":{"FlowDesigner:FD3345d24f908df21087c92728c39f5c15":{"despesa_liquida_pessoal_executivo":"String","despesa_liquida_pessoal_executivo.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"mapped\":\"{\\\"despesa_liquida_pessoal_executivo\\\":\\\"{{step[3d30f5c6-720f-4e4a-9cb9-be3e613c5f43].executivo_obj.despesa_liquida_pessoal_executivo}}\\\"}\",\"default_value\":\"\",\"label\":\"despesa_liquida_pessoal_executivo\",\"mandatory\":\"false\",\"order\":\"5\",\"max_length\":\"0\"}"},"variacao_despesa_liquida_pessoal_executivo":"String","variacao_despesa_liquida_pessoal_executivo.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"mapped\":\"{\\\"variacao_despesa_liquida_pessoal_executivo\\\":\\\"{{step[3d30f5c6-720f-4e4a-9cb9-be3e613c5f43].executivo_obj.variacao_despesa_liquida_pessoal_executivo}}\\\"}\",\"default_value\":\"\",\"label\":\"variacao_despesa_liquida_pessoal_executivo\",\"mandatory\":\"false\",\"order\":\"7\",\"max_length\":\"0\"}"},"limite_de_alerta_executivo":"String","limite_de_alerta_executivo.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"mapped\":\"{\\\"limite_de_alerta_executivo\\\":\\\"{{step[3d30f5c6-720f-4e4a-9cb9-be3e613c5f43].executivo_obj.limite_de_alerta_executivo}}\\\"}\",\"default_value\":\"\",\"label\":\"limite_de_alerta_executivo\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"0\",\"uiUniqueId\":\"4939dfff-dfee-4791-a4f0-83106e5c1224\"}"},"despesa_total_com_pessoal_executivo_anual":"String","despesa_total_com_pessoal_executivo_anual.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"mapped\":\"{\\\"despesa_total_com_pessoal_executivo_anual\\\":\\\"{{step[3d30f5c6-720f-4e4a-9cb9-be3e613c5f43].executivo_obj.despesa_total_com_pessoal_executivo_anual}}\\\"}\",\"default_value\":\"\",\"label\":\"despesa_total_com_pessoal_executivo_anual\",\"mandatory\":\"false\",\"order\":\"4\",\"max_length\":\"0\",\"uiUniqueId\":\"2f1d5d68-1ccb-4e29-94de-55f0178b9dc5\"}"},"variacao_despesa_liquida_pessoal_consolidado":"String","variacao_despesa_liquida_pessoal_consolidado.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"mapped\":\"{\\\"variacao_despesa_liquida_pessoal_consolidado\\\":\\\"{{step[3d30f5c6-720f-4e4a-9cb9-be3e613c5f43].executivo_obj.variacao_despesa_liquida_pessoal_consolidado}}\\\"}\",\"default_value\":\"\",\"label\":\"variacao_despesa_liquida_pessoal_consolidado\",\"mandatory\":\"false\",\"order\":\"6\",\"max_length\":\"0\"}"},"comprometimento_executivo":"String","comprometimento_executivo.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"mapped\":\"{\\\"comprometimento_executivo\\\":\\\"{{step[3d30f5c6-720f-4e4a-9cb9-be3e613c5f43].executivo_obj.comprometimento_executivo}}\\\"}\",\"default_value\":\"\",\"label\":\"comprometimento_executivo\",\"mandatory\":\"false\",\"order\":\"3\",\"max_length\":\"0\",\"uiUniqueId\":\"4725d2c0-6123-474c-8455-f0d1e60254d1\"}"},"despesa_liquida_pessoal_consolidado":"String","despesa_liquida_pessoal_consolidado.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"mapped\":\"{\\\"despesa_liquida_pessoal_consolidado\\\":\\\"{{step[3d30f5c6-720f-4e4a-9cb9-be3e613c5f43].executivo_obj.despesa_liquida_pessoal_consolidado}}\\\"}\",\"default_value\":\"\",\"label\":\"despesa_liquida_pessoal_consolidado\",\"mandatory\":\"false\",\"order\":\"8\",\"max_length\":\"0\"}"},"receita_corrente_liquida_rcl":"String","receita_corrente_liquida_rcl.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"mapped\":\"{\\\"receita_corrente_liquida_rcl\\\":\\\"{{step[3d30f5c6-720f-4e4a-9cb9-be3e613c5f43].executivo_obj.receita_corrente_liquida_rcl}}\\\"}\",\"default_value\":\"\",\"label\":\"receita_corrente_liquida_rcl\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"926b2cb8-a08c-43db-b5a9-9a08c19cac85\"}"}},"FlowDesigner:FD3345d24f908df21087c92728c39f5c15.$type_facets":{"SimpleMapFacet":"{\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"Executivo Obj\",\"mandatory\":\"false\",\"uiUniqueId\":\"a191885f-f466-4a49-ba9c-9e7b338b5709\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FD3345d24f908df21087c92728c39f5c15\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"object\",\"order\":\"19\",\"max_length\":\"65000\"}"}},"serializationFormat":"JSON"}</value>
+        <value>{"version":"1.0","complexObjectSchema":{"FlowDesigner:FD3345d24f908df21087c92728c39f5c15":{"despesa_liquida_pessoal_executivo":"String","despesa_liquida_pessoal_executivo.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"mapped\":\"{\\\"despesa_liquida_pessoal_executivo\\\":\\\"{{step[3d30f5c6-720f-4e4a-9cb9-be3e613c5f43].executivo_obj.despesa_liquida_pessoal_executivo}}\\\"}\",\"default_value\":\"\",\"label\":\"despesa_liquida_pessoal_executivo\",\"mandatory\":\"false\",\"order\":\"5\",\"max_length\":\"0\"}"},"variacao_despesa_liquida_pessoal_executivo":"String","variacao_despesa_liquida_pessoal_executivo.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"mapped\":\"{\\\"variacao_despesa_liquida_pessoal_executivo\\\":\\\"{{step[3d30f5c6-720f-4e4a-9cb9-be3e613c5f43].executivo_obj.variacao_despesa_liquida_pessoal_executivo}}\\\"}\",\"default_value\":\"\",\"label\":\"variacao_despesa_liquida_pessoal_executivo\",\"mandatory\":\"false\",\"order\":\"7\",\"max_length\":\"0\"}"},"limite_de_alerta_executivo":"String","limite_de_alerta_executivo.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"mapped\":\"{\\\"limite_de_alerta_executivo\\\":\\\"{{step[3d30f5c6-720f-4e4a-9cb9-be3e613c5f43].executivo_obj.limite_de_alerta_executivo}}\\\"}\",\"default_value\":\"\",\"label\":\"limite_de_alerta_executivo\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"0\",\"uiUniqueId\":\"4939dfff-dfee-4791-a4f0-83106e5c1224\"}"},"despesa_total_com_pessoal_executivo_anual":"String","despesa_total_com_pessoal_executivo_anual.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"mapped\":\"{\\\"despesa_total_com_pessoal_executivo_anual\\\":\\\"{{step[3d30f5c6-720f-4e4a-9cb9-be3e613c5f43].executivo_obj.despesa_total_com_pessoal_executivo_anual}}\\\"}\",\"default_value\":\"\",\"label\":\"despesa_total_com_pessoal_executivo_anual\",\"mandatory\":\"false\",\"order\":\"4\",\"max_length\":\"0\",\"uiUniqueId\":\"2f1d5d68-1ccb-4e29-94de-55f0178b9dc5\"}"},"variacao_despesa_liquida_pessoal_consolidado":"String","variacao_despesa_liquida_pessoal_consolidado.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"mapped\":\"{\\\"variacao_despesa_liquida_pessoal_consolidado\\\":\\\"{{step[3d30f5c6-720f-4e4a-9cb9-be3e613c5f43].executivo_obj.variacao_despesa_liquida_pessoal_consolidado}}\\\"}\",\"default_value\":\"\",\"label\":\"variacao_despesa_liquida_pessoal_consolidado\",\"mandatory\":\"false\",\"order\":\"6\",\"max_length\":\"0\"}"},"comprometimento_executivo":"String","comprometimento_executivo.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"mapped\":\"{\\\"comprometimento_executivo\\\":\\\"{{step[3d30f5c6-720f-4e4a-9cb9-be3e613c5f43].executivo_obj.comprometimento_executivo}}\\\"}\",\"default_value\":\"\",\"label\":\"comprometimento_executivo\",\"mandatory\":\"false\",\"order\":\"3\",\"max_length\":\"0\",\"uiUniqueId\":\"4725d2c0-6123-474c-8455-f0d1e60254d1\"}"},"despesa_liquida_pessoal_consolidado":"String","despesa_liquida_pessoal_consolidado.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"mapped\":\"{\\\"despesa_liquida_pessoal_consolidado\\\":\\\"{{step[3d30f5c6-720f-4e4a-9cb9-be3e613c5f43].executivo_obj.despesa_liquida_pessoal_consolidado}}\\\"}\",\"default_value\":\"\",\"label\":\"despesa_liquida_pessoal_consolidado\",\"mandatory\":\"false\",\"order\":\"8\",\"max_length\":\"0\"}"},"receita_corrente_liquida_rcl":"String","receita_corrente_liquida_rcl.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"choiceOption\":\"\",\"mapped\":\"{\\\"receita_corrente_liquida_rcl\\\":\\\"{{step[3d30f5c6-720f-4e4a-9cb9-be3e613c5f43].executivo_obj.receita_corrente_liquida_rcl}}\\\"}\",\"default_value\":\"\",\"label\":\"receita_corrente_liquida_rcl\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"0\",\"uiUniqueId\":\"926b2cb8-a08c-43db-b5a9-9a08c19cac85\"}"}},"FlowDesigner:FD3345d24f908df21087c92728c39f5c15.$type_facets":{"SimpleMapFacet":"{\"choiceOption\":\"\",\"default_value\":\"\",\"label\":\"Executivo Obj\",\"mandatory\":\"false\",\"uiUniqueId\":\"a191885f-f466-4a49-ba9c-9e7b338b5709\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FD3345d24f908df21087c92728c39f5c15\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"object\",\"order\":\"19\",\"max_length\":\"65000\"}"}},"complexObject":{"despesa_liquida_pessoal_executivo":{"$cv":{"$c":"java.lang.String","$v":""}},"variacao_despesa_liquida_pessoal_executivo":{"$cv":{"$c":"java.lang.String","$v":""}},"limite_de_alerta_executivo":{"$cv":{"$c":"java.lang.String","$v":""}},"despesa_total_com_pessoal_executivo_anual":{"$cv":{"$c":"java.lang.String","$v":""}},"variacao_despesa_liquida_pessoal_consolidado":{"$cv":{"$c":"java.lang.String","$v":""}},"comprometimento_executivo":{"$cv":{"$c":"java.lang.String","$v":""}},"despesa_liquida_pessoal_consolidado":{"$cv":{"$c":"java.lang.String","$v":""}},"receita_corrente_liquida_rcl":{"$cv":{"$c":"java.lang.String","$v":""}}},"serializationFormat":"JSON"}</value>
     </sys_element_mapping>
     <sys_element_mapping action="INSERT_OR_UPDATE">
         <field>exerc_cios_anteriores</field>
@@ -6139,10 +6140,10 @@
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-27 19:11:54</sys_created_on>
         <sys_id>9632d0ddfb35621086e7f4045eefdc95</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-11-11 15:22:40</sys_updated_on>
+        <sys_updated_on>2025-11-14 12:18:17</sys_updated_on>
     </sys_hub_step_instance>
     <sys_variable_value action="delete_multiple" query="document_key=9632d0ddfb35621086e7f4045eefdc95"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -6153,9 +6154,9 @@
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-27 19:11:55</sys_created_on>
         <sys_id>ba32d0ddfb35621086e7f4045eefdcb2</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-11-11 15:22:40</sys_updated_on>
+        <sys_updated_on>2025-11-14 12:18:17</sys_updated_on>
         <value>(function execute(inputs, outputs) {&#13;
    var fieldMapping = {&#13;
        "v_despesa_bruta_com_pessoal": "despesa_bruta",&#13;
@@ -6174,6 +6175,7 @@
        "v_porcentagem_do_limite_prudencial_de_rcl": "porcentagem_limite_prudencial",&#13;
        "v_porcentagem_de_limite_de_alerta_de_rcl": "porcentagem_alerta",&#13;
        "v_ano": "ano",&#13;
+       &#13;
 &#13;
        //obj&#13;
        "v_receita_corrente_liquida_rcl": "receita_corrente_liquida_rcl",&#13;
@@ -6834,7 +6836,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>54a4d2cbfb8df21086e7f4045eefdc15</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
@@ -6842,7 +6844,7 @@
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name/>
         <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-11-11 15:28:02</sys_updated_on>
+        <sys_updated_on>2025-11-14 12:18:17</sys_updated_on>
         <type>complex_object_schema</type>
     </sys_complex_object>
     <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
@@ -9063,7 +9065,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>f345d24ffb8df21086e7f4045eefdc15</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
@@ -9071,7 +9073,7 @@
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name/>
         <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-11-11 15:28:03</sys_updated_on>
+        <sys_updated_on>2025-11-14 12:18:17</sys_updated_on>
         <type>complex_object_schema</type>
     </sys_complex_object>
     <sys_hub_action_output action="INSERT_OR_UPDATE">
@@ -10531,14 +10533,14 @@
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-27 19:11:56</sys_created_on>
         <sys_id>fe32d0ddfb35621086e7f4045eefdcb7</sys_id>
-        <sys_mod_count>13</sys_mod_count>
+        <sys_mod_count>15</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name/>
         <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-11-11 15:28:03</sys_updated_on>
+        <sys_updated_on>2025-11-14 12:18:17</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
