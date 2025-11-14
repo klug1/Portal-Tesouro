@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>/* Estilo para o container principal */
+.clp-container {
+    // Garantindo a família da fonte para todo o bloco
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    // Removendo margens/padding desnecessários
+    line-height: 1; 
+    padding: 60px 0; // Padding vertical para dar espaço
+}
+
+/* Estilos para o texto normal */
+.clp-normal-text {
+    font-weight: 500; // Medium
+    font-size: 24px;
+    color: #4773C6;
+    // O line-height 100% e letter-spacing 0% já são o padrão na maioria dos casos, mas mantemos por precisão.
+}
+
+/* Estilos para o texto em negrito */
+.clp-bold-text {
+    font-weight: 700; // Bold
+    font-size: 24px;
+    color: #4773C6;
+}
+
+/* Estilos para o link "Clique aqui." */
+.clp-link {
+    font-weight: 400; // Regular
+    font-size: 22px;
+    color: #1D357F; // Cor específica do link
+    text-decoration: underline;
+    cursor: pointer; 
+    
+    // Animação de transição de 0.3 segundos para a cor
+    transition: color 0.3s ease; 
+}
+
+/* Efeito de HOVER: O link muda para um azul mais escuro suavemente */
+.clp-link:hover {
+    color: #16295c; // Um azul ligeiramente mais escuro que #1D357F
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>link_capag</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Link CAPAG</name>
+        <option_schema>[{"hint":"Insira o URL completo (ex: https://www.exemplo.com)","name":"clp_link_url","section":"Behavior","label":"URL do Ranking CLP","type":"string"}]</option_schema>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    /* define o URL de destino do link */
+    data.link_url = options.clp_link_url || "https://www.tesourotransparente.gov.br/temas/estados-e-municipios/capacidade-de-pagamento-capag"; 
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-14 02:08:35</sys_created_on>
+        <sys_id>b3df0108fb11b21086e7f4045eefdc5b</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Link CAPAG</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_b3df0108fb11b21086e7f4045eefdc5b</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-14 02:11:23</sys_updated_on>
+        <template><![CDATA[<div class="clp-container">
+    <span class="clp-normal-text">
+        Quer saber mais sobre a 
+    </span>
+    <span class="clp-bold-text">
+        Capacidade de Pagamento dos Estados?
+    </span>
+    <!--span class="clp-normal-text">
+        ?
+    </span-->
+    <a target="_blank" href="{{c.data.link_url}}" class="clp-link">
+        Clique aqui.
+    </a>
+</div>]]></template>
+    </sp_widget>
+</record_update>

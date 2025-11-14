@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-13 22:14:02</sys_created_on>
+        <sys_id>0c3ad884fbd57210f6d5f9d38eefdc81</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_sded9_portal_t_0_capacidade_de_pagamento.x_sded9_portal_t_0.capacidade_de_pagamento_user</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_security_acl display_value="x_sded9_portal_t_0_capacidade_de_pagamento">f32ad884fbd57210f6d5f9d38eefdc58</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_0c3ad884fbd57210f6d5f9d38eefdc81</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-13 22:14:02</sys_updated_on>
+        <sys_user_role display_value="x_sded9_portal_t_0.capacidade_de_pagamento_user" name="x_sded9_portal_t_0.capacidade_de_pagamento_user">a72a5884fbd57210f6d5f9d38eefdcf5</sys_user_role>
+    </sys_security_acl_role>
+</record_update>
