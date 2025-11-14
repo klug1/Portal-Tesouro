@@ -183,6 +183,8 @@ h2, h3, div {
     gr.orderBy('u_ano');
     gr.query();
 
+	
+	
     while (gr.next()) {
         dados.push({
             ano: gr.getValue('u_ano'),
@@ -199,14 +201,14 @@ h2, h3, div {
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-11-04 21:27:43</sys_created_on>
         <sys_id>de29b9c5fb81f210f6d5f9d38eefdc41</sys_id>
-        <sys_mod_count>12</sys_mod_count>
+        <sys_mod_count>13</sys_mod_count>
         <sys_name>Variação despesa liquida -consolidado</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_de29b9c5fb81f210f6d5f9d38eefdc41</sys_update_name>
-        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-11-04 22:05:18</sys_updated_on>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-14 14:37:42</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 
