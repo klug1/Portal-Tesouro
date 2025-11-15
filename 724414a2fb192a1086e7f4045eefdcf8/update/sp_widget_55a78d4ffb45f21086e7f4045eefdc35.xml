@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $rootScope, $timeout) {
+    // Ano atual (como número)
+    $scope.anoAtual = new Date().getFullYear(); 
+    $scope.anoSelecionado = "";
+
+    // Popula $scope.anos com os dados buscados no servidor (GlideRecord)
+    $scope.anos = []; 
+    if ($scope.data && $scope.data.anos) {
+        $scope.anos = $scope.data.anos;
+    } else {
+        console.error("RANKING: O array de anos não foi carregado do servidor.");
+    }
+
+    // Função disparada ao mudar o ano selecionado no select
+    $scope.anoChanged = function() {
+        if ($scope.anoSelecionado && ($scope.anoSelecionado < 2000 || $scope.anoSelecionado > $scope.anoAtual)) {
+            console.warn("Ano fora do intervalo permitido.");
+            return;
+        }
+        $rootScope.$broadcast('anoSelecionado', $scope.anoSelecionado);
+        console.log('Ano selecionado ranking:', $scope.anoSelecionado);
+    };
+
+    // Lógica de inicialização do ano
+    $timeout(function() {
+        // Converte o ano atual para String para garantir a comparação
+        var anoParaInicializar = $scope.anoAtual.toString(); 
+        var anosDisponiveis = $scope.anos;
+        var inicializado = false;
+
+        // 1. Tenta inicializar com o ANO ATUAL (ex: "2025")
+        if (anosDisponiveis.includes(anoParaInicializar)) {
+            $scope.anoSelecionado = anoParaInicializar;
+            console.log('RANKING: Inicialização automática: Ano Atual (' + anoParaInicializar + ') selecionado.');
+            inicializado = true;
+        } 
+        // 2. Se o ano atual não existir, inicializa com o ano mais recente disponível
+        else if (anosDisponiveis.length > 0) {
+            $scope.anoSelecionado = anosDisponiveis[0];
+            console.log('RANKING: Inicialização automática: Ano Mais Recente (' + $scope.anoSelecionado + ') selecionado.');
+            inicializado = true;
+        } 
+        
+        // 3. Se nenhuma das opções anteriores funcionar, volta para "Todos"
+        if (!inicializado) {
+            $scope.anoSelecionado = "";
+            console.log('RANKING: Inicialização automática: "Todos os anos" selecionado.');
+        }
+
+        // Dispara o evento com o valor inicial (Ano Atual, Mais Recente ou Todos)
+        $scope.anoChanged();
+    });
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,400;600&amp;display=swap');
+
+.breadcrumb-bar {
+    font-family: "Roboto Flex", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f8faff;
+    border-radius: .6rem;
+    padding: .8rem 1.5rem;
+    color: #1e3a8a;
+    font-size: 24px;
+    box-shadow: 0 .1rem .2rem rgba(0, 0, 0, .05);
+}
+
+.breadcrumb-links {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.breadcrumb-links a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.breadcrumb-links a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb-links span {
+    color: #64748b;
+}
+
+/* --- Filtro de Ano --- */
+.breadcrumb-filter {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+}
+
+.breadcrumb-filter label {
+    font-size: 10px;
+    font-weight: 600;
+    color: #293273;
+    //letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    margin-left: 26px;
+  	margin-bottom: -2px;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.filter-group i {
+    color: #4b5563;
+    font-size: 13px;
+}
+
+/* Select com ícone interno e seta customizada */
+.filter-select {
+    position: relative;
+    display: flex;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Ícone de filtro à esquerda */
+.filter-select i {
+    color: white;
+    -webkit-text-stroke: 1px #293273;
+    font-size: 16px;
+    pointer-events: none;
+  	padding-right: 10px;
+}
+
+/* Seta para baixo*/
+.filter-select::after {
+    content: "v";
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%) scaleY(0.9) scaleX(1.6);
+    font-size: 14px;
+    font-weight: 400;
+    pointer-events: none;
+  	color: #0f0f0f;
+}
+
+/* Select estilizado */
+.filter-select select {
+    padding: 4px 26px 4px 8px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    background-color: white;
+    font-family: 'Roboto Flex', sans-serif;
+    font-size: 13px;
+    color: #334155;
+    appearance: none;
+    min-width: 90px;
+    cursor: pointer;
+    height: 28px;
+    display: flex;
+    align-items: center;
+}
+
+.filter-select select:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37,99,235,0.2);
+}
+
+@media (min-width: 375px) and (max-width: 819px) {
+    .breadcrumb-bar {
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width: 820px) {
+    .breadcrumb-bar {
+        font-size: 2.5rem;
+    }
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>ranking_filtro</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Ranking Filtro</name>
+        <option_schema>[{"hint":"Informe o ID da página que deve ser usada no link","name":"id_da_pagina_anterior","section":"other","label":"ID da página anterior","type":"string"}]</option_schema>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+		
+	data.instanceName = gs.getProperty('instance_name');
+	data.pageId = options.page_id || 'resultados_fiscais';
+	
+    var anos = [];
+    var gr = new GlideRecord('x_sded9_portal_t_0_dados_do_ranking');
+    gr.orderByDesc('u_ano');
+    gr.query();
+
+    var anosUnicos = {};
+    while (gr.next()) {
+        var ano = gr.getValue('u_ano');
+        if (ano) { 
+            if (!anosUnicos[ano]) {
+                anos.push(ano);
+                anosUnicos[ano] = true;
+            }
+        }
+    }
+        
+    // gs.addInfoMessage(JSON.stringify(anos))
+    
+    data.anos = anos; 
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-10 22:58:43</sys_created_on>
+        <sys_id>55a78d4ffb45f21086e7f4045eefdc35</sys_id>
+        <sys_mod_count>52</sys_mod_count>
+        <sys_name>Ranking Filtro</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_55a78d4ffb45f21086e7f4045eefdc35</sys_update_name>
+        <sys_updated_by>pk.aba</sys_updated_by>
+        <sys_updated_on>2025-11-15 09:24:11</sys_updated_on>
+        <template><![CDATA[<div class="breadcrumb-bar">
+    <div class="breadcrumb-links">
+        <a ng-href="https://{{::data.instanceName}}.service-now.com/sate?id={{::data.pageId}}">
+            Resultados Fiscais
+        </a>
+        <span>&gt;</span>
+        <a href="#">Ranking Centro de Lideranças Públicas</a>
+    </div>
+
+    <div class="breadcrumb-filter">
+        <label for="ano-select">ANO</label>
+        <div class="filter-select">
+            <i class="fa fa-filter"></i>
+            <select 
+                id="ano-select"
+                ng-model="anoSelecionado"
+                ng-change="anoChanged()"
+            >
+                <option value="">Todos</option>
+                <option ng-repeat="ano in data.anos" value="{{ano}}">{{ano}}</option>
+            </select>
+        </div>
+    </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

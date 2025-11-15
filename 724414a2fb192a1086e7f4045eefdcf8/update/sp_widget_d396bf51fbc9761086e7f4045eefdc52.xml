@@ -1,9 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller=function() {
-  /* widget controller */
-  var c = this;
+        <client_script><![CDATA[api.controller=function($scope, $rootScope, spUtil) {
+    /* widget controller */
+    var c = this;
+
+    // Certifique-se que c.data é inicializado
+    if (!c.data.anoSelecionado) {
+        c.data.anoSelecionado = '';
+    }
+
+    // Escuta o evento 'anoSelecionado' enviado pelo outro widget
+    var listener = $rootScope.$on('anoSelecionado', function(event, ano) {
+        c.data.anoSelecionado = ano; // Armazena o ano ('2025' ou '' para Todos)
+        
+        // Chama o servidor (Server Script) para recarregar os dados
+        c.server.update().then(function() {
+            console.log('Poupança Corrente atualizada para o ano:', ano || 'Todos');
+        });
+    });
+
+    // Limpa o listener quando o escopo do widget é destruído para evitar vazamento de memória
+    $scope.$on('$destroy', function() {
+        if (listener) {
+            listener();
+        }
+    });
 };]]></client_script>
         <controller_as>c</controller_as>
         <css>@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&amp;display=swap');
@@ -66,6 +88,8 @@ $ranking-title-color: #021770;     // Cor do título
     padding-right: 10px;
     /* 🎯 NOVA COR para o Label */
     color: #1d2f80; 
+  	line-height: 1.5rem;
+  	padding-bottom: 12px;
 }
 
 .ranking-bar-wrapper {
@@ -212,13 +236,16 @@ $ranking-title-color: #021770;     // Cor do título
         <public>true</public>
         <roles/>
         <script><![CDATA[(function() {
-   
+    
     data.rankingData = []; // Array para armazenar os dados do gráfico
+
+    // Inicialização segura do filtro de ano
+    var anoFiltro = (input && input.anoSelecionado) ? input.anoSelecionado : ''; 
+    data.anoSelecionado = anoFiltro; // Guarda o ano selecionado no data object
 
     // 1. Filtro para o tipo de ranking específico
     var rankingTypeSysId = gs.getProperty('x_sded9_portal_t_0.poupanca_corrente') ||'f0e805b8fb857210f6d5f9d38eefdcb5';
     
-
 
     var grTipo = new GlideRecord('x_sded9_portal_t_0_tipos_de_ranking_area'); 
     if (grTipo.get(rankingTypeSysId)) {
@@ -237,18 +264,31 @@ $ranking-title-color: #021770;     // Cor do título
     var gr = new GlideRecord('x_sded9_portal_t_0_dados_do_ranking');
     gr.addQuery('u_tipo_de_ranking', rankingTypeSysId);
     
-  
+    // Aplica o filtro de ano
+    if (anoFiltro) {
+        gr.addQuery('u_ano', anoFiltro);
+    }
+    
+    // Adiciona ordenação por ano se for "Todos"
+    if (!anoFiltro) {
+        gr.orderByDesc('u_ano');
+    }
     
     gr.query();
 
     while (gr.next()) {
         
-         var estadoNome = gr.u_estado.getDisplayValue();
+        var estadoNome = gr.u_estado.getDisplayValue();
         var posicaoStr = gr.u_posicao.toString();
-        var posicaoNum = parseInt(posicaoStr.replace(/\D/g, ''), 10);
+        
+        // Ajuste para formatação da posição (remove .0 e adiciona °)
+        var cleanedPosicaoStr = posicaoStr.replace(/\.0/g, '').replace(/°/g, '') + '°';
+        var posicaoNum = parseInt(cleanedPosicaoStr.replace(/\D/g, ''), 10);
+        
         var porcentagemStr = gr.u_porcentagem.toString(); 
         var cleanedStr = porcentagemStr.replace(/,/g, '.'); 
         var porcentagemParaBarra = parseFloat(cleanedStr); 
+        var anoDoRegistro = gr.u_ano.toString(); // Captura o ano de registro
         
         if (isNaN(porcentagemParaBarra)) {
              porcentagemParaBarra = 0;
@@ -256,15 +296,20 @@ $ranking-title-color: #021770;     // Cor do título
 
         data.rankingData.push({
             nome: estadoNome,
-            posicao_str: posicaoStr, 
+            posicao_str: cleanedPosicaoStr, // Usa string formatada
             posicao_num: posicaoNum, 
-            porcentagem_num: porcentagemParaBarra
+            porcentagem_num: porcentagemParaBarra,
+            ano_registro: anoDoRegistro // Adicionado
         });
     }
 
+    // Mantida a ordenação crescente (1º, 2º...)
     data.rankingData.sort(function(a, b) {
-        return a.posicao_num - b.posicao_num; 
-    });
+        return a.posicao_num - b.posicao_num; 
+    });
+    
+    // ]]>🚨<![CDATA[ Define a variável de verificação de ausência de dados
+    data.noData = data.rankingData.length === 0 && anoFiltro;
 
 })();]]></script>
         <servicenow>false</servicenow>
@@ -272,25 +317,33 @@ $ranking-title-color: #021770;     // Cor do título
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-11-06 01:13:48</sys_created_on>
         <sys_id>d396bf51fbc9761086e7f4045eefdc52</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name>Poupança Corrente</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_d396bf51fbc9761086e7f4045eefdc52</sys_update_name>
-        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-11-07 02:52:43</sys_updated_on>
+        <sys_updated_by>pk.aba</sys_updated_by>
+        <sys_updated_on>2025-11-15 08:28:14</sys_updated_on>
         <template><![CDATA[<div class="panel panel-default">
     <div class="panel-heading">
         <h3 class="panel-title">Poupança Corrente</h3>
     </div>
     <div class="panel-body">
         
-        <div ng-repeat="item in c.data.rankingData" class="ranking-bar-container">
+        <div ng-if="c.data.noData" class="alert alert-info">
+            Não há registro para o ano selecionado ({{c.data.anoSelecionado}}).
+        </div>
+
+        <div ng-if="!c.data.noData" ng-repeat="item in c.data.rankingData" class="ranking-bar-container">
             
             <div class="ranking-label">
-                <span class="ranking-position-label">{{item.posicao_str}}°</span>
+                <span class="ranking-position-label">{{item.posicao_str}}</span>
                 {{item.nome}}
+                
+                <span ng-if="!c.data.anoSelecionado" class="ranking-ano-registro">
+                    ({{item.ano_registro}})
+                </span>
             </div>
             
             <div class="ranking-bar-wrapper">
@@ -298,7 +351,7 @@ $ranking-title-color: #021770;     // Cor do título
                 </div>
             </div>
             
-            </div>
+        </div>
         
     </div>
 </div>
@@ -321,6 +374,25 @@ $ranking-title-color: #021770;     // Cor do título
             <span class="ranking-info-content">{{c.data.atualizacao}}</span>
         </p>
     </div>
-</div>]]></template>
+</div>
+
+<style>
+/* Estilo para a mensagem de alerta */
+.alert-info {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #b8daff;
+    border-radius: 4px;
+    color: #0c5460;
+    background-color: #d1ecf1;
+}
+
+/* Estilo para o ano de registro */
+.ranking-ano-registro {
+    font-size: 0.85em;
+    color: #6c757d; 
+    margin-left: 5px;
+}
+</style>]]></template>
     </sp_widget>
 </record_update>
