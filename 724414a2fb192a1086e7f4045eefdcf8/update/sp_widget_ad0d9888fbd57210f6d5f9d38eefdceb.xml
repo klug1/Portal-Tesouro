@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $rootScope, $timeout) {
+    var chartCapag = null; 
+    
+    $scope.anoSelecionadoCapag = ""; 
+    $scope.exibirGraficoCapag = false;
+    
+    var coresCapag = {
+        'a_mais': 'rgba(62, 107, 184, 1)',  
+        'a': 'rgba(157, 175, 227, 1)',     
+        'b': 'rgba(157, 175, 227, 1)',    
+        'c': 'rgba(157, 175, 227, 1)',    
+        'd': 'rgba(157, 175, 227, 1)'     
+    };
+
+    var valoresFixos = {
+        'a_mais': 100,
+        'a': 80,
+        'b': 60,
+        'c': 40,
+        'd': 20
+    };
+
+    /**
+     * Função para carregar os dados do servidor com filtro de ano
+     */
+    function carregarDadosCapagFiltrado() {
+        var filtros = {
+            ano: $scope.anoSelecionadoCapag || "" 
+        };
+
+        $scope.server.get(filtros).then(function(response) {
+            var dados = response.data.dadosGraficoCapag || [];
+            var anosDisponiveis = response.data.anos || [];
+
+            $timeout(function() {
+                montarGraficoCapag(dados, anosDisponiveis); 
+            }, 300);
+        });
+    }
+
+    // Escuta o evento de mudança de ano disparado pelo seu filtro
+    $rootScope.$on('anoSelecionado', function(event, ano) {
+        $scope.anoSelecionadoCapag = ano; 
+        carregarDadosCapagFiltrado(); 
+    });
+    
+    // Chamada inicial
+    carregarDadosCapagFiltrado();
+
+    function montarGraficoCapag(listaDados, anosDisponiveis) {
+        
+        var ordemNotasDDAmais = ['d', 'c', 'b', 'a', 'a_mais'];
+        
+        var anosPresentes = [];
+        listaDados.forEach(function(item) {
+            if (anosPresentes.indexOf(item.ano) === -1) {
+                anosPresentes.push(item.ano);
+            }
+        });
+        // Ordena os anos de forma crescente (Ex: 2022, 2023, 2024)
+        anosPresentes.sort(function(a, b) {
+            return parseInt(a) - parseInt(b);
+        });
+        
+        var dadosMap = {};
+        listaDados.forEach(function(item) {
+            dadosMap[item.ano + '_' + item.nota] = item; 
+        });
+
+        var labelsFinais = [];
+        var valoresGraficoFinais = [];
+        var backgroundColorsFinais = [];
+
+        // 3. Constrói as listas finais, garantindo a ORDEM: Ano crescente, Nota D->A+
+        // Itera sobre todos os anos presentes (seja um ou vários)
+        anosPresentes.forEach(function(ano) {
+            ordemNotasDDAmais.forEach(function(nota) {
+                var notaFormatada = nota.toUpperCase().replace('_MAIS', '+');
+                var chave = ano + '_' + nota;
+                
+                // Inclui a barra SE houver dados para aquela combinação Ano/Nota
+                if (dadosMap[chave] && dadosMap[chave].count > 0) {
+                    
+                    // O rótulo é construído como "Ano | Nota" (usando | como separador interno)
+                    labelsFinais.push(ano + '|' + notaFormatada);
+                    valoresGraficoFinais.push(valoresFixos[nota]);
+                    backgroundColorsFinais.push(coresCapag[nota]);
+                }
+            });
+        });
+
+        if (valoresGraficoFinais.length === 0) {
+            if (chartCapag) {
+                chartCapag.destroy();
+                chartCapag = null;
+            }
+            $scope.exibirGraficoCapag = false;
+            $scope.$applyAsync();
+            return;
+        }
+
+        $scope.exibirGraficoCapag = true;
+        $scope.$applyAsync();
+
+        var maxValor = 100;
+        var ctx = document.getElementById('graficoCapagBarra').getContext('2d');
+
+        if (chartCapag) {
+            // APLICA O MÉTODO UPDATE PARA TRANSIÇÃO SUAVE
+            chartCapag.data.labels = labelsFinais; 
+            chartCapag.data.datasets[0].data = valoresGraficoFinais;
+            chartCapag.data.datasets[0].backgroundColor = backgroundColorsFinais;
+            chartCapag.data.datasets[0].label = 'Valor CAPAG'; 
+            chartCapag.update();
+            return;
+        }
+        
+        // Criação inicial do gráfico
+        chartCapag = new Chart(ctx, {
+            type: 'bar', 
+            data: {
+                labels: labelsFinais,
+                datasets: [{
+                    label: 'Valor CAPAG', 
+                    data: valoresGraficoFinais,
+                    backgroundColor: backgroundColorsFinais, 
+                    borderColor: backgroundColorsFinais.map(function(c) { return c.replace('0.8', '1'); }),
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                animation: {
+                    duration: 700,
+                    easing: 'easeInOutQuad'
+                },
+                scales: {
+                    x: {
+                        display: true,
+                        title: {
+                            display: false // O título da escala X não é mais necessário
+                        },
+                        ticks: {
+                            // ** NOVA LÓGICA DE CALLBACK PARA DIVIDIR O RÓTULO EM DUAS LINHAS **
+                            callback: function(val, index) {
+                                var fullLabel = this.getLabelForValue(val); // Ex: "2024|A+"
+                                var parts = fullLabel.split('|');
+                                
+                                if (parts.length === 2) {
+                                    // Retorna [Nota, Ano]
+                                    return [parts[1], parts[0]]; 
+                                }
+                                return fullLabel;
+                            },
+                            color: '#0E2B69',
+                            font: {
+                                size: 16,
+                                weight: 800,
+                                family: 'Roboto Flex, sans-serif',
+                                lineHeight: 1.8
+                            },
+                            padding: 6,
+                            maxRotation: 0,
+                            autoSkip: false
+                        }
+                    },
+                    y: {
+                        display: false, // Eixo Y removido
+                        beginAtZero: true,
+                        max: maxValor * 1.1,
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false 
+                    },
+                    tooltip: {
+                        enabled: false, // Reativado para ser funcional
+                        callbacks: {
+                            label: function(context) {
+                                return 'Valor: ' + context.raw + '%';
+                            },
+                            title: function(context) {
+                                // Retorna o rótulo no formato original para o tooltip
+                                var fullLabel = context[0].label;
+                                var parts = fullLabel.split('|');
+                                return parts[1] + ' (' + parts[0] + ')'; // Ex: A+ (2024)
+                            }
+                        }
+                    },
+                    datalabels: {
+                        anchor: 'end',
+                        align: 'top',
+                        formatter: function(value, context) {
+                            return value + '%'; 
+                        },
+                        color: '#000', 
+                        font: {
+                            weight: 'bold'
+                        }
+                    }
+                }
+            }
+        });
+    }
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>canvas {
+  display: block;
+  margin: 0 auto;
+}
+
+h3, div {
+ font-family: 'Roboto Flex', sans-serif;
+}
+
+/* --- Media Queries para Responsividade --- */
+
+/* Telas Pequenas (Mobile S, M, L - até 767px) */
+@media (max-width: 767px) {
+  canvas {
+    max-width: 90%; /* Ajustar a largura máxima do canvas */
+  }
+  h3 {
+    font-size: 1rem; /* Ajustar o tamanho da fonte do título */
+  }
+}
+
+/* Tablets (iPad Mini, iPad Air, Surface Duo, Galaxy Z Fold 5 - 768px até 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  canvas {
+    max-width: 80%;
+  }
+  h3 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Laptops e Telas Maiores (iPad Pro, Surface Pro 7, Laptops, 4K - 1024px em diante) */
+@media (min-width: 1024px) {
+  canvas {
+    max-width: none;
+  }
+  h3 {
+  }
+}
+
+/* Ajustes para o Surface Duo (540x720) */
+@media (width: 540px) and (height: 720px) {
+    canvas {
+        max-width: 95%;
+    }
+}
+
+/* Ajustes para Galaxy Z Fold 5 (max-width: 350px) */
+@media (max-width: 350px) {
+    h3 {
+        font-size: 0.9rem;
+    }
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>capag_grafico_fase_2</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Capag Grafico Fase 2</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    input = input || {};
+    data.dadosGraficoCapag = [];
+    data.anos = []; 
+
+    // O ano é lido do input enviado pelo Client Script
+    var anoFiltro = input.ano || ""; 
+    
+    // --- 1. Busca e Popula os Anos Disponíveis (para o filtro) ---
+    var grAnos = new GlideAggregate('x_sded9_portal_t_0_capacidade_de_pagamento');
+    grAnos.addAggregate('COUNT');
+    grAnos.groupBy('u_ano');
+    grAnos.orderBy('u_ano');
+    grAnos.query();
+    
+    while (grAnos.next()) {
+        data.anos.push(grAnos.getValue('u_ano').toString()); 
+    }
+    data.anos = Array.from(new Set(data.anos));
+    data.anos.sort(); 
+
+    // --- 2. Busca os Dados (Agrupa por Ano e Nota) ---
+    var grCapag = new GlideAggregate('x_sded9_portal_t_0_capacidade_de_pagamento');
+    grCapag.addAggregate('COUNT'); 
+    
+    // ** LÓGICA DE FILTRO ATUALIZADA **
+    if (anoFiltro !== "" && anoFiltro.toLowerCase() !== "todos") {
+        // Se um ano específico for selecionado, filtra por ele (Ano ÚNICO)
+        grCapag.addQuery('u_ano', anoFiltro);
+    } 
+    // Se 'anoFiltro' for "Todos" ou vazio, NENHUM filtro é aplicado aqui,
+    // o que fará com que o grCapag busque todos os dados disponíveis.
+    
+    // Agrupa e Ordena
+    grCapag.groupBy('u_ano');
+    grCapag.groupBy('u_nota_capag');
+    grCapag.orderBy('u_ano'); 
+    grCapag.orderByDesc('u_nota_capag'); 
+    grCapag.query();
+
+    var listaCapag = [];
+
+    while (grCapag.next()) {
+        var ano = grCapag.getValue('u_ano').toString();
+        var nota = grCapag.getValue('u_nota_capag');
+        var contagem = parseInt(grCapag.getAggregate('COUNT')) || 0;
+        
+        if (contagem > 0) {
+            listaCapag.push({
+                ano: ano,
+                nota: nota,
+                count: contagem
+            });
+        }
+    }
+    
+    data.dadosGraficoCapag = listaCapag;
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-13 22:26:26</sys_created_on>
+        <sys_id>ad0d9888fbd57210f6d5f9d38eefdceb</sys_id>
+        <sys_mod_count>60</sys_mod_count>
+        <sys_name>Capag Grafico Fase 2</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_ad0d9888fbd57210f6d5f9d38eefdceb</sys_update_name>
+        <sys_updated_by>pk.aba</sys_updated_by>
+        <sys_updated_on>2025-11-15 09:32:40</sys_updated_on>
+        <template><![CDATA[<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+
+  .chart-wrapper {
+      font-family: 'Roboto Flex', sans-serif;
+      width: 100%;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+      margin-top: 4rem;
+  }
+  .chart-container {
+      position: relative;
+      width: 100%;
+      height: 588px;
+  }
+  canvas {
+      width: 100% !important;
+      height: 100% !important;
+      display: block;
+  }
+  @media (max-width: 768px) {
+      .chart-container {
+          height: 400px;
+      }
+  }
+  @media (max-width: 480px) {
+      .chart-container {
+          height: 300px;
+      }
+  }
+  .report-widget.panel.mensagem {
+      text-align: center;
+      font-size: 1.2em;
+      padding: 20px;
+      background: #f8f8f8;
+      border-radius: 8px;
+      margin-top: 20px;
+  }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+
+<div class="chart-wrapper">
+  <!--h3 style="text-align:center; font-weight: 600; margin-bottom: 16px;">
+    <i class="fa fa-bar-chart" aria-hidden="true"></i> Distribuição da Capacidade de Pagamento (CAPAG)
+  </h3-->
+
+  <div class="chart-container" ng-show="exibirGraficoCapag">
+    <canvas id="graficoCapagBarra"></canvas>
+  </div>
+
+  <div class="report-widget panel mensagem" ng-show="!exibirGraficoCapag">
+    <div class="panel-heading">
+      <h2 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i></h2>
+    </div>
+    <div class="panel-body">
+      Nenhum dado de CAPAG disponível para o filtro selecionado.
+    </div>
+  </div>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>
