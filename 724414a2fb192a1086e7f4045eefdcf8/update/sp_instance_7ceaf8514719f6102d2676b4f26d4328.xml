@@ -10,48 +10,48 @@
         <roles/>
         <short_description/>
         <size>md</size>
-        <sp_column display_value="1">3aa27551fb493610f6d5f9d38eefdc7a</sp_column>
-        <sp_widget display_value="DBLP Gráfico">452a10c1fb49b210f6d5f9d38eefdc3c</sp_widget>
+        <sp_column display_value="1">07169deffbc9b61086e7f4045eefdcf7</sp_column>
+        <sp_widget display_value="Tesouro Footer">d6853000fbe5225086e7f4045eefdc84</sp_widget>
         <sys_class_name>sp_instance</sys_class_name>
-        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
-        <sys_created_on>2025-11-05 01:29:08</sys_created_on>
-        <sys_id>75803ecdfbc5f210f6d5f9d38eefdc67</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-17 21:49:19</sys_created_on>
+        <sys_id>7ceaf8514719f6102d2676b4f26d4328</sys_id>
+        <sys_mod_count>0</sys_mod_count>
         <sys_name/>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_update_name>sp_instance_75803ecdfbc5f210f6d5f9d38eefdc67</sys_update_name>
+        <sys_update_name>sp_instance_7ceaf8514719f6102d2676b4f26d4328</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-11-17 21:42:00</sys_updated_on>
+        <sys_updated_on>2025-11-17 21:49:19</sys_updated_on>
         <title/>
         <url/>
         <widget_parameters/>
     </sp_instance>
-    <sys_translated_text action="delete_multiple" query="documentkey=75803ecdfbc5f210f6d5f9d38eefdc67"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=7ceaf8514719f6102d2676b4f26d4328"/>
     <sys_translated_text action="INSERT_OR_UPDATE">
-        <documentkey>75803ecdfbc5f210f6d5f9d38eefdc67</documentkey>
+        <documentkey>7ceaf8514719f6102d2676b4f26d4328</documentkey>
         <fieldname>short_description</fieldname>
         <language>pb</language>
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
-        <sys_created_on>2025-11-17 21:41:45</sys_created_on>
-        <sys_id>8a29f49d47d5f6102d2676b4f26d43ae</sys_id>
+        <sys_created_on>2025-11-17 21:49:19</sys_created_on>
+        <sys_id>b0eaf8514719f6102d2676b4f26d4329</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-11-17 21:41:45</sys_updated_on>
+        <sys_updated_on>2025-11-17 21:49:19</sys_updated_on>
         <tablename>sp_instance</tablename>
         <value/>
     </sys_translated_text>
     <sys_translated_text action="INSERT_OR_UPDATE">
-        <documentkey>75803ecdfbc5f210f6d5f9d38eefdc67</documentkey>
+        <documentkey>7ceaf8514719f6102d2676b4f26d4328</documentkey>
         <fieldname>title</fieldname>
         <language>pb</language>
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
-        <sys_created_on>2025-11-17 21:41:45</sys_created_on>
-        <sys_id>0a29f49d47d5f6102d2676b4f26d43af</sys_id>
+        <sys_created_on>2025-11-17 21:49:19</sys_created_on>
+        <sys_id>fceaf8514719f6102d2676b4f26d4329</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-11-17 21:41:45</sys_updated_on>
+        <sys_updated_on>2025-11-17 21:49:19</sys_updated_on>
         <tablename>sp_instance</tablename>
         <value/>
     </sys_translated_text>

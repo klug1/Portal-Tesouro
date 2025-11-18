@@ -16,17 +16,43 @@
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-21 23:40:52</sys_created_on>
         <sys_id>bb3696dbfbe1a29086e7f4045eefdc86</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name/>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_instance_bb3696dbfbe1a29086e7f4045eefdc86</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-21 23:40:52</sys_updated_on>
+        <sys_updated_on>2025-11-17 21:42:00</sys_updated_on>
         <title/>
         <url/>
         <widget_parameters/>
     </sp_instance>
     <sys_translated_text action="delete_multiple" query="documentkey=bb3696dbfbe1a29086e7f4045eefdc86"/>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>bb3696dbfbe1a29086e7f4045eefdc86</documentkey>
+        <fieldname>short_description</fieldname>
+        <language>pb</language>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-17 21:41:50</sys_created_on>
+        <sys_id>1b29789d47d5f6102d2676b4f26d43be</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-17 21:41:50</sys_updated_on>
+        <tablename>sp_instance</tablename>
+        <value/>
+    </sys_translated_text>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>bb3696dbfbe1a29086e7f4045eefdc86</documentkey>
+        <fieldname>title</fieldname>
+        <language>pb</language>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-17 21:41:50</sys_created_on>
+        <sys_id>5729789d47d5f6102d2676b4f26d43bf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-17 21:41:50</sys_updated_on>
+        <tablename>sp_instance</tablename>
+        <value/>
+    </sys_translated_text>
 </record_update>

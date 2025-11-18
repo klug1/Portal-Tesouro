@@ -22,37 +22,11 @@
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_instance_5536838dfb49f210f6d5f9d38eefdcc8</sys_update_name>
-        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-11-05 15:35:46</sys_updated_on>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-17 21:35:21</sys_updated_on>
         <title/>
         <url/>
         <widget_parameters/>
     </sp_instance>
     <sys_translated_text action="delete_multiple" query="documentkey=5536838dfb49f210f6d5f9d38eefdcc8"/>
-    <sys_translated_text action="INSERT_OR_UPDATE">
-        <documentkey>5536838dfb49f210f6d5f9d38eefdcc8</documentkey>
-        <fieldname>short_description</fieldname>
-        <language>PB</language>
-        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
-        <sys_created_on>2025-11-05 15:35:46</sys_created_on>
-        <sys_id>c4527911fb493610f6d5f9d38eefdc5e</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-11-05 15:35:46</sys_updated_on>
-        <tablename>sp_instance</tablename>
-        <value/>
-    </sys_translated_text>
-    <sys_translated_text action="INSERT_OR_UPDATE">
-        <documentkey>5536838dfb49f210f6d5f9d38eefdcc8</documentkey>
-        <fieldname>title</fieldname>
-        <language>PB</language>
-        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
-        <sys_created_on>2025-11-05 15:35:47</sys_created_on>
-        <sys_id>48527911fb493610f6d5f9d38eefdc5f</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-11-05 15:35:47</sys_updated_on>
-        <tablename>sp_instance</tablename>
-        <value/>
-    </sys_translated_text>
 </record_update>
