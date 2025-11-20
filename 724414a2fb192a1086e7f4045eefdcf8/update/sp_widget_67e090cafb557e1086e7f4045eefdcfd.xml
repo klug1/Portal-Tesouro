@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $rootScope, $timeout) {
+    var chartEnd = null;
+
+    $scope.anoSelecionadoEnd = "";
+    $scope.exibirGraficoEnd = false;
+
+    var coresEnd = {
+        apurado: '#a7b9e8',
+        meta: '#4b77bf'
+    };
+
+    function carregarDadosEndFiltrado() {
+        var filtros = {
+            ano: $scope.anoSelecionadoEnd || ""
+        };
+        $scope.server.get(filtros).then(function(response) {
+            var dados = response.data.dadosGraficoEnd || [];
+            var anosDisponiveis = response.data.anos || [];
+
+            $timeout(function() {
+                montarGraficoEnd(dados, anosDisponiveis);
+            });
+        });
+    }
+
+    $rootScope.$on('anoSelecionado', function(event, ano) {
+        $scope.anoSelecionadoEnd = ano;
+        carregarDadosEndFiltrado();
+    });
+
+    carregarDadosEndFiltrado();
+
+    function montarGraficoEnd(listaDados, anosDisponiveis) {
+
+        var anosPresentes = [];
+        listaDados.forEach(function(item) {
+            if (anosPresentes.indexOf(item.ano) === -1) {
+                anosPresentes.push(item.ano);
+            }
+        });
+
+        anosPresentes.sort(function(a, b) {
+            return parseInt(a) - parseInt(b);
+        });
+
+        if (anosPresentes.length === 0) {
+            if (chartEnd) {
+                chartEnd.destroy();
+                chartEnd = null;
+            }
+            $scope.exibirGraficoEnd = false;
+            return;
+        }
+        $scope.exibirGraficoEnd = true;
+
+        var dadosApurado = anosPresentes.map(function(ano) {
+            var item = listaDados.find(function(d) { return d.ano === ano; });
+            return item ? parseFloat(item.apurado) : null;
+        });
+        var dadosMeta = anosPresentes.map(function(ano) {
+            var item = listaDados.find(function(d) { return d.ano === ano; });
+            return item ? parseFloat(item.meta) : null;
+        });
+
+        // ------------------------
+        // ESCALA DINÂMICA (mil, mi, bi)
+        // ------------------------
+        var todosValores = dadosApurado.concat(dadosMeta).filter(function(v) {
+            return v !== null && !isNaN(v);
+        });
+
+        var maxAbs = 0;
+        if (todosValores.length > 0) {
+            var maxVal = Math.max.apply(null, todosValores);
+            var minVal = Math.min.apply(null, todosValores);
+            maxAbs = Math.max(Math.abs(maxVal), Math.abs(minVal));
+        }
+
+        var unidadeEscala = '';
+        var divisorEscala = 1;
+
+        if (maxAbs >= 1e9) {
+            unidadeEscala = ' bi';
+            divisorEscala = 1e9;
+        } else if (maxAbs >= 1e6) {
+            unidadeEscala = ' mi';
+            divisorEscala = 1e6;
+        } else if (maxAbs >= 1e3) {
+            unidadeEscala = ' mil';
+            divisorEscala = 1e3;
+        }
+
+        // ------------------------
+        // ESCALA Y (usa o seu padding fixo)
+        // ------------------------
+        var maxVal = todosValores.length > 0 ? Math.max.apply(null, todosValores) : 100;
+        var minVal = todosValores.length > 0 ? Math.min.apply(null, todosValores) : 0;
+
+        var PADDING_FIXO = 100;
+        var scaleMax;
+        var scaleMin;
+
+        if (maxVal === 0 && minVal === 0) {
+            scaleMax = 10;
+            scaleMin = -10;
+        } else {
+            scaleMax = maxVal + PADDING_FIXO;
+            scaleMin = minVal - PADDING_FIXO;
+
+            if (minVal >= 0 && scaleMin < 0) {
+                scaleMin = 0;
+            }
+        }
+
+        var desiredType = 'bar';
+
+        var datasets = [{
+            label: 'Valor Apurado',
+            data: dadosApurado,
+            backgroundColor: coresEnd.apurado,
+            borderColor: coresEnd.apurado,
+            borderWidth: 1
+        },{
+            label: 'Meta',
+            data: dadosMeta,
+            backgroundColor: coresEnd.meta,
+            borderColor: coresEnd.meta,
+            borderWidth: 1
+        }];
+
+        datasets.forEach(function(ds, index){
+            ds.pointStyle = 'rect';
+            ds.pointBackgroundColor = ds.backgroundColor;
+            ds.pointBorderColor = ds.backgroundColor;
+            ds.pointBorderWidth = 0;
+        });
+
+        var ctx = document.getElementById('graficoResultado').getContext('2d');
+
+        if (chartEnd) {
+            chartEnd.destroy();
+            chartEnd = null;
+        }
+
+        chartEnd = new Chart(ctx, {
+            type: desiredType,
+            data: {
+                labels: anosPresentes,
+                datasets: datasets
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                animation: {
+                    duration: 700,
+                    easing: 'easeInOutQuad'
+                },
+                scales: {
+                    x: {
+                        display: true,
+                        offset: true,
+                        grid: {
+                            offset: true
+                        },
+                        ticks: {
+                            color: '#0E2B69',
+                            font: {
+                                size: 16,
+                                weight: 800,
+                                family: 'Roboto Flex, sans-serif',
+                                lineHeight: 1.8
+                            },
+                            padding: 6,
+                            maxRotation: 0,
+                            autoSkip: false
+                        }
+                    },
+                    y: {
+                        display: true,
+                        position: 'right',
+                        min: scaleMin,
+                        max: scaleMax,
+                        ticks: {
+                            callback: function(value) {
+                                var scaled = value / divisorEscala;
+                                return scaled.toLocaleString('pt-BR', {
+                                    minimumFractionDigits: 2,
+                                    maximumFractionDigits: 2
+                                }) + unidadeEscala;
+                            },
+                            color: '#0E2B69',
+                            font: {
+                                size: 14,
+                                family: 'Roboto Flex, sans-serif'
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top',
+                        labels: {
+                            usePointStyle: true
+                        }
+                    },
+                    tooltip: {
+                        enabled: true,
+                        callbacks: {
+                            label: function(context) {
+                                var raw = context.raw || 0;
+                                var scaled = raw / divisorEscala;
+                                return context.dataset.label + ': ' +
+                                    scaled.toLocaleString('pt-BR', {
+                                        minimumFractionDigits: 2,
+                                        maximumFractionDigits: 2
+                                    }) + unidadeEscala;
+                            }
+                        }
+                    },
+                    datalabels: {
+                        anchor: 'end',
+                        align: function(context) {
+                            return context.raw < 0 ? 'bottom' : 'top';
+                        },
+                        formatter: function(value) {
+                            if (value === null) return '';
+                            var scaled = value / divisorEscala;
+                            return scaled.toLocaleString('pt-BR', {
+                                minimumFractionDigits: 2,
+                                maximumFractionDigits: 2
+                            }) + unidadeEscala;
+                        },
+                        color: '#000',
+                        font: { weight: 'bold' }
+                    }
+                }
+            }
+        });
+    }
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>canvas {
+  display: block;
+  margin: 0 auto;
+}
+
+h3, div, span {
+ font-family: 'Roboto Flex', sans-serif;
+}
+
+.titleEnd{
+   font-family: Roboto;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 24px;
+  leading-trim: NONE;
+  line-height: 100%;
+  letter-spacing: 0%;
+	color:#021770;
+}
+
+/* --- Media Queries para Responsividade --- */
+
+/* Telas Pequenas (Mobile S, M, L - até 767px) */
+@media (max-width: 767px) {
+  canvas {
+    max-width: 90%; /* Ajustar a largura máxima do canvas */
+  }
+  h3 {
+    font-size: 1rem; /* Ajustar o tamanho da fonte do título */
+  }
+}
+
+/* Tablets (iPad Mini, iPad Air, Surface Duo, Galaxy Z Fold 5 - 768px até 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  canvas {
+    max-width: 80%;
+  }
+  h3 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Laptops e Telas Maiores (iPad Pro, Surface Pro 7, Laptops, 4K - 1024px em diante) */
+@media (min-width: 1024px) {
+  canvas {
+    max-width: none;
+  }
+  h3 {
+  }
+}
+
+/* Ajustes para o Surface Duo (540x720) */
+@media (width: 540px) and (height: 720px) {
+    canvas {
+        max-width: 95%;
+    }
+}
+
+/* Ajustes para Galaxy Z Fold 5 (max-width: 350px) */
+@media (max-width: 350px) {
+    h3 {
+        font-size: 0.9rem;
+    }
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>paf_resultado_primario</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>PAF Resultado Primário</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    input = input || {};
+    data.dadosGraficoEnd = [];
+    data.anos = [];
+    // O ano é lido do input enviado pelo Client Script
+    var anoFiltro = input.ano || "";
+   
+    // --- 1. Busca e Popula os Anos Disponíveis (para o filtro) ---
+    var grAnos = new GlideAggregate('x_sded9_portal_t_0_programa_de_ajuste_fiscal');
+    grAnos.addAggregate('COUNT');
+    grAnos.groupBy('u_ano');
+    grAnos.orderBy('u_ano');
+    grAnos.query();
+   
+    while (grAnos.next()) {
+        data.anos.push(grAnos.getValue('u_ano').toString());
+    }
+    data.anos = Array.from(new Set(data.anos));
+    data.anos.sort();
+    // --- 2. Busca os Dados ---
+    var grEnd = new GlideRecord('x_sded9_portal_t_0_programa_de_ajuste_fiscal');
+   
+    // Lógica de Filtro: se um ano específico for selecionado, filtra por ele.
+    if (anoFiltro !== "" && anoFiltro.toLowerCase() !== "todos") {
+        grEnd.addQuery('u_ano', anoFiltro);
+    }
+    // Se 'anoFiltro' for "Todos" ou vazio, NENHUM filtro é aplicado,
+    // buscando todos os dados disponíveis.
+   
+    // Ordena
+    grEnd.orderBy('u_ano');
+    grEnd.query();
+    var listaEnd = [];
+    while (grEnd.next()) {
+        var ano = grEnd.getValue('u_ano').toString();
+        var apurado = grEnd.getValue('valor_apurado_resultado_primario') || '0';
+        var meta = grEnd.getValue('meta_resultado_primario') || '0';
+       
+        listaEnd.push({
+            ano: ano,
+            apurado: apurado,
+            meta: meta
+        });
+    }
+   
+    data.dadosGraficoEnd = listaEnd;
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-20 02:41:27</sys_created_on>
+        <sys_id>67e090cafb557e1086e7f4045eefdcfd</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name>PAF Resultado Primário</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_67e090cafb557e1086e7f4045eefdcfd</sys_update_name>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-20 03:23:13</sys_updated_on>
+        <template><![CDATA[<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+  .chart-wrapper {
+      font-family: 'Roboto Flex', sans-serif;
+      width: 100%;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+      margin-top: 4rem;
+  }
+  .chart-container {
+      position: relative;
+      width: 100%;
+      height: 588px;
+  }
+  canvas {
+      width: 100% !important;
+      height: 100% !important;
+      display: block;
+  }
+  @media (max-width: 768px) {
+      .chart-container {
+          height: 400px;
+      }
+  }
+  @media (max-width: 480px) {
+      .chart-container {
+          height: 300px;
+      }
+  }
+  .report-widget.panel.mensagem {
+      text-align: center;
+      font-size: 1.2em;
+      padding: 20px;
+      background: #f8f8f8;
+      border-radius: 8px;
+      margin-top: 20px;
+  }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+<div class="chart-wrapper">
+  <h3 class="titleEnd" style="text-align:left; font-weight: 600; margin-bottom: 16px;">
+     Resultado Primário
+  </h3>
+  <div class="chart-container" ng-show="exibirGraficoEnd">
+    <canvas id="graficoResultado"></canvas>
+  </div>
+  <div class="report-widget panel mensagem" ng-show="!exibirGraficoEnd">
+    <div class="panel-heading">
+      <h2 class="panel-title"><i class="fa fa-line-chart" aria-hidden="true"></i></h2>
+    </div>
+    <div class="panel-body">
+      Nenhum dado de Resultado Primário disponível para o filtro selecionado.
+    </div>
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>
