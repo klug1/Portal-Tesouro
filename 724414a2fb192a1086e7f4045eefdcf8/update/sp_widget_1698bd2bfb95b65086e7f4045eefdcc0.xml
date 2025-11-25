@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $rootScope, $timeout) {
+    var chartEnd = null;
+
+    $scope.anoSelecionadoEnd = ""; // Inicializa vazio (Todos)
+    $scope.exibirGraficoEnd = false;
+
+    var coresEnd = {
+        apurado: '#a7b9e8', // Realizado
+        meta: '#4b77bf'     // Meta
+    };
+
+    // --- 1. OUVINTE DO EVENTO ---
+    $rootScope.$on('anoSelecionado', function(event, ano) {
+        console.log("Gráfico Endividamento recebeu ano:", ano);
+        $scope.anoSelecionadoEnd = ano;
+        carregarDadosEndFiltrado(); 
+    });
+
+    function carregarDadosEndFiltrado() {
+        var filtros = {
+            ano: $scope.anoSelecionadoEnd 
+        };
+        
+        $scope.server.get(filtros).then(function(response) {
+            var dados = response.data.dadosGraficoEnd || [];
+            
+            $timeout(function() {
+                montarGraficoEnd(dados);
+            });
+        });
+    }
+
+    carregarDadosEndFiltrado();
+
+    function montarGraficoEnd(listaDados) {
+
+        // 1. Preparação dos dados
+        var anosPresentes = [];
+        listaDados.forEach(function(item) {
+            if (anosPresentes.indexOf(item.ano) === -1) {
+                anosPresentes.push(item.ano);
+            }
+        });
+
+        anosPresentes.sort(function(a, b) {
+            return parseInt(a) - parseInt(b);
+        });
+
+        // Se não houver dados, limpa o gráfico e sai
+        if (anosPresentes.length === 0) {
+            if (chartEnd) {
+                chartEnd.destroy();
+                chartEnd = null;
+            }
+            $scope.exibirGraficoEnd = false;
+            return;
+        }
+        $scope.exibirGraficoEnd = true;
+
+        function parseValue(val) {
+            if (!val) return null;
+            var cleanVal = val.toString().replace(',', '.');
+            return parseFloat(cleanVal);
+        }
+
+        var dadosApurado = anosPresentes.map(function(ano) {
+            var item = listaDados.find(function(d) { return d.ano === ano; });
+            return item ? parseValue(item.apurado) : null;
+        });
+        var dadosMeta = anosPresentes.map(function(ano) {
+            var item = listaDados.find(function(d) { return d.ano === ano; });
+            return item ? parseValue(item.meta) : null;
+        });
+
+        // 2. Cálculo de Escalas
+        var todosValores = dadosApurado.concat(dadosMeta).filter(function(v) {
+            return v !== null && !isNaN(v);
+        });
+
+        var maxVal = todosValores.length > 0 ? Math.max.apply(null, todosValores) : 100;
+        var minVal = todosValores.length > 0 ? Math.min.apply(null, todosValores) : 0;
+
+        var PADDING_FIXO = (maxVal - minVal) * 0.1; 
+        if (PADDING_FIXO === 0) PADDING_FIXO = 5;
+
+        var scaleMax = maxVal + PADDING_FIXO;
+        var scaleMin = minVal >= 0 ? 0 : minVal - PADDING_FIXO;
+
+        // --- LÓGICA DE ATUALIZAÇÃO SUAVE ---
+        
+        if (chartEnd) {
+            // CENÁRIO A: O gráfico já existe. Apenas atualizamos os dados.
+            
+            chartEnd.data.labels = anosPresentes;
+            chartEnd.data.datasets[0].data = dadosApurado; // Atualiza dataset 0 (Realizado)
+            chartEnd.data.datasets[1].data = dadosMeta;    // Atualiza dataset 1 (Meta)
+            
+            // Atualiza as escalas (caso os valores mudem muito entre os anos)
+            chartEnd.options.scales.y.min = scaleMin;
+            chartEnd.options.scales.y.max = scaleMax;
+            
+            chartEnd.update(); // Anima a transição
+            
+        } else {
+            // CENÁRIO B: O gráfico não existe. Criamos do zero.
+            
+            var ctx = document.getElementById('graficoResultado').getContext('2d');
+            
+            var datasets = [{
+                label: 'Realizado',
+                data: dadosApurado,
+                backgroundColor: coresEnd.apurado,
+                borderColor: coresEnd.apurado,
+                borderWidth: 1,
+                pointStyle: 'rect',
+                pointBackgroundColor: coresEnd.apurado,
+                pointBorderColor: coresEnd.apurado,
+                pointBorderWidth: 0
+            },{
+                label: 'Meta',
+                data: dadosMeta,
+                backgroundColor: coresEnd.meta,
+                borderColor: coresEnd.meta,
+                borderWidth: 1,
+                pointStyle: 'rect',
+                pointBackgroundColor: coresEnd.meta,
+                pointBorderColor: coresEnd.meta,
+                pointBorderWidth: 0
+            }];
+
+            chartEnd = new Chart(ctx, {
+                type: 'bar', // ou desiredType
+                data: {
+                    labels: anosPresentes,
+                    datasets: datasets
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    animation: {
+                        duration: 750,        // Duração da animação
+                        easing: 'easeInOutQuart' // Suavização
+                    },
+                    scales: {
+                        x: {
+                            display: true,
+                            offset: true,
+                            grid: { offset: true },
+                            ticks: {
+                                color: '#0E2B69',
+                                font: {
+                                    size: 16,
+                                    weight: 800,
+                                    family: 'Roboto Flex, sans-serif',
+                                }
+                            }
+                        },
+                        y: {
+                            display: true,
+                            position: 'left',
+                            min: scaleMin,
+                            max: scaleMax,
+                            ticks: {
+                                callback: function(value) {
+                                    return value.toLocaleString('pt-BR', {
+                                        minimumFractionDigits: 2,
+                                        maximumFractionDigits: 2
+                                    }) + '%';
+                                },
+                                color: '#0E2B69',
+                                font: {
+                                    size: 14,
+                                    family: 'Roboto Flex, sans-serif'
+                                }
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'top',
+                            labels: { usePointStyle: true }
+                        },
+                        tooltip: {
+                            enabled: true,
+                            callbacks: {
+                                label: function(context) {
+                                    var raw = context.raw || 0;
+                                    return context.dataset.label + ': ' +
+                                        raw.toLocaleString('pt-BR', {
+                                            minimumFractionDigits: 2,
+                                            maximumFractionDigits: 2
+                                        }) + '%';
+                                }
+                            }
+                        },
+                        datalabels: {
+                            anchor: 'end',
+                            align: function(context) {
+                                return context.raw < 0 ? 'bottom' : 'top';
+                            },
+                            formatter: function(value) {
+                                if (value === null) return '';
+                                return value.toLocaleString('pt-BR', {
+                                    minimumFractionDigits: 2,
+                                    maximumFractionDigits: 2
+                                }) + '%';
+                            },
+                            color: '#000',
+                            font: { weight: 'bold' }
+                        }
+                    }
+                }
+            });
+        }
+    }
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>canvas {
+  display: block;
+  margin: 0 auto;
+}
+
+h3, div, span {
+ font-family: 'Roboto Flex', sans-serif;
+}
+
+.titleEnd{
+   font-family: Roboto;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 24px;
+  leading-trim: NONE;
+  line-height: 100%;
+  letter-spacing: 0%;
+	color:#021770;
+}
+
+/* --- Media Queries para Responsividade --- */
+
+/* Telas Pequenas (Mobile S, M, L - até 767px) */
+@media (max-width: 767px) {
+  canvas {
+    max-width: 90%; /* Ajustar a largura máxima do canvas */
+  }
+  h3 {
+    font-size: 1rem; /* Ajustar o tamanho da fonte do título */
+  }
+}
+
+/* Tablets (iPad Mini, iPad Air, Surface Duo, Galaxy Z Fold 5 - 768px até 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  canvas {
+    max-width: 80%;
+  }
+  h3 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Laptops e Telas Maiores (iPad Pro, Surface Pro 7, Laptops, 4K - 1024px em diante) */
+@media (min-width: 1024px) {
+  canvas {
+    max-width: none;
+  }
+  h3 {
+  }
+}
+
+/* Ajustes para o Surface Duo (540x720) */
+@media (width: 540px) and (height: 720px) {
+    canvas {
+        max-width: 95%;
+    }
+}
+
+/* Ajustes para Galaxy Z Fold 5 (max-width: 350px) */
+@media (max-width: 350px) {
+    h3 {
+        font-size: 0.9rem;
+    }
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>lde_-__montante_global_grafico</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>LDE -  Montante Global Grafico</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    input = input || {};
+    data.dadosGraficoEnd = [];
+    
+    // Pega o ano enviado pelo Client Script
+    var anoFiltro = input.ano || "";
+    
+    var grEnd = new GlideRecord('x_sded9_portal_t_0_limite_de_endividamento');
+    grEnd.addQuery('indicador_de_endividamento_publico', 'mga');
+    
+    // --- LÓGICA DE FILTRO REATIVADA ---
+    // Se o anoFiltro não for vazio, aplica o filtro.
+    // Se for vazio (que é o padrão do seu "Todos"), traz tudo.
+    if (anoFiltro && anoFiltro !== "") {
+        grEnd.addQuery('u_ano', anoFiltro);
+    }
+    
+    grEnd.orderBy('u_ano');
+    grEnd.query();
+    
+    var listaEnd = [];
+    while (grEnd.next()) {
+        listaEnd.push({
+            ano: grEnd.getValue('u_ano').toString(),
+            apurado: grEnd.getValue('u_realizado') || '0',
+            meta: grEnd.getValue('u_meta') || '0'
+        });
+    }
+    
+    data.dadosGraficoEnd = listaEnd;
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-25 02:05:15</sys_created_on>
+        <sys_id>1698bd2bfb95b65086e7f4045eefdcc0</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>LDE -  Montante Global Grafico</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_1698bd2bfb95b65086e7f4045eefdcc0</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-25 22:01:38</sys_updated_on>
+        <template><![CDATA[<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+  .chart-wrapper {
+      font-family: 'Roboto Flex', sans-serif;
+      width: 100%;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+      margin-top: 4rem;
+  }
+  .chart-container {
+      position: relative;
+      width: 100%;
+      height: 588px;
+  }
+  canvas {
+      width: 100% !important;
+      height: 100% !important;
+      display: block;
+  }
+  @media (max-width: 768px) {
+      .chart-container {
+          height: 400px;
+      }
+  }
+  @media (max-width: 480px) {
+      .chart-container {
+          height: 300px;
+      }
+  }
+  .report-widget.panel.mensagem {
+      text-align: center;
+      font-size: 1.2em;
+      padding: 20px;
+      background: #f8f8f8;
+      border-radius: 8px;
+      margin-top: 20px;
+  }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+<div class="chart-wrapper">
+  <h3 class="titleEnd" style="text-align:left; font-weight: 600; margin-bottom: 16px;">
+     Montante global das operações de créditos realizadas em um exercício financeiro
+  </h3>
+  <div class="chart-container" ng-show="exibirGraficoEnd">
+    <canvas id="graficoResultado"></canvas>
+  </div>
+  <div class="report-widget panel mensagem" ng-show="!exibirGraficoEnd">
+    <div class="panel-heading">
+      <h2 class="panel-title"><i class="fa fa-line-chart" aria-hidden="true"></i></h2>
+    </div>
+    <div class="panel-body">
+      Nenhum dado de Limite de Endividamento disponível para o filtro selecionado.
+    </div>
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>
