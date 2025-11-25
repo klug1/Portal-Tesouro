@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $rootScope, $timeout) {
+    // Variável do gráfico renomeada
+    var chartResultPrim = null;
+
+    $scope.anoSelecionadoResultPrim = "";
+    $scope.exibirGraficoResultPrim = false;
+
+    var coresResultPrim = {
+        apurado: '#a7b9e8',
+        meta: '#4b77bf'
+    };
+
+    function carregarDadosResultPrimFiltrado() {
+        var filtros = {
+            ano: $scope.anoSelecionadoResultPrim || ""
+        };
+        $scope.server.get(filtros).then(function(response) {
+            // Lendo a variável renomeada no Server Script
+            var dados = response.data.dadosGraficoResultPrim || [];
+            var anosDisponiveis = response.data.anos || [];
+
+            $timeout(function() {
+                montarGraficoResultPrim(dados, anosDisponiveis);
+            });
+        });
+    }
+
+    $rootScope.$on('anoSelecionado', function(event, ano) {
+        $scope.anoSelecionadoResultPrim = ano;
+        carregarDadosResultPrimFiltrado();
+    });
+
+    carregarDadosResultPrimFiltrado();
+
+    function montarGraficoResultPrim(listaDados, anosDisponiveis) {
+
+        var anosPresentes = [];
+        listaDados.forEach(function(item) {
+            if (anosPresentes.indexOf(item.ano) === -1) {
+                anosPresentes.push(item.ano);
+            }
+        });
+
+        anosPresentes.sort(function(a, b) {
+            return parseInt(a) - parseInt(b);
+        });
+
+        // Limpeza usando a nova variável de gráfico
+        if (anosPresentes.length === 0) {
+            if (chartResultPrim) {
+                chartResultPrim.destroy();
+                chartResultPrim = null;
+            }
+            $scope.exibirGraficoResultPrim = false;
+            return;
+        }
+        $scope.exibirGraficoResultPrim = true;
+
+        var dadosApurado = anosPresentes.map(function(ano) {
+            var item = listaDados.find(function(d) { return d.ano === ano; });
+            return item ? parseFloat(item.apurado) : null;
+        });
+        var dadosMeta = anosPresentes.map(function(ano) {
+            var item = listaDados.find(function(d) { return d.ano === ano; });
+            return item ? parseFloat(item.meta) : null;
+        });
+
+        // ------------------------
+        // ESCALA DINÂMICA (mil, mi, bi)
+        // ------------------------
+        var todosValores = dadosApurado.concat(dadosMeta).filter(function(v) {
+            return v !== null && !isNaN(v);
+        });
+
+        var maxAbs = 0;
+        if (todosValores.length > 0) {
+            var maxValCalc = Math.max.apply(null, todosValores);
+            var minValCalc = Math.min.apply(null, todosValores);
+            maxAbs = Math.max(Math.abs(maxValCalc), Math.abs(minValCalc));
+        }
+
+        var unidadeEscala = '';
+        var divisorEscala = 1;
+
+        if (maxAbs >= 1e9) {
+            unidadeEscala = ' bi';
+            divisorEscala = 1e9;
+        } else if (maxAbs >= 1e6) {
+            unidadeEscala = ' mi';
+            divisorEscala = 1e6;
+        } else if (maxAbs >= 1e3) {
+            unidadeEscala = ' mil';
+            divisorEscala = 1e3;
+        }
+
+        // ------------------------
+        // ESCALA Y
+        // ------------------------
+        var maxVal = todosValores.length > 0 ? Math.max.apply(null, todosValores) : 100;
+        var minVal = todosValores.length > 0 ? Math.min.apply(null, todosValores) : 0;
+
+        var PADDING_FIXO = 100; // Atenção: Ajustar se os valores forem muito pequenos pós divisão, mas aqui é valor bruto
+        var scaleMax;
+        var scaleMin;
+
+        if (maxVal === 0 && minVal === 0) {
+            scaleMax = 10;
+            scaleMin = -10;
+        } else {
+            scaleMax = maxVal + PADDING_FIXO;
+            scaleMin = minVal - PADDING_FIXO;
+
+            if (minVal >= 0 && scaleMin < 0) {
+                scaleMin = 0;
+            }
+        }
+
+        var desiredType = 'bar';
+
+        var datasets = [{
+            label: 'Valor Apurado',
+            data: dadosApurado,
+            backgroundColor: coresResultPrim.apurado,
+            borderColor: coresResultPrim.apurado,
+            borderWidth: 1
+        },{
+            label: 'Meta',
+            data: dadosMeta,
+            backgroundColor: coresResultPrim.meta,
+            borderColor: coresResultPrim.meta,
+            borderWidth: 1
+        }];
+
+        datasets.forEach(function(ds, index){
+            ds.pointStyle = 'rect';
+            ds.pointBackgroundColor = ds.backgroundColor;
+            ds.pointBorderColor = ds.backgroundColor;
+            ds.pointBorderWidth = 0;
+        });
+
+        // ATENÇÃO: Pegando o novo ID
+        var ctx = document.getElementById('graficoResultPrim').getContext('2d');
+
+        if (chartResultPrim) {
+            chartResultPrim.destroy();
+            chartResultPrim = null;
+        }
+
+        chartResultPrim = new Chart(ctx, {
+            type: desiredType,
+            data: {
+                labels: anosPresentes,
+                datasets: datasets
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                animation: {
+                    duration: 700,
+                    easing: 'easeInOutQuad'
+                },
+                scales: {
+                    x: {
+                        display: true,
+                        offset: true,
+                        grid: {
+                            offset: true
+                        },
+                        ticks: {
+                            color: '#0E2B69',
+                            font: {
+                                size: 16,
+                                weight: 800,
+                                family: 'Roboto Flex, sans-serif',
+                                lineHeight: 1.8
+                            },
+                            padding: 6,
+                            maxRotation: 0,
+                            autoSkip: false
+                        }
+                    },
+                    y: {
+                        display: true,
+                        position: 'right',
+                        min: scaleMin, // Se quiser usar a escala calculada
+                        max: scaleMax, // Se quiser usar a escala calculada
+                        // Se preferir automático, remova min/max
+                        ticks: {
+                            callback: function(value) {
+                                var scaled = value / divisorEscala;
+                                return scaled.toLocaleString('pt-BR', {
+                                    minimumFractionDigits: 2,
+                                    maximumFractionDigits: 2
+                                }) + unidadeEscala;
+                            },
+                            color: '#0E2B69',
+                            font: {
+                                size: 14,
+                                family: 'Roboto Flex, sans-serif'
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top',
+                        labels: {
+                            usePointStyle: true
+                        }
+                    },
+                    tooltip: {
+                        enabled: true,
+                        callbacks: {
+                            label: function(context) {
+                                var raw = context.raw || 0;
+                                var scaled = raw / divisorEscala;
+                                return context.dataset.label + ': ' +
+                                    scaled.toLocaleString('pt-BR', {
+                                        minimumFractionDigits: 2,
+                                        maximumFractionDigits: 2
+                                    }) + unidadeEscala;
+                            }
+                        }
+                    },
+                    datalabels: {
+                        anchor: 'end',
+                        align: function(context) {
+                            return context.raw < 0 ? 'bottom' : 'top';
+                        },
+                        formatter: function(value) {
+                            if (value === null) return '';
+                            var scaled = value / divisorEscala;
+                            return scaled.toLocaleString('pt-BR', {
+                                minimumFractionDigits: 2,
+                                maximumFractionDigits: 2
+                            }) + unidadeEscala;
+                        },
+                        color: '#000',
+                        font: { weight: 'bold' }
+                    }
+                }
+            }
+        });
+    }
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>canvas {
+  display: block;
+  margin: 0 auto;
+}
+
+h3, div, span {
+ font-family: 'Roboto Flex', sans-serif;
+}
+
+.titleEnd{
+   font-family: Roboto;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 24px;
+  leading-trim: NONE;
+  line-height: 100%;
+  letter-spacing: 0%;
+	color:#021770;
+}
+
+/* --- Media Queries para Responsividade --- */
+
+/* Telas Pequenas (Mobile S, M, L - até 767px) */
+@media (max-width: 767px) {
+  canvas {
+    max-width: 90%; /* Ajustar a largura máxima do canvas */
+  }
+  h3 {
+    font-size: 1rem; /* Ajustar o tamanho da fonte do título */
+  }
+}
+
+/* Tablets (iPad Mini, iPad Air, Surface Duo, Galaxy Z Fold 5 - 768px até 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  canvas {
+    max-width: 80%;
+  }
+  h3 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Laptops e Telas Maiores (iPad Pro, Surface Pro 7, Laptops, 4K - 1024px em diante) */
+@media (min-width: 1024px) {
+  canvas {
+    max-width: none;
+  }
+  h3 {
+  }
+}
+
+/* Ajustes para o Surface Duo (540x720) */
+@media (width: 540px) and (height: 720px) {
+    canvas {
+        max-width: 95%;
+    }
+}
+
+/* Ajustes para Galaxy Z Fold 5 (max-width: 350px) */
+@media (max-width: 350px) {
+    h3 {
+        font-size: 0.9rem;
+    }
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>paf_arrecadacao_propria</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>PAF Arrecadação Propria</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    input = input || {};
+    // Array de retorno renomeado
+    data.dadosGraficoResultPrim = [];
+    data.anos = [];
+    
+    var anoFiltro = input.ano || "";
+   
+    // --- 1. Busca e Popula os Anos Disponíveis ---
+    var grAnos = new GlideAggregate('x_sded9_portal_t_0_programa_de_ajuste_fiscal');
+    grAnos.addAggregate('COUNT');
+    grAnos.groupBy('u_ano');
+    grAnos.orderBy('u_ano');
+    grAnos.query();
+   
+    while (grAnos.next()) {
+        data.anos.push(grAnos.getValue('u_ano').toString());
+    }
+    data.anos = Array.from(new Set(data.anos));
+    data.anos.sort();
+
+    // --- 2. Busca os Dados (ResultPrim) ---
+    var grResultPrim = new GlideRecord('x_sded9_portal_t_0_programa_de_ajuste_fiscal');
+   
+    if (anoFiltro !== "" && anoFiltro.toLowerCase() !== "todos") {
+        grResultPrim.addQuery('u_ano', anoFiltro);
+    }
+   
+    grResultPrim.orderBy('u_ano');
+    grResultPrim.query();
+    
+    var listaResultPrim = [];
+    while (grResultPrim.next()) {
+        var ano = grResultPrim.getValue('u_ano').toString();
+        // Campos mantidos conforme seu código
+        var apurado = grResultPrim.getValue('valor_apurado_arrecadacao_propria') || '0';
+        var meta = grResultPrim.getValue('meta_arrecadacao_propria') || '0';
+       
+        listaResultPrim.push({
+            ano: ano,
+            apurado: apurado,
+            meta: meta
+        });
+    }
+   
+    data.dadosGraficoResultPrim = listaResultPrim;
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-25 01:20:50</sys_created_on>
+        <sys_id>6b6e292bfb55b65086e7f4045eefdc6f</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>PAF Arrecadação Propria</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_6b6e292bfb55b65086e7f4045eefdc6f</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-25 01:28:23</sys_updated_on>
+        <template><![CDATA[<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+  
+  /* Prefixei com .rp- (ResultPrim) para isolar o CSS */
+  .rp-chart-wrapper {
+      font-family: 'Roboto Flex', sans-serif;
+      width: 100%;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+      margin-top: 4rem;
+  }
+  .rp-chart-container {
+      position: relative;
+      width: 100%;
+      height: 588px;
+  }
+  
+  /* O !important garante que sobrescreva estilos globais conflitantes */
+  .rp-chart-wrapper canvas {
+      width: 100% !important;
+      height: 100% !important;
+      display: block;
+      margin: 0 auto;
+  }
+  
+  @media (max-width: 768px) {
+      .rp-chart-container {
+          height: 400px;
+      }
+  }
+  @media (max-width: 480px) {
+      .rp-chart-container {
+          height: 300px;
+      }
+  }
+  .rp-report-widget.panel.mensagem {
+      text-align: center;
+      font-size: 1.2em;
+      padding: 20px;
+      background: #f8f8f8;
+      border-radius: 8px;
+      margin-top: 20px;
+  }
+
+  .titleResultPrim {
+     font-family: 'Roboto Flex', sans-serif;
+     font-weight: 500;
+     font-size: 24px;
+     line-height: 100%;
+     color:#021770;
+  }
+
+  /* --- Media Queries Específicas para este Widget --- */
+  @media (max-width: 767px) {
+      .rp-chart-wrapper canvas {
+        max-width: 90%;
+      }
+      .titleResultPrim {
+        font-size: 1rem;
+      }
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+      .rp-chart-wrapper canvas {
+        max-width: 80%;
+      }
+      .titleResultPrim {
+        font-size: 1.1rem;
+      }
+  }
+
+  @media (min-width: 1024px) {
+      .rp-chart-wrapper canvas {
+        max-width: none;
+      }
+  }
+
+  @media (width: 540px) and (height: 720px) {
+      .rp-chart-wrapper canvas {
+          max-width: 95%;
+      }
+  }
+
+  @media (max-width: 350px) {
+      .titleResultPrim {
+          font-size: 0.9rem;
+      }
+  }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+
+<div class="rp-chart-wrapper">
+  <h3 class="titleResultPrim" style="text-align:left; margin-bottom: 16px;">
+     Arrecadação Própria
+  </h3>
+  
+  <div class="rp-chart-container" ng-show="exibirGraficoResultPrim">
+    <canvas id="graficoResultPrim"></canvas>
+  </div>
+  
+  <div class="rp-report-widget panel mensagem" ng-show="!exibirGraficoResultPrim">
+    <div class="panel-heading">
+      <h2 class="panel-title"><i class="fa fa-line-chart" aria-hidden="true"></i></h2>
+    </div>
+    <div class="panel-body">
+      Nenhum dado de Resultado Primário disponível para o filtro selecionado.
+    </div>
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>
