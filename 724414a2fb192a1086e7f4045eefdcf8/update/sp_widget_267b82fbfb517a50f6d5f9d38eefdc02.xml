@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $rootScope, $timeout) {
+    var chartCAED = null; // Variável renomeada
+
+    $scope.anoSelecionadoCAED = ""; 
+    $scope.exibirGraficoCAED = false;
+
+    var coresCAED = {
+        apurado: '#a7b9e8', // Realizado
+        meta: '#4b77bf'     // Meta
+    };
+
+    // --- 1. OUVINTE DO EVENTO ---
+    $rootScope.$on('anoSelecionado', function(event, ano) {
+        $scope.anoSelecionadoCAED = ano;
+        carregarDadosCAEDFiltrado(); 
+    });
+
+    function carregarDadosCAEDFiltrado() {
+        var filtros = {
+            ano: $scope.anoSelecionadoCAED 
+        };
+        
+        $scope.server.get(filtros).then(function(response) {
+            var dados = response.data.dadosGraficoCAED || [];
+            
+            $timeout(function() {
+                montarGraficoCAED(dados);
+            });
+        });
+    }
+
+    carregarDadosCAEDFiltrado();
+
+    function montarGraficoCAED(listaDados) {
+
+        // 1. Prepara os dados
+        var anosPresentes = [];
+        listaDados.forEach(function(item) {
+            if (anosPresentes.indexOf(item.ano) === -1) {
+                anosPresentes.push(item.ano);
+            }
+        });
+
+        anosPresentes.sort(function(a, b) {
+            return parseInt(a) - parseInt(b);
+        });
+
+        // Se não tiver dados, destrói para limpar a tela e sai
+        if (anosPresentes.length === 0) {
+            if (chartCAED) {
+                chartCAED.destroy();
+                chartCAED = null;
+            }
+            $scope.exibirGraficoCAED = false;
+            return;
+        }
+        
+        $scope.exibirGraficoCAED = true;
+
+        function parseValue(val) {
+            if (!val) return null;
+            var cleanVal = val.toString().replace(',', '.');
+            return parseFloat(cleanVal);
+        }
+
+        var dadosApurado = anosPresentes.map(function(ano) {
+            var item = listaDados.find(function(d) { return d.ano === ano; });
+            return item ? parseValue(item.apurado) : null;
+        });
+        var dadosMeta = anosPresentes.map(function(ano) {
+            var item = listaDados.find(function(d) { return d.ano === ano; });
+            return item ? parseValue(item.meta) : null;
+        });
+
+        // 2. Cálculo de Escalas (Max/Min)
+        var todosValores = dadosApurado.concat(dadosMeta).filter(function(v) {
+            return v !== null && !isNaN(v);
+        });
+
+        var maxVal = todosValores.length > 0 ? Math.max.apply(null, todosValores) : 100;
+        var minVal = todosValores.length > 0 ? Math.min.apply(null, todosValores) : 0;
+        var PADDING_FIXO = (maxVal - minVal) * 0.1; 
+        if (PADDING_FIXO === 0) PADDING_FIXO = 5;
+        var scaleMax = maxVal + PADDING_FIXO;
+        var scaleMin = minVal >= 0 ? 0 : minVal - PADDING_FIXO;
+
+        // --- LÓGICA DE UPDATE SUAVE ---
+        
+        if (chartCAED) {
+            // SE O GRÁFICO JÁ EXISTE: Apenas atualizamos
+            chartCAED.data.labels = anosPresentes;
+            chartCAED.data.datasets[0].data = dadosApurado;
+            chartCAED.data.datasets[1].data = dadosMeta;
+            
+            // Atualiza escalas dinamicamente
+            chartCAED.options.scales.y.min = scaleMin;
+            chartCAED.options.scales.y.max = scaleMax;
+            
+            chartCAED.update(); // Animação suave
+            
+        } else {
+            // SE O GRÁFICO NÃO EXISTE: Cria do zero
+            // IMPORTANTE: Busca pelo ID do CAED
+            var ctx = document.getElementById('graficoResultadoCAED').getContext('2d');
+            
+            var datasets = [{
+                label: 'Realizado',
+                data: dadosApurado,
+                backgroundColor: coresCAED.apurado,
+                borderColor: coresCAED.apurado,
+                borderWidth: 1,
+                pointStyle: 'rect',
+                pointBackgroundColor: coresCAED.apurado,
+                pointBorderColor: coresCAED.apurado,
+                pointBorderWidth: 0
+            },{
+                label: 'Meta',
+                data: dadosMeta,
+                backgroundColor: coresCAED.meta,
+                borderColor: coresCAED.meta,
+                borderWidth: 1,
+                pointStyle: 'rect',
+                pointBackgroundColor: coresCAED.meta,
+                pointBorderColor: coresCAED.meta,
+                pointBorderWidth: 0
+            }];
+
+            chartCAED = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: anosPresentes,
+                    datasets: datasets
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    animation: {
+                        duration: 750, // Duração da animação
+                        easing: 'easeInOutQuart' // Tipo de suavização
+                    },
+                    scales: {
+                        x: {
+                            display: true,
+                            offset: true,
+                            grid: { offset: true },
+                            ticks: {
+                                color: '#0E2B69',
+                                font: {
+                                    size: 16,
+                                    weight: 800,
+                                    family: 'Roboto Flex, sans-serif',
+                                }
+                            }
+                        },
+                        y: {
+                            display: true,
+                            position: 'left',
+                            min: scaleMin,
+                            max: scaleMax,
+                            ticks: {
+                                callback: function(value) {
+                                    return value.toLocaleString('pt-BR', {
+                                        minimumFractionDigits: 2,
+                                        maximumFractionDigits: 2
+                                    }) + '%';
+                                },
+                                color: '#0E2B69',
+                                font: {
+                                    size: 14,
+                                    family: 'Roboto Flex, sans-serif'
+                                }
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'top',
+                            labels: { usePointStyle: true }
+                        },
+                        tooltip: {
+                            enabled: true,
+                            callbacks: {
+                                label: function(context) {
+                                    var raw = context.raw || 0;
+                                    return context.dataset.label + ': ' +
+                                        raw.toLocaleString('pt-BR', {
+                                            minimumFractionDigits: 2,
+                                            maximumFractionDigits: 2
+                                        }) + '%';
+                                }
+                            }
+                        },
+                        datalabels: {
+                            anchor: 'end',
+                            align: function(context) {
+                                return context.raw < 0 ? 'bottom' : 'top';
+                            },
+                            formatter: function(value) {
+                                if (value === null) return '';
+                                return value.toLocaleString('pt-BR', {
+                                    minimumFractionDigits: 2,
+                                    maximumFractionDigits: 2
+                                }) + '%';
+                            },
+                            color: '#000',
+                            font: { weight: 'bold' }
+                        }
+                    }
+                }
+            });
+        }
+    }
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>canvas {
+  display: block;
+  margin: 0 auto;
+}
+
+h3, div, span {
+ font-family: 'Roboto Flex', sans-serif;
+}
+
+.titleEnd{
+   font-family: Roboto;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 24px;
+  leading-trim: NONE;
+  line-height: 100%;
+  letter-spacing: 0%;
+	color:#021770;
+}
+
+/* --- Media Queries para Responsividade --- */
+
+/* Telas Pequenas (Mobile S, M, L - até 767px) */
+@media (max-width: 767px) {
+  canvas {
+    max-width: 90%; /* Ajustar a largura máxima do canvas */
+  }
+  h3 {
+    font-size: 1rem; /* Ajustar o tamanho da fonte do título */
+  }
+}
+
+/* Tablets (iPad Mini, iPad Air, Surface Duo, Galaxy Z Fold 5 - 768px até 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  canvas {
+    max-width: 80%;
+  }
+  h3 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Laptops e Telas Maiores (iPad Pro, Surface Pro 7, Laptops, 4K - 1024px em diante) */
+@media (min-width: 1024px) {
+  canvas {
+    max-width: none;
+  }
+  h3 {
+  }
+}
+
+/* Ajustes para o Surface Duo (540x720) */
+@media (width: 540px) and (height: 720px) {
+    canvas {
+        max-width: 95%;
+    }
+}
+
+/* Ajustes para Galaxy Z Fold 5 (max-width: 350px) */
+@media (max-width: 350px) {
+    h3 {
+        font-size: 0.9rem;
+    }
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>lde_-_caed_grafico</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>LDE - CAED Grafico</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    input = input || {};
+    // Variável única de saída para evitar conflito
+    data.dadosGraficoCAED = [];
+    
+    // Pega o ano enviado pelo Client Script
+    var anoFiltro = input.ano || "";
+    
+    var grCAED = new GlideRecord('x_sded9_portal_t_0_limite_de_endividamento');
+    
+    // --- FILTRO DO CAED ---
+    // Confirme se o valor no banco é 'caed' (minúsculo) ou 'CAED' (maiúsculo)
+    grCAED.addQuery('indicador_de_endividamento_publico', 'caed');
+    
+    if (anoFiltro && anoFiltro !== "") {
+        grCAED.addQuery('u_ano', anoFiltro);
+    }
+    
+    grCAED.orderBy('u_ano');
+    grCAED.query();
+    
+    var listaCAED = [];
+    while (grCAED.next()) {
+        listaCAED.push({
+            ano: grCAED.getValue('u_ano').toString(),
+            apurado: grCAED.getValue('u_realizado') || '0',
+            meta: grCAED.getValue('u_meta') || '0'
+        });
+    }
+    
+    data.dadosGraficoCAED = listaCAED;
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-25 22:06:13</sys_created_on>
+        <sys_id>267b82fbfb517a50f6d5f9d38eefdc02</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>LDE - CAED Grafico</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_267b82fbfb517a50f6d5f9d38eefdc02</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-25 22:08:26</sys_updated_on>
+        <template><![CDATA[<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+  
+  /* .caed-wrapper para isolamento CSS */
+  .caed-wrapper .chart-wrapper {
+      font-family: 'Roboto Flex', sans-serif;
+      width: 100%;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+      margin-top: 4rem;
+  }
+  .caed-wrapper .chart-container {
+      position: relative;
+      width: 100%;
+      height: 588px;
+  }
+  .caed-wrapper canvas {
+      width: 100% !important;
+      height: 100% !important;
+      display: block;
+      margin: 0 auto;
+  }
+  @media (max-width: 768px) {
+      .caed-wrapper .chart-container {
+          height: 400px;
+      }
+  }
+  @media (max-width: 480px) {
+      .caed-wrapper .chart-container {
+          height: 300px;
+      }
+  }
+  .caed-wrapper .report-widget.panel.mensagem {
+      text-align: center;
+      font-size: 1.2em;
+      padding: 20px;
+      background: #f8f8f8;
+      border-radius: 8px;
+      margin-top: 20px;
+  }
+  
+  .caed-wrapper .titleCAED {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 100%;
+      color: #021770;
+      text-align: left; 
+      margin-bottom: 16px;
+  }
+
+  /* Responsividade Específica */
+  @media (max-width: 767px) {
+      .caed-wrapper canvas { max-width: 90%; }
+      .caed-wrapper .titleCAED { font-size: 1rem; }
+  }
+  @media (min-width: 768px) and (max-width: 1023px) {
+      .caed-wrapper canvas { max-width: 80%; }
+      .caed-wrapper .titleCAED { font-size: 1.1rem; }
+  }
+  @media (min-width: 1024px) {
+      .caed-wrapper canvas { max-width: none; }
+  }
+  @media (width: 540px) and (height: 720px) {
+      .caed-wrapper canvas { max-width: 95%; }
+  }
+  @media (max-width: 350px) {
+      .caed-wrapper .titleCAED { font-size: 0.9rem; }
+  }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+
+<div class="caed-wrapper">
+  <div class="chart-wrapper">
+    <h3 class="titleCAED">
+       Comprometimento Anual com amortizações, juros e demais cargos (CAED)
+    </h3>
+    
+    <div class="chart-container" ng-show="exibirGraficoCAED">
+      <canvas id="graficoResultadoCAED"></canvas>
+    </div>
+    
+    <div class="report-widget panel mensagem" ng-show="!exibirGraficoCAED">
+      <div class="panel-heading">
+        <h2 class="panel-title"><i class="fa fa-line-chart" aria-hidden="true"></i></h2>
+      </div>
+      <div class="panel-body">
+        Nenhum dado de CAED disponível para o filtro selecionado.
+      </div>
+    </div>
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

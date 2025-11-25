@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $rootScope, $timeout) {
+  var c = this;
+
+  // Inicializa vazio
+  c.selectedYear = "";
+
+  function atualizarIndicador() {
+    c.server.get({ selectedYear: c.selectedYear }).then(function(response) {
+      c.data = response.data;
+      // Debug para garantir que está vindo certo
+      console.log("Widget Meta atualizado. Ano:", c.data.selectedYear, "Valor:", c.data.indicator.value);
+    });
+  }
+
+  // Listener
+  var destroyListener = $rootScope.$on('anoSelecionado', function(event, ano) {
+    c.selectedYear = ano;
+    atualizarIndicador();
+  });
+
+  // Boa prática: remove o listener se o widget for destruído (mudar de página)
+  $scope.$on('$destroy', function() {
+      destroyListener();
+  });
+
+  // Carga inicial
+  atualizarIndicador();
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.financial-widget {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+  	margin-top: 4rem;
+}
+
+.indicator-block {
+    text-align: center;
+    padding: 0;
+}
+
+.indicator-header {
+		background-color: #EBEDF1;
+    color: #021770;
+    font-weight: 400;
+    padding: .8rem 1rem;
+    font-size: 1.4rem;
+    border-bottom: .1rem solid #C7C7C7
+}
+
+.indicator-value {
+    color: #021770;
+    font-size: 32px;
+    font-weight: 400;
+    padding: 10px 10px 15px;
+}
+
+.separator {
+    margin: 0;
+    border: 0;
+    border-top: 1px solid #e0e0e0;
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>lde_-_caed_meta</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>LDE - CAED Meta</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  input = input || {};
+  var table = 'x_sded9_portal_t_0_limite_de_endividamento';
+  var selectedYear = input.selectedYear || "";
+
+  // 1. Lógica para definir o ano padrão (Último ano disponível)
+  // Adicionamos o filtro aqui também para garantir que buscamos o último ano DO INDICADOR CORRETO
+  if (!selectedYear) {
+    var g = new GlideRecord(table);
+    g.addQuery('indicador_de_endividamento_publico', 'caed'); // <--- FILTRO IMPORTANTE
+    g.orderByDesc('u_ano');
+    g.setLimit(1);
+    g.query();
+    if (g.next())
+      selectedYear = g.getValue('u_ano');
+  }
+
+  data.selectedYear = selectedYear;
+
+  data.indicator = {
+    value: '0%', 
+    label: 'Meta ' + (selectedYear ? selectedYear : '')
+  };
+
+  // 2. Busca do registro final
+  var gr = new GlideRecord(table);
+  gr.addQuery('indicador_de_endividamento_publico', 'caed'); // <--- FILTRO IMPORTANTE
+  
+  if (selectedYear) {
+    gr.addQuery('u_ano', selectedYear);
+  }
+
+  gr.orderByDesc('sys_created_on');
+  gr.setLimit(1);
+  gr.query();
+
+  if (gr.next()) {
+    var anoReal = gr.getValue('u_ano');
+    var valorMeta = gr.getValue('u_meta') || '0'; // Pega a META
+
+    // Formatação simples para garantir casas decimais (opcional, mas recomendado)
+    // Se o banco guarda como "12,5", ok. Se guarda "12.5", ok.
+    data.indicator.value = valorMeta + '%'; 
+    data.indicator.label = 'Meta ' + anoReal; // Removi o ":" para ficar mais limpo
+    data.selectedYear = anoReal;
+  }
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-25 22:12:15</sys_created_on>
+        <sys_id>3adc827ffb517a50f6d5f9d38eefdc53</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>LDE - CAED Meta</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_3adc827ffb517a50f6d5f9d38eefdc53</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-25 22:12:45</sys_updated_on>
+        <template><![CDATA[<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+</style>
+
+<div class="financial-widget">
+  <div class="indicator-block">
+    <div class="indicator-header">{{data.indicator.label}}</div>
+    <div class="indicator-value">{{data.indicator.value}}</div>
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>
