@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="u_realizado" label="Realizado" language="en" table="x_sded9_portal_t_0_limite_de_endividamento">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>u_realizado</element>
+            <help/>
+            <hint/>
+            <label>Realizado</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_limite_de_endividamento</name>
+            <plural>Realizados</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-25 02:03:43</sys_created_on>
+            <sys_id>a338f52bfb95b65086e7f4045eefdcf9</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Realizado</sys_name>
+            <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+            <sys_update_name>sys_documentation_x_sded9_portal_t_0_limite_de_endividamento_u_realizado_en</sys_update_name>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-25 02:03:43</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

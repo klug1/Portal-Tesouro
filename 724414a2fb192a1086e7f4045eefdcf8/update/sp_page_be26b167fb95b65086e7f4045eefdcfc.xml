@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_page">
+    <sp_page action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <css/>
+        <draft>false</draft>
+        <dynamic_title_structure/>
+        <human_readable_url_structure/>
+        <id>limite_endividamento</id>
+        <internal>false</internal>
+        <omit_watcher>false</omit_watcher>
+        <public>true</public>
+        <roles/>
+        <seo_script/>
+        <short_description/>
+        <sys_class_name>sp_page</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-25 01:55:01</sys_created_on>
+        <sys_id>be26b167fb95b65086e7f4045eefdcfc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>limite_endividamento</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_page_be26b167fb95b65086e7f4045eefdcfc</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-25 01:55:01</sys_updated_on>
+        <title>Limite de Endividamento</title>
+        <use_seo_script>false</use_seo_script>
+    </sp_page>
+    <sys_translated_text action="delete_multiple" query="documentkey=be26b167fb95b65086e7f4045eefdcfc"/>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>be26b167fb95b65086e7f4045eefdcfc</documentkey>
+        <fieldname>dynamic_title_structure</fieldname>
+        <language>pb</language>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-25 01:55:01</sys_created_on>
+        <sys_id>00467567fb95b65086e7f4045eefdc51</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-25 01:55:01</sys_updated_on>
+        <tablename>sp_page</tablename>
+        <value/>
+    </sys_translated_text>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>be26b167fb95b65086e7f4045eefdcfc</documentkey>
+        <fieldname>short_description</fieldname>
+        <language>pb</language>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-25 01:55:01</sys_created_on>
+        <sys_id>0846fd27fb95b65086e7f4045eefdc92</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-25 01:55:01</sys_updated_on>
+        <tablename>sp_page</tablename>
+        <value/>
+    </sys_translated_text>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>be26b167fb95b65086e7f4045eefdcfc</documentkey>
+        <fieldname>title</fieldname>
+        <language>pb</language>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-25 01:55:01</sys_created_on>
+        <sys_id>8446fd27fb95b65086e7f4045eefdc94</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-25 01:55:01</sys_updated_on>
+        <tablename>sp_page</tablename>
+        <value>Limite de Endividamento</value>
+    </sys_translated_text>
+</record_update>
