@@ -11,26 +11,42 @@
   $scope.isFading = false;
 
   var chartInstance = null;
-  var currentAngle = 0;
-  var animationFrameId = null;
-  var resizeTimer = null;
   var offAnoListener = null;
+  var currentValue = 0;
 
   // ========================
-  // CORES — conforme legenda oficial
+  // LIMITES / CORES (CONSOLIDADO)
   // ========================
-  var COLOR_GREEN  = "#8BC34A"; // 0–54%
-  var COLOR_YELLOW = "#FFEB3B"; // 54–57%
-  var COLOR_ORANGE = "#FF9800"; // 57–60%
-  var COLOR_RED_LT = "#F44336"; // 60% (tick + marcador)
-  var COLOR_RED_DK = "#8C0C03"; // 60–100%
+  // 0–54   verde
+  // 54–57  amarelo
+  // 57–60  laranja
+  // 60     tick vermelho-claro
+  // 60–100 vermelho-escuro
+  const TH_ALERT = 54.0;
+  const TH_PRUD  = 57.0;
+  const TH_MAX   = 60.0;
+
+  const SL_GREEN  = TH_ALERT;              // 54
+  const SL_YELLOW = TH_PRUD - TH_ALERT;    // 3
+  const SL_ORANGE = TH_MAX  - TH_PRUD;     // 3
+  const SL_TICK   = 0.2;                   // espessura do limite
+  const SL_RED    = 100 - TH_MAX - SL_TICK;// 39.8
+
+  var COLOR_GREEN  = "#8BC34A";
+  var COLOR_YELLOW = "#FFEB3B";
+  var COLOR_ORANGE = "#FF9800";
+  var COLOR_RED_LT = "#F44336";
+  var COLOR_RED_DK = "#8C0C03";
 
   // ========================
   // UTIL
   // ========================
   function clampPct(p) { return Math.max(0, Math.min(p, 100)); }
   function mapValueToAngle(percent) { return (clampPct(percent) / 100) * Math.PI; }
-  function truncate2(x) { if (typeof x !== 'number') return x; return (Math.floor(x * 100) / 100).toFixed(2); }
+  function truncate2(x) {
+    if (typeof x !== "number") return x;
+    return (Math.round((x + Number.EPSILON) * 100) / 100).toFixed(2);
+  }
 
   function loadChartJs() {
     return new Promise(function (resolve) {
@@ -43,11 +59,106 @@
   }
 
   // ========================
-  // CHART.JS — 5 FATIAS exatas
+  // PLUGIN DO PONTEIRO (CONSOLIDADO)
+  // ========================
+  var needlePluginConsolidado = {
+    id: "consolidadoNeedle",
+    afterDraw: function (chart, args, options) {
+      var value = options.value;
+      if (value == null) return;
+
+      var meta = chart.getDatasetMeta(0);
+      if (!meta || !meta.data || !meta.data.length) return;
+
+      var arc = meta.data[0];
+      var ctx = chart.ctx;
+
+      var cx = arc.x;
+      var cy = arc.y;
+      var outerR = arc.outerRadius;
+      var innerR = arc.innerRadius;
+      if (!outerR || !innerR) return;
+
+      // ângulo do ponteiro
+      var angle = Math.PI - mapValueToAngle(value);
+      var len = outerR * 0.85;
+
+      var tipX = cx + len * Math.cos(angle);
+      var tipY = cy - len * Math.sin(angle);
+
+      var pointerColor = "#333";
+
+      ctx.save();
+
+      // haste
+      ctx.beginPath();
+      ctx.moveTo(cx, cy);
+      ctx.lineTo(tipX, tipY);
+      ctx.strokeStyle = pointerColor;
+      ctx.lineWidth = 3;
+      ctx.stroke();
+
+      // ponta
+      var ahLen = outerR * 0.12;
+      var ahWid = outerR * 0.08;
+      var ux = Math.cos(angle), uy = -Math.sin(angle);
+      var baseX = tipX - ahLen * ux, baseY = tipY - ahLen * uy;
+      var leftX  = baseX + (ahWid / 2) * uy, leftY  = baseY + (ahWid / 2) * -ux;
+      var rightX = baseX - (ahWid / 2) * uy, rightY = baseY - (ahWid / 2) * -ux;
+
+      ctx.beginPath();
+      ctx.moveTo(tipX, tipY);
+      ctx.lineTo(leftX, leftY);
+      ctx.lineTo(rightX, rightY);
+      ctx.closePath();
+      ctx.fillStyle = pointerColor;
+      ctx.fill();
+
+      // pivô
+      ctx.beginPath();
+      ctx.arc(cx, cy, innerR * 0.25, 0, Math.PI * 2);
+      ctx.fillStyle = pointerColor;
+      ctx.fill();
+
+      // --- Tick do limite (60) DESENHADO ANTES DO TEXTO ---
+      var tickAngle = Math.PI - mapValueToAngle(TH_MAX);
+      var midR = innerR + (outerR - innerR) * 0.65;
+      var tickLen = outerR * 0.05;
+
+      var tickX1 = cx + midR * Math.cos(tickAngle);
+      var tickY1 = cy - midR * Math.sin(tickAngle);
+      var tickX2 = cx + (midR + tickLen) * Math.cos(tickAngle);
+      var tickY2 = cy - (midR + tickLen) * Math.sin(tickAngle);
+
+      ctx.beginPath();
+      ctx.moveTo(tickX1, tickY1);
+      ctx.lineTo(tickX2, tickY2);
+      ctx.strokeStyle = COLOR_RED_LT;
+      ctx.lineWidth = 2;
+      ctx.lineCap = "round";
+      ctx.stroke();
+
+      // --- RÓTULO (NÚMERO) SEMPRE POR CIMA ---
+      var labelR = innerR + (outerR - innerR) * 0.45;
+      var labelX = cx + labelR * Math.cos(angle);
+      var labelY = cy - labelR * Math.sin(angle);
+
+      ctx.font = "bold 19px Arial";
+      ctx.fillStyle = "#2b2f33";
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.fillText(truncate2(value) + "%", labelX, labelY - 14);
+
+      ctx.restore();
+    }
+  };
+
+  // ========================
+  // DATASET DO SEMIDONUT
   // ========================
   function buildDataset() {
     return {
-      data: [54, 3, 3, 0.2, 39.8], // 0–54 / 54–57 / 57–60 / 60 / >60
+      data: [SL_GREEN, SL_YELLOW, SL_ORANGE, SL_TICK, SL_RED],
       backgroundColor: [
         COLOR_GREEN,
         COLOR_YELLOW,
@@ -55,167 +166,64 @@
         COLOR_RED_LT,
         COLOR_RED_DK
       ],
-      borderWidth: 0,
+      borderWidth: 0.2,
+      borderColor: "rgba(0,0,0,0.05)",
+      borderJoinStyle: "miter",
+      spacing: 0,
       circumference: 180,
       rotation: 270,
       cutout: "70%"
     };
   }
 
-  function renderGauge(percentual) {
+  // ========================
+  // CRIA / ATUALIZA GAUGE
+  // ========================
+  function createGauge() {
     var canvas = document.getElementById("gaugeChart");
-    if (!canvas) return;
+    if (!canvas) return null;
     var ctx = canvas.getContext("2d");
-    if (!ctx) return;
+    if (!ctx) return null;
 
-    Chart.defaults.elements.arc.borderWidth = 0;
-    Chart.defaults.elements.arc.borderColor = "rgba(0,0,0,0)";
-    Chart.defaults.plugins.legend.display = false;
-
-    if (chartInstance) { try { chartInstance.destroy(); } catch(e){} chartInstance = null; }
-
-    chartInstance = new Chart(ctx, {
+    return new Chart(ctx, {
       type: "doughnut",
       data: {
         labels: ["Verde", "Amarelo", "Laranja", "Vermelho Claro", "Vermelho Escuro"],
-        datasets: [ buildDataset() ]
+        datasets: [buildDataset()]
       },
       options: {
         responsive: true,
         maintainAspectRatio: false,
         animation: { duration: 0 },
-        elements: { arc: { borderWidth: 0 } },
-        plugins: { legend: { display: false }, tooltip: { enabled: false } }
-      }
+        elements: {
+          arc: {
+            borderWidth: 0,
+            borderColor: "rgba(0,0,0,0)"
+          }
+        },
+        plugins: {
+          legend: { display: false },
+          tooltip: { enabled: false },
+          consolidadoNeedle: {
+            value: 0
+          }
+        }
+      },
+      plugins: [needlePluginConsolidado]
     });
-
-    syncPointerCanvasSize();
-    animatePointer(mapValueToAngle(percentual || 0), percentual || 0);
   }
 
-  // ========================
-  // PONTEIRO (canvas separado)
-  // ========================
-  function syncPointerCanvasSize() {
-    var chartCanvas = document.getElementById("gaugeChart");
-    var pointerCanvas = document.getElementById("gaugePointer");
-    if (!chartCanvas || !pointerCanvas) return;
-
-    var dpr = window.devicePixelRatio || 1;
-    var cssW = chartCanvas.offsetWidth;
-    var cssH = chartCanvas.offsetHeight;
-
-    pointerCanvas.width  = Math.max(1, Math.floor(cssW * dpr));
-    pointerCanvas.height = Math.max(1, Math.floor(cssH * dpr));
-    pointerCanvas.style.width  = cssW + "px";
-    pointerCanvas.style.height = cssH + "px";
-
-    var ctx = pointerCanvas.getContext("2d");
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-  }
-
-  // Tick visual de 60%
-  function drawLimitTickAt(percent, color) {
-    var canvas = document.getElementById("gaugePointer");
-    if (!canvas) return;
-    var ctx = canvas.getContext("2d");
-    var W = parseFloat(canvas.style.width) || canvas.width;
-    var H = parseFloat(canvas.style.height) || canvas.height;
-    var cx = W / 2;
-    var cy = H;
-
-    var outerR = Math.min(W, H * 2) / 2 - 10;
-    var innerR = outerR * 0.70;
-    var midR   = innerR + (outerR - innerR) * 0.5;
-
-    var a = mapValueToAngle(percent);
-    var delta = (3 * Math.PI) / 180;
-
-    var start = Math.PI - (a + delta);
-    var end   = Math.PI - (a - delta);
-
-    ctx.beginPath();
-    ctx.arc(cx, cy, midR, start, end, false);
-    ctx.strokeStyle = color;
-    ctx.lineWidth = Math.max(4, Math.floor(H * 0.02));
-    ctx.lineCap = "round";
-    ctx.stroke();
-  }
-
-  function drawPointerAtAngle(angle, percentual) {
-    var canvas = document.getElementById("gaugePointer");
-    if (!canvas) return;
-    var ctx = canvas.getContext("2d");
-    var W = parseFloat(canvas.style.width) || canvas.width;
-    var H = parseFloat(canvas.style.height) || canvas.height;
-
-    ctx.clearRect(0, 0, W, H);
-
-    var cx = W / 2;
-    var cy = H;
-    var length = H * 0.75;
-
-    var theta = Math.PI - angle;
-    var tipX = cx + length * Math.cos(theta);
-    var tipY = cy - length * Math.sin(theta);
-
-    var pointerColor = "#333";
-
-    // haste
-    ctx.beginPath();
-    ctx.moveTo(cx, cy);
-    ctx.lineTo(tipX, tipY);
-    ctx.strokeStyle = pointerColor;
-    ctx.lineWidth = 3;
-    ctx.stroke();
-
-    // ponta
-    var ahLen = H * 0.08;
-    var ahWid = H * 0.05;
-    var ux = Math.cos(theta), uy = -Math.sin(theta);
-    var baseX = tipX - ahLen * ux, baseY = tipY - ahLen * uy;
-    var leftX  = baseX + (ahWid / 2) * uy, leftY  = baseY + (ahWid / 2) * -ux;
-    var rightX = baseX - (ahWid / 2) * uy, rightY = baseY - (ahWid / 2) * -ux;
-
-    ctx.beginPath();
-    ctx.moveTo(tipX, tipY);
-    ctx.lineTo(leftX, leftY);
-    ctx.lineTo(rightX, rightY);
-    ctx.closePath();
-    ctx.fillStyle = pointerColor;
-    ctx.fill();
-
-    // pivô
-    ctx.beginPath();
-    ctx.arc(cx, cy, 5, 0, Math.PI * 2);
-    ctx.fillStyle = pointerColor;
-    ctx.fill();
-
-    // label
-    ctx.font = "bold 18px Arial";
-    ctx.fillStyle = "#333";
-    ctx.textAlign = "center";
-    ctx.textBaseline = "bottom";
-    ctx.fillText(truncate2(percentual) + "%", tipX, tipY - H * 0.05);
-
-    // tick vermelho-claro (60%)
-    drawLimitTickAt(60, COLOR_RED_LT);
-  }
-
-  function animatePointer(toAngle, percentual) {
-    if (animationFrameId) cancelAnimationFrame(animationFrameId);
-    var duration = 500;
-    var startAngle = currentAngle;
-    var delta = toAngle - startAngle;
-    var startTime = performance.now();
-
-    function step(now) {
-      var t = Math.min((now - startTime) / duration, 1);
-      currentAngle = startAngle + delta * (1 - Math.pow(1 - t, 3));
-      drawPointerAtAngle(currentAngle, percentual);
-      if (t < 1) animationFrameId = requestAnimationFrame(step);
+  function renderGauge(percentual) {
+    if (!chartInstance) {
+      chartInstance = createGauge();
+      if (!chartInstance) return;
     }
-    animationFrameId = requestAnimationFrame(step);
+
+    var v = clampPct(percentual || 0);
+    currentValue = v;
+
+    chartInstance.options.plugins.consolidadoNeedle.value = v;
+    chartInstance.update();
   }
 
   // ========================
@@ -226,63 +234,64 @@
   function buscarUltimoAnoDisponivel() {
     if (ultimoAnoCache) return Promise.resolve(ultimoAnoCache);
     return spUtil.get("widget_limite_com_despesas_semidonut", { filtro_ano: "" })
-      .then(function(resp){
+      .then(function (resp) {
         var dados = (resp.data && resp.data.dados) || [];
         if (!dados.length) return null;
-        var anos = Array.from(new Set(dados.map(i => i.ano))).sort();
+        var anos = Array.from(new Set(dados.map(function (i) { return i.ano; }))).sort();
         ultimoAnoCache = anos[anos.length - 1] || null;
         return ultimoAnoCache;
       })
-      .catch(err => { console.error("Erro ao buscar anos disponíveis:", err); return null; });
+      .catch(function (err) {
+        console.error("Erro ao buscar anos disponíveis:", err);
+        return null;
+      });
   }
 
   function carregarDadosDoAno(ano) {
     return spUtil.get("widget_limite_com_despesas_semidonut", { filtro_ano: ano })
-      .then(function(resp){
+      .then(function (resp) {
         var dados = (resp.data && resp.data.dados) || [];
         if (!dados.length) {
           $scope.dadosVisiveis = null;
           $scope.latestYear = null;
-          limparCanvas();
           return null;
         }
+
         $scope.dadosVisiveis = dados[0];
         $scope.latestYear = ano;
 
-        var p = ($scope.dadosVisiveis.comprometimento != null) ? $scope.dadosVisiveis.comprometimento : 0;
+        var p = ($scope.dadosVisiveis.comprometimento != null)
+          ? $scope.dadosVisiveis.comprometimento
+          : 0;
+
         renderGauge(p);
         return p;
       })
-      .catch(err => { console.error("Erro ao buscar dados:", err); limparCanvas(); return null; })
-      .finally(() => { $scope.isFading = false; });
+      .catch(function (err) {
+        console.error("Erro ao buscar dados:", err);
+        return null;
+      })
+      .finally(function () {
+        $scope.isFading = false;
+      });
   }
 
   function atualizarDados(ano) {
     $scope.isFading = true;
     if (!ano) {
-      buscarUltimoAnoDisponivel().then(function(ultimo){
+      buscarUltimoAnoDisponivel().then(function (ultimo) {
         if (ultimo) {
           $scope.anoSelecionado = String(ultimo);
           carregarDadosDoAno(ultimo);
         } else {
-          $scope.latestYear = null; $scope.dadosVisiveis = null;
-          limparCanvas(); $scope.isFading = false;
+          $scope.latestYear = null;
+          $scope.dadosVisiveis = null;
+          $scope.isFading = false;
         }
       });
       return;
     }
     carregarDadosDoAno(ano);
-  }
-
-  function limparCanvas() {
-    var c = document.getElementById("gaugePointer");
-    if (c) {
-      var ctx = c.getContext("2d");
-      var w = parseFloat(c.style.width) || c.width;
-      var h = parseFloat(c.style.height) || c.height;
-      ctx.clearRect(0, 0, w, h);
-    }
-    if (chartInstance) { try { chartInstance.destroy(); } catch(e){} chartInstance = null; }
   }
 
   // ========================
@@ -298,42 +307,38 @@
     $rootScope.$broadcast("anoSelecionado", $scope.anoSelecionado);
   };
 
-  function onResize() {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(function () {
-      if ($scope.dadosVisiveis && $scope.dadosVisiveis.comprometimento != null) {
-        renderGauge($scope.dadosVisiveis.comprometimento);
-      }
-    }, 150);
-  }
-
   // ========================
   // BOOTSTRAP
   // ========================
   loadChartJs().then(function () {
-    buscarUltimoAnoDisponivel().then(function(ultimoAno){
+    chartInstance = createGauge();
+
+    buscarUltimoAnoDisponivel().then(function (ultimoAno) {
       if (ultimoAno) {
         $scope.anoSelecionado = String(ultimoAno);
-        $rootScope.$broadcast("anoSelecionado", $scope.anoSelecionado);
+        atualizarDados($scope.anoSelecionado);
+      } else {
+        $scope.latestYear = null;
+        $scope.dadosVisiveis = null;
       }
     });
 
     offAnoListener = $rootScope.$on("anoSelecionado", function (evt, ano) {
+      if (!ano) return;
       $scope.anoSelecionado = ano;
       atualizarDados(ano);
     });
-
-    window.addEventListener("resize", onResize);
   });
 
   // ========================
   // CLEANUP
   // ========================
-  $scope.$on("$destroy", function(){
+  $scope.$on("$destroy", function () {
     if (offAnoListener) offAnoListener();
-    window.removeEventListener("resize", onResize);
-    if (animationFrameId) cancelAnimationFrame(animationFrameId);
-    limparCanvas();
+    if (chartInstance) {
+      try { chartInstance.destroy(); } catch (e) {}
+      chartInstance = null;
+    }
   });
 }
 ]]></client_script>
@@ -554,14 +559,14 @@ canvas{display:block;margin:0 auto;max-width:100%;height:auto}
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-19 21:32:00</sys_created_on>
         <sys_id>e4952766fba9ae5086e7f4045eefdc4c</sys_id>
-        <sys_mod_count>367</sys_mod_count>
+        <sys_mod_count>368</sys_mod_count>
         <sys_name>Widget Limite com Despesas SemiDonut</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_e4952766fba9ae5086e7f4045eefdc4c</sys_update_name>
-        <sys_updated_by>sued.barreto@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-11-06 01:42:40</sys_updated_on>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-26 01:46:11</sys_updated_on>
         <template><![CDATA[<!-- Fonte -->
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,400;600;700&display=swap" rel="stylesheet">
 
