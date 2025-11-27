@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="estado" table="x_sded9_portal_t_0_ranking_centro_de_lideran_as_p_blicas" version="3">
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>estado</element>
+            <name>x_sded9_portal_t_0_ranking_centro_de_lideran_as_p_blicas</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-11-27 23:29:29</sys_created_on>
+            <sys_id>e5b1fce8fbe13e5086e7f4045eefdc30</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>estado</sys_name>
+            <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+            <sys_update_name>sys_choice_x_sded9_portal_t_0_ranking_centro_de_lideran_as_p_blicas_estado</sys_update_name>
+            <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-27 23:29:29</sys_updated_on>
+        </sys_choice_set>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>estado</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Acre</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_ranking_centro_de_lideran_as_p_blicas</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-11-27 23:29:29</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>2ddd64e8fbe13e5086e7f4045eefdceb</sys_id>
+            <sys_mod_count>4</sys_mod_count>
+            <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-27 23:33:44</sys_updated_on>
+            <value>acre</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>estado</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Alagoas</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_ranking_centro_de_lideran_as_p_blicas</name>
+            <sequence>1</sequence>
+            <synonyms/>
+            <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-11-27 23:29:54</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>a1b174e8fbe13e5086e7f4045eefdcfe</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-27 23:33:45</sys_updated_on>
+            <value>alagoas</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>estado</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Amapá</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_ranking_centro_de_lideran_as_p_blicas</name>
+            <sequence>2</sequence>
+            <synonyms/>
+            <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-11-27 23:30:02</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>77c1b4ecfbe13e5086e7f4045eefdce9</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-27 23:33:50</sys_updated_on>
+            <value>amapa</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>estado</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Amazonas</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_ranking_centro_de_lideran_as_p_blicas</name>
+            <sequence>3</sequence>
+            <synonyms/>
+            <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-11-27 23:30:06</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>e9d1b8e8fbe13e5086e7f4045eefdcd4</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-27 23:33:52</sys_updated_on>
+            <value>amazonas</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>estado</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Bahia</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_ranking_centro_de_lideran_as_p_blicas</name>
+            <sequence>4</sequence>
+            <synonyms/>
+            <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-11-27 23:30:37</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>aed1f4e8fbe13e5086e7f4045eefdcae</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-27 23:33:55</sys_updated_on>
+            <value>bahia</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>estado</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Ceará</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_ranking_centro_de_lideran_as_p_blicas</name>
+            <sequence>5</sequence>
+            <synonyms/>
+            <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-11-27 23:30:40</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>0af1b8e8fbe13e5086e7f4045eefdcd5</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-27 23:33:56</sys_updated_on>
+            <value>ceara</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>estado</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Distrito Federal</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_ranking_centro_de_lideran_as_p_blicas</name>
+            <sequence>6</sequence>
+            <synonyms/>
+            <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-11-27 23:30:44</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>4bf17060fb253e5086e7f4045eefdc40</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-27 23:33:58</sys_updated_on>
+            <value>distrito_federal</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>estado</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Espírito Santo</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_ranking_centro_de_lideran_as_p_blicas</name>
+            <sequence>7</sequence>
+            <synonyms/>
+            <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-11-27 23:30:48</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>77f13060fb253e5086e7f4045eefdc63</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-27 23:34:00</sys_updated_on>
+            <value>espirito_santo</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>estado</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Goiás</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_ranking_centro_de_lideran_as_p_blicas</name>
+            <sequence>8</sequence>
+            <synonyms/>
+            <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-11-27 23:30:51</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>3802bce8fbe13e5086e7f4045eefdcea</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-27 23:34:02</sys_updated_on>
+            <value>goias</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>estado</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Maranhão</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_ranking_centro_de_lideran_as_p_blicas</name>
+            <sequence>9</sequence>
+            <synonyms/>
+            <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-11-27 23:30:54</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>6502b8e8fbe13e5086e7f4045eefdcd6</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-27 23:34:03</sys_updated_on>
+            <value>maranhao</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>estado</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Mato Grosso</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_ranking_centro_de_lideran_as_p_blicas</name>
+            <sequence>10</sequence>
+            <synonyms/>
+            <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-11-27 23:30:58</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>d2023460fb253e5086e7f4045eefdc06</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-27 23:34:05</sys_updated_on>
+            <value>mato_grosso</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>estado</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Mato Grosso do Sul</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_ranking_centro_de_lideran_as_p_blicas</name>
+            <sequence>11</sequence>
+            <synonyms/>
+            <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-11-27 23:31:02</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>9702b060fb253e5086e7f4045eefdcf4</sys_id>
+            <sys_mod_count>3</sys_mod_count>
+            <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-27 23:34:07</sys_updated_on>
+            <value>mato_grosso_do_sul</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>estado</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Minas Gerais</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_ranking_centro_de_lideran_as_p_blicas</name>
+            <sequence>12</sequence>
+            <synonyms/>
+            <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-11-27 23:31:06</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>d012f060fb253e5086e7f4045eefdc23</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-27 23:34:09</sys_updated_on>
+            <value>minas_gerais</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>estado</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Pará</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_ranking_centro_de_lideran_as_p_blicas</name>
+            <sequence>13</sequence>
+            <synonyms/>
+            <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-11-27 23:31:15</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>3212f060fb253e5086e7f4045eefdc24</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-27 23:34:11</sys_updated_on>
+            <value>para</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>estado</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Paraíba</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_ranking_centro_de_lideran_as_p_blicas</name>
+            <sequence>14</sequence>
+            <synonyms/>
+            <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-11-27 23:31:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>4a123020fb253e5086e7f4045eefdccb</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-27 23:34:12</sys_updated_on>
+            <value>paraiba</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>estado</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Paraná</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_ranking_centro_de_lideran_as_p_blicas</name>
+            <sequence>15</sequence>
+            <synonyms/>
+            <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-11-27 23:31:09</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>11123460fb253e5086e7f4045eefdc07</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-27 23:34:14</sys_updated_on>
+            <value>parana</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>estado</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Pernambuco</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_ranking_centro_de_lideran_as_p_blicas</name>
+            <sequence>16</sequence>
+            <synonyms/>
+            <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-11-27 23:31:18</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>6712b460fb253e5086e7f4045eefdccf</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-27 23:34:17</sys_updated_on>
+            <value>pernambuco</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>estado</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Piauí</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_ranking_centro_de_lideran_as_p_blicas</name>
+            <sequence>17</sequence>
+            <synonyms/>
+            <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-11-27 23:31:29</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>4022b060fb253e5086e7f4045eefdcf6</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-27 23:34:19</sys_updated_on>
+            <value>piaui</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>estado</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Rio de Janeiro</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_ranking_centro_de_lideran_as_p_blicas</name>
+            <sequence>18</sequence>
+            <synonyms/>
+            <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-11-27 23:31:45</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>6d32f060fb253e5086e7f4045eefdc24</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-27 23:34:20</sys_updated_on>
+            <value>rio_de_janeiro</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>estado</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Rio Grande do Norte</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_ranking_centro_de_lideran_as_p_blicas</name>
+            <sequence>19</sequence>
+            <synonyms/>
+            <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-11-27 23:31:35</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>0b22b460fb253e5086e7f4045eefdc98</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-27 23:34:22</sys_updated_on>
+            <value>rio_grande_do_norte</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>estado</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Rio Grande do Sul</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_ranking_centro_de_lideran_as_p_blicas</name>
+            <sequence>20</sequence>
+            <synonyms/>
+            <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-11-27 23:31:40</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>d432f460fb253e5086e7f4045eefdc79</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-27 23:34:25</sys_updated_on>
+            <value>rio_grande_do_sul</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>estado</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Rondônia</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_ranking_centro_de_lideran_as_p_blicas</name>
+            <sequence>21</sequence>
+            <synonyms/>
+            <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-11-27 23:31:48</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>ba323860fb253e5086e7f4045eefdcbc</sys_id>
+            <sys_mod_count>3</sys_mod_count>
+            <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-27 23:34:27</sys_updated_on>
+            <value>rondonia</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>estado</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Roraima</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_ranking_centro_de_lideran_as_p_blicas</name>
+            <sequence>22</sequence>
+            <synonyms/>
+            <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-11-27 23:31:54</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>27323020fb253e5086e7f4045eefdccd</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-27 23:34:28</sys_updated_on>
+            <value>roraima</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>estado</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Santa Catarina</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_ranking_centro_de_lideran_as_p_blicas</name>
+            <sequence>23</sequence>
+            <synonyms/>
+            <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-11-27 23:31:58</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>8542bce8fbe13e5086e7f4045eefdcef</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-27 23:34:30</sys_updated_on>
+            <value>santa_catarina</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>estado</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>São Paulo</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_ranking_centro_de_lideran_as_p_blicas</name>
+            <sequence>24</sequence>
+            <synonyms/>
+            <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-11-27 23:32:06</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>fa42f460fb253e5086e7f4045eefdcc6</sys_id>
+            <sys_mod_count>3</sys_mod_count>
+            <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-27 23:34:33</sys_updated_on>
+            <value>sao_paulo</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>estado</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Sergipe</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_ranking_centro_de_lideran_as_p_blicas</name>
+            <sequence>25</sequence>
+            <synonyms/>
+            <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-11-27 23:32:02</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>fd423020fb253e5086e7f4045eefdcce</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-27 23:34:34</sys_updated_on>
+            <value>sergipe</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>estado</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Tocantins</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_ranking_centro_de_lideran_as_p_blicas</name>
+            <sequence>26</sequence>
+            <synonyms/>
+            <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-11-27 23:32:09</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>bb42f060fb253e5086e7f4045eefdc25</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-27 23:34:38</sys_updated_on>
+            <value>tocantins</value>
+        </sys_choice>
+    </sys_choice>
+</record_update>
