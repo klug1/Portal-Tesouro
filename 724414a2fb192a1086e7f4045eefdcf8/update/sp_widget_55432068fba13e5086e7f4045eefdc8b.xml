@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $rootScope, $timeout) {
+  var c = this;
+
+  c.selectedYear = "";
+
+  function atualizarIndicador() {
+    c.server.get({ selectedYear: c.selectedYear }).then(function(response) {
+      c.data = response.data;
+      // console.log("Indicador Investimento atualizado:", c.selectedYear, c.data);
+    });
+  }
+
+  // Escuta o evento de filtro de ano
+  $rootScope.$on('anoSelecionado', function(event, ano) {
+    c.selectedYear = ano;
+    atualizarIndicador();
+  });
+
+  // Carregamento inicial
+  atualizarIndicador();
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.financial-widget {
+  font-family: Roboto;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 4rem;
+}
+
+.indicator-block {
+  text-align: center;
+  padding: 0;
+}
+
+.indicator-header {
+  background-color: #EBEDF1;
+  color: #021770;
+  font-weight: 400;
+  padding: 8px 10px;
+  font-size: 14px;
+  border-bottom: 1px solid #C7C7C7;
+}
+
+.indicator-value {
+  color: #021770;
+  font-size: 32px;
+  font-weight: 400;
+  padding: 10px 10px 15px;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>investimento_-_pago_x_rcl_investimento</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>INVESTIMENTO - Pago x RCL Investimento</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    input = input || {};
+    var table = 'x_sded9_portal_t_0_investimento';
+    var selectedYear = input.selectedYear || "";
+
+    // 1. Busca o ano mais recente se nenhum for selecionado
+    if (!selectedYear) {
+        var g = new GlideRecord(table);
+        g.orderByDesc('u_ano');
+        g.setLimit(1);
+        g.query();
+        if (g.next())
+            selectedYear = g.getValue('u_ano');
+    }
+
+    data.selectedYear = selectedYear;
+
+    // Valor padrão com ponto
+    data.indicator = {
+        value: 'R$ 0.00', 
+        label: 'Investimento: ' + (selectedYear ? selectedYear : 'N/A')
+    };
+
+    // 2. Busca o dado na tabela
+    var gr = new GlideRecord(table);
+    
+    if (selectedYear) {
+        gr.addQuery('u_ano', selectedYear);
+    }
+
+    gr.orderByDesc('sys_created_on');
+    gr.setLimit(1);
+    gr.query();
+
+    if (gr.next()) {
+        var anoReal = gr.getValue('u_ano');
+        var valorBruto = gr.getValue('investimento_pago') || '0'; 
+        
+        // Chama a função de formatação corrigida
+        var valorFormatado = formatarMoedaAbreviada(valorBruto);
+
+        data.indicator.value = valorFormatado; 
+        data.indicator.label = 'Investimento ' + anoReal + ':';
+        data.selectedYear = anoReal;
+    }
+
+    // --- Função de Formatação Ajustada (Sem Arredondamento) ---
+    function formatarMoedaAbreviada(valorStr) {
+        if (!valorStr) return "R$ 0.00";
+
+        // Converte string BR para Float JS
+        var valor = parseFloat(valorStr.toString().replace(/\./g, '').replace(',', '.'));
+
+        if (isNaN(valor)) return "R$ 0.00";
+
+        var divisor = 1;
+        var sufixo = "";
+        var absValor = Math.abs(valor);
+
+        // Define a escala (Bi, Milhões, Mil)
+        if (absValor >= 1000000000) {
+            divisor = 1000000000;
+            sufixo = ' Bi';
+        } else if (absValor >= 1000000) {
+            divisor = 1000000;
+            sufixo = ' Milhões';
+        } else if (absValor >= 1000) {
+            divisor = 1000;
+            sufixo = ' Mil';
+        }
+
+        // Realiza a divisão
+        var valorDividido = valor / divisor;
+
+        // Lógica de TRUNCAMENTO (Math.floor)
+        // Multiplica por 100, remove decimais extras, divide por 100
+        var valorTruncado = Math.floor(Math.abs(valorDividido) * 100) / 100;
+
+        // Restaura o sinal negativo se necessário
+        if (valor < 0) {
+            valorTruncado = valorTruncado * -1;
+        }
+
+        // Retorna formatado sempre com 2 casas
+        return 'R$ ' + valorTruncado.toFixed(2) + sufixo;
+    }
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-27 22:26:24</sys_created_on>
+        <sys_id>55432068fba13e5086e7f4045eefdc8b</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>INVESTIMENTO - Pago x RCL Investimento</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_55432068fba13e5086e7f4045eefdc8b</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-27 22:27:01</sys_updated_on>
+        <template><![CDATA[<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+</style>
+
+<div class="financial-widget">
+  <div class="indicator-block">
+    <div class="indicator-header">{{data.indicator.label}}</div>
+    <div class="indicator-value">{{data.indicator.value}}</div>
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

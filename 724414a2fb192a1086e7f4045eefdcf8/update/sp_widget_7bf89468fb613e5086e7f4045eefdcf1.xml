@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $rootScope, $timeout) {
+  var c = this;
+
+  c.selectedYear = "";
+
+  function atualizarIndicador() {
+    c.server.get({ selectedYear: c.selectedYear }).then(function(response) {
+      c.data = response.data;
+      // console.log("Indicador Investimento atualizado:", c.selectedYear, c.data);
+    });
+  }
+
+  // Escuta o evento de filtro de ano
+  $rootScope.$on('anoSelecionado', function(event, ano) {
+    c.selectedYear = ano;
+    atualizarIndicador();
+  });
+
+  // Carregamento inicial
+  atualizarIndicador();
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.financial-widget {
+  font-family: Roboto;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 4rem;
+}
+
+.indicator-block {
+  text-align: center;
+  padding: 0;
+}
+
+.indicator-header {
+  background-color: #EBEDF1;
+  color: #021770;
+  font-weight: 400;
+  padding: 8px 10px;
+  font-size: 14px;
+  border-bottom: 1px solid #C7C7C7;
+}
+
+.indicator-value {
+  color: #021770;
+  font-size: 32px;
+  font-weight: 400;
+  padding: 10px 10px 15px;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>investimento_-_emp_x_rcl_percentual</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>INVESTIMENTO - Emp x RCL Percentual</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    input = input || {};
+    var table = 'x_sded9_portal_t_0_investimento';
+    var selectedYear = input.selectedYear || "";
+
+    // 1. Busca o ano mais recente se nenhum for selecionado
+    if (!selectedYear) {
+        var g = new GlideRecord(table);
+        g.orderByDesc('u_ano');
+        g.setLimit(1);
+        g.query();
+        if (g.next())
+            selectedYear = g.getValue('u_ano');
+    }
+
+    data.selectedYear = selectedYear;
+
+    // Valor padrão
+    data.indicator = {
+        value: '0%', 
+        label: 'Percentual: ' + (selectedYear ? selectedYear : 'N/A')
+    };
+
+    // 2. Busca o dado na tabela
+    var gr = new GlideRecord(table);
+    
+    if (selectedYear) {
+        gr.addQuery('u_ano', selectedYear);
+    }
+
+    gr.orderByDesc('sys_created_on');
+    gr.setLimit(1);
+    gr.query();
+
+    if (gr.next()) {
+        var anoReal = gr.getValue('u_ano');
+        // Pega o valor bruto (ex: "12.56")
+        var valorBruto = gr.getValue('percentual_da_rcl_investimento_empenhado') || '0'; 
+        
+        // Apenas troca ponto por vírgula e adiciona %
+        // Se vier do banco como "12.568", vira "12,568%"
+        var valorFinal = valorBruto.replace('.', ',') + '%';
+
+        data.indicator.value = valorFinal; 
+        data.indicator.label = 'Percentual ' + anoReal + ':';
+        data.selectedYear = anoReal;
+    }
+
+    // A função formatarMoedaAbreviada foi removida pois não é mais necessária.
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-27 21:41:30</sys_created_on>
+        <sys_id>7bf89468fb613e5086e7f4045eefdcf1</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>INVESTIMENTO - Emp x RCL Percentual</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_7bf89468fb613e5086e7f4045eefdcf1</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-27 21:43:36</sys_updated_on>
+        <template><![CDATA[<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+</style>
+
+<div class="financial-widget">
+  <div class="indicator-block">
+    <div class="indicator-header">{{data.indicator.label}}</div>
+    <div class="indicator-value">{{data.indicator.value}}</div>
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

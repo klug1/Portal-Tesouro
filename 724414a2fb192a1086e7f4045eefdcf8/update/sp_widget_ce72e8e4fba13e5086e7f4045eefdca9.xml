@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $rootScope, $timeout) {
+    // Variável exclusiva para este gráfico
+    var chartPago = null;
+
+    $scope.anoSelecionadoPago = ""; 
+    $scope.exibirGraficoPago = false;
+
+    // Definição das cores
+    var coresPago = {
+        barra1: '#a7b9e8', // Investimento Pago
+        barra2: '#4b77bf', // RCL
+        linha: '#021770'   // Percentual
+    };
+
+    $rootScope.$on('anoSelecionado', function(event, ano) {
+        $scope.anoSelecionadoPago = ano;
+        carregarDadosPagoFiltrado(); 
+    });
+
+    function carregarDadosPagoFiltrado() {
+        var filtros = {
+            ano: $scope.anoSelecionadoPago 
+        };
+        
+        $scope.server.get(filtros).then(function(response) {
+            // Variável de dados renomeada
+            var dados = response.data.dadosGraficoPago || [];
+            
+            // Timeout para garantir atualização do ciclo Angular
+            $timeout(function() {
+                montarGraficoPago(dados);
+            });
+        });
+    }
+
+    carregarDadosPagoFiltrado();
+
+    // --- Função Auxiliar para Truncar (Evita arredondamento 89.999 -> 90) ---
+    function formatarTruncado(valor) {
+        if (valor === null || valor === undefined) return '0,00';
+        // Multiplica por 100, corta decimais com floor, divide por 100
+        var truncado = Math.floor(Math.abs(valor) * 100) / 100;
+        if (valor < 0) truncado = truncado * -1;
+        
+        return truncado.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    }
+
+    function montarGraficoPago(listaDados) {
+
+        // 1. Preparação dos dados
+        var anosPresentes = [];
+        listaDados.forEach(function(item) {
+            if (anosPresentes.indexOf(item.ano) === -1) {
+                anosPresentes.push(item.ano);
+            }
+        });
+
+        anosPresentes.sort(function(a, b) {
+            return parseInt(a) - parseInt(b);
+        });
+
+        // Se não tiver dados, destrói e esconde
+        if (anosPresentes.length === 0) {
+            if (chartPago) {
+                chartPago.destroy();
+                chartPago = null;
+            }
+            $scope.exibirGraficoPago = false;
+            return;
+        }
+
+        // --- CORREÇÃO DE CARREGAMENTO (TIMEOUT) ---
+        $scope.exibirGraficoPago = true;
+
+        $timeout(function() {
+            
+            function parseValue(val) {
+                if (!val) return null;
+                var cleanVal = val.toString().replace(/\./g, '').replace(',', '.');
+                return parseFloat(cleanVal);
+            }
+            
+            function parsePercent(val) {
+                 if (!val) return null;
+                 var cleanVal = val.toString().replace(',', '.');
+                 return parseFloat(cleanVal);
+            }
+
+            // Mapeamento dos Dados (Campos atualizados para Pago)
+            var dadosBarra1 = anosPresentes.map(function(ano) {
+                var item = listaDados.find(function(d) { return d.ano === ano; });
+                return item ? parseValue(item.investimento_pago) : 0;
+            });
+
+            var dadosBarra2 = anosPresentes.map(function(ano) {
+                var item = listaDados.find(function(d) { return d.ano === ano; });
+                return item ? parseValue(item.rcl) : 0;
+            });
+
+            var dadosPercentual = anosPresentes.map(function(ano) {
+                var item = listaDados.find(function(d) { return d.ano === ano; });
+                return item ? parsePercent(item.percentual) : 0;
+            });
+
+            // 2. Configuração dos Datasets
+            var datasets = [
+                {
+                    label: 'Investimento Pago', // Label atualizado
+                    data: dadosBarra1,
+                    backgroundColor: coresPago.barra1,
+                    borderColor: coresPago.barra1,
+                    borderWidth: 1,
+                    order: 2, 
+                    yAxisID: 'y'
+                },
+                {
+                    label: 'Receita Corrente Líquida',
+                    data: dadosBarra2,
+                    backgroundColor: coresPago.barra2,
+                    borderColor: coresPago.barra2,
+                    borderWidth: 1,
+                    order: 3, 
+                    yAxisID: 'y'
+                },
+                {
+                    type: 'line',
+                    label: 'Percentual da RCL',
+                    data: dadosPercentual,
+                    borderColor: coresPago.linha,
+                    backgroundColor: coresPago.linha,
+                    borderWidth: 3,
+                    pointStyle: 'circle',
+                    pointRadius: 4,
+                    order: 1, 
+                    yAxisID: 'y1',
+                    datalabels: {
+                        align: 'top',
+                        anchor: 'end',
+                        formatter: function(value) {
+                             // Usando formatação truncada no label da linha
+                             return formatarTruncado(value) + '%';
+                        }
+                    }
+                }
+            ];
+
+            // Renderização do Gráfico
+            if (chartPago) {
+                chartPago.data.labels = anosPresentes;
+                chartPago.data.datasets = datasets;
+                chartPago.update();
+                
+            } else {
+                // Busca o novo ID 'graficoPago'
+                var element = document.getElementById('graficoPago');
+                
+                if (element) {
+                    var ctx = element.getContext('2d');
+                    
+                    chartPago = new Chart(ctx, {
+                        type: 'bar', 
+                        data: {
+                            labels: anosPresentes,
+                            datasets: datasets
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            interaction: {
+                                mode: 'index',
+                                intersect: false,
+                            },
+                            scales: {
+                                x: {
+                                    display: true,
+                                    grid: { display: false },
+                                    ticks: {
+                                        color: '#0E2B69',
+                                        font: {
+                                            size: 14,
+                                            family: 'Roboto Flex, sans-serif',
+                                            weight: 600
+                                        }
+                                    }
+                                },
+                                y: {
+                                    type: 'linear',
+                                    display: true,
+                                    position: 'left',
+                                    title: { display: true, text: 'Valores (R$)' },
+                                    ticks: {
+                                        color: '#0E2B69',
+                                        callback: function(value) {
+                                            return 'R$ ' + value.toLocaleString('pt-BR', { maximumFractionDigits: 0 });
+                                        }
+                                    }
+                                },
+                                y1: {
+                                    type: 'linear',
+                                    display: true,
+                                    position: 'right',
+                                    grid: {
+                                        drawOnChartArea: false 
+                                    },
+                                    title: { display: true, text: 'Percentual (%)' },
+                                    ticks: {
+                                        color: coresPago.linha,
+                                        callback: function(value) {
+                                            return value + '%';
+                                        }
+                                    }
+                                }
+                            },
+                            plugins: {
+                                legend: {
+                                    display: true,
+                                    position: 'top',
+                                    labels: { usePointStyle: true }
+                                },
+                                tooltip: {
+                                    enabled: true,
+                                    callbacks: {
+                                        label: function(context) {
+                                            var label = context.dataset.label || '';
+                                            var value = context.raw;
+                                            
+                                            // --- CORREÇÃO DE ARREDONDAMENTO NO TOOLTIP ---
+                                            var valFormatado = formatarTruncado(value);
+
+                                            if (context.dataset.type === 'line' || context.dataset.yAxisID === 'y1') {
+                                                return label + ': ' + valFormatado + '%';
+                                            } else {
+                                                return label + ': R$ ' + value.toLocaleString('pt-BR', {minimumFractionDigits: 2});
+                                            }
+                                        }
+                                    }
+                                },
+                                datalabels: {
+                                    display: function(context) {
+                                        return context.dataset.type === 'line'; 
+                                    },
+                                    color: '#000',
+                                    font: { weight: 'bold' }
+                                }
+                            }
+                        }
+                    });
+                }
+            }
+        }); // Fim do $timeout
+    }
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>canvas {
+  display: block;
+  margin: 0 auto;
+}
+
+h3, div, span {
+ font-family: 'Roboto Flex', sans-serif;
+}
+
+.titlePago{
+   font-family: Roboto;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 24px;
+  leading-trim: NONE;
+  line-height: 100%;
+  letter-spacing: 0%;
+	color:#021770;
+}
+
+/* --- Media Queries para Responsividade --- */
+
+/* Telas Pequenas (Mobile S, M, L - até 767px) */
+@media (max-width: 767px) {
+  canvas {
+    max-width: 90%; /* Ajustar a largura máxima do canvas */
+  }
+  h3 {
+    font-size: 1rem; /* Ajustar o tamanho da fonte do título */
+  }
+}
+
+/* Tablets (iPad Mini, iPad Air, Surface Duo, Galaxy Z Fold 5 - 768px até 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  canvas {
+    max-width: 80%;
+  }
+  h3 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Laptops e Telas Maiores (iPad Pro, Surface Pro 7, Laptops, 4K - 1024px em diante) */
+@media (min-width: 1024px) {
+  canvas {
+    max-width: none;
+  }
+  h3 {
+  }
+}
+
+/* Ajustes para o Surface Duo (540x720) */
+@media (width: 540px) and (height: 720px) {
+    canvas {
+        max-width: 95%;
+    }
+}
+
+/* Ajustes para Galaxy Z Fold 5 (max-width: 350px) */
+@media (max-width: 350px) {
+    h3 {
+        font-size: 0.9rem;
+    }
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>investimento_-_pago_x_rcl</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>INVESTIMENTO - Pago x RCL</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    input = input || {};
+    // Alterado nome da variável de dados para Pago
+    data.dadosGraficoPago = [];
+    
+    // Pega o ano enviado
+    var anoFiltro = input.ano || "";
+    
+    // Tabela permanece a mesma
+    var gr = new GlideRecord('x_sded9_portal_t_0_investimento');
+    
+    // Aplica filtro de ano se houver
+    if (anoFiltro && anoFiltro !== "") {
+        gr.addQuery('u_ano', anoFiltro);
+    }
+    
+    gr.orderBy('u_ano');
+    gr.query();
+    
+    var lista = [];
+    while (gr.next()) {
+        // --- CAMPOS NOVOS SOLICITADOS ---
+        lista.push({
+            ano: gr.getValue('u_ano').toString(),
+            // Campo atualizado para INVESTIMENTO PAGO
+            investimento_pago: gr.getValue('investimento_pago'),  
+            // RCL mantido
+            rcl: gr.getValue('receita_corrente_liquida'), 
+            // Campo atualizado para PERCENTUAL PAGO
+            percentual: gr.getValue('percentual_da_rcl_investimento_pago') 
+        });
+    }
+    
+    data.dadosGraficoPago = lista;
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-27 22:22:53</sys_created_on>
+        <sys_id>ce72e8e4fba13e5086e7f4045eefdca9</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>INVESTIMENTO - Pago x RCL</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_ce72e8e4fba13e5086e7f4045eefdca9</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-27 22:23:27</sys_updated_on>
+        <template><![CDATA[<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+  .chart-wrapper {
+      font-family: 'Roboto Flex', sans-serif;
+      width: 100%;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+      margin-top: 4rem;
+  }
+  .chart-container {
+      position: relative;
+      width: 100%;
+      height: 588px;
+  }
+  canvas {
+      width: 100% !important;
+      height: 100% !important;
+      display: block;
+  }
+  @media (max-width: 768px) {
+      .chart-container {
+          height: 400px;
+      }
+  }
+  @media (max-width: 480px) {
+      .chart-container {
+          height: 300px;
+      }
+  }
+  .report-widget.panel.mensagem {
+      text-align: center;
+      font-size: 1.2em;
+      padding: 20px;
+      background: #f8f8f8;
+      border-radius: 8px;
+      margin-top: 20px;
+  }
+  h3, div, span {
+    font-family: 'Roboto Flex', sans-serif;
+  }
+  /* Classe renomeada para Pago */
+  .titlePago {
+    font-family: Roboto;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 24px;
+    line-height: 100%;
+    color: #021770;
+  }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+
+<div class="chart-wrapper">
+  <h3 class="titlePago" style="text-align:left; font-weight: 600; margin-bottom: 16px;">
+      Investimento Pago x Receita Corrente Líquida (RCL)
+  </h3>
+  
+  <div class="chart-container" ng-show="exibirGraficoPago">
+    <canvas id="graficoPago"></canvas>
+  </div>
+  
+  <div class="report-widget panel mensagem" ng-show="!exibirGraficoPago">
+    <div class="panel-heading">
+      <h2 class="panel-title"><i class="fa fa-line-chart" aria-hidden="true"></i></h2>
+    </div>
+    <div class="panel-body">
+      Nenhum dado disponível para o filtro selecionado.
+    </div>
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>
