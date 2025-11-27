@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $rootScope, $timeout) {
+    // Variável única para este gráfico (Tribunal)
+    var chartTribunal = null;
+    
+    $scope.anoSelecionadoTribunal = "";
+    $scope.exibirGraficoTribunal = false;
+    
+    
+    var corTribunal = '#4b77bf'; 
+    
+    /**
+     * Função para carregar os dados do servidor com filtro de ano
+     */
+    function carregarDadosTribunalFiltrado() {
+        var filtros = {
+            ano: $scope.anoSelecionadoTribunal || ""
+        };
+        $scope.server.get(filtros).then(function(response) {
+            // Nota: Buscando 'dadosGraficoTribunal' que definiremos no Server Script
+            var dados = response.data.dadosGraficoTribunal || [];
+            
+            $timeout(function() {
+                montarGraficoTribunal(dados);
+            });
+        });
+    }
+
+    // Escuta o evento global de mudança de ano
+    $rootScope.$on('anoSelecionado', function(event, ano) {
+        $scope.anoSelecionadoTribunal = ano;
+        carregarDadosTribunalFiltrado();
+    });
+    
+    // Chamada inicial
+    carregarDadosTribunalFiltrado();
+    
+    function montarGraficoTribunal(listaDados) {
+        
+        var anosPresentes = [];
+        listaDados.forEach(function(item) {
+            if (anosPresentes.indexOf(item.ano) === -1) {
+                anosPresentes.push(item.ano);
+            }
+        });
+        
+        // Ordena os anos de forma crescente
+        anosPresentes.sort(function(a, b) {
+            return parseInt(a) - parseInt(b);
+        });
+        
+        // Se não houver dados, destrói gráfico e esconde
+        if (anosPresentes.length === 0) {
+            if (chartTribunal) {
+                chartTribunal.destroy();
+                chartTribunal = null;
+            }
+            $scope.exibirGraficoTribunal = false;
+            return;
+        }
+        
+        $scope.exibirGraficoTribunal = true;
+        
+        // Mapeia os dados
+        var dadosValores = anosPresentes.map(function(ano) {
+            var item = listaDados.find(function(d) { return d.ano === ano; });
+            return item ? parseFloat(item.total) : null;
+        });
+
+        var desiredType = (anosPresentes.length === 1) ? 'bar' : 'line';
+        
+        // Configuração do Dataset
+        var datasetConfig = {
+            label: 'Tribunal de Contas', // Label atualizada
+            data: dadosValores,
+            fill: false,
+            tension: 0.1,
+            backgroundColor: corTribunal,
+            borderColor: corTribunal,
+            borderWidth: 4, 
+            pointStyle: 'rectRounded', // Estilo do ponto diferente
+            pointRadius: 6,
+            pointHoverRadius: 8
+        };
+
+        if (desiredType === 'bar') {
+             datasetConfig.borderWidth = 1;
+        }
+        
+        // --- AQUI: Pegando o contexto do NOVO ID "graficoTribunal" ---
+        var ctxElement = document.getElementById('graficoTribunal');
+        if (!ctxElement) return; 
+        var ctx = ctxElement.getContext('2d');
+        
+        if (chartTribunal) {
+            if (chartTribunal.config.type !== desiredType) {
+                chartTribunal.destroy();
+                chartTribunal = null;
+            } else {
+                chartTribunal.data.labels = anosPresentes;
+                chartTribunal.data.datasets[0].data = dadosValores;
+                chartTribunal.update();
+                return;
+            }
+        }
+        
+        // Criação do gráfico
+        chartTribunal = new Chart(ctx, {
+            type: desiredType,
+            data: {
+                labels: anosPresentes,
+                datasets: [datasetConfig]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                animation: {
+                    duration: 700,
+                    easing: 'easeInOutQuad'
+                },
+                scales: {
+                    x: {
+                        display: true,
+                        offset: true,
+                        grid: { offset: true },
+                        ticks: {
+                            color: '#0E2B69',
+                            font: { size: 14, weight: 700, family: 'Roboto Flex, sans-serif' }
+                        }
+                    },
+                    y: {
+                        display: true,
+                        position: 'right',
+                        beginAtZero: true, 
+                        ticks: {
+                            callback: function(value) {
+                                return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+                            },
+                            color: '#0E2B69',
+                            font: { size: 12, family: 'Roboto Flex, sans-serif' }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top',
+                        labels: {
+                            boxWidth: 40, 
+                            padding: 20,
+                            font: {
+                                size: 14,
+                                family: 'Roboto Flex, sans-serif'
+                            }
+                        }
+                    },
+                    tooltip: {
+                        enabled: true,
+                        callbacks: {
+                            label: function(context) {
+                                var valorFormatado = context.raw.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+                                return context.dataset.label + ': ' + valorFormatado;
+                            }
+                        }
+                    },
+                    datalabels: {
+                        anchor: 'end',
+                        align: 'top',
+                        formatter: function(value) {
+                            if (value === null) return '';
+                            return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+                        },
+                        color: '#000',
+                        font: { weight: 'bold', size: 16 }
+                    }
+                }
+            }
+        });
+    }
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>canvas {
+  display: block;
+  margin: 0 auto;
+}
+
+h3, div, span {
+ font-family: 'Roboto Flex', sans-serif;
+}
+
+.titleTribunal{
+   font-family: Roboto;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 24px;
+  leading-trim: NONE;
+  line-height: 100%;
+  letter-spacing: 0%;
+	color:#021770;
+}
+
+/* --- Media Queries para Responsividade --- */
+
+/* Telas Pequenas (Mobile S, M, L - até 767px) */
+@media (max-width: 767px) {
+  canvas {
+    max-width: 90%; /* Ajustar a largura máxima do canvas */
+  }
+  h3 {
+    font-size: 1rem; /* Ajustar o tamanho da fonte do título */
+  }
+}
+
+/* Tablets (iPad Mini, iPad Air, Surface Duo, Galaxy Z Fold 5 - 768px até 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  canvas {
+    max-width: 80%;
+  }
+  h3 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Laptops e Telas Maiores (iPad Pro, Surface Pro 7, Laptops, 4K - 1024px em diante) */
+@media (min-width: 1024px) {
+  canvas {
+    max-width: none;
+  }
+  h3 {
+  }
+}
+
+/* Ajustes para o Surface Duo (540x720) */
+@media (width: 540px) and (height: 720px) {
+    canvas {
+        max-width: 95%;
+    }
+}
+
+/* Ajustes para Galaxy Z Fold 5 (max-width: 350px) */
+@media (max-width: 350px) {
+    h3 {
+        font-size: 0.9rem;
+    }
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>superavit_-_tribunal_de_contas</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>SUPERAVIT - Tribunal de Contas</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    input = input || {};
+    // Objeto de dados renomeado para 'dadosGraficoTribunal'
+    data.dadosGraficoTribunal = [];
+    data.anos = [];
+    
+    var anoFiltro = input.ano || "";
+    
+    // --- 1. Busca e Popula os Anos Disponíveis ---
+    var grAnos = new GlideAggregate('x_sded9_portal_t_0_super_vit');
+    grAnos.addAggregate('COUNT');
+    grAnos.groupBy('u_ano');
+    grAnos.orderBy('u_ano');
+    grAnos.query();
+    
+    while (grAnos.next()) {
+        data.anos.push(grAnos.getValue('u_ano').toString());
+    }
+    data.anos = Array.from(new Set(data.anos)).sort();
+
+    // --- 2. Busca os Dados de Superavit Tribunal de Contas ---
+    var grSuper = new GlideRecord('x_sded9_portal_t_0_super_vit');
+    
+    // Aplica o filtro de Ano
+    if (anoFiltro !== "" && anoFiltro.toLowerCase() !== "todos") {
+        grSuper.addQuery('u_ano', anoFiltro);
+    }
+    
+    grSuper.orderBy('u_ano');
+    grSuper.query();
+    
+    var listaTribunal = [];
+    while (grSuper.next()) {
+        var ano = grSuper.getValue('u_ano').toString();
+        
+        // --- ALTERAÇÃO PRINCIPAL: Campo superavit_tribunal_de_contas ---
+        var total = grSuper.getValue('superavit_tribunal_de_contas') || '0';
+        
+        listaTribunal.push({
+            ano: ano,
+            total: total
+        });
+    }
+    
+    data.dadosGraficoTribunal = listaTribunal;
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-27 00:10:56</sys_created_on>
+        <sys_id>cb91f3c8fba1fa50f6d5f9d38eefdc24</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>SUPERAVIT - Tribunal de Contas</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_cb91f3c8fba1fa50f6d5f9d38eefdc24</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-27 00:13:17</sys_updated_on>
+        <template><![CDATA[<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+
+  /* Sufixo alterado para 'tribunal' */
+  .chart-wrapper-tribunal {
+      font-family: 'Roboto Flex', sans-serif;
+      width: 100%;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+      margin-top: 4rem;
+  }
+  .chart-container-tribunal {
+      position: relative;
+      width: 100%;
+      height: 588px;
+  }
+  .chart-container-tribunal canvas {
+      width: 100% !important;
+      height: 100% !important;
+      display: block;
+  }
+  @media (max-width: 768px) {
+      .chart-container-tribunal {
+          height: 400px;
+      }
+  }
+  @media (max-width: 480px) {
+      .chart-container-tribunal {
+          height: 300px;
+      }
+  }
+  .report-widget.panel.mensagem {
+      text-align: center;
+      font-size: 1.2em;
+      padding: 20px;
+      background: #f8f8f8;
+      border-radius: 8px;
+      margin-top: 20px;
+  }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+
+<div class="chart-wrapper-tribunal">
+  <h3 class="titleTribunal" style="text-align:left; font-weight: 600; margin-bottom: 16px;">
+      </h3>
+   
+  <div class="chart-container-tribunal" ng-show="exibirGraficoTribunal">
+    <canvas id="graficoTribunal"></canvas>
+  </div>
+   
+  <div class="report-widget panel mensagem" ng-show="!exibirGraficoTribunal">
+    <div class="panel-heading">
+      <h2 class="panel-title"><i class="fa fa-line-chart" aria-hidden="true"></i></h2>
+    </div>
+    <div class="panel-body">
+      Nenhum dado de Superávit Tribunal de Contas disponível para o filtro selecionado.
+    </div>
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>
