@@ -2,43 +2,48 @@
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
         <client_script><![CDATA[function($scope, $rootScope, $timeout) {
-    // Variável única para este gráfico
-    var chartLegis = null;
-    
-    $scope.anoSelecionadoLegis = "";
-    $scope.exibirGraficoLegis = false;
-    
-    // Cor definida (mesma cor base, ou altere se desejar diferenciar)
-    var corLegis = '#a7b9e8';
-    
+    // Variável do gráfico renomeada
+    var chartDespPessoal = null;
+   
+    // Escopo renomeado
+    $scope.anoSelecionadoDespPessoal = "";
+    $scope.exibirGraficoDespPessoal = false;
+   
+    var coresDespPessoal = {
+        apurado: '#a7b9e8',
+        meta: '#4b77bf'
+    };
+   
     /**
      * Função para carregar os dados do servidor com filtro de ano
      */
-    function carregarDadosLegisFiltrado() {
+    function carregarDadosDespPessoalFiltrado() {
         var filtros = {
-            ano: $scope.anoSelecionadoLegis || ""
+            ano: $scope.anoSelecionadoDespPessoal || ""
         };
         $scope.server.get(filtros).then(function(response) {
-            // Nota: Buscando 'dadosGraficoLegis' do Server Script
-            var dados = response.data.dadosGraficoLegis || [];
-            
+            // Lendo a nova variável de dados vinda do Server Script
+            var dados = response.data.dadosGraficoDespPessoal || [];
+            var anosDisponiveis = response.data.anos || [];
+           
             $timeout(function() {
-                montarGraficoLegis(dados);
+                montarGraficoDespPessoal(dados, anosDisponiveis);
             });
         });
     }
 
-    // Escuta o evento global de mudança de ano
+    // O evento 'anoSelecionado' geralmente vem de um filtro global. 
+    // Mantive o nome do evento igual, mas a ação interna é isolada.
     $rootScope.$on('anoSelecionado', function(event, ano) {
-        $scope.anoSelecionadoLegis = ano;
-        carregarDadosLegisFiltrado();
+        $scope.anoSelecionadoDespPessoal = ano;
+        carregarDadosDespPessoalFiltrado();
     });
-    
+   
     // Chamada inicial
-    carregarDadosLegisFiltrado();
-    
-    function montarGraficoLegis(listaDados) {
-        
+    carregarDadosDespPessoalFiltrado();
+   
+    function montarGraficoDespPessoal(listaDados, anosDisponiveis) {
+       
         var anosPresentes = [];
         listaDados.forEach(function(item) {
             if (anosPresentes.indexOf(item.ano) === -1) {
@@ -46,70 +51,92 @@
             }
         });
         
-        // Ordena os anos de forma crescente
         anosPresentes.sort(function(a, b) {
             return parseInt(a) - parseInt(b);
         });
-        
-        // Se não houver dados, destrói gráfico e esconde
+       
+        // Lógica de destruição/limpeza usando as novas variáveis
         if (anosPresentes.length === 0) {
-            if (chartLegis) {
-                chartLegis.destroy();
-                chartLegis = null;
+            if (chartDespPessoal) {
+                chartDespPessoal.destroy();
+                chartDespPessoal = null;
             }
-            $scope.exibirGraficoLegis = false;
+            $scope.exibirGraficoDespPessoal = false;
             return;
         }
-        
-        $scope.exibirGraficoLegis = true;
-        
-        // Mapeia os dados
-        var dadosValores = anosPresentes.map(function(ano) {
+        $scope.exibirGraficoDespPessoal = true;
+       
+        var dadosApurado = anosPresentes.map(function(ano) {
             var item = listaDados.find(function(d) { return d.ano === ano; });
-            return item ? parseFloat(item.total) : null;
+            return item ? parseFloat(item.apurado) : null;
         });
-
+        var dadosMeta = anosPresentes.map(function(ano) {
+            var item = listaDados.find(function(d) { return d.ano === ano; });
+            return item ? parseFloat(item.meta) : null;
+        });
         var desiredType = (anosPresentes.length === 1) ? 'bar' : 'line';
-        
-        // Configuração do Dataset
-        var datasetConfig = {
-            label: 'Legislativo',
-            data: dadosValores,
+       
+        var datasets = [{
+            label: 'Valor Apurado',
+            data: dadosApurado,
             fill: false,
-            tension: 0.1,
-            backgroundColor: corLegis,
-            borderColor: corLegis,
-            borderWidth: 4, 
-            pointStyle: 'circle',
-            pointRadius: 6,
-            pointHoverRadius: 8
-        };
-
-        if (desiredType === 'bar') {
-             datasetConfig.borderWidth = 1;
+            tension: 0.1
+        }, {
+            label: 'Meta',
+            data: dadosMeta,
+            fill: false,
+            tension: 0.1
+        }];
+       
+        if (desiredType === 'line') {
+            datasets[0].borderColor = coresDespPessoal.apurado;
+            datasets[0].backgroundColor = coresDespPessoal.apurado;
+            datasets[0].borderWidth = 4;
+            datasets[0].pointStyle = 'circle';
+            datasets[0].pointRadius = 10;
+            
+            datasets[1].borderColor = coresDespPessoal.meta;
+            datasets[1].backgroundColor = coresDespPessoal.meta;
+            datasets[1].borderWidth = 4;
+            datasets[1].pointStyle = 'circle';
+            datasets[1].pointRadius = 10;
+        } else { // bar
+            datasets[0].backgroundColor = coresDespPessoal.apurado;
+            datasets[0].borderColor = coresDespPessoal.apurado;
+            datasets[0].borderWidth = 1;
+            
+            datasets[1].backgroundColor = coresDespPessoal.meta;
+            datasets[1].borderColor = coresDespPessoal.meta;
+            datasets[1].borderWidth = 1;
         }
+       
+        datasets[0].pointStyle = 'rect';
+        datasets[0].pointBackgroundColor = coresDespPessoal.apurado;
+        datasets[0].pointBorderColor = coresDespPessoal.apurado;
+        datasets[0].pointBorderWidth = 0;
         
-        var datasets = [datasetConfig];
-        
-        // --- AQUI: Pegando o contexto do ID Legislativo ---
-        var ctxElement = document.getElementById('graficoLegislativo');
-        if (!ctxElement) return;
-        var ctx = ctxElement.getContext('2d');
-        
-        if (chartLegis) {
-            if (chartLegis.config.type !== desiredType) {
-                chartLegis.destroy();
-                chartLegis = null;
+        datasets[1].pointStyle = 'rect';
+        datasets[1].pointBackgroundColor = coresDespPessoal.meta;
+        datasets[1].pointBorderColor = coresDespPessoal.meta;
+        datasets[1].pointBorderWidth = 0;
+       
+        // ATENÇÃO: Pegando o novo ID do canvas
+        var ctx = document.getElementById('graficoDespPessoalLinha').getContext('2d');
+       
+        if (chartDespPessoal) {
+            if (chartDespPessoal.config.type !== desiredType) {
+                chartDespPessoal.destroy();
+                chartDespPessoal = null;
             } else {
-                chartLegis.data.labels = anosPresentes;
-                chartLegis.data.datasets[0].data = dadosValores;
-                chartLegis.update();
+                chartDespPessoal.data.labels = anosPresentes;
+                chartDespPessoal.data.datasets[0].data = dadosApurado;
+                chartDespPessoal.data.datasets[1].data = dadosMeta;
+                chartDespPessoal.update();
                 return;
             }
         }
-        
-        // Criação do gráfico
-        chartLegis = new Chart(ctx, {
+       
+        chartDespPessoal = new Chart(ctx, {
             type: desiredType,
             data: {
                 labels: anosPresentes,
@@ -125,23 +152,36 @@
                 scales: {
                     x: {
                         display: true,
+                        title: { display: false },
                         offset: true,
                         grid: { offset: true },
                         ticks: {
                             color: '#0E2B69',
-                            font: { size: 14, weight: 700, family: 'Roboto Flex, sans-serif' }
+                            font: {
+                                size: 16,
+                                weight: 800,
+                                family: 'Roboto Flex, sans-serif',
+                                lineHeight: 1.8
+                            },
+                            padding: 6,
+                            maxRotation: 0,
+                            autoSkip: false
                         }
                     },
                     y: {
                         display: true,
                         position: 'right',
-                        beginAtZero: true, 
+                        min: 0,
+                        max: 100,
                         ticks: {
                             callback: function(value) {
-                                return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+                                return value.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + '%';
                             },
                             color: '#0E2B69',
-                            font: { size: 12, family: 'Roboto Flex, sans-serif' }
+                            font: {
+                                size: 14,
+                                family: 'Roboto Flex, sans-serif'
+                            }
                         }
                     }
                 },
@@ -149,21 +189,13 @@
                     legend: {
                         display: true,
                         position: 'top',
-                        labels: {
-                            boxWidth: 40, 
-                            padding: 20,
-                            font: {
-                                size: 14,
-                                family: 'Roboto Flex, sans-serif'
-                            }
-                        }
+                        labels: { usePointStyle: true }
                     },
                     tooltip: {
                         enabled: true,
                         callbacks: {
                             label: function(context) {
-                                var valorFormatado = context.raw.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-                                return context.dataset.label + ': ' + valorFormatado;
+                                return context.dataset.label + ': ' + context.raw.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + '%';
                             }
                         }
                     },
@@ -172,10 +204,10 @@
                         align: 'top',
                         formatter: function(value) {
                             if (value === null) return '';
-                            return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+                            return value.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + '%';
                         },
                         color: '#000',
-                        font: { weight: 'bold', size: 16 }
+                        font: { weight: 'bold' }
                     }
                 }
             }
@@ -192,7 +224,7 @@ h3, div, span {
  font-family: 'Roboto Flex', sans-serif;
 }
 
-.titleEnd{
+.titleDespPessoal{
    font-family: Roboto;
   font-weight: 500;
   font-style: Medium;
@@ -262,48 +294,50 @@ h3, div, span {
         <roles/>
         <script><![CDATA[(function() {
     input = input || {};
-    data.dadosGraficoLegis = [];
+    // Variável de dados renomeada para isolamento
+    data.dadosGraficoDespPessoal = [];
     data.anos = [];
     
     var anoFiltro = input.ano || "";
-    
+   
     // --- 1. Busca e Popula os Anos Disponíveis ---
-    var grAnos = new GlideAggregate('x_sded9_portal_t_0_super_vit');
+    var grAnos = new GlideAggregate('x_sded9_portal_t_0_programa_de_ajuste_fiscal');
     grAnos.addAggregate('COUNT');
     grAnos.groupBy('u_ano');
     grAnos.orderBy('u_ano');
     grAnos.query();
-    
+   
     while (grAnos.next()) {
         data.anos.push(grAnos.getValue('u_ano').toString());
     }
-    data.anos = Array.from(new Set(data.anos)).sort();
+    data.anos = Array.from(new Set(data.anos));
+    data.anos.sort();
 
-    // --- 2. Busca os Dados de Superavit Legislativo ---
-    var grSuper = new GlideRecord('x_sded9_portal_t_0_super_vit');
-    
-    // Aplica o filtro de Ano
+    // --- 2. Busca os Dados de Despesa Pessoal ---
+    var grDespPessoal = new GlideRecord('x_sded9_portal_t_0_programa_de_ajuste_fiscal');
+   
     if (anoFiltro !== "" && anoFiltro.toLowerCase() !== "todos") {
-        grSuper.addQuery('u_ano', anoFiltro);
+        grDespPessoal.addQuery('u_ano', anoFiltro);
     }
+   
+    grDespPessoal.orderBy('u_ano');
+    grDespPessoal.query();
     
-    grSuper.orderBy('u_ano');
-    grSuper.query();
-    
-    var listaLegis = [];
-    while (grSuper.next()) {
-        var ano = grSuper.getValue('u_ano').toString();
-        
-        // --- ALTERAÇÃO PRINCIPAL: superavit_legislativo ---
-        var total = grSuper.getValue('superavit_legislativo') || '0';
-        
-        listaLegis.push({
+    var listaDespPessoal = [];
+    while (grDespPessoal.next()) {
+        var ano = grDespPessoal.getValue('u_ano').toString();
+        // Campos mantidos conforme seu original, pois já referenciam despesa com pessoal
+        var apurado = grDespPessoal.getValue('valor_apurado_despesa_com_pessoal') || '0';
+        var meta = grDespPessoal.getValue('meta_despesa_com_pessoal') || '0';
+       
+        listaDespPessoal.push({
             ano: ano,
-            total: total
+            apurado: apurado,
+            meta: meta
         });
     }
-    
-    data.dadosGraficoLegis = listaLegis;
+   
+    data.dadosGraficoDespPessoal = listaDespPessoal;
 })();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
@@ -317,7 +351,7 @@ h3, div, span {
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_dfab65e3fb55b65086e7f4045eefdcd2</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-11-26 03:12:51</sys_updated_on>
+        <sys_updated_on>2025-11-27 01:33:36</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
   
