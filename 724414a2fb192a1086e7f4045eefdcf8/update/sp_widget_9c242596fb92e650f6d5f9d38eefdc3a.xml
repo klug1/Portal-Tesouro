@@ -150,14 +150,14 @@
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-06-25 00:15:03</sys_created_on>
         <sys_id>9c242596fb92e650f6d5f9d38eefdc3a</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>Novo info Evolucao da RCL</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_9c242596fb92e650f6d5f9d38eefdc3a</sys_update_name>
-        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-06-27 13:30:57</sys_updated_on>
+        <sys_updated_by>leandro.silva@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-28 17:28:06</sys_updated_on>
         <template><![CDATA[<style>
  @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 </style>
@@ -165,7 +165,7 @@
 <h3 class="info-title">Informações</h3>
 <div class="info-box">
   <!--p class="dadosInfo" ><strong>Produção:</strong> UPFE/SATE/SEFAZ-MT</p-->
-  <p class="dadosInfo" ><strong>Descrição:</strong>O gráfico demonstra a evolução da Receita Corrente Líquida mensal.  </p>
+  <p class="dadosInfo" ><strong>Descrição:</strong>Este gráfico mostra a evolução mensal da Receita Corrente Líquida ao longo do ano. Assim, você pode acompanhar como a arrecadação líquida do Estado varia mês a mês.  </p>
   <p class="dadosInfo" ><strong>Fonte:</strong> Relatório Resumido de Execução Orçamentária (RREO) </p>
   <!--a href="https://www5.sefaz.mt.gov.br/relatorios-lei-de-respons.-fiscal" target="_blank">https://www5.sefaz.mt.gov.br/relatorios-lei-de-respons.-fiscal</a>
   <br>Finanças > Contabilidade Pública > Relatórios Lei de Respons. FIscal

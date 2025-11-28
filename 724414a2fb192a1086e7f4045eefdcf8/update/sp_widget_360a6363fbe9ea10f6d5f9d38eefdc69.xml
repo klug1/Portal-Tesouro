@@ -150,14 +150,14 @@
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-23 00:25:27</sys_created_on>
         <sys_id>360a6363fbe9ea10f6d5f9d38eefdc69</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>Info RREO RCl x VN</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_360a6363fbe9ea10f6d5f9d38eefdc69</sys_update_name>
-        <sys_updated_by>sued.barreto@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-10-22 13:31:13</sys_updated_on>
+        <sys_updated_by>leandro.silva@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-28 17:19:26</sys_updated_on>
         <template><![CDATA[<style>
  @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 </style>
@@ -165,7 +165,7 @@
 <h3 class="info-title">Informações</h3>
 <div class="info-box">
   <!--p class="dadosInfo"><strong>Produção:</strong> UPFE/SATE/SEFAZ-MT</p-->
-   <p class="dadosInfo"><strong>Descrição:</strong> A Receita Corrente Líquida é um indicador financeiro calculado a partir da receita corrente total do estado, deduzidos: as parcelas entregues aos Municípios por determinação constitucional, a contribuição dos servidores para o custeio do seu sistema de previdência e assistência social e as receitas provenientes da compensação financeira citada no § 9º do art. 201 da Constituição Federal.   </p>
+   <p class="dadosInfo"><strong>Descrição:</strong> A Receita Corrente Líquida é o valor que o Estado realmente tem disponível depois de descontar algumas obrigações legais. Para calcular, pega-se tudo o que o Estado arrecada no dia a dia e subtrai: o que é repassado aos municípios, as contribuições dos servidores para a previdência e assistência, e outras receitas previstas na Constituição. Em resumo, é o dinheiro que sobra para custear serviços públicos e investimentos.</p>
   <p class="dadosInfo"><strong>Fonte:</strong> Lei Complementar Estadual nº 614/2019 e Relatório Resumido de Execução Orçamentária (RREO). </p>
   <!--a href="https://www5.sefaz.mt.gov.br/relatorios-lei-de-respons.-fiscal" target="_blank">https://www5.sefaz.mt.gov.br/relatorios-lei-de-respons.-fiscal</a>
   <br>Finanças > Contabilidade Pública > Relatórios Lei de Respons. FIscal

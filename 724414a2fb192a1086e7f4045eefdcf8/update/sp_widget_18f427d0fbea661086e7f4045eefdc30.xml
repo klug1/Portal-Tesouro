@@ -153,21 +153,21 @@
         <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
         <sys_created_on>2025-07-01 14:45:43</sys_created_on>
         <sys_id>18f427d0fbea661086e7f4045eefdc30</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_name>Info Evolução Estoque Total Dívida Públi</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_18f427d0fbea661086e7f4045eefdc30</sys_update_name>
-        <sys_updated_by>sued.barreto@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-11-06 17:04:19</sys_updated_on>
+        <sys_updated_by>leandro.silva@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-28 18:30:10</sys_updated_on>
         <template><![CDATA[<style>
  @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 </style>
 
 <h3 class="info-title">Informações</h3>
 <div class="info-box">
-  <p class="dadosInfo"><strong>Descrição:</strong> Evolução do Estoque da Dívida mostra como o total da conta a pagar está se comportanto com o tempo.</p>
+  <p class="dadosInfo"><strong>Descrição:</strong> Este gráfico mostra os índices usados para corrigir monetariamente a dívida pública do Estado, como IPCA, IGPM, SELIC e outros. Esses índices atualizam o valor das dívidas ao longo do tempo, garantindo que os pagamentos reflitam as variações da economia, como inflação e juros.</p>
   <p class="dadosInfo"><strong>Fonte:</strong> CGDP/SOFT/SATE/SEFAZ.</p>
   <p class="dadosInfo"><strong>Atualização:</strong> Anual </p>
 </div>
