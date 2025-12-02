@@ -277,11 +277,67 @@ $border-color: #4671C4;
         active: false,
         cards: [
             {
-                title: "Exemplo de Card da Segunda Aba",
-                desc: "Este é um conteúdo de placeholder para a aba Contas Desequilibradas.",
+                title: "Falta de dinheiro para Políticas Públicas",
+                desc: "Redução de investimentos em saúde, educação e segurança, prejudicando a qualidade de vida da população.",
                 //icon: "fa-warning",
-							image_url: "x_sded9_portal_t_0.positiveReview.png",
+                image_url: "x_sded9_portal_t_0.negativeReview.png",
                 link: "sp?id=detalhe_card&sys_id=10"
+            },
+            {
+                title: "Aumento da Dívida Pública",
+                desc: "Crescimento do endividamento, comprometendo recursos que poderiam ser investidos em áreas prioritárias.",
+                //icon: "fa-warning",
+                image_url: "x_sded9_portal_t_0.negativeReview.png",
+                link: "sp?id=detalhe_card&sys_id=11"
+            },
+            {
+                title: "Falta de dinheiro para investimentos públicos",
+                desc: "Paralisação de obras de infraestrutura, gerando desemprego e problemas de mobilidade urbana.",
+                //icon: "fa-warning",
+                image_url: "x_sded9_portal_t_0.negativeReview.png",
+                link: "sp?id=detalhe_card&sys_id=12"
+            },
+            {
+                title: "Pressão para elevação de impostos",
+                desc: "Aumento da carga tributária para compensar o desequilíbrio fiscal, prejudicando cidadãos e empresas.",
+                //icon: "fa-warning",
+                image_url: "x_sded9_portal_t_0.negativeReview.png",
+                link: "sp?id=detalhe_card&sys_id=13"
+            },
+            {
+                title: "Ambiente de negócios desfavorável",
+                desc: "Perda de confiança dos investidores e empresários no estado.",
+                //icon: "fa-warning",
+                image_url: "x_sded9_portal_t_0.negativeReview.png",
+                link: "sp?id=detalhe_card&sys_id=14"
+            },
+            {
+                title: "Queda do investimento privado",
+                desc: "Empresas deixando de investir no estado, reduzindo oportunidades de emprego e renda.",
+                //icon: "fa-warning",
+                image_url: "x_sded9_portal_t_0.negativeReview.png",
+                link: "sp?id=detalhe_card&sys_id=15"
+            },
+            {
+                title: "Queda no volume de emprego",
+                desc: "Aumento do desemprego e redução de oportunidades de trabalho.",
+                //icon: "fa-warning",
+                image_url: "x_sded9_portal_t_0.negativeReview.png",
+                link: "sp?id=detalhe_card&sys_id=16"
+            },
+            {
+                title: "Redução na renda das famílias",
+                desc: "Diminuição do poder de compra e da qualidade de vida da população.",
+                //icon: "fa-warning",
+                image_url: "x_sded9_portal_t_0.negativeReview.png",
+                link: "sp?id=detalhe_card&sys_id=17"
+            },
+            {
+                title: "Baixo Crescimento Econômico",
+                desc: "Estagnação econômica e redução da prosperidade do estado.",
+                //icon: "fa-warning",
+                image_url: "x_sded9_portal_t_0.negativeReview.png",
+                link: "sp?id=detalhe_card&sys_id=18"
             }
         ]
     };
@@ -298,14 +354,14 @@ $border-color: #4671C4;
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-10-24 00:06:09</sys_created_on>
         <sys_id>a95a6811fb7cfa50f6d5f9d38eefdcbe</sys_id>
-        <sys_mod_count>68</sys_mod_count>
+        <sys_mod_count>70</sys_mod_count>
         <sys_name>Impactos no Trabalho</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_a95a6811fb7cfa50f6d5f9d38eefdcbe</sys_update_name>
-        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-10-24 01:34:59</sys_updated_on>
+        <sys_updated_by>pk.aba</sys_updated_by>
+        <sys_updated_on>2025-12-02 20:50:48</sys_updated_on>
         <template><![CDATA[<div class="panel panel-default impactos-widget">
     <div class="panel-body">
 
@@ -349,9 +405,9 @@ $border-color: #4671C4;
                                 <h4 class="card-title blue-text">{{::card.title}}</h4>
                                 <p class="card-desc">{{::card.desc}}</p>
                                 
-                                <a ng-href="{{::card.link}}" class="saiba-mais-link">
+                                <!--<a ng-href="{{::card.link}}" class="saiba-mais-link">
                                     Saiba mais <i class="fa fa-long-arrow-right"></i>
-                                </a>
+                                </a>-->
 
                             </div>
                         </div>

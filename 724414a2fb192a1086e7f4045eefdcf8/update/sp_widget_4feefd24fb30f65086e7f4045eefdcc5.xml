@@ -251,7 +251,7 @@ $cor-rodape: #A0BAEC;
         valor: "Nota A",
         subtitulo_item: "em Gestão Fiscal no País", // NOVA LINHA
         descricao_detalhada: "Melhor classificação dada pelo Tesouro Nacional", // NOVA LINHA
-        link: "#" 
+        link: "?id=resultados_fiscais"
     });
 
     data.destaques.push({
@@ -259,7 +259,7 @@ $cor-rodape: #A0BAEC;
         valor: "R$ 1 BI",
         subtitulo_item: "em Empenhos Efetivados",
         descricao_detalhada: "Controle total do volume das despesas realizadas pelo Estado",
-        link: "#" 
+        link: "?id=resultados_fiscais"
     });
 
     data.destaques.push({
@@ -267,7 +267,7 @@ $cor-rodape: #A0BAEC;
         valor: "Top 2",
         subtitulo_item: "em Solidez Fiscal no País",
         descricao_detalhada: "2º melhor Estado do Brasil em solidez fiscal",
-        link: "#" 
+        link: "?id=resultados_fiscais" 
     });
     
     data.destaques.push({
@@ -275,7 +275,7 @@ $cor-rodape: #A0BAEC;
         valor: "R$ -0,01 BI",
         subtitulo_item: "em Redução da Dívida Pública",
         descricao_detalhada: "A menor dívida líquida do país",
-        link: "#" 
+        link: "?id=resultados_fiscais"
     });
 })();]]></script>
         <servicenow>false</servicenow>
@@ -283,14 +283,14 @@ $cor-rodape: #A0BAEC;
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-10-21 22:20:16</sys_created_on>
         <sys_id>4feefd24fb30f65086e7f4045eefdcc5</sys_id>
-        <sys_mod_count>42</sys_mod_count>
+        <sys_mod_count>43</sys_mod_count>
         <sys_name>Números do Tesouro Estadual</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_4feefd24fb30f65086e7f4045eefdcc5</sys_update_name>
-        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-10-22 00:10:28</sys_updated_on>
+        <sys_updated_by>pk.aba</sys_updated_by>
+        <sys_updated_on>2025-12-02 20:26:26</sys_updated_on>
         <template><![CDATA[<div class="panel-body widget-tesouro">
     <div class="widget-conteudo-centralizado">
 

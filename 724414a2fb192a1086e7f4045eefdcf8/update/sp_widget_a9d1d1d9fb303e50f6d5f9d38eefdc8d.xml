@@ -51,8 +51,8 @@ $small-info-border: #DDDDDD; // Definindo a cor da borda do disclaimer
 // 1. CONTAINER GERAL (Background, bordas e padding)
 .banner-container {
     background-color: $banner-color-bg;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
     padding: 30px; 
     overflow-x: hidden; 
 }
@@ -62,7 +62,8 @@ $small-info-border: #DDDDDD; // Definindo a cor da borda do disclaimer
     // === NOVOS ESTILOS PARA GRADIENTE E PADDING ===
     background: $background-content-wrapper; 
     padding: 25px; 
-    border-radius: 6px; 
+    border-radius: 24px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
     // ===============================================
     
     max-width: 1200px;
@@ -317,7 +318,8 @@ h1 {
         margin-right: 0;
         display: inline-flex;
     }
-}</css>
+}
+</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -363,14 +365,14 @@ h1 {
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-10-24 02:58:37</sys_created_on>
         <sys_id>a9d1d1d9fb303e50f6d5f9d38eefdc8d</sys_id>
-        <sys_mod_count>56</sys_mod_count>
+        <sys_mod_count>73</sys_mod_count>
         <sys_name>Celebramos Banner</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_a9d1d1d9fb303e50f6d5f9d38eefdc8d</sys_update_name>
-        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-10-25 04:52:36</sys_updated_on>
+        <sys_updated_by>pk.aba</sys_updated_by>
+        <sys_updated_on>2025-12-02 21:21:27</sys_updated_on>
         <template><![CDATA[<div class="banner-container">
     
     <div class="row content-wrapper">
