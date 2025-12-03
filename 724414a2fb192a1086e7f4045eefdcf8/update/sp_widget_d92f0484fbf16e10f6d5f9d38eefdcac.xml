@@ -96,137 +96,90 @@
 }
 ]]></client_script>
         <controller_as>c</controller_as>
-        <css> div, h2 {
-    font-family: 'Roboto Flex', sans-serif;
+        <css>@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&amp;display=swap');
+
+/* --- Wrapper Principal (Animação e Layout) --- */
+.financial-widget-wrapper {
+  font-family: 'Roboto Flex', sans-serif;
+  margin-top: 4rem; /* Alinhamento padrão */
+  
+  /* Lógica de Transição */
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+.financial-widget-wrapper.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+}
+
+/* --- Estrutura Visual do Widget --- */
+.financial-widget {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.indicator-block {
+  text-align: center;
+  padding: 0;
+}
+
+.indicator-header {
+  background-color: #EBEDF1;
+  color: #021770;
+  font-weight: 400;
+  padding: 8px 10px;
+  font-size: 14px;
+  border-bottom: 1px solid #C7C7C7;
+  font-family: 'Roboto Flex', sans-serif;
+}
+
+.indicator-value {
+  color: #021770;
+  font-size: 32px;
+  font-weight: 400;
+  padding: 10px 10px 15px;
+  font-family: 'Roboto Flex', sans-serif;
+}
+
+/* Estilo para mensagem de "Nenhum dado" */
+.indicator-value.small-text {
+  font-size: 18px;
+  color: #666;
+  line-height: 1.5;
+  padding: 20px;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 767px) {
+  .financial-widget-wrapper {
+    margin-top: 1rem;
   }
-
-  .report-widget {
-    border-radius: 12px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-    background-color: #fff;
-    margin-top: 24px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    font-family: 'Roboto Flex', sans-serif;
-    /* Transição para o fade + movimento vertical */
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  .indicator-value {
+    font-size: 24px;
   }
+}
 
-  .report-widget.panel.fade-out {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(20px);
+@media (min-width: 768px) and (max-width: 1023px) {
+  .financial-widget-wrapper {
+    margin-top: 2rem;
   }
+}
 
-  /* --- Media Queries para Responsividade --- */
-
-  /* Telas Pequenas (Mobile S, M, L - até 767px) */
-  @media (max-width: 767px) {
-    .report-widget {
-      margin-top: 1rem;
-    }
-    .panel-title {
-      font-size: 1.5rem;
-    }
-    .panel-body {
-      padding: 8px;
-    }
+@media (max-width: 350px) {
+  .indicator-header {
+    font-size: 12px;
   }
-
-  /* Tablets (768px até 1023px) */
-  @media (min-width: 768px) and (max-width: 1023px) {
-    .report-widget {
-      margin-top: 1.5rem;
-    }
-    .panel-title {
-      font-size: 1.1rem;
-    }
+  .indicator-value {
+    font-size: 20px;
+    padding: 6px;
   }
-
-  /* Laptops e Telas Maiores (1024px em diante) */
-  @media (min-width: 1024px) {
-    .report-widget {
-      margin-top: 24px; /* Valor original */
-    }
-    .panel-title {
-      font-size: 1.5em; /* Valor original */
-    }
-  }
-
-  /* Ajustes para dispositivos muito largos (1280px em diante) */
-  @media (min-width: 1280px) {
-    .panel-heading {
-      padding: 14px 18px;
-    }
-    .panel-body {
-      padding: 20px;
-    }
-  }
-
-  /* Ajustes Surface Duo (540x720) */
-  @media (width: 540px) and (height: 720px) {
-    .report-widget {
-      margin-top: 1.2rem;
-    }
-    .panel-title {
-      font-size: 1rem;
-    }
-  }
-
-  /* Ajustes Galaxy Z Fold 5 (max-width: 350px) */
-  @media (max-width: 350px) {
-    .panel-title {
-      font-size: 0.9rem;
-    }
-    .panel-body {
-      padding: 6px;
-    }
-  }
-
-  .panel-heading {
-    font-family: 'Roboto Flex', sans-serif;
-    background-color: #e0e0e0; /* fundo cinza claro */
-    padding: 12px 16px;
-    border-bottom: 1px solid #ccc;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-  }
-
-  .panel-title {
-    font-family: 'Roboto Flex', sans-serif;
-    margin: 0;
-    font-size: 1.2em;
-    color: #333;
-    text-align: center;
-  }
-
-  .panel-body {
-    font-family: 'Roboto Flex', sans-serif;
-    padding: 16px;
-    flex: 1;
-    width: 100%;
-  }
-
-  /* Transição da mensagem "Nenhum dado" */
-  .mensagem {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out, transform 0.5s ease-in-out;
-    height: 0;
-    overflow: hidden;
-  }
-
-  .mensagem.show {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-    height: auto;
-  }</css>
+}</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -333,46 +286,50 @@
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-23 21:46:02</sys_created_on>
         <sys_id>d92f0484fbf16e10f6d5f9d38eefdcac</sys_id>
-        <sys_mod_count>22</sys_mod_count>
+        <sys_mod_count>23</sys_mod_count>
         <sys_name>RCL ajustado card 3 mes</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_d92f0484fbf16e10f6d5f9d38eefdcac</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-06-24 23:11:37</sys_updated_on>
+        <sys_updated_on>2025-12-03 02:00:12</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 </style>
 
-<div class="report-widget panel"
-     ng-show="dadosVisiveisMes && dadosVisiveisMes.temDadoAdj"
-     ng-class="{'fade-out': isFadingMes}">
-  <div class="panel-heading">
-    <h2 class="panel-title">
-  <i class="fa fa-line-chart"></i> Soma Receita Ajustada Mês  {{ mesPorExtenso(mesSelecionadoWidget) || '—' }} {{ anoSelecionado || 'desse ano' }}
-</h2>
-  </div>
-  <div class="panel-body" style="text-align: center; font-size: 1.5em; font-weight: bold;">
-   R$ {{dadosVisiveisMes.valorSomaFormatadoAdj}}
-  </div>
-</div>
+<div class="financial-widget-wrapper" ng-class="{'fade-out': isFadingMes}">
 
-<div class="report-widget panel mensagem"
-     ng-show="!dadosVisiveisMes || !dadosVisiveisMes.temDadoAdj"
-     ng-class="{'show': !dadosVisiveisMes}">
-  <div class="panel-heading">
-    <h2 class="panel-title">
-      <i class="fa fa-line-chart"></i> Soma Receita Ajustada Mês 
-    </h2>
+  <div class="financial-widget" 
+       ng-show="dadosVisiveisMes && dadosVisiveisMes.temDadoAdj">
+    <div class="indicator-block">
+      <div class="indicator-header">
+        Soma Receita Ajustada Mês: {{ mesPorExtenso(mesSelecionadoWidget) || '—' }} {{ anoSelecionado || 'desse ano' }}
+      </div>
+      <div class="indicator-value">
+        R$ {{dadosVisiveisMes.valorSomaFormatadoAdj}}
+      </div>
+    </div>
   </div>
-  <div class="panel-body" style="text-align: center; font-size: 1.2em;">
-    <span ng-if="!mesSelecionadoWidget">Nenhum dado disponível para o mês selecionado.</span>
-    <span ng-if="mesSelecionadoWidget && (!dadosVisiveisMes || !dadosVisiveisMes.temDadoAdj)">Nenhum dado disponível para o filtro selecionado.</span>
+
+  <div class="financial-widget mensagem" 
+       ng-show="!dadosVisiveisMes || !dadosVisiveisMes.temDadoAdj">
+    <div class="indicator-block">
+      <div class="indicator-header">
+        Soma Receita Ajustada Mês
+      </div>
+      
+      <div class="indicator-value small-text">
+        <span ng-if="!mesSelecionadoWidget">
+          Nenhum dado disponível para o mês selecionado.
+        </span>
+        <span ng-if="mesSelecionadoWidget && (!dadosVisiveisMes || !dadosVisiveisMes.temDadoAdj)">
+          Nenhum dado disponível para o filtro selecionado.
+        </span>
+      </div>
+    </div>
   </div>
-</div>
 
-
-]]></template>
+</div>]]></template>
     </sp_widget>
 </record_update>
