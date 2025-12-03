@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="catalog_script_client">
+    <catalog_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_catalog>true</applies_catalog>
+        <applies_extended>false</applies_extended>
+        <applies_req_item>false</applies_req_item>
+        <applies_sc_task>false</applies_sc_task>
+        <applies_target_record>false</applies_target_record>
+        <applies_to>set</applies_to>
+        <cat_item/>
+        <cat_variable/>
+        <condition/>
+        <description/>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Masking monetary fields</name>
+        <order/>
+        <published_ref/>
+        <script><![CDATA[function onLoad() {
+    applyLiveMask('v_superavit_tribunal_de_contas');
+    applyLiveMask('v_superavit_judiciario');
+    applyLiveMask('v_superavit_executivo');
+    applyLiveMask('v_superavit_ministerio_publico');
+    applyLiveMask('v_superavit_legislativo');
+    applyLiveMask('v_superavit_total');
+    applyLiveMask('v_superavit_defensoria');
+
+
+
+ 
+}
+
+function applyLiveMask(variableName) {
+    var field = g_form.getControl(variableName);
+    if (!field) return;
+
+    field.addEventListener('input', function(e) {
+        var raw = field.value.replace(/[^\d]/g, '');
+        if (!raw) {
+            field.value = '';
+            return;
+        }
+        var number = parseFloat(raw) / 100;
+        var formatted = number.toLocaleString('pt-BR', {
+            style: 'currency',
+            currency: 'BRL'
+        });
+        field.value = formatted;
+        field.setSelectionRange(formatted.length, formatted.length);
+    });
+
+    field.addEventListener('paste', function(e) {
+        var pasted = (e.clipboardData || window.clipboardData).getData('text');
+        if (/[^\d]/.test(pasted.replace(/[^\d]/g, ''))) {
+            e.preventDefault();
+        }
+    });
+}
+]]></script>
+        <sys_class_name>catalog_script_client</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-12-03 10:23:50</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>8c27f09efb25b69086e7f4045eefdc15</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Masking monetary fields</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>catalog_script_client_8c27f09efb25b69086e7f4045eefdc15</sys_update_name>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-03 10:23:50</sys_updated_on>
+        <table/>
+        <type>onLoad</type>
+        <ui_type>10</ui_type>
+        <va_supported>false</va_supported>
+        <variable_set display_value="Superávit">cf02bc16fb25b69086e7f4045eefdcb7</variable_set>
+        <view/>
+    </catalog_script_client>
+</record_update>
