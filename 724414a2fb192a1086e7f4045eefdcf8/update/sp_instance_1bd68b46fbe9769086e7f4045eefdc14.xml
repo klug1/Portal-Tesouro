@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>1</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">c770f444fbb56e10f6d5f9d38eefdc74</sp_column>
+        <sp_widget display_value="Novo info Evolucao da RCL v2">10d68746fbe9769086e7f4045eefdc58</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-12-03 02:12:02</sys_created_on>
+        <sys_id>1bd68b46fbe9769086e7f4045eefdc14</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_instance_1bd68b46fbe9769086e7f4045eefdc14</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-03 02:12:29</sys_updated_on>
+        <title/>
+        <url/>
+        <widget_parameters><![CDATA[{
+	"descricao": {
+		"value": "Este gráfico mostra a evolução mensal da Receita Corrente Líquida ao longo do ano. Assim, você pode acompanhar como a arrecadação líquida do Estado varia mês a mês. ",
+		"displayValue": "Este gráfico mostra a evolução mensal da Receita Corrente Líquida ao longo do ano. Assim, você pode acompanhar como a arrecadação líquida do Estado varia mês a mês. "
+	},
+	"fonte": {
+		"value": "Relatório Resumido de Execução Orçamentária (RREO) ",
+		"displayValue": "Relatório Resumido de Execução Orçamentária (RREO) "
+	},
+	"atualizacao": {
+		"value": "Bimestral",
+		"displayValue": "Bimestral"
+	}
+}]]></widget_parameters>
+    </sp_instance>
+    <sys_translated_text action="delete_multiple" query="documentkey=1bd68b46fbe9769086e7f4045eefdc14"/>
+</record_update>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>1</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">8b51e000fb756e10f6d5f9d38eefdc18</sp_column>
+        <sp_widget display_value="Nova Variacao Info % v2">4956c706fbe9769086e7f4045eefdca8</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-12-03 02:09:56</sys_created_on>
+        <sys_id>f0668b06fbe9769086e7f4045eefdca2</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_instance_f0668b06fbe9769086e7f4045eefdca2</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-03 02:10:18</sys_updated_on>
+        <title/>
+        <url/>
+        <widget_parameters><![CDATA[{
+	"descricao": {
+		"value": "Este gráfico mostra a variação percentual da Receita Corrente Líquida em comparação com o ano anterior. Assim, é possível ver se a arrecadação líquida do Estado cresceu ou diminuiu de um exercício para o outro. ",
+		"displayValue": "Este gráfico mostra a variação percentual da Receita Corrente Líquida em comparação com o ano anterior. Assim, é possível ver se a arrecadação líquida do Estado cresceu ou diminuiu de um exercício para o outro. "
+	},
+	"fonte": {
+		"value": "Relatório Resumido de Execução Orçamentária (RREO). ",
+		"displayValue": "Relatório Resumido de Execução Orçamentária (RREO). "
+	},
+	"atualizacao": {
+		"value": "Anual",
+		"displayValue": "Anual"
+	}
+}]]></widget_parameters>
+    </sp_instance>
+    <sys_translated_text action="delete_multiple" query="documentkey=f0668b06fbe9769086e7f4045eefdca2"/>
+</record_update>
