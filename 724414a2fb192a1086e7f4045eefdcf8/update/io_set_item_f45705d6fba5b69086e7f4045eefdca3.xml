@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="io_set_item">
+    <io_set_item action="INSERT_OR_UPDATE">
+        <order>100</order>
+        <sc_cat_item display_value="Programa de Ajuste Fiscal">d8e64996fba5b69086e7f4045eefdcb0</sc_cat_item>
+        <sys_class_name>io_set_item</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-12-03 11:33:17</sys_created_on>
+        <sys_id>f45705d6fba5b69086e7f4045eefdca3</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Programa de Ajuste Fiscal.Programa de Ajuste Fiscal</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>io_set_item_f45705d6fba5b69086e7f4045eefdca3</sys_update_name>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-03 11:33:17</sys_updated_on>
+        <variable_set display_value="Programa de Ajuste Fiscal">e71745d6fba5b69086e7f4045eefdc43</variable_set>
+    </io_set_item>
+</record_update>
