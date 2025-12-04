@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="catalog_script_client">
+    <catalog_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_catalog>true</applies_catalog>
+        <applies_extended>false</applies_extended>
+        <applies_req_item>false</applies_req_item>
+        <applies_sc_task>false</applies_sc_task>
+        <applies_target_record>false</applies_target_record>
+        <applies_to>set</applies_to>
+        <cat_item/>
+        <cat_variable/>
+        <condition/>
+        <description/>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Unmasking Monetary fields</name>
+        <order/>
+        <published_ref/>
+        <script><![CDATA[function onSubmit() {
+    cleanCurrency('v_valor_apurado_resultado_primario');
+    cleanCurrency('v_meta_resultado_primario');
+    cleanCurrency('v_meta_arrecadacao_propria');
+    cleanCurrency('v_valor_apurado_arrecadacao_propria');
+    cleanCurrency('v_valor_apurado_caixa_liquido');
+    cleanCurrency('v_meta_caixa_liquido');
+    return true;
+}
+
+function cleanCurrency(variableName) {
+    var value = g_form.getValue(variableName);
+    if (!value) return;
+    value = value.replace(/[R$\s\.]/g, '').replace(',', '.');
+    g_form.setValue(variableName, value);
+}]]></script>
+        <sys_class_name>catalog_script_client</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-12-03 23:51:41</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>9e20bbdefb65f69086e7f4045eefdc04</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Unmasking Monetary fields</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>catalog_script_client_9e20bbdefb65f69086e7f4045eefdc04</sys_update_name>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-03 23:51:41</sys_updated_on>
+        <table/>
+        <type>onSubmit</type>
+        <ui_type>10</ui_type>
+        <va_supported>true</va_supported>
+        <variable_set display_value="Programa de Ajuste Fiscal">e71745d6fba5b69086e7f4045eefdc43</variable_set>
+        <view/>
+    </catalog_script_client>
+</record_update>
