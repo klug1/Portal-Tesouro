@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="item_option_new_set">
+    <item_option_new_set action="INSERT_OR_UPDATE">
+        <create_roles/>
+        <description/>
+        <display_title>false</display_title>
+        <internal_name>mrvs_lmtendiv</internal_name>
+        <layout>2across</layout>
+        <name/>
+        <order>100</order>
+        <read_roles/>
+        <set_attributes/>
+        <sys_class_name>item_option_new_set</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-12-04 10:45:20</sys_created_on>
+        <sys_id>9fc502eefb253a9086e7f4045eefdc39</sys_id>
+        <sys_mod_count>37</sys_mod_count>
+        <sys_name>MRVS_LmtEndiv</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>item_option_new_set_9fc502eefb253a9086e7f4045eefdc39</sys_update_name>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2025-12-04 10:56:08</sys_updated_on>
+        <title>MRVS_LmtEndiv</title>
+        <type>one_to_many</type>
+        <version>37</version>
+        <write_roles/>
+    </item_option_new_set>
+</record_update>

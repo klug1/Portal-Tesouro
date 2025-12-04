@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="question_choice">
+    <question_choice action="INSERT_OR_UPDATE">
+        <inactive>false</inactive>
+        <order>100</order>
+        <published_ref/>
+        <question display_value="Ano">9e264aeefb253a9086e7f4045eefdc59</question>
+        <sys_class_name>question_choice</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-12-04 10:48:43</sys_created_on>
+        <sys_id>a2a6ceaefb253a9086e7f4045eefdc3a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>2017</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>question_choice_a2a6ceaefb253a9086e7f4045eefdc3a</sys_update_name>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-04 10:48:43</sys_updated_on>
+        <text>2017</text>
+        <value>2017</value>
+    </question_choice>
+    <fx_price action="delete_multiple" query="id=a2a6ceaefb253a9086e7f4045eefdc3a"/>
+</record_update>
