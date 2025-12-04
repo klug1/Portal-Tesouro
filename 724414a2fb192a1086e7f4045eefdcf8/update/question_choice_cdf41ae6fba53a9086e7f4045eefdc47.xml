@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="question_choice">
+    <question_choice action="INSERT_OR_UPDATE">
+        <inactive>false</inactive>
+        <order>900</order>
+        <published_ref/>
+        <question display_value="Ano">2c629626fba53a9086e7f4045eefdc8e</question>
+        <sys_class_name>question_choice</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-12-04 11:50:59</sys_created_on>
+        <sys_id>cdf41ae6fba53a9086e7f4045eefdc47</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>2025</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>question_choice_cdf41ae6fba53a9086e7f4045eefdc47</sys_update_name>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-04 11:51:59</sys_updated_on>
+        <text>2025</text>
+        <value>2025</value>
+    </question_choice>
+    <fx_price action="delete_multiple" query="id=cdf41ae6fba53a9086e7f4045eefdc47"/>
+</record_update>
