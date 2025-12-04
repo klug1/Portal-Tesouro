@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>1</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">0b43916bfbc9b61086e7f4045eefdcf7</sp_column>
+        <sp_widget display_value="DP - DBLPC Info V2">1037d8a6fb69f69086e7f4045eefdc87</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-12-04 02:41:43</sys_created_on>
+        <sys_id>04471c66fb69f69086e7f4045eefdcb0</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_instance_04471c66fb69f69086e7f4045eefdcb0</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-04 02:42:15</sys_updated_on>
+        <title/>
+        <url/>
+        <widget_parameters><![CDATA[{
+	"descricao": {
+		"value": "Este gráfico mostra, lado a lado, os valores brutos e líquidos da despesa com pessoal de todos os poderes. A comparação ajuda a entender o total dos gastos e o que efetivamente entra no cálculo dos limites da LRF, após os descontos legais. ",
+		"displayValue": "Este gráfico mostra, lado a lado, os valores brutos e líquidos da despesa com pessoal de todos os poderes. A comparação ajuda a entender o total dos gastos e o que efetivamente entra no cálculo dos limites da LRF, após os descontos legais. "
+	},
+	"fonte": {
+		"value": "Relatório de Gestão Fiscal (RGF).   ",
+		"displayValue": "Relatório de Gestão Fiscal (RGF).   "
+	},
+	"atualizacao": {
+		"value": "Bimestral – o dado do ano considera os últimos 12 meses.",
+		"displayValue": "Bimestral – o dado do ano considera os últimos 12 meses."
+	}
+}]]></widget_parameters>
+    </sp_instance>
+    <sys_translated_text action="delete_multiple" query="documentkey=04471c66fb69f69086e7f4045eefdcb0"/>
+</record_update>

@@ -33,137 +33,99 @@
 }
 ]]></client_script>
         <controller_as>c</controller_as>
-        <css>.report-widget {
-    border-radius: 12px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-    background-color: #fff;
-    margin-top: 24px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    font-family: 'Roboto Flex', sans-serif;
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out, visibility 0.5s ease-in-out;
-  }
+        <css>/* --- 1. Importação da Fonte --- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&amp;display=swap');
 
-  .report-widget.panel.fade-out {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(20px);
-  }
+/* --- 2. Wrapper Principal --- */
+.financial-widget-wrapper {
+  font-family: 'Roboto Flex', sans-serif;
+  margin-top: 4rem; /* Mantém o alinhamento com os outros widgets */
+  
+  /* Transições */
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
 
-  .panel-heading {
-    font-family: 'Roboto Flex', sans-serif;
-    background-color: #e0e0e0;
-    padding: 12px 16px;
-    border-bottom: 1px solid #ccc;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-  }
+.financial-widget-wrapper.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+}
 
-  .panel-title {
-    font-family: 'Roboto Flex', sans-serif;
-   	margin: 0;
-    font-size: 1.8rem;
-    color: #333;
-    text-align: center;
-    font-size: 1.2em;
-  }
+/* --- 3. Estrutura do Widget --- */
+.financial-widget {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #fff;
+}
 
-  .panel-body {
-    font-family: 'Roboto Flex', sans-serif;
-    padding: 16px;
-    flex: 1;
-    width: 100%;
-  }
+.indicator-block {
+  text-align: center;
+  padding: 0;
+}
 
-  /* Transição da mensagem "Nenhum dado" */
-  .mensagem {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out, transform 0.5s ease-in-out;
-    height: 0;
+.indicator-header {
+  background-color: #EBEDF1; /* Fundo cinza claro */
+  color: #021770; /* Azul escuro */
+  font-weight: 400;
+  padding: 8px 10px;
+  font-size: 14px;
+  border-bottom: 1px solid #C7C7C7;
+  font-family: 'Roboto Flex', sans-serif;
+}
 
-/* --- Media Queries para Responsividade --- */
+/* Ajuste fino para o ícone no cabeçalho */
+.indicator-header i {
+  margin-right: 5px;
+}
 
-/* Telas Pequenas (Mobile S, M, L - até 767px) */
+.indicator-value {
+  color: #021770; /* Azul escuro */
+  font-size: 32px;
+  font-weight: 400;
+  padding: 10px 10px 15px;
+  font-family: 'Roboto Flex', sans-serif;
+}
+
+.indicator-value.small-text {
+  font-size: 18px;
+  color: #666;
+  line-height: 1.5;
+  padding: 20px;
+}
+
+/* --- 4. Responsividade --- */
+
+/* Mobile (até 767px) */
 @media (max-width: 767px) {
-  .report-widget {
+  .financial-widget-wrapper {
     margin-top: 1rem;
   }
-  .panel-title {
-    font-size: 1.5rem; 
-  }
-  .panel-body {
-    padding: 8px;
+  .indicator-value {
+    font-size: 24px;
   }
 }
 
-/* Tablets (iPad Mini, iPad Air, Surface Duo, Galaxy Z Fold 5 - 768px até 1023px) */
+/* Tablets (768px até 1023px) */
 @media (min-width: 768px) and (max-width: 1023px) {
-  .report-widget {
-    margin-top: 1.5rem;
-  }
-  .panel-title {
-    font-size: 1.1rem;
+  .financial-widget-wrapper {
+    margin-top: 2rem;
   }
 }
 
-/* Laptops e Telas Maiores (iPad Pro, Surface Pro 7, Laptops, 4K - 1024px em diante) */
-@media (min-width: 1024px) {
-  .panel-heading {
-    font-size: 15px;
-  }
-  .report-widget {
-    margin-top: 24px; 
-  }
-  .panel-title {
-    font-size: 1.6rem; 
-  }
-}
-
-/* Ajustes específicos para dispositivos muito largos como Nest Hub Max ou telas 4K */
-@media (min-width: 1280px) {
-    .panel-heading {
-        padding: 14px 18px;
-    }
-    .panel-body {
-        padding: 20px;
-    }
-}
-
-/* Ajustes para o Surface Duo (540x720) */
-@media (width: 540px) and (height: 720px) {
-    .report-widget {
-        margin-top: 1.2rem;
-    }
-    .panel-title {
-        font-size: 1rem;
-    }
-}
-
-/* Ajustes para Galaxy Z Fold 5 (max-width: 350px) */
+/* Dispositivos estreitos (ex: Galaxy Z Fold) */
 @media (max-width: 350px) {
-    .panel-title {
-        font-size: 0.9rem;
-    }
-    .panel-body {
-        padding: 6px;
-    }
-}
-
-    overflow: hidden;
+  .indicator-header {
+    font-size: 12px;
   }
-
-  .mensagem.show {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-    height: auto;
-  }</css>
+  .indicator-value {
+    font-size: 20px;
+    padding: 6px;
+  }
+}</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -228,46 +190,42 @@
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-20 00:10:45</sys_created_on>
         <sys_id>4ae9c876fb6dae5086e7f4045eefdc0c</sys_id>
-        <sys_mod_count>20</sys_mod_count>
+        <sys_mod_count>22</sys_mod_count>
         <sys_name>widget despesa comprometimento</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_4ae9c876fb6dae5086e7f4045eefdc0c</sys_update_name>
-        <sys_updated_by>pk.aba</sys_updated_by>
-        <sys_updated_on>2025-05-22 12:36:53</sys_updated_on>
-        <template><![CDATA[<!-- Fonte -->
-<style>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-04 02:25:37</sys_updated_on>
+        <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 </style>
 
-<!-- Com dado -->
-<div class="report-widget panel" 
-     ng-show="dadosVisiveis" 
-     ng-class="{'fade-out': isFading}">
-  <div class="panel-heading">
-    <h2 class="panel-title">
-      <i class="fa fa-handshake-o" aria-hidden="true"></i> Comprometimento
-    </h2>
-  </div>
-  <div class="panel-body" style="text-align: center; font-size: 2.5em; font-weight: bold;">
-    {{dadosVisiveis.comprometimento}}%
-  </div>
-</div>
+<div class="financial-widget-wrapper" ng-class="{'fade-out': isFading}">
 
-<!-- Sem dado -->
-<div class="report-widget panel mensagem" 
-     ng-show="!dadosVisiveis" 
-     ng-class="{'show': !dadosVisiveis}">
-  <div class="panel-heading">
-    <h2 class="panel-title">
-      <i class="fa fa-handshake-o" aria-hidden="true"></i> Comprometimento
-    </h2>
+  <div class="financial-widget" ng-show="dadosVisiveis">
+    <div class="indicator-block">
+      <div class="indicator-header">
+        <!--i class="fa fa-handshake-o" aria-hidden="true"></i--> Comprometimento
+      </div>
+      <div class="indicator-value">
+        {{dadosVisiveis.comprometimento}}%
+      </div>
+    </div>
   </div>
-  <div class="panel-body" style="text-align: center; font-size: 1.2em;">
-    Nenhum dado disponível para o ano selecionado.
+
+  <div class="financial-widget mensagem" ng-show="!dadosVisiveis">
+    <div class="indicator-block">
+      <div class="indicator-header">
+        <!--i class="fa fa-handshake-o" aria-hidden="true"></i--> Comprometimento
+      </div>
+      <div class="indicator-value small-text">
+        Nenhum dado disponível para o ano selecionado.
+      </div>
+    </div>
   </div>
-</div>
-]]></template>
+
+</div>]]></template>
     </sp_widget>
 </record_update>
