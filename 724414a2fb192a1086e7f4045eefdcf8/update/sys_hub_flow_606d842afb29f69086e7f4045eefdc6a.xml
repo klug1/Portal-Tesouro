@@ -1,0 +1,813 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=6663000,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>27000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from>8aba0455fb35621086e7f4045eefdc1c</copied_from>
+        <copied_from_name>Personal Expenses</copied_from_name>
+        <description/>
+        <display_name_after_preview/>
+        <flow_priority>MEDIUM</flow_priority>
+        <generation_source/>
+        <internal_name>programa_de_ajuste_fiscal</internal_name>
+        <label_cache>[{"name":"cee44457-eaf3-4b7f-b195-bacf6d5937e8.meta_arrecada_o_pr_pria","label":"4 - Get MRVS Values (Programa de Ajuste Fiscal)➛Meta Arrecadação Própria","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["meta_arrecadacao_propria"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["meta_arrecadacao_propria"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"3271aed8-5e20-4ed8-a857-2c8c54beab44"}},{"name":"cee44457-eaf3-4b7f-b195-bacf6d5937e8.valor_apurado_arrecada_o_pr_pria","label":"4 - Get MRVS Values (Programa de Ajuste Fiscal)➛Valor Apurado Arrecadação Própria","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["valor_apurado_arrecadacao_propria"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["valor_apurado_arrecadacao_propria"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"0a2ab4e1-1795-407a-837e-a231ecc3a56b"}},{"name":"cee44457-eaf3-4b7f-b195-bacf6d5937e8.cumprimento_despesa_com_pessoal","label":"4 - Get MRVS Values (Programa de Ajuste Fiscal)➛Cumprimento Despesa com Pessoal","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["cumprimento_despesa_com_pessoal"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["cumprimento_despesa_com_pessoal"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"4e888001-d453-4797-b2a0-52634eff1d54"}},{"name":"cee44457-eaf3-4b7f-b195-bacf6d5937e8.valor_apurado_caixa_l_quido","label":"4 - Get MRVS Values (Programa de Ajuste Fiscal)➛Valor Apurado Caixa Líquido","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["sys_created_by","valor_apurado_caixa_liquido"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["valor_apurado_caixa_liquido"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"10b2fb81-d625-4840-9c43-25f875c59717"}},{"name":"cee44457-eaf3-4b7f-b195-bacf6d5937e8.cumprimento_arrecada_o_pr_pria","label":"4 - Get MRVS Values (Programa de Ajuste Fiscal)➛Cumprimento Arrecadação Própria","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["cumprimento_arrecadacao_propria"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["cumprimento_arrecadacao_propria"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"28b9a669-165c-428f-a6d4-37d7b58fe627"}},{"name":"cee44457-eaf3-4b7f-b195-bacf6d5937e8.meta_caixa_l_quido","label":"4 - Get MRVS Values (Programa de Ajuste Fiscal)➛Meta Caixa Líquido","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["meta_caixa_liquido"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["meta_caixa_liquido"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"155dffce-88f1-4329-b2dc-c781153e2d4e"}},{"name":"cee44457-eaf3-4b7f-b195-bacf6d5937e8.meta_despesa_com_pessoal","label":"4 - Get MRVS Values (Programa de Ajuste Fiscal)➛Meta Despesa com Pessoal","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["meta_despesa_com_pessoal"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["meta_despesa_com_pessoal"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"e6ae2290-c848-47e3-84e1-09c3c340bb59"}},{"name":"cee44457-eaf3-4b7f-b195-bacf6d5937e8.cumprimento_caixa_l_quido","label":"4 - Get MRVS Values (Programa de Ajuste Fiscal)➛Cumprimento Caixa Líquido","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["cumprimento_caixa_liquido"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["cumprimento_caixa_liquido"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"559d96e6-893a-44a4-a913-3c2af26c8343"}},{"name":"subflow.record","label":"Entrada➛Record","reference":"x_sded9_portal_t_0_registro_de_cargas_tesouro","reference_display":"Registro de Cargas Tesouro","type":"reference","base_type":"reference","column_name":"","usedInstances":{"b1c3d1ce-831a-4bfb-b59b-fac37677e4f9":["conditions"],"0a53884c-6d3f-4926-b143-7aebb7b97d97":["conditions"],"39268173-2ed3-4659-805a-84b15f1045a3":["parent_sys_id"],"48a26039-251b-4103-aa0d-2be922aac49b":["parent_sys_id"],"cee44457-eaf3-4b7f-b195-bacf6d5937e8":["parent_sys_id"]},"attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"f4b7b973-3190-4871-8403-baaef11efe7b","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"b1c3d1ce-831a-4bfb-b59b-fac37677e4f9.Records","label":"1 - Pesquisar registros➛Multi Row Question Answer Records","reference":"sc_multi_row_question_answer","reference_display":"Resposta para a pergunta de várias linhas","type":"records","base_type":"records","usedInstances":{"20fde648-3ced-4596-b1ac-b39b687a2a96":["items"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.value","label":"2 - Para cada➛Resposta para a pergunta de várias linhas Record➛Valor","reference":"","reference_display":"Valor","type":"string","base_type":"string","parent_table_name":"sc_multi_row_question_answer","column_name":"value","usedInstances":{"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf":["conditions"]}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.row_index","label":"2 - Para cada➛Resposta para a pergunta de várias linhas Record➛Índice de linha","reference":"","reference_display":"Índice de linha","type":"long","base_type":"long","parent_table_name":"sc_multi_row_question_answer","column_name":"row_index","usedInstances":{"0a53884c-6d3f-4926-b143-7aebb7b97d97":["conditions"],"48a26039-251b-4103-aa0d-2be922aac49b":["multirow_record"],"cee44457-eaf3-4b7f-b195-bacf6d5937e8":["multirow_record"]}},{"name":"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf.Record","label":"3 - Pesquisar registro➛Programa de Ajuste Fiscal Record","reference":"x_sded9_portal_t_0_programa_de_ajuste_fiscal","reference_display":"Programa de Ajuste Fiscal","type":"reference","base_type":"reference","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["record"],"29b4a660-7fd0-4dc7-8800-b8c43a56f5c6":["record"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf.status","label":"3 - Pesquisar registro➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Erro","value":"1","order":0.0},{"label":"Êxito","value":"0","order":1.0}],"usedInstances":{"cc765906-5769-430a-b4ae-373f078cb540":["condition"]},"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"cee44457-eaf3-4b7f-b195-bacf6d5937e8.valor_apurado_despesa_com_pessoal","label":"4 - Get MRVS Values (Programa de Ajuste Fiscal)➛Valor Apurado Despesa com Pessoal","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["valor_apurado_despesa_com_pessoal"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["valor_apurado_despesa_com_pessoal"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"175b649a-014d-405d-b437-843762bd10e5"}},{"name":"cee44457-eaf3-4b7f-b195-bacf6d5937e8.valor_apurado_resultado_prim_rio","label":"4 - Get MRVS Values (Programa de Ajuste Fiscal)➛Valor Apurado Resultado Primário","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["valor_apurado_resultado_primario"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["valor_apurado_resultado_primario"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"191a08f3-ffa3-482d-9cc3-6569e5dff560"}},{"name":"cee44457-eaf3-4b7f-b195-bacf6d5937e8.meta_resultado_prim_rio","label":"4 - Get MRVS Values (Programa de Ajuste Fiscal)➛Meta Resultado Primário","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["meta_resultado_primario"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["meta_resultado_primario"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"244fd97f-6e31-4e36-bf14-c75e1ae6858f"}},{"name":"cee44457-eaf3-4b7f-b195-bacf6d5937e8.cumprimento_endividamento","label":"4 - Get MRVS Values (Programa de Ajuste Fiscal)➛Cumprimento Endividamento","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["cumprimento_endividamento"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["cumprimento_endividamento"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"34f4213b-3c00-4958-8f92-1c80153f83c6"}},{"name":"cee44457-eaf3-4b7f-b195-bacf6d5937e8.meta_endividamento","label":"4 - Get MRVS Values (Programa de Ajuste Fiscal)➛Meta Endividamento","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["meta_endividamento"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["meta_endividamento"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"b8b82401-43b8-439a-acdb-5066eb887912"}},{"name":"cee44457-eaf3-4b7f-b195-bacf6d5937e8.cumprimento_resultado_prim_rio","label":"4 - Get MRVS Values (Programa de Ajuste Fiscal)➛Cumprimento Resultado Primário","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["cumprimento_resultado_primario"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["cumprimento_resultado_primario"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"fbde66c9-e933-4e46-aad5-a68f2cc49a9a"}},{"name":"cee44457-eaf3-4b7f-b195-bacf6d5937e8.valor_apurado_endividamento","label":"4 - Get MRVS Values (Programa de Ajuste Fiscal)➛Valor Apurado Endividamento","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["valor_apurado_endividamento"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["valor_apurado_endividamento"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"0e1b0341-3399-428f-aeeb-3b5d1b10f45e"}},{"name":"cee44457-eaf3-4b7f-b195-bacf6d5937e8.ano","label":"4 - Get MRVS Values (Programa de Ajuste Fiscal)➛Ano","type":"string","base_type":"string","usedInstances":{"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_ano"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"94218d0e-1b45-4bf1-b5e9-30003b774c01"}}]</label_cache>
+        <master_snapshot>53c6a82efba9f69086e7f4045eefdcd1</master_snapshot>
+        <master_snapshot_digest/>
+        <name>Programa de Ajuste Fiscal</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id/>
+        <run_as>system</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>published</status>
+        <substatus/>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-12-04 01:58:36</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>606d842afb29f69086e7f4045eefdc6a</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>Programa de Ajuste Fiscal</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sys_hub_flow_606d842afb29f69086e7f4045eefdc6a</sys_update_name>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-04 03:49:41</sys_updated_on>
+        <type>subflow</type>
+        <updation_source/>
+        <version>2</version>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=606d842afb29f69086e7f4045eefdc6a"/>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>606d842afb29f69086e7f4045eefdc6a</documentkey>
+        <fieldname>annotation</fieldname>
+        <language>pb</language>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-12-04 01:58:36</sys_created_on>
+        <sys_id>e86d842afb29f69086e7f4045eefdc6a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-04 01:58:36</sys_updated_on>
+        <tablename>sys_hub_flow</tablename>
+        <value/>
+    </sys_translated_text>
+    <sys_variable_value action="delete_multiple" query="document_key=606d842afb29f69086e7f4045eefdc6a"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=606d842afb29f69086e7f4045eefdc6a"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=606d842afb29f69086e7f4045eefdc6a^sys_idNOT INa86d842afb29f69086e7f4045eefdc6d"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>606d842afb29f69086e7f4045eefdc6a</id>
+        <name>Programa de Ajuste Fiscal</name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-12-04 01:58:36</sys_created_on>
+        <sys_id>a86d842afb29f69086e7f4045eefdc6d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-04 01:58:36</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=a86d842afb29f69086e7f4045eefdc6d"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=606d842afb29f69086e7f4045eefdc6a^sys_idNOT INac6d842afb29f69086e7f4045eefdc7d"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference,uiUniqueId=f4b7b973-3190-4871-8403-baaef11efe7b</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table>x_sded9_portal_t_0_registro_de_cargas_tesouro</choice_table>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>record</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Referência">reference</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Programa de Ajuste Fiscal">606d842afb29f69086e7f4045eefdc6a</model>
+        <model_id>606d842afb29f69086e7f4045eefdc6a</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_606d842afb29f69086e7f4045eefdc6a</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="x_sded9_portal_t_0_registro_de_cargas_tesouro">x_sded9_portal_t_0_registro_de_cargas_tesouro</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-12-04 01:58:37</sys_created_on>
+        <sys_id>ac6d842afb29f69086e7f4045eefdc7d</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-04 01:58:37</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=ac6d842afb29f69086e7f4045eefdc7d"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=606d842afb29f69086e7f4045eefdc6a"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=606d842afb29f69086e7f4045eefdc6a"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=606d842afb29f69086e7f4045eefdc6a"/>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=606d842afb29f69086e7f4045eefdc6a^sys_idNOT INfc6d842afb29f69086e7f4045eefdcb9,b06d842afb29f69086e7f4045eefdcc7,f46d842afb29f69086e7f4045eefdcc8,724f84eafb29f69086e7f4045eefdc12,706d842afb29f69086e7f4045eefdcc8"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Pesquisar registros">43400a1587003300663ca1bb36cb0b4b</action_type>
+        <action_type_parent display_value="Pesquisar registros">d1c56ec50b30030085c083eb37673a50</action_type_parent>
+        <attributes/>
+        <comment>.</comment>
+        <compiled_snapshot>43400a1587003300663ca1bb36cb0b4b</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Programa de Ajuste Fiscal">606d842afb29f69086e7f4045eefdc6a</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-12-04 01:58:37</sys_created_on>
+        <sys_id>fc6d842afb29f69086e7f4045eefdcb9</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-04 02:04:16</sys_updated_on>
+        <ui_id>b1c3d1ce-831a-4bfb-b59b-fac37677e4f9</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/9VX3U7bMBR+lSjXVZTQUhh3CIS0C0Bj024Ys5zYaa05dmY7LVD1YaZdTHuAPUFfbMdxkob+QOm6DS59fP7P95041xOfEf/IP0x7YYij/cODMOx2w7Df7yY4iuNuP4nDuBf7HV/gjIKmwTGncBxhXtizTlBWcMOQkmP0taDaMCkQFnpMFagRpnOO7z5W2udW1buSY+9dpeod16rJkHGiqPCPrm86fo4VBDRwczRZuDJ3OUUcx5SDxw82H+/CJtfZuJaWMeV4uTgboT4i4XxLRWwyYcent4YKQiFWirmmHT/DgmAj1V0jURSTS8HngiETBjz6VvlWs3twfxhavZRCXQl1d80RVX1z4mQoWUIvc9svJ3GJukvJi0xcuAJsx2mKoct1x0FSaPBHc5uzTaLKKH0/lOOrOuAZE2V51SWXCebNCRujWFwYqu0wKKcZOEIZznMmBihXcsRKY8glCwYcDkHKAQ6EajYQAU5s4gG0CAdnID8txR+xYraKc3BTzj9lHMaNXNO1LFTZlRFKeKHLCwWocr78adkrwJvN0lVd1Ydci0BBJ4rl5hgMRrQqZdrZCO/74RwSiRSE2Zi6BXpmaIZkOQ8k6Diwup8KcEVGAH35GcBrU2HECScTXcS2I4GiCeBoOl1mxi5cbsegk3aFm3bngfHsx+wX1Wt6VnHpgaziUrQzLkG+/4lNRhUvj0xP0cMV/ARHkoNHUbA/n7eWyiDXuRZJ7AfBNuJ2Geztq+1Ae8YoJw/W/gbp1saXAD+BlZdLta6ICrWpDbPwBdh79V+AF4lZSIgg128mOBPlBxgS3Q2Yw8dX2psFHJTjbz1yrAzrZBnJ2MNm9tO73377lpOtQbxBms3bheXSI9Q74VhrlrIEwxr+LlcXUi/hOlgF5e7OoNzdex6UAUjXk6aWVhdXtLx+edlh1hb3zgIvWgDiWibR9Kahw8m2caPnx92zcRc4230WaduIczena4G34/fdGhp2/ibvh2BaxUOOxmjMyICaefRai0gzxvzLqvsKZw23yvL++K3Ye5ST/WjOOGADUlTDsNqPxQjeJsuLIwqceLut8VYYOiibt2mKteX57Nsty8rNcVWmionU60qo1gZrolX47u3w4fYvPoH1CFYyqZ7Eq/hN2hbMN78ByRgUpeoPAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=fc6d842afb29f69086e7f4045eefdcb9"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Pesquisar registro">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Pesquisar registro">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Programa de Ajuste Fiscal">606d842afb29f69086e7f4045eefdc6a</flow>
+        <generation_source/>
+        <order>3</order>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-12-04 01:58:37</sys_created_on>
+        <sys_id>b06d842afb29f69086e7f4045eefdcc7</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-04 02:04:16</sys_updated_on>
+        <ui_id>f55fbb1c-5a9e-441e-ba14-6cf57444d9bf</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/9VYy27jNhT9FUFr25UsW7ayG2RgoECbFJPpbNKAuBIpmy0lakgqjwnyMYMuin5AvyA/1ks9bMd2MorjYDJLPu773MMrnd+6nLpHLo28KI2i8XTieUHgeWEYJODHcRAmsRfDyO25OWQMbxqIBcPlJYjSrq+JpoxGpJDKgCCGeKRQcq4gA0IZgT9LbRhJuU5AoBjluhBw86mR/q256lDmvKuuOrP2arLggiqWu0fnFz23ALzHDFPu0e3GkbkpGBEQM4EaP1r/nBPrbK9zbGvCTMB2sNZCuyR5rVsqap3xei67NizHJLhHKQjNem4GOQUj1c1yRzGgp7lYbSx4blCjay9fa/4F1U89ey9lGFfC6rPlkjR5q7eTheQJOy0Ml3m9UztaH0pRZvlJHYDNOEuhFKbNOO6UGvWxwvpsnWg8Ss8W8upDa3DG8yq85lBIW5N2BcYoHpeGaVsMJliGikgGRcHzuS3/Ja+E0ZdsMBe4GKRCXqFRzef5ABLr+ABTBIMZ7r+vtj+B4jaKX1ENCqNDXGC5SZ10LUtVZeWSJMLiBA8U5LrW5d5VuSKfS+tlHXUTH6lThBd0onhh3qHAJWtCueu1+B8/iZFoBYlE5pRbm3qtCUoCufyjRFl6ezv0UsrC0bQfJIz2R+Mo7Mc+JP04iOJwOoEhROGAG5YNKvG7u+22eLG+/XrneD22rnl5IHz/z/1/TD+SraaLHuw1XeQfrItGnved+sio8u210bcaow74G93h0ydRQFf11vgKkDpza+2xDfC9ITrjTNAH9N7BuVb4FMGWg3LwrXrM5QajqTWzwfTDH57p3yRC0SFK6nzzXPC8emjR0cNAd/wkOmJ/AwdV+VfArfZAJ9sABgfM/b/Ol/25tqpsC+IObi5nFF5IOy4dC9CapzwBJN2/5e5AWsptjTVQDg4G5WD4PCgjkM5vl7GsZXFHytsJyxazlfhSS8CmBCJuTcS/u1i2w/G+dv3n2x1auxs9GzyradcRV5+8fxR4B57jHmnD3mv2/QJFG3ukbmNyxemcmZX19haV5grEX7vOG5wte6sK78Uzof/kd0O8NhPylGRYKV7goKpYgmDQBBR+9cgyp6QZUdemRW0/iJQ2zeVtdvnAsBHtS6WlzTxzpFMonjGupKPYnGuj5IGYp0OUreAZcy7vvyou9dIJ7aRSsczZ5KCOGXmEnkYHnAZfQk8zEAv8NAWHGSjWW58pVY0QuxiqY+2eAENHEuvqnf8q3r2c6na1wU7K6+jzD/FZ+1JSShjEoyGEk8D3Pc/36MSbTib+NIzTECajdNWChOg8QdZEzSlwgepJC4y2uv4285zxbP9fL0jIP80q7u119rYVPkH+cNIK0sgn1tNOoTQMEkspGOQreI6/G4W8ld8yJf+4mZt665dd5XqtN77kv+f8c8l+tnCYMm849WnSn078SX+U0rAfURj3IYrHk4CyZJTu/2xf/A8ZecEgzBQAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=b06d842afb29f69086e7f4045eefdcc7"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Criar registro">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent display_value="Criar registro">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Programa de Ajuste Fiscal">606d842afb29f69086e7f4045eefdc6a</flow>
+        <generation_source/>
+        <order>8</order>
+        <parent_ui_id>bbf158a1-4051-412a-803b-c34c3913e71b</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-12-04 01:58:37</sys_created_on>
+        <sys_id>f46d842afb29f69086e7f4045eefdcc8</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-04 03:49:39</sys_updated_on>
+        <ui_id>070c3028-da05-4dc4-afc6-b2410b50b51a</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1YS2/aQBD+K8hnQHZ4JHCLWuXWpGqrXNJ0NfaOYau119ldEyjyf++sHykEyANXqipx887OfPPNwx6Gu7UnuDf1xgH6o0kwjgbBYHDm+2cXwyAcD8LgjA8Aceh1vRQSJE0LoURWHrreAmTuhEtmOPIJy5S2IJllPsu0mmlIgHFk8DM3FlksTASSzLgwmYTVbW39uVbtcOxclqqdq0Y1mgvJNabe9O6+62VAemhRe9P1syu7ypBJCFES4jdHsnNdkXxrgBvGKOFAxM7Nc5nS3DHyux4uLaaUCW8agzTY9RJIOVilV97U6pwEGoHfpHL1pDEXqSVAz+kujfhF6Be+04uRYouwuns6sjp3lTiaKxHhTWaFSitJSay+VDJP0usqCJd1jCGXtsk6SXJDeJg5yo5EzSj+OlePXxqHVyIto6svpXJ1aU5grRZhbtG4gqDEhIBYAlkm0plrgYUojYlL0p9JOvRjqR7JqRGztA+RI96nDEH/iuQfS/EtaOGi+EQwZFyU0bOH3Pmt4qgZsypoUjCRFpm9JLgF1uSKbtPaHP3JwcoH4Z9Cl91sNto6Z5Cq77nvD/h6HVGXDIej8x5CPOgNw/O4FwaTUS+EKB7z0WRwjhd90i+KH1GeZFq4XCgWgVgCk+IhF/x9WHtQWIlCHuglcG+WydAAo+QyejAK5LscHAJp8I+nvmn+xHkzHtAaI+AQgXJtQnI4OjcNFnNQzEGRMyqh0gyyXANvU4S9OHtDaluNV7B2Ymqbwv1oW0ksy9jWzxbICzVqm79X0XY8ajT0PXRPLvH01WnTGttgjMCaBLZ0swejRt/sGPoiCvrYQnk6uu+2UBr+x0Pvmj9j3TI1h6HqDG2X6PhAXsApit0fNKe5cZobp7lxmhunuXGaGy/OjSO3W0xo2tCWXM2b7pv3nAbgAySZMnsWn2a7rR2wRe2g3nCDv7XhDn3/H+24Fcf/bMXd+Ldh/7LbCIliUdz/BqxdFDPVEQAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=f46d842afb29f69086e7f4045eefdcc8"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Get MRVS Values (Programa de Ajuste Fiscal)">1e1f40eafb29f69086e7f4045eefdc8b</action_type>
+        <action_type_parent display_value="Get MRVS Values (Programa de Ajuste Fiscal)">16ddf792fbe5f69086e7f4045eefdcf1</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Programa de Ajuste Fiscal">606d842afb29f69086e7f4045eefdc6a</flow>
+        <generation_source/>
+        <order>4</order>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-12-04 02:06:57</sys_created_on>
+        <sys_id>724f84eafb29f69086e7f4045eefdc12</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-04 03:39:44</sys_updated_on>
+        <ui_id>cee44457-eaf3-4b7f-b195-bacf6d5937e8</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/8VTXW/bMAz8K4GfY8Nfcey8DSsKFNjWoe36UhQCbdGJANlyJblNFuS/j4qdrC3WouuG7VFHkUceeTdbT3Bv4UUY1WmIUJdxUWdFmGc4JyCdIda8yrk39VpokH42vbRCqwemsVLaBe5B9i6y3cZhzTFLcz+pkPvprMj8MoLKL5OizPI5xFBkgbDYBK6AaDmudzuqwIXpJGyu/7hQtRKSa2y9xc3t1OtAU88WtbfYPgvZTYdMQomS+C6tFu2S0t8qxSHxQj1Mzhz5a/I4KgqYAwmhrqNo6uHaImUTaQ3S4NRroOVgld54C6t7AjQCP2/l5vhjJVpLxTz3d23Ed6qch2HoftZI01U4RI9PNmo7wNVKiQrPOytUOyAWSjnmVEr2TftlmMNtBWugaQ5bIaQ3VA8717RrY+ypvlyph4sD4anbhj4GpapAHl9gSYWyt2jcSnpx9UybAfn0fC8osSFG1kDXEcI6re7FnoWaboKlpEdQS1KdoxHLNoDKTRiQmBCcEn6yh69BCzfuZypDyY7uWyvuejxze+d5lKdxkfhZOgc/naepXyQh+HnOgS4gyeI89HZ7adld74YaRBrlYIOi9MFUWnT2A7Vwj+Pku+nosxm8dlxF9POQ6HhdVbMxTDx1melLN2swXNivDPRuJxy3eDDDG/o95H7dNzy53JjJ2cnLc4x20I+YRkfEf8sRSfzUD2tmqGbBOqUtSGZZSO5cCro6RQfDKtBLMIyOUvVavWCeizFhwnHycZ8wuTomvGyr36X+fx58vJCnNnx8FP/EibMkKaNZXfpFHuZ+ivHcB8TEz4uymId0fIDJu514+wOGHkjZ8wYAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=724f84eafb29f69086e7f4045eefdc12"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Atualizar registro">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Atualizar registro">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Programa de Ajuste Fiscal">606d842afb29f69086e7f4045eefdc6a</flow>
+        <generation_source/>
+        <order>6</order>
+        <parent_ui_id>cc765906-5769-430a-b4ae-373f078cb540</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-12-04 01:58:37</sys_created_on>
+        <sys_id>706d842afb29f69086e7f4045eefdcc8</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-04 03:43:26</sys_updated_on>
+        <ui_id>30bd6918-a95f-4a24-b688-772ee9e9bf9e</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1YUU/bMBD+K1We2yqhSaG8oSGkPQwmNvGyMesSX4onJw62U2BV/vvOaVJaSIG1SNO0vsUX33f3fXe91P429wT3jr0QuR9MgnEyCkajA98/OAqDeDyKgwM+AsTA63s5ZEg7NSZKc1rPQJbOMJ+nUZTGcZAMIpjgIAwDHMQQhINxkkaHYRjySZwOL2u/qiJPLkwh4eGqASBLciMk15h7x9+u+14BmmJZ1N7x/Mkr+1AgkxCjJMdTlZQZ5rb38ZQw3sqj9b7EqTBWqw5qLgqteYPPhDPSK5dR4Pc9vLeYc6SAKUiDfS+DnINV+sE7trokg0bgF7l8WO64EbldcM3g3ohfhB/6bl+KRC5pdFguWaNRK48SCV4UVqh8YbEQy1Y7JcssP19QcOpiCqW0K+qWhvCwcCm7JBYZpl9u1N1lG+9M5DW7JlupEpDLFVirRVxaNK4gKLEWJYOiEPmUFVrNRO1MqWTDqaTFMJXqjmIaMc2HkLi8hyQQDM/Iflqbr0ALR+ITwZBzVZNnt6WLu6DRJMxqzjVhVheKtppEi8KeEPAMmzSrftPKcfRSCySTx3qvYD628z0zVNkJK5S2IJllvmM4pY4EIsTgZ2ksslQYp9CzXv7cbO1x7J3UW3tn7dbtmvyrS7J3vkjyrQRXnFHCBsZNl6/ZmiaP3q3Jj/5SkzcZ/WNd/lpv+wcvjjd8rHTdzmalr2mUFVo4ToolIO6BSXFbCq6+l74/4vN5gkizOjocIKSjQRgfpoM4mEQ0ypN0zKPJ6BCPhh0orEapqh/Uze4nYgo0wEgkRg9GgfyjAJtAWvztU191X+a8ygc0fQCAQwLKlZvssLU2LRZzUMxBUTAqhdIMilID36UInTidlHatxitYzzjtKmE32pqIdRl3jbMG8kKNdtXvVbRnETUammvuyQlP02OX1lgHYwTWCrhjmA6MBn21Y2iyCRqaUK+27rs1lDb/7aGfuz/JekdpNkM1Cq2XaHsiL+B0/cvez//9/N/P//3838///2T+b3ncxIy+GnRsXXw3+m8+d7QAHyArlOk4iLTHzSYAmzUBlvcq73ix4u+vVt7xaqU1uhQ3TA/3qtsTZsiXglVVdf0bp2hBK3MUAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=706d842afb29f69086e7f4045eefdcc8"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=606d842afb29f69086e7f4045eefdc6a"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=606d842afb29f69086e7f4045eefdc6a^sys_idNOT IN786d842afb29f69086e7f4045eefdcb7,386d842afb29f69086e7f4045eefdcb9,3c6d842afb29f69086e7f4045eefdcb8"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">212b3741fbf1621086e7f4045eefdcdc</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Programa de Ajuste Fiscal">606d842afb29f69086e7f4045eefdc6a</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Para cada">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-12-04 01:58:37</sys_created_on>
+        <sys_id>786d842afb29f69086e7f4045eefdcb7</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-04 03:49:38</sys_updated_on>
+        <ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/51STW/bMAz9Lzonhj+ypM6twFCgh61AV/QyFAYl0YkwWdIkOaln+L+Pip106HEnm498j48iR2b76PoYXux9COpg2P7n24opkzD6H5mBDtmeqYhdYCt2At2neBx5ISpZCFzfVQWsN7zla/6l5usWRLXb7na4aevsGYX1MkwTUaUKTsPw+v8K4qi09LiYdODJW0TP9uOnVBwcNho4amq0KBBfSQqLWrZ1kdeiKrdVmefl3abg24oXpawA5ZbqrszHiCbxPr1BUqfQ33Tpk1yU+YrhO3EkUqMWdMAV68BIiNYPbB99T4BHkE9GD7eKozKR5FiqfQ/qD2kXeZ4KW6SJBM7JW9gsDznD4miVwCcXlTUzEoHrhSOs7jvzfbafVoAt9DpeV0BIH0gPXfKcXCyW2h9He36+NnxQ5jLfktRWgL5FEKNXvI8Y0hpQY0dCTQfOKXNonLcndSGTly47aAqyVtszNU3nloFIxjN6IsgeCP96gV/BqzTFN5Ih8nSZvvndp77zHIvjZh6aCoLwysV7kjvhYm56S/c6K4X5MCQKFajhS8Ier1eeEgMtWYl/obP1v5LVD2z6C+JmBEcvAwAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">f7ee3f85fbf1621086e7f4045eefdc51</block>
+        <comment/>
+        <connected_to>cc765906-5769-430a-b4ae-373f078cb540</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Programa de Ajuste Fiscal">606d842afb29f69086e7f4045eefdc6a</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Outro">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>7</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-12-04 01:58:37</sys_created_on>
+        <sys_id>386d842afb29f69086e7f4045eefdcb9</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-04 03:49:39</sys_updated_on>
+        <ui_id>bbf158a1-4051-412a-803b-c34c3913e71b</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">612b3741fbf1621086e7f4045eefdcde</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Programa de Ajuste Fiscal">606d842afb29f69086e7f4045eefdc6a</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Se">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>5</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-12-04 01:58:37</sys_created_on>
+        <sys_id>3c6d842afb29f69086e7f4045eefdcb8</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-04 03:49:39</sys_updated_on>
+        <ui_id>cc765906-5769-430a-b4ae-373f078cb540</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Uy27TQBT9FcvrJPIzkOwioBILqNRG2UBlXc8jGTGeMTPjpCHK17DgA/iE/Fjv+NFGlPKoWLLznPs6594jH0LduLpxdqkX1oq1CucfbkahUB7D70OooGLhPCRaUeGEVkULjMItyMYHViC1CSgLFkoHbxTmOQNUBwqCJZRMQnAhFEisoMLWEvarvy4kGyGpYT23GgwycMyE88MPIbevWSF9Mfa/dkaoNZYLii8eAY9nJCZpMk2TKEpeZnE5Tcs4oSkwSDFvKLw6fXeN1AGFoFV9+nb6qjH+1Cb8VMTtME8b6snF0Shkt44pypAAB2nZKKxAUXDa7O8Rw4BeKvkAbIRy2C70ybdWfMHeSZ77RM5QKWFd8P5Z9HvtYLLRgrDL2hPsEAel7GuIlk2l3nc6/EUYh0a64SKINBb7sdqT9ix6Svx6o3dXw0A8SyuwD0pN8ErDCxyuoWwcs/48TLIKGxUV1DUup6iN3oq2GLlUk7XEx4RLvcOh3n0TIJ74BHcEkwvEX7fwCozwKt5hGyzuaJZgBSlap2I7Z1DCsV1L8bnxhDqBvZSi2wYmWGJE7RY4Z8t61sfRY5ufOfxw4HnOyzIm4xxmbJxlMRuXEGfjKeH5iyzL6KzkE+vANfZ4/NhEUUqjx4Z/dp9/4f8Z5DyPo/zn/s+mZ/5/9SvTP+335Dd+9xf6Q7tHUfTf7+d+F7bofNtra4c/2+433tvdBNsZhzIiLBJZeuzt8PP3gT0aQJBzaKfNJy/hATveAf3ikJVGBgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=606d842afb29f69086e7f4045eefdc6a"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=606d842afb29f69086e7f4045eefdc6a"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>record</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>pb</language>
+        <name>var__m_sys_hub_flow_input_606d842afb29f69086e7f4045eefdc6a</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-12-04 01:58:37</sys_created_on>
+        <sys_id>ac6d842afb29f69086e7f4045eefdc80</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-04 01:58:37</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_606d842afb29f69086e7f4045eefdc6a"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_606d842afb29f69086e7f4045eefdc6a"/>
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=14755106000,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>27000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from>8aba0455fb35621086e7f4045eefdc1c</copied_from>
+        <copied_from_name/>
+        <description/>
+        <flow_priority>MEDIUM</flow_priority>
+        <internal_name>programa_de_ajuste_fiscal</internal_name>
+        <label_cache>[{"name":"cee44457-eaf3-4b7f-b195-bacf6d5937e8.meta_arrecada_o_pr_pria","label":"4 - Get MRVS Values (Programa de Ajuste Fiscal)➛Meta Arrecadação Própria","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["meta_arrecadacao_propria"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["meta_arrecadacao_propria"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"3271aed8-5e20-4ed8-a857-2c8c54beab44"}},{"name":"cee44457-eaf3-4b7f-b195-bacf6d5937e8.valor_apurado_arrecada_o_pr_pria","label":"4 - Get MRVS Values (Programa de Ajuste Fiscal)➛Valor Apurado Arrecadação Própria","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["valor_apurado_arrecadacao_propria"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["valor_apurado_arrecadacao_propria"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"0a2ab4e1-1795-407a-837e-a231ecc3a56b"}},{"name":"cee44457-eaf3-4b7f-b195-bacf6d5937e8.cumprimento_despesa_com_pessoal","label":"4 - Get MRVS Values (Programa de Ajuste Fiscal)➛Cumprimento Despesa com Pessoal","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["cumprimento_despesa_com_pessoal"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["cumprimento_despesa_com_pessoal"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"4e888001-d453-4797-b2a0-52634eff1d54"}},{"name":"cee44457-eaf3-4b7f-b195-bacf6d5937e8.valor_apurado_caixa_l_quido","label":"4 - Get MRVS Values (Programa de Ajuste Fiscal)➛Valor Apurado Caixa Líquido","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["sys_created_by","valor_apurado_caixa_liquido"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["valor_apurado_caixa_liquido"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"10b2fb81-d625-4840-9c43-25f875c59717"}},{"name":"cee44457-eaf3-4b7f-b195-bacf6d5937e8.cumprimento_arrecada_o_pr_pria","label":"4 - Get MRVS Values (Programa de Ajuste Fiscal)➛Cumprimento Arrecadação Própria","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["cumprimento_arrecadacao_propria"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["cumprimento_arrecadacao_propria"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"28b9a669-165c-428f-a6d4-37d7b58fe627"}},{"name":"cee44457-eaf3-4b7f-b195-bacf6d5937e8.meta_caixa_l_quido","label":"4 - Get MRVS Values (Programa de Ajuste Fiscal)➛Meta Caixa Líquido","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["meta_caixa_liquido"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["meta_caixa_liquido"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"155dffce-88f1-4329-b2dc-c781153e2d4e"}},{"name":"cee44457-eaf3-4b7f-b195-bacf6d5937e8.meta_despesa_com_pessoal","label":"4 - Get MRVS Values (Programa de Ajuste Fiscal)➛Meta Despesa com Pessoal","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["meta_despesa_com_pessoal"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["meta_despesa_com_pessoal"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"e6ae2290-c848-47e3-84e1-09c3c340bb59"}},{"name":"cee44457-eaf3-4b7f-b195-bacf6d5937e8.cumprimento_caixa_l_quido","label":"4 - Get MRVS Values (Programa de Ajuste Fiscal)➛Cumprimento Caixa Líquido","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["cumprimento_caixa_liquido"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["cumprimento_caixa_liquido"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"559d96e6-893a-44a4-a913-3c2af26c8343"}},{"name":"subflow.record","label":"Entrada➛Record","reference":"x_sded9_portal_t_0_registro_de_cargas_tesouro","reference_display":"Registro de Cargas Tesouro","type":"reference","base_type":"reference","column_name":"","usedInstances":{"b1c3d1ce-831a-4bfb-b59b-fac37677e4f9":["conditions"],"0a53884c-6d3f-4926-b143-7aebb7b97d97":["conditions"],"39268173-2ed3-4659-805a-84b15f1045a3":["parent_sys_id"],"48a26039-251b-4103-aa0d-2be922aac49b":["parent_sys_id"],"cee44457-eaf3-4b7f-b195-bacf6d5937e8":["parent_sys_id"]},"attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"f4b7b973-3190-4871-8403-baaef11efe7b","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"b1c3d1ce-831a-4bfb-b59b-fac37677e4f9.Records","label":"1 - Pesquisar registros➛Multi Row Question Answer Records","reference":"sc_multi_row_question_answer","reference_display":"Resposta para a pergunta de várias linhas","type":"records","base_type":"records","usedInstances":{"20fde648-3ced-4596-b1ac-b39b687a2a96":["items"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.value","label":"2 - Para cada➛Resposta para a pergunta de várias linhas Record➛Valor","reference":"","reference_display":"Valor","type":"string","base_type":"string","parent_table_name":"sc_multi_row_question_answer","column_name":"value","usedInstances":{"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf":["conditions"]}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.row_index","label":"2 - Para cada➛Resposta para a pergunta de várias linhas Record➛Índice de linha","reference":"","reference_display":"Índice de linha","type":"long","base_type":"long","parent_table_name":"sc_multi_row_question_answer","column_name":"row_index","usedInstances":{"0a53884c-6d3f-4926-b143-7aebb7b97d97":["conditions"],"48a26039-251b-4103-aa0d-2be922aac49b":["multirow_record"],"cee44457-eaf3-4b7f-b195-bacf6d5937e8":["multirow_record"]}},{"name":"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf.Record","label":"3 - Pesquisar registro➛Programa de Ajuste Fiscal Record","reference":"x_sded9_portal_t_0_programa_de_ajuste_fiscal","reference_display":"Programa de Ajuste Fiscal","type":"reference","base_type":"reference","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["record"],"29b4a660-7fd0-4dc7-8800-b8c43a56f5c6":["record"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf.status","label":"3 - Pesquisar registro➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Erro","value":"1","order":0.0},{"label":"Êxito","value":"0","order":1.0}],"usedInstances":{"cc765906-5769-430a-b4ae-373f078cb540":["condition"]},"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"cee44457-eaf3-4b7f-b195-bacf6d5937e8.valor_apurado_despesa_com_pessoal","label":"4 - Get MRVS Values (Programa de Ajuste Fiscal)➛Valor Apurado Despesa com Pessoal","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["valor_apurado_despesa_com_pessoal"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["valor_apurado_despesa_com_pessoal"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"175b649a-014d-405d-b437-843762bd10e5"}},{"name":"cee44457-eaf3-4b7f-b195-bacf6d5937e8.valor_apurado_resultado_prim_rio","label":"4 - Get MRVS Values (Programa de Ajuste Fiscal)➛Valor Apurado Resultado Primário","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["valor_apurado_resultado_primario"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["valor_apurado_resultado_primario"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"191a08f3-ffa3-482d-9cc3-6569e5dff560"}},{"name":"cee44457-eaf3-4b7f-b195-bacf6d5937e8.meta_resultado_prim_rio","label":"4 - Get MRVS Values (Programa de Ajuste Fiscal)➛Meta Resultado Primário","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["meta_resultado_primario"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["meta_resultado_primario"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"244fd97f-6e31-4e36-bf14-c75e1ae6858f"}},{"name":"cee44457-eaf3-4b7f-b195-bacf6d5937e8.cumprimento_endividamento","label":"4 - Get MRVS Values (Programa de Ajuste Fiscal)➛Cumprimento Endividamento","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["cumprimento_endividamento"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["cumprimento_endividamento"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"34f4213b-3c00-4958-8f92-1c80153f83c6"}},{"name":"cee44457-eaf3-4b7f-b195-bacf6d5937e8.meta_endividamento","label":"4 - Get MRVS Values (Programa de Ajuste Fiscal)➛Meta Endividamento","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["meta_endividamento"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["meta_endividamento"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"b8b82401-43b8-439a-acdb-5066eb887912"}},{"name":"cee44457-eaf3-4b7f-b195-bacf6d5937e8.cumprimento_resultado_prim_rio","label":"4 - Get MRVS Values (Programa de Ajuste Fiscal)➛Cumprimento Resultado Primário","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["cumprimento_resultado_primario"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["cumprimento_resultado_primario"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"fbde66c9-e933-4e46-aad5-a68f2cc49a9a"}},{"name":"cee44457-eaf3-4b7f-b195-bacf6d5937e8.valor_apurado_endividamento","label":"4 - Get MRVS Values (Programa de Ajuste Fiscal)➛Valor Apurado Endividamento","type":"string","base_type":"string","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["valor_apurado_endividamento"],"070c3028-da05-4dc4-afc6-b2410b50b51a":["valor_apurado_endividamento"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"0e1b0341-3399-428f-aeeb-3b5d1b10f45e"}},{"name":"cee44457-eaf3-4b7f-b195-bacf6d5937e8.ano","label":"4 - Get MRVS Values (Programa de Ajuste Fiscal)➛Ano","type":"string","base_type":"string","usedInstances":{"070c3028-da05-4dc4-afc6-b2410b50b51a":["u_ano"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"94218d0e-1b45-4bf1-b5e9-30003b774c01"}}]</label_cache>
+        <master>true</master>
+        <name>Programa de Ajuste Fiscal</name>
+        <natlang/>
+        <outputs/>
+        <parent_flow display_value="Programa de Ajuste Fiscal">606d842afb29f69086e7f4045eefdc6a</parent_flow>
+        <remote_trigger_id/>
+        <run_as>system</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-12-04 03:49:40</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>53c6a82efba9f69086e7f4045eefdcd1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-04 03:49:40</sys_updated_on>
+        <type>subflow</type>
+        <version>2</version>
+    </sys_hub_flow_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=53c6a82efba9f69086e7f4045eefdcd1"/>
+    <sys_translated_text action="INSERT_OR_UPDATE">
+        <documentkey>53c6a82efba9f69086e7f4045eefdcd1</documentkey>
+        <fieldname>annotation</fieldname>
+        <language>pb</language>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-12-04 03:49:40</sys_created_on>
+        <sys_id>1fc6a82efba9f69086e7f4045eefdcd1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-04 03:49:40</sys_updated_on>
+        <tablename>sys_hub_flow_snapshot</tablename>
+        <value/>
+    </sys_translated_text>
+    <sys_variable_value action="delete_multiple" query="document_key=53c6a82efba9f69086e7f4045eefdcd1"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=53c6a82efba9f69086e7f4045eefdcd1"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=53c6a82efba9f69086e7f4045eefdcd1^sys_idNOT IN93c6a82efba9f69086e7f4045eefdceb"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>53c6a82efba9f69086e7f4045eefdcd1</id>
+        <name>Programa de Ajuste Fiscal</name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-12-04 03:49:40</sys_created_on>
+        <sys_id>93c6a82efba9f69086e7f4045eefdceb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-04 03:49:40</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=93c6a82efba9f69086e7f4045eefdceb"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=53c6a82efba9f69086e7f4045eefdcd1^sys_idNOT INefc6a82efba9f69086e7f4045eefdceb"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference,uiUniqueId=f4b7b973-3190-4871-8403-baaef11efe7b</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table>x_sded9_portal_t_0_registro_de_cargas_tesouro</choice_table>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>record</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Referência">reference</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Programa de Ajuste Fiscal">53c6a82efba9f69086e7f4045eefdcd1</model>
+        <model_id>53c6a82efba9f69086e7f4045eefdcd1</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_53c6a82efba9f69086e7f4045eefdcd1</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="x_sded9_portal_t_0_registro_de_cargas_tesouro">x_sded9_portal_t_0_registro_de_cargas_tesouro</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-12-04 03:49:40</sys_created_on>
+        <sys_id>efc6a82efba9f69086e7f4045eefdceb</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-04 03:49:40</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=efc6a82efba9f69086e7f4045eefdceb"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=53c6a82efba9f69086e7f4045eefdcd1"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=53c6a82efba9f69086e7f4045eefdcd1"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=53c6a82efba9f69086e7f4045eefdcd1"/>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=53c6a82efba9f69086e7f4045eefdcd1^sys_idNOT INabc6a82efba9f69086e7f4045eefdcff,6fc6a82efba9f69086e7f4045eefdcff,a3c6e82efba9f69086e7f4045eefdc00,67c6e82efba9f69086e7f4045eefdc00,2bc6e82efba9f69086e7f4045eefdc00"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Pesquisar registros">43400a1587003300663ca1bb36cb0b4b</action_type>
+        <action_type_parent display_value="Pesquisar registros">d1c56ec50b30030085c083eb37673a50</action_type_parent>
+        <attributes/>
+        <comment>.</comment>
+        <compiled_snapshot>43400a1587003300663ca1bb36cb0b4b</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Programa de Ajuste Fiscal">53c6a82efba9f69086e7f4045eefdcd1</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-12-04 03:49:41</sys_created_on>
+        <sys_id>abc6a82efba9f69086e7f4045eefdcff</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-04 03:49:41</sys_updated_on>
+        <ui_id>b1c3d1ce-831a-4bfb-b59b-fac37677e4f9</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VX2WobMRT9lWGejRnH2Zq3kBAoZKFJyUuaCo2ksUU10lTSeInxx5Q+lH5AvyA/1itpxh68pDY4kNAnM3eRzr33HEl+mMScxifxcbafJLhzcHyUJN1ukhwedgnupGn3kKRJup/GrVjinEGkxalg8DnAonTfhqC8FJYjrYboe8mM5UoiLM2QaQij3BQCj++r6CsXGt2qYfSpCo1O61DS54JqJuOTh8dWXGANG1rwnEwWXJsiFjhlAkI/u1+8XIIdF7NP5H3BdjnPEyy6Dg6lqcOStGI2skxSBiAyLAxrxTmWFFulxzOLZpjeSDE39Lm0sGLsgkeGP8G+x4mLyxiURVjwzT5R1bZgzs6xxXdWl8SWugolfcUJM6EhlGUYGnvWtIWAm8L1OKSEskO2EmUur0M74tkC9ZTAUhoAwQpXqENelZHd9dXwtkZ5waXvSeUUimAx+8LWap6W1uGZxEywHBZCOS4KLnuo0GrAfTJgyds9AR/tTACFKDO8J9uYOOBt6CtuX4D93JvvseauiitYxnMm4wIogsIIjSq1b+UAEVEa79DAxLBWPG3FZmzOBDZmXjm0HFjrcIc+VBWj0DSXQjQv7CksMWBVcdPWRqo5SOaUI0pS7lCYhnS4ZTlSfkJIsmHbxX4pYSk6AAGpryABB4XTYJxMTJm6HrU1I0DH6XRZX7tYcpc69D2odXjmmvD86/kPM2s6UylyyXbZXKF2VIrs7EyRUMh70iRs/vYkub3IQgv+oTRy9CLLDuZ8MkpbFHrZkJq7nFxrRsuSabq2o/4GoGrq3wBXJdZRofQ6qBX3M84EXXUbXTjHwm2093/eRm+S+QCIojA9LgWX/mkBQF9LEsnLB++HBZ55ejWebc6GDVnWA46wff4dPW0thw0AzV5kvFARZZFvCs84wXAt/FSrIdeXgqfQ4oVQGytBdHcmiO7ebgQxmRXdaOyKKdTvSzffOuMpZODFDKBlI6UzXSW6LfftbL/v3nRZ2N2tlN0kYfCcr+Xijh+ka7Taes3DoQ+p1X4oKBsNOe0xO9+9jqLKDrH4tspfcQ/Vw/LlvcLjdv9FOR925mIFzSDNDIyv+brtwGtq+XTptIN5u6NlAyx1O66ef4x47k+XW48JU2XWYa2OFlA/6/kpNc+WjzNrRfj9Hb403+xtW49tpR7r6b2Lf4e7k8TjX/G64fAnEQAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=abc6a82efba9f69086e7f4045eefdcff"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Pesquisar registro">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Pesquisar registro">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Programa de Ajuste Fiscal">53c6a82efba9f69086e7f4045eefdcd1</flow>
+        <generation_source/>
+        <order>3</order>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-12-04 03:49:41</sys_created_on>
+        <sys_id>6fc6a82efba9f69086e7f4045eefdcff</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-04 03:49:41</sys_updated_on>
+        <ui_id>f55fbb1c-5a9e-441e-ba14-6cf57444d9bf</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VYzW7jNhB+FUFn25UsW7ZyWyQwUGCbFJt0L9sFMRIpmy0lakkqf4YfZtFD0QfoE+TFOtSPbdiOY2MdIEFPBocz5Mzw+2ZG/jJ3OXXPXBp5URpFw/HI84LA88IwSMCP4yBMYi+Ggdtxc8gYahqIBcPlLYjSru+JpoxGpJDKgCCGeKRQcqogA0IZgT9KbRhJuU5AoBnluhDw8Lmx/rVRdShzPlSqzqRVTWZcUMVy9+zL145bAOoxw5R7Nt/YOjQCATETqHpjf2E7JPNQLJek2qtlH1d2gjmX9YZU1PridVx2b1iOOXDPUhCaddwMcgpGqoelRDGgV7lYCWY8N3iia5XvNX/Ee8ee1UsZhpWwem+5JE3aanF6AQaujSoTU6pGNZlJnjBdJ4SyFEphztdltcJVYbjMa5M67NpaijLLL+t0uMsD2ldCSanRCVbYQK3nTRjp9UzefWq9nPC8ykmzKaR9x3YFxigel8b6M3eZYBkeRDIoCp5PLWRueWWMvmS9qcBFLxXyDi/VfJr3ILGO9zCv0Jug/KISfwbFbRS/4DFojA5xgRAh9RNqWaoqlbckERZbuKEg1/VZ7qLj6gd9LkDrVeSYcvKttH7XeWgiJnXSrEmieGE+4BG3rAlu0WlZNNyLwWgFuUTmlFsv9BqVSgK5/L1EWzqf972UsnAw7gYJo93BMAq7sQ9JNw6iOByPoA9R2OOGZb3KfLHYJtcPn3ckA1+OvmXguQ3/6e+nf5l+JicNF7dkH9dPaDcaLvon4+LA894TG/Hyt0fG4+lVp+AFjvl0L8roCk8aOxKpc7lGsm2aHA30A1xogX6FyMxBOdgdn3OsQXrKmaC7us7Ebmx0nf7/s+u8SZyjQ5TUr8dzwfNqhEBHX4sAw73oi/0NnFXwWsG/koFOtmkADpinf5zHo+lwgEPLyYsX0o56VVJ4yhPAJvCX3O1y2wIqCG2W/1bYECI4GSGC/mkIMV8GvZbYHa/QzpH2fVuLx9oCNi0Qlmsm/mIX6Y681z/+3v5im9jBUcxeB2G9c/EsFk88eD7D1c5rFocZmjb3kZrZ5I7TKTOr21stKs0diD937TfYI+1jVeG9whDr7/2QiteGWJ6SDN+OFzhrK5YgPDQBhR97sswpaabstfFW2+9ApU2jvF2CPjGkq22XWtq3YI50CsUzxpV0FJtybZQ8vlu/HE+b0mvm3D59V1zq5XXaSaVimbNZqA6M/ZgaNjjh+HrqGjYBMcOPdHCYgWK9PjClqtFmVxk78Dn34OPASneod/6rePfj9XAXM3bWxQN9fhcf66evXAmDeNCHcBT4vuf5Hh1549HIH4dxGsJokK7YS4jOEyy2eHIKXODxpIVK+97+dnm65tnR1ecAn1pAXmKBcdIKylhwrD8HOdyUmFhKwSDfqDE32D5+mlSdYonX4ZurM+/iL6uS32xmuhbtzPVrjRMl/y3n30r2swXXmHn9sU+T7njkj7qDlIbdiMKwC1E8HAWUJYP0lBPC1/8A4+CjOy4WAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=6fc6a82efba9f69086e7f4045eefdcff"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Get MRVS Values (Programa de Ajuste Fiscal)">1e1f40eafb29f69086e7f4045eefdc8b</action_type>
+        <action_type_parent display_value="Get MRVS Values (Programa de Ajuste Fiscal)">16ddf792fbe5f69086e7f4045eefdcf1</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>1e1f40eafb29f69086e7f4045eefdc8b</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Programa de Ajuste Fiscal">53c6a82efba9f69086e7f4045eefdcd1</flow>
+        <generation_source/>
+        <order>4</order>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-12-04 03:49:41</sys_created_on>
+        <sys_id>a3c6e82efba9f69086e7f4045eefdc00</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-04 03:49:41</sys_updated_on>
+        <ui_id>cee44457-eaf3-4b7f-b195-bacf6d5937e8</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/71T207bQBD9lWifY8uxHcfOGwIhIbWlSigvCFlj7zhZaX1hdw1Jo/x7Z2MnJLQgUBGPe3YuZ87MudswwdmUjXBUhB5CkflJESVeHOGEgHCMWPA85mzIKiiRIstWGqHqp1RhXiv78QiytT+bje8VHKMwdoIcuROOk8jJRpA7WZBkUTwBH5LIFQZL1xYQFcfVdksVuNCNhPXtfxfKl0JyhRWb3t0PWQOKOBtUbLp58fXeoSVkKCl0Vj8Nrmybt4Qw68Z+aKNEtejf3/oC8z1IoZbQaMhwZZBKEpMCpMYhK6HiYGq1ZlOjWgIUAr+u5PoQsRSVoWLMxq60+E3tYs/zbGSBNFyO3e/hmfbSdnBxAQaISZubVvWh+bIWOepOFo4F0Fjnx1gXcN0YUVddioFM7rNr2ZbVj04Rdiiw3yQhrSYS2NhJLfd+kGK+rJ9me5aXdoPq8CnrHOThBYaky1pj+WxYK25eqNwhf+mMEkvqmJbQNISkjaofxa4LkS7dhaSHW0jaH0ctFpULuZ3QpQ2Ae0n4xQ6+BSXsuN+pDCXbdr8q8dDilb0gHo/i0E8CJwon4ISTMHSSwAMnjjnQLQWRH3tsO2R6rc8laP0sFG0ofWjtmJ1svUBpp7FNyZVozBmResRei+2wd+sY3jrcZPR8pGQBW5X6p+LUq7rN7PRud73/suGH/fQOWns//dzxGszXenB18Trd3lHP131qqtkR3vvK/yxfBf6pq1appppJ2tTKgExN6pHxF4LOsKYLSnNQC9ApXWndqvoVC876hAHHwfkuYXBzSPhkc36U7xc4uZgjqHx5KVDac6naMttZ6hWHH2/91OTHe/8Sn4+DIBuNi8xJYi92QvQnDiAGTpxkycSjCwcMPtHn938A0DT8xZcHAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=a3c6e82efba9f69086e7f4045eefdc00"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Atualizar registro">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Atualizar registro">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Programa de Ajuste Fiscal">53c6a82efba9f69086e7f4045eefdcd1</flow>
+        <generation_source/>
+        <order>6</order>
+        <parent_ui_id>cc765906-5769-430a-b4ae-373f078cb540</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-12-04 03:49:41</sys_created_on>
+        <sys_id>67c6e82efba9f69086e7f4045eefdc00</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-04 03:49:41</sys_updated_on>
+        <ui_id>30bd6918-a95f-4a24-b688-772ee9e9bf9e</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1YyW7bMBD9FUNn25BiKYlzKxIEKNANaZFLF2IkjhwWlKiSVBrX0L93qMVLrGx2L0F9sjjkPM57nBmZ+rrwBPfOvBC5H0yD42QSTCZHvn90Ggbx8SQOjvgEEANv6OWQIa3UmCjNaXwLsnSGxSKNojSOg2QUwRRHYRjgKIYgHB0naXQShiGfxun4qvarKvLkwhQS5tctAFmSGyG5xtw7+/p96BWgaS+L2jtb3Jt6brASYpS09ApnwliteuK388KNuUrKDHPLRGd81/petDODtxc0Q04uoMAfenhnMedIoaQgDQ69DHIOVum5d2Z1SQaNwD/mcr5ccSNy21DN4M6IP7Rz6Lt1KRK3pJVhOWStRI05vQALnwk5saVeKqZEgqZRhWMKpbTn67ZmwcfCCpU3LhZi2XkrWWb5h0YRbwmwdiKloSCwcDxd5A2t9PON+n3VBXkp8lqSlqJUCcjlCKzVIi6tC2fhocRa4wyKQuQzVmh1K2pnCiUbzyQNxqlUv2lPI2b5GBIX95hUhfEl2S9q8zVo4Ui8JxhyroaemZtzCcasqJCG7FfpImmItRRYrUItAaszwTknWhT2DW11i23g1bAtiDh6LMeS6Sqh1jBXRXHHDCXIlBVKW5DMMt9xnlFeA1Fk8LM0FlkqjNNsqyI+tUsHHAdv6qWDy27py0rlGTS6UvnifuEBXm2xbNnerZwlDj40E22pRP+sVE5fU6m0NF59rTxVIf7Ro10YV5lUF4VZqw7qq4UWjqViCYg7YFL8KgVX30rfn/DFIkGk90Z0MkJIJ6MwPklHcTCN6LWSpMc8mk5O8HTcg8JqlKr6QTXhCs0UaICRbIwejAL5og0eAunwdw993X0Z8zof0PSeAg4JKJcAZIedtemwmINiDoo2o6NQmkFRauD7HEIvTi+lfU/jCawtTvtK2I+2IWJ9jPvuswHyyBntq9+TaFs7ajTU6dyTE576yT6psQnGCKwTcM9tejBa9PWMoc4mqI1CPdo57zZQuvh3h952vxf1ntI8DNUqtHlEuxN5BKfvH/+h/x/6/6H/H/r/of//J/3/ZZfWZ9wsukvrOWSFMj1Xje7Cihm9eOiq3Vw97l1a28nBdTu5/MbzDz/y+K/p7vq/fObpjC7oB3qQm+r3hFvkSwmrqvr+F+ZopSpFFQAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=67c6e82efba9f69086e7f4045eefdc00"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Criar registro">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent display_value="Criar registro">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Programa de Ajuste Fiscal">53c6a82efba9f69086e7f4045eefdcd1</flow>
+        <generation_source/>
+        <order>8</order>
+        <parent_ui_id>bbf158a1-4051-412a-803b-c34c3913e71b</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-12-04 03:49:41</sys_created_on>
+        <sys_id>2bc6e82efba9f69086e7f4045eefdc00</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-04 03:49:41</sys_updated_on>
+        <ui_id>070c3028-da05-4dc4-afc6-b2410b50b51a</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1YS3MaMQz+K4zPwCxZIIFbJpmc2qTTdHJJU492rQV3vI/Y3gTK8N8r74NAgKRhe8kMJ7AsfZI+2RbifsGkYGM27KE3GPWGod/z/RPPOznr94KhH/ROhA+IfdZmCcRImhYChbxYtNkTqNwJZ9wIFCOepdqC4pZ7PNPpREMMXCCH37mxyCNpQlBkJqTJFMzvKutvlWpLYOu8UG1d1arhVCqhMWHj+4c2y4D00KJm48WrrX9NQ0GAilR/uE/Yk5edZztlX16MFbauy41UCxeQ12Y4s5gQEWwcgTLYZjEkAmyq52xsdU4CjSBuEjVfaUxlYgmQOd2ZkX/I7Znn9CKk1EIs91ZLXlFXiqNLsHBLyKHNdaUaTlMZoilJERhBruzFuqxUuMmsTJPSpEizsk5VHifXJSVsBVBXiiS5oSAwc3m6yKs0ottp+vy9jvJKJgUl1aZKXS3rFVirZZBbF8+CocKYgHgMWSaTiTs2T7Iwplji7kTRohup9JmcGjlJuhC6wLtEK3SvSH5ZiO9AS5fFV4Ih42Wbmbm5UGDMSy5EIn/MXSRlZlUOvKTBmYRaZvacHDxhFe6yXV8Qgd5o78nqBS8HqbgTZu1y5ByS9Gfueb5YLEI6hf3+4LSDEPmdfnAadYLeaNAJIIyGYjDyT/GsS/rL5a8wjzMtHTspD0HOgCv5mEvxMawdKLxAIQ90ldz9NBka4EQ3py8mBfUhB/tAavzDQ183X8W8ng9ojSEICCF1B4fkcDA3NRZ3UNxBkTMqYao5ZLkG0aQIO3F2ptS0Gu9gbeXUlMLdaBskFmVs6mcD5I0aNeXvXbQtjxoNvZDumyOe3qEmR2MTjBNYTWBDNzswKvT1E0MvoqTnF4rVweduA6WO/3DobfNXUTekZj9UxdBmiQ5P5A2c5XL7Z9Gxbxz7xrFvHPvGsW8c+8abfeODM/L7k0w9I19AnKVmx2hTz8cYU8Oiyb4cdV7NyNVm667arObk3v+ak/ue95km5TKxTz8or/0nsntkroUU9HL58Bdo+Ex7YRIAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=2bc6e82efba9f69086e7f4045eefdc00"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=53c6a82efba9f69086e7f4045eefdcd1"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=53c6a82efba9f69086e7f4045eefdcd1^sys_idNOT INebc6a82efba9f69086e7f4045eefdcfe,63c6a82efba9f69086e7f4045eefdcff,e7c6a82efba9f69086e7f4045eefdcff"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">212b3741fbf1621086e7f4045eefdcdc</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Programa de Ajuste Fiscal">53c6a82efba9f69086e7f4045eefdcd1</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Para cada">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-12-04 03:49:41</sys_created_on>
+        <sys_id>ebc6a82efba9f69086e7f4045eefdcfe</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-04 03:49:41</sys_updated_on>
+        <ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/51TXW+jMBD8L34miI9cUvJWtapU6e4qpVVfThVa7CWxzticbZJyiP9+60Bo1cd7gh3vzs4MZmCm823n3Yu5dU4eNNv9eouY1AGj94FpaJDtmPTYOBaxE6gu1MNQpTwXKcfVTZ7Cal3V1ar6VlSrGni+3Wy3uK6LeI/cWOHGkUaFdK2C/vX/GfhRKmFxFtmCJW0eLdsNX46koAVpIeoiTQqeZ5s8S5LsZp1Wm7xKM5EDig0RKqhQUeujRx3cfTHr+zaUdpIwA9/nmf2C0iOIyJKI4TsxCaT1NSiHEWtAC/DG9mznbUeARRBPWvVLx1FqT3Qs9L47+Zc2pkkSGmskQxynw6Us5xwnuL4HD89EzX1n51Z+NJKjm6IQWEOn/N1nbGp4ar00ehrxUKnrtFFdo39OSbCF4PrZCOkcicA2GA3SZx/189Gc91eVD1JfQpkPleGglgq8t7LqfNAzMFTYEFHZQNtKfShba07yMkxamvigqIhrZc60NFzRGHgQHlOuED8Qfn+BX8HK4OIH0dDwGDHXuzsFzn14oRDLP11QMjmbPZRTDGGEW9n6W1pwwlnu+BZu/cS9ZMqlIwkvAXu8/ivhoKcbJPln6Gzs7yD+Axv/AcNY+5d1AwAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">612b3741fbf1621086e7f4045eefdcde</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Programa de Ajuste Fiscal">53c6a82efba9f69086e7f4045eefdcd1</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Se">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>5</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-12-04 03:49:41</sys_created_on>
+        <sys_id>63c6a82efba9f69086e7f4045eefdcff</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-04 03:49:41</sys_updated_on>
+        <ui_id>cc765906-5769-430a-b4ae-373f078cb540</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Vy27TQBT9FWvWSWQndiDZVSmVkIBKbdQNVNb1PJIRkxkzj7Yhytew4AP4hPwYd2wnjSivAEt2nnNf59yZI2+ICb4O3s3NmXNyocn07W2PSB0x/N4QDStOpoQazaSXRpcN0CN3oEIM3IAyNmE8OdMmeaExz1tgJtGQzKHiCpILqUFhBZOuVrC+ObmQLqVilnfcarDIwHNLpptvQpJhX5GCyCY0o6PheDRM0+HzPKvGoyobshFwGGFDFftj6tXuiw/KJAySRt/u8+6TwfiPNPt1HXHnrdSL7vyq63W9B41lkVuW9gh/8FwzjqwEKMd7ZAWagTd2fUAsB3ap1SOwlNpjOxKTH5z8iAOHRRETBUehlLfBw7Hs1trC4hw8IJVAfbBdKl0aSblrV8S4gKD87BhrEy7rKLUt8VCpfbVRYaXftBshhwb7W0QkOCTB66g0Uu90iOulub/as8SrbLbSBZWheLP7E3jcXRV85LMhXPEVNipXUNe40bK25k42xchlNVgoPAyEMvc4NL7YAdBIfICLhcEF4ucNfANWRhWvsQ0WtzQrcJKWzevGdrgmTrY94tZupsC5R5G43fJDiBRbyZ24st1PLKFW1v4MJ9/xTse299QsRz7ZbERRiKrKaL+ACe/necb7FWR5f0xF8SzPczapxMB58MFtt+9Cmo5Y+tQ2f9znNBdNoBBFlhbfd1E+PnLR7GfWOdE1w1+4Jl7Zb5omTdP/rvlr10hXtm+909YM/4emuY0OaWcedk2lQ2rziL3c/4hiYI2PS9Jj6N7Y91HUI7b9Chytrt7SBgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">f7ee3f85fbf1621086e7f4045eefdc51</block>
+        <comment/>
+        <connected_to>cc765906-5769-430a-b4ae-373f078cb540</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Programa de Ajuste Fiscal">53c6a82efba9f69086e7f4045eefdcd1</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Outro">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>7</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-12-04 03:49:41</sys_created_on>
+        <sys_id>e7c6a82efba9f69086e7f4045eefdcff</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-04 03:49:41</sys_updated_on>
+        <ui_id>bbf158a1-4051-412a-803b-c34c3913e71b</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=53c6a82efba9f69086e7f4045eefdcd1"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=53c6a82efba9f69086e7f4045eefdcd1"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>record</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>pb</language>
+        <name>var__m_sys_hub_flow_input_53c6a82efba9f69086e7f4045eefdcd1</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-12-04 03:49:40</sys_created_on>
+        <sys_id>2bc6a82efba9f69086e7f4045eefdcf9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-04 03:49:40</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_53c6a82efba9f69086e7f4045eefdcd1"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_53c6a82efba9f69086e7f4045eefdcd1"/>
+    <sys_hub_flow action="UPDATE">
+        <sys_id>606d842afb29f69086e7f4045eefdc6a</sys_id>
+        <latest_snapshot>53c6a82efba9f69086e7f4045eefdcd1</latest_snapshot>
+        <compiler_build>glide-yokohama-12-18-2024__patch7-hotfix2a-09-24-2025_10-07-2025_2003.zip</compiler_build>
+    </sys_hub_flow>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=606d842afb29f69086e7f4045eefdc6a"/>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=606d842afb29f69086e7f4045eefdc6a^sys_idNOT IN3fc6e82efba9f69086e7f4045eefdc1c"/>
+    <sys_flow_subflow_plan action="INSERT_OR_UPDATE">
+        <plan>com.snc.process_flow.engine.ProcessPlan@5d97bb1b</plan>
+        <plan_id display_value="Programa de Ajuste Fiscal">606d842afb29f69086e7f4045eefdc6a</plan_id>
+        <snapshot>53c6a82efba9f69086e7f4045eefdcd1</snapshot>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-12-04 03:49:41</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>3fc6e82efba9f69086e7f4045eefdc1c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-04 03:49:41</sys_updated_on>
+    </sys_flow_subflow_plan>
+</record_update>
