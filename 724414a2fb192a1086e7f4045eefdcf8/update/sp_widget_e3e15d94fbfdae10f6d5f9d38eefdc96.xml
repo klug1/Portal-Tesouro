@@ -75,8 +75,8 @@
                     {
                         label: 'Estoque Total',
                         data: estoqueTotalData,
-                        backgroundColor: '#6BB7F0',
-                        borderColor: '#6BB7F0',
+                        backgroundColor: '#a7b9e8',
+                        borderColor: '#a7b9e8',
                         borderWidth: 1,
                         yAxisID: 'y'
                     }
@@ -143,6 +143,17 @@
 
 h3, div, span {
  font-family: 'Roboto Flex', sans-serif;
+}
+
+.titleEnd{
+   font-family: Roboto;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 24px;
+  leading-trim: NONE;
+  line-height: 100%;
+  letter-spacing: 0%;
+	color:#021770;
 }
 
 /* --- Media Queries para Responsividade --- */
@@ -321,14 +332,14 @@ h3, div, span {
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-24 21:16:18</sys_created_on>
         <sys_id>e3e15d94fbfdae10f6d5f9d38eefdc96</sys_id>
-        <sys_mod_count>14</sys_mod_count>
+        <sys_mod_count>16</sys_mod_count>
         <sys_name>Evolucao do Estoque Total Grafico</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_e3e15d94fbfdae10f6d5f9d38eefdc96</sys_update_name>
-        <sys_updated_by>sued.barreto@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-09-26 16:40:38</sys_updated_on>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-05 23:35:32</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 
@@ -358,12 +369,20 @@ h3, div, span {
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <div class="chart-wrapper-total">
-  <h3 style="text-align:center; font-weight: 600; margin-bottom: 16px;">
-   Evolução do Estoque Total da Dívida Pública
+  
+    <h3 class="titleEnd" style="text-align:left; font-weight: 600; margin-bottom: 16px;">
+    Evolução do Estoque Total da Dívida Pública
     <span  class="dadosInfo" style="font-weight: 600; color: #333;">
       {{anoSelecionadoDividaPublicaTotal ? ' - Ano: ' + anoSelecionadoDividaPublicaTotal : ' - 2019 a 2024'}}
     </span>
   </h3>
+  
+  <!--h3 style="text-align:center; font-weight: 600; margin-bottom: 16px;">
+   Evolução do Estoque Total da Dívida Pública
+    <span  class="dadosInfo" style="font-weight: 600; color: #333;">
+      {{anoSelecionadoDividaPublicaTotal ? ' - Ano: ' + anoSelecionadoDividaPublicaTotal : ' - 2019 a 2024'}}
+    </span>
+  </h3-->
 
   <div class="chart-container-total" ng-show="exibirGraficoDividaPublicaTotal">
     <canvas id="graficoDividaPublicaTotal"></canvas>

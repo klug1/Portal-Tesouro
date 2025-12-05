@@ -115,14 +115,14 @@
             datasets.push({
                 label: 'Série: RCL ' + anoAnterior,
                 data: dadosAnoAnterior,
-                backgroundColor: '#6BB7F0'
+                backgroundColor: '#a7b9e8'
             });
         }
 
         datasets.push({
             label: 'Série: RCL ' + anoMaisRecente,
             data: dadosAnoMaisRecente,
-            backgroundColor: '#4A75B1'
+            backgroundColor: '#4b77bf'
         });
 
         chartInstance = new Chart(contexto, {
@@ -174,6 +174,17 @@
 
 h3, div {
  font-family: 'Roboto Flex', sans-serif;
+}
+
+.titleEnd{
+   font-family: Roboto;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 24px;
+  leading-trim: NONE;
+  line-height: 100%;
+  letter-spacing: 0%;
+	color:#021770;
 }
 
 /* --- Media Queries para Responsividade --- */
@@ -299,14 +310,14 @@ h3, div {
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-22 21:42:24</sys_created_on>
         <sys_id>12b48b23fb29ea10f6d5f9d38eefdc46</sys_id>
-        <sys_mod_count>77</sys_mod_count>
+        <sys_mod_count>81</sys_mod_count>
         <sys_name>RREO RCL x VN Grafico</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_12b48b23fb29ea10f6d5f9d38eefdc46</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-06-27 21:03:44</sys_updated_on>
+        <sys_updated_on>2025-12-05 23:26:53</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
   
@@ -354,9 +365,14 @@ h3, div {
 
 
 <div class="chart-wrapper">
-  <h3 style="text-align:center; font-weight: 600; margin-bottom: 16px;">
-    Receita Corrente Líquida (RCL) - Valor R$
+  
+  <h3 class="titleEnd" style="text-align:left; font-weight: 600; margin-bottom: 16px;">
+     Receita Corrente Líquida (RCL) - Valor R$
   </h3>
+  
+  <!--h3 style="text-align:center; font-weight: 600; margin-bottom: 16px;">
+    Receita Corrente Líquida (RCL) - Valor R$
+  </h3-->
 
   <div class="chart-container" ng-show="exibirGrafico">
       <canvas id="graficoLimitePessoal"></canvas>

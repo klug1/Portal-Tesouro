@@ -37,6 +37,12 @@
     $scope.goToLogin = function() {
         $window.location.href = '/login.do';
     };
+	
+	$scope.goTo = function(url) {
+    if (url) {
+      $window.open(url, '_blank');
+    }
+  };
 
     // Inicialização do usuário (dados viriam do servidor em produção)
     $scope.user = c.data && c.data.user_info ? c.data.user_info : {};
@@ -1834,14 +1840,14 @@ a:focus {
         <sys_created_by>pk.aba</sys_created_by>
         <sys_created_on>2025-10-18 13:49:26</sys_created_on>
         <sys_id>4a1d60ebfb687250f6d5f9d38eefdc35</sys_id>
-        <sys_mod_count>328</sys_mod_count>
+        <sys_mod_count>330</sys_mod_count>
         <sys_name>SATE HEADER V3</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_header_footer_4a1d60ebfb687250f6d5f9d38eefdc35</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-11-07 03:53:41</sys_updated_on>
+        <sys_updated_on>2025-12-05 03:04:51</sys_updated_on>
         <template><![CDATA[<div class="header-widget">
     <div class="top-bar" ng-init="c.checkUserLoggedIn()">
         <div class="logo-container">
@@ -1924,7 +1930,7 @@ a:focus {
                             </a>
                             <ul class="submenu-aninhado" ng-show="submenus.financeSubmenu">
                                 <li><a ng-click="goToPage('indicadores_fiscais')" href="javascript:void(0)">INDICADORES FISCAIS</a></li>
-                                <li><a ng-click="goToPage('404_sefaz')" href="javascript:void(0)">RESULTADO FISCAL</a></li>
+                                <li><a ng-click="goToPage('resultados_fiscais')" href="javascript:void(0)">RESULTADO FISCAL</a></li>
                                 <li><a target="_blank" ng-click="goTo('https://www5.sefaz.mt.gov.br/convenios')">CONVÊNIO</a></li>
                                 <li><a target="_blank" ng-click="goTo('https://www5.sefaz.mt.gov.br/fundo-de-participacao-dos-municipios')">REPASSES DO ICMS</a></li>
                                 <li><a target="_blank" ng-click="goTo('https://www5.sefaz.mt.gov.br/ajuste-fiscal')">AJUSTE FISCAL</a></li>

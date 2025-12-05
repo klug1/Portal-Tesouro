@@ -80,11 +80,11 @@
                     {
                         label: 'Resultado Primário',
                         data: resultadoData,
-                        backgroundColor: '#6BB7F0',
-                        borderColor: '#6BB7F0',
+                        backgroundColor: '#a7b9e8',
+                        borderColor: '#a7b9e8',
                         borderWidth: 2,
                         tension: 0.3,
-                        pointBackgroundColor: 'rgba(107, 183, 240, 1)',
+                        pointBackgroundColor: '#a7b9e8',
                         pointRadius: 5,
                         fill: false
                     }
@@ -139,6 +139,17 @@
 
 h3, div, span {
  font-family: 'Roboto Flex', sans-serif;
+}
+
+.titleEnd{
+   font-family: Roboto;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 24px;
+  leading-trim: NONE;
+  line-height: 100%;
+  letter-spacing: 0%;
+	color:#021770;
 }
 
 /* --- Media Queries para Responsividade --- */
@@ -276,14 +287,14 @@ h3, div, span {
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-24 15:38:54</sys_created_on>
         <sys_id>89b4089cfb39ae10f6d5f9d38eefdc57</sys_id>
-        <sys_mod_count>36</sys_mod_count>
+        <sys_mod_count>38</sys_mod_count>
         <sys_name>Resultado Primario Grafico</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_89b4089cfb39ae10f6d5f9d38eefdc57</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-06-27 21:09:35</sys_updated_on>
+        <sys_updated_on>2025-12-05 23:29:23</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 
@@ -329,13 +340,23 @@ h3, div, span {
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <div class="chart-wrapper">
-<h3 style="text-align:center; font-weight: 600; margin-bottom: 16px;">
+  
+    
+  <h3 class="titleEnd" style="text-align:left; font-weight: 600; margin-bottom: 16px;">
+     Resultado Primário - Valor R$
+  <span style="font-weight: 600; color: #333;">
+    {{anoSelecionadoLinha ? ' - Ano: ' + anoSelecionadoLinha : ''}}
+    {{bimestreSelecionadoLinha ? ' - ' + bimestreSelecionadoLinha + 'º Bimestre' : ''}}
+  </span>
+  </h3>
+  
+<!--h3 style="text-align:center; font-weight: 600; margin-bottom: 16px;">
   Resultado Primário - Valor R$
   <span style="font-weight: 600; color: #333;">
     {{anoSelecionadoLinha ? ' - Ano: ' + anoSelecionadoLinha : ''}}
     {{bimestreSelecionadoLinha ? ' - ' + bimestreSelecionadoLinha + 'º Bimestre' : ''}}
   </span>
-</h3>
+</h3-->
 
 
 <div class="chart-container" ng-show="data.dadosGraficoLinha.length > 0">

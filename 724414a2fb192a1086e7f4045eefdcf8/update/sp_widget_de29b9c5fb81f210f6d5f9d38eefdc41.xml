@@ -39,16 +39,16 @@
                     {
                         label: 'Despesa Líquida (R$)',
                         data: valores,
-                        borderColor: '#4A75B1',
-                        backgroundColor: tipo === 'bar' ? 'rgba(74,117,177,0.7)' : 'rgba(74,117,177,0.1)',
+                        borderColor: '#a7b9e8',
+                        backgroundColor: tipo === 'bar' ? 'rgba(167, 185, 232, 0.7)' : 'rgba(167, 185, 232, 0.7)',
                         tension: 0.3,
                         yAxisID: 'y1'
                     },
                     {
                         label: 'Variação (%)',
                         data: variacoes,
-                        borderColor: '#166282',
-                        backgroundColor: tipo === 'bar' ? 'rgba(22,98,130,0.7)' : 'rgba(22,98,130,0.1)',
+                        borderColor: '#4b77bf',
+                        backgroundColor: tipo === 'bar' ? 'rgba(75, 119, 191, 0.7)' : 'rgba(75, 119, 191, 0.1)',
                         tension: 0.3,
                         yAxisID: 'y2'
                     }
@@ -160,7 +160,19 @@ canvas {
 
 h2, h3, div {
   font-family: 'Roboto Flex', sans-serif;
-}</css>
+}
+
+.titleEnd{
+   font-family: Roboto;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 24px;
+  leading-trim: NONE;
+  line-height: 100%;
+  letter-spacing: 0%;
+	color:#021770;
+}
+</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -198,14 +210,14 @@ h2, h3, div {
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-11-04 21:27:43</sys_created_on>
         <sys_id>de29b9c5fb81f210f6d5f9d38eefdc41</sys_id>
-        <sys_mod_count>14</sys_mod_count>
+        <sys_mod_count>18</sys_mod_count>
         <sys_name>Variação despesa liquida -consolidado</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_de29b9c5fb81f210f6d5f9d38eefdc41</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-11-17 21:41:12</sys_updated_on>
+        <sys_updated_on>2025-12-05 23:33:41</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 
@@ -255,8 +267,12 @@ h2, h3, div {
 </style>
 
 <div class="linha-wrapper">
-  <h3 style="text-align:center; font-weight:600; margin-bottom:16px;">
+  <!--h3 style="text-align:center; font-weight:600; margin-bottom:16px;">
      VARIAÇÃO DA DESPESA LÍQUIDA COM PESSOAL - CONSOLIDADO
+  </h3-->
+  
+    <h3 class="titleEnd" style="text-align:left; font-weight: 600; margin-bottom: 16px;">
+      Variação da Despesa Líquida com Pessoal - Consolidado
   </h3>
 
   <!-- Gráfico -->

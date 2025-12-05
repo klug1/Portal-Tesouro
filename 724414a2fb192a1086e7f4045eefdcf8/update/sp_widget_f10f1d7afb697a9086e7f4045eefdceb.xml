@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>
+/* 1. Container Principal do Card */
+.ranking-info-card {
+    border: 1px solid #C8C5C5; 
+    border-radius: 4px;
+    margin-bottom: 20px; 
+    border-top: none; 
+}
+
+/* 2. Cabeçalho do Card (Contém o Título) */
+.ranking-info-heading {
+    /* Cor de fundo solicitada */
+    background-color: #F1F4FB; 
+    
+    /* Borda superior solicitada */
+    border-top: 0.5px solid #C8C5C5; 
+    
+    border-bottom: none; 
+    padding: 10px 15px;
+}
+
+/* 3. Título (h3) dentro do Cabeçalho */
+.ranking-info-title {
+    /* Estilos do Título solicitados */
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600; /* SemiBold */
+    font-size: 16px;
+    color: #021770; 
+    
+    /* Propriedades de espaçamento */
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: bottom;
+    
+    margin: 0; /* Essencial para remover margens padrão do H3 */
+    padding: 0; 
+}
+
+/* 4. Corpo do Card */
+.ranking-info-body {
+    padding: 15px;
+    border-top: 1px solid #C8C5C5; /* Separador entre heading e body */
+}
+
+/* 5. Parágrafos dentro do corpo */
+.ranking-info-body p {
+    margin-bottom: 5px; 
+    line-height: 100%; 
+}
+
+/* 6. Rótulos (Descrição, Fonte, Atualização) - Estilo SemiBold (600) */
+.ranking-info-label {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600; /* SemiBold */
+    font-size: 14px;
+    color: #021770; 
+    
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: bottom; 
+    margin-right: 5px;
+}
+
+/* 7. Conteúdo (Valores: Descrição, Fonte, Atualização) - Estilo Light (300) */
+.ranking-info-content {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100; /* Light */
+    font-size: 12px;
+    color: #021770; 
+    
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: bottom; 
+    
+    font-style: normal;
+}
+
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>info_amortiza__o_v2</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Info amortização v2</name>
+        <option_schema>[{"hint":"Descrição Padrão","name":"descricao","section":"other","label":"Descrição","type":"string"},{"name":"fonte","section":"other","label":"Fonte do Dado","type":"string"},{"name":"atualizacao","section":"other","label":"Data da Atualização","type":"string"}]</option_schema>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[
+(function() {
+
+
+ 
+  var descricao_capag = ".";
+  
+
+  var fonte_dinamica = ""; // Ou outro valor que você quer exibir
+
+  
+  var data_atualizacao_dinamica = "";
+  // 3. Popule o objeto 'data' com as propriedades que o HTML espera (c.data)
+  data.descricao = options.descricao || descricao_capag;
+  data.fonte = options.fonte || fonte_dinamica;
+  data.atualizacao = options.atualizacao || data_atualizacao_dinamica; 
+
+  
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-12-05 02:33:48</sys_created_on>
+        <sys_id>f10f1d7afb697a9086e7f4045eefdceb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Info amortização v2</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_f10f1d7afb697a9086e7f4045eefdceb</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-05 02:33:48</sys_updated_on>
+        <template><![CDATA[<div class="ranking-info-card">
+    <div class="ranking-info-heading">
+        <h3 class="ranking-info-title">Informações:</h3>
+    </div>
+    <div class="ranking-info-body">
+        <p>
+            <strong class="ranking-info-label">Descrição:</strong> 
+            <span class="ranking-info-content">{{c.data.descricao}}</span>
+        </p>
+        <p>
+            <strong class="ranking-info-label">Fonte:</strong> 
+            <span class="ranking-info-content">{{c.data.fonte}}</span>
+        </p>
+        <p>
+            <strong class="ranking-info-label">Atualização:</strong> 
+            <span class="ranking-info-content">{{c.data.atualizacao}}</span>
+        </p>
+    </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $rootScope, $timeout) {
+  $scope.filtroAnoIndicadores = "";
+
+  $scope.filtroAnoIndicadoresChanged = function() {
+    $rootScope.$broadcast('filtroAnoIndicadoresSelecionado', $scope.filtroAnoIndicadores);
+    console.log('Ano selecionado Indicadores:', $scope.filtroAnoIndicadores);
+  };
+
+  $timeout(function() {
+    $scope.filtroAnoIndicadoresChanged();
+  });
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.breadcrumb-bar {
+    font-family: "Roboto Flex", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f8faff;
+    border-radius: .6rem;
+    padding: .8rem 1.5rem;
+    color: #1e3a8a;
+    font-size: 24px;
+    box-shadow: 0 .1rem .2rem rgba(0, 0, 0, .05);
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.breadcrumb-links {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.breadcrumb-links a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.breadcrumb-links a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb-links span {
+    color: #64748b;
+}
+
+/* --- Container para agrupar os filtros --- */
+.filters-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* --- Estilo Individual do Filtro --- */
+.breadcrumb-filter {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+}
+
+.breadcrumb-filter label {
+    font-size: 10px;
+    font-weight: 600;
+    color: #9fa4c3;
+    display: flex;
+    align-items: center;
+    margin-left: 26px;
+    margin-bottom: -2px;
+    text-transform: uppercase;
+}
+
+/* Select com ícone interno e seta customizada */
+.filter-select {
+    position: relative;
+    display: flex;
+    align-items: center;
+    z-index: 99;
+}
+
+/* Ícone de filtro à esquerda */
+.filter-select i {
+    color: white;
+    -webkit-text-stroke: 1px #4b5563;
+    font-size: 16px;
+    pointer-events: none;
+    padding-right: 10px;
+}
+
+/* Seta para baixo */
+.filter-select::after {
+    content: "v";
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%) scaleY(0.9) scaleX(1.6);
+    font-size: 14px;
+    font-weight: 400;
+    pointer-events: none;
+    color: #334155;
+}
+
+/* Select estilizado */
+.filter-select select {
+    padding: 4px 26px 4px 8px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    background-color: white;
+    font-family: 'Roboto Flex', sans-serif;
+    font-size: 13px;
+    color: #334155;
+    appearance: none;
+    min-width: 110px;
+    cursor: pointer;
+    height: 28px;
+    display: flex;
+    align-items: center;
+}
+
+.filter-select select:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37,99,235,0.2);
+}
+
+/* Responsividade */
+@media (min-width: 375px) and (max-width: 819px) {
+    .breadcrumb-bar {
+        font-size: 1.5rem;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 1rem;
+    }
+    .filters-wrapper {
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+}
+
+@media (min-width: 820px) {
+    .breadcrumb-bar {
+        font-size: 2.5rem;
+    }
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>divida_publica_filtro_v2</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Divida Publica Filtro v2</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  var anos = [];
+  var gr = new GlideRecord('x_sded9_portal_t_0_u_indicadores_economicos');
+  gr.query();
+
+  var anosUnicos = {};
+
+  while (gr.next()) {
+    var ano = gr.getValue('u_ano');
+    if (ano && !anosUnicos[ano]) {
+      anos.push(ano);
+      anosUnicos[ano] = true;
+    }
+  }
+
+  anos.sort(function(a, b) {
+    return b - a;
+  });
+
+  data.anos = anos;
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-12-05 02:25:41</sys_created_on>
+        <sys_id>072d9d76fb697a9086e7f4045eefdc8d</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Divida Publica Filtro v2</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_072d9d76fb697a9086e7f4045eefdc8d</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-05 02:26:22</sys_updated_on>
+        <template><![CDATA[<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,400;600&display=swap');
+</style>
+
+<div class="breadcrumb-bar">
+  <!-- Lado Esquerdo: Título / Breadcrumb -->
+  <div class="breadcrumb-links">
+    <!-- Ajuste o link se necessário -->
+    <a href="?id=indicadores_fiscais">
+      Indicadores Fiscais
+    </a>
+    <span>&gt;</span>
+    <a href="#">Dívida Pública</a>
+  </div>
+
+  <!-- Lado Direito: Container do Filtro -->
+  <div class="filters-wrapper">
+
+    <!-- Filtro ANO -->
+    <div class="breadcrumb-filter">
+      <label for="ano-select">ANO</label>
+      <div class="filter-select">
+        <i class="fa fa-filter"></i>
+        <select 
+          id="ano-select" 
+          ng-model="filtroAnoIndicadores" 
+          ng-change="filtroAnoIndicadoresChanged()">
+          <option value="">Todos</option>
+          <option ng-repeat="ano in data.anos" value="{{ano}}">{{ano}}</option>
+        </select>
+      </div>
+    </div>
+
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>
