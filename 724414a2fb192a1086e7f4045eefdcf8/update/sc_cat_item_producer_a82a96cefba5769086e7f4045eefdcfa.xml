@@ -31,7 +31,7 @@
         <mobile_picture/>
         <mobile_picture_type>use_desktop_picture</mobile_picture_type>
         <model/>
-        <name>Superávit</name>
+        <name>Surplus</name>
         <no_attachment_v2>false</no_attachment_v2>
         <no_cart>false</no_cart>
         <no_cart_v2>false</no_cart_v2>
@@ -84,14 +84,14 @@
         <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
         <sys_created_on>2025-12-02 22:56:36</sys_created_on>
         <sys_id>a82a96cefba5769086e7f4045eefdcfa</sys_id>
-        <sys_mod_count>13</sys_mod_count>
-        <sys_name>Superávit</sys_name>
+        <sys_mod_count>14</sys_mod_count>
+        <sys_name>Surplus</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sc_cat_item_producer_a82a96cefba5769086e7f4045eefdcfa</sys_update_name>
         <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-12-11 13:43:46</sys_updated_on>
+        <sys_updated_on>2025-12-11 13:47:08</sys_updated_on>
         <table_name>x_sded9_portal_t_0_registro_de_cargas_tesouro</table_name>
         <taxonomy_topic/>
         <template/>
@@ -99,7 +99,7 @@
         <type>item</type>
         <use_sc_layout>true</use_sc_layout>
         <vendor/>
-        <version>69</version>
+        <version>70</version>
         <view/>
         <visible_bundle>true</visible_bundle>
         <visible_guide>true</visible_guide>
