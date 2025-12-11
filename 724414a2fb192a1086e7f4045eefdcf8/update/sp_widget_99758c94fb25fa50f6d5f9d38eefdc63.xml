@@ -27,11 +27,26 @@
         $scope.server.get(filtros).then(function(response) {
             var dados = response.data.dadosGraficoInvest || [];
             
-            // Timeout inicial para garantir que o ciclo do Angular atualize
-            $timeout(function() {
+            // --- MUDANÇA AQUI: VERIFICAÇÃO SEGURA ---
+            verificarBibliotecaChart(function() {
                 montarGraficoInvest(dados);
             });
         });
+    }
+
+    /**
+     * --- NOVA FUNÇÃO DE SEGURANÇA ---
+     * Garante que o Chart.js está carregado antes de tentar usar.
+     */
+    function verificarBibliotecaChart(callbackSucesso) {
+        if (typeof Chart !== 'undefined') {
+            callbackSucesso();
+        } else {
+            // Se ainda não carregou, espera 500ms e tenta de novo
+            $timeout(function() {
+                verificarBibliotecaChart(callbackSucesso);
+            }, 500);
+        }
     }
 
     carregarDadosInvestFiltrado();
@@ -57,188 +72,186 @@
                 chartInvest = null;
             }
             $scope.exibirGraficoInvest = false;
+            $scope.$applyAsync(); // Atualiza a view
             return;
         }
 
-        // --- AQUI ESTÁ A CORREÇÃO ---
-        // 1. Avisamos ao Angular para exibir a div
         $scope.exibirGraficoInvest = true;
+        $scope.$applyAsync(); // Garante que a DIV apareça antes de buscar o ID
 
-        // 2. Usamos um $timeout para esperar o HTML ser renderizado antes de buscar o ID
-        $timeout(function() {
-            
-            function parseValue(val) {
+        
+        function parseValue(val) {
+            if (!val) return null;
+            // Remove pontos de milhar e troca vírgula por ponto
+            var cleanVal = val.toString().replace(/\./g, '').replace(',', '.');
+            return parseFloat(cleanVal);
+        }
+        
+        function parsePercent(val) {
                 if (!val) return null;
-                var cleanVal = val.toString().replace(/\./g, '').replace(',', '.');
+                var cleanVal = val.toString().replace(',', '.');
                 return parseFloat(cleanVal);
-            }
-            
-            function parsePercent(val) {
-                 if (!val) return null;
-                 var cleanVal = val.toString().replace(',', '.');
-                 return parseFloat(cleanVal);
-            }
+        }
 
-            // Mapeamento dos Dados
-            var dadosInvest1 = anosPresentes.map(function(ano) {
-                var item = listaDados.find(function(d) { return d.ano === ano; });
-                return item ? parseValue(item.investimento) : 0;
-            });
+        // Mapeamento dos Dados
+        var dadosInvest1 = anosPresentes.map(function(ano) {
+            var item = listaDados.find(function(d) { return d.ano === ano; });
+            return item ? parseValue(item.investimento) : 0;
+        });
 
-            var dadosInvest2 = anosPresentes.map(function(ano) {
-                var item = listaDados.find(function(d) { return d.ano === ano; });
-                return item ? parseValue(item.investimento2) : 0;
-            });
+        var dadosInvest2 = anosPresentes.map(function(ano) {
+            var item = listaDados.find(function(d) { return d.ano === ano; });
+            return item ? parseValue(item.investimento2) : 0;
+        });
 
-            var dadosPercentual = anosPresentes.map(function(ano) {
-                var item = listaDados.find(function(d) { return d.ano === ano; });
-                return item ? parsePercent(item.percentual) : 0;
-            });
+        var dadosPercentual = anosPresentes.map(function(ano) {
+            var item = listaDados.find(function(d) { return d.ano === ano; });
+            return item ? parsePercent(item.percentual) : 0;
+        });
 
-            // 2. Configuração dos Datasets
-            var datasets = [
-                {
-                    label: 'Investimento Empenhado',
-                    data: dadosInvest1,
-                    backgroundColor: coresInvest.barra1,
-                    borderColor: coresInvest.barra1,
-                    borderWidth: 1,
-                    order: 2, 
-                    yAxisID: 'y'
-                },
-                {
-                    label: 'Receita Corrente Líquida',
-                    data: dadosInvest2,
-                    backgroundColor: coresInvest.barra2,
-                    borderColor: coresInvest.barra2,
-                    borderWidth: 1,
-                    order: 3, 
-                    yAxisID: 'y'
-                },
-                {
-                    type: 'line',
-                    label: 'Percentual da RCL',
-                    data: dadosPercentual,
-                    borderColor: coresInvest.linha,
-                    backgroundColor: coresInvest.linha,
-                    borderWidth: 3,
-                    pointStyle: 'circle',
-                    pointRadius: 4,
-                    order: 1, 
-                    yAxisID: 'y1',
-                    datalabels: {
-                        align: 'top',
-                        anchor: 'end',
-                        formatter: function(value) {
-                             return value.toLocaleString('pt-BR', { minimumFractionDigits: 2 }) + '%';
-                        }
+        // 2. Configuração dos Datasets
+        var datasets = [
+            {
+                label: 'Investimento Empenhado',
+                data: dadosInvest1,
+                backgroundColor: coresInvest.barra1,
+                borderColor: coresInvest.barra1,
+                borderWidth: 1,
+                order: 2, 
+                yAxisID: 'y'
+            },
+            {
+                label: 'Receita Corrente Líquida',
+                data: dadosInvest2,
+                backgroundColor: coresInvest.barra2,
+                borderColor: coresInvest.barra2,
+                borderWidth: 1,
+                order: 3, 
+                yAxisID: 'y'
+            },
+            {
+                type: 'line',
+                label: 'Percentual da RCL',
+                data: dadosPercentual,
+                borderColor: coresInvest.linha,
+                backgroundColor: coresInvest.linha,
+                borderWidth: 3,
+                pointStyle: 'circle',
+                pointRadius: 4,
+                order: 1, 
+                yAxisID: 'y1',
+                datalabels: {
+                    align: 'top',
+                    anchor: 'end',
+                    formatter: function(value) {
+                            return value.toLocaleString('pt-BR', { minimumFractionDigits: 2 }) + '%';
                     }
                 }
-            ];
+            }
+        ];
 
-            // Renderização do Gráfico
-            if (chartInvest) {
-                chartInvest.data.labels = anosPresentes;
-                chartInvest.data.datasets = datasets;
-                chartInvest.update();
-                
-            } else {
-                // Agora é seguro buscar o elemento, pois o $timeout garantiu a renderização
-                var element = document.getElementById('graficoInvestimento');
-                
-                // Verificação de segurança extra
-                if (element) {
-                    var ctx = element.getContext('2d');
-                    
-                    chartInvest = new Chart(ctx, {
-                        type: 'bar', 
-                        data: {
-                            labels: anosPresentes,
-                            datasets: datasets
-                        },
-                        options: {
-                            responsive: true,
-                            maintainAspectRatio: false,
-                            interaction: {
-                                mode: 'index',
-                                intersect: false,
-                            },
-                            scales: {
-                                x: {
-                                    display: true,
-                                    grid: { display: false },
-                                    ticks: {
-                                        color: '#0E2B69',
-                                        font: {
-                                            size: 14,
-                                            family: 'Roboto Flex, sans-serif',
-                                            weight: 600
-                                        }
-                                    }
-                                },
-                                y: {
-                                    type: 'linear',
-                                    display: true,
-                                    position: 'left',
-                                    title: { display: true, text: 'Valores (R$)' },
-                                    ticks: {
-                                        color: '#0E2B69',
-                                        callback: function(value) {
-                                            return 'R$ ' + value.toLocaleString('pt-BR', {
-                                                maximumFractionDigits: 0
-                                            });
-                                        }
-                                    }
-                                },
-                                y1: {
-                                    type: 'linear',
-                                    display: true,
-                                    position: 'right',
-                                    grid: {
-                                        drawOnChartArea: false 
-                                    },
-                                    title: { display: true, text: 'Percentual (%)' },
-                                    ticks: {
-                                        color: coresInvest.linha,
-                                        callback: function(value) {
-                                            return value + '%';
-                                        }
-                                    }
+        // --- SEGURANÇA ADICIONAL ---
+        // Verifica se o elemento existe no HTML antes de tentar desenhar
+        var element = document.getElementById('graficoInvestimento');
+        if (!element) return; // Se o elemento não existe, para aqui
+
+        var ctx = element.getContext('2d');
+
+        // Renderização do Gráfico
+        if (chartInvest) {
+            chartInvest.data.labels = anosPresentes;
+            chartInvest.data.datasets = datasets;
+            chartInvest.update();
+            
+        } else {
+            
+            chartInvest = new Chart(ctx, {
+                type: 'bar', 
+                data: {
+                    labels: anosPresentes,
+                    datasets: datasets
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: {
+                        mode: 'index',
+                        intersect: false,
+                    },
+                    scales: {
+                        x: {
+                            display: true,
+                            grid: { display: false },
+                            ticks: {
+                                color: '#0E2B69',
+                                font: {
+                                    size: 14,
+                                    family: 'Roboto Flex, sans-serif',
+                                    weight: 600
                                 }
+                            }
+                        },
+                        y: {
+                            type: 'linear',
+                            display: true,
+                            position: 'left',
+                            title: { display: true, text: 'Valores (R$)' },
+                            ticks: {
+                                color: '#0E2B69',
+                                callback: function(value) {
+                                    return 'R$ ' + value.toLocaleString('pt-BR', {
+                                        maximumFractionDigits: 0
+                                    });
+                                }
+                            }
+                        },
+                        y1: {
+                            type: 'linear',
+                            display: true,
+                            position: 'right',
+                            grid: {
+                                drawOnChartArea: false 
                             },
-                            plugins: {
-                                legend: {
-                                    display: true,
-                                    position: 'top',
-                                    labels: { usePointStyle: true }
-                                },
-                                tooltip: {
-                                    enabled: true,
-                                    callbacks: {
-                                        label: function(context) {
-                                            var label = context.dataset.label || '';
-                                            var value = context.raw;
-                                            if (context.dataset.type === 'line' || context.dataset.yAxisID === 'y1') {
-                                                return label + ': ' + value.toLocaleString('pt-BR', {minimumFractionDigits: 2}) + '%';
-                                            } else {
-                                                return label + ': R$ ' + value.toLocaleString('pt-BR', {minimumFractionDigits: 2});
-                                            }
-                                        }
-                                    }
-                                },
-                                datalabels: {
-                                    display: function(context) {
-                                        return context.dataset.type === 'line'; 
-                                    },
-                                    color: '#000',
-                                    font: { weight: 'bold' }
+                            title: { display: true, text: 'Percentual (%)' },
+                            ticks: {
+                                color: coresInvest.linha,
+                                callback: function(value) {
+                                    return value + '%';
                                 }
                             }
                         }
-                    });
+                    },
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'top',
+                            labels: { usePointStyle: true }
+                        },
+                        tooltip: {
+                            enabled: true,
+                            callbacks: {
+                                label: function(context) {
+                                    var label = context.dataset.label || '';
+                                    var value = context.raw;
+                                    if (context.dataset.type === 'line' || context.dataset.yAxisID === 'y1') {
+                                        return label + ': ' + value.toLocaleString('pt-BR', {minimumFractionDigits: 2}) + '%';
+                                    } else {
+                                        return label + ': R$ ' + value.toLocaleString('pt-BR', {minimumFractionDigits: 2});
+                                    }
+                                }
+                            }
+                        },
+                        datalabels: {
+                            display: function(context) {
+                                return context.dataset.type === 'line'; 
+                            },
+                            color: '#000',
+                            font: { weight: 'bold' }
+                        }
+                    }
                 }
-            }
-        }); // Fim do $timeout
+            });
+        }
     }
 }]]></client_script>
         <controller_as>c</controller_as>
@@ -358,14 +371,14 @@ h3, div, span {
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-11-27 01:37:39</sys_created_on>
         <sys_id>99758c94fb25fa50f6d5f9d38eefdc63</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>INVESTIMENTO - Empenhado x RCL</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_99758c94fb25fa50f6d5f9d38eefdc63</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-11-27 22:02:02</sys_updated_on>
+        <sys_updated_on>2025-12-11 01:24:44</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
   .chart-wrapper {

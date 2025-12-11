@@ -8,7 +8,6 @@
     $scope.anoSelecionadoTribunal = "";
     $scope.exibirGraficoTribunal = false;
     
-    
     var corTribunal = '#4b77bf'; 
     
     /**
@@ -22,10 +21,26 @@
             // Nota: Buscando 'dadosGraficoTribunal' que definiremos no Server Script
             var dados = response.data.dadosGraficoTribunal || [];
             
-            $timeout(function() {
+            // --- MUDANÇA AQUI: VERIFICAÇÃO SEGURA ---
+            verificarBibliotecaChart(function() {
                 montarGraficoTribunal(dados);
             });
         });
+    }
+
+    /**
+     * --- NOVA FUNÇÃO DE SEGURANÇA ---
+     * Garante que o Chart.js está carregado antes de tentar usar.
+     */
+    function verificarBibliotecaChart(callbackSucesso) {
+        if (typeof Chart !== 'undefined') {
+            callbackSucesso();
+        } else {
+            // Se ainda não carregou, espera 500ms e tenta de novo
+            $timeout(function() {
+                verificarBibliotecaChart(callbackSucesso);
+            }, 500);
+        }
     }
 
     // Escuta o evento global de mudança de ano
@@ -58,10 +73,12 @@
                 chartTribunal = null;
             }
             $scope.exibirGraficoTribunal = false;
+            $scope.$applyAsync(); // Atualiza a view
             return;
         }
         
         $scope.exibirGraficoTribunal = true;
+        $scope.$applyAsync(); // Atualiza a view para garantir o DOM
         
         // Mapeia os dados
         var dadosValores = anosPresentes.map(function(ano) {
@@ -91,7 +108,8 @@
         
         // --- AQUI: Pegando o contexto do NOVO ID "graficoTribunal" ---
         var ctxElement = document.getElementById('graficoTribunal');
-        if (!ctxElement) return; 
+        if (!ctxElement) return; // Segurança caso o DOM não tenha carregado
+        
         var ctx = ctxElement.getContext('2d');
         
         if (chartTribunal) {
@@ -309,14 +327,14 @@ h3, div, span {
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-11-27 00:10:56</sys_created_on>
         <sys_id>cb91f3c8fba1fa50f6d5f9d38eefdc24</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>SUPERAVIT - Tribunal de Contas</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_cb91f3c8fba1fa50f6d5f9d38eefdc24</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-11-27 00:13:17</sys_updated_on>
+        <sys_updated_on>2025-12-11 01:20:18</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 

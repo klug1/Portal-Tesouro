@@ -20,10 +20,27 @@
             var dados = response.data.dadosGraficoEnd || [];
             var anosDisponiveis = response.data.anos || [];
 
-            $timeout(function() {
+            // --- ALTERAÇÃO: VERIFICAÇÃO DE BIBLIOTECA ---
+            // Substituímos o $timeout direto pela função de verificação segura
+            verificarBibliotecaChart(function() {
                 montarGraficoEnd(dados, anosDisponiveis);
             });
         });
+    }
+
+    /**
+     * --- NOVA FUNÇÃO DE SEGURANÇA ---
+     * Verifica se a biblioteca Chart.js já foi carregada.
+     */
+    function verificarBibliotecaChart(callbackSucesso) {
+        if (typeof Chart !== 'undefined') {
+            callbackSucesso();
+        } else {
+            // Se ainda não carregou, espera 500ms e tenta de novo
+            $timeout(function() {
+                verificarBibliotecaChart(callbackSucesso);
+            }, 500);
+        }
     }
 
     // Escuta o evento do filtro de ano
@@ -56,9 +73,11 @@
                 chartEnd = null;
             }
             $scope.exibirGraficoEnd = false;
+            $scope.$applyAsync(); // Atualiza a view
             return;
         }
         $scope.exibirGraficoEnd = true;
+        $scope.$applyAsync(); // Atualiza a view
 
         var isSingleYear = (anosPresentes.length === 1);
 
@@ -145,7 +164,11 @@
             pointBorderWidth: 0
         }];
 
-        var ctx = document.getElementById('graficoCaixaLiquido').getContext('2d');
+        // --- SEGURANÇA ADICIONAL ---
+        var canvasElement = document.getElementById('graficoCaixaLiquido');
+        if (!canvasElement) return;
+
+        var ctx = canvasElement.getContext('2d');
 
         if (chartEnd) {
             chartEnd.destroy();
@@ -252,8 +275,7 @@
             }
         });
     }
-}
-]]></client_script>
+}]]></client_script>
         <controller_as>c</controller_as>
         <css>canvas {
   display: block;
@@ -384,14 +406,14 @@ h3, div, span {
         <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
         <sys_created_on>2025-11-19 23:58:03</sys_created_on>
         <sys_id>028baf39fbd57e10f6d5f9d38eefdca0</sys_id>
-        <sys_mod_count>14</sys_mod_count>
+        <sys_mod_count>15</sys_mod_count>
         <sys_name>PAF Caixa Liquido</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_028baf39fbd57e10f6d5f9d38eefdca0</sys_update_name>
-        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-11-20 03:11:00</sys_updated_on>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-11 01:09:51</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 

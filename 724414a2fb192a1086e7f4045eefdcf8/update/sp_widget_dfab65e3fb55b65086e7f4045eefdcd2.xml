@@ -25,11 +25,28 @@
             // Lendo a nova variável de dados vinda do Server Script
             var dados = response.data.dadosGraficoDespPessoal || [];
             var anosDisponiveis = response.data.anos || [];
-           
-            $timeout(function() {
+            
+            // --- MUDANÇA AQUI ---
+            // Substituímos o $timeout direto pela função de verificação segura
+            verificarBibliotecaChart(function() {
                 montarGraficoDespPessoal(dados, anosDisponiveis);
             });
         });
+    }
+
+    /**
+     * --- NOVA FUNÇÃO DE SEGURANÇA ---
+     * Verifica se a biblioteca Chart.js já foi carregada.
+     */
+    function verificarBibliotecaChart(callbackSucesso) {
+        if (typeof Chart !== 'undefined') {
+            callbackSucesso();
+        } else {
+            // Se ainda não carregou, espera 500ms e tenta de novo
+            $timeout(function() {
+                verificarBibliotecaChart(callbackSucesso);
+            }, 500);
+        }
     }
 
     // O evento 'anoSelecionado' geralmente vem de um filtro global. 
@@ -50,7 +67,7 @@
                 anosPresentes.push(item.ano);
             }
         });
-        
+       
         anosPresentes.sort(function(a, b) {
             return parseInt(a) - parseInt(b);
         });
@@ -62,9 +79,11 @@
                 chartDespPessoal = null;
             }
             $scope.exibirGraficoDespPessoal = false;
+            $scope.$applyAsync(); // Segurança para atualizar a view
             return;
         }
         $scope.exibirGraficoDespPessoal = true;
+        $scope.$applyAsync(); // Segurança para atualizar a view
        
         var dadosApurado = anosPresentes.map(function(ano) {
             var item = listaDados.find(function(d) { return d.ano === ano; });
@@ -94,7 +113,7 @@
             datasets[0].borderWidth = 4;
             datasets[0].pointStyle = 'circle';
             datasets[0].pointRadius = 10;
-            
+           
             datasets[1].borderColor = coresDespPessoal.meta;
             datasets[1].backgroundColor = coresDespPessoal.meta;
             datasets[1].borderWidth = 4;
@@ -104,7 +123,7 @@
             datasets[0].backgroundColor = coresDespPessoal.apurado;
             datasets[0].borderColor = coresDespPessoal.apurado;
             datasets[0].borderWidth = 1;
-            
+           
             datasets[1].backgroundColor = coresDespPessoal.meta;
             datasets[1].borderColor = coresDespPessoal.meta;
             datasets[1].borderWidth = 1;
@@ -114,14 +133,18 @@
         datasets[0].pointBackgroundColor = coresDespPessoal.apurado;
         datasets[0].pointBorderColor = coresDespPessoal.apurado;
         datasets[0].pointBorderWidth = 0;
-        
+       
         datasets[1].pointStyle = 'rect';
         datasets[1].pointBackgroundColor = coresDespPessoal.meta;
         datasets[1].pointBorderColor = coresDespPessoal.meta;
         datasets[1].pointBorderWidth = 0;
        
-        // ATENÇÃO: Pegando o novo ID do canvas
-        var ctx = document.getElementById('graficoDespPessoalLinha').getContext('2d');
+        // --- SEGURANÇA ADICIONAL ---
+        // Verifica se o elemento existe no HTML antes de tentar desenhar
+        var canvasElement = document.getElementById('graficoDespPessoalLinha');
+        if (!canvasElement) return;
+
+        var ctx = canvasElement.getContext('2d');
        
         if (chartDespPessoal) {
             if (chartDespPessoal.config.type !== desiredType) {
@@ -344,14 +367,14 @@ h3, div, span {
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-11-25 01:08:49</sys_created_on>
         <sys_id>dfab65e3fb55b65086e7f4045eefdcd2</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>PAF Despesa com Pessoal</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_dfab65e3fb55b65086e7f4045eefdcd2</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-11-27 01:33:36</sys_updated_on>
+        <sys_updated_on>2025-12-11 01:07:23</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
   

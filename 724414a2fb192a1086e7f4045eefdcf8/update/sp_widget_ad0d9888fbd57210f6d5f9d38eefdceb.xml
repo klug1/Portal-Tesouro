@@ -2,7 +2,7 @@
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
         <client_script><![CDATA[function($scope, $rootScope, $timeout) {
-    var chartCapag = null; 
+    var chartCapag = null;
     
     $scope.anoSelecionadoCapag = ""; 
     $scope.exibirGraficoCapag = false;
@@ -35,10 +35,31 @@
             var dados = response.data.dadosGraficoCapag || [];
             var anosDisponiveis = response.data.anos || [];
 
-            $timeout(function() {
+            // --- ALTERAÇÃO AQUI ---
+            // Em vez de chamar o montarGraficoCapag diretamente, chamamos a verificação
+            verificarBibliotecaChart(function() {
                 montarGraficoCapag(dados, anosDisponiveis); 
-            }, 300);
+            });
         });
+    }
+
+    /**
+     * --- NOVA FUNÇÃO DE SEGURANÇA ---
+     * Verifica se a biblioteca Chart.js já foi carregada pelo navegador.
+     * Se não, espera 500ms e tenta novamente.
+     */
+    function verificarBibliotecaChart(callbackSucesso) {
+        if (typeof Chart !== 'undefined') {
+            // A biblioteca existe, pode executar o código do gráfico
+            callbackSucesso();
+        } else {
+            // A biblioteca ainda não carregou (race condition).
+            // Aguarda meio segundo e verifica de novo (recursividade).
+            // console.warn("Chart.js ainda não carregou. Aguardando..."); 
+            $timeout(function() {
+                verificarBibliotecaChart(callbackSucesso);
+            }, 500);
+        }
     }
 
     // Escuta o evento de mudança de ano disparado pelo seu filtro
@@ -106,7 +127,10 @@
         $scope.$applyAsync();
 
         var maxValor = 100;
-        var ctx = document.getElementById('graficoCapagBarra').getContext('2d');
+        // Importante: garante que o elemento existe antes de pegar o contexto
+        var canvasElement = document.getElementById('graficoCapagBarra');
+        if (!canvasElement) return; // Segurança extra
+        var ctx = canvasElement.getContext('2d');
 
         if (chartCapag) {
             // APLICA O MÉTODO UPDATE PARA TRANSIÇÃO SUAVE
@@ -338,14 +362,14 @@ h3, div {
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-11-13 22:26:26</sys_created_on>
         <sys_id>ad0d9888fbd57210f6d5f9d38eefdceb</sys_id>
-        <sys_mod_count>60</sys_mod_count>
+        <sys_mod_count>61</sys_mod_count>
         <sys_name>Capag Grafico Fase 2</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_ad0d9888fbd57210f6d5f9d38eefdceb</sys_update_name>
-        <sys_updated_by>pk.aba</sys_updated_by>
-        <sys_updated_on>2025-11-15 09:32:40</sys_updated_on>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-11 01:03:05</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 

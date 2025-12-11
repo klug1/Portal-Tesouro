@@ -2,7 +2,7 @@
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
         <client_script><![CDATA[function($scope, $rootScope, $timeout) {
-    var chartCAED = null; // Variável renomeada
+    var chartCAED = null; 
 
     $scope.anoSelecionadoCAED = ""; 
     $scope.exibirGraficoCAED = false;
@@ -26,10 +26,26 @@
         $scope.server.get(filtros).then(function(response) {
             var dados = response.data.dadosGraficoCAED || [];
             
-            $timeout(function() {
+            // --- MUDANÇA AQUI: VERIFICAÇÃO SEGURA ---
+            verificarBibliotecaChart(function() {
                 montarGraficoCAED(dados);
             });
         });
+    }
+
+    /**
+     * --- NOVA FUNÇÃO DE SEGURANÇA ---
+     * Garante que o Chart.js está carregado antes de tentar usar.
+     */
+    function verificarBibliotecaChart(callbackSucesso) {
+        if (typeof Chart !== 'undefined') {
+            callbackSucesso();
+        } else {
+            // Se ainda não carregou, espera 500ms e tenta de novo
+            $timeout(function() {
+                verificarBibliotecaChart(callbackSucesso);
+            }, 500);
+        }
     }
 
     carregarDadosCAEDFiltrado();
@@ -55,10 +71,12 @@
                 chartCAED = null;
             }
             $scope.exibirGraficoCAED = false;
+            $scope.$applyAsync(); // Atualiza a view
             return;
         }
         
         $scope.exibirGraficoCAED = true;
+        $scope.$applyAsync(); // Garante renderização do DOM
 
         function parseValue(val) {
             if (!val) return null;
@@ -82,10 +100,17 @@
 
         var maxVal = todosValores.length > 0 ? Math.max.apply(null, todosValores) : 100;
         var minVal = todosValores.length > 0 ? Math.min.apply(null, todosValores) : 0;
+        
         var PADDING_FIXO = (maxVal - minVal) * 0.1; 
         if (PADDING_FIXO === 0) PADDING_FIXO = 5;
+        
         var scaleMax = maxVal + PADDING_FIXO;
         var scaleMin = minVal >= 0 ? 0 : minVal - PADDING_FIXO;
+
+        // --- SEGURANÇA ADICIONAL ---
+        // Verifica se o elemento existe no HTML antes de tentar desenhar
+        var canvasElement = document.getElementById('graficoResultadoCAED');
+        if (!canvasElement) return;
 
         // --- LÓGICA DE UPDATE SUAVE ---
         
@@ -103,8 +128,7 @@
             
         } else {
             // SE O GRÁFICO NÃO EXISTE: Cria do zero
-            // IMPORTANTE: Busca pelo ID do CAED
-            var ctx = document.getElementById('graficoResultadoCAED').getContext('2d');
+            var ctx = canvasElement.getContext('2d');
             
             var datasets = [{
                 label: 'Realizado',
@@ -330,14 +354,14 @@ h3, div, span {
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-11-25 22:06:13</sys_created_on>
         <sys_id>267b82fbfb517a50f6d5f9d38eefdc02</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>LDE - CAED Grafico</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_267b82fbfb517a50f6d5f9d38eefdc02</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-11-25 22:08:26</sys_updated_on>
+        <sys_updated_on>2025-12-11 01:17:00</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
   

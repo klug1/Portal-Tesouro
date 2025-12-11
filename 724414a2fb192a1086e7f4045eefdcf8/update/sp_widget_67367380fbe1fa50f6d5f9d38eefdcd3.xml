@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller = function($scope, $rootScope, $timeout) {
+        <client_script><![CDATA[function($scope, $rootScope, $timeout) {
     // Variável única para este gráfico (Defensoria)
     var chartDefensoria = null;
     
@@ -22,10 +22,26 @@
             // Nota: Buscando 'dadosGraficoDefensoria' do Server Script
             var dados = response.data.dadosGraficoDefensoria || [];
             
-            $timeout(function() {
+            // --- MUDANÇA AQUI: VERIFICAÇÃO SEGURA ---
+            verificarBibliotecaChart(function() {
                 montarGraficoDefensoria(dados);
             });
         });
+    }
+
+    /**
+     * --- NOVA FUNÇÃO DE SEGURANÇA ---
+     * Garante que o Chart.js está carregado antes de tentar usar.
+     */
+    function verificarBibliotecaChart(callbackSucesso) {
+        if (typeof Chart !== 'undefined') {
+            callbackSucesso();
+        } else {
+            // Se ainda não carregou, espera 500ms e tenta de novo
+            $timeout(function() {
+                verificarBibliotecaChart(callbackSucesso);
+            }, 500);
+        }
     }
 
     // Escuta o evento global de mudança de ano
@@ -58,10 +74,12 @@
                 chartDefensoria = null;
             }
             $scope.exibirGraficoDefensoria = false;
+            $scope.$applyAsync(); // Atualiza a view
             return;
         }
         
         $scope.exibirGraficoDefensoria = true;
+        $scope.$applyAsync(); // Atualiza a view para garantir o DOM
         
         // Mapeia os dados
         var dadosValores = anosPresentes.map(function(ano) {
@@ -91,7 +109,8 @@
         
         // --- AQUI: Pegando o contexto do NOVO ID "graficoDefensoria" ---
         var ctxElement = document.getElementById('graficoDefensoria');
-        if (!ctxElement) return; 
+        if (!ctxElement) return; // Segurança caso o DOM não tenha carregado
+
         var ctx = ctxElement.getContext('2d');
         
         if (chartDefensoria) {
@@ -309,14 +328,14 @@ h3, div, span {
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-11-27 00:31:11</sys_created_on>
         <sys_id>67367380fbe1fa50f6d5f9d38eefdcd3</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>SUPERAVIT - Defensoria</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_67367380fbe1fa50f6d5f9d38eefdcd3</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-11-27 00:32:41</sys_updated_on>
+        <sys_updated_on>2025-12-11 01:23:17</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 

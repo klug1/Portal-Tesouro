@@ -13,6 +13,9 @@
         meta: '#4b77bf'
     };
 
+    /**
+     * Função para carregar os dados do servidor com filtro de ano
+     */
     function carregarDadosResultPrimFiltrado() {
         var filtros = {
             ano: $scope.anoSelecionadoResultPrim || ""
@@ -22,10 +25,27 @@
             var dados = response.data.dadosGraficoResultPrim || [];
             var anosDisponiveis = response.data.anos || [];
 
-            $timeout(function() {
+            // --- ALTERAÇÃO: VERIFICAÇÃO DE BIBLIOTECA ---
+            // Substituímos o $timeout direto pela função de verificação segura
+            verificarBibliotecaChart(function() {
                 montarGraficoResultPrim(dados, anosDisponiveis);
             });
         });
+    }
+
+    /**
+     * --- NOVA FUNÇÃO DE SEGURANÇA ---
+     * Verifica se a biblioteca Chart.js já foi carregada.
+     */
+    function verificarBibliotecaChart(callbackSucesso) {
+        if (typeof Chart !== 'undefined') {
+            callbackSucesso();
+        } else {
+            // Se ainda não carregou, espera 500ms e tenta de novo
+            $timeout(function() {
+                verificarBibliotecaChart(callbackSucesso);
+            }, 500);
+        }
     }
 
     $rootScope.$on('anoSelecionado', function(event, ano) {
@@ -55,9 +75,11 @@
                 chartResultPrim = null;
             }
             $scope.exibirGraficoResultPrim = false;
+            $scope.$applyAsync(); // Atualiza a view
             return;
         }
         $scope.exibirGraficoResultPrim = true;
+        $scope.$applyAsync(); // Atualiza a view
 
         var dadosApurado = anosPresentes.map(function(ano) {
             var item = listaDados.find(function(d) { return d.ano === ano; });
@@ -102,7 +124,7 @@
         var maxVal = todosValores.length > 0 ? Math.max.apply(null, todosValores) : 100;
         var minVal = todosValores.length > 0 ? Math.min.apply(null, todosValores) : 0;
 
-        var PADDING_FIXO = 100; // Atenção: Ajustar se os valores forem muito pequenos pós divisão, mas aqui é valor bruto
+        var PADDING_FIXO = 100; 
         var scaleMax;
         var scaleMin;
 
@@ -126,7 +148,7 @@
             backgroundColor: coresResultPrim.apurado,
             borderColor: coresResultPrim.apurado,
             borderWidth: 1
-        },{
+        }, {
             label: 'Meta',
             data: dadosMeta,
             backgroundColor: coresResultPrim.meta,
@@ -134,15 +156,18 @@
             borderWidth: 1
         }];
 
-        datasets.forEach(function(ds, index){
+        datasets.forEach(function(ds, index) {
             ds.pointStyle = 'rect';
             ds.pointBackgroundColor = ds.backgroundColor;
             ds.pointBorderColor = ds.backgroundColor;
             ds.pointBorderWidth = 0;
         });
 
-        // ATENÇÃO: Pegando o novo ID
-        var ctx = document.getElementById('graficoResultPrim').getContext('2d');
+        // --- SEGURANÇA ADICIONAL ---
+        var canvasElement = document.getElementById('graficoResultPrim');
+        if (!canvasElement) return;
+
+        var ctx = canvasElement.getContext('2d');
 
         if (chartResultPrim) {
             chartResultPrim.destroy();
@@ -185,9 +210,8 @@
                     y: {
                         display: true,
                         position: 'right',
-                        min: scaleMin, // Se quiser usar a escala calculada
-                        max: scaleMax, // Se quiser usar a escala calculada
-                        // Se preferir automático, remova min/max
+                        min: scaleMin, 
+                        max: scaleMax, 
                         ticks: {
                             callback: function(value) {
                                 var scaled = value / divisorEscala;
@@ -240,7 +264,9 @@
                             }) + unidadeEscala;
                         },
                         color: '#000',
-                        font: { weight: 'bold' }
+                        font: {
+                            weight: 'bold'
+                        }
                     }
                 }
             }
@@ -377,14 +403,14 @@ h3, div, span {
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-11-25 01:20:50</sys_created_on>
         <sys_id>6b6e292bfb55b65086e7f4045eefdc6f</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>PAF Arrecadação Propria</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_6b6e292bfb55b65086e7f4045eefdc6f</sys_update_name>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-11-25 01:28:23</sys_updated_on>
+        <sys_updated_on>2025-12-11 01:08:25</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
   
