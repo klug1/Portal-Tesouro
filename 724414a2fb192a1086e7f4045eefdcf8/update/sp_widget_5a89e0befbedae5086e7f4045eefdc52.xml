@@ -284,59 +284,72 @@ canvas {
         <public>true</public>
         <roles/>
         <script><![CDATA[(function() {
-  var gr = new GlideRecord('x_sded9_portal_t_0_u_despesa_pessoal');
-  gr.addQuery('u_ano', '>=', 2019);
-  gr.addQuery('u_ano', '<=', 2024);
-  gr.orderBy('u_ano');
-  gr.query();
+    
+    if (!gs.isLoggedIn()) {
+        data.isLoggedIn = false;
+    
+        data.chartBarData = []; 
+        data.temDados = false;
+        return; 
+    }
+    
+    data.isLoggedIn = true;
+    
+    var gr = new GlideRecord('x_sded9_portal_t_0_u_despesa_pessoal');
+    gr.addQuery('u_ano', '>=', 2019);
+    gr.addQuery('u_ano', '<=', 2024);
+    
+   
+    
+    gr.orderBy('u_ano');
+    gr.query();
 
-  var dados = [];
-  while (gr.next()) {
-    dados.push({
-      ano: gr.getValue('u_ano'),
-      ativo: parseFloat(gr.getValue('u_despesa_liquida_pedidos')) / 1,
-      inativo: parseFloat(gr.getValue('u_receita_corrente_liquida')) / 1,
-      comprometimento: parseFloat(gr.getValue('u_comprometimento_rcl')) || 0
-    });
-  }
-
-  data.chartBarData = dados;
-})();
-]]></script>
+    var dados = [];
+    while (gr.next()) {
+        dados.push({
+            ano: gr.getValue('u_ano'),
+            ativo: parseFloat(gr.getValue('u_despesa_liquida_pedidos')) / 1,
+            inativo: parseFloat(gr.getValue('u_receita_corrente_liquida')) / 1,
+            comprometimento: parseFloat(gr.getValue('u_comprometimento_rcl')) || 0
+        });
+    }
+   
+    data.chartBarData = dados;
+    
+    data.temDados = (dados.length > 0);
+    
+})();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-20 02:28:56</sys_created_on>
         <sys_id>5a89e0befbedae5086e7f4045eefdc52</sys_id>
-        <sys_mod_count>86</sys_mod_count>
+        <sys_mod_count>89</sys_mod_count>
         <sys_name>WIdget Despesa Line/Bar v2</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_5a89e0befbedae5086e7f4045eefdc52</sys_update_name>
         <sys_updated_by>leandro.silva@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-12-08 19:47:11</sys_updated_on>
-        <template><![CDATA[<div class="chart-wrapper">
-  <h3 style="text-align:center; font-weight: 600; margin-bottom: 16px;">
-      <!--Limites com despesas de pessoal - Consolidado-->
-  </h3>
+        <sys_updated_on>2025-12-15 13:02:26</sys_updated_on>
+        <template><![CDATA[<div ng-if="data.isLoggedIn">
+    <div class="chart-wrapper">
+        <h3 style="text-align:center; font-weight: 600; margin-bottom: 16px;">
+            </h3>
 
-  <!-- Mostrar o gráfico só se tiver dados -->
-  <div class="chart-container" style="margin-top: 16px;" ng-show="temDados">
-      <canvas id="graficoBarra"></canvas>
-  </div>
+        <div class="chart-container" style="margin-top: 16px;" ng-show="data.temDados">
+            <canvas id="graficoBarra"></canvas>
+        </div>
 
-  <!-- Mostrar mensagem quando não tiver dados -->
-  <div class="report-widget panel mensagem" 
-       ng-show="!temDados">
-    <div class="panel-heading">
-      <h2 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i> </h2>
+        <div class="report-widget panel mensagem" ng-show="!data.temDados">
+            <div class="panel-heading">
+                <h2 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i> </h2>
+            </div>
+            <div class="panel-body" style="text-align: center; font-size: 1.2em;">
+                Nenhum dado disponível para o ano selecionado.
+            </div>
+        </div>
     </div>
-    <div class="panel-body" style="text-align: center; font-size: 1.2em;">
-      Nenhum dado disponível para o ano selecionado.
-    </div>
-  </div>
-</div>
-]]></template>
+</div>]]></template>
     </sp_widget>
 </record_update>

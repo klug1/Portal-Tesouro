@@ -284,22 +284,21 @@ canvas {
         <docs/>
         <field_list/>
         <has_preview>true</has_preview>
-        <id>ldpe_grafico</id>
+        <id>idpe-grafico-publico</id>
         <internal>false</internal>
         <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
-        <name>ldpe - grafico</name>
+        <name>idpe-grafico-publico</name>
         <option_schema/>
         <public>true</public>
         <roles/>
         <script><![CDATA[(function() {
-	if (!gs.isLoggedIn()) {
-        data.isLoggedIn = false;
-       
-        data.dados = []; 
+	if (gs.isLoggedIn()) {
+        data.isLoggedIn = true; 
         return; 
     }
     
-    data.isLoggedIn = true;
+    data.isLoggedIn = false;
+    
   var gr = new GlideRecord('x_sded9_portal_t_0_u_despesa_pessoal');
   gr.addQuery('u_ano', '>=', 2019);
   gr.addQuery('u_ano', '<=', 2024);
@@ -318,25 +317,25 @@ canvas {
   }
 	
 	
-
+	data.temDados = (dados.length > 0);
   data.chartBarData = dados;
 	
 })();
 ]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
-        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
-        <sys_created_on>2025-11-05 02:35:42</sys_created_on>
-        <sys_id>c5cfba45fb49f210f6d5f9d38eefdc5f</sys_id>
-        <sys_mod_count>30</sys_mod_count>
-        <sys_name>ldpe - grafico</sys_name>
+        <sys_created_by>leandro.silva@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-12-15 13:36:07</sys_created_on>
+        <sys_id>51861746fb79fe1086e7f4045eefdce6</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>idpe-grafico-publico</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_update_name>sp_widget_c5cfba45fb49f210f6d5f9d38eefdc5f</sys_update_name>
+        <sys_update_name>sp_widget_51861746fb79fe1086e7f4045eefdce6</sys_update_name>
         <sys_updated_by>leandro.silva@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-12-15 13:35:28</sys_updated_on>
-        <template><![CDATA[<div ng-if="data.isLoggedIn">
+        <sys_updated_on>2025-12-15 13:39:45</sys_updated_on>
+        <template><![CDATA[<div ng-if="!data.isLoggedIn"> 
 <style>
 
 </style>

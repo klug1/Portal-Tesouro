@@ -535,6 +535,14 @@ canvas{display:block;margin:0 auto;max-width:100%;height:auto}
         <public>true</public>
         <roles/>
         <script><![CDATA[(function() {
+	if (!gs.isLoggedIn()) {
+        data.isLoggedIn = false;
+       
+        data.dados = []; 
+        return; 
+    }
+    
+    data.isLoggedIn = true;
   var anoFiltrado = (typeof input !== 'undefined' && input.filtro_ano) ? input.filtro_ano : '';
   var gr = new GlideRecord('x_sded9_portal_t_0_u_despesa_pessoal');
 
@@ -561,15 +569,16 @@ canvas{display:block;margin:0 auto;max-width:100%;height:auto}
         <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
         <sys_created_on>2025-11-05 15:17:40</sys_created_on>
         <sys_id>b62ee199fb093610f6d5f9d38eefdcc9</sys_id>
-        <sys_mod_count>17</sys_mod_count>
+        <sys_mod_count>19</sys_mod_count>
         <sys_name>Limite com Despesas Executivo SemiDonut</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_b62ee199fb093610f6d5f9d38eefdcc9</sys_update_name>
-        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-12-04 02:31:20</sys_updated_on>
+        <sys_updated_by>leandro.silva@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-15 13:32:38</sys_updated_on>
         <template><![CDATA[<!-- Fonte -->
+<div ng-if="data.isLoggedIn">
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,400;600;700&display=swap" rel="stylesheet">
 
 <div class="report-widget panel"
@@ -664,6 +673,7 @@ canvas{display:block;margin:0 auto;max-width:100%;height:auto}
   <div class="panel-body">
     <p class="nodata">Nenhum dado disponível para o ano selecionado.</p>
   </div>
+</div>
 </div>
 ]]></template>
     </sp_widget>

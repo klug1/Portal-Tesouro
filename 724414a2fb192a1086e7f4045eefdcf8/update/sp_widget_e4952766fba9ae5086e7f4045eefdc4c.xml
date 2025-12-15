@@ -531,27 +531,39 @@ canvas{display:block;margin:0 auto;max-width:100%;height:auto}
         <public>true</public>
         <roles/>
         <script><![CDATA[(function() {
-  var anoFiltrado = (typeof input !== 'undefined' && input.filtro_ano) ? input.filtro_ano : '';
-  var gr = new GlideRecord('x_sded9_portal_t_0_u_despesa_pessoal');
+   
+    if (!gs.isLoggedIn()) {
+        data.isLoggedIn = false;
+       
+        data.dados = []; 
+        return; 
+    }
+    
+    // Se o usuário ESTIVER logado, execute a lógica de dados.
+    data.isLoggedIn = true;
+    
+    // --- LÓGICA DE NEGÓCIO ---
+    
+    var anoFiltrado = (typeof input !== 'undefined' && input.filtro_ano) ? input.filtro_ano : '';
+    var gr = new GlideRecord('x_sded9_portal_t_0_u_despesa_pessoal');
 
-  if (anoFiltrado) {
-    gr.addQuery('u_ano', anoFiltrado);
-  }
+    if (anoFiltrado) {
+        gr.addQuery('u_ano', anoFiltrado);
+    }
 
-  gr.orderByDesc('u_ano');
-  gr.query();
+    gr.orderByDesc('u_ano');
+    gr.query();
 
-  var dados = [];
-  while (gr.next()) {
-    dados.push({
-      ano: gr.getValue('u_ano'),
-      comprometimento: parseFloat(gr.getValue('u_comprometimento_rcl')) || 0
-    });
-  }
-	
-	//gs.addInfoMessage(JSON.stringify(dados));
-
-  data.dados = dados;
+    var dados = [];
+    while (gr.next()) {
+        dados.push({
+            ano: gr.getValue('u_ano'),
+            comprometimento: parseFloat(gr.getValue('u_comprometimento_rcl')) || 0
+        });
+    }
+    
+   
+    data.dados = dados;
 })();
 ]]></script>
         <servicenow>false</servicenow>
@@ -559,111 +571,95 @@ canvas{display:block;margin:0 auto;max-width:100%;height:auto}
         <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-05-19 21:32:00</sys_created_on>
         <sys_id>e4952766fba9ae5086e7f4045eefdc4c</sys_id>
-        <sys_mod_count>369</sys_mod_count>
+        <sys_mod_count>374</sys_mod_count>
         <sys_name>Widget Limite com Despesas SemiDonut</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sp_widget_e4952766fba9ae5086e7f4045eefdc4c</sys_update_name>
-        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-12-04 02:03:57</sys_updated_on>
-        <template><![CDATA[<!-- Fonte -->
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,400;600;700&display=swap" rel="stylesheet">
+        <sys_updated_by>leandro.silva@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-15 13:10:23</sys_updated_on>
+        <template><![CDATA[<div ng-if="data.isLoggedIn">
 
-<div class="report-widget panel"
-     ng-show="anoSelecionado !== '' && anoSelecionado != null && dadosVisiveis"
-     ng-class="{'fade-out': isFading}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,400;600;700&display=swap" rel="stylesheet">
 
-  <!--div class="panel-heading">
-    <h2 class="panel-title">
-      <i class="fa fa-tachometer m-r"></i>
-      {{::c.options.title || 'Despesa com Pessoal - Consolidado'}}
-    </h2>
-  </div-->
+    <div class="report-widget panel"
+        ng-show="anoSelecionado !== '' && anoSelecionado != null && dadosVisiveis"
+        ng-class="{'fade-out': isFading}">
 
-  <div class="panel-body">
-    <!-- Gauge -->
-    <div class="chart-wrap">
-      <div class="chart-container">
-        <canvas id="gaugeChart" width="800" height="250"></canvas>
-        <canvas id="gaugePointer" width="800" height="250" class="pointer-canvas"></canvas>
+        <div class="panel-body">
+            <div class="chart-wrap">
+                <div class="chart-container">
+                    <canvas id="gaugeChart" width="800" height="250"></canvas>
+                    <canvas id="gaugePointer" width="800" height="250" class="pointer-canvas"></canvas>
 
-        <!-- escala 0% / 100% -->
-        <div class="gauge-scale">
-          <span class="scale-min">0%</span>
-          <span class="scale-max">100%</span>
+                    <div class="gauge-scale">
+                        <span class="scale-min">0%</span>
+                        <span class="scale-max">100%</span>
+                    </div>
+                </div>
+            </div>
+
+            <section class="legend">
+                <article class="legend-item">
+                    <span class="legend-dot" style="--dot:#8BC34A"></span>
+                    <div class="legend-text">
+                        <h4>Verde — Abaixo do Alerta (0%–54,00%)</h4>
+                        <p>Despesas sob controle. Há folga para manter equilíbrio e planejar aumentos com segurança.</p>
+                    </div>
+                </article>
+
+                <article class="legend-item">
+                    <span class="legend-dot" style="--dot:#FFEB3B"></span>
+                    <div class="legend-text">
+                        <h4>Amarelo — Limite de Alerta (54%–57%)</h4>
+                        <p>Sinal de atenção. Tribunal de Contas alerta para conter o avanço dos gastos com pessoal.</p>
+                    </div>
+                </article>
+                
+                <article class="legend-item">
+                    <span class="legend-dot" style="--dot:#FF9800"></span>
+                    <div class="legend-text">
+                        <h4>Laranja — Limite Prudencial (57%–60%)</h4>
+                        <p>Risco fiscal. A lei restringe reajustes, novos cargos e contratações.</p>
+                    </div>
+                </article>
+
+                <article class="legend-item">
+                    <span class="legend-dot" style="--dot:#F44336"></span>
+                    <div class="legend-text">
+                        <h4>Vermelho Claro — Limite Máximo (60%)</h4>
+                        <p>Teto legal da LRF atingido. Não pode ser ultrapassado.</p>
+                    </div>
+                </article>
+
+                <article class="legend-item">
+                    <span class="legend-dot" style="--dot:#8C0C03"></span>
+                    <div class="legend-text">
+                        <h4>Vermelho Escuro — Acima do Limite (60%–100%)</h4>
+                        <p>Situação crítica. Estado deve cortar despesas e fica impedido de contratar novos empréstimos e receber transferência voluntária.</p>
+                    </div>
+                </article>
+            </section>
+
+            <div class="resume">
+                <strong>{{latestYear}}</strong> – Comprometimento RCL com Pessoal:
+                <strong>{{dadosVisiveis.comprometimento}}%</strong>
+            </div>
         </div>
-      </div>
     </div>
 
-    <!-- Legenda (cards) -->
-    <section class="legend">
-      <!-- Item Verde -->
-      <article class="legend-item">
-        <span class="legend-dot" style="--dot:#8BC34A"></span>
-        <div class="legend-text">
-          <h4>Verde — Abaixo do Alerta (0%–54,00%)</h4>
-          <p>Despesas sob controle. Há folga para manter equilíbrio e planejar aumentos com segurança.</p>
+    <div class="report-widget panel empty" ng-show="!dadosVisiveis">
+        <div class="panel-heading">
+            <h2 class="panel-title">
+                <i class="fa fa-tachometer m-r"></i>
+                {{::c.options.title || 'Limites com Despesas de Pessoal'}}
+            </h2>
         </div>
-      </article>
-
-      <!-- Item Amarelo -->
-      <article class="legend-item">
-        <span class="legend-dot" style="--dot:#FFEB3B"></span>
-        <div class="legend-text">
-          <h4>Amarelo — Limite de Alerta (54%–57%)</h4>
-          <p>Sinal de atenção. Tribunal de Contas alerta para conter o avanço dos gastos com pessoal.</p>
+        <div class="panel-body">
+            <p class="nodata">Nenhum dado disponível para o ano selecionado.</p>
         </div>
-      </article>
-
-      <!-- Item Laranja -->
-      <article class="legend-item">
-        <span class="legend-dot" style="--dot:#FF9800"></span>
-        <div class="legend-text">
-          <h4>Laranja — Limite Prudencial (57%–60%)</h4>
-          <p>Risco fiscal. A lei restringe reajustes, novos cargos e contratações.</p>
-        </div>
-      </article>
-
-      <!-- Item Vermelho Claro -->
-      <article class="legend-item">
-        <span class="legend-dot" style="--dot:#F44336"></span>
-        <div class="legend-text">
-          <h4>Vermelho Claro — Limite Máximo (60%)</h4>
-          <p>Teto legal da LRF atingido. Não pode ser ultrapassado.</p>
-        </div>
-      </article>
-
-      <!-- Item Vermelho Escuro -->
-      <article class="legend-item">
-        <span class="legend-dot" style="--dot:#8C0C03"></span>
-        <div class="legend-text">
-          <h4>Vermelho Escuro — Acima do Limite (60%–100%)</h4>
-          <p>Situação crítica. Estado deve cortar despesas e fica impedido de contratar novos empréstimos e receber transferência voluntária.</p>
-        </div>
-      </article>
-    </section>
-
-    <!-- Valor/ano -->
-    <div class="resume">
-      <strong>{{latestYear}}</strong> – Comprometimento RCL com Pessoal:
-      <strong>{{dadosVisiveis.comprometimento}}%</strong>
     </div>
-  </div>
-</div>
-
-<!-- Estado sem dados -->
-<div class="report-widget panel empty" ng-show="!dadosVisiveis">
-  <div class="panel-heading">
-    <h2 class="panel-title">
-      <i class="fa fa-tachometer m-r"></i>
-      {{::c.options.title || 'Limites com Despesas de Pessoal'}}
-    </h2>
-  </div>
-  <div class="panel-body">
-    <p class="nodata">Nenhum dado disponível para o ano selecionado.</p>
-  </div>
-</div>
-]]></template>
+</div>]]></template>
     </sp_widget>
 </record_update>

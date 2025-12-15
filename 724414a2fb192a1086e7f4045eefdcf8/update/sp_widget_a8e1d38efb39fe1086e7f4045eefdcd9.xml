@@ -3,7 +3,6 @@
         <category>custom</category>
         <client_script><![CDATA[function($scope, $rootScope, $timeout) {
   var dadosOriginais = $scope.data.chartBarData || [];
-	var LIMITE_PERCENTUAL = 44; 
 
   var grafico = null;
 
@@ -30,10 +29,10 @@
     var comprometimentos = dados.map(function(d) { return d.comprometimento || 0; });
     var linhaFixa = [];
     for (var i = 0; i < anos.length; i++) {
-      linhaFixa.push(LIMITE_PERCENTUAL);
+      linhaFixa.push(54);
     }
 
-    var ctx = document.getElementById('graficobarraExecutivo').getContext('2d');
+    var ctx = document.getElementById('graficoBarra').getContext('2d');
 
     if (grafico) {
       grafico.destroy();
@@ -66,7 +65,7 @@
             yAxisID: 'yRight'
           },
           {
-            label: 'Limite de Alerta ('+LIMITE_PERCENTUAL+'%)',
+            label: 'Limite de Alerta (54%)',
             type: 'line',
             borderColor: '#FFD700',
             borderDash: [5, 5],
@@ -150,13 +149,6 @@
         <css>@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8.144,100.1000&amp;display=swap');
 
 /* =============================
-   TIPOGRAFIA E BASE
-   ============================= */
-h3, div {
-  font-family: 'Roboto Flex', sans-serif;
-}
-
-/* =============================
    CARD DO WIDGET
    ============================= */
 .chart-wrapper {
@@ -167,7 +159,7 @@ h3, div {
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
-  height: 74rem; /* base padrão */
+  height: 72rem; /* altura padrão (fallback) */
 }
 
 /* =============================
@@ -176,7 +168,7 @@ h3, div {
 .chart-container {
   position: relative;
   width: 100%;
-  height: 65rem; /* proporcional à base */
+  height: 58rem; /* fallback padrão */
   overflow: hidden;
   border-radius: 6px;
 }
@@ -203,79 +195,79 @@ canvas {
   box-sizing: border-box;
   display: grid;
   place-items: center;
-  height: 65rem;
+  height: 58rem; /* mesma altura padrão do gráfico */
 }
 
 /* =============================
    TELAS MUITO GRANDES (≥ 2001px)
    ============================= */
 @media (min-width: 2001px) {
-  .chart-wrapper   { height: 134rem; }
-  .chart-container { height: 124rem; }
-  .report-widget.panel.mensagem { height: 124rem; }
+  .chart-wrapper   { height: 130rem; }
+  .chart-container { height: 121rem; }
+  .report-widget.panel.mensagem { height: 121rem; }
 }
 
 /* =============================
    TELAS GRANDES (1884px–2000px)
    ============================= */
 @media (min-width: 1884px) and (max-width: 2000px) {
-  .chart-wrapper   { height: 127rem; }
-  .chart-container { height: 118rem; }
-  .report-widget.panel.mensagem { height: 118rem; }
+  .chart-wrapper   { height: 124rem; }
+  .chart-container { height: 115rem; }
+  .report-widget.panel.mensagem { height: 115rem; }
 }
 
 /* =============================
    FAIXA PRINCIPAL (1511px–1883px)
    ============================= */
 @media (min-width: 1511px) and (max-width: 1883px) {
-  .chart-wrapper   { height: 120rem; } /* altura do card */
-  .chart-container { height: 111rem; } /* altura do gráfico */
-  .report-widget.panel.mensagem { height: 111rem; } /* altura idêntica */
+  .chart-wrapper   { height: 118rem; } /* altura do card */
+  .chart-container { height: 109rem; } /* altura do gráfico */
+  .report-widget.panel.mensagem { height: 109rem; } /* altura idêntica */
 }
 
 /* =============================
    DESKTOP PADRÃO (1200px–1510px)
    ============================= */
 @media (min-width: 1200px) and (max-width: 1510px) {
-  .chart-wrapper   { height: 98rem; }
-  .chart-container { height: 90rem; }
-  .report-widget.panel.mensagem { height: 90rem; }
+  .chart-wrapper   { height: 96rem; }
+  .chart-container { height: 88rem; }
+  .report-widget.panel.mensagem { height: 88rem; }
 }
 
 /* =============================
    DESKTOP/NOTEBOOK (992px–1199px)
    ============================= */
 @media (min-width: 992px) and (max-width: 1199px) {
-  .chart-wrapper   { height: 82rem; }
-  .chart-container { height: 74rem; }
-  .report-widget.panel.mensagem { height: 74rem; }
+  .chart-wrapper   { height: 80rem; }
+  .chart-container { height: 72rem; }
+  .report-widget.panel.mensagem { height: 72rem; }
 }
 
 /* =============================
    TABLETS (768px–991px)
    ============================= */
 @media (min-width: 768px) and (max-width: 991px) {
-  .chart-wrapper   { height: 62rem; }
-  .chart-container { height: 54rem; }
-  .report-widget.panel.mensagem { height: 54rem; }
+  .chart-wrapper   { height: 60rem; }
+  .chart-container { height: 52rem; }
+  .report-widget.panel.mensagem { height: 52rem; }
 }
 
 /* =============================
    MOBILE (≤ 767px)
    ============================= */
 @media (max-width: 767px) {
-  .chart-wrapper   { height: 46rem; }
-  .chart-container { height: 38rem; }
-  .report-widget.panel.mensagem { height: 38rem; }
+  .chart-wrapper   { height: 44rem; }
+  .chart-container { height: 36rem; }
+  .report-widget.panel.mensagem { height: 36rem; }
 }
 
 /* =============================
    MOBILE PEQUENO (≤ 480px)
    ============================= */
 @media (max-width: 480px) {
-  .chart-wrapper   { height: 38rem; }
-  .chart-container { height: 30rem; }
-  .report-widget.panel.mensagem { height: 30rem; }
+  .chart-wrapper   { height: 36rem; }
+  .chart-container { height: 28rem; }
+  .report-widget.panel.mensagem { height: 28rem; }
 }
 </css>
         <data_table>sp_instance</data_table>
@@ -284,87 +276,74 @@ canvas {
         <docs/>
         <field_list/>
         <has_preview>true</has_preview>
-        <id>ldpe_grafico</id>
+        <id>widget_despesa_line_bar_v2_publico</id>
         <internal>false</internal>
         <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
-        <name>ldpe - grafico</name>
+        <name>Widget Despesa Line Bar v2 Publico</name>
         <option_schema/>
         <public>true</public>
         <roles/>
         <script><![CDATA[(function() {
-	if (!gs.isLoggedIn()) {
-        data.isLoggedIn = false;
-       
-        data.dados = []; 
+    
+    if (gs.isLoggedIn()) {
+        data.isLoggedIn = true; 
         return; 
     }
     
-    data.isLoggedIn = true;
-  var gr = new GlideRecord('x_sded9_portal_t_0_u_despesa_pessoal');
-  gr.addQuery('u_ano', '>=', 2019);
-  gr.addQuery('u_ano', '<=', 2024);
-  gr.orderBy('u_ano');
-  gr.query();
+    data.isLoggedIn = false;
+    
+    var gr = new GlideRecord('x_sded9_portal_t_0_u_despesa_pessoal');
+    gr.addQuery('u_ano', '>=', 2019);
+    gr.addQuery('u_ano', '<=', 2024);
+    
+    gr.orderBy('u_ano');
+    gr.query();
 
-	
-  var dados = [];
-  while (gr.next()) {
-    dados.push({
-      ano: gr.getValue('u_ano'),
-      ativo: parseFloat(gr.getValue('despesa_total_com_pessoal_executivo_anual')) / 1,
-      inativo: parseFloat(gr.getValue('receita_corrente_liquida_rcl')) / 1,
-      comprometimento: parseFloat(gr.getValue('comprometimento_executivo')) || 0
-    });
-  }
-	
-	
-
-  data.chartBarData = dados;
-	
-})();
-]]></script>
+    var dados = [];
+    while (gr.next()) {
+        dados.push({
+            ano: gr.getValue('u_ano'),
+            ativo: parseFloat(gr.getValue('u_despesa_liquida_pedidos')) / 1,
+            inativo: parseFloat(gr.getValue('u_receita_corrente_liquida')) / 1,
+            comprometimento: parseFloat(gr.getValue('u_comprometimento_rcl')) || 0
+        });
+    }
+    
+    data.chartBarData = dados;
+    data.temDados = (dados.length > 0);
+    
+})();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
-        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
-        <sys_created_on>2025-11-05 02:35:42</sys_created_on>
-        <sys_id>c5cfba45fb49f210f6d5f9d38eefdc5f</sys_id>
-        <sys_mod_count>30</sys_mod_count>
-        <sys_name>ldpe - grafico</sys_name>
+        <sys_created_by>leandro.silva@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-12-15 13:15:52</sys_created_on>
+        <sys_id>a8e1d38efb39fe1086e7f4045eefdcd9</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>Widget Despesa Line Bar v2 Publico</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_update_name>sp_widget_c5cfba45fb49f210f6d5f9d38eefdc5f</sys_update_name>
+        <sys_update_name>sp_widget_a8e1d38efb39fe1086e7f4045eefdcd9</sys_update_name>
         <sys_updated_by>leandro.silva@vaexpert.com.br</sys_updated_by>
-        <sys_updated_on>2025-12-15 13:35:28</sys_updated_on>
-        <template><![CDATA[<div ng-if="data.isLoggedIn">
-<style>
+        <sys_updated_on>2025-12-15 13:26:01</sys_updated_on>
+        <template><![CDATA[<div ng-if="!data.isLoggedIn"> 
+    <div class="chart-wrapper">
+        <h3 style="text-align:center; font-weight: 600; margin-bottom: 16px;">
+        </h3>
 
-</style>
+        <div class="chart-container" style="margin-top: 16px;" ng-show="data.temDados">
+            <canvas id="graficoBarra"></canvas>
+        </div>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-
-<div class="chart-wrapper">
-  <h3 style="text-align:center; font-weight: 600; margin-bottom: 16px;">
-      <!--LIMITE DE DESPESA COM PESSOAL - EXECUTIVO -->
-  </h3>
-
-  <!-- Mostrar o gráfico só se tiver dados -->
-  <div class="chart-container" style="margin-top: 16px;" ng-show="temDados">
-      <canvas id="graficobarraExecutivo"></canvas>
-  </div>
-
-  <!-- Mostrar mensagem quando não tiver dados -->
-  <div class="report-widget panel mensagem" 
-       ng-show="!temDados">
-    <div class="panel-heading">
-      <h2 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i> </h2>
+        <div class="report-widget panel mensagem" ng-show="!data.temDados">
+            <div class="panel-heading">
+                <h2 class="panel-title"><i class="fa fa-bar-chart" aria-hidden="true"></i> </h2>
+            </div>
+            <div class="panel-body" style="text-align: center; font-size: 1.2em;">
+                Nenhum dado disponível para o ano selecionado.
+            </div>
+        </div>
     </div>
-    <div class="panel-body" style="text-align: center; font-size: 1.2em;">
-      Nenhum dado disponível para o ano selecionado.
-    </div>
-  </div>
-</div>
 </div>]]></template>
     </sp_widget>
 </record_update>
