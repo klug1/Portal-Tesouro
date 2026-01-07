@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container">
+    <sp_container action="DELETE">
+        <background_color/>
+        <background_image/>
+        <background_style>default</background_style>
+        <bootstrap_alt>false</bootstrap_alt>
+        <class_name/>
+        <container_class_name/>
+        <name>Despesas com o Pessoal - Container 1</name>
+        <order>1</order>
+        <semantic_tag/>
+        <sp_page display_value="despesa_pessoal">3a43952bfbc9b61086e7f4045eefdcc8</sp_page>
+        <subheader>false</subheader>
+        <sys_class_name>sp_container</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-25 00:58:51</sys_created_on>
+        <sys_id>5569e96ffb15b65086e7f4045eefdcd5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Despesas com o Pessoal - Container 1</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_container_5569e96ffb15b65086e7f4045eefdcd5</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-25 00:58:51</sys_updated_on>
+        <title/>
+        <width>container</width>
+    </sp_container>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</application>
+        <file_path/>
+        <instance_id>e34bb3801b9d82dc65324089bd4bcbee</instance_id>
+        <instance_name>sefazmtdev</instance_name>
+        <name>sp_container_5569e96ffb15b65086e7f4045eefdcd5</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container"><sp_container action="INSERT_OR_UPDATE"><background_color/><background_image/><background_style>default</background_style><bootstrap_alt>false</bootstrap_alt><class_name/><container_class_name/><name>Despesas com o Pessoal - Container 1</name><order>1</order><semantic_tag/><sp_page display_value="despesa_pessoal">3a43952bfbc9b61086e7f4045eefdcc8</sp_page><subheader>false</subheader><sys_class_name>sp_container</sys_class_name><sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by><sys_created_on>2025-11-25 00:58:51</sys_created_on><sys_id>5569e96ffb15b65086e7f4045eefdcd5</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Despesas com o Pessoal - Container 1</sys_name><sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package><sys_policy/><sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope><sys_update_name>sp_container_5569e96ffb15b65086e7f4045eefdcd5</sys_update_name><sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by><sys_updated_on>2025-11-25 00:58:51</sys_updated_on><title/><width>container</width></sp_container></record_update>]]></payload>
+        <payload_hash>-562420555</payload_hash>
+        <record_name>Despesas com o Pessoal - Container 1</record_name>
+        <reverted_from/>
+        <source>fb392d6ffb15b65086e7f4045eefdc96</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-25 00:58:51</sys_created_on>
+        <sys_id>e169e96ffb15b65086e7f4045eefdcd7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19ab8853ee30000001</sys_recorded_at>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-25 00:58:51</sys_updated_on>
+        <type>Container</type>
+        <update_guid>a569e96f7b15b650b8adfe2c66ea97d6</update_guid>
+        <update_guid_history>a569e96f7b15b650b8adfe2c66ea97d6:-562420555</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Despesas com o Pessoal - Container 1">df4a90fffb553a50f6d5f9d38eefdc10</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-25 13:51:46</sys_created_on>
+        <sys_db_object display_value="" name="sp_container">sp_container</sys_db_object>
+        <sys_id>1cb318939e5547dcbadaaebfcb19fe90</sys_id>
+        <sys_metadata>5569e96ffb15b65086e7f4045eefdcd5</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Despesas com o Pessoal - Container 1</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_scope_delete display_value="">06b5f462fd3a460d80eabc3a7195aca1</sys_scope_delete>
+        <sys_update_name>sp_container_5569e96ffb15b65086e7f4045eefdcd5</sys_update_name>
+        <sys_update_version display_value="sp_container_5569e96ffb15b65086e7f4045eefdcd5">e169e96ffb15b65086e7f4045eefdcd7</sys_update_version>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-25 13:51:46</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -54,7 +54,7 @@ function cleanCurrency(variableName) {
         <type>onSubmit</type>
         <ui_type>10</ui_type>
         <va_supported>true</va_supported>
-        <variable_set display_value="Dívida Pública">e8b60b60fb2de25086e7f4045eefdc6b</variable_set>
+        <variable_set display_value="Public debt">e8b60b60fb2de25086e7f4045eefdc6b</variable_set>
         <view/>
     </catalog_script_client>
 </record_update>

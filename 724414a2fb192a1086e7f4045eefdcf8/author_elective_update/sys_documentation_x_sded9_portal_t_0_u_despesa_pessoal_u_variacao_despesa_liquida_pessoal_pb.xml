@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation action="DELETE" element="u_variacao_despesa_liquida_pessoal" label="Variação % da Despesa Líquida Com Pessoal" language="pb" table="x_sded9_portal_t_0_u_despesa_pessoal">
+        <sys_documentation action="DELETE">
+            <element>u_variacao_despesa_liquida_pessoal</element>
+            <help/>
+            <hint/>
+            <label>Variação % da Despesa Líquida Com Pessoal</label>
+            <language>pb</language>
+            <name>x_sded9_portal_t_0_u_despesa_pessoal</name>
+            <plural>Variações % das Despesas Líquidas Com Pessoal</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>jesse.biscarde@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-10-28 17:05:51</sys_created_on>
+            <sys_id>613a7cfefbbc3690f6d5f9d38eefdc8d</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_name>Variação % da Despesa Líquida Com Pessoal</sys_name>
+            <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+            <sys_update_name>sys_documentation_x_sded9_portal_t_0_u_despesa_pessoal_u_variacao_despesa_liquida_pessoal_pb</sys_update_name>
+            <sys_updated_by>jesse.biscarde@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-10-28 17:09:08</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</application>
+        <file_path/>
+        <instance_id>e34bb3801b9d82dc65324089bd4bcbee</instance_id>
+        <instance_name>sefazmtdev</instance_name>
+        <name>sys_documentation_x_sded9_portal_t_0_u_despesa_pessoal_u_variacao_despesa_liquida_pessoal_pb</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_documentation element="u_variacao_despesa_liquida_pessoal" label="Variação % da Despesa Líquida Com Pessoal" language="pb" table="x_sded9_portal_t_0_u_despesa_pessoal"><sys_documentation action="INSERT_OR_UPDATE"><element>u_variacao_despesa_liquida_pessoal</element><help/><hint/><label>Variação % da Despesa Líquida Com Pessoal</label><language>pb</language><name>x_sded9_portal_t_0_u_despesa_pessoal</name><plural>Variações % das Despesas Líquidas Com Pessoal</plural><sys_class_name>sys_documentation</sys_class_name><sys_created_by>jesse.biscarde@artycs.com.br</sys_created_by><sys_created_on>2025-10-28 17:05:51</sys_created_on><sys_id>613a7cfefbbc3690f6d5f9d38eefdc8d</sys_id><sys_mod_count>1</sys_mod_count><sys_name>Variação % da Despesa Líquida Com Pessoal</sys_name><sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package><sys_policy/><sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope><sys_update_name>sys_documentation_x_sded9_portal_t_0_u_despesa_pessoal_u_variacao_despesa_liquida_pessoal_pb</sys_update_name><sys_updated_by>jesse.biscarde@artycs.com.br</sys_updated_by><sys_updated_on>2025-10-28 17:09:08</sys_updated_on><url/><url_target/></sys_documentation></sys_documentation></record_update>]]></payload>
+        <payload_hash>204755098</payload_hash>
+        <record_name>Personal Expenses.Variação % da Despesa Líquida Com Pessoal</record_name>
+        <reverted_from/>
+        <source>7f97b8fafbbc3690f6d5f9d38eefdc55</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>jesse.biscarde@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-10-28 17:09:08</sys_created_on>
+        <sys_id>2dfab032fbfc3690f6d5f9d38eefdcf4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19a2bcb82930000001</sys_recorded_at>
+        <sys_updated_by>jesse.biscarde@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-10-28 17:09:08</sys_updated_on>
+        <type>Field Label</type>
+        <update_guid>2dfab03210fc36907de68c1f362cc0f3</update_guid>
+        <update_guid_history>2dfab03210fc36907de68c1f362cc0f3:204755098,693a7cfec6bc3690ccc730aab695af8e:125611434</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>jesse.biscarde@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-10-28 18:21:58</sys_created_on>
+        <sys_db_object display_value="" name="sys_documentation">sys_documentation</sys_db_object>
+        <sys_id>5ea931c953314ba29122f96268850f64</sys_id>
+        <sys_metadata>613a7cfefbbc3690f6d5f9d38eefdc8d</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Variação % da Despesa Líquida Com Pessoal</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_parent display_value="">fbe97cfafbbc3690f6d5f9d38eefdcef</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_scope_delete display_value="">06b5f462fd3a460d80eabc3a7195aca1</sys_scope_delete>
+        <sys_update_name>sys_documentation_x_sded9_portal_t_0_u_despesa_pessoal_u_variacao_despesa_liquida_pessoal_pb</sys_update_name>
+        <sys_update_version display_value="sys_documentation_x_sded9_portal_t_0_u_despesa_pessoal_u_variacao_despesa_liquida_pessoal_pb">2dfab032fbfc3690f6d5f9d38eefdcf4</sys_update_version>
+        <sys_updated_by>jesse.biscarde@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-10-28 18:21:58</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

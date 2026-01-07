@@ -26,7 +26,7 @@
         <value/>
         <value_action>ignore</value_action>
         <variable>v_bimestre</variable>
-        <variable_set display_value="RCL (Receita Corrente Líquida)">79efb360fb61265086e7f4045eefdc7a</variable_set>
+        <variable_set display_value="RCL (Net Current Revenue)">79efb360fb61265086e7f4045eefdc7a</variable_set>
         <visible>ignore</visible>
     </catalog_ui_policy_action>
     <sys_translated_text action="delete_multiple" query="documentkey=a7710034fb61265086e7f4045eefdc69"/>

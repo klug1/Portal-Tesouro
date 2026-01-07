@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="fe9949f8fb857210f6d5f9d38eefdc2e" label="Dados do Ranking" max_length="40" name="x_sded9_portal_t_0_dados_do_ranking" type="collection">
+        <element display="true" label="Estado" max_length="32" name="u_estado" reference="x_sded9_portal_t_0_estados" type="reference"/>
+        <element label="Tipo de Ranking" max_length="32" name="u_tipo_de_ranking" reference="x_sded9_portal_t_0_tipos_de_ranking_area" type="reference"/>
+        <element label="Ano" max_length="40" name="u_ano" type="integer"/>
+        <element label="Posição" max_length="40" name="u_posicao" type="string"/>
+        <element label="Porcentagem" max_length="40" name="u_porcentagem" type="string"/>
+        <element label="Data do Registro" max_length="40" name="data_do_registro" type="glide_date"/>
+        <index name="index">
+            <element name="u_estado"/>
+        </index>
+        <index name="index2">
+            <element name="u_tipo_de_ranking"/>
+        </index>
+    </element>
+</database>

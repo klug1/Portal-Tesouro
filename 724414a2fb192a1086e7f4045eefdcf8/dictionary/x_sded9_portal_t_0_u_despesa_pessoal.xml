@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="4c72d8befb1d6a1086e7f4045eefdc68" label="Despesa Pessoal" max_length="40" name="x_sded9_portal_t_0_u_despesa_pessoal" type="collection">
+        <element label="Change in Net Personnel Expenses - Consolidated" max_length="30" name="u_despesa_liquida_pessoal_consolidado" type="decimal"/>
+        <element label="Despesa Total com Pessoal - Executivo- Anual " max_length="20" name="despesa_total_com_pessoal_executivo_anual" type="decimal"/>
+        <element label="Variation in Net Personnel Expenses - Executive" max_length="30" name="u_despesa_liquida_pessoal_executivo" type="decimal"/>
+        <element label="Interfaz para pensionistas con resúmenes vinculados" max_length="20" name="u_despesa_inativos_pensionistas_vinculados" type="decimal"/>
+        <element label="Comprometimento %- Executivo" max_length="20" name="comprometimento_executivo" type="decimal"/>
+        <element label="% Variation in Net Personnel Expenses - Executive" max_length="30" name="u_variacao_despesa_liquida_pessoal_executivo" type="decimal"/>
+        <element label="Gasto con personal tercerizado" max_length="20" name="u_despesa_pessoal_terceirizado" type="decimal"/>
+        <element label="Receita corrente líquida" max_length="20" name="u_receita_corrente_liquida" type="decimal"/>
+        <element label="Porcentaje del límite de alerta de RCL" max_length="20" name="u_limite_de_alerta" type="decimal"/>
+        <element label="Gasto con deducciones" max_length="20" name="u_despesa_deducoes" type="decimal"/>
+        <element label="Gastos brutos de personal" max_length="20" name="u_despesa_bruta_pessoal" type="decimal"/>
+        <element label="Año de referencia" max_length="4" name="u_ano" type="integer"/>
+        <element label="% Variation in Net Personnel Expenses - Consolidated" max_length="30" name="u_variacao_despesa_liquida_pessoal_consolidado" type="decimal"/>
+        <element label="Porcentaje de compromiso de RCL" max_length="20" name="u_comprometimento_rcl" type="decimal"/>
+        <element label="Porcentaje del límite máximo de RCL" max_length="20" name="u_limite_maximo" type="decimal"/>
+        <element label="Gastos con indemnización por decisiones judiciales" max_length="20" name="u_despesa_decisao_judicial" type="decimal"/>
+        <element label="Gastos con personal activo" max_length="20" name="u_despesa_pessoal_ativo" type="decimal"/>
+        <element label="Receita Corrente Líquida-RCL- Para fins de % com pessoal - Executivo" max_length="20" name="receita_corrente_liquida_rcl" type="decimal"/>
+        <element label="Limite de Alerta - Executivo" max_length="20" name="limite_de_alerta_executivo" type="decimal"/>
+        <element label="Indemnización por despido o indemnización por despido voluntario" max_length="20" name="u_despesa_indenizacoes_demissoes" type="decimal"/>
+        <element label="Gastos de ejercicios anteriores" max_length="20" name="u_despesas_exercicio_anteriores" type="decimal"/>
+        <element label="Net personnel expenses" max_length="20" name="u_despesa_liquida_pedidos" type="decimal"/>
+        <element label="Porcentaje del límite prudencial de RCL" max_length="20" name="u_limite_prudencial" type="decimal"/>
+        <element label="Gastos de personal – inactivos y pensionistas" max_length="20" name="u_despesa_inativos_pensionistas" type="decimal"/>
+    </element>
+</database>

@@ -1,0 +1,1045 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="u_uf" table="x_sded9_portal_t_0_estados" version="3">
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>u_uf</element>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:40:11</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>u_uf</sys_name>
+            <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+            <sys_update_name>sys_choice_x_sded9_portal_t_0_estados_u_uf</sys_update_name>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:40:11</sys_updated_on>
+        </sys_choice_set>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>AC</label>
+            <language>pt</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>100</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:25</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:25</sys_updated_on>
+            <value>AC</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>AC</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>100</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:25</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:25</sys_updated_on>
+            <value>AC</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>AL</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>110</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:25</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:25</sys_updated_on>
+            <value>AL</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>AL</label>
+            <language>pt</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>110</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:25</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:25</sys_updated_on>
+            <value>AL</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>AP</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>120</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:26</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:26</sys_updated_on>
+            <value>AP</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>AP</label>
+            <language>pt</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>120</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:25</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:25</sys_updated_on>
+            <value>AP</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>AM</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>130</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:26</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:26</sys_updated_on>
+            <value>AM</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>AM</label>
+            <language>pt</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>130</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:26</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:26</sys_updated_on>
+            <value>AM</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>BA</label>
+            <language>pt</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>140</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:26</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:26</sys_updated_on>
+            <value>BA</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>BA</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>140</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:26</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:26</sys_updated_on>
+            <value>BA</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>CE</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>150</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:26</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:26</sys_updated_on>
+            <value>CE</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>CE</label>
+            <language>pt</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>150</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:26</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:26</sys_updated_on>
+            <value>CE</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>DF</label>
+            <language>pt</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>160</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:26</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:26</sys_updated_on>
+            <value>DF</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>DF</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>160</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:26</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:26</sys_updated_on>
+            <value>DF</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>ES</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>170</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:26</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:26</sys_updated_on>
+            <value>ES</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>ES</label>
+            <language>pt</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>170</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:26</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:26</sys_updated_on>
+            <value>ES</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>GO</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>180</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:26</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:26</sys_updated_on>
+            <value>GO</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>GO</label>
+            <language>pt</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>180</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:26</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:26</sys_updated_on>
+            <value>GO</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>MA</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>190</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:26</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:26</sys_updated_on>
+            <value>MA</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>MA</label>
+            <language>pt</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>190</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:26</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:26</sys_updated_on>
+            <value>MA</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>MT</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>200</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:26</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:26</sys_updated_on>
+            <value>MT</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>MT</label>
+            <language>pt</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>200</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:26</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:26</sys_updated_on>
+            <value>MT</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>MS</label>
+            <language>pt</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>210</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:26</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:26</sys_updated_on>
+            <value>MS</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>MS</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>210</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:27</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:27</sys_updated_on>
+            <value>MS</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>MG</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>220</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:27</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:27</sys_updated_on>
+            <value>MG</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>MG</label>
+            <language>pt</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>220</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:27</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:27</sys_updated_on>
+            <value>MG</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>PA</label>
+            <language>pt</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>230</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:27</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:27</sys_updated_on>
+            <value>PA</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>PA</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>230</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:27</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:27</sys_updated_on>
+            <value>PA</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>PB</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>240</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:27</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:27</sys_updated_on>
+            <value>PB</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>PB</label>
+            <language>pt</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>240</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:27</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:27</sys_updated_on>
+            <value>PB</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>PR</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>250</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:27</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:27</sys_updated_on>
+            <value>PR</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>PR</label>
+            <language>pt</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>250</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:27</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:27</sys_updated_on>
+            <value>PR</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>PE</label>
+            <language>pt</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>260</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:27</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:27</sys_updated_on>
+            <value>PE</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>PE</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>260</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:27</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:27</sys_updated_on>
+            <value>PE</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>PI</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>270</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:27</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:27</sys_updated_on>
+            <value>PI</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>PI</label>
+            <language>pt</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>270</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:27</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:27</sys_updated_on>
+            <value>PI</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>RJ</label>
+            <language>pt</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>280</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:27</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:27</sys_updated_on>
+            <value>RJ</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>RJ</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>280</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:27</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:27</sys_updated_on>
+            <value>RJ</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>RN</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>290</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:27</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:27</sys_updated_on>
+            <value>RN</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>RN</label>
+            <language>pt</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>290</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:27</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:27</sys_updated_on>
+            <value>RN</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>RS</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>300</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:28</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:28</sys_updated_on>
+            <value>RS</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>RS</label>
+            <language>pt</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>300</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:28</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:28</sys_updated_on>
+            <value>RS</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>RO</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>310</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:28</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:28</sys_updated_on>
+            <value>RO</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>RO</label>
+            <language>pt</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>310</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:28</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:28</sys_updated_on>
+            <value>RO</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>RR</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>320</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:28</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:28</sys_updated_on>
+            <value>RR</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>RR</label>
+            <language>pt</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>320</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:28</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:28</sys_updated_on>
+            <value>RR</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>SC</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>330</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:28</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:28</sys_updated_on>
+            <value>SC</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>SC</label>
+            <language>pt</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>330</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:28</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:28</sys_updated_on>
+            <value>SC</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>SP</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>340</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:28</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:28</sys_updated_on>
+            <value>SP</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>SP</label>
+            <language>pt</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>340</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:28</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:28</sys_updated_on>
+            <value>SP</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>SE</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>350</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:28</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:28</sys_updated_on>
+            <value>SE</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>SE</label>
+            <language>pt</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>350</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:28</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:28</sys_updated_on>
+            <value>SE</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>TO</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>360</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:28</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:28</sys_updated_on>
+            <value>TO</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_uf</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>TO</label>
+            <language>pt</language>
+            <name>x_sded9_portal_t_0_estados</name>
+            <sequence>360</sequence>
+            <synonyms/>
+            <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+            <sys_created_on>2025-11-03 22:54:28</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-03 22:54:28</sys_updated_on>
+            <value>TO</value>
+        </sys_choice>
+    </sys_choice>
+</record_update>

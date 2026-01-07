@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="io_set_item">
+    <io_set_item action="DELETE">
+        <order>100</order>
+        <sc_cat_item display_value="Copy of Tesouro público credor">84665a00fbc1325086e7f4045eefdc87</sc_cat_item>
+        <sys_class_name>io_set_item</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-01 21:00:57</sys_created_on>
+        <sys_id>e0669240fbc1325086e7f4045eefdc31</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>RREO (Summary Report of Budget Execution).Copy of Tesouro público credor</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>io_set_item_e0669240fbc1325086e7f4045eefdc31</sys_update_name>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-01 21:00:57</sys_updated_on>
+        <variable_set display_value="RREO (Summary Report of Budget Execution)">0e3b3768fb21265086e7f4045eefdc88</variable_set>
+    </io_set_item>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</application>
+        <file_path/>
+        <instance_id>e34bb3801b9d82dc65324089bd4bcbee</instance_id>
+        <instance_name>sefazmtdev</instance_name>
+        <name>io_set_item_e0669240fbc1325086e7f4045eefdc31</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="io_set_item"><io_set_item action="INSERT_OR_UPDATE"><order>100</order><sc_cat_item display_value="Copy of Tesouro público credor">84665a00fbc1325086e7f4045eefdc87</sc_cat_item><sys_class_name>io_set_item</sys_class_name><sys_created_by>allex.sousa@artycs.com.br</sys_created_by><sys_created_on>2025-11-01 21:00:57</sys_created_on><sys_id>e0669240fbc1325086e7f4045eefdc31</sys_id><sys_mod_count>0</sys_mod_count><sys_name>RREO (Summary Report of Budget Execution).Copy of Tesouro público credor</sys_name><sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package><sys_policy/><sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope><sys_update_name>io_set_item_e0669240fbc1325086e7f4045eefdc31</sys_update_name><sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by><sys_updated_on>2025-11-01 21:00:57</sys_updated_on><variable_set display_value="RREO (Summary Report of Budget Execution)">0e3b3768fb21265086e7f4045eefdc88</variable_set></io_set_item></record_update>]]></payload>
+        <payload_hash>1060953638</payload_hash>
+        <record_name>RREO (Summary Report of Budget Execution).Copy of Tesouro público credor</record_name>
+        <reverted_from/>
+        <source>ac38315afb2c7a1086e7f4045eefdc67</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-01 21:00:58</sys_created_on>
+        <sys_id>e8669240fbc1325086e7f4045eefdc36</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19a41392fb70000001</sys_recorded_at>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-01 21:00:58</sys_updated_on>
+        <type>Catalog Variable Set</type>
+        <update_guid>e06692404cc132500b7d6c4723ec5b36</update_guid>
+        <update_guid_history>e06692404cc132500b7d6c4723ec5b36:1060953638</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="RREO (Summary Report of Budget Execution).Copy of Tesouro público credor">e9474178fbc5721086e7f4045eefdc42</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-03 23:10:46</sys_created_on>
+        <sys_db_object display_value="" name="io_set_item">io_set_item</sys_db_object>
+        <sys_id>2cf6907fb2d94b50ae16db8055769900</sys_id>
+        <sys_metadata>e0669240fbc1325086e7f4045eefdc31</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>RREO (Summary Report of Budget Execution).Copy of Tesouro público credor</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_scope_delete display_value="">06b5f462fd3a460d80eabc3a7195aca1</sys_scope_delete>
+        <sys_update_name>io_set_item_e0669240fbc1325086e7f4045eefdc31</sys_update_name>
+        <sys_update_version display_value="io_set_item_e0669240fbc1325086e7f4045eefdc31">e8669240fbc1325086e7f4045eefdc36</sys_update_version>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-03 23:10:46</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

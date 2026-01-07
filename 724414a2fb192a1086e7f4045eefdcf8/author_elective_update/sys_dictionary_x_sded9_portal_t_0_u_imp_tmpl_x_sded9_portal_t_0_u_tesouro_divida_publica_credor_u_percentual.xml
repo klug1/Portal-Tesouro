@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_dictionary action="DELETE" element="u_percentual" table="x_sded9_portal_t_0_u_imp_tmpl_x_sded9_portal_t_0_u_tesouro_divida_publica_credor">
+        <active>true</active>
+        <array>false</array>
+        <attributes>import_attribute_name=u_percentual</attributes>
+        <audit>false</audit>
+        <calculation/>
+        <choice>0</choice>
+        <choice_field/>
+        <choice_table/>
+        <column_label>Percentual</column_label>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>u_percentual</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <internal_type display_value="">float</internal_type>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <name>x_sded9_portal_t_0_u_imp_tmpl_x_sded9_portal_t_0_u_tesouro_divida_publica_credor</name>
+        <next_element/>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_dictionary</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-10-15 22:52:55</sys_created_on>
+        <sys_id>a2fc4f6afb283e10f6d5f9d38eefdcc6</sys_id>
+        <sys_name>Percentual</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sys_dictionary_x_sded9_portal_t_0_u_imp_tmpl_x_sded9_portal_t_0_u_tesouro_divida_publica_credor_u_percentual</sys_update_name>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-10-15 22:52:55</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_dictionary>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</application>
+        <file_path/>
+        <instance_id>e34bb3801b9d82dc65324089bd4bcbee</instance_id>
+        <instance_name>sefazmtdev</instance_name>
+        <name>sys_dictionary_x_sded9_portal_t_0_u_imp_tmpl_x_sded9_portal_t_0_u_tesouro_divida_publica_credor_u_percentual</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_dictionary action="INSERT_OR_UPDATE" element="u_percentual" table="x_sded9_portal_t_0_u_imp_tmpl_x_sded9_portal_t_0_u_tesouro_divida_publica_credor"><active>true</active><array>false</array><attributes>import_attribute_name=u_percentual</attributes><audit>false</audit><calculation/><choice>0</choice><choice_field/><choice_table/><column_label>Percentual</column_label><comments/><create_roles/><default_value/><defaultsort/><delete_roles/><dependent/><dependent_on_field/><display>false</display><dynamic_creation>false</dynamic_creation><dynamic_creation_script/><dynamic_default_value/><dynamic_ref_qual/><element>u_percentual</element><element_reference>false</element_reference><foreign_database/><formula/><function_definition/><function_field>false</function_field><internal_type display_value="">float</internal_type><mandatory>false</mandatory><max_length>40</max_length><name>x_sded9_portal_t_0_u_imp_tmpl_x_sded9_portal_t_0_u_tesouro_divida_publica_credor</name><next_element/><primary>false</primary><read_only>false</read_only><read_roles/><reference/><reference_cascade_rule/><reference_floats>false</reference_floats><reference_key/><reference_qual/><reference_qual_condition/><reference_type/><spell_check>false</spell_check><staged>false</staged><sys_class_name>sys_dictionary</sys_class_name><sys_created_by>allex.sousa@artycs.com.br</sys_created_by><sys_created_on>2025-10-15 22:52:55</sys_created_on><sys_id>a2fc4f6afb283e10f6d5f9d38eefdcc6</sys_id><sys_name>Percentual</sys_name><sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package><sys_policy/><sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope><sys_update_name>sys_dictionary_x_sded9_portal_t_0_u_imp_tmpl_x_sded9_portal_t_0_u_tesouro_divida_publica_credor_u_percentual</sys_update_name><sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by><sys_updated_on>2025-10-15 22:52:55</sys_updated_on><table_reference>false</table_reference><text_index>false</text_index><unique>false</unique><use_dependent_field>false</use_dependent_field><use_dynamic_default>false</use_dynamic_default><use_reference_qualifier>simple</use_reference_qualifier><virtual>false</virtual><virtual_type>script</virtual_type><widget/><write_roles/><xml_view>false</xml_view></sys_dictionary></record_update>]]></payload>
+        <payload_hash>-1803194528</payload_hash>
+        <record_name>u_imp_tmpl_x_sded9_portal_t_0_u_tesouro_divida_publica_credor.Percentual</record_name>
+        <reverted_from/>
+        <source>ec844835fbb7e61086e7f4045eefdc00</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-10-15 22:52:55</sys_created_on>
+        <sys_id>22fc4f6afb283e10f6d5f9d38eefdcd5</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_recorded_at>199ea13932e0000001</sys_recorded_at>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-10-15 23:12:24</sys_updated_on>
+        <type>Dictionary</type>
+        <update_guid>a6fc4f6a0f283e108e9683f02d547ed4</update_guid>
+        <update_guid_history>a6fc4f6a0f283e108e9683f02d547ed4:-1803194528</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-12-11 19:28:34</sys_created_on>
+        <sys_db_object display_value="" name="sys_dictionary">sys_dictionary</sys_db_object>
+        <sys_id>15010e7c1c7f498494f50b2b5f622544</sys_id>
+        <sys_metadata>a2fc4f6afb283e10f6d5f9d38eefdcc6</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Percentual</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_parent display_value="">aafc4f6afb283e10f6d5f9d38eefdc94</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_scope_delete display_value="">06b5f462fd3a460d80eabc3a7195aca1</sys_scope_delete>
+        <sys_update_name>sys_dictionary_x_sded9_portal_t_0_u_imp_tmpl_x_sded9_portal_t_0_u_tesouro_divida_publica_credor_u_percentual</sys_update_name>
+        <sys_update_version display_value="sys_dictionary_x_sded9_portal_t_0_u_imp_tmpl_x_sded9_portal_t_0_u_tesouro_divida_publica_credor_u_percentual">22fc4f6afb283e10f6d5f9d38eefdcd5</sys_update_version>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-11 19:28:34</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

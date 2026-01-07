@@ -2739,7 +2739,22 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <url_target/>
     </sys_documentation>
     <sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_output_376d7a86fba9769086e7f4045eefdc2e"/>
-    <sys_hub_action_plan action="delete_multiple" query="action_id=376d7a86fba9769086e7f4045eefdc2e"/>
+    <sys_hub_action_plan action="delete_multiple" query="action_id=376d7a86fba9769086e7f4045eefdc2e^sys_idNOT IN0f640742fbe9769086e7f4045eefdc45"/>
+    <sys_hub_action_plan action="INSERT_OR_UPDATE">
+        <action_id display_value="Get MRVS Values (Superávit)">376d7a86fba9769086e7f4045eefdc2e</action_id>
+        <plan>{"type":"PlanProxy","persistor":{"@class":".ChunkingPlanPersistor","table":"sys_hub_action_plan","id":"0f640742fbe9769086e7f4045eefdc45","name":"plan","plan_signature":null}}</plan>
+        <snapshot>ee640742fbe9769086e7f4045eefdc3a</snapshot>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-12-03 02:01:21</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>0f640742fbe9769086e7f4045eefdc45</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-03 02:01:21</sys_updated_on>
+    </sys_hub_action_plan>
     <sys_hub_action_type_snapshot action="INSERT_OR_UPDATE">
         <access>public</access>
         <acls/>

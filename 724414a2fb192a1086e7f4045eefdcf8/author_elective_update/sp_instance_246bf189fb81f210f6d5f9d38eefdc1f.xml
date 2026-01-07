@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="DELETE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>2</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">d12a10c1fb49b210f6d5f9d38eefdc45</sp_column>
+        <sp_widget display_value="DBLP Gráfico">452a10c1fb49b210f6d5f9d38eefdc3c</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-04 21:36:55</sys_created_on>
+        <sys_id>246bf189fb81f210f6d5f9d38eefdc1f</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_instance_246bf189fb81f210f6d5f9d38eefdc1f</sys_update_name>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-04 23:08:52</sys_updated_on>
+        <title/>
+        <url/>
+        <widget_parameters/>
+    </sp_instance>
+    <sys_translated_text action="DELETE" query="documentkey=246bf189fb81f210f6d5f9d38eefdc1f"/>
+    <sys_translated_text action="DELETE">
+        <documentkey>246bf189fb81f210f6d5f9d38eefdc1f</documentkey>
+        <fieldname>short_description</fieldname>
+        <language>pb</language>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-04 21:36:55</sys_created_on>
+        <sys_id>686bf189fb81f210f6d5f9d38eefdc1f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-04 21:36:55</sys_updated_on>
+        <tablename>sp_instance</tablename>
+        <value/>
+    </sys_translated_text>
+    <sys_translated_text action="DELETE">
+        <documentkey>246bf189fb81f210f6d5f9d38eefdc1f</documentkey>
+        <fieldname>title</fieldname>
+        <language>pb</language>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-04 21:36:55</sys_created_on>
+        <sys_id>a06bf189fb81f210f6d5f9d38eefdc21</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-04 21:36:55</sys_updated_on>
+        <tablename>sp_instance</tablename>
+        <value/>
+    </sys_translated_text>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</application>
+        <file_path/>
+        <instance_id>e34bb3801b9d82dc65324089bd4bcbee</instance_id>
+        <instance_name>sefazmtdev</instance_name>
+        <name>sp_instance_246bf189fb81f210f6d5f9d38eefdc1f</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance"><sp_instance action="INSERT_OR_UPDATE"><active>true</active><class_name/><color>default</color><css/><glyph/><id/><order>2</order><roles/><short_description/><size>md</size><sp_column display_value="1">d12a10c1fb49b210f6d5f9d38eefdc45</sp_column><sp_widget display_value="DBLP Gráfico">452a10c1fb49b210f6d5f9d38eefdc3c</sp_widget><sys_class_name>sp_instance</sys_class_name><sys_created_by>allex.sousa@artycs.com.br</sys_created_by><sys_created_on>2025-11-04 21:36:55</sys_created_on><sys_id>246bf189fb81f210f6d5f9d38eefdc1f</sys_id><sys_mod_count>1</sys_mod_count><sys_name/><sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package><sys_policy/><sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope><sys_update_name>sp_instance_246bf189fb81f210f6d5f9d38eefdc1f</sys_update_name><sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by><sys_updated_on>2025-11-04 23:08:52</sys_updated_on><title/><url/><widget_parameters/></sp_instance><sys_translated_text action="delete_multiple" query="documentkey=246bf189fb81f210f6d5f9d38eefdc1f"/><sys_translated_text action="INSERT_OR_UPDATE"><documentkey>246bf189fb81f210f6d5f9d38eefdc1f</documentkey><fieldname>short_description</fieldname><language>pb</language><sys_created_by>allex.sousa@artycs.com.br</sys_created_by><sys_created_on>2025-11-04 21:36:55</sys_created_on><sys_id>686bf189fb81f210f6d5f9d38eefdc1f</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by><sys_updated_on>2025-11-04 21:36:55</sys_updated_on><tablename>sp_instance</tablename><value/></sys_translated_text><sys_translated_text action="INSERT_OR_UPDATE"><documentkey>246bf189fb81f210f6d5f9d38eefdc1f</documentkey><fieldname>title</fieldname><language>pb</language><sys_created_by>allex.sousa@artycs.com.br</sys_created_by><sys_created_on>2025-11-04 21:36:55</sys_created_on><sys_id>a06bf189fb81f210f6d5f9d38eefdc21</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by><sys_updated_on>2025-11-04 21:36:55</sys_updated_on><tablename>sp_instance</tablename><value/></sys_translated_text></record_update>]]></payload>
+        <payload_hash>2028827701</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>fcb200e0fbc9be90f6d5f9d38eefdcd4</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-04 23:08:52</sys_created_on>
+        <sys_id>df609249fb05f210f6d5f9d38eefdcb4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19a51215d470000001</sys_recorded_at>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-04 23:08:52</sys_updated_on>
+        <type>Instance</type>
+        <update_guid>1b609249b605f210aac8a54a2cfc83b4</update_guid>
+        <update_guid_history>1b609249b605f210aac8a54a2cfc83b4:2028827701,ac6b3d89f181f21061500a056333e211:-1625283018,ec6bf1893881f210302adf38e7c86f1f:1697770257</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">1d809249fb05f210f6d5f9d38eefdcef</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-04 23:09:17</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance">sp_instance</sys_db_object>
+        <sys_id>1030c791e4a94cb58518d2e931ef9ce1</sys_id>
+        <sys_metadata>246bf189fb81f210f6d5f9d38eefdc1f</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_scope_delete display_value="">06b5f462fd3a460d80eabc3a7195aca1</sys_scope_delete>
+        <sys_update_name>sp_instance_246bf189fb81f210f6d5f9d38eefdc1f</sys_update_name>
+        <sys_update_version display_value="sp_instance_246bf189fb81f210f6d5f9d38eefdc1f">df609249fb05f210f6d5f9d38eefdcb4</sys_update_version>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-04 23:09:17</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

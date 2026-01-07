@@ -307,7 +307,7 @@
         <sys_scope/>
         <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
         <sys_updated_on>2025-12-03 01:27:58</sys_updated_on>
-        <trigger_definition display_value="Criado em">798916a0c31322002841b63b12d3ae7c</trigger_definition>
+        <trigger_definition display_value="Created">798916a0c31322002841b63b12d3ae7c</trigger_definition>
         <trigger_inputs>H4sIAAAAAAAA/9VY227jNhD9FUFPLeACuthxnLetk0UDbDeo420fFqlAiaQtlCZdilLiXeTfO9TNsi6OHStb5yWASYpz5vDMGTJfv5sM+YSZV+Yc+YyYAzPkikiO2HyzJjCs9LDH0UrPrRDHSAm5Ma+UjMnApFKs5mS1ZkjBYopYBINCYiLNK3tgJojF5H4T3WLYCb5Pt8n3NPNp+P3kRZjgibcWUiHmKc/yJFmEkZLCw8QLkFygyFMkErEU8B0OI4i4+TP/fC4JimK5MaawUBiz7FOkQsFhcbAMGZaEm1dfHwbmGknAoDS+77WpUIMMaIAmDrEC13Ydx7Kcy6HtX7i+7WAXEcuCDeuE1ZJSLbxtGSFPinBItiSrQSkkg+8425QrlnAiGX0r9BSF32D3S0uvowSwBySbK396OTvZcLAUYUDu1ikZ6UiGM5sULF7xzxl+zSuhKGaq4BVG4gj2I2sNWYPIEdH7pXicFQE/hjzNLp9kIkCs/IWUkqEfw9lpwmnIgHov40afZop+djO9m117f32YT3+7mXmzm/v57HY6v7k2n9O8vH9jvWOGMMfiZek8l2L4GBKmD5DHKx/QDMwokOFafQhUmBTSfB5s5T4VHIe5RGqSD4qpaFfyRfb7NG9ZnaoPKhEL5f9980dTz9ngcbq9uEAIE9ShW59WdFvNvAWaaiGhmt0+Becjh0h4aFn/k4hz53qthlcCE3a93c6EycUCVB3ydaw0W4+IK7Ar4SGMvQqPeilgeknUWW7PLypYxhw+8MrzaOo4pa3k7xO4IigGqrDgJt0S5umnfMtZzA0BBwd/jCCWQI0yCl+jtyu0yBml94SRQFVEQL9E1V+/h1EU8kUFdRk05aARswwHYjKKlLLY0YnBH/os4ibpSY3MWjEfXcm2TalPqGONdR3blutT2xpbI0Sxa1mBU6nkJphOlKomiTep6OPqOUrFyA6QXp3iHLxVrYaDZJTsarAgQUskt41pP9DsnqA5GlrN/tyj/K+UZTZ8vavOfan13PsRThB8gQ+1wQMdkDLxCNb7CvfzUfDPQoqY47od6T2NkBvbFcZPOX8/9+iEVMAtdy+A3RXn5IFb2gvhIr7pwf1cavsTMiQWmJ4LfuePJhM/QA6l44sxceya+21htGJ7F673gtqSNrl2OWCrcJI2vR3hfScAbPjg0QBPd8BcmK3+l829D6d7XBLuAVTpMe1lDcNbsBAey/lcv9XeCJ1s6/vUiqeXk2Bkj8fBGF4tUPF0SHxkD50Rmowv3MtRreIbUPbBVC3M/JC3TLSJUiAdbvAlmzqvx/lbyjYiSul2dHyX5nCPTb9BWZBKp9THYqSmIqTxWfBfbrfrjHsCDTB90PbVrg9BoQ/WeFsYvlDLxn0BQv8K4zuh9T2zg5Wze1LVRJLs5nryk4oML0cT6rZbDJ20WcwWTDfMs79eHFghSWettd0zDhV80lo3nReDV0i4JpPqjWHPlaYvUuzeSXHejhT35GtUUYud78jXgH1HLSy9V5zSx3RM4glaNe9rYcCEAUGMkBr5fxIJNvyNoZYEKGVwX4aAho5+qmtXu0gTSqngHwsku4E3uhkMG/kF6vwaVU0K/b6ACR6j0cjtuA9P6i/gNkAv4D37tnV0VSRtRba3dx23b33P1u5VkeyuIg7sS71m3d6cTsu6tT29lPXpjWff+70FxZm2lIf/AEqfxGRrHwAA</trigger_inputs>
         <trigger_outputs/>
         <trigger_type>record_create</trigger_type>
@@ -678,7 +678,7 @@
         <flow display_value="Populating tables from record producers (portal)">94f35f09fb7d221086e7f4045eefdcf8</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Se">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
         <order>5</order>
         <outputs_assigned/>
         <parent_ui_id/>
@@ -705,7 +705,7 @@
         <flow display_value="Populating tables from record producers (portal)">94f35f09fb7d221086e7f4045eefdcf8</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Se">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
         <order>7</order>
         <outputs_assigned/>
         <parent_ui_id/>
@@ -732,7 +732,7 @@
         <flow display_value="Populating tables from record producers (portal)">94f35f09fb7d221086e7f4045eefdcf8</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Se">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
         <order>9</order>
         <outputs_assigned/>
         <parent_ui_id/>
@@ -759,7 +759,7 @@
         <flow display_value="Populating tables from record producers (portal)">94f35f09fb7d221086e7f4045eefdcf8</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Se">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
         <order>13</order>
         <outputs_assigned/>
         <parent_ui_id/>
@@ -786,7 +786,7 @@
         <flow display_value="Populating tables from record producers (portal)">94f35f09fb7d221086e7f4045eefdcf8</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Se">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
         <order>11</order>
         <outputs_assigned/>
         <parent_ui_id/>
@@ -813,7 +813,7 @@
         <flow display_value="Populating tables from record producers (portal)">94f35f09fb7d221086e7f4045eefdcf8</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Se">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
         <order>15</order>
         <outputs_assigned/>
         <parent_ui_id/>
@@ -840,7 +840,7 @@
         <flow display_value="Populating tables from record producers (portal)">94f35f09fb7d221086e7f4045eefdcf8</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Senão">666e5545c3e232002841b63b12d3ae99</logic_definition>
+        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
         <order>19</order>
         <outputs_assigned/>
         <parent_ui_id/>
@@ -867,7 +867,7 @@
         <flow display_value="Populating tables from record producers (portal)">94f35f09fb7d221086e7f4045eefdcf8</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Senão">666e5545c3e232002841b63b12d3ae99</logic_definition>
+        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
         <order>21</order>
         <outputs_assigned/>
         <parent_ui_id/>
@@ -894,7 +894,7 @@
         <flow display_value="Populating tables from record producers (portal)">94f35f09fb7d221086e7f4045eefdcf8</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Senão">666e5545c3e232002841b63b12d3ae99</logic_definition>
+        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
         <order>23</order>
         <outputs_assigned/>
         <parent_ui_id/>
@@ -921,7 +921,7 @@
         <flow display_value="Populating tables from record producers (portal)">94f35f09fb7d221086e7f4045eefdcf8</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Senão">666e5545c3e232002841b63b12d3ae99</logic_definition>
+        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
         <order>25</order>
         <outputs_assigned/>
         <parent_ui_id/>
@@ -948,7 +948,7 @@
         <flow display_value="Populating tables from record producers (portal)">94f35f09fb7d221086e7f4045eefdcf8</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Senão">666e5545c3e232002841b63b12d3ae99</logic_definition>
+        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
         <order>31</order>
         <outputs_assigned/>
         <parent_ui_id/>
@@ -975,7 +975,7 @@
         <flow display_value="Populating tables from record producers (portal)">94f35f09fb7d221086e7f4045eefdcf8</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Senão">666e5545c3e232002841b63b12d3ae99</logic_definition>
+        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
         <order>17</order>
         <outputs_assigned/>
         <parent_ui_id/>
@@ -1002,7 +1002,7 @@
         <flow display_value="Populating tables from record producers (portal)">94f35f09fb7d221086e7f4045eefdcf8</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Se">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
         <order>1</order>
         <outputs_assigned/>
         <parent_ui_id/>
@@ -1029,7 +1029,7 @@
         <flow display_value="Populating tables from record producers (portal)">94f35f09fb7d221086e7f4045eefdcf8</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Se">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
         <order>3</order>
         <outputs_assigned/>
         <parent_ui_id/>
@@ -1056,7 +1056,7 @@
         <flow display_value="Populating tables from record producers (portal)">94f35f09fb7d221086e7f4045eefdcf8</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Senão">666e5545c3e232002841b63b12d3ae99</logic_definition>
+        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
         <order>27</order>
         <outputs_assigned/>
         <parent_ui_id/>
@@ -1083,7 +1083,7 @@
         <flow display_value="Populating tables from record producers (portal)">94f35f09fb7d221086e7f4045eefdcf8</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Senão">666e5545c3e232002841b63b12d3ae99</logic_definition>
+        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
         <order>29</order>
         <outputs_assigned/>
         <parent_ui_id/>
@@ -1455,7 +1455,7 @@
         <sys_scope/>
         <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
         <sys_updated_on>2025-12-03 11:14:10</sys_updated_on>
-        <trigger_definition display_value="Criado em">798916a0c31322002841b63b12d3ae7c</trigger_definition>
+        <trigger_definition display_value="Created">798916a0c31322002841b63b12d3ae7c</trigger_definition>
         <trigger_inputs>H4sIAAAAAAAA/9VY227jNhD9FUFPLeACuthxnLetk0UDbDeo420fFqlAiaQtlCZdilLiXeTfO9TNsi6OHStb5yWASYpz5vDMGTJfv5sM+YSZV+Yc+YyYAzPkikiO2HyzJjCs9LDH0UrPrRDHSAm5Ma+UjMnApFKs5mS1ZkjBYopYBINCYiLNK3tgJojF5H4T3WLYCb5Pt8n3NPNp+P3kRZjgibcWUiHmKc/yJFmEkZLCw8QLkFygyFMkErEU8B0OI4i4+TP/fC4JimK5MaawUBiz7FOkQsFhcbAMGZaEm1dfHwbmGknAoDS+77WpUIMMaIAmDrEC13Ydx7Kcy6HtX7i+7WAXEcuCDeuE1ZJSLbxtGSFPinBItiSrQSkkg+8425QrlnAiGX0r9BSF32D3S0uvowSwBySbK396OTvZcLAUYUDu1ikZ6UiGM5sULF7xzxl+zSuhKGaq4BVG4gj2I2sNWYPIEdH7pXicFQE/hjzNLp9kIkCs/IWUkqEfw9lpwmnIgHov40afZop+djO9m117f32YT3+7mXmzm/v57HY6v7k2n9O8vH9jvWOGMMfiZek8l2L4GBKmD5DHKx/QDMwokOFafQhUmBTSfB5s5T4VHIe5RGqSD4qpaFfyRfb7NG9ZnaoPKhEL5f9980dTz9ngcbq9uEAIE9ShW59WdFvNvAWaaiGhmt0+Becjh0h4aFn/k4hz53qthlcCE3a93c6EycUCVB3ydaw0W4+IK7Ar4SGMvQqPeilgeknUWW7PLypYxhw+8MrzaOo4pa3k7xO4IigGqrDgJt0S5umnfMtZzA0BBwd/jCCWQI0yCl+jtyu0yBml94SRQFVEQL9E1V+/h1EU8kUFdRk05aARswwHYjKKlLLY0YnBH/os4ibpSY3MWjEfXcm2TalPqGONdR3blutT2xpbI0Sxa1mBU6nkJphOlKomiTep6OPqOUrFyA6QXp3iHLxVrYaDZJTsarAgQUskt41pP9DsnqA5GlrN/tyj/K+UZTZ8vavOfan13PsRThB8gQ+1wQMdkDLxCNb7CvfzUfDPQoqY47od6T2NkBvbFcZPOX8/9+iEVMAtdy+A3RXn5IFb2gvhIr7pwf1cavsTMiQWmJ4LfuePJhM/QA6l44sxceya+21htGJ7F673gtqSNrl2OWCrcJI2vR3hfScAbPjg0QBPd8BcmK3+l829D6d7XBLuAVTpMe1lDcNbsBAey/lcv9XeCJ1s6/vUiqeXk2Bkj8fBGF4tUPF0SHxkD50Rmowv3MtRreIbUPbBVC3M/JC3TLSJUiAdbvAlmzqvx/lbyjYiSul2dHyX5nCPTb9BWZBKp9THYqSmIqTxWfBfbrfrjHsCDTB90PbVrg9BoQ/WeFsYvlDLxn0BQv8K4zuh9T2zg5Wze1LVRJLs5nryk4oML0cT6rZbDJ20WcwWTDfMs79eHFghSWettd0zDhV80lo3nReDV0i4JpPqjWHPlaYvUuzeSXHejhT35GtUUYud78jXgH1HLSy9V5zSx3RM4glaNe9rYcCEAUGMkBr5fxIJNvyNoZYEKGVwX4aAho5+qmtXu0gTSqngHwsku4E3uhkMG/kF6vwaVU0K/b6ACR6j0cjtuA9P6i/gNkAv4D37tnV0VSRtRba3dx23b33P1u5VkeyuIg7sS71m3d6cTsu6tT29lPXpjWff+70FxZm2lIf/AEqfxGRrHwAA</trigger_inputs>
         <trigger_outputs/>
         <trigger_type>record_create</trigger_type>
@@ -1826,7 +1826,7 @@
         <flow display_value="Populating tables from record producers (portal)">917bfb41fbf1621086e7f4045eefdc6f</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Senão">666e5545c3e232002841b63b12d3ae99</logic_definition>
+        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
         <order>19</order>
         <outputs_assigned/>
         <parent_ui_id/>
@@ -1853,7 +1853,7 @@
         <flow display_value="Populating tables from record producers (portal)">917bfb41fbf1621086e7f4045eefdc6f</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Senão">666e5545c3e232002841b63b12d3ae99</logic_definition>
+        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
         <order>21</order>
         <outputs_assigned/>
         <parent_ui_id/>
@@ -1880,7 +1880,7 @@
         <flow display_value="Populating tables from record producers (portal)">917bfb41fbf1621086e7f4045eefdc6f</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Se">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
         <order>3</order>
         <outputs_assigned/>
         <parent_ui_id/>
@@ -1907,7 +1907,7 @@
         <flow display_value="Populating tables from record producers (portal)">917bfb41fbf1621086e7f4045eefdc6f</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Se">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
         <order>5</order>
         <outputs_assigned/>
         <parent_ui_id/>
@@ -1934,7 +1934,7 @@
         <flow display_value="Populating tables from record producers (portal)">917bfb41fbf1621086e7f4045eefdc6f</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Se">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
         <order>1</order>
         <outputs_assigned/>
         <parent_ui_id/>
@@ -1961,7 +1961,7 @@
         <flow display_value="Populating tables from record producers (portal)">917bfb41fbf1621086e7f4045eefdc6f</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Se">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
         <order>7</order>
         <outputs_assigned/>
         <parent_ui_id/>
@@ -1988,7 +1988,7 @@
         <flow display_value="Populating tables from record producers (portal)">917bfb41fbf1621086e7f4045eefdc6f</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Se">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
         <order>9</order>
         <outputs_assigned/>
         <parent_ui_id/>
@@ -2015,7 +2015,7 @@
         <flow display_value="Populating tables from record producers (portal)">917bfb41fbf1621086e7f4045eefdc6f</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Se">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
         <order>11</order>
         <outputs_assigned/>
         <parent_ui_id/>
@@ -2042,7 +2042,7 @@
         <flow display_value="Populating tables from record producers (portal)">917bfb41fbf1621086e7f4045eefdc6f</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Se">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
         <order>13</order>
         <outputs_assigned/>
         <parent_ui_id/>
@@ -2069,7 +2069,7 @@
         <flow display_value="Populating tables from record producers (portal)">917bfb41fbf1621086e7f4045eefdc6f</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Se">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
         <order>15</order>
         <outputs_assigned/>
         <parent_ui_id/>
@@ -2096,7 +2096,7 @@
         <flow display_value="Populating tables from record producers (portal)">917bfb41fbf1621086e7f4045eefdc6f</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Senão">666e5545c3e232002841b63b12d3ae99</logic_definition>
+        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
         <order>17</order>
         <outputs_assigned/>
         <parent_ui_id/>
@@ -2123,7 +2123,7 @@
         <flow display_value="Populating tables from record producers (portal)">917bfb41fbf1621086e7f4045eefdc6f</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Senão">666e5545c3e232002841b63b12d3ae99</logic_definition>
+        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
         <order>23</order>
         <outputs_assigned/>
         <parent_ui_id/>
@@ -2150,7 +2150,7 @@
         <flow display_value="Populating tables from record producers (portal)">917bfb41fbf1621086e7f4045eefdc6f</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Senão">666e5545c3e232002841b63b12d3ae99</logic_definition>
+        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
         <order>25</order>
         <outputs_assigned/>
         <parent_ui_id/>
@@ -2177,7 +2177,7 @@
         <flow display_value="Populating tables from record producers (portal)">917bfb41fbf1621086e7f4045eefdc6f</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Senão">666e5545c3e232002841b63b12d3ae99</logic_definition>
+        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
         <order>27</order>
         <outputs_assigned/>
         <parent_ui_id/>
@@ -2204,7 +2204,7 @@
         <flow display_value="Populating tables from record producers (portal)">917bfb41fbf1621086e7f4045eefdc6f</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Senão">666e5545c3e232002841b63b12d3ae99</logic_definition>
+        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
         <order>31</order>
         <outputs_assigned/>
         <parent_ui_id/>
@@ -2231,7 +2231,7 @@
         <flow display_value="Populating tables from record producers (portal)">917bfb41fbf1621086e7f4045eefdc6f</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Senão">666e5545c3e232002841b63b12d3ae99</logic_definition>
+        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
         <order>29</order>
         <outputs_assigned/>
         <parent_ui_id/>
@@ -2354,7 +2354,7 @@
         <binding_strategy>com.snc.process_flow.engine.binding.OncePerRecord</binding_strategy>
         <plan>{"type":"PlanProxy","persistor":{"@class":".ChunkingPlanPersistor","table":"sys_flow_trigger_plan","id":"ed7bfb41fbf1621086e7f4045eefdcae","name":"plan","plan_signature":null}}</plan>
         <plan_id>94f35f09fb7d221086e7f4045eefdcf8</plan_id>
-        <snapshot>917bfb41fbf1621086e7f4045eefdc6f</snapshot>
+        <snapshot>f6470528fbf1f610f6d5f9d38eefdcd4</snapshot>
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-27 17:32:27</sys_created_on>
         <sys_domain>global</sys_domain>

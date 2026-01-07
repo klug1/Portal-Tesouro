@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="d6f68c39fbe16210f6d5f9d38eefdc4f" extends="sys_import_set_row" label="Imp Tmpl X Sded9 Portal T 0 U Rreo" max_length="40" name="u_imp_tmpl_x_sded9_portal_t_0_u_rreo" type="collection">
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Reference Month (Jan-Dec)" label="Reference Month (Jan-Dec)" max_length="40" name="u_reference_month__jan_dec_" type="string"/>
+        <element attributes="import_attribute_name=Ano de referência" label="Ano de referência" max_length="4" name="u_rplcd_n_ascii_1989050366" type="integer"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=RREO according to LRF (Fiscal Responsibility Law)" label="RREO according to LRF (Fiscal Responsibility Law)" max_length="40" name="u_rreo_accordi_nsibility_law_" type="string"/>
+        <element attributes="import_attribute_name=RREO ajustada" label="RREO ajustada" max_length="100" name="u_rreo_ajustada" type="float"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Adjusted RREO (Fiscal Management Report)" label="Adjusted RREO (Fiscal Management Report)" max_length="40" name="u_adjusted_rre_gement_report_" type="string"/>
+        <element attributes="import_attribute_name=RREO conforme LRF (Lei de Responsabilidade Fiscal)" label="RREO conforme LRF (Lei de Responsabilidade Fiscal)" max_length="100" name="u_rreo_conform_lidade_fiscal_" type="float"/>
+        <element attributes="import_attribute_name=Reference Year" label="Reference Year" max_length="40" name="u_reference_year" type="integer"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Mês de referência(Jan-Dez)" label="Mês de referência(Jan-Dez)" max_length="40" name="u_rplcd_n_ascii_1391095205" type="string"/>
+    </element>
+</database>

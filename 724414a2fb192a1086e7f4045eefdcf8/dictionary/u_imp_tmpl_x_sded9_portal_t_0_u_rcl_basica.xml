@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="ac0b68c7fb612a10f6d5f9d38eefdc6c" extends="sys_import_set_row" label="Imp Tmpl X Sded9 Portal T 0 U Rcl Basica" max_length="40" name="u_imp_tmpl_x_sded9_portal_t_0_u_rcl_basica" type="collection">
+        <element attributes="import_attribute_name=Reference Year" label="Reference Year" max_length="4" name="u_reference_year" type="integer"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Reference Bimester (1st–6th)" label="Reference Bimester (1st–6th)" max_length="40" name="u_reference_bimester__1st_6th_" type="string"/>
+        <element attributes="import_attribute_name=Regular CLR (Current Net Revenue)" label="Regular CLR (Current Net Revenue)" max_length="20" name="u_regular_clr__t_net_revenue_" type="float"/>
+        <element attributes="import_attribute_name=Adjusted CLR (Current Net Revenue)" label="Adjusted CLR (Current Net Revenue)" max_length="20" name="u_adjusted_clr_t_net_revenue_" type="float"/>
+    </element>
+</database>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="ce474fbdfbd17e10f6d5f9d38eefdc4b" label="Investimento" max_length="40" name="x_sded9_portal_t_0_investimento" type="collection">
+        <element label="Percentage of the NCR Investment Settled" max_length="20" name="percentual_da_rcl_investimento_liquidado" type="decimal"/>
+        <element label="Net Current Revenue" max_length="20" name="receita_corrente_liquida" type="decimal"/>
+        <element label="Percentage of the NCR Paid Investment" max_length="20" name="percentual_da_rcl_investimento_pago" type="decimal"/>
+        <element label="Committed Investment" max_length="20" name="investimento_empenhado" type="decimal"/>
+        <element label="Ano" max_length="40" name="u_ano" type="integer"/>
+        <element label="Percentage of the NCR Committed Investment" max_length="20" name="percentual_da_rcl_investimento_empenhado" type="decimal"/>
+        <element label="Paid Investment" max_length="20" name="investimento_pago" type="decimal"/>
+        <element label="Settled Investment" max_length="20" name="investimento_liquidado" type="decimal"/>
+    </element>
+</database>

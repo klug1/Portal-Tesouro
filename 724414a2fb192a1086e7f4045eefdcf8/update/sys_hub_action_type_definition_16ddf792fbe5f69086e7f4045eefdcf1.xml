@@ -730,7 +730,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label/>
         <mandatory>true</mandatory>
         <max_length>8000</max_length>
@@ -897,7 +897,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Valor Apurado Resultado Primário</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -980,7 +980,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Valor Apurado Despesa com Pessoal</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1063,7 +1063,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Meta Caixa Líquido</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1146,7 +1146,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Cumprimento Endividamento</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1229,7 +1229,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Meta Resultado Primário</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1312,7 +1312,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Valor Apurado Caixa Líquido</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1395,7 +1395,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Valor Apurado Arrecadação Própria</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1478,7 +1478,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Meta Despesa com Pessoal</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1561,7 +1561,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Meta Endividamento</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1644,7 +1644,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Ano</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1727,7 +1727,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Cumprimento Arrecadação Própria</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1810,7 +1810,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Valor Apurado Endividamento</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1893,7 +1893,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Cumprimento Caixa Líquido</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1976,7 +1976,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Cumprimento Resultado Primário</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -2059,7 +2059,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Meta Arrecadação Própria</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -2142,7 +2142,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Cumprimento Despesa com Pessoal</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -2595,7 +2595,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Referência">reference</internal_type>
+        <internal_type display_value="Reference">reference</internal_type>
         <label>Parent Sys ID</label>
         <mandatory>true</mandatory>
         <max_length>32</max_length>
@@ -2679,7 +2679,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Row Index</label>
         <mandatory>true</mandatory>
         <max_length>8000</max_length>
@@ -2853,7 +2853,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Meta Arrecadação Própria</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -2940,7 +2940,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Cumprimento Arrecadação Própria</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3027,7 +3027,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Meta Resultado Primário</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3114,7 +3114,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Valor Apurado Arrecadação Própria</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3201,7 +3201,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Meta Caixa Líquido</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3311,7 +3311,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Action Status</label>
         <mandatory>false</mandatory>
         <max_length>65000</max_length>
@@ -3398,7 +3398,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Valor Apurado Resultado Primário</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3485,7 +3485,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Ano</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3572,7 +3572,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Cumprimento Despesa com Pessoal</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3659,7 +3659,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Meta Despesa com Pessoal</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3746,7 +3746,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Valor Apurado Despesa com Pessoal</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3833,7 +3833,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Meta Endividamento</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3920,7 +3920,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Valor Apurado Caixa Líquido</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -4007,7 +4007,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Cumprimento Caixa Líquido</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -4094,7 +4094,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Cumprimento Endividamento</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -4181,7 +4181,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Cumprimento Resultado Primário</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -4268,7 +4268,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Valor Apurado Endividamento</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -4795,17 +4795,17 @@
     <sys_hub_action_plan action="INSERT_OR_UPDATE">
         <action_id display_value="Get MRVS Values (Programa de Ajuste Fiscal)">16ddf792fbe5f69086e7f4045eefdcf1</action_id>
         <plan>{"type":"PlanProxy","persistor":{"@class":".ChunkingPlanPersistor","table":"sys_hub_action_plan","id":"b71f80eafb29f69086e7f4045eefdc78","name":"plan","plan_signature":null}}</plan>
-        <snapshot>b566602efba9f69086e7f4045eefdc46</snapshot>
+        <snapshot>bb6a4d6cfbf1f610f6d5f9d38eefdcb3</snapshot>
         <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
         <sys_created_on>2025-12-04 02:06:13</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>b71f80eafb29f69086e7f4045eefdc78</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_overrides/>
         <sys_scope/>
         <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-12-04 03:47:57</sys_updated_on>
+        <sys_updated_on>2025-12-10 11:33:14</sys_updated_on>
     </sys_hub_action_plan>
     <sys_hub_action_type_snapshot action="INSERT_OR_UPDATE">
         <access>public</access>
@@ -5534,7 +5534,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>row_index</label>
         <mandatory>true</mandatory>
         <max_length>8000</max_length>
@@ -5701,7 +5701,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Cumprimento Resultado Primário</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -5784,7 +5784,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Valor Apurado Caixa Líquido</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -5867,7 +5867,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Ano</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -5950,7 +5950,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Cumprimento Caixa Líquido</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -6033,7 +6033,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Meta Caixa Líquido</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -6116,7 +6116,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Valor Apurado Despesa com Pessoal</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -6199,7 +6199,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Cumprimento Endividamento</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -6282,7 +6282,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Valor Apurado Arrecadação Própria</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -6365,7 +6365,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Valor Apurado Resultado Primário</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -6448,7 +6448,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Valor Apurado Endividamento</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -6531,7 +6531,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Cumprimento Arrecadação Própria</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -6614,7 +6614,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Meta Despesa com Pessoal</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -6697,7 +6697,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Meta Endividamento</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -6780,7 +6780,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Meta Arrecadação Própria</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -6863,7 +6863,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Meta Resultado Primário</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -6946,7 +6946,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Cumprimento Despesa com Pessoal</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -7399,7 +7399,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Row Index</label>
         <mandatory>true</mandatory>
         <max_length>8000</max_length>
@@ -7483,7 +7483,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Referência">reference</internal_type>
+        <internal_type display_value="Reference">reference</internal_type>
         <label>Parent Sys ID</label>
         <mandatory>true</mandatory>
         <max_length>32</max_length>
@@ -7570,7 +7570,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Cumprimento Caixa Líquido</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -7657,7 +7657,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Meta Despesa com Pessoal</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -7744,7 +7744,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Meta Caixa Líquido</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -7831,7 +7831,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Valor Apurado Endividamento</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -7918,7 +7918,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Ano</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -8005,7 +8005,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Valor Apurado Caixa Líquido</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -8092,7 +8092,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Cumprimento Despesa com Pessoal</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -8179,7 +8179,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Valor Apurado Arrecadação Própria</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -8266,7 +8266,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Meta Arrecadação Própria</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -8353,7 +8353,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Valor Apurado Despesa com Pessoal</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -8440,7 +8440,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Valor Apurado Resultado Primário</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -8527,7 +8527,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Meta Resultado Primário</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -8614,7 +8614,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Cumprimento Endividamento</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -8701,7 +8701,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Meta Endividamento</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -8788,7 +8788,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Cumprimento Resultado Primário</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -8875,7 +8875,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Cumprimento Arrecadação Própria</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -9049,7 +9049,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Action Status</label>
         <mandatory>false</mandatory>
         <max_length>65000</max_length>

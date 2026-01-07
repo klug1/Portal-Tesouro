@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="29f0dc44fba4721086e7f4045eefdc3f" extends="sys_import_set_row" label="Imp Tmpl X Sded9 Portal T 0 U Despesa Bruta E Liquida" max_length="40" name="u_imp_tmpl_x_sded9_portal_t_0_u_despesa_bruta_e_liquida" type="collection">
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Mês" label="Mês" max_length="40" name="u_rplcd_n_ascii_1501958512" type="string"/>
+        <element attributes="import_attribute_name=Valor Despesas" label="Valor Despesas " max_length="20" name="u_valor_despesas" type="float"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Tipo de despesa" label="Tipo de despesa" max_length="40" name="u_tipo_de_despesa" type="string"/>
+        <element attributes="import_attribute_name=Ano" label="Ano" max_length="40" name="u_ano" type="integer"/>
+    </element>
+</database>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $timeout) {
+  $timeout(function() {
+    if (typeof Chart !== 'undefined' && $scope.data.percent_despesa_2024 !== 'N/D') {
+      var percent = parseFloat($scope.data.percent_despesa_2024);
+      var limites = [
+        parseFloat($scope.data.limite_alerta),
+        parseFloat($scope.data.limite_prudencial),
+        parseFloat($scope.data.limite_maximo)
+      ];
+
+      var ctx = document.getElementById('despesaChart').getContext('2d');
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Comprometimento', 'Alerta', 'Prudencial', 'Máximo'],
+          datasets: [{
+            label: '% Despesa',
+            data: [percent, ...limites],
+            backgroundColor: [
+              'rgba(59, 130, 246, 0.8)',  // azul
+              'rgba(234, 179, 8, 0.6)',   // amarelo
+              'rgba(249, 115, 22, 0.6)',  // laranja
+              'rgba(220, 38, 38, 0.6)'    // vermelho
+            ],
+            borderRadius: 10
+          }]
+        },
+        options: {
+          plugins: {
+            legend: { display: false },
+            tooltip: { enabled: true }
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              max: 100,
+              ticks: {
+                callback: function(value) { return value + '%' }
+              }
+            }
+          }
+        }
+      });
+    }
+  }, 500);
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.widget-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.info-container {
+  width: 100%;
+  text-align: center;
+}
+
+.chart-container {
+  width: 100%;
+  max-width: 600px;
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>widget_limite_com_despesas</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Widget limite com despesas</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  var gr = new GlideRecord('x_sded9_portal_t_0_u_despesa_pessoal');
+  gr.addQuery('u_ano', 2024);
+  gr.query();
+
+  if (gr.next()) {
+    data.percent_despesa_2024 = parseFloat(gr.u_comprometimento_rcl).toFixed(2);
+    data.valor_despesa_2024 = (parseFloat(gr.u_despesa_liquida_pedidos) / 1000000).toFixed(2);
+    data.limite_alerta = parseFloat(gr.u_limite_de_alerta).toFixed(2);
+    data.limite_prudencial = parseFloat(gr.u_limite_prudencial).toFixed(2);
+    data.limite_maximo = parseFloat(gr.u_limite_maximo).toFixed(2);
+  } else {
+    data.percent_despesa_2024 = 'N/D';
+    data.valor_despesa_2024 = 'N/D';
+    data.limite_alerta = 'N/D';
+    data.limite_prudencial = 'N/D';
+    data.limite_maximo = 'N/D';
+  }
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>estevao.gabriel@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-19 20:15:14</sys_created_on>
+        <sys_id>40045f2efb21a610f6d5f9d38eefdc8d</sys_id>
+        <sys_mod_count>13</sys_mod_count>
+        <sys_name>Widget limite com despesas</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_40045f2efb21a610f6d5f9d38eefdc8d</sys_update_name>
+        <sys_updated_by>estevao.gabriel@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-20 17:24:59</sys_updated_on>
+        <template><![CDATA[<div class="bg-white rounded-2xl shadow-lg p-6 widget-container">
+  <div class="info-container">
+    <h2 class="text-2xl font-bold text-gray-800 mb-1">% Despesa 2024</h2>
+    <p class="text-4xl text-blue-600 font-bold mb-4">{{data.percent_despesa_2024}}%</p>
+
+    <h2 class="text-2xl font-bold text-gray-800 mb-1">Valor da Despesa 2024</h2>
+    <p class="text-4xl text-green-600 font-bold mb-4">{{data.valor_despesa_2024}} MI</p>
+
+    <div class="bg-gray-100 p-4 rounded-xl w-full">
+      <p><strong class="text-gray-700">Limite de Alerta:</strong> {{data.limite_alerta}}%</p>
+      <p><strong class="text-gray-700">Limite Prudencial:</strong> {{data.limite_prudencial}}%</p>
+      <p><strong class="text-gray-700">Limite Máximo:</strong> {{data.limite_maximo}}%</p>
+    </div>
+  </div>
+
+  <div class="chart-container mt-6 w-full">
+    <canvas id="despesaChart" height="120"></canvas>
+  </div>
+</div>
+]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>40045f2efb21a610f6d5f9d38eefdc8d</id>
+        <sys_created_by>estevao.gabriel@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-19 20:15:14</sys_created_on>
+        <sys_id>84045f2efb21a610f6d5f9d38eefdc8f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>estevao.gabriel@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-19 20:15:14</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

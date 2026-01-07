@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_module">
+    <sys_ui_module action="DELETE">
+        <active>true</active>
+        <application display_value="Ranking Centro de Lideranças Públicas">c97c74f4fb457210f6d5f9d38eefdce7</application>
+        <filter/>
+        <name>Ranking Centro de Lideranças Públicas</name>
+        <order/>
+        <path/>
+        <path_relative_to_root>false</path_relative_to_root>
+        <roles>x_sded9_portal_t_0.ranking_centro_de_lideran_as_p_blicas_user</roles>
+        <sys_class_name>sys_ui_module</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-03 22:23:30</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>c17c74f4fb457210f6d5f9d38eefdcea</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Ranking Centro de Lideranças Públicas</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sys_ui_module_c17c74f4fb457210f6d5f9d38eefdcea</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-03 22:23:30</sys_updated_on>
+        <table>x_sded9_portal_t_0_ranking_centro_de_lideran_as_publicas</table>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+    </sys_ui_module>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</application>
+        <file_path/>
+        <instance_id>e34bb3801b9d82dc65324089bd4bcbee</instance_id>
+        <instance_name>sefazmtdev</instance_name>
+        <name>sys_ui_module_c17c74f4fb457210f6d5f9d38eefdcea</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_module"><sys_ui_module action="INSERT_OR_UPDATE"><active>true</active><application display_value="Ranking Centro de Lideranças Públicas">c97c74f4fb457210f6d5f9d38eefdce7</application><filter/><name>Ranking Centro de Lideranças Públicas</name><order/><path/><path_relative_to_root>false</path_relative_to_root><roles>x_sded9_portal_t_0.ranking_centro_de_lideran_as_p_blicas_user</roles><sys_class_name>sys_ui_module</sys_class_name><sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by><sys_created_on>2025-11-03 22:23:30</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>c17c74f4fb457210f6d5f9d38eefdcea</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Ranking Centro de Lideranças Públicas</sys_name><sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package><sys_policy/><sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope><sys_update_name>sys_ui_module_c17c74f4fb457210f6d5f9d38eefdcea</sys_update_name><sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by><sys_updated_on>2025-11-03 22:23:30</sys_updated_on><table>x_sded9_portal_t_0_ranking_centro_de_lideran_as_publicas</table><uncancelable>false</uncancelable><view_name/></sys_ui_module></record_update>]]></payload>
+        <payload_hash>1626942372</payload_hash>
+        <record_name>Ranking Centro de Lideranças Públicas</record_name>
+        <reverted_from/>
+        <source>411c3cb4fb457210f6d5f9d38eefdc84</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-03 22:23:30</sys_created_on>
+        <sys_id>097c74f4fb457210f6d5f9d38eefdcec</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19a4bd178840000001</sys_recorded_at>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-03 22:23:30</sys_updated_on>
+        <type>Module</type>
+        <update_guid>c97c74f458457210c2c57d1a73cc43eb</update_guid>
+        <update_guid_history>c97c74f458457210c2c57d1a73cc43eb:1626942372</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-03 22:35:31</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_module">sys_ui_module</sys_db_object>
+        <sys_id>4118eedea6904ae2ba135bbf4e229424</sys_id>
+        <sys_metadata>c17c74f4fb457210f6d5f9d38eefdcea</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Ranking Centro de Lideranças Públicas</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_scope_delete display_value="">06b5f462fd3a460d80eabc3a7195aca1</sys_scope_delete>
+        <sys_update_name>sys_ui_module_c17c74f4fb457210f6d5f9d38eefdcea</sys_update_name>
+        <sys_update_version display_value="sys_ui_module_c17c74f4fb457210f6d5f9d38eefdcea">097c74f4fb457210f6d5f9d38eefdcec</sys_update_version>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-03 22:35:31</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

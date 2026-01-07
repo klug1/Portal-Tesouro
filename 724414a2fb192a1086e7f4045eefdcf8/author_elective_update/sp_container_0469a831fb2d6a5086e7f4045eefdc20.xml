@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container">
+    <sp_container action="DELETE">
+        <background_color/>
+        <background_image/>
+        <background_style>default</background_style>
+        <bootstrap_alt>false</bootstrap_alt>
+        <class_name/>
+        <container_class_name/>
+        <name>Despesas com o Pessoal - Container 11</name>
+        <order>11</order>
+        <semantic_tag/>
+        <sp_page display_value="despesa_pessoal">76c8a031fb2d6a5086e7f4045eefdcb9</sp_page>
+        <subheader>false</subheader>
+        <sys_class_name>sp_container</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-05-16 23:54:19</sys_created_on>
+        <sys_id>0469a831fb2d6a5086e7f4045eefdc20</sys_id>
+        <sys_mod_count>21</sys_mod_count>
+        <sys_name>Despesas com o Pessoal - Container 11</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_container_0469a831fb2d6a5086e7f4045eefdc20</sys_update_name>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-05 01:06:29</sys_updated_on>
+        <title/>
+        <width>container-fluid</width>
+    </sp_container>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</application>
+        <file_path/>
+        <instance_id>e34bb3801b9d82dc65324089bd4bcbee</instance_id>
+        <instance_name>sefazmtdev</instance_name>
+        <name>sp_container_0469a831fb2d6a5086e7f4045eefdc20</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container"><sp_container action="INSERT_OR_UPDATE"><background_color/><background_image/><background_style>default</background_style><bootstrap_alt>false</bootstrap_alt><class_name/><container_class_name/><name>Despesas com o Pessoal - Container 11</name><order>11</order><semantic_tag/><sp_page display_value="despesa_pessoal">76c8a031fb2d6a5086e7f4045eefdcb9</sp_page><subheader>false</subheader><sys_class_name>sp_container</sys_class_name><sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by><sys_created_on>2025-05-16 23:54:19</sys_created_on><sys_id>0469a831fb2d6a5086e7f4045eefdc20</sys_id><sys_mod_count>21</sys_mod_count><sys_name>Despesas com o Pessoal - Container 11</sys_name><sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package><sys_policy/><sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope><sys_update_name>sp_container_0469a831fb2d6a5086e7f4045eefdc20</sys_update_name><sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by><sys_updated_on>2025-11-05 01:06:29</sys_updated_on><title/><width>container-fluid</width></sp_container></record_update>]]></payload>
+        <payload_hash>-1206933008</payload_hash>
+        <record_name>Despesas com o Pessoal - Container 11</record_name>
+        <reverted_from/>
+        <source>fcb200e0fbc9be90f6d5f9d38eefdcd4</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-05 01:06:29</sys_created_on>
+        <sys_id>da5b6201fbc5f210f6d5f9d38eefdc34</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19a518d0bc60000001</sys_recorded_at>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-05 01:06:29</sys_updated_on>
+        <type>Container</type>
+        <update_guid>1a5b620158c5f210aa2ddc91cb279a34</update_guid>
+        <update_guid_history>1a5b620158c5f210aa2ddc91cb279a34:-1206933008,391b62cd3085f2108252a89c51a11113:616122451,7899a20d5e85f21024b0e304c7b37bbf:1743609417,92b86e89ba85f2105eeee19e9ece3880:859538954,ea276a09a485f210335bae990b2a08c4:-24531509,737c350dd281f210f62bc01ef6d2eba0:-1206933008,da98c6726f7c3a103c7319d3f4b7b763:616122451,f913465cc9203210ec4f113afeb19346:1548147681,7d03c25c9e203210cbcfeff57cba4cbf:-1040582850,4aa812dfc5e1a290ba18fc089823fa04:665653915,f6e7de5f8fe1a290b1f8b0393d85175c:-1040582850,dd665edb43e1a2903853b9289820e3f3:1548147681,4df55e9b86e1a29057237f3888c88952:-2025758443,cb75929bdae1a29049899ebd7858c6c9:1395961238,27559e5ba5e1a290aac55b977ffcf3e4:522713623,df551e5b27e1a290412a885bf2ed36b9:-350533992,03559e5b79e1a290cd2f7ec6067252b5:-1223781607,e2551a5b9ee1a2907fe9f91d6e6a7d5b:-2097029222,0e559e5ba5e1a2900c2e480959441f4f:1324690459,61551e5b1de1a290a5c2ac65057639a1:451442844,cf2b6cf1072d6a5007ee089dcafcb552:-421804771,0c69a831e62d6a5007619f1fc9404b20:1278990062</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Despesas com o Pessoal - Container 11">4eab6641fbc5f210f6d5f9d38eefdc82</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-05 01:07:50</sys_created_on>
+        <sys_db_object display_value="" name="sp_container">sp_container</sys_db_object>
+        <sys_id>03f6ee93d32f46b48202ff0a1d893ea4</sys_id>
+        <sys_metadata>0469a831fb2d6a5086e7f4045eefdc20</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Despesas com o Pessoal - Container 11</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_scope_delete display_value="">06b5f462fd3a460d80eabc3a7195aca1</sys_scope_delete>
+        <sys_update_name>sp_container_0469a831fb2d6a5086e7f4045eefdc20</sys_update_name>
+        <sys_update_version display_value="sp_container_0469a831fb2d6a5086e7f4045eefdc20">da5b6201fbc5f210f6d5f9d38eefdc34</sys_update_version>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-05 01:07:50</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

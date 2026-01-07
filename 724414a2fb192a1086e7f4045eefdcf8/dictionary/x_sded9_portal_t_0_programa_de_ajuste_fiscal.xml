@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="d77f47f9fb157e10f6d5f9d38eefdcca" label="Programa de Ajuste Fiscal" max_length="40" name="x_sded9_portal_t_0_programa_de_ajuste_fiscal" type="collection">
+        <element label="Personnel Expenditure Amount Determined" max_length="20" name="valor_apurado_despesa_com_pessoal" type="decimal"/>
+        <element label="Personnel Expenditure Target" max_length="20" name="meta_despesa_com_pessoal" type="decimal"/>
+        <element label="Primary Result Amount Determined" max_length="20" name="valor_apurado_resultado_primario" type="decimal"/>
+        <element label="Net Cash Target" max_length="20" name="meta_caixa_liquido" type="decimal"/>
+        <element choice="1" label="Own Revenue Compliance" max_length="40" name="cumprimento_arrecadacao_propria" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Sim" language="pb" value="1"/>
+                <element inactive_on_update="false" label="Yes" value="1"/>
+                <element inactive_on_update="false" label="No" value="2"/>
+                <element inactive_on_update="false" label="Não" value="2"/>
+            </choice>
+        </element>
+        <element label="Year" max_length="40" name="u_ano" type="integer"/>
+        <element label="Primary Result Target" max_length="20" name="meta_resultado_primario" type="decimal"/>
+        <element label="Debt Amount Determined" max_length="20" name="valor_apurado_endividamento" type="decimal"/>
+        <element choice="1" label="Debt Compliance" max_length="40" name="cumprimento_endividamento" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="No" value="2"/>
+                <element inactive_on_update="false" label="Não" language="pb" value="2"/>
+                <element inactive_on_update="false" label="Sim" language="pb" value="1"/>
+                <element inactive_on_update="false" label="Yes" value="1"/>
+            </choice>
+        </element>
+        <element choice="1" label="Net Cash Compliance" max_length="40" name="cumprimento_caixa_liquido" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Yes" value="1"/>
+                <element inactive_on_update="false" label="No" value="2"/>
+                <element inactive_on_update="false" label="Não" language="pb" value="2"/>
+                <element inactive_on_update="false" label="Sim" language="pb" value="1"/>
+            </choice>
+        </element>
+        <element label="Net Cash Amount Determined" max_length="20" name="valor_apurado_caixa_liquido" type="decimal"/>
+        <element label="Debt Target" max_length="20" name="meta_endividamento" type="decimal"/>
+        <element choice="1" label="Personnel Expenditure Compliance" max_length="40" name="cumprimento_despesa_com_pessoal" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Não" value="2"/>
+                <element inactive_on_update="false" label="Sim" language="pb" value="1"/>
+                <element inactive_on_update="false" label="No" value="2"/>
+                <element inactive_on_update="false" label="Yes" value="1"/>
+            </choice>
+        </element>
+        <element label="Own Revenue Amount Determined" max_length="20" name="valor_apurado_arrecadacao_propria" type="decimal"/>
+        <element label="Own Revenue Target" max_length="20" name="meta_arrecadacao_propria" type="decimal"/>
+        <element choice="1" label="Primary Result Compliance" max_length="40" name="cumprimento_resultado_primario" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Yes" value="1"/>
+                <element inactive_on_update="false" label="Não" language="pb" value="2"/>
+                <element inactive_on_update="false" label="No" value="2"/>
+                <element inactive_on_update="false" label="Sim" language="pb" value="1"/>
+            </choice>
+        </element>
+    </element>
+</database>

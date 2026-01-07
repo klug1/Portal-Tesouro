@@ -366,7 +366,7 @@ outputs.soma_interna_externa = fieldMapping['v_estoque_total_da_divida_publica_s
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label/>
         <mandatory>true</mandatory>
         <max_length>8000</max_length>
@@ -533,7 +533,7 @@ outputs.soma_interna_externa = fieldMapping['v_estoque_total_da_divida_publica_s
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Soma Interna Externa</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -616,7 +616,7 @@ outputs.soma_interna_externa = fieldMapping['v_estoque_total_da_divida_publica_s
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Divida Publica Externa</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -699,7 +699,7 @@ outputs.soma_interna_externa = fieldMapping['v_estoque_total_da_divida_publica_s
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Divida Publica Interna</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -782,7 +782,7 @@ outputs.soma_interna_externa = fieldMapping['v_estoque_total_da_divida_publica_s
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Ano</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -959,7 +959,7 @@ outputs.soma_interna_externa = fieldMapping['v_estoque_total_da_divida_publica_s
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Row Index</label>
         <mandatory>true</mandatory>
         <max_length>8000</max_length>
@@ -1043,7 +1043,7 @@ outputs.soma_interna_externa = fieldMapping['v_estoque_total_da_divida_publica_s
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Referência">reference</internal_type>
+        <internal_type display_value="Reference">reference</internal_type>
         <label>Parent Sys ID</label>
         <mandatory>true</mandatory>
         <max_length>32</max_length>
@@ -1130,7 +1130,7 @@ outputs.soma_interna_externa = fieldMapping['v_estoque_total_da_divida_publica_s
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Status da ação</label>
         <mandatory>false</mandatory>
         <max_length>65000</max_length>
@@ -1217,7 +1217,7 @@ outputs.soma_interna_externa = fieldMapping['v_estoque_total_da_divida_publica_s
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Soma</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1391,7 +1391,7 @@ outputs.soma_interna_externa = fieldMapping['v_estoque_total_da_divida_publica_s
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Divida Interna</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1478,7 +1478,7 @@ outputs.soma_interna_externa = fieldMapping['v_estoque_total_da_divida_publica_s
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Divida Externa</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1565,7 +1565,7 @@ outputs.soma_interna_externa = fieldMapping['v_estoque_total_da_divida_publica_s
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Ano</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1812,7 +1812,22 @@ outputs.soma_interna_externa = fieldMapping['v_estoque_total_da_divida_publica_s
         <url_target/>
     </sys_documentation>
     <sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_output_1f6b105dfb75621086e7f4045eefdc46"/>
-    <sys_hub_action_plan action="delete_multiple" query="action_id=1f6b105dfb75621086e7f4045eefdc46"/>
+    <sys_hub_action_plan action="delete_multiple" query="action_id=1f6b105dfb75621086e7f4045eefdc46^sys_idNOT INa96d9811fbb5621086e7f4045eefdc69"/>
+    <sys_hub_action_plan action="INSERT_OR_UPDATE">
+        <action_id display_value="Get MRVS Values (Public debt)">1f6b105dfb75621086e7f4045eefdc46</action_id>
+        <plan>{"type":"PlanProxy","persistor":{"@class":".ChunkingPlanPersistor","table":"sys_hub_action_plan","id":"a96d9811fbb5621086e7f4045eefdc69","name":"plan","plan_signature":null}}</plan>
+        <snapshot>956d9811fbb5621086e7f4045eefdc57</snapshot>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-27 20:00:43</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>a96d9811fbb5621086e7f4045eefdc69</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-27 20:00:43</sys_updated_on>
+    </sys_hub_action_plan>
     <sys_hub_action_type_snapshot action="INSERT_OR_UPDATE">
         <access>public</access>
         <acls/>
@@ -2259,7 +2274,7 @@ outputs.soma_interna_externa = fieldMapping['v_estoque_total_da_divida_publica_s
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>row_index</label>
         <mandatory>true</mandatory>
         <max_length>8000</max_length>
@@ -2343,7 +2358,7 @@ outputs.soma_interna_externa = fieldMapping['v_estoque_total_da_divida_publica_s
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Divida Publica Interna</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -2426,7 +2441,7 @@ outputs.soma_interna_externa = fieldMapping['v_estoque_total_da_divida_publica_s
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Ano</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -2509,7 +2524,7 @@ outputs.soma_interna_externa = fieldMapping['v_estoque_total_da_divida_publica_s
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Divida Publica Externa</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -2592,7 +2607,7 @@ outputs.soma_interna_externa = fieldMapping['v_estoque_total_da_divida_publica_s
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Soma Interna Externa</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -2769,7 +2784,7 @@ outputs.soma_interna_externa = fieldMapping['v_estoque_total_da_divida_publica_s
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Row Index</label>
         <mandatory>true</mandatory>
         <max_length>8000</max_length>
@@ -2853,7 +2868,7 @@ outputs.soma_interna_externa = fieldMapping['v_estoque_total_da_divida_publica_s
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Referência">reference</internal_type>
+        <internal_type display_value="Reference">reference</internal_type>
         <label>Parent Sys ID</label>
         <mandatory>true</mandatory>
         <max_length>32</max_length>
@@ -2940,7 +2955,7 @@ outputs.soma_interna_externa = fieldMapping['v_estoque_total_da_divida_publica_s
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Ano</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3114,7 +3129,7 @@ outputs.soma_interna_externa = fieldMapping['v_estoque_total_da_divida_publica_s
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Status da ação</label>
         <mandatory>false</mandatory>
         <max_length>65000</max_length>
@@ -3201,7 +3216,7 @@ outputs.soma_interna_externa = fieldMapping['v_estoque_total_da_divida_publica_s
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Divida Externa</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3288,7 +3303,7 @@ outputs.soma_interna_externa = fieldMapping['v_estoque_total_da_divida_publica_s
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Divida Interna</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3375,7 +3390,7 @@ outputs.soma_interna_externa = fieldMapping['v_estoque_total_da_divida_publica_s
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Soma</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>

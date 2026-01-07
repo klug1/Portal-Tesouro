@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="10fb387efb11aa1086e7f4045eefdc8c" label="RREO (Informe Resumen de Ejecución Presupuestaria)" max_length="40" name="x_sded9_portal_t_0_u_rreo" type="collection">
+        <element label="RREO conforme LRF (Lei de Responsabilidade Fiscal)" max_length="40" name="rreo_according_to_lrf_fiscal_responsibility_law_2" type="decimal"/>
+        <element label="RREO ajustada" max_length="40" name="adjusted_rreo_fiscal_management_report_2" type="decimal"/>
+        <element choice="1" label="Mes de referencia (Ene-Dic)" max_length="40" name="u_mes" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="February" sequence="200" value="02"/>
+                <element inactive_on_update="false" label="July" sequence="700" value="07"/>
+                <element inactive_on_update="false" label="Fevereiro" language="pb" sequence="200" value="02"/>
+                <element inactive_on_update="false" label="Dezembro" language="pb" sequence="1200" value="12"/>
+                <element inactive_on_update="false" label="Julho" language="pb" sequence="700" value="07"/>
+                <element inactive_on_update="false" label="Maio" language="pb" sequence="500" value="05"/>
+                <element inactive_on_update="false" label="Mayo" language="es" sequence="500" value="05"/>
+                <element inactive_on_update="false" label="March" sequence="300" value="03"/>
+                <element inactive_on_update="false" label="Diciembre" language="es" sequence="1200" value="12"/>
+                <element inactive_on_update="false" label="Enero" language="es" sequence="100" value="01"/>
+                <element inactive_on_update="false" label="Agosto" language="es" sequence="800" value="08"/>
+                <element inactive_on_update="false" label="June" sequence="600" value="06"/>
+                <element inactive_on_update="false" label="January" sequence="100" value="01"/>
+                <element inactive_on_update="false" label="Janeiro" language="pb" sequence="100" value="01"/>
+                <element inactive_on_update="false" label="August" sequence="800" value="08"/>
+                <element inactive_on_update="false" label="May" sequence="500" value="05"/>
+                <element inactive_on_update="false" label="Febrero" language="es" sequence="200" value="02"/>
+                <element inactive_on_update="false" label="Marzo" language="es" sequence="300" value="03"/>
+                <element inactive_on_update="false" label="Julio" language="es" sequence="700" value="07"/>
+                <element inactive_on_update="false" label="September" sequence="900" value="09"/>
+                <element inactive_on_update="false" label="November" sequence="1100" value="11"/>
+                <element inactive_on_update="false" label="Outubro" language="pb" sequence="1000" value="10"/>
+                <element inactive_on_update="false" label="Octubre" language="es" sequence="1000" value="10"/>
+                <element inactive_on_update="false" label="Septiembre" language="es" sequence="900" value="09"/>
+                <element inactive_on_update="false" label="October" sequence="1000" value="10"/>
+                <element inactive_on_update="false" label="Novembro" language="pb" sequence="1100" value="11"/>
+                <element inactive_on_update="false" label="December" sequence="1200" value="12"/>
+                <element inactive_on_update="false" label="Agosto" language="pb" sequence="800" value="08"/>
+                <element inactive_on_update="false" label="Junio" language="es" sequence="600" value="06"/>
+                <element inactive_on_update="false" label="Abril" language="pb" sequence="400" value="04"/>
+                <element inactive_on_update="false" label="Abril" language="es" sequence="400" value="04"/>
+                <element inactive_on_update="false" label="Setembro" language="pb" sequence="900" value="09"/>
+                <element inactive_on_update="false" label="Junho" language="pb" sequence="600" value="06"/>
+                <element inactive_on_update="false" label="Março" language="pb" sequence="300" value="03"/>
+                <element inactive_on_update="false" label="Noviembre" language="es" sequence="1100" value="11"/>
+                <element inactive_on_update="false" label="April" sequence="400" value="04"/>
+            </choice>
+        </element>
+        <element label="Año de referencia" max_length="4" name="u_ano" type="integer"/>
+    </element>
+</database>

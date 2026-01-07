@@ -463,7 +463,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label/>
         <mandatory>true</mandatory>
         <max_length>8000</max_length>
@@ -547,7 +547,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Amortizacao Interna</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -630,7 +630,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Amortizacao Externa</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -713,7 +713,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Juros Interno</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -796,7 +796,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Juros Externo</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -879,7 +879,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Ano</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1079,7 +1079,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Row Index</label>
         <mandatory>true</mandatory>
         <max_length>8000</max_length>
@@ -1163,7 +1163,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Referência">reference</internal_type>
+        <internal_type display_value="Reference">reference</internal_type>
         <label>Parent Sys ID</label>
         <mandatory>true</mandatory>
         <max_length>32</max_length>
@@ -1250,7 +1250,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Ano</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1337,7 +1337,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Amortizacao Externa</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1424,7 +1424,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Juros Externo</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1598,7 +1598,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Amortizacao Interna</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1685,7 +1685,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Status da ação</label>
         <mandatory>false</mandatory>
         <max_length>65000</max_length>
@@ -1772,7 +1772,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Juros Interno</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -2042,7 +2042,22 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <url_target/>
     </sys_documentation>
     <sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_output_8ca18821fbbd2210f6d5f9d38eefdc7d"/>
-    <sys_hub_action_plan action="delete_multiple" query="action_id=8ca18821fbbd2210f6d5f9d38eefdc7d"/>
+    <sys_hub_action_plan action="delete_multiple" query="action_id=8ca18821fbbd2210f6d5f9d38eefdc7d^sys_idNOT INd883c8e1fbbd2210f6d5f9d38eefdcfd"/>
+    <sys_hub_action_plan action="INSERT_OR_UPDATE">
+        <action_id display_value="Get MRVS Values (Amortization and Interest)">8ca18821fbbd2210f6d5f9d38eefdc7d</action_id>
+        <plan>{"type":"PlanProxy","persistor":{"@class":".ChunkingPlanPersistor","table":"sys_hub_action_plan","id":"d883c8e1fbbd2210f6d5f9d38eefdcfd","name":"plan","plan_signature":null}}</plan>
+        <snapshot>3b73c8e1fbbd2210f6d5f9d38eefdcf4</snapshot>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 12:46:04</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>d883c8e1fbbd2210f6d5f9d38eefdcfd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 12:46:04</sys_updated_on>
+    </sys_hub_action_plan>
     <sys_hub_action_type_snapshot action="INSERT_OR_UPDATE">
         <access>public</access>
         <acls/>
@@ -2503,7 +2518,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>row_index</label>
         <mandatory>true</mandatory>
         <max_length>8000</max_length>
@@ -2587,7 +2602,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Juros Externo</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -2670,7 +2685,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Amortizacao Externa</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -2753,7 +2768,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Ano</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -2836,7 +2851,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Juros Interno</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -2919,7 +2934,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Amortizacao Interna</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3119,7 +3134,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Row Index</label>
         <mandatory>true</mandatory>
         <max_length>8000</max_length>
@@ -3203,7 +3218,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Referência">reference</internal_type>
+        <internal_type display_value="Reference">reference</internal_type>
         <label>Parent Sys ID</label>
         <mandatory>true</mandatory>
         <max_length>32</max_length>
@@ -3290,7 +3305,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Amortizacao Interna</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3377,7 +3392,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Amortizacao Externa</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3464,7 +3479,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Status da ação</label>
         <mandatory>false</mandatory>
         <max_length>65000</max_length>
@@ -3551,7 +3566,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Juros Interno</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3638,7 +3653,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Juros Externo</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3725,7 +3740,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Ano</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>

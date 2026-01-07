@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="1c2e444dfbc5b210f6d5f9d38eefdccc" label="Despesa Bruta e Liquida com Pessoal" max_length="40" name="x_sded9_portal_t_0_despesa_bruta_e_liquida_com_pessoal" type="collection">
+        <element choice="1" label="Mês" mandatory="true" max_length="40" name="u_mes" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Maio" sequence="0" value="5"/>
+                <element inactive_on_update="false" label="Setembro" sequence="0" value="9"/>
+                <element inactive_on_update="false" label="Junho" sequence="0" value="6"/>
+                <element inactive_on_update="false" label="Outubro" sequence="0" value="10"/>
+                <element inactive_on_update="false" label="Fevereiro" sequence="0" value="2"/>
+                <element inactive_on_update="false" label="Julho" sequence="0" value="7"/>
+                <element inactive_on_update="false" label="Novembro" sequence="0" value="11"/>
+                <element inactive_on_update="false" label="Março" sequence="0" value="3"/>
+                <element inactive_on_update="false" label="Abril" sequence="0" value="4"/>
+                <element inactive_on_update="false" label="Agosto" sequence="0" value="8"/>
+                <element inactive_on_update="false" label="Dezembro" sequence="0" value="12"/>
+                <element inactive_on_update="false" label="Janeiro" sequence="0" value="1"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" choice="3" default="2017" label="Exercício" mandatory="true" max_length="40" name="u_exercicio" type="string">
+            <choice>
+                <element inactive_on_update="false" label="2020" sequence="3" value="2020"/>
+                <element inactive_on_update="false" label="2024" sequence="7" value="2024"/>
+                <element inactive_on_update="false" label="2028" sequence="11" value="2028"/>
+                <element inactive_on_update="false" label="2021" sequence="4" value="2021"/>
+                <element inactive_on_update="false" label="2025" sequence="8" value="2025"/>
+                <element inactive_on_update="false" label="2017" sequence="0" value="2017"/>
+                <element inactive_on_update="false" label="2026" sequence="9" value="2026"/>
+                <element inactive_on_update="false" label="2018" sequence="1" value="2018"/>
+                <element inactive_on_update="false" label="2022" sequence="5" value="2022"/>
+                <element inactive_on_update="false" label="2019" sequence="2" value="2019"/>
+                <element inactive_on_update="false" label="2023" sequence="6" value="2023"/>
+                <element inactive_on_update="false" label="2027" sequence="10" value="2027"/>
+            </choice>
+        </element>
+        <element choice="1" label="Tipo de informação" mandatory="true" max_length="40" name="u_tipo_de_informacao" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Despesa Líquida com pessoal - Mensal" sequence="0" value="2"/>
+                <element inactive_on_update="false" label="Despesa Bruta com pessoal - Mensal" sequence="0" value="1"/>
+            </choice>
+        </element>
+        <element label="Valor" mandatory="true" max_length="20" name="u_valor" type="decimal"/>
+    </element>
+</database>

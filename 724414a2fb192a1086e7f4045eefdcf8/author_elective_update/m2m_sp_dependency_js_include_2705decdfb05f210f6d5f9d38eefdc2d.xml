@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_dependency_js_include">
+    <m2m_sp_dependency_js_include action="DELETE">
+        <order>100</order>
+        <sp_dependency display_value="Recent Accesses Tracker">c9b3928dfb05f210f6d5f9d38eefdc71</sp_dependency>
+        <sp_js_include display_value="">6ef45ecdfb05f210f6d5f9d38eefdc98</sp_js_include>
+        <sys_class_name>m2m_sp_dependency_js_include</sys_class_name>
+        <sys_created_by>pk.aba</sys_created_by>
+        <sys_created_on>2025-11-04 23:29:05</sys_created_on>
+        <sys_id>2705decdfb05f210f6d5f9d38eefdc2d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Recent Accesses Tracker.</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>m2m_sp_dependency_js_include_2705decdfb05f210f6d5f9d38eefdc2d</sys_update_name>
+        <sys_updated_by>pk.aba</sys_updated_by>
+        <sys_updated_on>2025-11-04 23:29:05</sys_updated_on>
+    </m2m_sp_dependency_js_include>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</application>
+        <file_path/>
+        <instance_id>e34bb3801b9d82dc65324089bd4bcbee</instance_id>
+        <instance_name>sefazmtdev</instance_name>
+        <name>m2m_sp_dependency_js_include_2705decdfb05f210f6d5f9d38eefdc2d</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_dependency_js_include"><m2m_sp_dependency_js_include action="INSERT_OR_UPDATE"><order>100</order><sp_dependency display_value="Recent Accesses Tracker">c9b3928dfb05f210f6d5f9d38eefdc71</sp_dependency><sp_js_include display_value="">6ef45ecdfb05f210f6d5f9d38eefdc98</sp_js_include><sys_class_name>m2m_sp_dependency_js_include</sys_class_name><sys_created_by>pk.aba</sys_created_by><sys_created_on>2025-11-04 23:29:05</sys_created_on><sys_id>2705decdfb05f210f6d5f9d38eefdc2d</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Recent Accesses Tracker.</sys_name><sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package><sys_policy/><sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope><sys_update_name>m2m_sp_dependency_js_include_2705decdfb05f210f6d5f9d38eefdc2d</sys_update_name><sys_updated_by>pk.aba</sys_updated_by><sys_updated_on>2025-11-04 23:29:05</sys_updated_on></m2m_sp_dependency_js_include></record_update>]]></payload>
+        <payload_hash>-1871249538</payload_hash>
+        <record_name>Recent Accesses Tracker.</record_name>
+        <reverted_from/>
+        <source>bd7ff115fb283610f6d5f9d38eefdc71</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>pk.aba</sys_created_by>
+        <sys_created_on>2025-11-04 23:29:05</sys_created_on>
+        <sys_id>6305decdfb05f210f6d5f9d38eefdc2f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19a5133e1200000001</sys_recorded_at>
+        <sys_updated_by>pk.aba</sys_updated_by>
+        <sys_updated_on>2025-11-04 23:29:05</sys_updated_on>
+        <type>Dependency JS Includes</type>
+        <update_guid>6b05decd9305f21034eddc3cf410572e</update_guid>
+        <update_guid_history>6b05decd9305f21034eddc3cf410572e:-1871249538</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Recent Accesses Tracker.">d288d205fb49f21086e7f4045eefdce9</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>pk.aba</sys_created_by>
+        <sys_created_on>2025-11-04 23:44:17</sys_created_on>
+        <sys_db_object display_value="" name="m2m_sp_dependency_js_include">m2m_sp_dependency_js_include</sys_db_object>
+        <sys_id>0db4849c03ac4ed68aea9965bf48fb21</sys_id>
+        <sys_metadata>2705decdfb05f210f6d5f9d38eefdc2d</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Recent Accesses Tracker.</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_scope_delete display_value="">06b5f462fd3a460d80eabc3a7195aca1</sys_scope_delete>
+        <sys_update_name>m2m_sp_dependency_js_include_2705decdfb05f210f6d5f9d38eefdc2d</sys_update_name>
+        <sys_update_version display_value="m2m_sp_dependency_js_include_2705decdfb05f210f6d5f9d38eefdc2d">6305decdfb05f210f6d5f9d38eefdc2f</sys_update_version>
+        <sys_updated_by>pk.aba</sys_updated_by>
+        <sys_updated_on>2025-11-04 23:44:17</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

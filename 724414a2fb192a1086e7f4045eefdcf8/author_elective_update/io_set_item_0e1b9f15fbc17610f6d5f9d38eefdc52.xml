@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="io_set_item">
+    <io_set_item action="DELETE">
+        <order>100</order>
+        <sc_cat_item display_value="Cópia de Tesouro público credor">6d1bdf91fbc17610f6d5f9d38eefdc5f</sc_cat_item>
+        <sys_class_name>io_set_item</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-05 23:13:35</sys_created_on>
+        <sys_id>0e1b9f15fbc17610f6d5f9d38eefdc52</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Tesouro dívida pública - Credores.Cópia de Tesouro público credor</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>io_set_item_0e1b9f15fbc17610f6d5f9d38eefdc52</sys_update_name>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-05 23:13:35</sys_updated_on>
+        <variable_set display_value="Tesouro dívida pública - Credores">547e78f8fb85721086e7f4045eefdce2</variable_set>
+    </io_set_item>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</application>
+        <file_path/>
+        <instance_id>e34bb3801b9d82dc65324089bd4bcbee</instance_id>
+        <instance_name>sefazmtdev</instance_name>
+        <name>io_set_item_0e1b9f15fbc17610f6d5f9d38eefdc52</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="io_set_item"><io_set_item action="INSERT_OR_UPDATE"><order>100</order><sc_cat_item display_value="Cópia de Tesouro público credor">6d1bdf91fbc17610f6d5f9d38eefdc5f</sc_cat_item><sys_class_name>io_set_item</sys_class_name><sys_created_by>allex.sousa@artycs.com.br</sys_created_by><sys_created_on>2025-11-05 23:13:35</sys_created_on><sys_id>0e1b9f15fbc17610f6d5f9d38eefdc52</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Tesouro dívida pública - Credores.Cópia de Tesouro público credor</sys_name><sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package><sys_policy/><sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope><sys_update_name>io_set_item_0e1b9f15fbc17610f6d5f9d38eefdc52</sys_update_name><sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by><sys_updated_on>2025-11-05 23:13:35</sys_updated_on><variable_set display_value="Tesouro dívida pública - Credores">547e78f8fb85721086e7f4045eefdce2</variable_set></io_set_item></record_update>]]></payload>
+        <payload_hash>-2085325081</payload_hash>
+        <record_name>Tesouro dívida pública - Credores.Cópia de Tesouro público credor</record_name>
+        <reverted_from/>
+        <source>fcb200e0fbc9be90f6d5f9d38eefdcd4</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-05 23:13:35</sys_created_on>
+        <sys_id>da1b9f15fbc17610f6d5f9d38eefdc56</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19a564c0c500000001</sys_recorded_at>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-05 23:13:35</sys_updated_on>
+        <type>Catalog Variable Set</type>
+        <update_guid>161b9f15c4c17610caffc5a0592d5156</update_guid>
+        <update_guid_history>161b9f15c4c17610caffc5a0592d5156:-2085325081</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Tesouro dívida pública - Credores.Cópia de Tesouro público credor">618b9b55fbc17610f6d5f9d38eefdc37</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-05 23:15:27</sys_created_on>
+        <sys_db_object display_value="" name="io_set_item">io_set_item</sys_db_object>
+        <sys_id>35f00ac87dcc48b2a1166f52af787204</sys_id>
+        <sys_metadata>0e1b9f15fbc17610f6d5f9d38eefdc52</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Tesouro dívida pública - Credores.Cópia de Tesouro público credor</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_scope_delete display_value="">06b5f462fd3a460d80eabc3a7195aca1</sys_scope_delete>
+        <sys_update_name>io_set_item_0e1b9f15fbc17610f6d5f9d38eefdc52</sys_update_name>
+        <sys_update_version display_value="io_set_item_0e1b9f15fbc17610f6d5f9d38eefdc52">da1b9f15fbc17610f6d5f9d38eefdc56</sys_update_version>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-05 23:15:27</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

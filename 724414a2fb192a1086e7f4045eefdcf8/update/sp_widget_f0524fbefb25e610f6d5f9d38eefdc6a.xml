@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.widget-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card-box {
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  text-align: center;
+  padding: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.card-header {
+  background: #f1f3f5;
+  font-weight: bold;
+  font-size: 13px;
+  padding: 5px;
+  border-bottom: 1px solid #ccc;
+}
+
+.card-value {
+  font-size: 26px;
+  font-weight: bold;
+  padding: 10px 0;
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>widget_despesas_do_ano</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Widget despesas do ano</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  var gr = new GlideRecord('x_sded9_portal_t_0_u_despesa_pessoal');
+  gr.addQuery('u_ano', '2024');
+  gr.orderByDesc('sys_created_on');
+  gr.setLimit(1);
+  gr.query();
+
+  if (gr.next()) {
+    var comprometimento = parseFloat(gr.getValue('u_comprometimento_rcl')) || 0;
+    var despesaBruta = parseFloat(gr.getValue('u_despesa_bruta_pessoal')) || 0;
+
+    data.percentual = comprometimento.toFixed(2).replace('.', ',') + ' %';
+    data.valor = (despesaBruta / 1_000_000).toLocaleString('pt-BR', {
+      minimumFractionDigits: 3,
+      maximumFractionDigits: 3
+    }) + ' MI';
+  } else {
+    data.percentual = 'Sem dado';
+    data.valor = 'Sem dado';
+  }
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>estevao.gabriel@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-20 13:36:29</sys_created_on>
+        <sys_id>f0524fbefb25e610f6d5f9d38eefdc6a</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Widget despesas do ano</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_f0524fbefb25e610f6d5f9d38eefdc6a</sys_update_name>
+        <sys_updated_by>estevao.gabriel@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-20 17:25:20</sys_updated_on>
+        <template><![CDATA[<div class="widget-container">
+  <div class="card-box">
+    <div class="card-header"> % DESPESA 2024 </div>
+    <div class="card-value"> {{ data.percentual }} </div>
+  </div>
+  <div class="card-box">
+    <div class="card-header"> Valor Total </div>
+    <div class="card-value"> {{ data.valor }} </div>
+  </div>
+</div>
+]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>f0524fbefb25e610f6d5f9d38eefdc6a</id>
+        <sys_created_by>estevao.gabriel@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-20 13:36:29</sys_created_on>
+        <sys_id>bc52c372fb65e610f6d5f9d38eefdcf2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>estevao.gabriel@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-20 13:36:29</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

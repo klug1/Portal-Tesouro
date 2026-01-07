@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="io_set_item">
+    <io_set_item action="DELETE">
+        <order>100</order>
+        <sc_cat_item display_value="Cópia de Superávit">d8e64996fba5b69086e7f4045eefdcb0</sc_cat_item>
+        <sys_class_name>io_set_item</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-12-03 11:31:22</sys_created_on>
+        <sys_id>34e60d96fba5b69086e7f4045eefdc13</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Superávit.Cópia de Superávit</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>io_set_item_34e60d96fba5b69086e7f4045eefdc13</sys_update_name>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-03 11:31:22</sys_updated_on>
+        <variable_set display_value="Superávit">cf02bc16fb25b69086e7f4045eefdcb7</variable_set>
+    </io_set_item>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</application>
+        <file_path/>
+        <instance_id>e34bb3801b9d82dc65324089bd4bcbee</instance_id>
+        <instance_name>sefazmtdev</instance_name>
+        <name>io_set_item_34e60d96fba5b69086e7f4045eefdc13</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="io_set_item"><io_set_item action="INSERT_OR_UPDATE"><order>100</order><sc_cat_item display_value="Cópia de Superávit">d8e64996fba5b69086e7f4045eefdcb0</sc_cat_item><sys_class_name>io_set_item</sys_class_name><sys_created_by>allex.sousa@artycs.com.br</sys_created_by><sys_created_on>2025-12-03 11:31:22</sys_created_on><sys_id>34e60d96fba5b69086e7f4045eefdc13</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Superávit.Cópia de Superávit</sys_name><sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package><sys_policy/><sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope><sys_update_name>io_set_item_34e60d96fba5b69086e7f4045eefdc13</sys_update_name><sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by><sys_updated_on>2025-12-03 11:31:22</sys_updated_on><variable_set display_value="Superávit">cf02bc16fb25b69086e7f4045eefdcb7</variable_set></io_set_item></record_update>]]></payload>
+        <payload_hash>-1371034587</payload_hash>
+        <record_name>Superávit.Cópia de Superávit</record_name>
+        <reverted_from/>
+        <source>064f47f9fb157e10f6d5f9d38eefdc1c</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-12-03 11:31:22</sys_created_on>
+        <sys_id>b4e60d96fba5b69086e7f4045eefdc16</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19ae3fb36920000001</sys_recorded_at>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-03 11:31:22</sys_updated_on>
+        <type>Catalog Variable Set</type>
+        <update_guid>fce60d9628a5b6902c73b7539802aa15</update_guid>
+        <update_guid_history>fce60d9628a5b6902c73b7539802aa15:-1371034587</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Superávit.Cópia de Superávit">baf70d1afba5b69086e7f4045eefdc23</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-12-03 11:36:09</sys_created_on>
+        <sys_db_object display_value="" name="io_set_item">io_set_item</sys_db_object>
+        <sys_id>082c38f868ba475b81929428193877d1</sys_id>
+        <sys_metadata>34e60d96fba5b69086e7f4045eefdc13</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Superávit.Cópia de Superávit</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_scope_delete display_value="">06b5f462fd3a460d80eabc3a7195aca1</sys_scope_delete>
+        <sys_update_name>io_set_item_34e60d96fba5b69086e7f4045eefdc13</sys_update_name>
+        <sys_update_version display_value="io_set_item_34e60d96fba5b69086e7f4045eefdc13">b4e60d96fba5b69086e7f4045eefdc16</sys_update_version>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-03 11:36:09</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

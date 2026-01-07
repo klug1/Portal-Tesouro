@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.info-box {
+    border: 1px solid #ccc;
+    padding: 12px 16px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    margin-top: 2px;
+    font-size: 14px;
+    color: #333;
+    line-height: 1.5;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.info-box strong {
+    display: block;
+    margin-bottom: 4px;
+    color: #000;
+}
+
+.info-box .sub-info {
+    color: #0066cc;
+    font-weight: 500;
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>card_5</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Card 5</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>estevao.gabriel@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-20 16:45:04</sys_created_on>
+        <sys_id>1f7d27fafb69e610f6d5f9d38eefdc09</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Card 5</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_1f7d27fafb69e610f6d5f9d38eefdc09</sys_update_name>
+        <sys_updated_by>estevao.gabriel@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-20 17:24:59</sys_updated_on>
+        <template><![CDATA[<div class="info-box">
+  <p><strong>Descrição:</strong>
+     Imagem demonstra os <span class="sub-info">limites</span> de comprometimento das Despesas com pessoal em relação a Receita Corrente Líquida (RCL).
+  </p><br>
+  <p><strong>Fonte:</strong>
+     Relatório de Gestão Fiscal - RGF - 2019 a 2024 - Consolidado.
+  </p><br>
+  <p><strong>Atualização:</strong>
+     Bimestral - o exercício corrente contempla os últimos 12 meses
+  </p><br>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

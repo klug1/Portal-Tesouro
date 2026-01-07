@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="9bf3a1f9fb34fe50f6d5f9d38eefdc7f" label="Newsletter SATE" max_length="40" name="x_sded9_portal_t_0_newsletter" type="collection">
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Email" max_length="40" name="u_email" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Nome" max_length="40" name="u_nome" type="string"/>
+        <element default="true" label="Ativo" max_length="40" name="u_ativo" type="boolean"/>
+        <element attributes="edge_encryption_enabled=true" default="true" label="Consentimento" max_length="40" name="u_consentimento" type="boolean"/>
+        <element attributes="edge_encryption_enabled=true" label="Data do Registro" max_length="40" name="u_data_registro" type="glide_date"/>
+    </element>
+</database>

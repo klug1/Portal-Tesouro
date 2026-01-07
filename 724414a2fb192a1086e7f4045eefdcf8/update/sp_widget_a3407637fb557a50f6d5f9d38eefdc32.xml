@@ -1,0 +1,669 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function ($scope, $rootScope, spUtil, $timeout) {
+  // ========================
+  // ESTADO
+  // ========================
+  $scope.anoSelecionado = "";
+  $scope.latestYear = null;
+  $scope.dadosVisiveis = null;
+  $scope.isFading = false;
+
+  var chartInstance = null;
+  var offAnoListener = null;
+  var currentValue = 0;
+
+  // ========================
+  // LIMITES / CORES (CONSOLIDADO)
+  // ========================
+  // 0–54   verde
+  // 54–57  amarelo
+  // 57–60  laranja
+  // 60     tick vermelho-claro
+  // 60–100 vermelho-escuro
+  const TH_ALERT = 54.0;
+  const TH_PRUD  = 57.0;
+  const TH_MAX   = 60.0;
+
+  const SL_GREEN  = TH_ALERT;              // 54
+  const SL_YELLOW = TH_PRUD - TH_ALERT;    // 3
+  const SL_ORANGE = TH_MAX  - TH_PRUD;     // 3
+  const SL_TICK   = 0.2;                   // espessura do limite
+  const SL_RED    = 100 - TH_MAX - SL_TICK;// 39.8
+
+  var COLOR_GREEN  = "#8BC34A";
+  var COLOR_YELLOW = "#FFEB3B";
+  var COLOR_ORANGE = "#FF9800";
+  var COLOR_RED_LT = "#F44336";
+  var COLOR_RED_DK = "#8C0C03";
+
+  // ========================
+  // UTIL
+  // ========================
+  function clampPct(p) { return Math.max(0, Math.min(p, 100)); }
+  function mapValueToAngle(percent) { return (clampPct(percent) / 100) * Math.PI; }
+  function truncate2(x) {
+    if (typeof x !== "number") return x;
+    return (Math.round((x + Number.EPSILON) * 100) / 100).toFixed(2);
+  }
+
+  function loadChartJs() {
+    return new Promise(function (resolve) {
+      if (window.Chart) return resolve();
+      var s = document.createElement("script");
+      s.src = "https://cdn.jsdelivr.net/npm/chart.js";
+      s.onload = resolve;
+      document.head.appendChild(s);
+    });
+  }
+
+  // ========================
+  // PLUGIN DO PONTEIRO (CONSOLIDADO)
+  // ========================
+  var needlePluginConsolidado = {
+    id: "consolidadoNeedle",
+    afterDraw: function (chart, args, options) {
+      var value = options.value;
+      if (value == null) return;
+
+      var meta = chart.getDatasetMeta(0);
+      if (!meta || !meta.data || !meta.data.length) return;
+
+      var arc = meta.data[0];
+      var ctx = chart.ctx;
+
+      var cx = arc.x;
+      var cy = arc.y;
+      var outerR = arc.outerRadius;
+      var innerR = arc.innerRadius;
+      if (!outerR || !innerR) return;
+
+      // ângulo do ponteiro
+      var angle = Math.PI - mapValueToAngle(value);
+      var len = outerR * 0.85;
+
+      var tipX = cx + len * Math.cos(angle);
+      var tipY = cy - len * Math.sin(angle);
+
+      var pointerColor = "#333";
+
+      ctx.save();
+
+      // haste
+      ctx.beginPath();
+      ctx.moveTo(cx, cy);
+      ctx.lineTo(tipX, tipY);
+      ctx.strokeStyle = pointerColor;
+      ctx.lineWidth = 3;
+      ctx.stroke();
+
+      // ponta
+      var ahLen = outerR * 0.12;
+      var ahWid = outerR * 0.08;
+      var ux = Math.cos(angle), uy = -Math.sin(angle);
+      var baseX = tipX - ahLen * ux, baseY = tipY - ahLen * uy;
+      var leftX  = baseX + (ahWid / 2) * uy, leftY  = baseY + (ahWid / 2) * -ux;
+      var rightX = baseX - (ahWid / 2) * uy, rightY = baseY - (ahWid / 2) * -ux;
+
+      ctx.beginPath();
+      ctx.moveTo(tipX, tipY);
+      ctx.lineTo(leftX, leftY);
+      ctx.lineTo(rightX, rightY);
+      ctx.closePath();
+      ctx.fillStyle = pointerColor;
+      ctx.fill();
+
+      // pivô
+      ctx.beginPath();
+      ctx.arc(cx, cy, innerR * 0.25, 0, Math.PI * 2);
+      ctx.fillStyle = pointerColor;
+      ctx.fill();
+
+      // --- Tick do limite (60) DESENHADO ANTES DO TEXTO ---
+      var tickAngle = Math.PI - mapValueToAngle(TH_MAX);
+      var midR = innerR + (outerR - innerR) * 0.65;
+      var tickLen = outerR * 0.05;
+
+      var tickX1 = cx + midR * Math.cos(tickAngle);
+      var tickY1 = cy - midR * Math.sin(tickAngle);
+      var tickX2 = cx + (midR + tickLen) * Math.cos(tickAngle);
+      var tickY2 = cy - (midR + tickLen) * Math.sin(tickAngle);
+
+      ctx.beginPath();
+      ctx.moveTo(tickX1, tickY1);
+      ctx.lineTo(tickX2, tickY2);
+      ctx.strokeStyle = COLOR_RED_LT;
+      ctx.lineWidth = 2;
+      ctx.lineCap = "round";
+      ctx.stroke();
+
+      // --- RÓTULO (NÚMERO) SEMPRE POR CIMA ---
+      var labelR = innerR + (outerR - innerR) * 0.45;
+      var labelX = cx + labelR * Math.cos(angle);
+      var labelY = cy - labelR * Math.sin(angle);
+
+      ctx.font = "bold 19px Arial";
+      ctx.fillStyle = "#2b2f33";
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.fillText(truncate2(value) + "%", labelX, labelY - 14);
+
+      ctx.restore();
+    }
+  };
+
+  // ========================
+  // DATASET DO SEMIDONUT
+  // ========================
+  function buildDataset() {
+    return {
+      data: [SL_GREEN, SL_YELLOW, SL_ORANGE, SL_TICK, SL_RED],
+      backgroundColor: [
+        COLOR_GREEN,
+        COLOR_YELLOW,
+        COLOR_ORANGE,
+        COLOR_RED_LT,
+        COLOR_RED_DK
+      ],
+      borderWidth: 0.2,
+      borderColor: "rgba(0,0,0,0.05)",
+      borderJoinStyle: "miter",
+      spacing: 0,
+      circumference: 180,
+      rotation: 270,
+      cutout: "70%"
+    };
+  }
+
+  // ========================
+  // CRIA / ATUALIZA GAUGE
+  // ========================
+  function createGauge() {
+    var canvas = document.getElementById("gaugeChart");
+    if (!canvas) return null;
+    var ctx = canvas.getContext("2d");
+    if (!ctx) return null;
+
+    return new Chart(ctx, {
+      type: "doughnut",
+      data: {
+        labels: ["Verde", "Amarelo", "Laranja", "Vermelho Claro", "Vermelho Escuro"],
+        datasets: [buildDataset()]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        animation: { duration: 0 },
+        elements: {
+          arc: {
+            borderWidth: 0,
+            borderColor: "rgba(0,0,0,0)"
+          }
+        },
+        plugins: {
+          legend: { display: false },
+          tooltip: { enabled: false },
+          consolidadoNeedle: {
+            value: 0
+          }
+        }
+      },
+      plugins: [needlePluginConsolidado]
+    });
+  }
+
+  function renderGauge(percentual) {
+    if (!chartInstance) {
+      chartInstance = createGauge();
+      if (!chartInstance) return;
+    }
+
+    var v = clampPct(percentual || 0);
+    currentValue = v;
+
+    chartInstance.options.plugins.consolidadoNeedle.value = v;
+    chartInstance.update();
+  }
+
+  // ========================
+  // DADOS (ServiceNow)
+  // ========================
+  var ultimoAnoCache = null;
+
+  function buscarUltimoAnoDisponivel() {
+    if (ultimoAnoCache) return Promise.resolve(ultimoAnoCache);
+    return spUtil.get("widget_limite_com_despesas_semidonut", { filtro_ano: "" })
+      .then(function (resp) {
+        var dados = (resp.data && resp.data.dados) || [];
+        if (!dados.length) return null;
+        var anos = Array.from(new Set(dados.map(function (i) { return i.ano; }))).sort();
+        ultimoAnoCache = anos[anos.length - 1] || null;
+        return ultimoAnoCache;
+      })
+      .catch(function (err) {
+        console.error("Erro ao buscar anos disponíveis:", err);
+        return null;
+      });
+  }
+
+  function carregarDadosDoAno(ano) {
+    return spUtil.get("widget_limite_com_despesas_semidonut", { filtro_ano: ano })
+      .then(function (resp) {
+        var dados = (resp.data && resp.data.dados) || [];
+        if (!dados.length) {
+          $scope.dadosVisiveis = null;
+          $scope.latestYear = null;
+          return null;
+        }
+
+        $scope.dadosVisiveis = dados[0];
+        $scope.latestYear = ano;
+
+        var p = ($scope.dadosVisiveis.comprometimento != null)
+          ? $scope.dadosVisiveis.comprometimento
+          : 0;
+
+        renderGauge(p);
+        return p;
+      })
+      .catch(function (err) {
+        console.error("Erro ao buscar dados:", err);
+        return null;
+      })
+      .finally(function () {
+        $scope.isFading = false;
+      });
+  }
+
+  function atualizarDados(ano) {
+    $scope.isFading = true;
+    if (!ano) {
+      buscarUltimoAnoDisponivel().then(function (ultimo) {
+        if (ultimo) {
+          $scope.anoSelecionado = String(ultimo);
+          carregarDadosDoAno(ultimo);
+        } else {
+          $scope.latestYear = null;
+          $scope.dadosVisiveis = null;
+          $scope.isFading = false;
+        }
+      });
+      return;
+    }
+    carregarDadosDoAno(ano);
+  }
+
+  // ========================
+  // EVENTOS
+  // ========================
+  $scope.anoChanged = function () {
+    var y = parseInt($scope.anoSelecionado, 10);
+    var thisYear = new Date().getFullYear();
+    if ($scope.anoSelecionado && (y < 2000 || y > thisYear)) {
+      console.warn("Ano fora do intervalo permitido.");
+      return;
+    }
+    $rootScope.$broadcast("anoSelecionado", $scope.anoSelecionado);
+  };
+
+  // ========================
+  // BOOTSTRAP
+  // ========================
+  loadChartJs().then(function () {
+    chartInstance = createGauge();
+
+    buscarUltimoAnoDisponivel().then(function (ultimoAno) {
+      if (ultimoAno) {
+        $scope.anoSelecionado = String(ultimoAno);
+        atualizarDados($scope.anoSelecionado);
+      } else {
+        $scope.latestYear = null;
+        $scope.dadosVisiveis = null;
+      }
+    });
+
+    offAnoListener = $rootScope.$on("anoSelecionado", function (evt, ano) {
+      if (!ano) return;
+      $scope.anoSelecionado = ano;
+      atualizarDados(ano);
+    });
+  });
+
+  // ========================
+  // CLEANUP
+  // ========================
+  $scope.$on("$destroy", function () {
+    if (offAnoListener) offAnoListener();
+    if (chartInstance) {
+      try { chartInstance.destroy(); } catch (e) {}
+      chartInstance = null;
+    }
+  });
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>/* =========================
+   Base &amp; painel
+========================= */
+:root{
+  --bg:#fff;
+  --ink:#202124;
+  --muted:#6b7280;
+  --line:#eceff1;
+  --card:#fafafa;
+  --shadow:0 1px 2px rgba(0,0,0,.04);
+  --shadow-lg:0 6px 18px rgba(0,0,0,.08);
+}
+
+.report-widget{
+  background:var(--bg);
+  border-radius:14px;
+  box-shadow:0 2px 6px rgba(0,0,0,.06);
+  overflow:hidden;
+  font-family:'Roboto Flex',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  transition:.35s ease;
+}
+
+.report-widget.fade-out{opacity:.35;filter:grayscale(.25)}
+.report-widget.panel.empty .panel-body{padding:28px;text-align:center}
+
+.panel-heading{
+  background:#e5e7eb;
+  border-bottom:1px solid #d9dde3;
+  padding:12px 16px;
+}
+.panel-title{
+  margin:0;
+  font-weight:700;
+  font-size:18px;
+  color:var(--ink);
+  text-align:center;
+}
+.panel-body{padding:16px 16px 18px}
+
+/* =========================
+   Gauge area
+========================= */
+.chart-wrap{display:flex;justify-content:center}
+.chart-container{
+  position:relative;
+  width:100%;
+  max-width:860px;
+  height:240px;               /* altura confortável */
+  margin:2px auto 22px;
+}
+.pointer-canvas{
+  position:absolute;top:0;left:0;display:block;width:100%;height:100%;
+}
+canvas{display:block;margin:0 auto;max-width:100%;height:auto}
+
+/* =========================
+   Escala (0% e 100%)
+========================= */
+.gauge-scale {
+  position: absolute;
+  left: 0;
+  bottom: 0; /* alinhado exatamente com a base do semidonut */
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  pointer-events: none;
+  transform: translateY(50%); /* empurra levemente para baixo do arco */
+}
+
+.scale-min,
+.scale-max {
+  font-weight: 700;
+  color: #2b2f33;
+  background: #fff;
+  border-radius: 6px;
+  padding: 2px 6px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .06);
+  font-size: 13px;
+}
+
+/* =========================
+   Legend as cards
+========================= */
+.legend{
+  width:100%;
+  max-width:920px;
+  margin:0 auto 6px;
+  display:flex;
+  flex-direction:column;      /* 1 por linha */
+  gap:4px;                    /* pouco espaço entre itens */
+}
+.legend-item{
+  display:grid;
+  grid-template-columns:22px 1fr;
+  align-items:flex-start;
+  gap:5px;
+  border:1px solid var(--line);
+  background:var(--card);
+  border-radius:12px;
+  padding:10px 12px;
+  box-shadow:var(--shadow);
+}
+.legend-item:hover{box-shadow:var(--shadow-lg);background:#fff}
+
+.legend-dot{
+  width:18px;height:18px;border-radius:6px;
+  background:var(--dot, #ccc);
+  box-shadow:inset 0 0 0 1px rgba(0,0,0,.06);
+}
+.legend-text h4{
+  margin:0 0 3px 0;
+  font-weight:800;
+  color:var(--ink);
+  font-size:15px;
+  line-height:1.25;
+}
+.legend-text p{
+  margin:0;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.45;
+}
+
+/* =========================
+   Resume (ano + valor)
+========================= */
+.resume{
+  text-align:center;
+  margin-top:18px;
+  padding:12px 14px;
+  background:#f6f7f9;
+  border:1px solid var(--line);
+  border-radius:12px;
+  font-size:16px;
+  font-weight:600;
+}
+
+/* =========================
+   Empty state
+========================= */
+.nodata{margin:0;font-size:15px;color:var(--muted)}
+
+/* =========================
+   Responsivo
+========================= */
+@media (max-width:1024px){
+  .chart-container{height:210px;margin-bottom:18px}
+  .legend-text h4{font-size:14.5px}
+  .legend-text p{font-size:12.5px}
+  .resume{font-size:15px}
+}
+@media (max-width:768px){
+  .chart-container{height:190px}
+  .legend{gap:7px}
+  .legend-item{padding:9px 11px}
+  .legend-text h4{font-size:14px}
+  .legend-text p{
+    font-size:12px;
+    display:-webkit-box;
+    -webkit-line-clamp:2;     /* corta descrições longas no mobile */
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+  }
+}
+@media (max-width:480px){
+  .chart-container{height:170px}
+  .scale-min,.scale-max{font-size:12px}
+  .legend-dot{width:16px;height:16px;border-radius:5px}
+  .legend-text h4{font-size:13.5px}
+  .legend-text p{font-size:11.5px}
+  .resume{font-size:14.5px;padding:10px 12px}
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id/>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Copy of copy Widget Limite com Despesas</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  var anoFiltrado = (typeof input !== 'undefined' && input.filtro_ano) ? input.filtro_ano : '';
+  var gr = new GlideRecord('x_sded9_portal_t_0_u_despesa_pessoal');
+
+  if (anoFiltrado) {
+    gr.addQuery('u_ano', anoFiltrado);
+  }
+
+  gr.orderByDesc('u_ano');
+  gr.query();
+
+  var dados = [];
+  while (gr.next()) {
+    dados.push({
+      ano: gr.getValue('u_ano'),
+      comprometimento: parseFloat(gr.getValue('u_comprometimento_rcl')) || 0
+    });
+  }
+	
+	//gs.addInfoMessage(JSON.stringify(dados));
+
+  data.dados = dados;
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-26 00:47:08</sys_created_on>
+        <sys_id>a3407637fb557a50f6d5f9d38eefdc32</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Copy of copy Widget Limite com Despesas</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_a3407637fb557a50f6d5f9d38eefdc32</sys_update_name>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-26 01:44:39</sys_updated_on>
+        <template><![CDATA[<!-- Fonte -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,400;600;700&display=swap" rel="stylesheet">
+
+<div class="report-widget panel"
+     ng-show="anoSelecionado !== '' && anoSelecionado != null && dadosVisiveis"
+     ng-class="{'fade-out': isFading}">
+
+  <div class="panel-heading">
+    <h2 class="panel-title">
+      <i class="fa fa-tachometer m-r"></i>
+      {{::c.options.title || 'Despesa com Pessoal - Consolidado'}}
+    </h2>
+  </div>
+
+  <div class="panel-body">
+    <!-- Gauge -->
+    <div class="chart-wrap">
+      <div class="chart-container">
+        <canvas id="gaugeChart" width="800" height="250"></canvas>
+        <canvas id="gaugePointer" width="800" height="250" class="pointer-canvas"></canvas>
+
+        <!-- escala 0% / 100% -->
+        <div class="gauge-scale">
+          <span class="scale-min">0%</span>
+          <span class="scale-max">100%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Legenda (cards) -->
+    <section class="legend">
+      <!-- Item Verde -->
+      <article class="legend-item">
+        <span class="legend-dot" style="--dot:#8BC34A"></span>
+        <div class="legend-text">
+          <h4>Verde — Abaixo do Alerta (0%–54,00%)</h4>
+          <p>Despesas sob controle. Há folga para manter equilíbrio e planejar aumentos com segurança.</p>
+        </div>
+      </article>
+
+      <!-- Item Amarelo -->
+      <article class="legend-item">
+        <span class="legend-dot" style="--dot:#FFEB3B"></span>
+        <div class="legend-text">
+          <h4>Amarelo — Limite de Alerta (54%–57%)</h4>
+          <p>Sinal de atenção. Tribunal de Contas alerta para conter o avanço dos gastos com pessoal.</p>
+        </div>
+      </article>
+
+      <!-- Item Laranja -->
+      <article class="legend-item">
+        <span class="legend-dot" style="--dot:#FF9800"></span>
+        <div class="legend-text">
+          <h4>Laranja — Limite Prudencial (57%–60%)</h4>
+          <p>Risco fiscal. A lei restringe reajustes, novos cargos e contratações.</p>
+        </div>
+      </article>
+
+      <!-- Item Vermelho Claro -->
+      <article class="legend-item">
+        <span class="legend-dot" style="--dot:#F44336"></span>
+        <div class="legend-text">
+          <h4>Vermelho Claro — Limite Máximo (60%)</h4>
+          <p>Teto legal da LRF atingido. Não pode ser ultrapassado.</p>
+        </div>
+      </article>
+
+      <!-- Item Vermelho Escuro -->
+      <article class="legend-item">
+        <span class="legend-dot" style="--dot:#8C0C03"></span>
+        <div class="legend-text">
+          <h4>Vermelho Escuro — Acima do Limite (60%–100%)</h4>
+          <p>Situação crítica. Estado deve cortar despesas e fica impedido de contratar novos empréstimos e receber transferência voluntária.</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- Valor/ano -->
+    <div class="resume">
+      <strong>{{latestYear}}</strong> – Comprometimento RCL com Pessoal:
+      <strong>{{dadosVisiveis.comprometimento}}%</strong>
+    </div>
+  </div>
+</div>
+
+<!-- Estado sem dados -->
+<div class="report-widget panel empty" ng-show="!dadosVisiveis">
+  <div class="panel-heading">
+    <h2 class="panel-title">
+      <i class="fa fa-tachometer m-r"></i>
+      {{::c.options.title || 'Limites com Despesas de Pessoal'}}
+    </h2>
+  </div>
+  <div class="panel-body">
+    <p class="nodata">Nenhum dado disponível para o ano selecionado.</p>
+  </div>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

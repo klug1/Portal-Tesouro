@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation action="DELETE" element="percentage_of_net_current_revenue_rcl_investment_committed" label="Percentual da RCL Investimento Empenhado " language="pb" table="x_sded9_portal_t_0_investimento">
+        <sys_documentation action="DELETE">
+            <element>percentage_of_net_current_revenue_rcl_investment_committed</element>
+            <help/>
+            <hint/>
+            <label>Percentual da RCL Investimento Empenhado </label>
+            <language>pb</language>
+            <name>x_sded9_portal_t_0_investimento</name>
+            <plural>Percentual da RCL Investimento Empenhado </plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-11-19 21:45:33</sys_created_on>
+            <sys_id>d93d8739fb157e10f6d5f9d38eefdcee</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Percentual da RCL Investimento Empenhado </sys_name>
+            <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+            <sys_update_name>sys_documentation_x_sded9_portal_t_0_investimento_percentage_of_net_current_revenue_rcl_investment_committed_pb</sys_update_name>
+            <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-19 21:45:33</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</application>
+        <file_path/>
+        <instance_id>e34bb3801b9d82dc65324089bd4bcbee</instance_id>
+        <instance_name>sefazmtdev</instance_name>
+        <name>sys_documentation_x_sded9_portal_t_0_investimento_percentage_of_net_current_revenue_rcl_investment_committed_pb</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_documentation element="percentage_of_net_current_revenue_rcl_investment_committed" label="Percentual da RCL Investimento Empenhado " language="pb" table="x_sded9_portal_t_0_investimento"><sys_documentation action="INSERT_OR_UPDATE"><element>percentage_of_net_current_revenue_rcl_investment_committed</element><help/><hint/><label>Percentual da RCL Investimento Empenhado </label><language>pb</language><name>x_sded9_portal_t_0_investimento</name><plural>Percentual da RCL Investimento Empenhado </plural><sys_class_name>sys_documentation</sys_class_name><sys_created_by>allex.sousa@artycs.com.br</sys_created_by><sys_created_on>2025-11-19 21:45:33</sys_created_on><sys_id>d93d8739fb157e10f6d5f9d38eefdcee</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Percentual da RCL Investimento Empenhado </sys_name><sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package><sys_policy/><sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope><sys_update_name>sys_documentation_x_sded9_portal_t_0_investimento_percentage_of_net_current_revenue_rcl_investment_committed_pb</sys_update_name><sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by><sys_updated_on>2025-11-19 21:45:33</sys_updated_on><url/><url_target/></sys_documentation></sys_documentation></record_update>]]></payload>
+        <payload_hash>1384700696</payload_hash>
+        <record_name>Investimento.Percentage of Net Current Revenue (RCL) Investment Committed</record_name>
+        <reverted_from/>
+        <source>b24414a2fb192a1086e7f4045eefdcfa</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 21:45:33</sys_created_on>
+        <sys_id>5d3d8739fb157e10f6d5f9d38eefdcf0</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_recorded_at>19a9e147ac60000001</sys_recorded_at>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 21:49:47</sys_updated_on>
+        <type>Rótulo do campo</type>
+        <update_guid>113d873916157e10bf3569fc9f63d2f0</update_guid>
+        <update_guid_history>113d873916157e10bf3569fc9f63d2f0:1384700696</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 21:49:19</sys_created_on>
+        <sys_db_object display_value="" name="sys_documentation">sys_documentation</sys_db_object>
+        <sys_id>11dc04f16d9b40f185b80cd1d9918ed9</sys_id>
+        <sys_metadata>d93d8739fb157e10f6d5f9d38eefdcee</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Percentual da RCL Investimento Empenhado </sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_parent display_value="">1fa84731fb157e10f6d5f9d38eefdc75</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_scope_delete display_value="">06b5f462fd3a460d80eabc3a7195aca1</sys_scope_delete>
+        <sys_update_name>sys_documentation_x_sded9_portal_t_0_investimento_percentage_of_net_current_revenue_rcl_investment_committed_pb</sys_update_name>
+        <sys_update_version display_value="sys_documentation_x_sded9_portal_t_0_investimento_percentage_of_net_current_revenue_rcl_investment_committed_pb">5d3d8739fb157e10f6d5f9d38eefdcf0</sys_update_version>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 21:49:19</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

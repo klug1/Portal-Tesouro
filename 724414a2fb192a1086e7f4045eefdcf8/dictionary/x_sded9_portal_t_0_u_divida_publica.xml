@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="cef8343afb11aa1086e7f4045eefdc19" label="Dívida Pública" max_length="40" name="x_sded9_portal_t_0_u_divida_publica" type="collection">
+        <element label="Stock total de la deuda pública (interna + externa)" max_length="20" name="u_estoque_divida_publica_total" type="decimal"/>
+        <element label="Stock de la deuda pública externa" max_length="20" name="u_estoque_divida_publica_externa" type="decimal"/>
+        <element label="Año de referencia" max_length="40" name="u_ano" type="integer"/>
+        <element label="Stock de la deuda pública interna" max_length="20" name="u_estoque_divida_publica_interna" type="decimal"/>
+    </element>
+</database>

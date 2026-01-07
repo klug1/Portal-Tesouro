@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="548fbcf8fb457210f6d5f9d38eefdcd5" label="Estados" max_length="40" name="x_sded9_portal_t_0_estados" type="collection">
+        <element choice="1" display="true" label="Nome" max_length="40" name="nome" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Espirito Santo" sequence="170" value="espírito_santo"/>
+                <element inactive_on_update="false" label="Para" sequence="230" value="pará"/>
+                <element inactive_on_update="false" label="Mato Grosso do Sul" sequence="210" value="mato_grosso_do_sul"/>
+                <element inactive_on_update="false" label="Maranhao" sequence="190" value="maranhão"/>
+                <element inactive_on_update="false" label="Parana" sequence="250" value="paraná"/>
+                <element inactive_on_update="false" label="Rondônia" language="pb" sequence="310" value="rondônia"/>
+                <element inactive_on_update="false" label="Rio Grande do Norte" sequence="290" value="rio_grande_do_norte"/>
+                <element inactive_on_update="false" label="Piaui" sequence="270" value="piauí"/>
+                <element inactive_on_update="false" label="Sergipe" language="pb" sequence="350" value="sergipe"/>
+                <element inactive_on_update="false" label="Santa Catarina" language="pb" sequence="330" value="santa_catarina"/>
+                <element inactive_on_update="false" label="Amapa" sequence="120" value="amapá"/>
+                <element inactive_on_update="false" label="Bahia" sequence="140" value="bahia"/>
+                <element inactive_on_update="false" label="Acre" sequence="100" value="acre"/>
+                <element inactive_on_update="false" label="Ceara" sequence="150" value="ceará"/>
+                <element inactive_on_update="false" label="Acre" language="pb" sequence="100" value="acre"/>
+                <element inactive_on_update="false" label="Maranhão" language="pb" sequence="190" value="maranhão"/>
+                <element inactive_on_update="false" label="Espírito Santo" language="pb" sequence="170" value="espírito_santo"/>
+                <element inactive_on_update="false" label="Pará" language="pb" sequence="230" value="pará"/>
+                <element inactive_on_update="false" label="Mato Grosso do Sul" language="pb" sequence="210" value="mato_grosso_do_sul"/>
+                <element inactive_on_update="false" label="Piauí" language="pb" sequence="270" value="piauí"/>
+                <element inactive_on_update="false" label="Roraima" sequence="320" value="roraima"/>
+                <element inactive_on_update="false" label="Paraná" language="pb" sequence="250" value="paraná"/>
+                <element inactive_on_update="false" label="Rio Grande do Sul" sequence="300" value="rio_grande_do_sul"/>
+                <element inactive_on_update="false" label="Rio Grande do Norte" language="pb" sequence="290" value="rio_grande_do_norte"/>
+                <element inactive_on_update="false" label="Tocantins" sequence="360" value="tocantins"/>
+                <element inactive_on_update="false" label="Sao Paulo" sequence="340" value="são_paulo"/>
+                <element inactive_on_update="false" label="Amazonas" language="pb" sequence="130" value="amazonas"/>
+                <element inactive_on_update="false" label="Amapá" language="pb" sequence="120" value="amapá"/>
+                <element inactive_on_update="false" label="Bahia" language="pb" sequence="140" value="bahia"/>
+                <element inactive_on_update="false" label="Amazonas" sequence="130" value="amazonas"/>
+                <element inactive_on_update="false" label="Mato Grosso" sequence="200" value="mato_grosso"/>
+                <element inactive_on_update="false" label="Goias" sequence="180" value="goiás"/>
+                <element inactive_on_update="false" label="Distrito Federal" sequence="160" value="distrito_federal"/>
+                <element inactive_on_update="false" label="Paraiba" sequence="240" value="paraíba"/>
+                <element inactive_on_update="false" label="Minas Gerais" sequence="220" value="minas_gerais"/>
+                <element inactive_on_update="false" label="Rio de Janeiro" sequence="280" value="rio_de_janeiro"/>
+                <element inactive_on_update="false" label="Pernambuco" sequence="260" value="pernambuco"/>
+                <element inactive_on_update="false" label="Roraima" language="pb" sequence="320" value="roraima"/>
+                <element inactive_on_update="false" label="São Paulo" language="pb" sequence="340" value="são_paulo"/>
+                <element inactive_on_update="false" label="Tocantins" language="pb" sequence="360" value="tocantins"/>
+                <element inactive_on_update="false" label="Alagoas" sequence="110" value="alagoas"/>
+                <element inactive_on_update="false" label="Minas Gerais" language="pb" sequence="220" value="minas_gerais"/>
+                <element inactive_on_update="false" label="Mato Grosso" language="pb" sequence="200" value="mato_grosso"/>
+                <element inactive_on_update="false" label="Goiás" language="pb" sequence="180" value="goiás"/>
+                <element inactive_on_update="false" label="Distrito Federal" language="pb" sequence="160" value="distrito_federal"/>
+                <element inactive_on_update="false" label="Paraíba" language="pb" sequence="240" value="paraíba"/>
+                <element inactive_on_update="false" label="Rio Grande do Sul" language="pb" sequence="300" value="rio_grande_do_sul"/>
+                <element inactive_on_update="false" label="Rio de Janeiro" language="pb" sequence="280" value="rio_de_janeiro"/>
+                <element inactive_on_update="false" label="Pernambuco" language="pb" sequence="260" value="pernambuco"/>
+                <element inactive_on_update="false" label="Rondonia" sequence="310" value="rondônia"/>
+                <element inactive_on_update="false" label="Sergipe" sequence="350" value="sergipe"/>
+                <element inactive_on_update="false" label="Santa Catarina" sequence="330" value="santa_catarina"/>
+                <element inactive_on_update="false" label="Alagoas" language="pb" sequence="110" value="alagoas"/>
+                <element inactive_on_update="false" label="Ceará" language="pb" sequence="150" value="ceará"/>
+            </choice>
+        </element>
+        <element choice="1" label="Região" max_length="40" name="u_regiao" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Sudeste" language="pt" sequence="130" value="sudeste"/>
+                <element inactive_on_update="false" label="Southeast Region" sequence="130" value="sudeste"/>
+                <element inactive_on_update="false" label="Norte" language="pt" sequence="100" value="norte"/>
+                <element inactive_on_update="false" label="Nordeste" language="pt" sequence="110" value="nordeste"/>
+                <element inactive_on_update="false" label="Central-West Region" sequence="120" value="centrooeste"/>
+                <element inactive_on_update="false" label="South Region" sequence="140" value="sul"/>
+                <element inactive_on_update="false" label="Centro-Oeste" language="pt" sequence="120" value="centrooeste"/>
+                <element inactive_on_update="false" label="North Region" sequence="100" value="norte"/>
+                <element inactive_on_update="false" label="Sul" language="pt" sequence="140" value="sul"/>
+                <element inactive_on_update="false" label="Northeast Region" sequence="110" value="nordeste"/>
+            </choice>
+        </element>
+        <element choice="1" label="UF" max_length="2" name="u_uf" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="AP" sequence="120" value="AP"/>
+                <element inactive_on_update="false" label="DF" language="pt" sequence="160" value="DF"/>
+                <element inactive_on_update="false" label="AP" language="pt" sequence="120" value="AP"/>
+                <element inactive_on_update="false" label="BA" language="pt" sequence="140" value="BA"/>
+                <element inactive_on_update="false" label="ES" sequence="170" value="ES"/>
+                <element inactive_on_update="false" label="MS" language="pt" sequence="210" value="MS"/>
+                <element inactive_on_update="false" label="MA" sequence="190" value="MA"/>
+                <element inactive_on_update="false" label="PA" language="pt" sequence="230" value="PA"/>
+                <element inactive_on_update="false" label="PE" language="pt" sequence="260" value="PE"/>
+                <element inactive_on_update="false" label="RS" sequence="300" value="RS"/>
+                <element inactive_on_update="false" label="SC" sequence="330" value="SC"/>
+                <element inactive_on_update="false" label="RJ" language="pt" sequence="280" value="RJ"/>
+                <element inactive_on_update="false" label="RJ" sequence="280" value="RJ"/>
+                <element inactive_on_update="false" label="SE" sequence="350" value="SE"/>
+                <element inactive_on_update="false" label="TO" sequence="360" value="TO"/>
+                <element inactive_on_update="false" label="AL" sequence="110" value="AL"/>
+                <element inactive_on_update="false" label="AM" sequence="130" value="AM"/>
+                <element inactive_on_update="false" label="CE" sequence="150" value="CE"/>
+                <element inactive_on_update="false" label="MG" sequence="220" value="MG"/>
+                <element inactive_on_update="false" label="PR" sequence="250" value="PR"/>
+                <element inactive_on_update="false" label="MA" language="pt" sequence="190" value="MA"/>
+                <element inactive_on_update="false" label="PB" sequence="240" value="PB"/>
+                <element inactive_on_update="false" label="SE" language="pt" sequence="350" value="SE"/>
+                <element inactive_on_update="false" label="RS" language="pt" sequence="300" value="RS"/>
+                <element inactive_on_update="false" label="SC" language="pt" sequence="330" value="SC"/>
+                <element inactive_on_update="false" label="PI" sequence="270" value="PI"/>
+                <element inactive_on_update="false" label="TO" language="pt" sequence="360" value="TO"/>
+                <element inactive_on_update="false" label="CE" language="pt" sequence="150" value="CE"/>
+                <element inactive_on_update="false" label="GO" sequence="180" value="GO"/>
+                <element inactive_on_update="false" label="AL" language="pt" sequence="110" value="AL"/>
+                <element inactive_on_update="false" label="AM" language="pt" sequence="130" value="AM"/>
+                <element inactive_on_update="false" label="AC" language="pt" sequence="100" value="AC"/>
+                <element inactive_on_update="false" label="ES" language="pt" sequence="170" value="ES"/>
+                <element inactive_on_update="false" label="PB" language="pt" sequence="240" value="PB"/>
+                <element inactive_on_update="false" label="PI" language="pt" sequence="270" value="PI"/>
+                <element inactive_on_update="false" label="MG" language="pt" sequence="220" value="MG"/>
+                <element inactive_on_update="false" label="PR" language="pt" sequence="250" value="PR"/>
+                <element inactive_on_update="false" label="MT" sequence="200" value="MT"/>
+                <element inactive_on_update="false" label="RO" sequence="310" value="RO"/>
+                <element inactive_on_update="false" label="SP" sequence="340" value="SP"/>
+                <element inactive_on_update="false" label="RN" sequence="290" value="RN"/>
+                <element inactive_on_update="false" label="RR" sequence="320" value="RR"/>
+                <element inactive_on_update="false" label="DF" sequence="160" value="DF"/>
+                <element inactive_on_update="false" label="BA" sequence="140" value="BA"/>
+                <element inactive_on_update="false" label="GO" language="pt" sequence="180" value="GO"/>
+                <element inactive_on_update="false" label="AC" sequence="100" value="AC"/>
+                <element inactive_on_update="false" label="MT" language="pt" sequence="200" value="MT"/>
+                <element inactive_on_update="false" label="PA" sequence="230" value="PA"/>
+                <element inactive_on_update="false" label="PE" sequence="260" value="PE"/>
+                <element inactive_on_update="false" label="MS" sequence="210" value="MS"/>
+                <element inactive_on_update="false" label="RN" language="pt" sequence="290" value="RN"/>
+                <element inactive_on_update="false" label="RR" language="pt" sequence="320" value="RR"/>
+                <element inactive_on_update="false" label="RO" language="pt" sequence="310" value="RO"/>
+                <element inactive_on_update="false" label="SP" language="pt" sequence="340" value="SP"/>
+            </choice>
+        </element>
+    </element>
+</database>

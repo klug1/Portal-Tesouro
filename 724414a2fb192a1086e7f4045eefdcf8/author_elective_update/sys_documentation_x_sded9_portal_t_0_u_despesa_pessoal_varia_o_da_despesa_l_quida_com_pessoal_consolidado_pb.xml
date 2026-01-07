@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation action="DELETE" element="varia_o_da_despesa_l_quida_com_pessoal_consolidado" label="Variação % da Despesa Líquida Com Pessoal - Consolidado" language="pb" table="x_sded9_portal_t_0_u_despesa_pessoal">
+        <sys_documentation action="DELETE">
+            <element>varia_o_da_despesa_l_quida_com_pessoal_consolidado</element>
+            <help/>
+            <hint/>
+            <label>Variação % da Despesa Líquida Com Pessoal - Consolidado</label>
+            <language>pb</language>
+            <name>x_sded9_portal_t_0_u_despesa_pessoal</name>
+            <plural>Variação % da Despesa Líquida Com Pessoal - Consolidado</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>jesse.biscarde@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-10-28 18:41:11</sys_created_on>
+            <sys_id>390051b6fb707690f6d5f9d38eefdc7b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Variação % da Despesa Líquida Com Pessoal - Consolidado</sys_name>
+            <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+            <sys_update_name>sys_documentation_x_sded9_portal_t_0_u_despesa_pessoal_varia_o_da_despesa_l_quida_com_pessoal_consolidado_pb</sys_update_name>
+            <sys_updated_by>jesse.biscarde@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-10-28 18:41:11</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</application>
+        <file_path/>
+        <instance_id>e34bb3801b9d82dc65324089bd4bcbee</instance_id>
+        <instance_name>sefazmtdev</instance_name>
+        <name>sys_documentation_x_sded9_portal_t_0_u_despesa_pessoal_varia_o_da_despesa_l_quida_com_pessoal_consolidado_pb</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_documentation element="varia_o_da_despesa_l_quida_com_pessoal_consolidado" label="Variação % da Despesa Líquida Com Pessoal - Consolidado" language="pb" table="x_sded9_portal_t_0_u_despesa_pessoal"><sys_documentation action="INSERT_OR_UPDATE"><element>varia_o_da_despesa_l_quida_com_pessoal_consolidado</element><help/><hint/><label>Variação % da Despesa Líquida Com Pessoal - Consolidado</label><language>pb</language><name>x_sded9_portal_t_0_u_despesa_pessoal</name><plural>Variação % da Despesa Líquida Com Pessoal - Consolidado</plural><sys_class_name>sys_documentation</sys_class_name><sys_created_by>jesse.biscarde@artycs.com.br</sys_created_by><sys_created_on>2025-10-28 18:41:11</sys_created_on><sys_id>390051b6fb707690f6d5f9d38eefdc7b</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Variação % da Despesa Líquida Com Pessoal - Consolidado</sys_name><sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package><sys_policy/><sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope><sys_update_name>sys_documentation_x_sded9_portal_t_0_u_despesa_pessoal_varia_o_da_despesa_l_quida_com_pessoal_consolidado_pb</sys_update_name><sys_updated_by>jesse.biscarde@artycs.com.br</sys_updated_by><sys_updated_on>2025-10-28 18:41:11</sys_updated_on><url/><url_target/></sys_documentation></sys_documentation></record_update>]]></payload>
+        <payload_hash>49423274</payload_hash>
+        <record_name>Personal Expenses.varia_o_da_despesa_l_quida_com_pessoal_consolidado</record_name>
+        <reverted_from/>
+        <source>7f97b8fafbbc3690f6d5f9d38eefdc55</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>jesse.biscarde@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-10-28 18:41:11</sys_created_on>
+        <sys_id>4e0051b6fb707690f6d5f9d38eefdc7d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19a2c1fc78d0000001</sys_recorded_at>
+        <sys_updated_by>jesse.biscarde@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-10-28 18:41:11</sys_updated_on>
+        <type>Rótulo do campo</type>
+        <update_guid>8e0051b69f7076903a28ff366098157c</update_guid>
+        <update_guid_history>8e0051b69f7076903a28ff366098157c:49423274</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>jesse.biscarde@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-10-28 18:42:33</sys_created_on>
+        <sys_db_object display_value="" name="sys_documentation">sys_documentation</sys_db_object>
+        <sys_id>1d4e9698877d419c893c035f6600a741</sys_id>
+        <sys_metadata>390051b6fb707690f6d5f9d38eefdc7b</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Variação % da Despesa Líquida Com Pessoal - Consolidado</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_parent display_value="">a1df05b6fb707690f6d5f9d38eefdc5d</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_scope_delete display_value="">06b5f462fd3a460d80eabc3a7195aca1</sys_scope_delete>
+        <sys_update_name>sys_documentation_x_sded9_portal_t_0_u_despesa_pessoal_varia_o_da_despesa_l_quida_com_pessoal_consolidado_pb</sys_update_name>
+        <sys_update_version display_value="sys_documentation_x_sded9_portal_t_0_u_despesa_pessoal_varia_o_da_despesa_l_quida_com_pessoal_consolidado_pb">4e0051b6fb707690f6d5f9d38eefdc7d</sys_update_version>
+        <sys_updated_by>jesse.biscarde@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-10-28 18:42:33</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

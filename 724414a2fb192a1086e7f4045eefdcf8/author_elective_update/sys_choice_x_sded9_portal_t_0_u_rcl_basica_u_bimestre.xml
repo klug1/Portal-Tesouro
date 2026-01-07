@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="u_bimestre" table="x_sded9_portal_t_0_u_rcl_basica" version="3">
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>u_bimestre</element>
+            <name>x_sded9_portal_t_0_u_rcl_basica</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-07 17:52:30</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>u_bimestre</sys_name>
+            <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+            <sys_update_name>sys_choice_x_sded9_portal_t_0_u_rcl_basica_u_bimestre</sys_update_name>
+            <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-07 17:52:30</sys_updated_on>
+        </sys_choice_set>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_bimestre</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>1</label>
+            <language>pb</language>
+            <name>x_sded9_portal_t_0_u_rcl_basica</name>
+            <sequence>100</sequence>
+            <synonyms/>
+            <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-07 17:52:34</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-07 17:52:34</sys_updated_on>
+            <value>1</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_bimestre</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>1</label>
+            <language>es</language>
+            <name>x_sded9_portal_t_0_u_rcl_basica</name>
+            <sequence>100</sequence>
+            <synonyms/>
+            <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-07 17:52:39</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-07 17:52:39</sys_updated_on>
+            <value>1</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_bimestre</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>1</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_u_rcl_basica</name>
+            <sequence>100</sequence>
+            <synonyms/>
+            <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-07 17:52:30</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-07 17:52:30</sys_updated_on>
+            <value>1</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_bimestre</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>2</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_u_rcl_basica</name>
+            <sequence>200</sequence>
+            <synonyms/>
+            <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-07 17:52:47</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-07 17:52:47</sys_updated_on>
+            <value>2</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_bimestre</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>2</label>
+            <language>es</language>
+            <name>x_sded9_portal_t_0_u_rcl_basica</name>
+            <sequence>200</sequence>
+            <synonyms/>
+            <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-07 17:52:51</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-07 17:52:51</sys_updated_on>
+            <value>2</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_bimestre</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>2</label>
+            <language>pb</language>
+            <name>x_sded9_portal_t_0_u_rcl_basica</name>
+            <sequence>200</sequence>
+            <synonyms/>
+            <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-07 17:52:55</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-07 17:52:55</sys_updated_on>
+            <value>2</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_bimestre</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>3</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_u_rcl_basica</name>
+            <sequence>300</sequence>
+            <synonyms/>
+            <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-07 17:53:07</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-07 17:53:07</sys_updated_on>
+            <value>3</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_bimestre</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>3</label>
+            <language>es</language>
+            <name>x_sded9_portal_t_0_u_rcl_basica</name>
+            <sequence>300</sequence>
+            <synonyms/>
+            <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-07 17:53:13</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-07 17:53:13</sys_updated_on>
+            <value>3</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_bimestre</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>3</label>
+            <language>pb</language>
+            <name>x_sded9_portal_t_0_u_rcl_basica</name>
+            <sequence>300</sequence>
+            <synonyms/>
+            <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-07 17:53:19</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-07 17:53:19</sys_updated_on>
+            <value>3</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_bimestre</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>4</label>
+            <language>pb</language>
+            <name>x_sded9_portal_t_0_u_rcl_basica</name>
+            <sequence>400</sequence>
+            <synonyms/>
+            <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-07 17:53:39</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-07 17:53:39</sys_updated_on>
+            <value>4</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_bimestre</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>4</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_u_rcl_basica</name>
+            <sequence>400</sequence>
+            <synonyms/>
+            <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-07 17:53:30</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-07 17:53:30</sys_updated_on>
+            <value>4</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_bimestre</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>4</label>
+            <language>es</language>
+            <name>x_sded9_portal_t_0_u_rcl_basica</name>
+            <sequence>400</sequence>
+            <synonyms/>
+            <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-07 17:53:34</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-07 17:53:34</sys_updated_on>
+            <value>4</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_bimestre</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>5</label>
+            <language>pb</language>
+            <name>x_sded9_portal_t_0_u_rcl_basica</name>
+            <sequence>500</sequence>
+            <synonyms/>
+            <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-07 17:54:00</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-07 17:54:00</sys_updated_on>
+            <value>5</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_bimestre</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>5</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_u_rcl_basica</name>
+            <sequence>500</sequence>
+            <synonyms/>
+            <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-07 17:53:49</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-07 17:53:49</sys_updated_on>
+            <value>5</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_bimestre</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>5</label>
+            <language>es</language>
+            <name>x_sded9_portal_t_0_u_rcl_basica</name>
+            <sequence>500</sequence>
+            <synonyms/>
+            <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-07 17:53:56</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-07 17:53:56</sys_updated_on>
+            <value>5</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_bimestre</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>6</label>
+            <language>pb</language>
+            <name>x_sded9_portal_t_0_u_rcl_basica</name>
+            <sequence>600</sequence>
+            <synonyms/>
+            <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-07 17:54:18</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-07 17:54:18</sys_updated_on>
+            <value>6</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_bimestre</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>6</label>
+            <language>en</language>
+            <name>x_sded9_portal_t_0_u_rcl_basica</name>
+            <sequence>600</sequence>
+            <synonyms/>
+            <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-07 17:54:10</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-07 17:54:10</sys_updated_on>
+            <value>6</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_bimestre</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>6</label>
+            <language>es</language>
+            <name>x_sded9_portal_t_0_u_rcl_basica</name>
+            <sequence>600</sequence>
+            <synonyms/>
+            <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-05-07 17:54:13</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-05-07 17:54:13</sys_updated_on>
+            <value>6</value>
+        </sys_choice>
+    </sys_choice>
+</record_update>

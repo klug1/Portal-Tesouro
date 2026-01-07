@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="23114936fb51aa1086e7f4045eefdcd8" label="RCL with Deductions" max_length="40" name="x_sded9_portal_t_0_u_rcl_deducoes" type="collection">
+        <element label="Año de referencia" max_length="4" name="u_ano" type="integer"/>
+        <element label="Variación" max_length="20" name="u_variacao" type="decimal"/>
+        <element label="RCL ajustado (Recaudación Corriente Líquida ajustada)" max_length="20" name="u_rcl_ajustada" type="decimal"/>
+        <element label="Deducciones entre RCL normal y ajustado" max_length="20" name="u_deducoes" type="decimal"/>
+        <element label="Regular CLR (Current Net Revenue)" max_length="40" name="u_rcl_normal" type="decimal"/>
+    </element>
+</database>

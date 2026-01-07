@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope) {
+  var c = this;
+  
+  /**
+   * Inicialização do widget
+   */
+  c.$onInit = function() {
+    // Inicializa o array de anos
+    c.anos = [];
+    
+    // Registra o listener para mudanças no select
+    c.registerListeners();
+  };
+  
+  /**
+   * Registra os event listeners
+   */
+  c.registerListeners = function() {
+    // Listener para mudança no select de ano
+    $scope.$watch('c.anoSelecionado', function(newValue, oldValue) {
+      if (newValue !== oldValue) {
+        c.emitirEventoFiltroAno(newValue);
+      }
+    });
+  };
+  
+  /**
+   * Emite o evento global de filtro por ano
+   * @param {String} ano - O ano selecionado ou string vazia
+   */
+  c.emitirEventoFiltroAno = function(ano) {
+    // Cria e dispara o CustomEvent com o ano selecionado
+    var evento = new CustomEvent('despesaPessoalFiltroAno', {
+      detail: {
+        ano: ano || ''
+      },
+      bubbles: true,
+      cancelable: true
+    });
+    
+    // Dispara o evento no documento
+    document.dispatchEvent(evento);
+    
+    console.log('Evento despesaPessoalFiltroAno emitido com ano:', ano || 'Todos');
+  };
+  
+  /**
+   * Manipula a seleção de um ano no dropdown
+   */
+  c.selecionarAno = function() {
+    c.emitirEventoFiltroAno(c.anoSelecionado);
+  };
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.despesa-pessoal-filtro-ano {
+  padding: 15px 0;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 20px;
+}
+
+.despesa-pessoal-filtro-ano .titulo {
+  font-size: 24px;
+  font-weight: 600;
+  color: #2e2e2e;
+  margin: 0;
+  line-height: 38px;
+}
+
+.despesa-pessoal-filtro-ano .filtro-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.despesa-pessoal-filtro-ano .filtro-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.despesa-pessoal-filtro-ano label {
+  margin-right: 10px;
+  font-weight: 600;
+  color: #2e2e2e;
+  margin-bottom: 0;
+}
+
+.despesa-pessoal-filtro-ano .select-container {
+  position: relative;
+  display: inline-block;
+  width: 120px;
+}
+
+.despesa-pessoal-filtro-ano .filtro-icone {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.despesa-pessoal-filtro-ano select {
+  width: 100%;
+  padding-right: 30px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.despesa-pessoal-filtro-ano select:focus {
+  outline: none;
+  border-color: #4d8fcc;
+  box-shadow: 0 0 0 2px rgba(77, 143, 204, 0.2);
+}
+
+/* Responsividade */
+@media (max-width: 767px) {
+  .despesa-pessoal-filtro-ano .titulo-container,
+  .despesa-pessoal-filtro-ano .filtro-container {
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .despesa-pessoal-filtro-ano .titulo-container {
+    margin-bottom: 15px;
+  }
+  
+  .despesa-pessoal-filtro-ano .filtro-wrapper {
+    justify-content: center;
+  }
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>widget_teste</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Widget teste</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* Consulta a tabela x_sded9_portal_t_0_u_despesa_pessoal para obter os anos disponíveis */
+  var anos = [];
+  
+  // Cria um GlideAggregate para consultar valores únicos do campo u_ano
+  var ga = new GlideAggregate('x_sded9_portal_t_0_u_despesa_pessoal');
+  ga.addAggregate('COUNT', 'u_ano');
+  ga.groupBy('u_ano');
+  ga.orderBy('u_ano');
+  ga.query();
+  
+  // Itera sobre os resultados e adiciona ao array de anos
+  while (ga.next()) {
+    var ano = ga.getValue('u_ano');
+    if (ano && ano.trim() !== '') {
+      anos.push(ano);
+    }
+  }
+  
+  // Ordena os anos em ordem decrescente (mais recente primeiro)
+  anos.sort(function(a, b) {
+    return b - a;
+  });
+  
+  // Define os dados que serão enviados para o client script
+  data.anos = anos;
+  
+  // Define o ano mais recente como selecionado por padrão (se existir)
+  if (anos.length > 0) {
+    data.anoSelecionado = anos[0];
+  } else {
+    data.anoSelecionado = '';
+  }
+})()
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>estevao.gabriel@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-20 19:04:39</sys_created_on>
+        <sys_id>f76d404bfbade610f6d5f9d38eefdc4b</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Widget teste</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_f76d404bfbade610f6d5f9d38eefdc4b</sys_update_name>
+        <sys_updated_by>estevao.gabriel@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-20 19:07:19</sys_updated_on>
+        <template><![CDATA[<div class="despesa-pessoal-filtro-ano">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 titulo-container">
+        <h2 class="titulo">Despesas com o Pessoal</h2>
+      </div>
+      <div class="col-md-6 filtro-container">
+        <div class="filtro-wrapper">
+          <label for="filtro-ano">ANO:</label>
+          <div class="select-container">
+            <i class="fa fa-filter filtro-icone"></i>
+            <select id="filtro-ano" class="form-control">
+              <option value="">Todos</option>
+              <option ng-repeat="ano in c.anos" value="{{ano}}">{{ano}}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>f76d404bfbade610f6d5f9d38eefdc4b</id>
+        <sys_created_by>estevao.gabriel@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-20 19:04:39</sys_created_on>
+        <sys_id>336d404bfbade610f6d5f9d38eefdc4d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>estevao.gabriel@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-20 19:04:39</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

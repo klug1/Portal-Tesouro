@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="io_set_item">
     <io_set_item action="INSERT_OR_UPDATE">
         <order>100</order>
-        <sc_cat_item display_value="Dívida Pública">94e5c320fb2de25086e7f4045eefdcab</sc_cat_item>
+        <sc_cat_item display_value="Public debt">94e5c320fb2de25086e7f4045eefdcab</sc_cat_item>
         <sys_class_name>io_set_item</sys_class_name>
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-13 14:09:24</sys_created_on>
@@ -14,6 +14,6 @@
         <sys_update_name>io_set_item_7ab60b60fb2de25086e7f4045eefdcab</sys_update_name>
         <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
         <sys_updated_on>2025-05-13 14:09:24</sys_updated_on>
-        <variable_set display_value="Dívida Pública">e8b60b60fb2de25086e7f4045eefdc6b</variable_set>
+        <variable_set display_value="Public debt">e8b60b60fb2de25086e7f4045eefdc6b</variable_set>
     </io_set_item>
 </record_update>

@@ -491,7 +491,7 @@ outputs.coeficiente = fieldMapping['v_coeficiente_de_atualizacao_monetaria'];&#1
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label/>
         <mandatory>true</mandatory>
         <max_length>8000</max_length>
@@ -575,7 +575,7 @@ outputs.coeficiente = fieldMapping['v_coeficiente_de_atualizacao_monetaria'];&#1
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Ano</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -658,7 +658,7 @@ outputs.coeficiente = fieldMapping['v_coeficiente_de_atualizacao_monetaria'];&#1
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>TR</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -741,7 +741,7 @@ outputs.coeficiente = fieldMapping['v_coeficiente_de_atualizacao_monetaria'];&#1
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>CDI</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -824,7 +824,7 @@ outputs.coeficiente = fieldMapping['v_coeficiente_de_atualizacao_monetaria'];&#1
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Coeficiente</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -907,7 +907,7 @@ outputs.coeficiente = fieldMapping['v_coeficiente_de_atualizacao_monetaria'];&#1
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>TJLP</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -990,7 +990,7 @@ outputs.coeficiente = fieldMapping['v_coeficiente_de_atualizacao_monetaria'];&#1
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Dolar</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1073,7 +1073,7 @@ outputs.coeficiente = fieldMapping['v_coeficiente_de_atualizacao_monetaria'];&#1
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Selic</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1319,7 +1319,7 @@ outputs.coeficiente = fieldMapping['v_coeficiente_de_atualizacao_monetaria'];&#1
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Referência">reference</internal_type>
+        <internal_type display_value="Reference">reference</internal_type>
         <label>Parent Sys ID</label>
         <mandatory>true</mandatory>
         <max_length>32</max_length>
@@ -1403,7 +1403,7 @@ outputs.coeficiente = fieldMapping['v_coeficiente_de_atualizacao_monetaria'];&#1
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Row Index</label>
         <mandatory>true</mandatory>
         <max_length>8000</max_length>
@@ -1577,7 +1577,7 @@ outputs.coeficiente = fieldMapping['v_coeficiente_de_atualizacao_monetaria'];&#1
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Coeficiente</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1664,7 +1664,7 @@ outputs.coeficiente = fieldMapping['v_coeficiente_de_atualizacao_monetaria'];&#1
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>TR</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1751,7 +1751,7 @@ outputs.coeficiente = fieldMapping['v_coeficiente_de_atualizacao_monetaria'];&#1
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>CDI</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1838,7 +1838,7 @@ outputs.coeficiente = fieldMapping['v_coeficiente_de_atualizacao_monetaria'];&#1
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Status da ação</label>
         <mandatory>false</mandatory>
         <max_length>65000</max_length>
@@ -1925,7 +1925,7 @@ outputs.coeficiente = fieldMapping['v_coeficiente_de_atualizacao_monetaria'];&#1
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Ano</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -2012,7 +2012,7 @@ outputs.coeficiente = fieldMapping['v_coeficiente_de_atualizacao_monetaria'];&#1
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>TJLP</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -2099,7 +2099,7 @@ outputs.coeficiente = fieldMapping['v_coeficiente_de_atualizacao_monetaria'];&#1
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Selic</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -2186,7 +2186,7 @@ outputs.coeficiente = fieldMapping['v_coeficiente_de_atualizacao_monetaria'];&#1
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Dolar</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -2502,7 +2502,22 @@ outputs.coeficiente = fieldMapping['v_coeficiente_de_atualizacao_monetaria'];&#1
         <url_target/>
     </sys_documentation>
     <sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_output_fc993b15fb7d2210f6d5f9d38eefdc70"/>
-    <sys_hub_action_plan action="delete_multiple" query="action_id=fc993b15fb7d2210f6d5f9d38eefdc70"/>
+    <sys_hub_action_plan action="delete_multiple" query="action_id=fc993b15fb7d2210f6d5f9d38eefdc70^sys_idNOT INb4cbf319fb7d2210f6d5f9d38eefdc50"/>
+    <sys_hub_action_plan action="INSERT_OR_UPDATE">
+        <action_id display_value="Get MRVS Values (Economic Indicators)">fc993b15fb7d2210f6d5f9d38eefdc70</action_id>
+        <plan>{"type":"PlanProxy","persistor":{"@class":".ChunkingPlanPersistor","table":"sys_hub_action_plan","id":"b4cbf319fb7d2210f6d5f9d38eefdc50","name":"plan","plan_signature":null}}</plan>
+        <snapshot>a0cbf319fb7d2210f6d5f9d38eefdc46</snapshot>
+        <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-28 12:12:15</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>b4cbf319fb7d2210f6d5f9d38eefdc50</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-28 12:12:15</sys_updated_on>
+    </sys_hub_action_plan>
     <sys_hub_action_type_snapshot action="INSERT_OR_UPDATE">
         <access>public</access>
         <acls/>
@@ -2991,7 +3006,7 @@ outputs.coeficiente = fieldMapping['v_coeficiente_de_atualizacao_monetaria'];&#1
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>row_index</label>
         <mandatory>true</mandatory>
         <max_length>8000</max_length>
@@ -3075,7 +3090,7 @@ outputs.coeficiente = fieldMapping['v_coeficiente_de_atualizacao_monetaria'];&#1
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Selic</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3158,7 +3173,7 @@ outputs.coeficiente = fieldMapping['v_coeficiente_de_atualizacao_monetaria'];&#1
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Coeficiente</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3241,7 +3256,7 @@ outputs.coeficiente = fieldMapping['v_coeficiente_de_atualizacao_monetaria'];&#1
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>TR</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3324,7 +3339,7 @@ outputs.coeficiente = fieldMapping['v_coeficiente_de_atualizacao_monetaria'];&#1
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Dolar</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3407,7 +3422,7 @@ outputs.coeficiente = fieldMapping['v_coeficiente_de_atualizacao_monetaria'];&#1
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Ano</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3490,7 +3505,7 @@ outputs.coeficiente = fieldMapping['v_coeficiente_de_atualizacao_monetaria'];&#1
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>CDI</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3573,7 +3588,7 @@ outputs.coeficiente = fieldMapping['v_coeficiente_de_atualizacao_monetaria'];&#1
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>TJLP</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3819,7 +3834,7 @@ outputs.coeficiente = fieldMapping['v_coeficiente_de_atualizacao_monetaria'];&#1
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Row Index</label>
         <mandatory>true</mandatory>
         <max_length>8000</max_length>
@@ -3903,7 +3918,7 @@ outputs.coeficiente = fieldMapping['v_coeficiente_de_atualizacao_monetaria'];&#1
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Referência">reference</internal_type>
+        <internal_type display_value="Reference">reference</internal_type>
         <label>Parent Sys ID</label>
         <mandatory>true</mandatory>
         <max_length>32</max_length>
@@ -3990,7 +4005,7 @@ outputs.coeficiente = fieldMapping['v_coeficiente_de_atualizacao_monetaria'];&#1
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Status da ação</label>
         <mandatory>false</mandatory>
         <max_length>65000</max_length>
@@ -4077,7 +4092,7 @@ outputs.coeficiente = fieldMapping['v_coeficiente_de_atualizacao_monetaria'];&#1
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>TR</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -4164,7 +4179,7 @@ outputs.coeficiente = fieldMapping['v_coeficiente_de_atualizacao_monetaria'];&#1
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Coeficiente</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -4251,7 +4266,7 @@ outputs.coeficiente = fieldMapping['v_coeficiente_de_atualizacao_monetaria'];&#1
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>TJLP</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -4338,7 +4353,7 @@ outputs.coeficiente = fieldMapping['v_coeficiente_de_atualizacao_monetaria'];&#1
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Ano</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -4425,7 +4440,7 @@ outputs.coeficiente = fieldMapping['v_coeficiente_de_atualizacao_monetaria'];&#1
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>CDI</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -4512,7 +4527,7 @@ outputs.coeficiente = fieldMapping['v_coeficiente_de_atualizacao_monetaria'];&#1
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Selic</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -4686,7 +4701,7 @@ outputs.coeficiente = fieldMapping['v_coeficiente_de_atualizacao_monetaria'];&#1
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <label>Dolar</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>

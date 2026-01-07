@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="DELETE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>2</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">3a43916bfbc9b61086e7f4045eefdcc0</sp_column>
+        <sp_widget display_value="novo info limite despesa">d3066d1afb92e650f6d5f9d38eefdc56</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-12 13:06:35</sys_created_on>
+        <sys_id>b643916bfbc9b61086e7f4045eefdcc2</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_instance_b643916bfbc9b61086e7f4045eefdcc2</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-04 02:27:16</sys_updated_on>
+        <title/>
+        <url/>
+        <widget_parameters/>
+    </sp_instance>
+    <sys_translated_text action="DELETE" query="documentkey=b643916bfbc9b61086e7f4045eefdcc2"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</application>
+        <file_path/>
+        <instance_id>e34bb3801b9d82dc65324089bd4bcbee</instance_id>
+        <instance_name>sefazmtdev</instance_name>
+        <name>sp_instance_b643916bfbc9b61086e7f4045eefdcc2</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance"><sp_instance action="INSERT_OR_UPDATE"><active>true</active><class_name/><color>default</color><css/><glyph/><id/><order>2</order><roles/><short_description/><size>md</size><sp_column display_value="1">3a43916bfbc9b61086e7f4045eefdcc0</sp_column><sp_widget display_value="novo info limite despesa">d3066d1afb92e650f6d5f9d38eefdc56</sp_widget><sys_class_name>sp_instance</sys_class_name><sys_created_by>allex.sousa@artycs.com.br</sys_created_by><sys_created_on>2025-11-12 13:06:35</sys_created_on><sys_id>b643916bfbc9b61086e7f4045eefdcc2</sys_id><sys_mod_count>1</sys_mod_count><sys_name/><sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package><sys_policy/><sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope><sys_update_name>sp_instance_b643916bfbc9b61086e7f4045eefdcc2</sys_update_name><sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by><sys_updated_on>2025-12-04 02:27:16</sys_updated_on><title/><url/><widget_parameters/></sp_instance><sys_translated_text action="delete_multiple" query="documentkey=b643916bfbc9b61086e7f4045eefdcc2"/></record_update>]]></payload>
+        <payload_hash>2092381595</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>eb77b902fb29b690f6d5f9d38eefdcdb</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-12-04 02:27:16</sys_created_on>
+        <sys_id>14f35c62fb69f69086e7f4045eefdce9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19ae72f6def0000001</sys_recorded_at>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-04 02:27:16</sys_updated_on>
+        <type>Instance</type>
+        <update_guid>1cf35c62cd69f690444c039cbdd526e8</update_guid>
+        <update_guid_history>1cf35c62cd69f690444c039cbdd526e8:2092381595,b243916ba8c9b6109327b4cf4420d9c3:1155666010</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">a8249862fb69f69086e7f4045eefdc90</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-12-04 02:28:06</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance">sp_instance</sys_db_object>
+        <sys_id>01925a1edd3742b88121672e520452c1</sys_id>
+        <sys_metadata>b643916bfbc9b61086e7f4045eefdcc2</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_scope_delete display_value="">06b5f462fd3a460d80eabc3a7195aca1</sys_scope_delete>
+        <sys_update_name>sp_instance_b643916bfbc9b61086e7f4045eefdcc2</sys_update_name>
+        <sys_update_version display_value="sp_instance_b643916bfbc9b61086e7f4045eefdcc2">14f35c62fb69f69086e7f4045eefdce9</sys_update_version>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-04 02:28:06</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

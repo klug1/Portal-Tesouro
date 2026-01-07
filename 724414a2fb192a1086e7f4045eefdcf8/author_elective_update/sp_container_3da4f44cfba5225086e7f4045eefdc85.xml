@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container">
+    <sp_container action="DELETE">
+        <background_color/>
+        <background_image/>
+        <background_style>default</background_style>
+        <bootstrap_alt>true</bootstrap_alt>
+        <class_name/>
+        <container_class_name/>
+        <name>Tesouro Estadual MT - Container 2</name>
+        <order>2</order>
+        <semantic_tag/>
+        <sp_page display_value="ec_home_sefaz">1bdfe132fb55aa1086e7f4045eefdcf5</sp_page>
+        <subheader>false</subheader>
+        <sys_class_name>sp_container</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-05-11 14:14:13</sys_created_on>
+        <sys_id>3da4f44cfba5225086e7f4045eefdc85</sys_id>
+        <sys_mod_count>16</sys_mod_count>
+        <sys_name>Tesouro Estadual MT - Container 2</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_container_3da4f44cfba5225086e7f4045eefdc85</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-10-20 04:19:55</sys_updated_on>
+        <title/>
+        <width>container</width>
+    </sp_container>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</application>
+        <file_path/>
+        <instance_id>e34bb3801b9d82dc65324089bd4bcbee</instance_id>
+        <instance_name>sefazmtdev</instance_name>
+        <name>sp_container_3da4f44cfba5225086e7f4045eefdc85</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container"><sp_container action="INSERT_OR_UPDATE"><background_color/><background_image/><background_style>default</background_style><bootstrap_alt>true</bootstrap_alt><class_name/><container_class_name/><name>Tesouro Estadual MT - Container 2</name><order>2</order><semantic_tag/><sp_page display_value="ec_home_sefaz">1bdfe132fb55aa1086e7f4045eefdcf5</sp_page><subheader>false</subheader><sys_class_name>sp_container</sys_class_name><sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by><sys_created_on>2025-05-11 14:14:13</sys_created_on><sys_id>3da4f44cfba5225086e7f4045eefdc85</sys_id><sys_mod_count>16</sys_mod_count><sys_name>Tesouro Estadual MT - Container 2</sys_name><sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package><sys_policy/><sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope><sys_update_name>sp_container_3da4f44cfba5225086e7f4045eefdc85</sys_update_name><sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by><sys_updated_on>2025-10-20 04:19:55</sys_updated_on><title/><width>container</width></sp_container></record_update>]]></payload>
+        <payload_hash>1228047541</payload_hash>
+        <record_name>Tesouro Estadual MT - Container 2</record_name>
+        <reverted_from/>
+        <source>8d8d3c08fb783650f6d5f9d38eefdc17</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-10-20 04:19:55</sys_created_on>
+        <sys_id>732e3888fb783650f6d5f9d38eefdc4e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>199ffd864d40000001</sys_recorded_at>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-10-20 04:19:55</sys_updated_on>
+        <type>Container</type>
+        <update_guid>bf2e3888ef783650fa7761da20cac04d</update_guid>
+        <update_guid_history>bf2e3888ef783650fa7761da20cac04d:1228047541,4f2e388818783650bb69d79a56592917:-488316812,122ef488177836506cdc13bd209c6ddf:2090286131,992ef488167836507e8d7717c92930a5:373921778,bc2ef488e9783650d5f1a8c1deeda44d:-1342442575,c02ef4887c783650ac010027f1411416:1236160368,9b1eb488bc78365038395625d09e55bc:-480203985,651eb488f3783650494a25a2ad6c2115:2098398958,10a5eb4b11b5e210b555f9df86288f2d:1993541844,e5854bdd93e9e650583e40780b916f39:1275314228,cfa4479ddee9e6509396a5e7a4a7c2c1:1379961506,a66aa20100e1a650376755604c6ec7b7:1147387683,039962cdbba1a6507e77f38670fb55fe:1379961506,86579649b761a650d595b4ae9e7a0ea0:1275314228,a873c601b221a650bf0114932d518222:1379961506,68c6308022e52250fc43803ddd58e6af:1147387683,f1a4f44c18a522507583e154289a0387:-1342976204</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Tesouro Estadual MT - Container 2">203ebc48fb783650f6d5f9d38eefdcf6</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-10-20 04:19:58</sys_created_on>
+        <sys_db_object display_value="" name="sp_container">sp_container</sys_db_object>
+        <sys_id>088ebd3b5a954eb8bc7e4d342cc7a040</sys_id>
+        <sys_metadata>3da4f44cfba5225086e7f4045eefdc85</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Tesouro Estadual MT - Container 2</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_scope_delete display_value="">06b5f462fd3a460d80eabc3a7195aca1</sys_scope_delete>
+        <sys_update_name>sp_container_3da4f44cfba5225086e7f4045eefdc85</sys_update_name>
+        <sys_update_version display_value="sp_container_3da4f44cfba5225086e7f4045eefdc85">732e3888fb783650f6d5f9d38eefdc4e</sys_update_version>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-10-20 04:19:58</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

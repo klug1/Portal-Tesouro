@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="ua_table_licensing_config">
+    <ua_table_licensing_config action="INSERT_OR_UPDATE">
+        <is_fulfillment>false</is_fulfillment>
+        <license_condition/>
+        <license_model>none</license_model>
+        <license_roles/>
+        <name>x_sded9_portal_t_0_u_despesa_bruta_e_liquida</name>
+        <op_delete>true</op_delete>
+        <op_insert>true</op_insert>
+        <op_update>true</op_update>
+        <owner_condition/>
+        <sys_class_name>ua_table_licensing_config</sys_class_name>
+        <sys_created_by>sued.barreto@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-10-07 14:16:48</sys_created_on>
+        <sys_id>a42a0484fbec3610f6d5f9d38eefdce9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_sded9_portal_t_0_u_despesa_bruta_e_liquida</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>ua_table_licensing_config_a42a0484fbec3610f6d5f9d38eefdce9</sys_update_name>
+        <sys_updated_by>sued.barreto@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-10-07 14:16:48</sys_updated_on>
+    </ua_table_licensing_config>
+</record_update>

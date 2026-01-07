@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="6ec4dc36fb5d6a1086e7f4045eefdc6e" label="Indicadores Econômicos" max_length="40" name="x_sded9_portal_t_0_u_indicadores_economicos" type="collection">
+        <element label="Dólar + SOFR (Dólar americano + taxa de juros americano)" max_length="20" name="u_dolar_sofr" type="decimal"/>
+        <element label="TJLP (Tasa de Interés a Largo Plazo)" max_length="20" name="u_tjlp" type="decimal"/>
+        <element label="TR (Tasa Referencial)" max_length="20" name="u_tr" type="decimal"/>
+        <element label="CDI (Certificado de Depósito Interbancário)" max_length="20" name="u_cdi" type="decimal"/>
+        <element label="Selic (Tasa básica de interés de la economía)" max_length="20" name="u_selic" type="decimal"/>
+        <element label="Coeficiente de Actualización Monetaria" max_length="20" name="u_cam" type="decimal"/>
+        <element label="Año de referencia" max_length="40" name="u_ano" type="integer"/>
+    </element>
+</database>

@@ -1,0 +1,2309 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=4034000,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>27000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from>216b4dedfb756210f6d5f9d38eefdc7a</copied_from>
+        <copied_from_name>Primary Revenue and Expenditure </copied_from_name>
+        <description/>
+        <display_name_after_preview/>
+        <flow_priority>MEDIUM</flow_priority>
+        <generation_source/>
+        <internal_name>ranking_data</internal_name>
+        <label_cache>[{"name":"subflow.record","label":"Input➛Record","reference":"x_sded9_portal_t_0_registro_de_cargas_tesouro","reference_display":"Treasury Cargo Registration","type":"reference","base_type":"reference","column_name":"","usedInstances":{"b1c3d1ce-831a-4bfb-b59b-fac37677e4f9":["conditions"],"0a53884c-6d3f-4926-b143-7aebb7b97d97":["conditions"],"39268173-2ed3-4659-805a-84b15f1045a3":["parent_sys_id"],"c89a2cab-c4b6-4d9a-a522-66df72662c5e":["parent_sys_id"],"fb48067c-f6f5-45ab-b1f7-87e39e2b4f53":["parent_sys_id"],"83c6e11f-e93b-467c-9b7f-38bab9ae0a3b":["parent_sys_id"],"b68068aa-2262-4839-a185-5e13cd917f72":["parent_sys_id"],"d54d22bc-061e-44b3-8b1e-9ed82884ca5f":["parent_sys_id"],"7a5418ac-94b7-4d9e-aa2a-30eca3999ced":["parent_sys_id"],"736e303e-e8a8-45be-be88-2fc0536e20f5":["parent_sys_id"]},"attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"f4b7b973-3190-4871-8403-baaef11efe7b","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"b1c3d1ce-831a-4bfb-b59b-fac37677e4f9.Records","label":"1 - Look Up Records➛Multi Row Question Answer Records","reference":"sc_multi_row_question_answer","reference_display":"Multi Row Question Answer","type":"records","base_type":"records","usedInstances":{"20fde648-3ced-4596-b1ac-b39b687a2a96":["items"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.value","label":"3 - For Each➛Multi Row Question Answer Record➛Value","reference":"","reference_display":"Value","type":"string","base_type":"string","parent_table_name":"sc_multi_row_question_answer","column_name":"value","usedInstances":{"3283fd25-754f-4540-a6dc-42c1d8b9e628":["conditions"],"45e87eb4-1522-46c8-928c-4e868bc4e337":["var_ano-0"],"509ab718-88ae-46b1-9886-0418f90aabbf":["var_mes-0","var_estado-1"],"43175a16-f870-4ccd-b780-63e52089e443":["var_rpps-0","var_tipo_ranking-1"],"3866f7bc-4596-4ecc-b5ab-abdbbde58ec9":["condition"]}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.row_index","label":"3 - For Each➛Multi Row Question Answer Record➛Row index","reference":"","reference_display":"Row index","type":"long","base_type":"long","parent_table_name":"sc_multi_row_question_answer","column_name":"row_index","usedInstances":{"0a53884c-6d3f-4926-b143-7aebb7b97d97":["conditions"],"7a5418ac-94b7-4d9e-aa2a-30eca3999ced":["multirow_record"],"736e303e-e8a8-45be-be88-2fc0536e20f5":["multirow_record"]}},{"name":"0a53884c-6d3f-4926-b143-7aebb7b97d97.Record.row_index","label":"18 - Look Up Record➛Multi Row Question Answer Record➛Índice de linha","reference":"","reference_display":"Índice de linha","type":"long","base_type":"long","parent_table_name":"sc_multi_row_question_answer","column_name":"row_index","usedInstances":{"39268173-2ed3-4659-805a-84b15f1045a3":["multirow_record"],"c89a2cab-c4b6-4d9a-a522-66df72662c5e":["multirow_record"],"fb48067c-f6f5-45ab-b1f7-87e39e2b4f53":["multirow_record"],"83c6e11f-e93b-467c-9b7f-38bab9ae0a3b":["multirow_record"],"b68068aa-2262-4839-a185-5e13cd917f72":["multirow_record"],"d54d22bc-061e-44b3-8b1e-9ed82884ca5f":["multirow_record"]}},{"name":"0a53884c-6d3f-4926-b143-7aebb7b97d97.status","label":"18 - Look Up Record➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Error","value":"1","order":0.0},{"label":"Success","value":"0","order":1.0}],"usedInstances":{},"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"0a53884c-6d3f-4926-b143-7aebb7b97d97.Record","label":"18 - Look Up Record➛Multi Row Question Answer Record","reference":"sc_multi_row_question_answer","reference_display":"Multi Row Question Answer","type":"reference","base_type":"reference","usedInstances":{},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.item_option_new.name","label":"3 - For Each➛Multi Row Question Answer Record➛Question➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"item_option_new","column_name":"name","usedInstances":{"cfdc988b-b11d-4942-b9bf-11cea3ddb70f":["condition"],"fefe5d28-2611-4ce7-9f3a-4b1127da7629":["condition"],"7b5c4780-d3a5-467a-a4b8-6c282af57221":["condition"]}},{"name":"flow_variable.var_count1","label":"Flow Variables➛var_count","reference":"","reference_display":"","type":"integer","base_type":"integer","column_name":"","usedInstances":{"b6f98993-2de4-48f4-9d42-7ad52358075f":["condition"],"3c031a62-dd97-42a9-ae1e-b0b41c896ded":["condition"],"e0441a5d-de7b-4465-8283-c2d239ca3641":["condition"]},"attributes":{"uiType":"integer","uiTypeLabel":"Integer","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"9fc98cf4-2f8f-46ca-a232-6c078f64d1d2"}},{"name":"flow_variable.var_ano","label":"Flow Variables➛var_ano","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf":["conditions"],"0f79095d-d776-406e-9ec5-66e22442586e":["conditions"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"72f2355b-0329-4d8c-b4dc-3cb07f54ba9d"}},{"name":"flow_variable.var_mes","label":"Flow Variables➛var_mes","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf":["conditions"],"0f79095d-d776-406e-9ec5-66e22442586e":["conditions"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"3576bc47-0baa-4380-a20c-7f6e4ce1a770"}},{"name":"flow_variable.var_rpps","label":"Flow Variables➛var_rpps","reference":"","reference_display":"","type":"boolean","base_type":"boolean","column_name":"","choices":[],"usedInstances":{"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf":["conditions"],"0f79095d-d776-406e-9ec5-66e22442586e":["conditions"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"d7cbe4fe-a090-4ba1-b6bd-d3e948e273cf","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"flow_variable.var_estado","label":"Flow Variables➛var_estado","type":"string","base_type":"string","usedInstances":{"0f79095d-d776-406e-9ec5-66e22442586e":["conditions"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"b5bfab12-1026-43f0-8961-a41ba3f1f927"}},{"name":"flow_variable.var_tipo_ranking","label":"Flow Variables➛var_tipo_ranking","type":"string","base_type":"string","usedInstances":{"0f79095d-d776-406e-9ec5-66e22442586e":["conditions"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"d0ca7d7d-8ff4-490c-80aa-9e8fc9246410"}},{"name":"0f79095d-d776-406e-9ec5-66e22442586e.status","label":"17 - Look Up Record➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Error","value":"1","order":0.0},{"label":"Success","value":"0","order":1.0}],"usedInstances":{"cc765906-5769-430a-b4ae-373f078cb540":["condition"]},"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"0f79095d-d776-406e-9ec5-66e22442586e.Record","label":"17 - Look Up Record➛Dados do Ranking Record","reference":"x_sded9_portal_t_0_dados_do_ranking","reference_display":"Dados do Ranking","type":"reference","base_type":"reference","usedInstances":{"d239a872-dd08-4cf1-b300-905ddb1c2964":["record"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"736e303e-e8a8-45be-be88-2fc0536e20f5.posicao","label":"19 - Get MRVS Values (Ranking Data)➛Posicao","reference_display":"Posicao","type":"string","base_type":"string","usedInstances":{"d239a872-dd08-4cf1-b300-905ddb1c2964":["u_posicao"],"510f8cfb-0ff0-4e9c-a774-ec8193bdeab8":["u_posicao"]},"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiType":"string","uiUniqueId":"5a35ea5f-a7aa-4f24-8036-77294708c489"}},{"name":"736e303e-e8a8-45be-be88-2fc0536e20f5.porcentagem","label":"19 - Get MRVS Values (Ranking Data)➛Porcentagem","reference_display":"Porcentagem","type":"string","base_type":"string","usedInstances":{"d239a872-dd08-4cf1-b300-905ddb1c2964":["u_porcentagem"],"510f8cfb-0ff0-4e9c-a774-ec8193bdeab8":["u_porcentagem"]},"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiType":"string","uiUniqueId":"148d6e3c-b142-475f-8ac9-9419e537d9fe"}},{"name":"736e303e-e8a8-45be-be88-2fc0536e20f5.ano","label":"19 - Get MRVS Values (Ranking Data)➛Ano","reference_display":"Ano","type":"string","base_type":"string","usedInstances":{"510f8cfb-0ff0-4e9c-a774-ec8193bdeab8":["u_ano"]},"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiType":"string","uiUniqueId":"4d0ccd94-22ef-45dc-a2d2-6fa2d53333ff"}},{"name":"736e303e-e8a8-45be-be88-2fc0536e20f5.estado","label":"19 - Get MRVS Values (Ranking Data)➛Estado","reference_display":"Estado","type":"string","base_type":"string","usedInstances":{"510f8cfb-0ff0-4e9c-a774-ec8193bdeab8":["u_estado"]},"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiType":"string","uiUniqueId":"ccd27053-5b95-429a-8e34-d66f1d4c948d"}},{"name":"736e303e-e8a8-45be-be88-2fc0536e20f5.tipo_ranking","label":"19 - Get MRVS Values (Ranking Data)➛Tipo Ranking","reference_display":"Tipo Ranking","type":"string","base_type":"string","usedInstances":{"510f8cfb-0ff0-4e9c-a774-ec8193bdeab8":["u_tipo_de_ranking"]},"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiType":"string","uiUniqueId":"71f54863-5a0d-4af2-845a-416c5bcc9da2"}}]</label_cache>
+        <master_snapshot>e759fab5fb9d3e1086e7f4045eefdc31</master_snapshot>
+        <master_snapshot_digest/>
+        <name>Ranking Data</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id/>
+        <run_as>system</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>published</status>
+        <substatus/>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 19:11:37</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>5af92e31fb5d3e1086e7f4045eefdc3a</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>Ranking Data</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sys_hub_flow_5af92e31fb5d3e1086e7f4045eefdc3a</sys_update_name>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:55</sys_updated_on>
+        <type>subflow</type>
+        <updation_source/>
+        <version>2</version>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=5af92e31fb5d3e1086e7f4045eefdc3a"/>
+    <sys_variable_value action="delete_multiple" query="document_key=5af92e31fb5d3e1086e7f4045eefdc3a"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=5af92e31fb5d3e1086e7f4045eefdc3a"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=5af92e31fb5d3e1086e7f4045eefdc3a^sys_idNOT IN16f92e31fb5d3e1086e7f4045eefdc3b"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>5af92e31fb5d3e1086e7f4045eefdc3a</id>
+        <name>Ranking Data</name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 19:11:37</sys_created_on>
+        <sys_id>16f92e31fb5d3e1086e7f4045eefdc3b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 19:11:37</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=16f92e31fb5d3e1086e7f4045eefdc3b"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=5af92e31fb5d3e1086e7f4045eefdc3a^sys_idNOT INeef96e31fb5d3e1086e7f4045eefdc26"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference,uiUniqueId=f4b7b973-3190-4871-8403-baaef11efe7b</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table>x_sded9_portal_t_0_registro_de_cargas_tesouro</choice_table>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>record</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Ranking Data">5af92e31fb5d3e1086e7f4045eefdc3a</model>
+        <model_id>5af92e31fb5d3e1086e7f4045eefdc3a</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_5af92e31fb5d3e1086e7f4045eefdc3a</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="x_sded9_portal_t_0_registro_de_cargas_tesouro">x_sded9_portal_t_0_registro_de_cargas_tesouro</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 19:11:38</sys_created_on>
+        <sys_id>eef96e31fb5d3e1086e7f4045eefdc26</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 19:11:38</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=eef96e31fb5d3e1086e7f4045eefdc26"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=5af92e31fb5d3e1086e7f4045eefdc3a"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=5af92e31fb5d3e1086e7f4045eefdc3a"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=5af92e31fb5d3e1086e7f4045eefdc3a"/>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=5af92e31fb5d3e1086e7f4045eefdc3a^sys_idNOT INa6f96e31fb5d3e1086e7f4045eefdc39,e2f96e31fb5d3e1086e7f4045eefdc3a,d739f6b5fb9d3e1086e7f4045eefdc85,9f39f6b5fb9d3e1086e7f4045eefdc86,9739f6b5fb9d3e1086e7f4045eefdc87,d339f6b5fb9d3e1086e7f4045eefdc86"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Records">43400a1587003300663ca1bb36cb0b4b</action_type>
+        <action_type_parent display_value="Look Up Records">d1c56ec50b30030085c083eb37673a50</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>43400a1587003300663ca1bb36cb0b4b</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Ranking Data">5af92e31fb5d3e1086e7f4045eefdc3a</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 19:11:38</sys_created_on>
+        <sys_id>a6f96e31fb5d3e1086e7f4045eefdc39</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:28:38</sys_updated_on>
+        <ui_id>b1c3d1ce-831a-4bfb-b59b-fac37677e4f9</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VX22obMRD9lWWfjVnHuTVvISFQyIUmJS9tIrSS1hbRSltJaycx/pjSh9IP6Bf4xzqSdu3Fl8QGBxL6ZHZmJM2cOWckfxvFnMZH8WG2myS4s3d4kCTdbpLs73cJ7qRpd5+kSbqbxq1Y4pxBpMWpYPA5wKJ034agvBSWI62G6EfJjOVKIizNkGkIo9wUAj/dVtEXLjS6VsPoSxUaHdehpM8F1UzGR9/uWnGBNRxowXM0mnOtm7HAKRMQ+tX94sUS7FMx/UTeF2zns3WCRZfBoTR1uSStmD1aJimDJDIsDGvFOZYUW6WfphbNML2SYmboc2lhx9gFPxr+DOceJi4uY1AWYcE3/UQVbMGcnWKLb6wuiS11FUr6ihNmAiCUZRiAPWnaQsBV4TAOS0LZYbUSZS4vAxzxdIO6S2ApDSTBCleoy7wqI7vpq+F1neUZlx6TyikUwWL6ha3VPC2ty2cUM8Fy2AjluCi47KFCqwH3iyGXvN0T8NHOBFCIMsN7so2JS7wNuOL2GdhPvfkWa+6quIBtPGcyLoAiKLTQqFJ7KAeIiNJ4hwYmhr3icSs2T+ZEYGNmlQPkwFqXd8ChqhgF0NwSonlhj2GLAauKG7fWUs1eMqMcUZJyl4VpSIdbliPlO4QkG7Zd7PcStqIDEJC6v7p+KQLkg+lrQZYXCiBFAMMD4H4PqnLVcRoCRiNTpg72tmYEGD4eL0r2nWa5zWnhO1VPixPXqsnvyV9mVvSvmhsLtvPmDrWjmhudrc0NKOQjTQ44/P0Njs1HQYDglXlADl5k2d6MT0ZpiwKWjYHgrlAHzeOiCpuuzai/RlI19a+AqxLrqFB6VaoV9zPOBF12Z545x9ydufN/3pnvkvmQEEWhe1wKLv0DCBJ9K0kkLw/eT3M88/RqPC6dDRuyqAccYTv5Ez1vLIc1Epq+G+FaiiiLPCg84wTDtfBLLU+5vhQ8heYvhNpYCaK7NUF0d7YjiNG06AawS7pQv4Jdf+sVz2EFnl8BtGws6YyXiW7Dczubn7szXhR2dyNlN0kYPKcrubjlZ/MKrbbecjj0YWl1HgrKRkNOe8zOTq+jqLJDLB6W+SvuobpZvrw3eILvvijn/c5MrKAZpJmB9jXf4B14TS1Ol047mDcbLWvkUsNxMfn5yHM/Xa59TvBINqtyrUYLqJ/1fJeas+Xz1FoRfneLL813e9vWbVuqx7p7H+I/7PYkcfcP1xbCU80RAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=a6f96e31fb5d3e1086e7f4045eefdc39"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Ranking Data">5af92e31fb5d3e1086e7f4045eefdc3a</flow>
+        <generation_source/>
+        <order>18</order>
+        <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 19:11:39</sys_created_on>
+        <sys_id>e2f96e31fb5d3e1086e7f4045eefdc3a</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:28:38</sys_updated_on>
+        <ui_id>0a53884c-6d3f-4926-b143-7aebb7b97d97</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VYzW7jNhB+FUFn25Us/+a2SBCgwG6CJuletltiRFIxUVrUklScrOGHKXoo+gB9grxYh6JkG7aT2KhTJOgp0HCG/Gb4fcNxvsxDwcKTkI2jcTYe90fDKEqSKBoMEgpxmiYDmkYp9MJWmMOUo6eFVHL8vANZum9DybSUVhCtZuRbyY0VKieQmxnX6MaEKSQ8fK69PznX4ErNgp9q1+BD40onQjLN8/Dky9dWWIDGAy2unMw3lvZFLCHlEl1v3F/YTsE+FMtPUq1528dVnOTBhV9QmjksUSvk95bnjCOIDKThrXAKOQOr9MPSojmwy1yuDBORW9wxdM73RnzHc0eR88s4pkW5X1t+krps3pydgYVrq0tqS1270okSlBtfEMYzwMKertu8w2XhauxDfNo+Wslyml/4coTLDZpbQktpEAQvXKIOeZ1Gdj1Rs6sG5bnIq5rUi1JRkMsvsFaLtLQOzzzkkk9xIzKFohD5LSm0uhNVMGKZdm4lfnQyiRRi3IjbvAPUAe9gXaFzjvazyvwZtHBZfMJtKs5kQiJFiL9Co0pdlfKOUFmaakEjE/1e4aIVmgdzKsGYVeZYcmStw+3rUGdMfNFcCNWisB9wizteJ7doNarpP8vB8YpyVOVMOBRmTTpIcXeUYL+UGM/mc1OmrgYdzSnSbbH41WnKFfm+8ehGGeOD3qidUM7avf540E5joO00GaeD0RC6MB50hOXTzjJ0sdiW4X948oGqfrmijapPXUkf/3z8m5sn6lzre8v2cX2HZqHWd3w0ffei6D0pHA9/ewI/XLK+BC/oNmbPsoyt+GSUtsTXck2424I6mOh7QGiIfonMzEEHhdJPAauZngku2a6X7NwtbLxk3f/nS/YmeY6AGPG3J3Ip8mosQaCvJYD+s+xL4w2eVfRaG/mcDQzdlgEEYB//Cr4fLIc9AC2nOVGogPGgKorIBAV8BP5QuyE3T0BFoc323xhrQSRHE0TSPY4g5suk1wq74xaa2dTdbxPx3UfAZgTSci0kXuwS3YHnxoef211sCzs5SNnrJPQrZ09y8cjD7BNabb1mc5hgaH0e8comM8FuuV2d3ngxZWcgf9u1XnOPNJdVpfcKg3H87I+zdG0wFpn/+Vjg/O6HT0NwOCWZKnNG6sl9RSV3k5nQxtbO2y3oiqNc3XNplLsLHqig0GLKhVaB5rfCWK0Of61fzqcp6TUP7h5/10KZ5XEmyJTm02CzUe2Z+yE9rHfE8fXYPewc5AQCBgG3UKz3B651NdrsamN7Xucz/Niz0+2LLn4VdP++H+5Sxs6+uCfmd/EPgON3Lsoh7XVhMEziOIriiA2j0XAYjwZpNoBhL1uplxCTU2y2uHMGQuL2pKFKc9/Rdnu68B3gsPazB6iGkW7/IKu4jB3HAdoLcd1jUqUkh3yjydzg+/HDefVULAnbf3ON5l38H6wUN5uV9qadtX6teaIUP+fiW8l/dOQa8ag7ihltj4bxsN3L2KA9ZtBvwzjtDxPGaS875ojw9R+dQQcbcxYAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=e2f96e31fb5d3e1086e7f4045eefdc3a"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Ranking Data">5af92e31fb5d3e1086e7f4045eefdc3a</flow>
+        <generation_source/>
+        <order>17</order>
+        <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 20:18:18</sys_created_on>
+        <sys_id>d739f6b5fb9d3e1086e7f4045eefdc85</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:28:38</sys_updated_on>
+        <ui_id>0f79095d-d776-406e-9ec5-66e22442586e</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VY227jNhD9FUHPjivF97wVCQIU2CZAku7LdkuMRMomlia1JOVcDH/Mog9FP6BfkB/rUJRsw7fYqA0k6FNCzgw5lzNnKH+ZhpyGFyEdRINsMOj0e1HUakVRt9tKIU6SVjdNogTaYSOUMGaoaSERDJcTEIVbPxFDGR2QXGkLglgSEQpUGUIV0SC/cTlEbcpNLuD5c2V05TQCqoK7uUY64oJqJsOLL18bYQ4ar7NMhxfTFdG+/gpImEDVB/cX1gOwz/l8SUqZ3/u0sBMsuPECpanzJWqE7MkyiRGHFxkIwxrhGCQFq/TzfEczoLdSLDZGXFo8MXTKT4a/4L39yOllDMNKmZfNl6TKlt/OrsDCvdVFagtdqaYjxVNmfEIoy6AQ9nJ5zyvc5pYr6U182N5aiWIsb3w6wvkBdXFwpzDoBMtdoM7zKozsfqQe72ovr7ksc1IJhUpBzFdgreZJYZ0/05AJNsaDyBjyHKtNcq0mvDRGX8bNocBFMxPqES81fCibkDrHm5hXaF7j/lW5/Rk0d1H8isegMTrEBUKE+BIaVegylROSisKUAgSg8WeFs0Zons2lAGMWkWPKyffC+e3zUEVMfNKcSap5bn/GIyasCm7WqHumsxODgwXkUiUpd16YpcYpCEj1e4G2dDotg59U8TXxHyeczf4oCDMWm2W7npeXqpbnCjNYt912m1Kx0prN1tvzPbl2IC+8XZOaFy5dUV7/ev2HmS2Vqhhibe/T8gm1oGKI+GgM0Y6ij8QRePn7o4jDm96n4I3Oj+lOlNEFngxOReJzudT66x13MND3cKEG+i0iU4IOcEJvc6xCesaZoJtm4bUTrMzC8//nLHyXOEeHKPHV41JwWT5s0NFTNUBnJ/qSeAVnJbwW8C/3wKTrbQAB2Ne/g5eD22EPh+bvQZwwAWVBmRSe8RRwCPypNrtcj4ASQqv0X29WDdE6WkO0zo/TENN50EuJ3VCF+nXr6ltbvHgLWLVAWC6ZxLNNTXfgvfHh957P1hu7dVBnL4PQS662YvHIz+Etvdo4JTmM0LS6j/jOJo+cDpld3F5rUWUfQXzbJK+wR+pileGd4Gkd7/y8S5ae1jwjY6wdz/ELQLMU4WEIaEYyVUhKqrf/0qMbK5lxbWylvE5Bdwzb1Y1Lo1wtWKCCXPMx41oFmg25sVodPq3fjqdO6T0LJq8/NMfv4/o6E2RKs3GwSlR7xn4Ih7WP+Hw9NoddgxhBQCFgFvJlfmBal0+bTTS2Zzl34GNPptvXu/gk3v13PtzUGRt5cU+fP8RPCMdnrpRB0j6Hbq8Vx1EUR7QX9Xu9uN9Nsi702tmiewkxMkWyxZMz4AKPJzVU6nrH6/R0z8cHs88ePtWAvEGCCbISykg4zp+9HK4oJlFKMJArHPOA4+On63JSzPHaeXc88yF+SCv4w2qm/dbGXJ/qOVHw3yT/XrBfHLj6LDrvxzQ96/fi3lk7o92zAYXOGQySTq9FWdrOjvlC+PovGTuIo7IWAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=d739f6b5fb9d3e1086e7f4045eefdc85"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Ranking Data">5af92e31fb5d3e1086e7f4045eefdc3a</flow>
+        <generation_source/>
+        <order>21</order>
+        <parent_ui_id>cc765906-5769-430a-b4ae-373f078cb540</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 20:18:19</sys_created_on>
+        <sys_id>9f39f6b5fb9d3e1086e7f4045eefdc86</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:28:38</sys_updated_on>
+        <ui_id>d239a872-dd08-4cf1-b300-905ddb1c2964</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VVy27bMBD8FUNny6AlS37cihgBCqQJ4BS5pKmwIlcOUUpUSSqJa/jfu3pYNpI0TYAcGvQkcHdnOTvkiNdbTwpv4U1QsPF8HPNwHIYBY8FsMk7jMB0HIgTEsTf0CsiRKg1ybQSt70BVdWC7Zdl0zuaR8MV0GvsTFqM/Rx75cYxBMJkE0SzG0arB7XaEFNKWCjZXXQOK8FuphMHCW1zfDL0SDO3l0HiL7aPUa8kqSFFR6QrX0jqjn+HvNmW9FppXORYukfvgWYdddpnB5yVlCFQTGrOhhw8OC4FEJQNlcejlUAhw2my8hTMVBQyCuCjUpq+4lYVrR83hwcpftPOE1XUZ0my8k6FfJp1EbThbgoNL6sxdZXrFtORoW1UEZlApd3IcawsuSid10UIcpGqP1qrKi/NWEa9vcHQilSUSWNZz1szbsbLLW32/2pM8lUUjSTei0hxUvwLnjEwrV9PZeqiw0TiHspTFOimNvpMNmKjko7WixShT+p72tHJdjIDXvEekKoxOKb5swldgZD3EF2pD4N3Qsxt7osDawyikYfKzqpm0g3UjJI0KjQRJcxNqMDeydJ9oqzvsiO+GnSHS6KU7xueHC3XU82CKh8TSBZknpTYOVOISlggQ2iZCJwaKHyTCUyMs64qB0INVX/E2Y7yC9N4YX+sv/GGKzhpPYmcHsMLBeZvojBG9mzFmH8kY3Rgf3hl/8wMLXvzn4uEmNRawR16oyAVWctDfKsZCsd1OwxhDFqKPM5j5kyhFP8XZzA8yziLKBSyLRh1mt/te4w0nprDG/I09etxzD8+/Q+xtNn/FWextfgI58X3mcPYWx5wUcZi0h/XI5l1ycNUl+zfwHR9B9pHc/t88gze/AfHe4s8ZCgAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=9f39f6b5fb9d3e1086e7f4045eefdc86"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Create Record">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent display_value="Create Record">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Ranking Data">5af92e31fb5d3e1086e7f4045eefdc3a</flow>
+        <generation_source/>
+        <order>23</order>
+        <parent_ui_id>bbf158a1-4051-412a-803b-c34c3913e71b</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 20:18:19</sys_created_on>
+        <sys_id>9739f6b5fb9d3e1086e7f4045eefdc87</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:28:38</sys_updated_on>
+        <ui_id>510f8cfb-0ff0-4e9c-a774-ec8193bdeab8</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VwW7bMAz9lUBnJ5DjJEtzG1r0tLVAO/TStQJt0Ykw2fIkuW0W+N9H23JSdC22AL0U2CkQ+R71+GQytzumJFuxRYx8fhIvsiROkinn0+UsThdJGk9lAogzFrESCiSkh1Sj6A4RewBdt8En4STKE1EZ60ELL7iQII0T0ggL5Q9Vrgktlas0bG8C6axFjKQZXe0R2UZpabFkq9u7iFVg6RqPlq12L1L/KlpDipqg39pfeKMLv61ejX05kDWOLvqEsbIVxCOGTx5LaputctAOI1ZAKcEbu2Urb2sKWAR5WertHrFRpaeCrMU+OfWLrl3yFpcjtZZhn9sfRXCsD+dn4OGaKme+tgGabYzK0PWmSMyh1v70eawHXFZembKndG0GttF1UV70lrB9geGBKFI7EoFV22erPLSRX2/M49Wg8lyVnSUhqU0Gen8C761Ka9/q2THUWFAhUUBV0YuLypoH1ZFJSzFZazpMcm0e6VKn1uUEslb4hGyFyTnFz7rwDVjVdvGVyhC5iZjbulMNzh16IRPFz7pV0ncWehC9DS0ls6ryn+mCBwxym2gYB4n85M0vK04PH1I3Ae7ZKNQCSvO95jyRu92nZIEJT3CMS1iOZ/MUxykul+NpnvE55aY8n08I3zT3tUDnaSKOovaUju1VZci1YdyOKtNxA7ErVhmnMjhOS+AEvs3IbFhjcWSNPa9p/twY/719R2+P3LV/n4hh155CQXpfGZFhz2JBj+pR9CPzYteG5OgmJMO+jd9r3844/0gbt2/swy/cZ/+tr6/eIUiim+buNw4Ug7+XCAAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=9739f6b5fb9d3e1086e7f4045eefdc87"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Get MRVS Values (Ranking Data)">5ba5ba71fb9d3e1086e7f4045eefdcc4</action_type>
+        <action_type_parent display_value="Get MRVS Values (Ranking Data)">1bc07ab9fb5d3e1086e7f4045eefdc67</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>5ba5ba71fb9d3e1086e7f4045eefdcc4</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Ranking Data">5af92e31fb5d3e1086e7f4045eefdc3a</flow>
+        <generation_source/>
+        <order>19</order>
+        <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 20:18:19</sys_created_on>
+        <sys_id>d339f6b5fb9d3e1086e7f4045eefdc86</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:28:38</sys_updated_on>
+        <ui_id>736e303e-e8a8-45be-be88-2fc0536e20f5</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/71V207bQBD9lWifY8u32HHeKhASUluqhPYFIWu8O05WWl9YryFpxL93NnZCQgsCFfG4cz1zZo72ZsukYDPmJzDJIfGLPBUh+t40xqSIvGiCWAjOYzZmFZRIkWWnjNT1Q6aR11qQ4x5UZz3bbeAVAuNo6oQchRNN0tjJfeBOHqZ5PE0ggDR2pcHStQVkJXD9+EgVhGwbBZtf/12Ir6QSGis2u7kdswY0YTao2Wz7zPXWoRXkqCh0Xj+MLm2b14gwm8Y6WqNltRzeX4cCi72RQi0gf8xwbZBKEpICVItjVkIlwNR6w2ZGd2TQCOKqUptDxEpWhooxG7tu5W9qN/U8z0YWSMNx7L2HZzZQ25uLczBASDpuOj2E8lUtObY9LQILoLHOjm19wFVjZF31KQZytc+uVVdW33tG2KHAfpNk6VoCgY2d1GIfBikWq/phvkd5YTeoD05Vc1CHFxiiLu+MxbNlnbx+xnJv+YtnVFhSx6yEpiFL1uj6Xu66EOjSXSp6uIWi/Qls5bJygdsJXdoAuBdkP9+Zf4GWdtxvVIaSbbuflbzr8NJeECac061ETu5B6kSB7znpVCTOhHtJ4CdpkgchexyzdtOeKWjbJ6JoQ9ldZ8fsaRsIynqObQrXsjFfCNQ9Dlw8jge1iuLVw50+HSlJwFal/pk81Wrb5XZ6t7/ef8nw3Xp6A6y9nn7scI0Wm3Z0ef4y3EFRT9d9Kqr5kX3QVfBRugqDU1Wts5ZqpllTawMqM5lHwl9KOsOaLijjoJfQZnSldafrFyQ4HxJGAkdnu4TR9SHhg8X5XryfoORigaD56kKisudSdWW+k9QLCj/e+qnIj/f+KToPgwkPwzChrygunAjQd/LYnzp+it4kEp7AkH+gzm//AIdAlSGXBwAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=d339f6b5fb9d3e1086e7f4045eefdc86"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=5af92e31fb5d3e1086e7f4045eefdc3a"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=5af92e31fb5d3e1086e7f4045eefdc3a^sys_idNOT IN26f96e31fb5d3e1086e7f4045eefdc2f,a2f96e31fb5d3e1086e7f4045eefdc30,eaf96e31fb5d3e1086e7f4045eefdc30,26f96e31fb5d3e1086e7f4045eefdc31,eaf96e31fb5d3e1086e7f4045eefdc31,26f96e31fb5d3e1086e7f4045eefdc32,eaf96e31fb5d3e1086e7f4045eefdc32,a2f96e31fb5d3e1086e7f4045eefdc33,6af96e31fb5d3e1086e7f4045eefdc33,22f96e31fb5d3e1086e7f4045eefdc34,e6f96e31fb5d3e1086e7f4045eefdc34,aef96e31fb5d3e1086e7f4045eefdc34,66f96e31fb5d3e1086e7f4045eefdc35,e2f96e31fb5d3e1086e7f4045eefdc36,2af96e31fb5d3e1086e7f4045eefdc37,eef96e31fb5d3e1086e7f4045eefdc37,a6f96e31fb5d3e1086e7f4045eefdc38,6ef96e31fb5d3e1086e7f4045eefdc38"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">a7790d2dfb756210f6d5f9d38eefdc0e</block>
+        <comment>Setando o count em 0</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Ranking Data">5af92e31fb5d3e1086e7f4045eefdc3a</flow>
+        <flow_variables_assigned>var_count1</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 19:11:38</sys_created_on>
+        <sys_id>26f96e31fb5d3e1086e7f4045eefdc2f</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:50</sys_updated_on>
+        <ui_id>f4620f47-34ec-411b-af22-18f36db78b5b</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1U0W7aMBT9Fz9DFEJCgbdKUyWkbZU21pepii72NVhzbNexoQzx77smIa3a7QMm9S33+Pqec4+PcmI2BhdDu7a3bau2hi1/Po6YMgmj7xMz0CBbsj34mttowoSNqNAxgTl9C9U6DceHVxDfKS089rMceBoR0LPl6c1RODqsNWxQ082VCbilLmIXVFYgFwVOJ3JTiSlO8vkMb2SZlxWiFLyqqO96c9BG2N/kJhrC1EBgvUhy8hHD54BGIBFK0C2OWANGQLD+OCAeQdwb/QLsaBCNY6n5uVW/aXaZpz6JtBnH7mwo696hDuY7qzjeu6Cs6ZAAG93f4VbHxnztVkjeooSow9VbQmJL89AlzUlEr0h+39nDtyvhnTKX9fpDbTnooYIQvNrEgG16jqjWb73poM/vHgU1NsRZN+CcMtvaebtXFx6S3WRbTUUmtT2QvhSkDHjaMSM3Ibsj/NMFfgCv0sJfaEzP98Oop4ir9OgLyRdzLstxIedyXM44jKGYFuMZz2/mclaKiSjY+WJu/RTTWp1NvSF15yk1tNwrF25Jwh773c+PKbgdexftS87+kZmPiH9E/L+MuECuWlK1ThJW1/94OjhScBR/DR2s/5X2ecHOfwCdC1O2EQYAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">212b3741fbf1621086e7f4045eefdcdc</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Ranking Data">5af92e31fb5d3e1086e7f4045eefdc3a</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="For Each">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
+        <order>3</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 19:11:38</sys_created_on>
+        <sys_id>a2f96e31fb5d3e1086e7f4045eefdc30</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:50</sys_updated_on>
+        <ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/51STW/bMAz9Lzonhj+ypM6twFCgh61AV/QyFAYl0YkwWdIkOaln+L+Pip106HEnm4/k43siR2b76PoYXux9COpg2P7n24opkzD6H5mBDtmeqYhdYCt2At2neBx5ISpZCFzfVQWsN7zla/6l5usWRLXb7na4aevsGYX1MkwTtUoVnIbh9f8ZxFFp6XER6cCTtoie7cdPqTg4bDRw1DRoYaB+JSksatnWRV6LqtxWZZ6Xd5uCbytelLIClFuqu3Y+LqY/vUFip9DfeOmTVJT5iuF7RCORBrWgA65YB0ZCtH5g++h7AjyCfDJ6uFUclYlEx1Lte1B/iLvI81TYIjkSOCdvYbM85AyLo1UCn1xU1sxIBK6XHmF135nvs/y0Amyh1/G6AkL6QHzokuakYpHU/jja8/N14IMyF39LUlsB+hZBjF7xPmJIa0CNHRE1HTinzKFx3p7UpZm0dNlBU5C12p5paDq3DEQSntETQfZA+NcL/ApeJRffiIaap4v75nef5s4+FsXNbJoKgvDKxXuiO+EibnpL9zozhfkwJAoVaOBLwh6vV54SAy1ZiX+hs/W/ktQPbPoLPlHA5y8DAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">6b790d2dfb756210f6d5f9d38eefdc0f</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Ranking Data">5af92e31fb5d3e1086e7f4045eefdc3a</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>4</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 19:11:38</sys_created_on>
+        <sys_id>eaf96e31fb5d3e1086e7f4045eefdc30</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:50</sys_updated_on>
+        <ui_id>b6f98993-2de4-48f4-9d42-7ad52358075f</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1UXWvbMBT9K0PPxsh2Hda8lY3CYFthLX3ZirmW5ERMljx9JM1M/vuu/JGENWWl9HFv0rm6955zfHBPTPBd8O7OXDknV5osvz8kROqI4bknGlpBloQZzaWXRlcDkJANqBALeOTSdQp290eEraXiVkzTOrDY44Uly/6vkt91olJQC4WNt95KvcJ2yfHWUGiyS5axIl8UOaX5+4usXhR1lvMCBBT4bm78MJN793lAkmdZx32Iu3mTsTzSymhCxKMXmgtc3YByIiEtaA7e2N0BsQL4jVZHYC21HxW38Ojkb5ydl2V82AjUyCY7Dtdqsmp2yUgmbrpIcEQ81Gq20KjQ6q+jjmiyaCAof2JycDhPdJF0ZDFRam7XZvttXngt9SBwKirDQB1u4NGGOnjh4ocRSrQ4qGqh69CcqrNmI4dm5NKmK4WXtFFmi0tjUlJgkXiKHkF6jfjHAb4HK6OKLzgGm0eaNTjJqiFVOM5blLAfbKl+hUhoFDhJqUY38IFjVnb+CvdsxMR6nzyN5Eka+35guJlIpHiomAnaZ/v9j0BpwenTwL6s6S0yfQllU2a0PJ/pi8W5TJ9J8/NBzv8R5Gj9C3NMKf0f5NMgS1eNgZy0DctfneOHGNpxgxtzwwWTDoncRezT/AeOhR0GQLJTaGvszyjhiO3/AG3f7sTLBQAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">e3790d2dfb756210f6d5f9d38eefdc10</block>
+        <comment>Setando em 1</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Ranking Data">5af92e31fb5d3e1086e7f4045eefdc3a</flow>
+        <flow_variables_assigned>var_count1</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>5</order>
+        <outputs_assigned/>
+        <parent_ui_id>b6f98993-2de4-48f4-9d42-7ad52358075f</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 19:11:38</sys_created_on>
+        <sys_id>26f96e31fb5d3e1086e7f4045eefdc31</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:50</sys_updated_on>
+        <ui_id>3443d07f-a146-41ae-ab16-99e00768f4e4</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1U0W7aMBT9Fz9DFEJCgbdKUyWkbZU21pepii72NVhzbNexoQzx77smIa3a7QMm9S33+Pqec4+PcmI2BhdDu7a3bau2hi1/Po6YMgmj7xMz0CBbsj34mttowoSNqNAxgelbqNZpOD68gvhOaeGxn+XA04iAni1Pb47C0WGtYYOabq5MwC11EbugsgK5KHA6kZtKTHGSz2d4I8u8rBCl4FVFfdebgzbC/iY30RCmBgLrRZKTjxg+BzQCiVCCbnHEGjACgvXHAfEI4t7oF2BHg2gcS83PrfpNs8s89UmkzTh2Z0NZ9w51MN9ZxfHeBWVNhwTY6P4Otzo25mu3QvIWJUQdrt4SEluahy5pTiJ6RfL7zh6+XQnvlLms1x9qy0EPFYTg1SYGbNNzRLV+600HfX73KKixIc66AeeU2dbO27268JDsJttqKjKp7YH0pSBlwNOOGbkJ2R3hny7wA3iVFv5CY3q+H0Y9RVylR19IvphzWY4LOZfjcsZhDMW0GM94fjOXs1JMRMHOF3Prp5jW6mzqDak7T6mh5V65cEsS9tjvfn5Mwe3Yu2hfcvaPzHxE/CPi/2XEBXLVkqp1krC6/sfTwZGCo/hr6GD9r7TPC3b+A93JsRoRBgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">e31d41a1fbb56210f6d5f9d38eefdc62</block>
+        <comment/>
+        <connected_to>b6f98993-2de4-48f4-9d42-7ad52358075f</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Ranking Data">5af92e31fb5d3e1086e7f4045eefdc3a</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
+        <order>6</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 19:11:38</sys_created_on>
+        <sys_id>eaf96e31fb5d3e1086e7f4045eefdc31</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:50</sys_updated_on>
+        <ui_id>e0441a5d-de7b-4465-8283-c2d239ca3641</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1UTWvcMBD9K0VnY/zRhHZvoSVQaBtoQi5tEGNJ3hWVJVUfu9ka//eO/LG7NAkNOeTUm/RGM/Pe88M9MTHYGPyNufBerjVZfb/LiNQJw3NPNHSCrAgzmssgjaYjkJEtqJgKeOTSWwX72yPCNlJxJ+ZpFhz2BOHIqv+rFPZWUAWNUNh4HZzUa2yXHG9tAW35npWsrs7rqiiqd2/L5rxuyorXIKDCd0vjh4Xcm88jkj3JOu1D3C+bjOOJVllkRNwHobnA1S0oLzLSgeYQjNsfECeAX2l1BDZSh0lxB/de/sbZ1dlZetgK1MhmOw5XOlu1uGQkE1c2EZyQAI1aLDQqdvrrpCOZLFqIKpyYHD3OEzaRTixmSu31xuy+LQsvpR4FzkVlGKjDDQLa0MQgfPowQokOB9EOrEVzqHVmK8dm5NLla4WXvFVmh0tTUnJgiXiOHkF+ifjHEb4FJ5OKLzgGmyeaDXjJ6JgqHBccShhGW+ivmAhNAmcpdHIDH3jmpA0XuGcrZtZD9jCSJ2ns+5HhdiaR44EyE3Uoh+FHLIqalw8D+7ymV8h0+VimH0nz00Gu/hHkZP0zc1wUxf8gnwZZejoFctY2Ln9xju9SaKcNfsoNF0x6JHKTsE/LHzgV9hgAyU6hnXE/k4QjNvwBPUsE1MsFAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">a31d41a1fbb56210f6d5f9d38eefdc63</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Ranking Data">5af92e31fb5d3e1086e7f4045eefdc3a</flow>
+        <flow_variables_assigned>var_count1</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>7</order>
+        <outputs_assigned/>
+        <parent_ui_id>e0441a5d-de7b-4465-8283-c2d239ca3641</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 19:11:38</sys_created_on>
+        <sys_id>26f96e31fb5d3e1086e7f4045eefdc32</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:50</sys_updated_on>
+        <ui_id>26bc65d4-7174-419d-bffb-8c2a18337402</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1U0W7aMBT9Fz9DFEJCgbdKUyWkbZU21pepii72NVhzbNexoQzx77smIa3a7QMm9S33+Pqec4+PcmI2BhdDu7a3bau2hi1/Po6YMgmj7xMz0CBbsj34mttowoSNqNAxgQV9C9U6DceHVxDfKS089rMceBoR0LPl6c1RODqsNWxQ082VCbilLmIXVFYgFwVOJ3JTiSlO8vkMb2SZlxWiFLyqqO96c9BG2N/kJhrC1EBgvUhy8hHD54BGIBFK0C2OWANGQLD+OCAeQdwb/QLsaBCNY6n5uVW/aXaZpz6JtBnH7mwo696hDuY7qzjeu6Cs6ZAAG93f4VbHxnztVkjeooSow9VbQmJL89AlzUlEr0h+39nDtyvhnTKX9fpDbTnooYIQvNrEgG16jqjWb73poM/vHgU1NsRZN+CcMtvaebtXFx6S3WRbTUUmtT2QvhSkDHjaMSM3Ibsj/NMFfgCv0sJfaEzP98Oop4ir9OgLyRdzLstxIedyXM44jKGYFuMZz2/mclaKiSjY+WJu/RTTWp1NvSF15yk1tNwrF25Jwh773c+PKbgdexftS87+kZmPiH9E/L+MuECuWlK1ThJW1/94OjhScBR/DR2s/5X2ecHOfwBciec0EQYAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">eb790d2dfb756210f6d5f9d38eefdc10</block>
+        <comment/>
+        <connected_to>b6f98993-2de4-48f4-9d42-7ad52358075f</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Ranking Data">5af92e31fb5d3e1086e7f4045eefdc3a</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>8</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 19:11:38</sys_created_on>
+        <sys_id>eaf96e31fb5d3e1086e7f4045eefdc32</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:50</sys_updated_on>
+        <ui_id>9293447b-4381-4d7b-bfa2-d1373275d096</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">e3790d2dfb756210f6d5f9d38eefdc11</block>
+        <comment>Setando em 0</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Ranking Data">5af92e31fb5d3e1086e7f4045eefdc3a</flow>
+        <flow_variables_assigned>var_count1</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>9</order>
+        <outputs_assigned/>
+        <parent_ui_id>9293447b-4381-4d7b-bfa2-d1373275d096</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 19:11:38</sys_created_on>
+        <sys_id>a2f96e31fb5d3e1086e7f4045eefdc33</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:50</sys_updated_on>
+        <ui_id>6352d366-f036-48f1-8001-aafb42a31f7f</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1U0W7aMBT9Fz9DFEJCgbdKUyWkbZU21pepii72NVhzbNexoQzx77smIa3a7QMm9S33+Pqec4+PcmI2BhdDu7a3bau2hi1/Po6YMgmj7xMz0CBbsj34mttowoSNqNAxgTl9C9U6DceHVxDfKS089rMceBoR0LPl6c1RODqsNWxQ082VCbilLmIXVFYgFwVOJ3JTiSlO8vkMb2SZlxWiFLyqqO96c9BG2N/kJhrC1EBgvUhy8hHD54BGIBFK0C2OWANGQLD+OCAeQdwb/QLsaBCNY6n5uVW/aXaZpz6JtBnH7mwo696hDuY7qzjeu6Cs6ZAAG93f4VbHxnztVkjeooSow9VbQmJL89AlzUlEr0h+39nDtyvhnTKX9fpDbTnooYIQvNrEgG16jqjWb73poM/vHgU1NsRZN+CcMtvaebtXFx6S3WRbTUUmtT2QvhSkDHjaMSM3Ibsj/NMFfgCv0sJfaEzP98Oop4ir9OgLyRdzLstxIedyXM44jKGYFuMZz2/mclaKiSjY+WJu/RTTWp1NvSF15yk1tNwrF25Jwh773c+PKbgdexftS87+kZmPiH9E/L+MuECuWlK1ThJW1/94OjhScBR/DR2s/5X2ecHOfwCdC1O2EQYAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">eb790d2dfb756210f6d5f9d38eefdc11</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Ranking Data">5af92e31fb5d3e1086e7f4045eefdc3a</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>10</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 19:11:38</sys_created_on>
+        <sys_id>6af96e31fb5d3e1086e7f4045eefdc33</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:50</sys_updated_on>
+        <ui_id>cfdc988b-b11d-4942-b9bf-11cea3ddb70f</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Uy27bMBD8lUJnWdDDUmPfghYBCrQN0AS5tIGwIlc2UYpUScqOa/jfu9TDNhoHLYocezHEoXZ3ZrTjfaA713bO3utra8VKBcuvj2EglMfoeR8oaDBYBkwrLpzQquyBMNiA7PwFPXJhWwm7hxPC1kJyg2O3FgzVODTBcv/bldu1WEqoUFLhnTNCrahccDrVMdTJgiUsS4ssjeP0ap5URVYlKc8AIaP3psJ3E7k3H3skfJG1n0e4nSZpwz2tJA4DfHKoONLoGqTFMGhAcXDa7I6IQeC3Sp6AtVBuUNzAkxU/qXea5/7FGkkjG+04HsvRqsklLRjetp7ggDio5GShll2jPg86vMlYQyfdmcmdpX7YetKexUipvlvr7Zdp4I1QvcDxUmoG8ngCRzZUnUPrPwxKbKhR2UDbkjlla/RG9MXEpYlWkg5RLfWWhvpNiYB54hF5BNEN4e97+AGM8Co+URsqHmhWYAUr+62ids6QhENvS/mj84QGgaOUcnCDXrDMiNZd05wNjqwP4fOVPNvG/T6Na47F/GqWMeSzeb4oZlUCbFZli6q4egspLIpIOGz6n1K3w3rgNvJtD4dvXRxnfFOC0s9X+7Xbv0ZOFpDXeRLnl3MyLy7l5EJCXg5H+odw+M/5l9mI4/h/OM7DIWw5LPmorR/+z9l49EEYJthhbzgyYYnIvcc+TP/q/mJHCyDYObTV5ruXcMIOvwDm5h6wHwYAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">e3790d2dfb756210f6d5f9d38eefdc12</block>
+        <comment>Popula o ano</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Ranking Data">5af92e31fb5d3e1086e7f4045eefdc3a</flow>
+        <flow_variables_assigned>var_ano</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>11</order>
+        <outputs_assigned/>
+        <parent_ui_id>cfdc988b-b11d-4942-b9bf-11cea3ddb70f</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 19:11:38</sys_created_on>
+        <sys_id>22f96e31fb5d3e1086e7f4045eefdc34</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:50</sys_updated_on>
+        <ui_id>45e87eb4-1522-46c8-928c-4e868bc4e337</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VTY/aMBD9Lz6TKOQLwm2laqWV2q7UpXupVpFjj8GqY2dtB5Yi/nvHSYCK9tYrt/jZM/PemxnlSEzvu967tXlwTm40Wf14mxGpA4bfR6JpC2RFdtTWVBsywy/VB+R4TBPBocyXUcaAR3lRlVEzpyxqsqoplwua0qqMpYc2HmJOJ4zm0nWKHl7/KwnbSsUtTGQ7apGjB0tWx5srf+igVrQBhbVevJV6g+GS46kqRZVCNhdNwTOYJ8sSFiJP8gJAcJZn+O4ceNX+lxmhAALunNpYHngkMwIfHjQHLCWocjAjLdWcemMPF8QC5c9aXYGt1B6zkfD4w8lfmHqZJEl4KQBFMRhvL8d6snOE2dZIBs+dl0aPiKeNmmKYUX2rv44CQiNA0F75cyMQ6R3mgy6wDjQmTuJla/bfzgUfpR4ETpfKMKouJ+rRhqb34EInerm+MWdEPt+2AxS0WLFuadchUnfW7ORQBUm38UbhIRbK7JFdGNGYsqAwRjdp/Ij4pwF+pVYGuV8wDQaHct+1fO/hKbR7kYo0K4omSrK0inK+xAnLOcOpa5KFKPKGVpycBmvr9z6IGk2a7KhHR/GBY1Z2/gEp7GBSfnoLWzFWH5dmmLB/zct9ee7Lc1+e2+XhwKRDVutA4en87wkXBxwayf6E9sb+DHqu2Ok3K9WNFcUGAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">eb790d2dfb756210f6d5f9d38eefdc12</block>
+        <comment/>
+        <connected_to>cfdc988b-b11d-4942-b9bf-11cea3ddb70f</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Ranking Data">5af92e31fb5d3e1086e7f4045eefdc3a</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
+        <order>12</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 19:11:38</sys_created_on>
+        <sys_id>e6f96e31fb5d3e1086e7f4045eefdc34</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:50</sys_updated_on>
+        <ui_id>fefe5d28-2611-4ce7-9f3a-4b1127da7629</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1UTY/TMBD9KyjnNMpHG9reVqCVkICV2NVeYBVN7Elr4djBdtotUf8743y0FbsrEBKcuFTxc2bmvZd57QLduqZ19k5fWSs2Klh/fggDoTxGz12goMZgHTCtuHBCq6IHwmAHsvUX9MiFbSQc7s8I2wrJDY7dGjBU49AE6+6nK3dosJBQoqTCW2eE2lC54HSqYqiSFUtYluZZGsfpcp6UeVYmKc8AIaX3psI3E7lX73skfJG1n0e4nSZpwz2tJA4DfHSoONLoCqTFMKhBcXDaHE6IQeA3Sp6BrVBuUFzDoxXfqXe6WPgXKySNbLTjdCxGqyaXtGB403iCA+KglJOFWra1+jjo8CZjBa10Fya3lvph40l7FiOl6nar95+mgddC9QLHS6kZyNMJHNlQtg6t/zAosaZGRQ1NQ+YUjdE70RcTlzraSDpEldR7Guo3JQLmiUfkEUTXhL/t4Xswwqv4QG2oeKBZghWs6LeK2jlDEo69LcW31hMaBI5SisENesEyIxp3RXN2OLI+hk9X8mIbuy6NK475fDnLGPLZfLHKZ2UCbFZmqzJfvoYUVnkkHNb9T6GbYT1wH/m2x+OXNo4zvivQOuD66Xb/hQn/IC3Jc2l5JicvRyT9RUT8R/3NhMRx/D8ilxERthhWfdTWD//jhDz4OAwT7LA3HJmwROTOY++m/3Z/caAFEOwS2mvz1Us4Y8cfjg9glCUGAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">67790d2dfb756210f6d5f9d38eefdc13</block>
+        <comment>Popula o estado</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Ranking Data">5af92e31fb5d3e1086e7f4045eefdc3a</flow>
+        <flow_variables_assigned>var_estado</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>13</order>
+        <outputs_assigned/>
+        <parent_ui_id>fefe5d28-2611-4ce7-9f3a-4b1127da7629</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 19:11:38</sys_created_on>
+        <sys_id>aef96e31fb5d3e1086e7f4045eefdc34</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:50</sys_updated_on>
+        <ui_id>509ab718-88ae-46b1-9886-0418f90aabbf</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VwW7bMAz9F51jw44dJ86twFCgwLYCa9bLUBiURCXCZMuV5aRZkH8fFTvpFnSnXXMzn0S+x0cRPjDb+7b33credZ1eN2z542XCdBMw+j6wBmpkS7YFV2HnQVo2ocD0ATwcpomSWOSLKBMoo3xWFhFPQUQ8K3mxmMMUyiLWHuv4lHM8UrbUXWtg//xfRcRGG+lw1NuCI5keHVsero78vsXKAEdDXE/e6WZN6VpSpCArVcFnipcywzRZFDhXeZLPEJUUxZzunRP/av8jSwINYd2ZwDoZ1CQThm8eG4lEqMB0OGE1NBK8dfsL4hDkY2PegY1uPFVj4fJbp39R6UWSJOGmQmpN4HB6CavR1AEWG6sFPrZe22ZAPHAz5ghr+rr5OvQQxoEKeuPP4yCk76getkF1kDFqUk8bu/t2JrzXzanB8dBYAeYSgScbeO+xC/Po9erKnAH5fD0UNFgTY1VD2xJStc5u9YmFRNfx2lAQK2N3pC681RhE6DAmNyG+J/zTCX4Gp0O7X6gMJQe6741+7fEhDJ3PuAKeTqM0mRZRnqkkWpRFGkGecshUqsrpnB1P1lavfWhqMGm0oxocpQudcLr1dyRhi2Pnx5ewGwP7sD2nd/aPJ3PbotsW3bbo4y2SKHRHqlZBwsP5bxQO9vRutPgT2ln3M/Tzjh1/A5w1bn/XBgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">2b1d41a1fbb56210f6d5f9d38eefdc65</block>
+        <comment/>
+        <connected_to>cfdc988b-b11d-4942-b9bf-11cea3ddb70f</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Ranking Data">5af92e31fb5d3e1086e7f4045eefdc3a</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
+        <order>14</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 19:11:38</sys_created_on>
+        <sys_id>66f96e31fb5d3e1086e7f4045eefdc35</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:50</sys_updated_on>
+        <ui_id>7b5c4780-d3a5-467a-a4b8-6c282af57221</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Uy27bMBD8lUJnWdDDdm3fghYBCrQN0AS5tIGwIlcxEYpkScqOa/jfu9TDNvJAiwLtqRdDHGp3Z0az3ke69ab17kZfOCfuVbT6ehdHQgWMnveRggajVcS04sILrcoOiKMNyDZc0CMXzkjY3Z4QthaSWxy6GbBU49FGq/2TK78zWEqoUFLhtbdC3VO54HSqU6izJctYkc+LPE3zxTSr5kWV5bwAhJzeGwvfjeTefOyQ+FXWYR7hbpykLQ+0sjSO8NGj4kija5AO46gBxcFruzsiFoFfKXkC1kL5XnEDj078oN75bBZerJE0ssGO47EcrBpd0oLhlQkEe8RDJUcLtWwb9bnXEUzGGlrpz0xuHfVDE0gHFgOl+nqtt1/GgZdCdQKHS6kZyOMJPNlQtR5d+DAosaFGZQPGkDmlsXojumLi0iT3kg5JLfWWhoakJMAC8YQ8guSS8PcdfAtWBBWfqA0V9zQrcIKVXaqonbck4dDZUn5vA6Fe4CCl7N2gFxyzwvgLmrPBgfUhfh7JszTu93lac5xPF5OCIZ9MZ8v5pMqATapiWc0XbyGH5TwRHpvup9Smjwduk9D2cPjWpmnBN6UXRpPS0oJ66LPyJOZ/c9Q/2J/spf15YXNeX5r8F0sTPvNv7kyapv+X5nxphCv78A/auuF/vDN3YUH6Ca7PDUcmHBG5CdiH8d8+XOwoAIKdQ1ttH4KEE3b4CVvHQNU3BgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">231d41a1fbb56210f6d5f9d38eefdc66</block>
+        <comment>Popula o tipo de ranking</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Ranking Data">5af92e31fb5d3e1086e7f4045eefdc3a</flow>
+        <flow_variables_assigned>var_tipo_ranking</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>15</order>
+        <outputs_assigned/>
+        <parent_ui_id>7b5c4780-d3a5-467a-a4b8-6c282af57221</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 19:11:38</sys_created_on>
+        <sys_id>e2f96e31fb5d3e1086e7f4045eefdc36</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:51</sys_updated_on>
+        <ui_id>43175a16-f870-4ccd-b780-63e52089e443</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VTW/bMAz9LzrHhpM4jp1bgaFAgW0F1qyXoTBoiUqEypIry0mzIP99lO2kRbCPw669WY8i3+MTCR+Z7XzT+XZtb9pWbQxb/XiaMGUCRt9HZqBGtmI7cKVXjS0dmGdlNmxCkO5C6HicJVJglubRnKOI0kWRRdUUeFTNiyrLlzCDIouVxzruc04nyhaqbTQcHv+rCN8qLRyOqhtwJNajY6vjVcgfGiw1VKiJ68G7oQMl6MSX80Jm1UJWhZjjNMkzXMo0SReIUvCsoHvnxN+Y8Gd7AiVF2jOZdSIoSyYMXz0agUQuQbc4YTUYAd66wwVxCOLe6Ddgq4ynaixcfm3VTyqdJ0kSbkqkNjkO0cuxHA0eYL61iuN945U1A+Kh0mMOt7qrzdehk/A0KKHT/vw0hHQt1cMmqA4yRk3yYWv3386Et8r0DY5BbTnoywk82VB1HtvwNp1aX5kzIJ+vHwg11sRY1tA0hJSNszvVs5DoOt5oOsRS2z2pC9MbAw8dxuQmxLeEf+rhR3AqtPuFylByoPtu1EuHd2EARMJhKZYiyqVMo7RIeJQnAFGBueTFLM3SacJOvbXlSxeaGkwa7SgHR+lCy51q/A1J2OHY+ekp7MnAPuxTP3N/HZyPvfrYq4+9+vdeCeSqJVXrIOHu/McKgQNNj+Lvob11z6GfN+z0C298LoD7BgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">6f790d2dfb756210f6d5f9d38eefdc13</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Ranking Data">5af92e31fb5d3e1086e7f4045eefdc3a</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>16</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 19:11:38</sys_created_on>
+        <sys_id>2af96e31fb5d3e1086e7f4045eefdc37</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:51</sys_updated_on>
+        <ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+2Uz27bMAzGX6XQ2TBkuwnW3IoOBQZsK7AWvWyFQUt0IkyWPElOmgV5oD3HXmyU/6RBl2LFsONu0keR/Ej/4B2zXWi74O/spfdqadji80PClIkanXfMQINswYQ1UgVlTdkLCVuD7mLgynYmnP38ccZJlMq3Grb3p2JipbR0OHZowVGdgI4tds9CYdtiqaFCTSVug1NmSelK0q3mUGcXIhNFPi9yzvM351k1L6oslwUgFPRuSryaDJ+975XkxUliP9L91Mk6GW1lPGH4GNBIpNY1aI8Ja8BICNZtD4pDkDdGPwkrZQKVY/Hxo1ffqXY+m8WHNdKMAofg4VqOSxtksbJK4E0bDQ5KgEqPOcLqrjEfhzniurGGTodp3aR0nuphG01HF6Ol+nZlN5+mhtfK9AOOQW0F6MMNAq2h6gL6+GFQY0OFygbalpZTts6uVZ9MXpp0qemS1tpuqGmkJwURjae0I0ivSX/by/fgVJziA5Wh5MFmBV6JsieNygVHI+z7tZTfumhoGHAcpRy2QQ+8cKoNl9RnjaPrffI7pkeE7na9w/VoIqVDKSKZ2X7/peO8kCfQfV3Sv2D6Amb1LOOz00yfz08xfYLml0HO/wByXP0rOeac/wf5GGTlywHIcba++V9z/BChHTr4gRuJQnkyche1d9NfOQa2BIASx9LGuq9xhCdt/wsKQ4JR3wUAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">612b3741fbf1621086e7f4045eefdcde</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Ranking Data">5af92e31fb5d3e1086e7f4045eefdc3a</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>20</order>
+        <outputs_assigned/>
+        <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 19:11:38</sys_created_on>
+        <sys_id>eef96e31fb5d3e1086e7f4045eefdc37</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:51</sys_updated_on>
+        <ui_id>cc765906-5769-430a-b4ae-373f078cb540</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1UXW/aMBT9K1GeAZlAQuENbas0aVulFfVlq6Ib+wasGTuzHShD/Pdd56NFK9W2ao97i8/9OufeoxxjU/uq9m5lls7JtY4XX+4HsdQBo+9jrGGL8SLmRgvppdF5AwziHag6BO5AGRsJjJbaRO805XkLwkQaohUUqCC6lhoUVQjpKgWHu78u5BuphMWOWwWWGHi08eL4S8gfKsxVKKb+t95KvaZyKehVMijHcz7mkySbJIwlV9NxkU2KcSImgDChvL7wTS81+tAggxd3EOYR7vpJxopAa8wGMT541AJpdAnK4SDeghbgjT08IhZB3Gj1BGyk9tQuDskPTv6g3kmahsQSSSPHNvj4zLuNtjDfGMnxpgoEW8RDoboablS91Z9aHeEWWEKtfH8LQmpH/bAKpAOLjlJ5uzH7z/1AOkgjsAsqw+k+/Qs8raGoPbpwGFS4pUb5FqqKlpNX1uxkU0xctqO1oseoVGZPQ4PvRsAD8RHtCEbXhL9t4DuwMqj4SG2ouKVZgJM8bzxK7bwlCadmLfn3OhBqBXZS8nYblOC4lZVf0pwddqxPg+cGP/P28cjK2ZzNUzEUs1k2nLIMh3Pk6TDLMEmm0yS9ynDkPPjanU5fa8Ymgj23+qv7/AvnzyEt0zFLLzt/ml1y/gXPv2z35Dd2Dwf6Q7czxv7b/dzu0uWtbTttzfBXu/0+WLud4FrfCOTSEZFVwN73f/0QOJABJD+H9sZ+CxKesNNPGBUhIz8GAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">f7ee3f85fbf1621086e7f4045eefdc51</block>
+        <comment/>
+        <connected_to>cc765906-5769-430a-b4ae-373f078cb540</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Ranking Data">5af92e31fb5d3e1086e7f4045eefdc3a</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>22</order>
+        <outputs_assigned/>
+        <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 19:11:38</sys_created_on>
+        <sys_id>a6f96e31fb5d3e1086e7f4045eefdc38</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:51</sys_updated_on>
+        <ui_id>bbf158a1-4051-412a-803b-c34c3913e71b</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">e7790d2dfb756210f6d5f9d38eefdc15</block>
+        <comment>Limpando Variables</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Ranking Data">5af92e31fb5d3e1086e7f4045eefdc3a</flow>
+        <flow_variables_assigned>var_ano,var_estado,var_tipo_ranking</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>24</order>
+        <outputs_assigned/>
+        <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 19:11:38</sys_created_on>
+        <sys_id>6ef96e31fb5d3e1086e7f4045eefdc38</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:51</sys_updated_on>
+        <ui_id>6deb7984-2b14-4d0a-a4e7-d189ebcd7d31</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1YXWvbMBT9L36Og/xt960wCoVthbXryyjm6qsVlSXXlttmpf99V7GTdFm2h7ENMvwmHX3cc44OycUvgR1cO7j+yp72vbo1wcmXm0WgjMdw/BIYaERwEjxCV4OxwQJHevAIDrnqWw2r6x3C7pTmnZiuaaHD0050wcnL3pJbtaLWQIXGg5euU+YWjyuOsyqXVSySSNKMJyIiZS4KmZI0E0Jylia4b3Nwx+oHmr4AAv3mattxz4MsAvHshOECS0nQvVgEDRgOznarLdIJ4BdG74A7ZdyosIHnXn3Fq0tCiN8pBYpik/7ttJ682dhiFRMXrVPWjIgDqjeeWT005uMowLsqJAzavXF16PE+0XrWnsbESV7e2adPm4JnyqwFTovaMtDbGTi0gQ5O9P4lBnW1Z86IvN9/DqFFgxXrBtoWkbrt7KNaV0HSzfJW42QptX1Cdj48S2Be4RLdhOUZ4u/W8DV0ysv9gNfgYV/us1EPgzj3z13EMk6yjIYkiasw5SULacpZmDBKCpmlFCoevK6trR8GL2o0abKjHh3FDT3rVOtOkcKjmJS/Lr4LsOgd8H+SYQlJJXOaSVodyHBe7GV4S+wQ2TnJR5JkmlEJNIrDiMR5mCaShGWVRyGkEYVERvizVvyhJDvV2roDcz/K++t5ZsUv81zt5XmP3s+Jz9k+kmxzwqDgBQ9LKdMwrQgLSwIQVqKUrIrTPI3Ib2f7xid4rD42HevMHfpXn5uPOdbH1HwcCPLchMyJPuIm5ECi52Zkzvh/1YxwwVSPrK48hfPNtxC/sML0KPYWerLdvdezw16/AY1r70tVEQAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=5af92e31fb5d3e1086e7f4045eefdc3a"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=5af92e31fb5d3e1086e7f4045eefdc3a^sys_idNOT IN5af92e31fb5d3e1086e7f4045eefdc55,96f92e31fb5d3e1086e7f4045eefdc43,c739f6b5fb9d3e1086e7f4045eefdc69,fa39f6b5fb9d3e1086e7f4045eefdc67"/>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=integer,uiTypeLabel=Integer,uiUniqueId=9fc98cf4-2f8f-46ca-a232-6c078f64d1d2</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>var_count1</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Integer">integer</internal_type>
+        <label>var_count</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Ranking Data">5af92e31fb5d3e1086e7f4045eefdc3a</model>
+        <model_id>5af92e31fb5d3e1086e7f4045eefdc3a</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_variable_5af92e31fb5d3e1086e7f4045eefdc3a</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 19:11:38</sys_created_on>
+        <sys_id>5af92e31fb5d3e1086e7f4045eefdc55</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 19:11:38</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=72f2355b-0329-4d8c-b4dc-3cb07f54ba9d</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>var_ano</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>var_ano</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Ranking Data">5af92e31fb5d3e1086e7f4045eefdc3a</model>
+        <model_id>5af92e31fb5d3e1086e7f4045eefdc3a</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_variable_5af92e31fb5d3e1086e7f4045eefdc3a</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 19:11:37</sys_created_on>
+        <sys_id>96f92e31fb5d3e1086e7f4045eefdc43</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 19:11:37</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=d0ca7d7d-8ff4-490c-80aa-9e8fc9246410</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>var_tipo_ranking</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>var_tipo_ranking</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Ranking Data">5af92e31fb5d3e1086e7f4045eefdc3a</model>
+        <model_id>5af92e31fb5d3e1086e7f4045eefdc3a</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_variable_5af92e31fb5d3e1086e7f4045eefdc3a</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 20:18:17</sys_created_on>
+        <sys_id>c739f6b5fb9d3e1086e7f4045eefdc69</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:17</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=b5bfab12-1026-43f0-8961-a41ba3f1f927</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>var_estado</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>var_estado</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Ranking Data">5af92e31fb5d3e1086e7f4045eefdc3a</model>
+        <model_id>5af92e31fb5d3e1086e7f4045eefdc3a</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_variable_5af92e31fb5d3e1086e7f4045eefdc3a</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 20:18:17</sys_created_on>
+        <sys_id>fa39f6b5fb9d3e1086e7f4045eefdc67</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:17</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>record</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_5af92e31fb5d3e1086e7f4045eefdc3a</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 19:11:38</sys_created_on>
+        <sys_id>eef96e31fb5d3e1086e7f4045eefdc29</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 19:11:38</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_5af92e31fb5d3e1086e7f4045eefdc3a"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_5af92e31fb5d3e1086e7f4045eefdc3a"/>
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=613704000,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>27000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from>216b4dedfb756210f6d5f9d38eefdc7a</copied_from>
+        <copied_from_name/>
+        <description/>
+        <flow_priority>MEDIUM</flow_priority>
+        <internal_name>ranking_data</internal_name>
+        <label_cache>[{"name":"subflow.record","label":"Input➛Record","reference":"x_sded9_portal_t_0_registro_de_cargas_tesouro","reference_display":"Treasury Cargo Registration","type":"reference","base_type":"reference","column_name":"","usedInstances":{"b1c3d1ce-831a-4bfb-b59b-fac37677e4f9":["conditions"],"0a53884c-6d3f-4926-b143-7aebb7b97d97":["conditions"],"39268173-2ed3-4659-805a-84b15f1045a3":["parent_sys_id"],"c89a2cab-c4b6-4d9a-a522-66df72662c5e":["parent_sys_id"],"fb48067c-f6f5-45ab-b1f7-87e39e2b4f53":["parent_sys_id"],"83c6e11f-e93b-467c-9b7f-38bab9ae0a3b":["parent_sys_id"],"b68068aa-2262-4839-a185-5e13cd917f72":["parent_sys_id"],"d54d22bc-061e-44b3-8b1e-9ed82884ca5f":["parent_sys_id"],"7a5418ac-94b7-4d9e-aa2a-30eca3999ced":["parent_sys_id"],"736e303e-e8a8-45be-be88-2fc0536e20f5":["parent_sys_id"]},"attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"f4b7b973-3190-4871-8403-baaef11efe7b","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"b1c3d1ce-831a-4bfb-b59b-fac37677e4f9.Records","label":"1 - Look Up Records➛Multi Row Question Answer Records","reference":"sc_multi_row_question_answer","reference_display":"Multi Row Question Answer","type":"records","base_type":"records","usedInstances":{"20fde648-3ced-4596-b1ac-b39b687a2a96":["items"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.value","label":"3 - For Each➛Multi Row Question Answer Record➛Value","reference":"","reference_display":"Value","type":"string","base_type":"string","parent_table_name":"sc_multi_row_question_answer","column_name":"value","usedInstances":{"3283fd25-754f-4540-a6dc-42c1d8b9e628":["conditions"],"45e87eb4-1522-46c8-928c-4e868bc4e337":["var_ano-0"],"509ab718-88ae-46b1-9886-0418f90aabbf":["var_mes-0","var_estado-1"],"43175a16-f870-4ccd-b780-63e52089e443":["var_rpps-0","var_tipo_ranking-1"],"3866f7bc-4596-4ecc-b5ab-abdbbde58ec9":["condition"]}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.row_index","label":"3 - For Each➛Multi Row Question Answer Record➛Row index","reference":"","reference_display":"Row index","type":"long","base_type":"long","parent_table_name":"sc_multi_row_question_answer","column_name":"row_index","usedInstances":{"0a53884c-6d3f-4926-b143-7aebb7b97d97":["conditions"],"7a5418ac-94b7-4d9e-aa2a-30eca3999ced":["multirow_record"],"736e303e-e8a8-45be-be88-2fc0536e20f5":["multirow_record"]}},{"name":"0a53884c-6d3f-4926-b143-7aebb7b97d97.Record.row_index","label":"18 - Look Up Record➛Multi Row Question Answer Record➛Índice de linha","reference":"","reference_display":"Índice de linha","type":"long","base_type":"long","parent_table_name":"sc_multi_row_question_answer","column_name":"row_index","usedInstances":{"39268173-2ed3-4659-805a-84b15f1045a3":["multirow_record"],"c89a2cab-c4b6-4d9a-a522-66df72662c5e":["multirow_record"],"fb48067c-f6f5-45ab-b1f7-87e39e2b4f53":["multirow_record"],"83c6e11f-e93b-467c-9b7f-38bab9ae0a3b":["multirow_record"],"b68068aa-2262-4839-a185-5e13cd917f72":["multirow_record"],"d54d22bc-061e-44b3-8b1e-9ed82884ca5f":["multirow_record"]}},{"name":"0a53884c-6d3f-4926-b143-7aebb7b97d97.status","label":"18 - Look Up Record➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Error","value":"1","order":0.0},{"label":"Success","value":"0","order":1.0}],"usedInstances":{},"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"0a53884c-6d3f-4926-b143-7aebb7b97d97.Record","label":"18 - Look Up Record➛Multi Row Question Answer Record","reference":"sc_multi_row_question_answer","reference_display":"Multi Row Question Answer","type":"reference","base_type":"reference","usedInstances":{},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.item_option_new.name","label":"3 - For Each➛Multi Row Question Answer Record➛Question➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"item_option_new","column_name":"name","usedInstances":{"cfdc988b-b11d-4942-b9bf-11cea3ddb70f":["condition"],"fefe5d28-2611-4ce7-9f3a-4b1127da7629":["condition"],"7b5c4780-d3a5-467a-a4b8-6c282af57221":["condition"]}},{"name":"flow_variable.var_count1","label":"Flow Variables➛var_count","reference":"","reference_display":"","type":"integer","base_type":"integer","column_name":"","usedInstances":{"b6f98993-2de4-48f4-9d42-7ad52358075f":["condition"],"3c031a62-dd97-42a9-ae1e-b0b41c896ded":["condition"],"e0441a5d-de7b-4465-8283-c2d239ca3641":["condition"]},"attributes":{"uiType":"integer","uiTypeLabel":"Integer","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"9fc98cf4-2f8f-46ca-a232-6c078f64d1d2"}},{"name":"flow_variable.var_ano","label":"Flow Variables➛var_ano","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf":["conditions"],"0f79095d-d776-406e-9ec5-66e22442586e":["conditions"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"72f2355b-0329-4d8c-b4dc-3cb07f54ba9d"}},{"name":"flow_variable.var_mes","label":"Flow Variables➛var_mes","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf":["conditions"],"0f79095d-d776-406e-9ec5-66e22442586e":["conditions"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"3576bc47-0baa-4380-a20c-7f6e4ce1a770"}},{"name":"flow_variable.var_rpps","label":"Flow Variables➛var_rpps","reference":"","reference_display":"","type":"boolean","base_type":"boolean","column_name":"","choices":[],"usedInstances":{"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf":["conditions"],"0f79095d-d776-406e-9ec5-66e22442586e":["conditions"]},"attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"d7cbe4fe-a090-4ba1-b6bd-d3e948e273cf","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"flow_variable.var_estado","label":"Flow Variables➛var_estado","type":"string","base_type":"string","usedInstances":{"0f79095d-d776-406e-9ec5-66e22442586e":["conditions"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"b5bfab12-1026-43f0-8961-a41ba3f1f927"}},{"name":"flow_variable.var_tipo_ranking","label":"Flow Variables➛var_tipo_ranking","type":"string","base_type":"string","usedInstances":{"0f79095d-d776-406e-9ec5-66e22442586e":["conditions"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"d0ca7d7d-8ff4-490c-80aa-9e8fc9246410"}},{"name":"0f79095d-d776-406e-9ec5-66e22442586e.status","label":"17 - Look Up Record➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Error","value":"1","order":0.0},{"label":"Success","value":"0","order":1.0}],"usedInstances":{"cc765906-5769-430a-b4ae-373f078cb540":["condition"]},"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"0f79095d-d776-406e-9ec5-66e22442586e.Record","label":"17 - Look Up Record➛Dados do Ranking Record","reference":"x_sded9_portal_t_0_dados_do_ranking","reference_display":"Dados do Ranking","type":"reference","base_type":"reference","usedInstances":{"d239a872-dd08-4cf1-b300-905ddb1c2964":["record"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"736e303e-e8a8-45be-be88-2fc0536e20f5.posicao","label":"19 - Get MRVS Values (Ranking Data)➛Posicao","reference_display":"Posicao","type":"string","base_type":"string","usedInstances":{"d239a872-dd08-4cf1-b300-905ddb1c2964":["u_posicao"],"510f8cfb-0ff0-4e9c-a774-ec8193bdeab8":["u_posicao"]},"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiType":"string","uiUniqueId":"5a35ea5f-a7aa-4f24-8036-77294708c489"}},{"name":"736e303e-e8a8-45be-be88-2fc0536e20f5.porcentagem","label":"19 - Get MRVS Values (Ranking Data)➛Porcentagem","reference_display":"Porcentagem","type":"string","base_type":"string","usedInstances":{"d239a872-dd08-4cf1-b300-905ddb1c2964":["u_porcentagem"],"510f8cfb-0ff0-4e9c-a774-ec8193bdeab8":["u_porcentagem"]},"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiType":"string","uiUniqueId":"148d6e3c-b142-475f-8ac9-9419e537d9fe"}},{"name":"736e303e-e8a8-45be-be88-2fc0536e20f5.ano","label":"19 - Get MRVS Values (Ranking Data)➛Ano","reference_display":"Ano","type":"string","base_type":"string","usedInstances":{"510f8cfb-0ff0-4e9c-a774-ec8193bdeab8":["u_ano"]},"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiType":"string","uiUniqueId":"4d0ccd94-22ef-45dc-a2d2-6fa2d53333ff"}},{"name":"736e303e-e8a8-45be-be88-2fc0536e20f5.estado","label":"19 - Get MRVS Values (Ranking Data)➛Estado","reference_display":"Estado","type":"string","base_type":"string","usedInstances":{"510f8cfb-0ff0-4e9c-a774-ec8193bdeab8":["u_estado"]},"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiType":"string","uiUniqueId":"ccd27053-5b95-429a-8e34-d66f1d4c948d"}},{"name":"736e303e-e8a8-45be-be88-2fc0536e20f5.tipo_ranking","label":"19 - Get MRVS Values (Ranking Data)➛Tipo Ranking","reference_display":"Tipo Ranking","type":"string","base_type":"string","usedInstances":{"510f8cfb-0ff0-4e9c-a774-ec8193bdeab8":["u_tipo_de_ranking"]},"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiType":"string","uiUniqueId":"71f54863-5a0d-4af2-845a-416c5bcc9da2"}}]</label_cache>
+        <master>true</master>
+        <name>Ranking Data</name>
+        <natlang/>
+        <outputs/>
+        <parent_flow display_value="Ranking Data">5af92e31fb5d3e1086e7f4045eefdc3a</parent_flow>
+        <remote_trigger_id/>
+        <run_as>system</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 20:18:53</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>e759fab5fb9d3e1086e7f4045eefdc31</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:53</sys_updated_on>
+        <type>subflow</type>
+        <version>2</version>
+    </sys_hub_flow_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=e759fab5fb9d3e1086e7f4045eefdc31"/>
+    <sys_variable_value action="delete_multiple" query="document_key=e759fab5fb9d3e1086e7f4045eefdc31"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=e759fab5fb9d3e1086e7f4045eefdc31"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=e759fab5fb9d3e1086e7f4045eefdc31^sys_idNOT IN6f59fab5fb9d3e1086e7f4045eefdc3e"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>e759fab5fb9d3e1086e7f4045eefdc31</id>
+        <name>Ranking Data</name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 20:18:53</sys_created_on>
+        <sys_id>6f59fab5fb9d3e1086e7f4045eefdc3e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:53</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=6f59fab5fb9d3e1086e7f4045eefdc3e"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=e759fab5fb9d3e1086e7f4045eefdc31^sys_idNOT INeb59fab5fb9d3e1086e7f4045eefdc3f"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference,uiUniqueId=f4b7b973-3190-4871-8403-baaef11efe7b</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table>x_sded9_portal_t_0_registro_de_cargas_tesouro</choice_table>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>record</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Ranking Data">e759fab5fb9d3e1086e7f4045eefdc31</model>
+        <model_id>e759fab5fb9d3e1086e7f4045eefdc31</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_e759fab5fb9d3e1086e7f4045eefdc31</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="x_sded9_portal_t_0_registro_de_cargas_tesouro">x_sded9_portal_t_0_registro_de_cargas_tesouro</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 20:18:53</sys_created_on>
+        <sys_id>eb59fab5fb9d3e1086e7f4045eefdc3f</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:53</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=eb59fab5fb9d3e1086e7f4045eefdc3f"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=e759fab5fb9d3e1086e7f4045eefdc31"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=e759fab5fb9d3e1086e7f4045eefdc31"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=e759fab5fb9d3e1086e7f4045eefdc31"/>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=e759fab5fb9d3e1086e7f4045eefdc31^sys_idNOT IN7b59fab5fb9d3e1086e7f4045eefdc71,3f59fab5fb9d3e1086e7f4045eefdc71,ff59fab5fb9d3e1086e7f4045eefdc71,f359fab5fb9d3e1086e7f4045eefdc72,b759fab5fb9d3e1086e7f4045eefdc72,7b59fab5fb9d3e1086e7f4045eefdc72"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Records">43400a1587003300663ca1bb36cb0b4b</action_type>
+        <action_type_parent display_value="Look Up Records">d1c56ec50b30030085c083eb37673a50</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>43400a1587003300663ca1bb36cb0b4b</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Ranking Data">e759fab5fb9d3e1086e7f4045eefdc31</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 20:18:54</sys_created_on>
+        <sys_id>7b59fab5fb9d3e1086e7f4045eefdc71</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:54</sys_updated_on>
+        <ui_id>b1c3d1ce-831a-4bfb-b59b-fac37677e4f9</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VXwU7jMBD9lSjnKkppKSw3BEJaCai2IC67YDmx01o4cdZ2WkrVf99x7KRRG0orFaloj54Z229m3ps4vxc+I/6Ff570wxB3T8/PwrDXC8PBoBfjbhT1BnEURv3I7/gZTilEahxxCssp5oVZqxilBdcMSTFDfwuqNBMZwpmaUQlhhKmc4/mTi74zod5IzLxfLtS7rELjCeNE0sy/+P3c8XMs4UINnovFmmtXxBxHlEPoo4O8loGe5/USlT5ru21u8+6tQ0hioIQdn75pmhEKGBLMFe34Kc4I1kLOa4ukmAwzvjJMWKbhRN8Evyn2DveehyYuoZBVTK2vXiJXNWtOrrHGD1oWsS6kC40ngsVU2XoQmmCo61XTZgOGuSmx3WLTtrsFL9Ls3pbDrw+omgSWQgEImptEDXKXRvIwEbNRhfKGZWVNnJOLGPN6hbWWLCq0wbPwKacpHIRSnOcsG6NciikrNwOWNBhzWAQJBwYRqtg4C3BsgAdQVxzcgP26ND9hyUwWd3BMSZmEcWAIsi1UopBlKaco5oUqHRKIaM/ylx1fzdUVx0qtMoeSA2kNblsHlzGyRTNbYslyfQlHTKlLbtnZSTSn4YpyscgIMyhUQzlM0xSJskMoo7PAxP4p4CgyBf2Il+FoWwSoB5PPgjTLBZQUQRleoe4vICqTHSM2YLFQRWTKHkgaA8OXy03FHinKQw6LslPVsLhqtqqtfW5sbNhu2w5wY6N7sLEBeXynwQGXH9/c2H8S2BJ8Mg7is60kO13xSQmpka1lYx6YD6gpzdumCJuu/Zi/A6iK+UPDVS+af4TTET9hlJO27+WNcax9L0/+z+/lUdIeABFku8cyzrLy8QNAv0oP4fah+2ONZyW9Gu9KY8Mq3hQD9rTw3vdWwg5wKiU8wN3eo8XTArH6ApSUWZ/+ldEJoHcwAfRODiOARZ1mXciWmlfvXdPNKv7dxOP1eKBgY0N32Sawve7s7nvnyXJTwL29FNwkm/Vcf8C5Az+MP1Bk5ytHwAS2uvuQ1S+aMTKmenV7FUWEnmH+2uZ3jENVo8r0vuCR3d8q20F3JVFQCpJUQfOar+wuPJg2Z0g3sOb9RsgOWKpy3OE3b1SDaUXoxggonY7L3jTnyM/a6kjeP+AT8mi/pFWzWjVY9exb/JseTgjP/wCKNFI4pBEAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=7b59fab5fb9d3e1086e7f4045eefdc71"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Ranking Data">e759fab5fb9d3e1086e7f4045eefdc31</flow>
+        <generation_source/>
+        <order>17</order>
+        <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 20:18:54</sys_created_on>
+        <sys_id>3f59fab5fb9d3e1086e7f4045eefdc71</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:54</sys_updated_on>
+        <ui_id>0f79095d-d776-406e-9ec5-66e22442586e</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VY227bOBD9FUHPjlfy3XlbxDBQoG2AJNuXbpegRComSpMqSTkXw//eoUjJhu/COkCCvpnDIXlm5swh5e/LkJHwOiTjaJyNx/3RMIq63SgaDLopjpOkO0iTKMG9sBUKPKfgaXDCKQwXmBd2/Iw0oWSMcqkM5sigCBFMpEZEIoXFTyYewZswnXP88s0vmliPgMjgrvZIZ4wTRUV4/f1HK8yxguMMVeH1cmvqXLwcJ5SD64MHvIXfvOT1EJVzzvZ5c1nw1U1IRSyUqBXSZ0MFBBxeZ5hr2grnWBBspHqpLYpiciv42jBjwsCOoXV+1uwVzh1F1i+jEFVK3Vw9RD5ZzpxNsMH3RhWpKZR3TWeSpVS7fBCa4YKbm02bc7jNDZPCLXFhu9WSF3Px1aUjrDeoagOWQgMImttALXIfRnY/k093FcopE2VO/CSXKeb1CBujWFIYi2cZUk7nsBGa4zyHYqNcyQUrFwOWefuRw6CdcfkEh2r2KNo4tcDbkFfcnoJ9Upq/YcVsFF9gG1gMgBgHhiBXQi0LVaZygVJe6HIC+KfdXuGqFeoXfcOx1uvIIeXoV2Fxuzz4iJFLml2SKpabv2GLBfXBrVpVy/SPUnC8plwqBWEWhd7omwJhIf8tYC1ZLsvgFz6+Nvywk6vVfwWi2kCvHPZz86WrYbmEDFZdd3hN6ei9Vqvd7nxP0BrKwumaVLJws1mUfYXyArFj+7xvAy8Q8cUEohdFH0ki4PD3pxDNe96l4ETjx+QoyciaTxruRORyudH5uw3XmOdnQKh4fmuZGSQvh1B5mmeMcrLvHpzaia17sPNn3oPvkuQAiCBXPSY4E+WjBoC+Ffv7R6mXxFs8K+m15n5pwzrd7QEcGBm8Nu6EM+BUnXAPZwcPDs8eiJXel5TZ1vrK6Buge7EG6HYu0wDLOsw6kXtyXr1jbTUr/1frj7f9gYIbC+LVvgZrdGbc9MzOareBu406eJNsbmZygHMXfvAe6MjWW0rADJb685DrX/TEyCM169MrLyLNE+Y/9817xqGqUGV4b/B4jo9+vyUbj2eWoTlUjuXwxlc0BXJohBVFmSwEQf51v/GshkpmTGnjnXeF5o5C/4hAQmMGZkaD0juovRtexKfjqFL5KQuqQPxpOoBAgjKQoA6kWdhNRKt3wcfppUVrihkvqwEfbvlGOalSUh0QrhOFPMKIM1XtTFDxRUH9f9nb1wJ75e8E1g/xL8DlpSmlOOl18GDYjeMoiiMyjEbDYTwaJNkAD3vZukcR0iIFNYWdM6AKbI8qalR1jnf1x4ttM505A1TFwIkU9vu6MzSBRQXlDSpUp3F7PUmk5BSLLUF5AOR/TcsboaZr/92Jyof4S6xgD9uZdqa9uX6rZ0PB/hHsV0E/WYqNaNQZxSS9Gg3j4VUvI4OrMcH9KzxO+sMuoWkvu+RL4MdvtGXS3HsWAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=3f59fab5fb9d3e1086e7f4045eefdc71"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Ranking Data">e759fab5fb9d3e1086e7f4045eefdc31</flow>
+        <generation_source/>
+        <order>18</order>
+        <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 20:18:54</sys_created_on>
+        <sys_id>ff59fab5fb9d3e1086e7f4045eefdc71</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:54</sys_updated_on>
+        <ui_id>0a53884c-6d3f-4926-b143-7aebb7b97d97</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VYUW/iOBD+K1GegUsIJNC3VSuklXa3ura3L3t7lhM7xTpjZ2OnlCL++41jBxBQIDp6anWPHo/tb8bfNxnnx9JnxL/yyTgY5+PxcJQEQRQFQRxHGQ7TNIqzNEjxwO/4As8oeGqccgrDJ8wrM1YZmlVcM1TKOfpVUaWZFAgLNacluBGmCo4X3533V+Pq3cm597tz9T41rtmUcVJS4V/9+NnxC1zCgRpmrpY7U+ci5jilHFwfHOSdCPSiWA9RPWdtX7aXed/shCyJgRJ0fPqsqSAUMOSYK9rxZ1gQrGW5WFtKismt4BvDlAkNO/rG+VmxFzh3FBi/nEJUGbVz6yFyWbPm/AZrfK/LKtNV6VyzqWQZVTYfhOYY8nq9bbMOt4VJsV1iw7arJa9m4ptNh7/eoLkksFQKQNDCBGqQuzDy+6mc3zUoJ0zUOXGTXGaYr0dY65KllTZ4lj7ldAYboRkuCiYeUVHKJ1YvBiyz3iOHQS/nwCBCFXsUPZwZ4D3IK+5NwH5Tm7/jkpkovsI2NWVyxoEhyF6hklVZp/IJZbxS9UQJRLR7+auOrxbqmmOlNpFDyoG0BrfNg4sY2aSZJVnJCv0JtniiLrhVpxHN8CgFxxvKZVIQZlCoLeUAw81RjPxZwXqyXKoqNTnolTQDuq1WfxlJmSQ/Nx79ICc0Hoy6UUZJdzAcx900xFk3jcZpPEpwH4/jHtN01lsvXa32VfgfntxS1Kcz2oj6ejulh9Ls5L1n+3JoAyfv8GLyHgTBRxI4HP7+9N1esTYFJ2QbkqMkIxs+KVlqZHO5pdt9PbXm+RkQGp7fGmZ66eI1VI7mOaOcHPqKTczEzles///8ir1LkgMgguztMcGZqFsSAPpW7B8epV4a7vCsptdWt2dsWGX7GsCelt5LayWcAadRwj2c7T1YPAcgNvW+psxurW+MTgDRxQQQ9S8jgOU6zHUiD+S86ULNbTb+L8Yf7/oDBbcWhKtDAmt1Ztj2zP5qX8BRKwVvk83O3LzCuQu3q68osvOWJWAKS915yOoXzRl5pHpzeuNFpJ5j/vehecc41FxUHd4btL7h0ddXutX6sty+Dwvo0G17qRC0nyiXlSDI9eYbIpmbzFmptHPeLzR3FPQjPAnC9PSUerW3t/Zu+SE+HUeTys+51wTiTlMeBOLVgXjrQNqF3aZoDS7YnF66aE0w4/VtwLOr2LpOWpayfKVwnbjII4w4s6qdCSq8KKh/X/YOSeBg+TuB9UO84S9fmjKK00Efx0kUhkEQBiQJRkkSjuI0j3EyyDcaRUiJDKop7JwDVWB71FCjuedgv/7Yktq20JyBqqHgjRTm1d1PtGdgwf16DazTwF1BSaXkFIudivIA34nfJg6/4+vw3VWVD/FHq2IPu5m2poO5fqu+oWJ/CParop8NxUY06I9CknVHSZh0BzmJu2OCh108TodJRGg2yC/ZCvz8B7qKcL88FgAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=ff59fab5fb9d3e1086e7f4045eefdc71"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Get MRVS Values (Ranking Data)">5ba5ba71fb9d3e1086e7f4045eefdcc4</action_type>
+        <action_type_parent display_value="Get MRVS Values (Ranking Data)">1bc07ab9fb5d3e1086e7f4045eefdc67</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>5ba5ba71fb9d3e1086e7f4045eefdcc4</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Ranking Data">e759fab5fb9d3e1086e7f4045eefdc31</flow>
+        <generation_source/>
+        <order>19</order>
+        <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 20:18:54</sys_created_on>
+        <sys_id>f359fab5fb9d3e1086e7f4045eefdc72</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:54</sys_updated_on>
+        <ui_id>736e303e-e8a8-45be-be88-2fc0536e20f5</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/71V207bQBD9lWifY8u32HHeKhASUluqhPYFIWu8O05WWl9YryFpxL93NnZCQgsCFfG4cz1zZo72ZsukYDPmJzDJIfGLPBUh+t40xqSIvGiCWAjOYzZmFZRIkWWnjNT1Q6aR11qQ4x5UZz3bbeAVAuNo6oQchRNN0tjJfeBOHqZ5PE0ggDR2pcHStQVkJXD9+EgVhGwbBZtf/12Ir6QSGis2u7kdswY0YTao2Wz7zPXWoRXkqCh0Xj+MLm2b14gwm8Y6WqNltRzeX4cCi72RQi0gf8xwbZBKEpICVItjVkIlwNR6w2ZGd2TQCOKqUptDxEpWhooxG7tu5W9qN/U8z0YWSMNx7L2HZzZQ25uLczBASDpuOj2E8lUtObY9LQILoLHOjm19wFVjZF31KQZytc+uVVdW33tG2KHAfpNk6VoCgY2d1GIfBikWq/phvkd5YTeoD05Vc1CHFxiiLu+MxbNlnbx+xnJv+YtnVFhSx6yEpiFL1uj6Xu66EOjSXSp6uIWi/Qls5bJygdsJXdoAuBdkP9+Zf4GWdtxvVIaSbbuflbzr8NJeECac061ETu5B6kSB7znpVCTOhHtJ4CdpkgchexyzdtOeKWjbJ6JoQ9ldZ8fsaRsIynqObQrXsjFfCNQ9Dlw8jge1iuLVw50+HSlJwFal/pk81Wrb5XZ6t7/ef8nw3Xp6A6y9nn7scI0Wm3Z0ef4y3EFRT9d9Kqr5kX3QVfBRugqDU1Wts5ZqpllTawMqM5lHwl9KOsOaLijjoJfQZnSldafrFyR4TY3bTm9GZxRdj+Z9PuyU9eHqfC/gT5BysUDQfHUhUdl7qboy32nqBYkfr/1U5ceL/xShh8GEh2GY0F8UF04E6Dt57E8dP0VvEglPYMg/UOi3fwAxszTxmAcAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=f359fab5fb9d3e1086e7f4045eefdc72"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Ranking Data">e759fab5fb9d3e1086e7f4045eefdc31</flow>
+        <generation_source/>
+        <order>21</order>
+        <parent_ui_id>cc765906-5769-430a-b4ae-373f078cb540</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 20:18:54</sys_created_on>
+        <sys_id>b759fab5fb9d3e1086e7f4045eefdc72</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:54</sys_updated_on>
+        <ui_id>d239a872-dd08-4cf1-b300-905ddb1c2964</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VVTU/cMBD9K6ucNytvvvbjVrFCqkRBWiouLY0ce7JYdeLUdoBttP+9k8QJK0AUJA5FPXpm3vjN87zkW+MJ7q29CDiZr+YJC+dhGBASLKN5loTZPOAhBZh7U6+kBWClBqY0x/MtlXUbaBqSL1ZkFXOfLxaJH5EE/BWw2E8SCIIoCuJlArNthzscEMmFqSTdX7kGGGE3QnINpbf+dj31KqrxLgvaWzePUq8lK2kGEku3A9vH7O2+as9csbqA0qZiCJ455MZlJp83mEFQS2dOph7cWyg5IJGcSgNTr6Alp1bpvbe2usaABsovSrkfK25EaftBC3pvxG+8OSJtXQ44GXMijMfUCdSH8w219BI7M1vrUS8lGJheEw45raU9OY71BReVFarsIZZmckArWRflea+INzY4eo/aIAmo2jlb5v1Y+eWNutsOJE9F2UniRpSKUTmeqLVaZLVt6TQeSOg0LmhViXKXVlrdig6MVIrZTuJhlkt1h3casStnlLW8Z6gqnZ1ifNOFr6gW7RBfsA2CD1PP7M2JpMY8jIIapr/qlkk/mBsh7VToJEi7TWjBTIvKfsKrbsERP0ydHbL4pQ1jq4eFOur5YIn71OCCrNJKaUtlalOScsqVSblKNS1/oghPbbBpKyZcTbZjxdts8QrSgy2+dsvw/BDOGU9iZ8fYyXmfcL6I380Xy4/kCzfGhzfG3+xAghc/uEeb1DnAHFmhRhMYwaj6XhMS8qZZhAmEJAQflnTpR3EGfgbLpR/kjMSYC0gezxzmcPjR4jVDpnQHxRt7jLjn/jr/DrG3ufwVbzG4/FSA5OaZxxksDgUqYiHtH+uRzV1ycuWS4y/wHf+B5CO5/b/5C17/ATXePr0WCgAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=b759fab5fb9d3e1086e7f4045eefdc72"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Create Record">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent display_value="Create Record">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Ranking Data">e759fab5fb9d3e1086e7f4045eefdc31</flow>
+        <generation_source/>
+        <order>23</order>
+        <parent_ui_id>bbf158a1-4051-412a-803b-c34c3913e71b</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 20:18:54</sys_created_on>
+        <sys_id>7b59fab5fb9d3e1086e7f4045eefdc72</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:54</sys_updated_on>
+        <ui_id>510f8cfb-0ff0-4e9c-a774-ec8193bdeab8</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VwW7bMAz9lUBnJ5DjJEtzG1r0tLVAO/TStQJt0Ykw2fIkuW0W+N9H23IadC22AL0U2FHke9Tjk0nf7piSbMUWMfL5SbzIkjhJppxPl7M4XSRpPJUJIM5YxEookJAeUo2iO0TsAXTdBp+EkyhPRGWsBy284EKCNE5IIyyUP1S5JrRUrtKwvQmksxYxkmZ0tUdkG6WlxZKtbu8iVoGlazxattq9SP2raA0paoJ+a1W/0YTfVq/GvhxyRxd9wljZ6uERwyePJXXNVjlohxEroJTgjd2ylbc1BSyCvCz1do/YqNJTQdZin5z6RdcueYvLkTrLsM/tjyIY1ofzM/BwTZUzX9sAzTZGZeh6TyTmUGt/ehjrAZeVV6bsKV2bgW10XZQXvSVsX2B4H4rUjkRg1fbZKg9t5Ncb83g1qDxXZWdJSGqTgd6fwHur0tq3enYMNRZUSBRQVfTgorLmQXVk0lJM1poOk1ybR7rUqXU5gawVPiFbYXJO8bMufANWtV18pTJEbiLmtu5Ug3PPvZCJ4mfdKuk7Cz2I3oaWkllV+c90wQMGuU00TINEfvLmhxWnzx9SNwDuYBJqAaX5XnOeyN3uU7LAhCc4xiUsx7N5iuMUl8vxNM/4nHJTns8nhG+a+1qg8zQQR1F7Ssf2qjLk2jBtR5XpuIHYFauMUxkcpyVwAt9mZDassTiyxp7XNH8ujP/evqO3R67av0/EsGrPFWrpXhmRYc9iQY/qUfQj82LXhuToJiTDvo3fa9/OOP9IG7dv7MMv3IN/6+urdwiS6Ka5+w2dtx6wlggAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=7b59fab5fb9d3e1086e7f4045eefdc72"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=e759fab5fb9d3e1086e7f4045eefdc31"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=e759fab5fb9d3e1086e7f4045eefdc31^sys_idNOT IN7b59fab5fb9d3e1086e7f4045eefdc5e,ff59fab5fb9d3e1086e7f4045eefdc5e,7759fab5fb9d3e1086e7f4045eefdc5f,fb59fab5fb9d3e1086e7f4045eefdc5f,7359fab5fb9d3e1086e7f4045eefdc60,f759fab5fb9d3e1086e7f4045eefdc60,7f59fab5fb9d3e1086e7f4045eefdc60,f359fab5fb9d3e1086e7f4045eefdc61,7b59fab5fb9d3e1086e7f4045eefdc61,ff59fab5fb9d3e1086e7f4045eefdc61,7759fab5fb9d3e1086e7f4045eefdc62,fb59fab5fb9d3e1086e7f4045eefdc62,7359fab5fb9d3e1086e7f4045eefdc63,f759fab5fb9d3e1086e7f4045eefdc63,7f59fab5fb9d3e1086e7f4045eefdc63,bb59fab5fb9d3e1086e7f4045eefdc70,3359fab5fb9d3e1086e7f4045eefdc71,b759fab5fb9d3e1086e7f4045eefdc71"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">a7790d2dfb756210f6d5f9d38eefdc0e</block>
+        <comment>Setando o count em 0</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Ranking Data">e759fab5fb9d3e1086e7f4045eefdc31</flow>
+        <flow_variables_assigned>var_count1</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 20:18:54</sys_created_on>
+        <sys_id>7b59fab5fb9d3e1086e7f4045eefdc5e</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:54</sys_updated_on>
+        <ui_id>f4620f47-34ec-411b-af22-18f36db78b5b</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+2V224aMRCG38XXgBZYCHAXJYqE1DZSQ3NTRavBHoNVr73xAUIR794xXg5K1T4Bd/Y39sw/v215z2wMTQx+Ye+9VyvDZj/fOkyZxGi8Z0qwGWMdZqBGGm3AVdxGE/rENqBjggWNhfKNht3rFeJrpYXDNmcDjlIEdGy2/xQ61hiBnA5w2JfLkRhiv5iM8U6WRTlClIKPRpRQwxL1tYh/6Aq7JjFlAq6oXgZf2s3zM7VOJDVFh+FHQCOQZEjQHjusBiMgWLc7E4cgno2+gDWlz9bU8OHVb6pYFmmdRGqMY46dp1VrUMbyEQK8BBd5iK5dytdWcfTZEoESog4P1ywveG6CsiZvCbDUp91Wx9p8y26wc4LTeRCJnkRgkxpNyts25Mvabr+fVD4pc/SkDWrLQZ9nEIJTyxiSnj2LavHZ5oz+Nho11lSzqqFplFlVjbMbdaxDsuveStOkJ7Xdkr50CXvAU489OgLoPRF/POJXcCo1/JXStPV+GPUecZ7uz1Ty6YTLsjuQE9ktxxy6MBgOumNe3E3kuBR9MWCHDvM7/6DB+4tVdEbVe0yNZuNai6rsctrCnWrCPYnaYOvG4S1d/6zn9lBuD+X2UP7zUARy5UnnIoman/6WFNjRrVT8Gm2t+5U6vLDDH0Hv1zilBgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">212b3741fbf1621086e7f4045eefdcdc</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Ranking Data">e759fab5fb9d3e1086e7f4045eefdc31</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="For Each">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
+        <order>3</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 20:18:54</sys_created_on>
+        <sys_id>ff59fab5fb9d3e1086e7f4045eefdc5e</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:54</sys_updated_on>
+        <ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/51TXW+jMBD8L34miI9cUvJWtapU6e4qpVVfThVa7CWxzticbZJyiP9+60Bo1cd7gh3vzs4MZmCm823n3Yu5dU4eNNv9eouY1AGj94FpaJDtmPTYOBaxE6gu1MNQpTwXKcfVTZ7Cal3V1ar6VlSrGni+3Wy3uK6LeI/cWOHGkUaFdK2C/vX/GfhRKmFxFtmCJW0eLdsNX46koAVpIeoiTQqeZ5s8S5LsZp1Wm7xKM5EDig0RKqhQUevj7O6LWd+3obSThBn4Ps/sF5QeQUSWRAzfPWqBtL4G5TBiDWgB3tie7bztCLAI4kmrfuk4Su2JjoXedyf/0sY0SUJjjWSI43S4lOWc4wTX9+Dhmai57+zcyo9GcnRTFAJr6JS/+4xNDU+tl0ZPIx4qdZ02qmv0zykJthBcPxshnSMR2AajQfrso34+mvP+qvJB6kso86EyHNRSgfdWVp0PegaGChsiKhtoW6kPZWvNSV6GSUsTHxQVca3MmZaGKxoDD8JjyhXiB8LvL/ArWBlc/CAaGh4j5np3p8C5Dy8UYvmnC0omZ7OHcoohjHArW39LC044yx3fwq2fuJdMuXQk4SVgj9d/JRz0dIMk/wydjf0dxH9g4z8Uu0oRdQMAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">6b790d2dfb756210f6d5f9d38eefdc0f</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Ranking Data">e759fab5fb9d3e1086e7f4045eefdc31</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>4</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 20:18:54</sys_created_on>
+        <sys_id>7759fab5fb9d3e1086e7f4045eefdc5f</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:54</sys_updated_on>
+        <ui_id>b6f98993-2de4-48f4-9d42-7ad52358075f</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VXWvbMBT9K0PPxsh2E9a8lZTCoFthLX3ZirmW5ERMljx9JM1M/vuubMcJa8Zatse9SUe6V+cc34M7YoJvg3cP5so5udJk8eUpIVJHDNcd0dAIsiDMaC69NLrsgYRsQIV4gEsuXatg93hE2FoqbsXYrQWLNV5Ysuh+OZIcC2oKdXbJMlbk8yKnNH9/kVXzospyXoCAAhsqqITCq8sDjXe3PZL8lp/ftRF33kq9Gve3Y5f7A2gsj6wymhDx7IXmAvnUoJxISAOagzd2NyFWAL/T6gispfaD4AaenfyBD+azWbxYC5TIRjembTk6NcD1NXhAKoH5YCfjjGTCDeZwUUNQfnmKDRfu2ih1KPFQqUO1UaHRnwZHyNTg5MMEhyREG5VG6qOO+n5ttp8PLG+k7l0ZD5VhoKYdePSuCj7y6YhQosFGZQNti46WrTUb2RcjlyZdKdyktTJbfDROVwosEk/RWEhvEL/u4UewMqr4iG2weKBZgZOs7CcR26FNguwT4nZuqcC5o0h0t/weIsVB8iiuHPyJJczK1l/hyxsx6tgnLwf7ZKa7rue8GWmluCiZCdpn+/3XQGnB6cuxf13R25JxCbN6ltHZ+WRczM8l40wm3hiH/A9xiN/ilWmglP6Pw1/HQbpyGOJRW//4P0zDUxz94c3JayYdUnuI2IfD3yAe7HC4JDuFtsZ+i6KO2P4n3OlZ2VcGAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">e3790d2dfb756210f6d5f9d38eefdc10</block>
+        <comment>Setando em 1</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Ranking Data">e759fab5fb9d3e1086e7f4045eefdc31</flow>
+        <flow_variables_assigned>var_count1</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>5</order>
+        <outputs_assigned/>
+        <parent_ui_id>b6f98993-2de4-48f4-9d42-7ad52358075f</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 20:18:54</sys_created_on>
+        <sys_id>fb59fab5fb9d3e1086e7f4045eefdc5f</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:54</sys_updated_on>
+        <ui_id>3443d07f-a146-41ae-ab16-99e00768f4e4</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+2V224aMRCG38XXsOKwEOAuShQJqW2khuamilaDPQarXnvjA4Qi3r1jvByUqn0C7uxv7Jl/ftvyntkYmhj8wt57r1aGzX6+dZgyidF4z5RgM8Y6zECNNNqAq7iNJvSJbUDHBNNYKN9o2L1eIb5WWjhsczbgKEVAx2b7T6FjjRHI6QCHfbkciSH2e5Mx3smyV44QpeCjESXUsER9LeIfusKuSUyZgCuql8GXdvP8TK0TSU2vw/AjoBFIMiRojx1WgxEQrNudiUMQz0ZfwJrSZ2tq+PDqN1Use2mdRGqMY46dp1VrUMbyEQK8BBd5iK5dytdWcfTZEoESog4P1ywveG6CsiZvCbDUp91Wx9p8y26wc4LTeRCJnkRgkxpNyts25Mvabr+fVD4pc/SkDWrLQZ9nEIJTyxiSnj2LavHZ5oz+Nho11lSzqqFplFlVjbMbdaxDsutipWlSSG23pC9dwgJ46rGgI4DiifjjEb+CU6nhr5SmrffDqPeI83R/ppJPJ1yW3YGcyG455tCFwXDQHfPe3USOS9EXA3boML/zDxq8v1hFZ1S9x9RoNq61qMoupy3cqSbck6gNtm4c3tL1z3puD+X2UG4P5T8PRSBXnnQukqj56W9JgR3dSsWv0da6X6nDCzv8AXxecyKlBgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">e31d41a1fbb56210f6d5f9d38eefdc62</block>
+        <comment/>
+        <connected_to>b6f98993-2de4-48f4-9d42-7ad52358075f</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Ranking Data">e759fab5fb9d3e1086e7f4045eefdc31</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
+        <order>6</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 20:18:54</sys_created_on>
+        <sys_id>7359fab5fb9d3e1086e7f4045eefdc60</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:54</sys_updated_on>
+        <ui_id>e0441a5d-de7b-4465-8283-c2d239ca3641</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VTWvcMBD9K0VnY2xvE9q9hQ2BQtpAE3JpgxlL8q6oLLn62M3W7H/vyJK9S5PSlObYm/RGM/Pe8wweiPau987e6QtrxVqR5ZeHjAgVMDwPREHHyZJQrZhwQqt6BDKyBelDAI9M2F7C/v6I0I2QzPBUrQeDOY4bshx+CQmGCW0BbfmelnRRnS+qoqjevS2b80VTVmwBHCosKKHhEp+uJhpvrkck+y0/t+8Dbp0Rap3u16nK7QRqwwKrssgIf3RcMY58WpCWZ6QDxcBps58Rw4HdKHkENkK5KLiDRyt+YMPq7Cw8bDlKpMmN+VonpyLcXoIDpOKp82Y2TgvKbTSH8Ra8dKtTLD646YPUmOKgkVO2lr5Tn6IjZC5w8mG8RRK8D0oD9aSjvd3o3eeJ5ZVQoyspKDUFOd/AoXeNd4HPQLjkHRaqO+h7dLTujd6KMRm5dPla4iVvpd5h0zBdOdBAPEdjIb9C/HKE78GIoOIjlsHkSLMBK2g9TiKWQ5s4OWTE7u1KgrVHkehu/d0HilFyEldHf0IKNaJ3F9h5y5OOQ/Z0sE9mehhGzttEK8dDTbVXrjwcvvqiWLDy6di/LOlVN6N8bjOe2Ym/XIfqD+sQvsULt6Eoiv/r8M/rIGwdhzhpG5u/4jY8hNGPPWevqbBI7S5gH6a/QQjscbgEPYV22nwLoo7Y4ScA0RdeVwYAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">a31d41a1fbb56210f6d5f9d38eefdc63</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Ranking Data">e759fab5fb9d3e1086e7f4045eefdc31</flow>
+        <flow_variables_assigned>var_count1</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>7</order>
+        <outputs_assigned/>
+        <parent_ui_id>e0441a5d-de7b-4465-8283-c2d239ca3641</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 20:18:54</sys_created_on>
+        <sys_id>f759fab5fb9d3e1086e7f4045eefdc60</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:54</sys_updated_on>
+        <ui_id>26bc65d4-7174-419d-bffb-8c2a18337402</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+2V224aMRCG38XXgGBZCHAXJYqE1DZSQ3NTRavBHoNVr73xAUIR794xXg5K1T4Bd/Y39sw/v215z2wMTQx+Ye+9VyvDZj/fOkyZxGi8Z0qwGWMdZqBGGm3AVdxGEwbENqBjggWNhfKNht3rFeJrpYXDNmcDjlIEdGy2/xQ61hiBnBY4HMjlSAxx0J+M8U6W/XKEKAUfjSihhiXqaxH/0BV2TWLKBFxRvQy+tJvnZ2qdSGr6HYYfAY1AkiFBe+ywGoyAYN3uTByCeDb6AtaUPltTw4dXv6li2U/rJFJjHHPsPK1agzKWjxDgJbjIQ3TtUr62iqPPlgiUEHV4uGZ5wXMTlDV5S4ClPu22OtbmW3aDnROczoNI9CQCm9RoUt62IV/Wdvv9pPJJmaMnbVBbDvo8gxCcWsaQ9OxZVIvPNmf0t9GosaaaVQ1No8yqapzdqGMdkl33VpomPantlvSlS9gDnnrs0RFA74n44xG/glOp4a+Upq33w6j3iPN0f6aSTydclt1CTmS3HHPoQjEsumPev5vIcSkGomCHDvM7/6DB+4tVdEbVe0yNZuNai6rsctrCnWrCPYnaYOvG4S1d/6zn9lBuD+X2UP7zUARy5UnnIoman/6WFNjRrVT8Gm2t+5U6vLDDHzuNng2lBgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">eb790d2dfb756210f6d5f9d38eefdc10</block>
+        <comment/>
+        <connected_to>b6f98993-2de4-48f4-9d42-7ad52358075f</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Ranking Data">e759fab5fb9d3e1086e7f4045eefdc31</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>8</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 20:18:54</sys_created_on>
+        <sys_id>7f59fab5fb9d3e1086e7f4045eefdc60</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:54</sys_updated_on>
+        <ui_id>9293447b-4381-4d7b-bfa2-d1373275d096</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">e3790d2dfb756210f6d5f9d38eefdc11</block>
+        <comment>Setando em 0</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Ranking Data">e759fab5fb9d3e1086e7f4045eefdc31</flow>
+        <flow_variables_assigned>var_count1</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>9</order>
+        <outputs_assigned/>
+        <parent_ui_id>9293447b-4381-4d7b-bfa2-d1373275d096</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 20:18:54</sys_created_on>
+        <sys_id>f359fab5fb9d3e1086e7f4045eefdc61</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:54</sys_updated_on>
+        <ui_id>6352d366-f036-48f1-8001-aafb42a31f7f</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+2V224aMRCG38XXgBZYCHAXJYqE1DZSQ3NTRavBHoNVr73xAUIR794xXg5K1T4Bd/Y39sw/v215z2wMTQx+Ye+9VyvDZj/fOkyZxGi8Z0qwGWMdZqBGGm3AVdxGE/rENqBjggWNhfKNht3rFeJrpYXDNmcDjlIEdGy2/xQ61hiBnA5w2JfLkRhiv5iM8U6WRTlClIKPRpRQwxL1tYh/6Aq7JjFlAq6oXgZf2s3zM7VOJDVFh+FHQCOQZEjQHjusBiMgWLc7E4cgno2+gDWlz9bU8OHVb6pYFmmdRGqMY46dp1VrUMbyEQK8BBd5iK5dytdWcfTZEoESog4P1ywveG6CsiZvCbDUp91Wx9p8y26wc4LTeRCJnkRgkxpNyts25Mvabr+fVD4pc/SkDWrLQZ9nEIJTyxiSnj2LavHZ5oz+Nho11lSzqqFplFlVjbMbdaxDsuveStOkJ7Xdkr50CXvAU489OgLoPRF/POJXcCo1/JXStPV+GPUecZ7uz1Ty6YTLsjuQE9ktxxy6MBgOumNe3E3kuBR9MWCHDvM7/6DB+4tVdEbVe0yNZuNai6rsctrCnWrCPYnaYOvG4S1d/6zn9lBuD+X2UP7zUARy5UnnIoman/6WFNjRrVT8Gm2t+5U6vLDDH0Hv1zilBgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">eb790d2dfb756210f6d5f9d38eefdc11</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Ranking Data">e759fab5fb9d3e1086e7f4045eefdc31</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>10</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 20:18:54</sys_created_on>
+        <sys_id>7b59fab5fb9d3e1086e7f4045eefdc61</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:54</sys_updated_on>
+        <ui_id>cfdc988b-b11d-4942-b9bf-11cea3ddb70f</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VXWvbMBT9K0PPjvFH7CV5KymFQbfCWvqyFXMtyYmYLHmWnDQL+e+7shwnrBlbWR/3Yqwj3atzju/Be6I723TWPOgrY8RKkcWXp4AI5TB83xMFNScLQrViwgqtih4IyAZk5zbwlQnTSNg9nhC6FpK1fOjWQIs1lrdksf9lSzAsqCKo4jmNaZrkaRJFyWwal3laxglLgUOKDSWUXOLR5ZHGu9seCX7Lz+4ahxvbCrUa1rdDl/sjqFvmWMVRQPiz5Ypx5FOBNDwgNSgGVre7EWk5sDslT8BaKOsF1/BsxA+8MMkyd7DiKJEObozLYnDKw9U1WEAqHbVdOxqnBeXGm8N4BZ20y3PMH7hrnFRfYqGUx2otu1p98o6QscHZh+kMkuCNU+qoDzqq+7Xefj6yvBGqd2XYlJqCHFdg0buys47PnnDJa2xU1NA06GjRtHoj+mLkUocriYuwknqLl7rpCoE64iEaC+EN4tc9/AitcCo+Yhss9jRLMIIW/SRiO7SJk0NAzM4sJRhzEonuFt87R9FLHsQV3h9XQlvR2Cu8ecMHHYfg5WCfzfR+n0QV4/l0NkkpZ5NpNs8nZQx0UqbzMp+9hwTmeSgsr/tHoRs/enwburaHw9cuilK2KUDplwF56/avS9scsiqLo+xy2qb5pbRdyNkrI5b8IWLu+/5lwqIo+h+xf46YMIUPxqCtv/wNE/bk4uTvHL2mwiC1B4d9OP5h3MYOh0vQc2ir229O1Ak7/AST4ntAqwYAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">e3790d2dfb756210f6d5f9d38eefdc12</block>
+        <comment>Popula o ano</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Ranking Data">e759fab5fb9d3e1086e7f4045eefdc31</flow>
+        <flow_variables_assigned>var_ano</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>11</order>
+        <outputs_assigned/>
+        <parent_ui_id>cfdc988b-b11d-4942-b9bf-11cea3ddb70f</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 20:18:54</sys_created_on>
+        <sys_id>ff59fab5fb9d3e1086e7f4045eefdc61</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:54</sys_updated_on>
+        <ui_id>45e87eb4-1522-46c8-928c-4e868bc4e337</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VTW/bMAz9LzonhhM7H86taFGgwLYCa9bLUBi0RCXCZMmV5KRZkP8+KnaSrj3usEtu5qMovvdEwntm29C0wS/tjfdqZdji58uAKRMx+t4zJdiCsQEzUCN9bcCVYCwBG9BtRPb7cSoFTvP5MOMohvmkmA6rEfBhlRXVdD6DMRTTRAWsk2PN4UDVQvlGw+75ny7ha6WFw550A444BnRssf+QOoooprIYYzaS1URkOErnU5zJPM0niFLwPKMLNVSo/1L5SXbYNRHwwSmz6uMvfdnTCbRORBrpgOFbQCOQ+kvQHgesBiMgWLc7Iw5BPBp9AdbKhM70Gt68+k395mmaxpMSSRPHLnsOy97NDpZ3EICotDy0rj/K11Zx9J0bAiW0Oty+x7oDj01Q1nQlASp9qra6rc23zgp2vuD0eIS0nkhgE6VG7r0Q+bS22+8nlvfKHF3pk9py0OcIAnlXtSHy2bNWLT/Y3CGfjEaNNXUsa2gaQsrG2Y06diHSdbLSFCRS2y2xi+OdAI8KE3oCSO4JvzvCz+BUlPuVrqHi2O6HUa8tPsTBmY3lOJtMqmGajYthLuY0lbngNKlVOpOTvIJCsMOA+Z2/1eD9xSh6ofK1jTI723qDys7jWMKdasINkdpg78XhJe5Wx+e6gtcVvK7gf1lBgVx54rmMpB5O/8OY2NFAKv4e2lr3Kyq8YIc/gr+svVkHAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">eb790d2dfb756210f6d5f9d38eefdc12</block>
+        <comment/>
+        <connected_to>cfdc988b-b11d-4942-b9bf-11cea3ddb70f</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Ranking Data">e759fab5fb9d3e1086e7f4045eefdc31</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
+        <order>12</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 20:18:54</sys_created_on>
+        <sys_id>7759fab5fb9d3e1086e7f4045eefdc62</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:54</sys_updated_on>
+        <ui_id>fefe5d28-2611-4ce7-9f3a-4b1127da7629</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VXW/TMBT9K8jPaZSPNrR9mzpNQhpMYtNeYIpubGe1cOxgO+1K1f/OdZymFRsCxHjjpYqPc+895+QedU9059rO2Tt9Ya14VGT56SEiQnkMn/dEQcPJklCtmHBCq7IHIrIB2fkLfGTCthJ29yeEroVkhg/dWjBY47ghy/0PV4JhQZ1AnS5oSvOsyLMkyebTtCryKs1YDhwybCih4hJfXR1pvLnukein/Nyu9bh1RqjH4Xw9dLk9gtowzypNIsKfHFeMI58apOURaUAxcNrsRsRwYDdKnoC1UC4IbuDJim84MJvN/Is1R4l0cGM8loNTAa4vwQFS6ajrzGicFpTbYA7jNXTSrc6x8MJN66WGEgeVPFZr2TXqQ3CEjA3OPkxnkQRvvVJPfdBR36719uOR5ZVQvSvDpdQU5HgCh95VnfN89oRL3mCjsoG2RUfL1uiN6IuRSxM/SjzEtdRbHOq3KwbqicdoLMRXiF/28D0Y4VW8xzZYHGhWYAUt+03EdmgTJ4eI2J1dSbD2JBLdLb92nmKQPIgrgz++hBrRugucvOGDjkP0fLHPdnq/z5Ka8WI6n+SUs8l0tigmVQp0UuWLqpi/hQwWRSwcb/qfUrdh9fg29m0Ph89dkuRsU3LrgOnnGfkHE141c+lLmXshbX8YtOwXQfNf+TdzliTJ/6D9ddCELUM8Bm398FfM2YMPVZg5ek2FRWp3Hnt3/J/xFztcLkHPoa02X7yoE3b4DokreJ2xBgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">67790d2dfb756210f6d5f9d38eefdc13</block>
+        <comment>Popula o estado</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Ranking Data">e759fab5fb9d3e1086e7f4045eefdc31</flow>
+        <flow_variables_assigned>var_estado</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>13</order>
+        <outputs_assigned/>
+        <parent_ui_id>fefe5d28-2611-4ce7-9f3a-4b1127da7629</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 20:18:54</sys_created_on>
+        <sys_id>fb59fab5fb9d3e1086e7f4045eefdc62</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:54</sys_updated_on>
+        <ui_id>509ab718-88ae-46b1-9886-0418f90aabbf</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VwW7bMAz9F51jw44TJ+6taFGgwLYCa9bLUAS0RCXCZMuV5KSZkX8fFTtJke62wy65mY8i+d6TCHfMtL5pvVuYW+fUqmY3P19HTNUBo++OKcFuGBuxGiqkrw3YJToPwhC2Ad0GsOvGiRSYT+ZRxlFEk2mRR2UKPCqzosznMxhDkcfKYxUfavZ7qhbKNRp2L//UhK+VFhYH3g1YounRspvuInXQISErZF5OZVmIDNNknuNMTpLJFFEKns+ooYYS9aXQv4n3uyZgzltVr4b4y1D8fASNFYFMMmL47rEWSCwkaIcjVkEtwBu7OyEWQTzV+gysVe179yt4d+o3zZsnSRJOSiRlHPvsKVwOnvawvAcPRKXlvrXDUb42iqPrPREoodX+7iPWH3hqvDJ1X+Kh1Mdqo9uq/ta7wU4NjldISOuIBDZBauA+CJHPa7P9fmT5oOqDK0NSGw76FIEn78rWBz4da9XiwuYe+WQ0aqxo4rKCpiFk2VizUYcpRLqKV5qCWGqzJXbhncfAg8KYrgDiB8LvD/ALWBXkfqU2VBzG/ajVW4uP4fmU01JCmY6jNBnn0SSTSTQv8jSCSVpCJlNZjGdsP2Ju5+40OHc2im5o+dYGmb1tg0HL3uNQwq1q/C2R2uDgxf41bFjP57qL11287uL/3UWBXDniuQikHo9/yJDY0ZtU/CO0NfZXUHjG9n8APUdl3WsHAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">2b1d41a1fbb56210f6d5f9d38eefdc65</block>
+        <comment/>
+        <connected_to>cfdc988b-b11d-4942-b9bf-11cea3ddb70f</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Ranking Data">e759fab5fb9d3e1086e7f4045eefdc31</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
+        <order>14</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 20:18:54</sys_created_on>
+        <sys_id>7359fab5fb9d3e1086e7f4045eefdc63</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:54</sys_updated_on>
+        <ui_id>7b5c4780-d3a5-467a-a4b8-6c282af57221</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VXWvbMBT9K0PPjvFHkiV5KymFQbfCWvqyFXMtyYmoLHmSnDQL+e+7shwntB3bWPe2l2Ad+d57zvE9ZE9065rW2Tt9Ya1YKbL48hARoTyGz3uioOZkQahWTDihVdEBEdmAbP0FPjJhGwm7+xNC10Iyw/tuDRiscdyQxf7ZlWBYUCVQpXOa0jyb5lmSZLNxWk7zMs1YDhwybCih5BJfXR5pvLvukOin/Nyu8bh1RqhVf77uu9weQW2YZ5UmEeFPjivGkU8F0vKI1KAYOG12A2I4sBslT8BaKBcE1/BkxXccmE0m/sWKo0TauzEci96pAFeX4ACptNS1ZjBOC8ptMIfxClrpludYeOGm8VJDiYNSHqu1bGv1KThChgZnH6a1SII3Xqmn3uuobtd6+/nI8kqozpX+UmoKcjiBQ+/K1nk+e8Ilr7FRUUPToKNFY/RGdMXIpY5XEg9xJfUWh/rtioF64jEaC/EV4pcdfA9GeBUfsQ0WB5olWEGLbhOxHdrEySEidmeXEqw9iUR3i2+tpxgk9+KK4I8voUY07gInb3iv4xC9XOyznd7vs6RifDqejXLK2Wg8mU9HZQp0VObzcjp7DxnMp7FwvO5+Ct2E1ePb2Lc9HL62SZKzTeFEo1F7YUA9hpV7FpZ/OepNU5i+lsJX8veH0ct+ET3/3X8zeUmS/I/eX0dP2CIEptfWDX/D5D34mIWZg9dUWKR257EPx38ef7HD5RL0HNpq8+hFnbDDD5kHqqPDBgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">231d41a1fbb56210f6d5f9d38eefdc66</block>
+        <comment>Popula o tipo de ranking</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Ranking Data">e759fab5fb9d3e1086e7f4045eefdc31</flow>
+        <flow_variables_assigned>var_tipo_ranking</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>15</order>
+        <outputs_assigned/>
+        <parent_ui_id>7b5c4780-d3a5-467a-a4b8-6c282af57221</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 20:18:54</sys_created_on>
+        <sys_id>f759fab5fb9d3e1086e7f4045eefdc63</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:54</sys_updated_on>
+        <ui_id>43175a16-f870-4ccd-b780-63e52089e443</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VwW7bMAz9F51jw2lcx+6taFGgwLYCa9fLUBi0RDVCZcmV5KRZkH8fFTtJ0W6nXXbIzXwUyfeeRHjDbB+6PvgHe+m9ejbs4ufThCkTMfreMCXYBWMTZqBF+lqCq4PqbO3AvCjzTJkl6D6mNpuzTAos8jKZcRRJfl4VSTMFnjSzqinKOZxBVaQqYJvuarZbqhbKdxrWj//UhC+UFg5H9h04IhvQsYvNh9RODZ/PKlk057KpxAynWVngXOZZfo4oBS8qaqihQf1nuX83Iqy7mPHBHeMvY6P7PWidiMSyCcO3gEYgMZKgPU5YC0ZAsG59QByCuDP6CCyUCcN9tPDm1S+aV2ZZFk9KJJUch+whrEd/B1heQwCi0vPQu/EoX1jF0Q/+CJTQ63D1HhsO3HVBWTOUBGj0vtrqvjXfBk/YocH+OgnpPZHALkqN3Ech8n5hV9/3LG+U2bkyJrXloA8RBPKu6UPks2G9evhg84B8Mho1tjSxbqHrCKk7Z5dqN4VIt+mzpiCV2q6IXXz5KfCoMKUrgPSG8Osd/AhORblfqQ0Vx3E/jHrt8TY+JZFxmIu5SEop8ySvMp6UGUBSYSl5dZYX+TRj2wnza3+lwfujUXRD9WsfZQ62jQbVg8exhDvVhUsitcTRi+1T3LaBz2k7T9t52s7/bTsFcuWJ50Mkdbv/i8bEml6m4u+hlXUvUeER2/4G4moUTY8HAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">6f790d2dfb756210f6d5f9d38eefdc13</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Ranking Data">e759fab5fb9d3e1086e7f4045eefdc31</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>16</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 20:18:54</sys_created_on>
+        <sys_id>7f59fab5fb9d3e1086e7f4045eefdc63</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:54</sys_updated_on>
+        <ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Vy27bMBD8FYNnQdAjNhrfAgcBCqQN0AS5tIGwoiibKEWqfNhxBX9Qv6M/1qVIP9C6aIL22Js4y92dHe5AA1HO9s6aB3VlDF9KMv/4lBAuPYbfA5HQMTInVMmGW65kNQIJWYNwPrBQTtrJ92+TDMGGm17A9vFcjK64aDSLHXrQWMcyTebDTyHeYGqbQZtf0pyWxawssqx4c5HXs7LOi6YEBiUWFFAzMXaJ1Ca3I5L8lrPd9h43VnO5jOfbWOV+DyrdeFZ5lhD2bJlsGPJpQRiWkA5kA1bp7QHRDJo7KY7AikuL5Yi//Gz4V2xYTKf+YstwRMpC8HCsomYBbq/BAlJx1Dodr9KV4pSZIE7DWnDCLk6xcOGu96OGFAu12Gcr4Tr5PihCDgX2T4SIM0iC9X5STz3O0d6v1ObDnuUNl6MqMSgUBXE4gUXtamc9n4EwwTosVHXQ96ho1Wu15mMycunSpcBD2gq1waZ+41KgnniKwkJ6g/j1CD+C5n6Kd1gGkwPNGgyn1bidWA5lYmSXELM1CwHGHIdEdasvzlMMI8fhqqCPT6Ga9/YKO69ZnGOX/LrsJ3s+DCPndaSV4kdF/X7nu90nl2Vlc8YAL0t6nTMuYdpO82x63hkXs3POOOOJV9qh+IMd/Fu80A1Zlv23w1/bgZsqLHGcbWz+D93w5Fc/9DxoTblBag8ee7v/Q/jAFpeL01Noo/RnP9QR2/0AAAV/dWsGAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">612b3741fbf1621086e7f4045eefdcde</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Ranking Data">e759fab5fb9d3e1086e7f4045eefdc31</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>20</order>
+        <outputs_assigned/>
+        <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 20:18:54</sys_created_on>
+        <sys_id>bb59fab5fb9d3e1086e7f4045eefdc70</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:54</sys_updated_on>
+        <ui_id>cc765906-5769-430a-b4ae-373f078cb540</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VXU/bMBT9K5Gf08pNm0D7hsqQJrEhDcTLQNGN7VBrjp3ZDtBF/e+7zkeLRqeNbY97i4/vvT7n2EdpiWl83Xh3Y86ckw+arD7fx0TqgOF3SzRUgqwIM5pLL43OOyAmj6CasHELytiIi+hMm+idxjpvgZtIQ3QDhVAQXUgNCju4dLWC7e2bG9lGKm7FwK0Giwy8sGTV/rAlOc4tKZSzJZuxeZLNE0qT08WsyObFLOFzEDDHgSrMx9L1KCq67JD4p2r9tg6481bqh2F9OUy5HkFjeWA1ozERz15oLpBPCcqJmFSgOXhjt3vECuBXWh2AjdQex5FQ/OzkNzwwSdNQWAqUyES/uV/mg6E9XJ6DB6TSMN/YoZRtjGTC9eZwUUKj/Pol1hdc1UFq3+KhUGO3UU2lP/aOkP2A8f4QaRySEHVQGqgPOsrrjXn6NLLES+xcGTaVYXin4wo8elc0PvBpiVCiwkF5BXWNjua1NY+ya0Yu1fRB4WJaKvOEh4a3OgUWiE/RWJheIH7ewbdgZVDxAcdgc0+zACdZ3r1rHIc2CbKLidu6tQLnDiLR3fxrEyj2kgdxee9PaGFW1v4MT34Ug45d/DomLxLStrQ8WdJlyif85CSbLGgmJkvB0kmWiSRZLJL0NBNT58E3bre7ayidc/o6MH885235WUJapjOaHs/PIjuWnyPJeWNokl+EJtzYb2aGUvo/NH8dGuny/qkP2rrD/2Fm7kNA+jP3XjPpkNpNwN6Pf6CwscXHJdlL6MnYL0HUAdt9B9sd8lDLBgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">f7ee3f85fbf1621086e7f4045eefdc51</block>
+        <comment/>
+        <connected_to>cc765906-5769-430a-b4ae-373f078cb540</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Ranking Data">e759fab5fb9d3e1086e7f4045eefdc31</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>22</order>
+        <outputs_assigned/>
+        <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 20:18:54</sys_created_on>
+        <sys_id>3359fab5fb9d3e1086e7f4045eefdc71</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:54</sys_updated_on>
+        <ui_id>bbf158a1-4051-412a-803b-c34c3913e71b</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">e7790d2dfb756210f6d5f9d38eefdc15</block>
+        <comment>Limpando Variables</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Ranking Data">e759fab5fb9d3e1086e7f4045eefdc31</flow>
+        <flow_variables_assigned>var_ano,var_estado,var_tipo_ranking</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>24</order>
+        <outputs_assigned/>
+        <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 20:18:54</sys_created_on>
+        <sys_id>b759fab5fb9d3e1086e7f4045eefdc71</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:54</sys_updated_on>
+        <ui_id>6deb7984-2b14-4d0a-a4e7-d189ebcd7d31</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1YTU/cMBD9Lz5vVs7mmxsCISG1RSqUS4Wi8RdYOHaInYXtiv9ee5PdpQvtiUqtyC1+zsy8efaLRlkj07u2d/bKHFsrbzU6+n4zQ1IHzD+vkWToCKEZ0tBw/7SErgZtPLAE1fNhj0nbKlhd7xF6JxXr+Jiuhc5HO96ho/XB1iZ9lYtqwZNYkIwlPMZlzguR4jTjXDCaJj6hAsLVL/VfEXKrNgDWdVLfjutPY9jlFjQdCzTwDPEnxzXjvr4AZfkMNaAZONOtdkjHgV1otQfupHZDgw08WfnD1ysxxuFNwX1PdGx/t6xHaQZYnIIDT6Wnru92ShlJuR3UYFxAr9zJS2x44aJ10ughxAFR22ij+kZ/GaRAuwQvTqK3ngRvQ6uB+9iIuLwzj1+3LM+k3qgybipDQe1W4Lx2pHeBzxr18upA5gF5JTRXvPEV6wba1iN125ml3FTxpJv5rfKLuVDm0bMLF28ONHQ490cA8zOPn27ga+hkaPezT+ODQ7lvWj70/DxcnGIhFkmWkQgniypKWUkjkjIaJZTgQmQpgYqh5xmyK3uiwNq9UP6E6oc+tDnINgpUDxqHENrJ1h17Uks+avE8e9MO3Dpg7+wIAUklcpIJUr3hiLw4cMSOwlu0Jl98OF+QjAgg8SKK8SKP0kTgqKzyOII0JpCI2H9ui7/uCydbU3eg74fG39EdtPijO6oDdxwQ+T3FySkfzikMUyhYwaJSiDRKK0yjEgNEFS8FrRZpnsb4HZ1yE3ww8JnGq8kc/7g5pvFqGq8mX0zj1TReTU75X8Yrxqm0nudVIHW+/Y8VNlb+Zkr6Eno03X3ocI89/wSFGPSWERMAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=e759fab5fb9d3e1086e7f4045eefdc31"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=e759fab5fb9d3e1086e7f4045eefdc31^sys_idNOT IN2b59fab5fb9d3e1086e7f4045eefdc56,7f59fab5fb9d3e1086e7f4045eefdc59,b759fab5fb9d3e1086e7f4045eefdc5b,f359fab5fb9d3e1086e7f4045eefdc58"/>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=integer,uiTypeLabel=Integer,uiUniqueId=9fc98cf4-2f8f-46ca-a232-6c078f64d1d2</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>var_count1</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Integer">integer</internal_type>
+        <label>var_count</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Ranking Data">e759fab5fb9d3e1086e7f4045eefdc31</model>
+        <model_id>e759fab5fb9d3e1086e7f4045eefdc31</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_variable_e759fab5fb9d3e1086e7f4045eefdc31</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 20:18:53</sys_created_on>
+        <sys_id>2b59fab5fb9d3e1086e7f4045eefdc56</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:53</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=d0ca7d7d-8ff4-490c-80aa-9e8fc9246410</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>var_tipo_ranking</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>var_tipo_ranking</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Ranking Data">e759fab5fb9d3e1086e7f4045eefdc31</model>
+        <model_id>e759fab5fb9d3e1086e7f4045eefdc31</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_variable_e759fab5fb9d3e1086e7f4045eefdc31</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 20:18:53</sys_created_on>
+        <sys_id>7f59fab5fb9d3e1086e7f4045eefdc59</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:53</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=b5bfab12-1026-43f0-8961-a41ba3f1f927</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>var_estado</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>var_estado</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Ranking Data">e759fab5fb9d3e1086e7f4045eefdc31</model>
+        <model_id>e759fab5fb9d3e1086e7f4045eefdc31</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_variable_e759fab5fb9d3e1086e7f4045eefdc31</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 20:18:53</sys_created_on>
+        <sys_id>b759fab5fb9d3e1086e7f4045eefdc5b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:53</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=72f2355b-0329-4d8c-b4dc-3cb07f54ba9d</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>var_ano</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>var_ano</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Ranking Data">e759fab5fb9d3e1086e7f4045eefdc31</model>
+        <model_id>e759fab5fb9d3e1086e7f4045eefdc31</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_variable_e759fab5fb9d3e1086e7f4045eefdc31</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 20:18:53</sys_created_on>
+        <sys_id>f359fab5fb9d3e1086e7f4045eefdc58</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:53</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>record</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_e759fab5fb9d3e1086e7f4045eefdc31</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 20:18:53</sys_created_on>
+        <sys_id>a759fab5fb9d3e1086e7f4045eefdc4e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:53</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_e759fab5fb9d3e1086e7f4045eefdc31"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_e759fab5fb9d3e1086e7f4045eefdc31"/>
+    <sys_hub_flow action="UPDATE">
+        <sys_id>5af92e31fb5d3e1086e7f4045eefdc3a</sys_id>
+        <latest_snapshot>e759fab5fb9d3e1086e7f4045eefdc31</latest_snapshot>
+        <compiler_build>glide-yokohama-12-18-2024__patch7-hotfix2a-09-24-2025_10-07-2025_2003.zip</compiler_build>
+    </sys_hub_flow>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=5af92e31fb5d3e1086e7f4045eefdc3a"/>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=5af92e31fb5d3e1086e7f4045eefdc3a^sys_idNOT IN4869fab5fb9d3e1086e7f4045eefdc76"/>
+    <sys_flow_subflow_plan action="INSERT_OR_UPDATE">
+        <plan>{"type":"PlanProxy","persistor":{"@class":".ChunkingPlanPersistor","table":"sys_flow_subflow_plan","id":"4869fab5fb9d3e1086e7f4045eefdc76","name":"plan","plan_signature":null}}</plan>
+        <plan_id display_value="Ranking Data">5af92e31fb5d3e1086e7f4045eefdc3a</plan_id>
+        <snapshot>dab683b9fbdd3e1086e7f4045eefdcd2</snapshot>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-19 20:18:55</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>4869fab5fb9d3e1086e7f4045eefdc76</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-19 20:18:55</sys_updated_on>
+    </sys_flow_subflow_plan>
+</record_update>

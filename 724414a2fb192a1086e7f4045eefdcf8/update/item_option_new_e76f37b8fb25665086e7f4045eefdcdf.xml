@@ -14,6 +14,7 @@
         <delete_roles/>
         <delivery_plan/>
         <description/>
+        <disable_initial_slot_fill>false</disable_initial_slot_fill>
         <display_title>false</display_title>
         <do_not_select_first>false</do_not_select_first>
         <dynamic_default_value/>
@@ -31,8 +32,10 @@
         <instructions/>
         <layout>normal</layout>
         <list_table/>
+        <lookup_dependent_question/>
         <lookup_label/>
         <lookup_price/>
+        <lookup_source/>
         <lookup_table/>
         <lookup_unique>false</lookup_unique>
         <lookup_value/>
@@ -97,7 +100,7 @@
         <use_reference_qualifier>simple</use_reference_qualifier>
         <validate_regex display_value="Ano">de8e440dfb65665086e7f4045eefdc90</validate_regex>
         <variable_name/>
-        <variable_set display_value="RCL com Deduções">348ebf38fb25665086e7f4045eefdc2a</variable_set>
+        <variable_set display_value="RCL with Deductions">348ebf38fb25665086e7f4045eefdc2a</variable_set>
         <variable_width/>
         <visibility>1</visibility>
         <visible_bundle>true</visible_bundle>

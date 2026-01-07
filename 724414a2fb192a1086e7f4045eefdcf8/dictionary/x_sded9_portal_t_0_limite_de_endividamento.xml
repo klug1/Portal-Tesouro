@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="d31bdfbdfb557e10f6d5f9d38eefdcd3" label="Limite de endividamento" max_length="40" name="x_sded9_portal_t_0_limite_de_endividamento" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="Target" max_length="40" name="u_meta" type="string"/>
+        <element label="Year" max_length="40" name="u_ano" type="integer"/>
+        <element choice="1" label="Public Debt Indicator" max_length="40" name="indicador_de_endividamento_publico" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="CAED*" language="pb" sequence="2" value="caed"/>
+                <element inactive_on_update="false" label="MGA*" language="pb" sequence="1" value="mga"/>
+                <element inactive_on_update="false" label="DCL*" sequence="3" value="dcl"/>
+                <element inactive_on_update="false" label="DCL*" language="pb" sequence="3" value="dcl"/>
+                <element inactive_on_update="false" label="CAED*" sequence="2" value="caed"/>
+                <element inactive_on_update="false" label="MGA*" sequence="1" value="mga"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Accomplished" max_length="40" name="u_realizado" type="string"/>
+    </element>
+</database>

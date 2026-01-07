@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_list action="DELETE" parent="" relationship="" sys_domain="global" table="x_sded9_portal_t_0_investimento" version="2" view="">
+        <sys_ui_list_element action="DELETE">
+            <average_value>false</average_value>
+            <element>reference_year</element>
+            <list_id display_value="x_sded9_portal_t_0_investimento" element="NULL" name="x_sded9_portal_t_0_investimento" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">dfe9cfb1fb157e10f6d5f9d38eefdc3e</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>0</position>
+            <sum>false</sum>
+            <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-11-19 21:31:14</sys_created_on>
+            <sys_id>97e9cfb1fb157e10f6d5f9d38eefdc3f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-19 21:31:14</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="DELETE">
+            <average_value>false</average_value>
+            <element>committed_investment</element>
+            <list_id display_value="x_sded9_portal_t_0_investimento" element="NULL" name="x_sded9_portal_t_0_investimento" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">dfe9cfb1fb157e10f6d5f9d38eefdc3e</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>1</position>
+            <sum>false</sum>
+            <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-11-19 21:31:14</sys_created_on>
+            <sys_id>9be9cfb1fb157e10f6d5f9d38eefdc3f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-19 21:31:14</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="DELETE">
+            <average_value>false</average_value>
+            <element>investment_liquidated</element>
+            <list_id display_value="x_sded9_portal_t_0_investimento" element="NULL" name="x_sded9_portal_t_0_investimento" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">dfe9cfb1fb157e10f6d5f9d38eefdc3e</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>2</position>
+            <sum>false</sum>
+            <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-11-19 21:31:14</sys_created_on>
+            <sys_id>9fe9cfb1fb157e10f6d5f9d38eefdc3f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-19 21:31:14</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="DELETE">
+            <average_value>false</average_value>
+            <element>ncr_net_current_revenue</element>
+            <list_id display_value="x_sded9_portal_t_0_investimento" element="NULL" name="x_sded9_portal_t_0_investimento" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">dfe9cfb1fb157e10f6d5f9d38eefdc3e</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>3</position>
+            <sum>false</sum>
+            <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-11-19 21:31:14</sys_created_on>
+            <sys_id>93e9cfb1fb157e10f6d5f9d38eefdc40</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-19 21:31:14</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="DELETE">
+            <average_value>false</average_value>
+            <element>net_current_revenue</element>
+            <list_id display_value="x_sded9_portal_t_0_investimento" element="NULL" name="x_sded9_portal_t_0_investimento" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">dfe9cfb1fb157e10f6d5f9d38eefdc3e</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>4</position>
+            <sum>false</sum>
+            <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-11-19 21:31:14</sys_created_on>
+            <sys_id>97e9cfb1fb157e10f6d5f9d38eefdc40</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-19 21:31:14</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="DELETE">
+            <average_value>false</average_value>
+            <element>paid_investment</element>
+            <list_id display_value="x_sded9_portal_t_0_investimento" element="NULL" name="x_sded9_portal_t_0_investimento" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">dfe9cfb1fb157e10f6d5f9d38eefdc3e</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>5</position>
+            <sum>false</sum>
+            <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-11-19 21:31:14</sys_created_on>
+            <sys_id>9be9cfb1fb157e10f6d5f9d38eefdc40</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-19 21:31:14</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="DELETE">
+            <average_value>false</average_value>
+            <element>percentage_of_net_current_revenue_rcl_investment_committed</element>
+            <list_id display_value="x_sded9_portal_t_0_investimento" element="NULL" name="x_sded9_portal_t_0_investimento" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">dfe9cfb1fb157e10f6d5f9d38eefdc3e</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>6</position>
+            <sum>false</sum>
+            <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-11-19 21:31:14</sys_created_on>
+            <sys_id>9fe9cfb1fb157e10f6d5f9d38eefdc40</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-11-19 21:31:14</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list action="DELETE">
+            <average_value>false</average_value>
+            <element/>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <name>x_sded9_portal_t_0_investimento</name>
+            <parent/>
+            <position/>
+            <relationship/>
+            <sum>false</sum>
+            <sys_class_name>sys_ui_list</sys_class_name>
+            <sys_created_by/>
+            <sys_created_on/>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path/>
+            <sys_id>b5be43b9fb157e10f6d5f9d38eefdce1</sys_id>
+            <sys_mod_count/>
+            <sys_name>x_sded9_portal_t_0_investimento</sys_name>
+            <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+            <sys_update_name/>
+            <sys_updated_by/>
+            <sys_updated_on>2026-01-07 18:07:01</sys_updated_on>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_list>
+    </sys_ui_list>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</application>
+        <file_path/>
+        <instance_id>e34bb3801b9d82dc65324089bd4bcbee</instance_id>
+        <instance_name>sefazmtdev</instance_name>
+        <name>sys_ui_list_x_sded9_portal_t_0_investimento_null</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_ui_list parent="" relationship="" sys_domain="global" table="x_sded9_portal_t_0_investimento" version="2" view=""><sys_ui_list_element action="DELETE"><average_value>false</average_value><element>reference_year</element><list_id display_value="x_sded9_portal_t_0_investimento" element="NULL" name="x_sded9_portal_t_0_investimento" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">dfe9cfb1fb157e10f6d5f9d38eefdc3e</list_id><max_value>false</max_value><min_value>false</min_value><position>0</position><sum>false</sum><sys_created_by>allex.sousa@artycs.com.br</sys_created_by><sys_created_on>2025-11-19 21:31:14</sys_created_on><sys_id>97e9cfb1fb157e10f6d5f9d38eefdc3f</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by><sys_updated_on>2025-11-19 21:31:14</sys_updated_on></sys_ui_list_element><sys_ui_list_element action="DELETE"><average_value>false</average_value><element>committed_investment</element><list_id display_value="x_sded9_portal_t_0_investimento" element="NULL" name="x_sded9_portal_t_0_investimento" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">dfe9cfb1fb157e10f6d5f9d38eefdc3e</list_id><max_value>false</max_value><min_value>false</min_value><position>1</position><sum>false</sum><sys_created_by>allex.sousa@artycs.com.br</sys_created_by><sys_created_on>2025-11-19 21:31:14</sys_created_on><sys_id>9be9cfb1fb157e10f6d5f9d38eefdc3f</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by><sys_updated_on>2025-11-19 21:31:14</sys_updated_on></sys_ui_list_element><sys_ui_list_element action="DELETE"><average_value>false</average_value><element>investment_liquidated</element><list_id display_value="x_sded9_portal_t_0_investimento" element="NULL" name="x_sded9_portal_t_0_investimento" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">dfe9cfb1fb157e10f6d5f9d38eefdc3e</list_id><max_value>false</max_value><min_value>false</min_value><position>2</position><sum>false</sum><sys_created_by>allex.sousa@artycs.com.br</sys_created_by><sys_created_on>2025-11-19 21:31:14</sys_created_on><sys_id>9fe9cfb1fb157e10f6d5f9d38eefdc3f</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by><sys_updated_on>2025-11-19 21:31:14</sys_updated_on></sys_ui_list_element><sys_ui_list_element action="DELETE"><average_value>false</average_value><element>ncr_net_current_revenue</element><list_id display_value="x_sded9_portal_t_0_investimento" element="NULL" name="x_sded9_portal_t_0_investimento" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">dfe9cfb1fb157e10f6d5f9d38eefdc3e</list_id><max_value>false</max_value><min_value>false</min_value><position>3</position><sum>false</sum><sys_created_by>allex.sousa@artycs.com.br</sys_created_by><sys_created_on>2025-11-19 21:31:14</sys_created_on><sys_id>93e9cfb1fb157e10f6d5f9d38eefdc40</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by><sys_updated_on>2025-11-19 21:31:14</sys_updated_on></sys_ui_list_element><sys_ui_list_element action="DELETE"><average_value>false</average_value><element>net_current_revenue</element><list_id display_value="x_sded9_portal_t_0_investimento" element="NULL" name="x_sded9_portal_t_0_investimento" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">dfe9cfb1fb157e10f6d5f9d38eefdc3e</list_id><max_value>false</max_value><min_value>false</min_value><position>4</position><sum>false</sum><sys_created_by>allex.sousa@artycs.com.br</sys_created_by><sys_created_on>2025-11-19 21:31:14</sys_created_on><sys_id>97e9cfb1fb157e10f6d5f9d38eefdc40</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by><sys_updated_on>2025-11-19 21:31:14</sys_updated_on></sys_ui_list_element><sys_ui_list_element action="DELETE"><average_value>false</average_value><element>paid_investment</element><list_id display_value="x_sded9_portal_t_0_investimento" element="NULL" name="x_sded9_portal_t_0_investimento" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">dfe9cfb1fb157e10f6d5f9d38eefdc3e</list_id><max_value>false</max_value><min_value>false</min_value><position>5</position><sum>false</sum><sys_created_by>allex.sousa@artycs.com.br</sys_created_by><sys_created_on>2025-11-19 21:31:14</sys_created_on><sys_id>9be9cfb1fb157e10f6d5f9d38eefdc40</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by><sys_updated_on>2025-11-19 21:31:14</sys_updated_on></sys_ui_list_element><sys_ui_list_element action="DELETE"><average_value>false</average_value><element>percentage_of_net_current_revenue_rcl_investment_committed</element><list_id display_value="x_sded9_portal_t_0_investimento" element="NULL" name="x_sded9_portal_t_0_investimento" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">dfe9cfb1fb157e10f6d5f9d38eefdc3e</list_id><max_value>false</max_value><min_value>false</min_value><position>6</position><sum>false</sum><sys_created_by>allex.sousa@artycs.com.br</sys_created_by><sys_created_on>2025-11-19 21:31:14</sys_created_on><sys_id>9fe9cfb1fb157e10f6d5f9d38eefdc40</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by><sys_updated_on>2025-11-19 21:31:14</sys_updated_on></sys_ui_list_element><sys_ui_list action="DELETE"><average_value>false</average_value><element/><max_value>false</max_value><min_value>false</min_value><name>x_sded9_portal_t_0_investimento</name><parent/><position/><relationship/><sum>false</sum><sys_class_name>sys_ui_list</sys_class_name><sys_created_by/><sys_created_on/><sys_domain>global</sys_domain><sys_domain_path/><sys_id>b5be43b9fb157e10f6d5f9d38eefdce1</sys_id><sys_mod_count/><sys_name>x_sded9_portal_t_0_investimento</sys_name><sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package><sys_policy/><sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope><sys_update_name/><sys_updated_by/><sys_updated_on>2026-01-07 18:07:01</sys_updated_on><sys_user/><view display_value="Default view" name="NULL">Default view</view><view_name/></sys_ui_list></sys_ui_list></record_update>]]></payload>
+        <payload_hash>937409055</payload_hash>
+        <record_name>Investimento</record_name>
+        <reverted_from/>
+        <source>b5d0b261fb5afa14f6d5f9d38eefdc9d</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2026-01-07 18:07:01</sys_created_on>
+        <sys_id>b111fe61fb5afa14f6d5f9d38eefdc13</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19b99a404a50000001</sys_recorded_at>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2026-01-07 18:07:01</sys_updated_on>
+        <type>List Layout</type>
+        <update_guid>7d11fe613f5afa14c96f331f3499a611</update_guid>
+        <update_guid_history>7d11fe613f5afa14c96f331f3499a611:937409055,dbe9cfb143157e10a9ce4e09b29a7a41:-913626252,e2d90fb1f5157e10753705cb1370c5fe:-1169974957</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2026-01-07 18:07:01</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_list">sys_ui_list</sys_db_object>
+        <sys_id>cd24e002b219478886313898a2aaac40</sys_id>
+        <sys_metadata>dfe9cfb1fb157e10f6d5f9d38eefdc3e</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_sded9_portal_t_0_investimento</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_parent display_value="Investimento">ce474fbdfbd17e10f6d5f9d38eefdc4b</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_scope_delete display_value="">06b5f462fd3a460d80eabc3a7195aca1</sys_scope_delete>
+        <sys_update_name>sys_ui_list_x_sded9_portal_t_0_investimento_null</sys_update_name>
+        <sys_update_version display_value="sys_ui_list_x_sded9_portal_t_0_investimento_null">b111fe61fb5afa14f6d5f9d38eefdc13</sys_update_version>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2026-01-07 18:07:01</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

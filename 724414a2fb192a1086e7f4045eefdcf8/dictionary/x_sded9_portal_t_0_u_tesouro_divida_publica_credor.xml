@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="ec09315afb2c7a1086e7f4045eefdcc3" label="Tesouro dívida pública - Credores" max_length="40" name="x_sded9_portal_t_0_u_tesouro_divida_publica_credor" type="collection">
+        <element label="Saldo Devedor" max_length="20" name="u_saldo_devedor" type="decimal"/>
+        <element label="Credor" max_length="40" name="u_credor" type="string"/>
+        <element label="Percentual" max_length="20" name="u_percentual" type="decimal"/>
+        <element label="Ano" max_length="40" name="u_ano" type="integer"/>
+    </element>
+</database>

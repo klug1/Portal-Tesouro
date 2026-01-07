@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="4199f03afb11aa1086e7f4045eefdc6f" label="Amortization and Interest" max_length="40" name="x_sded9_portal_t_0_u_amortizacao_juros" type="collection">
+        <element label="Valor de la amortización externa" max_length="20" name="u_amortizacao_externa" type="decimal"/>
+        <element label="Año de referencia" max_length="4" name="u_ano" type="integer"/>
+        <element label="Valor de la amortización interna" max_length="20" name="u_amortizacao_interna" type="decimal"/>
+        <element label="Intereses y cargos (interna)" max_length="20" name="u_juros_encargos_interna" type="decimal"/>
+        <element label="Intereses y cargos (externa)" max_length="20" name="u_juros_encargos_externa" type="decimal"/>
+    </element>
+</database>

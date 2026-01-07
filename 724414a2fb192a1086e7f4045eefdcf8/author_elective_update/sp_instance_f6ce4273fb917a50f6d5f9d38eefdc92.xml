@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="DELETE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>2</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">01f7f81d47d5f6102d2676b4f26d43e4</sp_column>
+        <sp_widget display_value="Widget Limite com Despesas SemiDonut">e4952766fba9ae5086e7f4045eefdc4c</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-25 22:20:43</sys_created_on>
+        <sys_id>f6ce4273fb917a50f6d5f9d38eefdc92</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_instance_f6ce4273fb917a50f6d5f9d38eefdc92</sys_update_name>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-25 22:20:43</sys_updated_on>
+        <title/>
+        <url/>
+        <widget_parameters/>
+    </sp_instance>
+    <sys_translated_text action="DELETE" query="documentkey=f6ce4273fb917a50f6d5f9d38eefdc92"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</application>
+        <file_path/>
+        <instance_id>e34bb3801b9d82dc65324089bd4bcbee</instance_id>
+        <instance_name>sefazmtdev</instance_name>
+        <name>sp_instance_f6ce4273fb917a50f6d5f9d38eefdc92</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance"><sp_instance action="INSERT_OR_UPDATE"><active>true</active><class_name/><color>default</color><css/><glyph/><id/><order>2</order><roles/><short_description/><size>md</size><sp_column display_value="1">01f7f81d47d5f6102d2676b4f26d43e4</sp_column><sp_widget display_value="Widget Limite com Despesas SemiDonut">e4952766fba9ae5086e7f4045eefdc4c</sp_widget><sys_class_name>sp_instance</sys_class_name><sys_created_by>allex.sousa@artycs.com.br</sys_created_by><sys_created_on>2025-11-25 22:20:43</sys_created_on><sys_id>f6ce4273fb917a50f6d5f9d38eefdc92</sys_id><sys_mod_count>0</sys_mod_count><sys_name/><sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package><sys_policy/><sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope><sys_update_name>sp_instance_f6ce4273fb917a50f6d5f9d38eefdc92</sys_update_name><sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by><sys_updated_on>2025-11-25 22:20:43</sys_updated_on><title/><url/><widget_parameters/></sp_instance><sys_translated_text action="delete_multiple" query="documentkey=f6ce4273fb917a50f6d5f9d38eefdc92"/></record_update>]]></payload>
+        <payload_hash>1012297006</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>fb392d6ffb15b65086e7f4045eefdc96</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-25 22:20:43</sys_created_on>
+        <sys_id>76ce4273fb917a50f6d5f9d38eefdc94</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19abd1ad4810000001</sys_recorded_at>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-25 22:20:43</sys_updated_on>
+        <type>Instance</type>
+        <update_guid>7ace427364917a5052e01e61ede65393</update_guid>
+        <update_guid_history>7ace427364917a5052e01e61ede65393:1012297006</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">42fec6b3fb917a50f6d5f9d38eefdcf6</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-25 22:21:29</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance">sp_instance</sys_db_object>
+        <sys_id>1d83f88d7e4b49b8a433d4b275defc04</sys_id>
+        <sys_metadata>f6ce4273fb917a50f6d5f9d38eefdc92</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_scope_delete display_value="">06b5f462fd3a460d80eabc3a7195aca1</sys_scope_delete>
+        <sys_update_name>sp_instance_f6ce4273fb917a50f6d5f9d38eefdc92</sys_update_name>
+        <sys_update_version display_value="sp_instance_f6ce4273fb917a50f6d5f9d38eefdc92">76ce4273fb917a50f6d5f9d38eefdc94</sys_update_version>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-25 22:21:29</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

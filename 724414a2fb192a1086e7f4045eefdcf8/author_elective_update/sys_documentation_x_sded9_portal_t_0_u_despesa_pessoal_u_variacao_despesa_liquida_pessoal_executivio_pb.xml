@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation action="DELETE" element="u_variacao_despesa_liquida_pessoal_executivio" label="Variação % da Despesa Líquida Com Pessoal - Executivio" language="pb" table="x_sded9_portal_t_0_u_despesa_pessoal">
+        <sys_documentation action="DELETE">
+            <element>u_variacao_despesa_liquida_pessoal_executivio</element>
+            <help/>
+            <hint/>
+            <label>Variação % da Despesa Líquida Com Pessoal - Executivio</label>
+            <language>pb</language>
+            <name>x_sded9_portal_t_0_u_despesa_pessoal</name>
+            <plural>Variação % da Despesa Líquida Com Pessoal - Executivio</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>jesse.biscarde@artycs.com.br</sys_created_by>
+            <sys_created_on>2025-10-28 18:46:15</sys_created_on>
+            <sys_id>9431d97afb707690f6d5f9d38eefdc66</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Variação % da Despesa Líquida Com Pessoal - Executivio</sys_name>
+            <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+            <sys_update_name>sys_documentation_x_sded9_portal_t_0_u_despesa_pessoal_u_variacao_despesa_liquida_pessoal_executivio_pb</sys_update_name>
+            <sys_updated_by>jesse.biscarde@artycs.com.br</sys_updated_by>
+            <sys_updated_on>2025-10-28 18:46:15</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</application>
+        <file_path/>
+        <instance_id>e34bb3801b9d82dc65324089bd4bcbee</instance_id>
+        <instance_name>sefazmtdev</instance_name>
+        <name>sys_documentation_x_sded9_portal_t_0_u_despesa_pessoal_u_variacao_despesa_liquida_pessoal_executivio_pb</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_documentation element="u_variacao_despesa_liquida_pessoal_executivio" label="Variação % da Despesa Líquida Com Pessoal - Executivio" language="pb" table="x_sded9_portal_t_0_u_despesa_pessoal"><sys_documentation action="INSERT_OR_UPDATE"><element>u_variacao_despesa_liquida_pessoal_executivio</element><help/><hint/><label>Variação % da Despesa Líquida Com Pessoal - Executivio</label><language>pb</language><name>x_sded9_portal_t_0_u_despesa_pessoal</name><plural>Variação % da Despesa Líquida Com Pessoal - Executivio</plural><sys_class_name>sys_documentation</sys_class_name><sys_created_by>jesse.biscarde@artycs.com.br</sys_created_by><sys_created_on>2025-10-28 18:46:15</sys_created_on><sys_id>9431d97afb707690f6d5f9d38eefdc66</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Variação % da Despesa Líquida Com Pessoal - Executivio</sys_name><sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package><sys_policy/><sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope><sys_update_name>sys_documentation_x_sded9_portal_t_0_u_despesa_pessoal_u_variacao_despesa_liquida_pessoal_executivio_pb</sys_update_name><sys_updated_by>jesse.biscarde@artycs.com.br</sys_updated_by><sys_updated_on>2025-10-28 18:46:15</sys_updated_on><url/><url_target/></sys_documentation></sys_documentation></record_update>]]></payload>
+        <payload_hash>-1858801576</payload_hash>
+        <record_name>Personal Expenses.u_variacao_despesa_liquida_pessoal_executivio</record_name>
+        <reverted_from/>
+        <source>7f97b8fafbbc3690f6d5f9d38eefdc55</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>jesse.biscarde@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-10-28 18:46:15</sys_created_on>
+        <sys_id>9831d97afb707690f6d5f9d38eefdc68</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19a2c246c3f0000001</sys_recorded_at>
+        <sys_updated_by>jesse.biscarde@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-10-28 18:46:15</sys_updated_on>
+        <type>Rótulo do campo</type>
+        <update_guid>1c31d97a73707690f004f37b0a957e67</update_guid>
+        <update_guid_history>1c31d97a73707690f004f37b0a957e67:-1858801576</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>jesse.biscarde@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-10-28 18:51:57</sys_created_on>
+        <sys_db_object display_value="" name="sys_documentation">sys_documentation</sys_db_object>
+        <sys_id>64171725889741d293b9d2de1c4093c9</sys_id>
+        <sys_metadata>9431d97afb707690f6d5f9d38eefdc66</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Variação % da Despesa Líquida Com Pessoal - Executivio</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_parent display_value="">2001d97afb707690f6d5f9d38eefdca9</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_scope_delete display_value="">06b5f462fd3a460d80eabc3a7195aca1</sys_scope_delete>
+        <sys_update_name>sys_documentation_x_sded9_portal_t_0_u_despesa_pessoal_u_variacao_despesa_liquida_pessoal_executivio_pb</sys_update_name>
+        <sys_update_version display_value="sys_documentation_x_sded9_portal_t_0_u_despesa_pessoal_u_variacao_despesa_liquida_pessoal_executivio_pb">9831d97afb707690f6d5f9d38eefdc68</sys_update_version>
+        <sys_updated_by>jesse.biscarde@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-10-28 18:51:57</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

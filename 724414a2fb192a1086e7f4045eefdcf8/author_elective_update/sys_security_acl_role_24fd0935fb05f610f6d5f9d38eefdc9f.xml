@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="DELETE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-07 02:13:57</sys_created_on>
+        <sys_id>24fd0935fb05f610f6d5f9d38eefdc9f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>.snc_external</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_security_acl display_value="">b3ed0935fb05f610f6d5f9d38eefdc49</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_24fd0935fb05f610f6d5f9d38eefdc9f</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-07 02:13:57</sys_updated_on>
+        <sys_user_role display_value="snc_external" name="snc_external">940ba702933002009c8579b4f47ffbe2</sys_user_role>
+    </sys_security_acl_role>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</application>
+        <file_path/>
+        <instance_id>e34bb3801b9d82dc65324089bd4bcbee</instance_id>
+        <instance_name>sefazmtdev</instance_name>
+        <name>sys_security_acl_role_24fd0935fb05f610f6d5f9d38eefdc9f</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role"><sys_security_acl_role action="INSERT_OR_UPDATE"><sys_class_name>sys_security_acl_role</sys_class_name><sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by><sys_created_on>2025-11-07 02:13:57</sys_created_on><sys_id>24fd0935fb05f610f6d5f9d38eefdc9f</sys_id><sys_mod_count>0</sys_mod_count><sys_name>.snc_external</sys_name><sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package><sys_policy/><sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope><sys_security_acl display_value="">b3ed0935fb05f610f6d5f9d38eefdc49</sys_security_acl><sys_update_name>sys_security_acl_role_24fd0935fb05f610f6d5f9d38eefdc9f</sys_update_name><sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by><sys_updated_on>2025-11-07 02:13:57</sys_updated_on><sys_user_role display_value="snc_external" name="snc_external">940ba702933002009c8579b4f47ffbe2</sys_user_role></sys_security_acl_role></record_update>]]></payload>
+        <payload_hash>-1748958670</payload_hash>
+        <record_name>.snc_external</record_name>
+        <reverted_from/>
+        <source>d8fc0681fb05f210f6d5f9d38eefdc44</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-07 02:13:57</sys_created_on>
+        <sys_id>0efd0935fb05f610f6d5f9d38eefdc53</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19a5c1789a50000001</sys_recorded_at>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-07 02:13:57</sys_updated_on>
+        <type>Access Roles</type>
+        <update_guid>02fd09358b05f610dd3b536c6866e953</update_guid>
+        <update_guid_history>02fd09358b05f610dd3b536c6866e953:-1748958670</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value=".snc_external">fb8e4175fb05f610f6d5f9d38eefdc2b</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-07 02:16:32</sys_created_on>
+        <sys_db_object display_value="" name="sys_security_acl_role">sys_security_acl_role</sys_db_object>
+        <sys_id>74275a4627a24bd09d82afb7776e5b90</sys_id>
+        <sys_metadata>24fd0935fb05f610f6d5f9d38eefdc9f</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>.snc_external</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_parent display_value="">b3ed0935fb05f610f6d5f9d38eefdc49</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_scope_delete display_value="">06b5f462fd3a460d80eabc3a7195aca1</sys_scope_delete>
+        <sys_update_name>sys_security_acl_role_24fd0935fb05f610f6d5f9d38eefdc9f</sys_update_name>
+        <sys_update_version display_value="sys_security_acl_role_24fd0935fb05f610f6d5f9d38eefdc9f">0efd0935fb05f610f6d5f9d38eefdc53</sys_update_version>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-07 02:16:32</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

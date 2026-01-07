@@ -115,7 +115,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Referência">reference</internal_type>
+        <internal_type display_value="Reference">reference</internal_type>
         <label>Record</label>
         <mandatory>true</mandatory>
         <max_length>32</max_length>
@@ -168,8 +168,8 @@
     <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=30d83ecefb69769086e7f4045eefdc50"/>
     <sys_hub_action_instance_v2 action="delete_multiple" query="flow=30d83ecefb69769086e7f4045eefdc50^sys_idNOT INc9d83ecefb69769086e7f4045eefdcdf,8dd83ecefb69769086e7f4045eefdcde,c5d83ecefb69769086e7f4045eefdcdf,f88bacdafbe1b69086e7f4045eefdc54,c1d83ecefb69769086e7f4045eefdcde"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Criar registro">2de05916c31332002841b63b12d3aee1</action_type>
-        <action_type_parent display_value="Criar registro">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <action_type display_value="Create Record">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent display_value="Create Record">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
         <attributes/>
         <comment/>
         <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
@@ -182,18 +182,18 @@
         <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
         <sys_created_on>2025-12-03 01:10:42</sys_created_on>
         <sys_id>c9d83ecefb69769086e7f4045eefdcdf</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-12-03 09:36:37</sys_updated_on>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2025-12-03 11:26:39</sys_updated_on>
         <ui_id>070c3028-da05-4dc4-afc6-b2410b50b51a</ui_id>
         <updation_source/>
-        <values>H4sIAAAAAAAA/+1W3U7bMBR+FeTrtEpIqWjv0CbuBtKYuGHMOolPWk+O7cVOaVflYfYse7EdJym0UCToJk1I9M7n5zvfd3Lq45s1k4JN2TjB+GSSjPM0SdPjOD4+HSXZOM2SY5EC4ohFTEOJFOkhU8jbQ8QWoOpgXHInUEy4NZUHxT2PuastVnwhPYUJ6ayC1XUffRVcv391vnwulahQs+nNbcQsVITssWLT9SOXX1nkCjJUBPElsDi66Fi8VMFWMip4RlIo89hmKhEYxRHDpUdNUtm0AOUwYiVoAd5UKzb1VU2GCkFcarW6j5hL7QmQhdilkz8J/TQOcQWSthw73/2R983qzPncyBwvrZdGd5aWWO80qi71RScitBkLqJXftJkstSM8tIFyINEzKq7m5u7zpuC51K263qlMDur+BN5XMqs9uvBBUGFJQLwEa6WecVuZhWyTiUs5nCk6DAtl7qiokzM9hDwQH1KHYHhO9o+t+RoqGVR8IhhKblr1/Ecd6nY6esa8E00BLq+k9WcEt8CeXBNtZldgPHn2yyfZw4dux9VtzW3NQZuvdRynYr0OufQTg0mKp4NRkSQDKE7SwYkoMpHBaJyOkiHFN823driBBpiEFqidIUGvgtkHsIOLS8xrUvs6dnvyd1C/10Lmktp/KOwDwA6uwpl0Cv6C7xbCDnIptXR0H0jDbZ0pmR9a4CnQTh1v6OI6ELrN3UULfxpNN6FAnhvtwR0K/QSoaZ5eqO9j/D7Gb3GMD9z9WNLwezzqxj968RbYAHyA0hq3Zy1sdn9fgC/6Av3+T/7V/h9R6/7PC6Dj+MYeAFtvsf1PgY2RKDbN7R9bJ8II1AoAAA==</values>
+        <values>H4sIAAAAAAAA/+1WS27bMBC9SsG1bUiRY8TeFQmyahOgKbJJU2IkjmwWFKmKpGPX0GF6ll6sQ0n+JQ7auN0EiDcG5/P43ng4nrsVk4JN2CjG6HQcj7IkTpKTKDo5G8bpKEnjE5EA4pD1mIYCKdJBqpA3hx6bg/LBuOBWoBjz0lQOFHc84taXWPG5dBQmpC0VLG+76Jvg+vWz9WUzqUSFmk3u7nushIqQHVZssnrk+lueClJUFPo5fMMzxN2yPGj7sE1W+O6qdZhKBEJRj+HCoSalbJKDsthjBWgBzlRLNnGVJ0OFIK61Wm4iZlI7AmQhdmHlD7r2LApxOZK0DFvf5si7WrXm/AIc3BBy5nzVhWYzIzO0bVEE5uCVO9+1tQHXpZNGtymNzC7bKF/oq7YkbAOw/mnI4i2RwDLoDMw7GfnNzDx8WrO8lLopSedUJgO1OYFzlUy9C3xWDBUWBMQLKEupp7yszFw2ycSlGEwVHQa5Mg90qZVTPYAsEB9QWWFwSfaLxnwLlQwqPhIMJdc9Zpf2XIG1Wy1URP7dByatsk4Db8sQUrJKlu49XTDHjm7dW78AgdH42c6K020jNU1vd7rfc9Dmi4+iRKxWIZc+oj9O8Kw/zOO4D/lp0j8VeSpSGI6SYTyg+Lr+2jwRoGdA0nPU1pDEF8EcAtjDxQVmntS+jN2B/D3Ub17ITNIPcizsFmAPV+FUWgX/wHcHYQ+5kFpamirS8NKnSmbHXvAUaO8eZ2j8HQnd5O6jhWekaZ4K5JnRDuyx0E+A6vrpWH5r47c2fo1t/MIN4s9zfr1BnENRGntg8K+3Byzo/Tjk7R/Bow2ic7677ZzdFhH/ry1iSJV7RXtEK+zVrxE7G+PhhWJtJNJ1ff8bwpiVbmALAAA=</values>
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=c9d83ecefb69769086e7f4045eefdcdf"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Pesquisar registro">9d09f99587003300663ca1bb36cb0ba3</action_type>
-        <action_type_parent display_value="Pesquisar registro">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
         <attributes/>
         <comment/>
         <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
@@ -206,18 +206,18 @@
         <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
         <sys_created_on>2025-12-03 01:10:42</sys_created_on>
         <sys_id>8dd83ecefb69769086e7f4045eefdcde</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-12-03 09:35:48</sys_updated_on>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2025-12-03 11:26:39</sys_updated_on>
         <ui_id>f55fbb1c-5a9e-441e-ba14-6cf57444d9bf</ui_id>
         <updation_source/>
-        <values>H4sIAAAAAAAA/9VY227jNhD9FUHPtitZtmzlbZFFgAJtAmy2+5IGxEikYqKUqCUp52L4YxZ9KPoB/YL8WIe62I7jZBXHwWYfeZmZM8NzhpQuFi6n7pFLIy9Ko2g8nXheEHheGAYJ+HEchEnsxTBye24OGcOdBmLBcDgHUdrxDdGU0YgUUhkQxBCP6LJgisy5wW2U60LA7Zdm97lduv9WryUzLqhiuXt0cdlzC1AYwTDlHi22lsxtwYiAmAl08dkCcE4tml5n8BvGTMDjbGyEdkjy2rdU1ILxei67MSzHLN2jFIRmPTeDnIKR6nY1oxjQs1ysJ2Y8N+jRtZtvNL9D91PP7ksZ5pWwem01JE2h6ulkJnnCzgrDZV7P1EDrRSnKLD+tE7AlZimUwrQlxplSoz9WWMwWRIMoPZ/J609twBOeV+k1i0ImIFYjMEbxuDRM28NggmXoiGRQFDy/IoWSc14ZI5ZscCVwMEiFvMagml/lA0gs8AGWCAYnOP+xmv4Citssfkc3aIyAuMDjJnXRtSxVVZU5SUSpqwUFua59ucuqVuRraVHWWTf5kbpEuEEnihfmAxrM2SqVetKm0ZRwsWvfcrnstVIYP8umaE2eROaUW3R6Qw8lgVz+WaItXSyGXkpZOJr2g4TR/mgchf3Yh6QfB1EcTicwhCgccMOyQWW+XD5WzKv97aey483cutblgfH9P/f/Mf1EtRq9PZhr9OYfTG8jz/tBijOqfH+C+56E6oR362ilDp8+ywK6Pm+NFwKpK7chj8cE35uiJ5wJ+uAi6ACuNT5DsuWgHLy2noLccDS1YbbuhOFPfye8S4YiIErqevNc8Ly6khHoYag7fpYdsb/Fg+r418St5kAnjwkMDpj7f527/XttdbItiTvAXL1meCEdypxjAVrzlCeATfdvuTuRtuW2wRoqBwejcjB8GZWRSBeLVS4bVdxR8vYtZg+ztbirLWDbAhm3YeIvL1dyON43rv/yuEMbd0uzwYtEu8m4euXjk8Q78IvvCRn23lL3MzRt4pFaxuSa0ytm1tHbXVSaaxB/7VpveLbSVpXevq/H9a337BdGvPEm5CnJ8KR4gU9axRIkgyagGEllmVPSPGY3Xot4bilX2jSbH3eXTwyFaG8qLW3lmSOdQvGMcSUdxa64NkoeqPN0yLI1PGfO/P6b4lKvQGgnlYplznYP6liRJ9rT6ICvwde0pxMQM3AoOMxAsSl9plT1hNjVoTqe3TNk6NjEuqLz3wTd61vdLhnsbHkdMf8UH8CvbUoJg3g0hHAS+L7n+R6deNPJxJ+GcRrCZJSuJUiIzhPsmug5BS7QPWmJ0Z6uv+NfDc/2/0mDDfmXk6r39jqjbY1PsX84aUVp7CcWaadUmg4SSykY5Gt6jn9YC3kvP3BK/nm7NvXUb7uO663u+JL/kfOvJfvV0mHKvOHUp0l/OvEn/VFKw35EYdyHKB5PAsqSUbr/tX35PyUE4xLXFAAA</values>
+        <values>H4sIAAAAAAAA/+VY227jNhD9FUHPtitZvilvRYIABbYJsEn3ZbsgRiIVE6VELUk5F8Mfs9iHoh/QL/CPdSRKsmErWRvrAAn6FGjIIc8Mz5kZ5/PS5dQ9c2nohUkYjmdTzwsCz5tMghj8KAomceRFMHJ7bgYpw50GIsHwcwGiKL8fiKaMhiSXyoAghnhEFzlTZMENbqNc5wIeP9W7b8ql9Te7Fs+5oIpl7tnnLz03B4U3GKbcs+XO0qEQBURM4Nbb8i/sYzaPeftJqjVr+7DxE8y5sgtS0RKL13PZg2EZBumeJSA067kpZBSMVI+tRTGg15nYGOY8M3iiW25+0PwJ75155b6EYVgxs2vtJ6nzZM3JBRi4MaqITaHqrfFc8phpmxDKEiiEOd+22Q3XueEysy42bOstRZFmVzYdbntA8yxoKTSCYHkZaIm8DiO5mcv7jw3KS55VOakXhYxBtF9gjOJRYUo8S5cJluJBJIU859kdyZVc8MoZsaSDO4Efg0TIe7xU87tsAHEJfIB5hcEl2i8q8ydQvIzidzwGnREQF0gRYp9Qy0JVqVyQWBS6WlCQaXuWu+q5+lGfC9B6EzmmnHwtStw2D3XExCatdIkVz82veMSCtcFZYxlYndRl177VatVrBDV+ka3hhpyxzCgv8eotVRUEMvlngb50uRx6CWWT0awfxIz2R+Nw0o98iPtREEaT2RSGEE4G3LB0ULmvVvu6++nzjtTqj6NvtHpehr/+e/0v08/kpFbtnu3D9gnNQq1a/2SqHXnee9ItXv72ZHu8EG0KutXYasynL7KMbviksTkRm8stke3L5GiiHwChIfo1MjMD5WCjfA5YzfSEM0G7+tNlubDTn4b/z/70JnmOgCixr8czwbNq2ECgryWA8Yvsi/wdnlX02tC/soGO92UADpj1P87T0XI4AFA7o/FcOpQ5VVJ4wmPAJvBddkNuWkBFod3y3xhrQQQnE0QwPI0glm3QW4nteIVm4izft/F4sh6w64G03HLxV12iO/Je//h7h6t9YQdHKXubhHbl4lkunnhEfUarvdcsDnN0re8jVtnkntM7Zja3N7uoNPcg/upar7lHmseqwjvduLtpsC/+5Iq2hliekBTfjuc4lSsWIz00AcVIIouMknoe3xpv8SUTrrSpN++XoI8M5Vq2Sy3Lt2COdHLFU8aVdBS749ooeXy3/nE8TUpvmLNYf1Nc6vY67SRSsdTZLVQHxn5MDRudcHw9dQ27BDEHh4LDDOTb9YEpVY02XWXswOd8gR8HVrpD0fmvgu7n62GXMjrr4oGY38XP+tNXrphBNBrCZBr4vuf5Hp16s+nUn02iZALTUbJRLyE6i7HY4skJcIHHk4YqzXv7Hf/H4unR1ecATA0hr7DAOElFZSw4JZ6DANclJpJSMMh2aswtto9fLqtO0fJ1/ObqzLv451bBb3czbU2duX6tcaLgf2T8a8F+K8k1Y95w5tO4P5v60/4ooZN+SGHchzAaTwPK4lFyygnhy38HQAQVORYAAA==</values>
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=8dd83ecefb69769086e7f4045eefdcde"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Atualizar registro">f9d01dd2c31332002841b63b12d3aea1</action_type>
-        <action_type_parent display_value="Atualizar registro">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
         <attributes/>
         <comment/>
         <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
@@ -230,13 +230,13 @@
         <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
         <sys_created_on>2025-12-03 01:10:42</sys_created_on>
         <sys_id>c5d83ecefb69769086e7f4045eefdcdf</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-12-03 09:35:48</sys_updated_on>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2025-12-03 11:26:39</sys_updated_on>
         <ui_id>30bd6918-a95f-4a24-b688-772ee9e9bf9e</ui_id>
         <updation_source/>
-        <values>H4sIAAAAAAAA/+1Wy27bMBD8lUBny5AsyY19KxoE6KEJkBS5pCmxIlcOC4pUJcqxa/hj+i39sS4l+dU4aeIGKAJENy65szO7A5HXC08Kb+zFKIJwFA55FEbRIAgGx3GYDqM0HIgIEEOv52nIkU6WyE0paD0FVbvAYpElSZamIfcTGKEfxyH6KYSxP+RZ8i6OYzFKs/5Fk7dcUqaQVaFgftUBUITfSiVK1N74+qbnFVBSLYulN178sWXnBTIFKSpKPDG8zlHbo48nhPFUHavsC5zIypZmjzRXhdaiw2fSBWnLMQqDnoczi1ogFcxAVdjzctACrCnn3tiWNQVKBHGu1Xx94lZq22rNYVbJH4QfB+5chiSOd31YL1nXo1V7jOR4XlhpdBuxkKpV74yqc33WSnDdxQxqZbe6W1eEh4Wj7Ei0DLPLW3N3sap3KnWjrmOrDAe1XoG1pUxri5UbCCpsmpJDUUg9YUVpprJJJip5f6Jo0c+UuaOalZzoPnDHu08Ngv4pxU+a8BWU0on4RDCUvGzEs++1q9vK6AizRnMjmDWDoqMVL2Vh3xPwFDuay15n5TR5zAJ8tJn3FubGzjNW0WRHrDClBcUsC1hVE0M2lfa+dy/d1q+f7d5hLv7sWBydtSyeqmArGRU8IKmz8U6sc3HyYi4+/k8u7hi9Mhv/zbzB4NH/F24m3fi12jJuzUCbL3UQRGKxcLn0CX8U4bEfZ2HoQ5ZEfiKyVKQQD6M47NP55fJr424gB7OmPZpML5Bxoy1Uz4J7DGinDs6Q16T+eWz35O+gkmNQV4bGcSDsBmAH91stJJc05kPpbgB2cJW7fxT8Qx8eAM6lposNKcyKOlWSH4p/H2jXLoZ+kIc6xOXuewy8ufjNxa/QxQde/ZiT9y0ete7vPfkOWAF8gLww1Z5LYXX1dwXYtCuwfsS+4Cs2eHvHvuQ79uY3NmfclJQNAAA=</values>
+        <values>H4sIAAAAAAAA/+1W227bMAz9lcLPSWDHTtbkbWhQYEDXAu3Ql64TaIlONciSZ8lpsyAfs2/Zj42+5NamXZP1JVjzEogUjw5pHok3M08Kb+hFKPxgEPR5GIRh1/e7x1EQ98M46IoQEAOv5WlIkXbmyE0uaD0BVZSG2Szp9ZI4Dni7BwNsR1GA7RiCqN3nSe9DFEViECedyypuPqdIIW2mYHrdAJCF30klctTe8Oa25WWQ01kOc284e+R6LVkFMSraeoljaV1utvB306xcC8OLFLVjcmE8a2JHjefo04g8FFQSCvyWhw8OtUCikoCy2PJS0AKcyafe0OUFGXIEcaHVdLnjTmpXp5rCg5U/6eTIL/clSLnxpgzLJWtKVJuTETi4ImTuinxZMSM52roqAhMolDtZt9UbLjInja5DHMRqEW1UkerzuiLeEmDtixSWSGBW5lkyr9NKru7M/eWC5KnUVUmaFJXhoJYrcC6XceFKOjMPFVY1TiHLpB6zLDcTWQUTlbQzVrToJMrc05lWjnUHeMm7Q1WFzinZR5X5GnJZJvGZYCh43vLs1J4osHaVCtWQ/ShKJnViTQqsqkJVAlZ1QhnMc5m5j3TUBBvi81YjiLj3Uo/xwaqh1jBXonhglhpkwDKTO1DMMZ/ZgjiziXRPFXBVun7/qn27aeEVPBda+FL+wzPEGzU8sZ2tghUendeORgu9N9PC8SFpoUnj4MXwNwn43RevWVx1UtX1dq39CwbafC18PxSzWRlLP9EehHjcjpIgaEPSC9s9kcQihqgfRkGH9s/n3yqNAOmAVQXTJB2BjBvtwO4E9xLQxjn4gLyg7HdjuyV+A5V6CLU19IH2hF0BbOB+L4Tkkj78vnRXABu4qnwmFfxDHZ4BTqWm9xfJzLIiVpLvi/8UaLNdDF2z+3ZIGbttMHnv4vcuPsAu3m2AeMUtvxggTiDNjN1y7S+GB0xJPg5Z/Qw8GiAa59F141wO1G84UfuHNEf8NzP17R9rJLo2Zg4AAA==</values>
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=c5d83ecefb69769086e7f4045eefdcdf"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
@@ -244,7 +244,7 @@
         <action_type_parent display_value="Get MRVS Values (Superávit)">376d7a86fba9769086e7f4045eefdc2e</action_type_parent>
         <attributes/>
         <comment/>
-        <compiled_snapshot/>
+        <compiled_snapshot>4264c342fbe9769086e7f4045eefdc9b</compiled_snapshot>
         <display_text/>
         <flow display_value="Superávit">30d83ecefb69769086e7f4045eefdc50</flow>
         <generation_source/>
@@ -254,18 +254,18 @@
         <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
         <sys_created_on>2025-12-03 09:31:46</sys_created_on>
         <sys_id>f88bacdafbe1b69086e7f4045eefdc54</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-12-03 09:35:48</sys_updated_on>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2025-12-03 11:26:39</sys_updated_on>
         <ui_id>3200000d-93e8-4f11-af53-5dfbdba46341</ui_id>
         <updation_source/>
-        <values>H4sIAAAAAAAA/8VU30/bMBD+V6o8N5GbpmnSNzSEhLSNCRgvCFmOfWktOXGwHWhX9X/fuUkjqFa2sWl79P367r67z/fbQIpgEZA0Tfg0icsC8nmakyyFeZmQZAZQCp7zYBzUrAKMrFrlpNHP1ADXRqDjianWe7bbmJQC0iQLpxxEmMzyNCwmjIfFNC/SbM5ilqeRdFBFvoCsBax3O6wgpG0U29z9cSG+kkoYqIPF/cM4aJjBnh2YYLE9crlNA1SxAhTi3Tgj6yWm/yoVh8Rr/Ty69OBv0eOh0GEPIGj1HU3GAawdYDaClkxZGAcVqwVz2myChTMtGgwwcVWrzRCxkrXDYoGPXVv5DStnhBAfWQJOx6HzDk/ac9uZ+UpLDleNk7ruLI4Vqs/hWrVV/bmbw28FSobTHLaCltZiPWh8076NvqfyZqWfrw+AF34bZnAqzZkaXswhC0XrwPqVtPL2iJvO8vF4L6CgQkRasaZBC22MfpJ7FGy6ipYKH1GpkHUBVi7riHE/YYRksugC7ed78x0z0o/7Cctgsof7WsvHFi793uOZmJGcx+FkKniYlIyFjMQkTOeTOCtFEU9ZEez21NLH1g/VkdTTQTtGMcByIxt3hi08QT/5bnzQWfzWcSHAcEh4vL6q3VgqX6vMtoWfNeou7EcCercShi0OYvh5v4fcL/uGRzcbO7o8Pz1HLwfzAqlXRPy3FDGNX+thTS3WzGmjjWOKOkpQnUuJV6fxYChnZsksxaPUrdEnxHPdJ4wEjD7sE0a3Q8JpWf0u9P/T4MuFvJbhy6P4N0pMZiIv5nmYFCJDJZIMP34+RyWmJM8Fesj7lfjwHaLwr5nzBgAA</values>
+        <values>H4sIAAAAAAAA/71V227aQBD9FbTP2DLGGMxblChSpLapIM1LFFnj3TGstL5kd51AEf/eWWwIpE3aqFEed65nzszR3m2YFGzKgjiO+DAK8wyTcZwEkxjHeRREI8Rc8ISzPiuhQIosGmWlrp5SjbzSghyPoBrn2WzCIBcYRxNvyFF40SiJvWwA3MuGSRZPxhBCEvvSYuG7ArIUuNpuqYKQplawvv3vQnwpldBYsundfZ/VoAmzRc2mmxeufx1aQYaKQmfVU+/KtXmLCLuuncNYLctF9/7SFZjvjRTqAA36DFcWqSQhyUEZ7LMCSgG20ms2tbohg0YQ16VaHyKWsrRUjLnYlZE/qd0kCAIXmSMNx7H1Hp5pR21rzi/AAiFpuG10F8qXleRoWloE5kBjnR/b2oDr2sqqbFMsZGqfXammKL+1jLBDgf0mydIYAoG1m9Rh7wbJ58vqabZHeek2qA9OVXFQhxdYoi5rrMOzYY28ecFya/mNZ1RYUMe0gLomS1rr6lHuuhDowl8oevi5ov0JNHJR+sDdhD5tAPxLsl/szLegpRv3K5WhZNfuRykfGrxyFxSOxChIeOgNhoJ7UQ7gQRAGXjwehJNcZOEQMrbtM7M25wqMeSaKNpQ+NG7MlraOoLTl2KVwLWt7RqAeseNi29+rNXzrcKnl4UhJAq4q9U/lqVZNk7np/fZ6/yTD9+vp77D2evq+w9Wbr03v6uJ1uJ2inq/7VFSzI3unq/CjdDUMT1W1Sg3VTNK60hZUatOAhL+QdIYVXVDKQS/ApHSlVaOrVyQ46xJ6Anvnu4TezSHhg8X5XryfoOR8jqD58lKicudSNkW2k9QrCj/e+qnIj/f+OTqPRiLJxokXZWJCOg8m9BXxMek8DpJEkCf4SJ3f/wJPYOpIlwcAAA==</values>
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=f88bacdafbe1b69086e7f4045eefdc54"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Pesquisar registros">43400a1587003300663ca1bb36cb0b4b</action_type>
-        <action_type_parent display_value="Pesquisar registros">d1c56ec50b30030085c083eb37673a50</action_type_parent>
+        <action_type display_value="Look Up Records">43400a1587003300663ca1bb36cb0b4b</action_type>
+        <action_type_parent display_value="Look Up Records">d1c56ec50b30030085c083eb37673a50</action_type_parent>
         <attributes/>
         <comment>.</comment>
         <compiled_snapshot>43400a1587003300663ca1bb36cb0b4b</compiled_snapshot>
@@ -278,13 +278,13 @@
         <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
         <sys_created_on>2025-12-03 01:10:42</sys_created_on>
         <sys_id>c1d83ecefb69769086e7f4045eefdcde</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
-        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-12-03 09:35:47</sys_updated_on>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2025-12-03 11:26:39</sys_updated_on>
         <ui_id>b1c3d1ce-831a-4bfb-b59b-fac37677e4f9</ui_id>
         <updation_source/>
-        <values>H4sIAAAAAAAA/9VX3U7bMBR+lSjXVZTQUhh3CIS0C0Bj024Ys5zYaa05dmY7LVD1YaZdTHuAPUFfbMdxkob+QOm6DS59fP7P95041xOfEf/IP0x7YYij/cODMOx2w7Df7yY4iuNuP4nDuBf7HV/gjIKmwTGncBxhXtizTlBWcMOQkmP0taDaMCkQFnpMFagRpnOO7z5W2udW1buSY+9dpeod16rJkHGiqPCPrm86fo4VBDRwczRZuDJ3OUUcx5SDxw82H+/CJtfZuJaWMeV4uTgboT4i4XxLRWwyYcent4YKQiFWirmmHT/DgmAj1V0jURSTS8HngiETBjz6VvlWs3twfxhavZRCXQl1d80RVX1z4mQoWUIvc9svJ3GJukvJi0xcuAJsx2mKoct1x0FSaPBHc5uzTaLKKH0/lOOrOuAZE2V51SWXCebNCRujWFwYqu0wKKcZOEIZznMmBihXcsRKY8glCwYcDkHKAQ6EajYQAU5s4gG0CAdnID8txR+xYraKc3BTzj9lHMaNXNO1LFTZlRFKeKHLCwWocr78adkrwJvN0lVd1Ydci0BBJ4rl5hgMRrQqZdrZCO/74RwSiRSE2Zi6BXpmaIZkOQ8k6Diwup8KcEVGAH35GcBrU2HECScTXcS2I4GiCeBoOl1mxi5cbsegk3aFm3bngfHsx+wX1Wt6VnHpgaziUrQzLkG+/4lNRhUvj0xP0cMV/ARHkoNHUbA/n7eWyiDXuRZJ7AfBNuJ2Geztq+1Ae8YoJw/W/gbp1saXAD+BlZdLta6ICrWpDbPwBdh79V+AF4lZSIgg128mOBPlBxgS3Q2Yw8dX2psFHJTjbz1yrAzrZBnJ2MNm9tO73377lpOtQbxBms3bheXSI9Q74VhrlrIEwxr+LlcXUi/hOlgF5e7OoNzdex6UAUjXk6aWVhdXtLx+edlh1hb3zgIvWgDiWibR9Kahw8m2caPnx92zcRc4230WaduIczena4G34/fdGhp2/ibvh2BaxUOOxmjMyICaefRai0gzxvzLqvsKZw23yvL++K3Ye5ST/WjOOGADUlTDsNqPxQjeJsuLIwqceLut8VYYOiibt2mKteX57Nsty8rNcVWmionU60qo1gZrolX47u3w4fYvPoH1CFYyqZ7Eq/hN2hbMN78ByRgUpeoPAAA=</values>
+        <values>H4sIAAAAAAAA/+VX2WobMRT9lWGejRnH2Zq3kBAoZKFJyUuaCo2ksUU10lTSeInxx5Q+lH5AvyA/1itpxh68pDY4kNAnM3eRzr33HEl+mMScxifxcbafJLhzcHyUJN1ukhwedgnupGn3kKRJup/GrVjinEGkxalg8DnAonTfhqC8FJYjrYboe8mM5UoiLM2QaQij3BQCj++r6CsXGt2qYfSpCo1O61DS54JqJuOTh8dWXGANG1rwnEwWXJsiFjhlAkI/u1+8XIIdF7NP5H3BdjnPEyy6Dg6lqcOStGI2skxSBiAyLAxrxTmWFFulxzOLZpjeSDE39Lm0sGLsgkeGP8G+x4mLyxiURVjwzT5R1bZgzs6xxXdWl8SWugolfcUJM6EhlGUYGnvWtIWAm8L1OKSEskO2EmUur0M74tkC9ZTAUhoAwQpXqENelZHd9dXwtkZ5waXvSeUUimAx+8LWap6W1uGZxEywHBZCOS4KLnuo0GrAfTJgyds9AR/tTACFKDO8J9uYOOBt6CtuX4D93JvvseauiitYxnMm4wIogsIIjSq1b+UAEVEa79DAxLBWPG3FZmzOBDZmXjm0HFjrcIc+VBWj0DSXQjQv7CksMWBVcdPWRqo5SOaUI0pS7lCYhnS4ZTlSfkJIsmHbxX4pYSk6AAGpryABB4XTYJxMTJm6HrU1I0DH6XRZX7tYcpc69D2odXjmmvD86/kPM2s6UylyyXbZXKF2VIrs7EyRUMh70iRs/vYkub3IQgv+oTRy9CLLDuZ8MkpbFHrZkJq7nFxrRsuSabq2o/4GoGrq3wBXJdZRofQ6qBX3M84EXXUbXTjHwm2093/eRm+S+QCIojA9LgWX/mkBQF9LEsnLB++HBZ55ejWebc6GDVnWA46wff4dPW0thw0AzV5kvFARZZFvCs84wXAt/FSrIdeXgqfQ4oVQGytBdHcmiO7ebgQxmRXdaOyKKdTvSzffOuMpZODFDKBlI6UzXSW6LfftbL/v3nRZ2N2tlN0kYfCcr+Xijh+ka7Taes3DoQ+p1X4oKBsNOe0xO9+9jqLKDrH4tspfcQ/Vw/LlvcLjdv9FOR925mIFzSDNDIyv+brtwGtq+XTptIN5u6NlAyx1O66ef4x47k+XW48JU2XWYa2OFlA/6/kpNc+WjzNrRfj9Hb403+xtW49tpR7r6b2Lf4e7k8TjX/G64fAnEQAA</values>
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=c1d83ecefb69769086e7f4045eefdcde"/>
     <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=30d83ecefb69769086e7f4045eefdc50"/>
@@ -299,7 +299,7 @@
         <flow display_value="Superávit">30d83ecefb69769086e7f4045eefdc50</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Se">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
         <order>5</order>
         <outputs_assigned/>
         <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
@@ -326,7 +326,7 @@
         <flow display_value="Superávit">30d83ecefb69769086e7f4045eefdc50</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Para cada">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
+        <logic_definition display_value="For Each">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
         <order>2</order>
         <outputs_assigned/>
         <parent_ui_id/>
@@ -353,7 +353,7 @@
         <flow display_value="Superávit">30d83ecefb69769086e7f4045eefdc50</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Outro">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
         <order>7</order>
         <outputs_assigned/>
         <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
@@ -529,7 +529,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Referência">reference</internal_type>
+        <internal_type display_value="Reference">reference</internal_type>
         <label>Record</label>
         <mandatory>true</mandatory>
         <max_length>32</max_length>
@@ -582,8 +582,8 @@
     <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=f6d87ecefb69769086e7f4045eefdcf0"/>
     <sys_hub_action_instance_v2 action="delete_multiple" query="flow=f6d87ecefb69769086e7f4045eefdcf0^sys_idNOT INb6d8becefb69769086e7f4045eefdc2c,a0ac285efbe1b69086e7f4045eefdc91,7ad8becefb69769086e7f4045eefdc2c,03d8becefb69769086e7f4045eefdc2d,c3d8becefb69769086e7f4045eefdc2d"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Pesquisar registros">43400a1587003300663ca1bb36cb0b4b</action_type>
-        <action_type_parent display_value="Pesquisar registros">d1c56ec50b30030085c083eb37673a50</action_type_parent>
+        <action_type display_value="Look Up Records">43400a1587003300663ca1bb36cb0b4b</action_type>
+        <action_type_parent display_value="Look Up Records">d1c56ec50b30030085c083eb37673a50</action_type_parent>
         <attributes/>
         <comment>.</comment>
         <compiled_snapshot>43400a1587003300663ca1bb36cb0b4b</compiled_snapshot>
@@ -630,8 +630,8 @@
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=a0ac285efbe1b69086e7f4045eefdc91"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Pesquisar registro">9d09f99587003300663ca1bb36cb0ba3</action_type>
-        <action_type_parent display_value="Pesquisar registro">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
         <attributes/>
         <comment/>
         <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
@@ -654,8 +654,8 @@
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=7ad8becefb69769086e7f4045eefdc2c"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Atualizar registro">f9d01dd2c31332002841b63b12d3aea1</action_type>
-        <action_type_parent display_value="Atualizar registro">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
         <attributes/>
         <comment/>
         <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
@@ -678,8 +678,8 @@
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=03d8becefb69769086e7f4045eefdc2d"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Criar registro">2de05916c31332002841b63b12d3aee1</action_type>
-        <action_type_parent display_value="Criar registro">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <action_type display_value="Create Record">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent display_value="Create Record">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
         <attributes/>
         <comment/>
         <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
@@ -713,7 +713,7 @@
         <flow display_value="Superávit">f6d87ecefb69769086e7f4045eefdcf0</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Para cada">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
+        <logic_definition display_value="For Each">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
         <order>2</order>
         <outputs_assigned/>
         <parent_ui_id/>
@@ -740,7 +740,7 @@
         <flow display_value="Superávit">f6d87ecefb69769086e7f4045eefdcf0</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Se">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
         <order>5</order>
         <outputs_assigned/>
         <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
@@ -767,7 +767,7 @@
         <flow display_value="Superávit">f6d87ecefb69769086e7f4045eefdcf0</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Outro">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
         <order>7</order>
         <outputs_assigned/>
         <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
@@ -814,14 +814,14 @@
     <sys_hub_flow action="UPDATE">
         <sys_id>30d83ecefb69769086e7f4045eefdc50</sys_id>
         <latest_snapshot>f6d87ecefb69769086e7f4045eefdcf0</latest_snapshot>
-        <compiler_build>glide-yokohama-12-18-2024__patch7-hotfix2a-09-24-2025_10-07-2025_2003.zip</compiler_build>
+        <compiler_build>glide-yokohama-12-18-2024__patch7-hotfix2b-10-21-2025_11-06-2025_2131.zip</compiler_build>
     </sys_hub_flow>
     <sys_flow_trigger_plan action="delete_multiple" query="plan_id=30d83ecefb69769086e7f4045eefdc50"/>
     <sys_flow_subflow_plan action="delete_multiple" query="plan_id=30d83ecefb69769086e7f4045eefdc50^sys_idNOT IN8fd8becefb69769086e7f4045eefdc2f"/>
     <sys_flow_subflow_plan action="INSERT_OR_UPDATE">
-        <plan>com.snc.process_flow.engine.ProcessPlan@6dfd52ed</plan>
+        <plan>{"type":"PlanProxy","persistor":{"@class":".ChunkingPlanPersistor","table":"sys_flow_subflow_plan","id":"8fd8becefb69769086e7f4045eefdc2f","name":"plan","plan_signature":null}}</plan>
         <plan_id display_value="Superávit">30d83ecefb69769086e7f4045eefdc50</plan_id>
-        <snapshot>f6d87ecefb69769086e7f4045eefdcf0</snapshot>
+        <snapshot>828481e0fbf1f610f6d5f9d38eefdcf4</snapshot>
         <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
         <sys_created_on>2025-12-03 01:10:51</sys_created_on>
         <sys_domain>global</sys_domain>

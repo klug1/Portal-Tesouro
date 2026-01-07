@@ -2007,17 +2007,17 @@ outputs.variacoes = fieldMapping['v_variacao'];&#13;
     <sys_hub_action_plan action="INSERT_OR_UPDATE">
         <action_id display_value="Get MRVS Values (RCL With Dedutions)">6815877cfbf5e61086e7f4045eefdcb5</action_id>
         <plan>{"type":"PlanProxy","persistor":{"@class":".ChunkingPlanPersistor","table":"sys_hub_action_plan","id":"a3755f74fb79e61086e7f4045eefdc44","name":"plan","plan_signature":null}}</plan>
-        <snapshot>665a173cfb79e61086e7f4045eefdc4a</snapshot>
+        <snapshot>1bde838dfb3d221086e7f4045eefdc21</snapshot>
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-26 20:08:04</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>a3755f74fb79e61086e7f4045eefdc44</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_overrides/>
         <sys_scope/>
         <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-26 20:29:19</sys_updated_on>
+        <sys_updated_on>2025-05-27 14:17:37</sys_updated_on>
     </sys_hub_action_plan>
     <sys_hub_action_type_snapshot action="INSERT_OR_UPDATE">
         <access>public</access>

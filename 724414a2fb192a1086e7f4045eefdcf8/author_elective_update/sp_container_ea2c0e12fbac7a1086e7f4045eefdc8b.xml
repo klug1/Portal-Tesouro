@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container">
+    <sp_container action="DELETE">
+        <background_color/>
+        <background_image/>
+        <background_style>default</background_style>
+        <bootstrap_alt>false</bootstrap_alt>
+        <class_name/>
+        <container_class_name/>
+        <name>IADP Grafico - Test Page - Container 2</name>
+        <order>2</order>
+        <semantic_tag/>
+        <sp_page display_value="atualizacao_divida_publica">25cf7552fb6c7a1086e7f4045eefdcc9</sp_page>
+        <subheader>false</subheader>
+        <sys_class_name>sp_container</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-10-14 23:31:16</sys_created_on>
+        <sys_id>ea2c0e12fbac7a1086e7f4045eefdc8b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>IADP Grafico - Test Page - Container 2</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_container_ea2c0e12fbac7a1086e7f4045eefdc8b</sys_update_name>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-10-14 23:31:16</sys_updated_on>
+        <title/>
+        <width>container</width>
+    </sp_container>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</application>
+        <file_path/>
+        <instance_id>e34bb3801b9d82dc65324089bd4bcbee</instance_id>
+        <instance_name>sefazmtdev</instance_name>
+        <name>sp_container_ea2c0e12fbac7a1086e7f4045eefdc8b</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container"><sp_container action="INSERT_OR_UPDATE"><background_color/><background_image/><background_style>default</background_style><bootstrap_alt>false</bootstrap_alt><class_name/><container_class_name/><name>IADP Grafico - Test Page - Container 2</name><order>2</order><semantic_tag/><sp_page display_value="atualizacao_divida_publica">25cf7552fb6c7a1086e7f4045eefdcc9</sp_page><subheader>false</subheader><sys_class_name>sp_container</sys_class_name><sys_created_by>allex.sousa@artycs.com.br</sys_created_by><sys_created_on>2025-10-14 23:31:16</sys_created_on><sys_id>ea2c0e12fbac7a1086e7f4045eefdc8b</sys_id><sys_mod_count>0</sys_mod_count><sys_name>IADP Grafico - Test Page - Container 2</sys_name><sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package><sys_policy/><sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope><sys_update_name>sp_container_ea2c0e12fbac7a1086e7f4045eefdc8b</sys_update_name><sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by><sys_updated_on>2025-10-14 23:31:16</sys_updated_on><title/><width>container</width></sp_container></record_update>]]></payload>
+        <payload_hash>1801056786</payload_hash>
+        <record_name>IADP Grafico - Test Page - Container 2</record_name>
+        <reverted_from/>
+        <source>ec844835fbb7e61086e7f4045eefdc00</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-10-14 23:31:16</sys_created_on>
+        <sys_id>e22c8a56fbac7a1086e7f4045eefdc87</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_recorded_at>199e510528c0000001</sys_recorded_at>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-03 20:56:50</sys_updated_on>
+        <type>Container</type>
+        <update_guid>e62c8a56a5ac7a1091b202a2a4c24486</update_guid>
+        <update_guid_history>e62c8a56a5ac7a1091b202a2a4c24486:1801056786</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="IADP Grafico - Test Page - Container 2">2d6d7d3efbe47e10f6d5f9d38eefdc9f</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-10-16 11:43:43</sys_created_on>
+        <sys_db_object display_value="" name="sp_container">sp_container</sys_db_object>
+        <sys_id>3b39f964ba0f4034a00161c94c68ae10</sys_id>
+        <sys_metadata>ea2c0e12fbac7a1086e7f4045eefdc8b</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>IADP Grafico - Test Page - Container 2</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_scope_delete display_value="">06b5f462fd3a460d80eabc3a7195aca1</sys_scope_delete>
+        <sys_update_name>sp_container_ea2c0e12fbac7a1086e7f4045eefdc8b</sys_update_name>
+        <sys_update_version display_value="sp_container_ea2c0e12fbac7a1086e7f4045eefdc8b">e22c8a56fbac7a1086e7f4045eefdc87</sys_update_version>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-10-16 11:43:43</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="DELETE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>2</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">59859e5bfbe1a29086e7f4045eefdcbc</sp_column>
+        <sp_widget display_value="Widget Despesas porcentagem ano">fc8cff26fb2dae5086e7f4045eefdc2d</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-05-21 23:38:07</sys_created_on>
+        <sys_id>2f959e5bfbe1a29086e7f4045eefdc12</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_instance_2f959e5bfbe1a29086e7f4045eefdc12</sys_update_name>
+        <sys_updated_by>sued.barreto@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-10-01 15:45:43</sys_updated_on>
+        <title/>
+        <url/>
+        <widget_parameters/>
+    </sp_instance>
+    <sys_translated_text action="DELETE" query="documentkey=2f959e5bfbe1a29086e7f4045eefdc12"/>
+    <sys_translated_text action="DELETE">
+        <documentkey>2f959e5bfbe1a29086e7f4045eefdc12</documentkey>
+        <fieldname>short_description</fieldname>
+        <language>pb</language>
+        <sys_created_by>sued.barreto@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-10-01 15:45:35</sys_created_on>
+        <sys_id>aae46d06fb143a10f6d5f9d38eefdcc1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>sued.barreto@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-10-01 15:45:35</sys_updated_on>
+        <tablename>sp_instance</tablename>
+        <value/>
+    </sys_translated_text>
+    <sys_translated_text action="DELETE">
+        <documentkey>2f959e5bfbe1a29086e7f4045eefdc12</documentkey>
+        <fieldname>title</fieldname>
+        <language>pb</language>
+        <sys_created_by>sued.barreto@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-10-01 15:45:35</sys_created_on>
+        <sys_id>26e46d06fb143a10f6d5f9d38eefdcc3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>sued.barreto@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-10-01 15:45:35</sys_updated_on>
+        <tablename>sp_instance</tablename>
+        <value/>
+    </sys_translated_text>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</application>
+        <file_path/>
+        <instance_id>e34bb3801b9d82dc65324089bd4bcbee</instance_id>
+        <instance_name>sefazmtdev</instance_name>
+        <name>sp_instance_2f959e5bfbe1a29086e7f4045eefdc12</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance"><sp_instance action="INSERT_OR_UPDATE"><active>true</active><class_name/><color>default</color><css/><glyph/><id/><order>2</order><roles/><short_description/><size>md</size><sp_column display_value="1">59859e5bfbe1a29086e7f4045eefdcbc</sp_column><sp_widget display_value="Widget Despesas porcentagem ano">fc8cff26fb2dae5086e7f4045eefdc2d</sp_widget><sys_class_name>sp_instance</sys_class_name><sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by><sys_created_on>2025-05-21 23:38:07</sys_created_on><sys_id>2f959e5bfbe1a29086e7f4045eefdc12</sys_id><sys_mod_count>2</sys_mod_count><sys_name/><sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package><sys_policy/><sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope><sys_update_name>sp_instance_2f959e5bfbe1a29086e7f4045eefdc12</sys_update_name><sys_updated_by>sued.barreto@vaexpert.com.br</sys_updated_by><sys_updated_on>2025-10-01 15:45:43</sys_updated_on><title/><url/><widget_parameters/></sp_instance><sys_translated_text action="delete_multiple" query="documentkey=2f959e5bfbe1a29086e7f4045eefdc12"/><sys_translated_text action="INSERT_OR_UPDATE"><documentkey>2f959e5bfbe1a29086e7f4045eefdc12</documentkey><fieldname>short_description</fieldname><language>pb</language><sys_created_by>sued.barreto@vaexpert.com.br</sys_created_by><sys_created_on>2025-10-01 15:45:35</sys_created_on><sys_id>aae46d06fb143a10f6d5f9d38eefdcc1</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>sued.barreto@vaexpert.com.br</sys_updated_by><sys_updated_on>2025-10-01 15:45:35</sys_updated_on><tablename>sp_instance</tablename><value/></sys_translated_text><sys_translated_text action="INSERT_OR_UPDATE"><documentkey>2f959e5bfbe1a29086e7f4045eefdc12</documentkey><fieldname>title</fieldname><language>pb</language><sys_created_by>sued.barreto@vaexpert.com.br</sys_created_by><sys_created_on>2025-10-01 15:45:35</sys_created_on><sys_id>26e46d06fb143a10f6d5f9d38eefdcc3</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>sued.barreto@vaexpert.com.br</sys_updated_by><sys_updated_on>2025-10-01 15:45:35</sys_updated_on><tablename>sp_instance</tablename><value/></sys_translated_text></record_update>]]></payload>
+        <payload_hash>2051888474</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>4ed68f80fb9c3e9086e7f4045eefdc78</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>sued.barreto@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-10-01 15:45:43</sys_created_on>
+        <sys_id>20f4ad06fb143a10f6d5f9d38eefdc6f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>199a0736f240000001</sys_recorded_at>
+        <sys_updated_by>sued.barreto@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-10-01 15:45:43</sys_updated_on>
+        <type>Instance</type>
+        <update_guid>2cf4ad067a143a10805cec694fd6e06e</update_guid>
+        <update_guid_history>2cf4ad067a143a10805cec694fd6e06e:2051888474,aae46d0661143a105066cad34f961bc3:319779067,22e46d06f0143a104030a791f06350c2:-1821377857,a7959e5b39e1a29000183c9c91db1813:-1898741639</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">354d6e85fbc5f210f6d5f9d38eefdce4</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>sued.barreto@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-11-05 01:14:55</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance">sp_instance</sys_db_object>
+        <sys_id>13720e6d2eda44bcbce0b8e49e26b504</sys_id>
+        <sys_metadata>2f959e5bfbe1a29086e7f4045eefdc12</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_scope_delete display_value="">06b5f462fd3a460d80eabc3a7195aca1</sys_scope_delete>
+        <sys_update_name>sp_instance_2f959e5bfbe1a29086e7f4045eefdc12</sys_update_name>
+        <sys_update_version display_value="sp_instance_2f959e5bfbe1a29086e7f4045eefdc12">20f4ad06fb143a10f6d5f9d38eefdc6f</sys_update_version>
+        <sys_updated_by>sued.barreto@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-05 01:14:55</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

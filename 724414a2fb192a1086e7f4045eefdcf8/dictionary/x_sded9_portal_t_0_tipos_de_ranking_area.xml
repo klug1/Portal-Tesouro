@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="5a258534fb857210f6d5f9d38eefdceb" label="Tipos de Ranking/Área" max_length="40" name="x_sded9_portal_t_0_tipos_de_ranking_area" type="collection">
+        <element choice="1" display="true" label="Tipo Ranking" max_length="40" name="u_tipo_ranking" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Golden Rule" sequence="120" value="regra_de_ouro"/>
+                <element inactive_on_update="false" label="Primary Result" sequence="160" value="resultado_primario"/>
+                <element inactive_on_update="false" label="Resultado Primario" language="pt" sequence="160" value="resultado_primario"/>
+                <element inactive_on_update="false" label="Ranking Geral CLP" language="pt" sequence="100" value="ranking_geral_clp"/>
+                <element inactive_on_update="false" label="Budgetary Planning Success" sequence="140" value="sucesso_do_planejamento_orcamentario"/>
+                <element inactive_on_update="false" label="Liquidity Index" sequence="180" value="indice_de_liquidez"/>
+                <element inactive_on_update="false" label="Sucesso do Planejamento orçamentário" language="pt" sequence="140" value="sucesso_do_planejamento_orcamentario"/>
+                <element inactive_on_update="false" label="Regra de Ouro" language="pt" sequence="120" value="regra_de_ouro"/>
+                <element inactive_on_update="false" label="Overall CLP Ranking" sequence="100" value="ranking_geral_clp"/>
+                <element inactive_on_update="false" label="Indice de Liquidez" language="pt" sequence="180" value="indice_de_liquidez"/>
+                <element inactive_on_update="false" label="Current Savings" sequence="190" value="poupanca_corrente"/>
+                <element inactive_on_update="false" label="Fiscal Dependency" sequence="150" value="dependencia_fiscal"/>
+                <element inactive_on_update="false" label="Investment Rate" sequence="110" value="taxa_de_investimento"/>
+                <element inactive_on_update="false" label="Fiscal Solvency" sequence="130" value="solvencia_fiscal"/>
+                <element inactive_on_update="false" label="Poupança corrente" language="pt" sequence="190" value="poupanca_corrente"/>
+                <element inactive_on_update="false" label="Personnel Expenses" sequence="170" value="gasto_com_pessoal"/>
+                <element inactive_on_update="false" label="Dependência fiscal" language="pt" sequence="150" value="dependencia_fiscal"/>
+                <element inactive_on_update="false" label="Taxa de Investimento" language="pt" sequence="110" value="taxa_de_investimento"/>
+                <element inactive_on_update="false" label="Solvência fiscal" language="pt" sequence="130" value="solvencia_fiscal"/>
+                <element inactive_on_update="false" label="Gasto com Pessoal" language="pt" sequence="170" value="gasto_com_pessoal"/>
+            </choice>
+        </element>
+        <element label="Fonte" max_length="100" name="u_fonte" type="string"/>
+        <element label="Atualização" max_length="40" name="u_atualizacao" type="string"/>
+        <element label="Descrição" max_length="400" name="u_descricao" type="string"/>
+    </element>
+</database>

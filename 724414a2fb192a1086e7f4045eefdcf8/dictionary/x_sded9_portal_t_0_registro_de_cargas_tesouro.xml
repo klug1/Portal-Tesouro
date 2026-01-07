@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="2a9f5628fb29e25086e7f4045eefdc9d" label="Registro de Cargas Tesouro" max_length="40" name="x_sded9_portal_t_0_registro_de_cargas_tesouro" type="collection">
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element choice="3" label="Tabla" max_length="80" name="u_tabela" reference="sys_db_object" type="reference">
+            <choice/>
+        </element>
+    </element>
+</database>

@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="DELETE">
+        <access>public</access>
+        <acls/>
+        <active>false</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=703186000,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>27000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <compiler_build>glide-yokohama-12-18-2024__patch4-05-14-2025_06-04-2025_1836.zip</compiler_build>
+        <copied_from>4c553341fb71621086e7f4045eefdc07</copied_from>
+        <copied_from_name>RCL with Deductions</copied_from_name>
+        <description/>
+        <display_name_after_preview/>
+        <flow_priority>MEDIUM</flow_priority>
+        <generation_source/>
+        <internal_name>tesouro_dvida_pblica__credores</internal_name>
+        <label_cache>[{"name":"88fef126-39a9-4ad8-b84a-47e36beafd9f.Record","label":"3 - Look Up Record➛Tesouro dívida pública - Credores Record","reference":"x_sded9_portal_t_0_u_tesouro_divida_publica_credor","reference_display":"Tesouro dívida pública - Credores Record","type":"reference","base_type":"reference","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["record"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"88fef126-39a9-4ad8-b84a-47e36beafd9f.status","label":"3 - Look Up Record➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Error","value":"1","order":0.0},{"label":"Success","value":"0","order":1.0}],"usedInstances":{"cc765906-5769-430a-b4ae-373f078cb540":["condition"]},"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"subflow.record","label":"Input➛Record","reference":"x_sded9_portal_t_0_registro_de_cargas_tesouro","reference_display":"Treasury Cargo Registration","type":"reference","base_type":"reference","usedInstances":{"b1c3d1ce-831a-4bfb-b59b-fac37677e4f9":["conditions"],"0a53884c-6d3f-4926-b143-7aebb7b97d97":["conditions"],"39268173-2ed3-4659-805a-84b15f1045a3":["parent_sys_id"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"f4b7b973-3190-4871-8403-baaef11efe7b","uiTypeLabel":"Reference"}},{"name":"b1c3d1ce-831a-4bfb-b59b-fac37677e4f9.Records","label":"1 - Look Up Records➛Multi Row Question Answer Records","reference":"sc_multi_row_question_answer","reference_display":"Multi Row Question Answer Records","type":"records","base_type":"records","usedInstances":{"20fde648-3ced-4596-b1ac-b39b687a2a96":["items"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.value","label":"2 - For Each➛Multi Row Question Answer Record➛Value","reference":"","reference_display":"Value","type":"string","base_type":"string","parent_table_name":"sc_multi_row_question_answer","column_name":"value","usedInstances":{"88fef126-39a9-4ad8-b84a-47e36beafd9f":["conditions"]}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.row_index","label":"2 - For Each➛Multi Row Question Answer Record➛Row index","reference":"","reference_display":"Row index","type":"long","base_type":"long","parent_table_name":"sc_multi_row_question_answer","column_name":"row_index","usedInstances":{"0a53884c-6d3f-4926-b143-7aebb7b97d97":["conditions"],"39268173-2ed3-4659-805a-84b15f1045a3":["multirow_record"]}}]</label_cache>
+        <latest_snapshot/>
+        <master_snapshot/>
+        <master_snapshot_digest/>
+        <name>Tesouro dívida pública - Credores - Test</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id/>
+        <run_as>system</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>draft</status>
+        <substatus/>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-03 23:38:26</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>fa9d09f0fb09721086e7f4045eefdcbd</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Tesouro dívida pública - Credores - Test</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sys_hub_flow_fa9d09f0fb09721086e7f4045eefdcbd</sys_update_name>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-04 01:54:29</sys_updated_on>
+        <type>subflow</type>
+        <updation_source/>
+        <version>2</version>
+    </sys_hub_flow>
+    <sys_translated_text action="DELETE" query="documentkey=fa9d09f0fb09721086e7f4045eefdcbd"/>
+    <sys_variable_value action="DELETE" query="document_key=fa9d09f0fb09721086e7f4045eefdcbd"/>
+    <sys_hub_flow_stage action="DELETE" query="flow=fa9d09f0fb09721086e7f4045eefdcbd"/>
+    <sys_flow_cat_variable_model action="DELETE" query="id=fa9d09f0fb09721086e7f4045eefdcbd^sys_idNOT INb29d09f0fb09721086e7f4045eefdcbe"/>
+    <sys_flow_cat_variable_model action="DELETE">
+        <id>fa9d09f0fb09721086e7f4045eefdcbd</id>
+        <name>Tesouro dívida pública - Credores</name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-03 23:38:26</sys_created_on>
+        <sys_id>b29d09f0fb09721086e7f4045eefdcbe</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-03 23:38:26</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="DELETE" query="flow_catalog_model=b29d09f0fb09721086e7f4045eefdcbe"/>
+    <sys_hub_flow_input action="DELETE" query="model=fa9d09f0fb09721086e7f4045eefdcbd^sys_idNOT INfa9d09f0fb09721086e7f4045eefdcc1"/>
+    <sys_hub_flow_input action="DELETE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference,uiUniqueId=f4b7b973-3190-4871-8403-baaef11efe7b</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table>x_sded9_portal_t_0_registro_de_cargas_tesouro</choice_table>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>record</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Tesouro dívida pública - Credores - Test">fa9d09f0fb09721086e7f4045eefdcbd</model>
+        <model_id>fa9d09f0fb09721086e7f4045eefdcbd</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_fa9d09f0fb09721086e7f4045eefdcbd</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="x_sded9_portal_t_0_registro_de_cargas_tesouro">x_sded9_portal_t_0_registro_de_cargas_tesouro</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-03 23:38:26</sys_created_on>
+        <sys_id>fa9d09f0fb09721086e7f4045eefdcc1</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-03 23:38:26</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="DELETE" query="action_input=fa9d09f0fb09721086e7f4045eefdcc1"/>
+    <sys_hub_flow_output action="DELETE" query="model=fa9d09f0fb09721086e7f4045eefdcbd"/>
+    <sys_hub_alias_mapping action="DELETE" query="source_id=fa9d09f0fb09721086e7f4045eefdcbd"/>
+    <sys_hub_trigger_instance_v2 action="DELETE" query="flow=fa9d09f0fb09721086e7f4045eefdcbd"/>
+    <sys_hub_action_instance_v2 action="DELETE" query="flow=fa9d09f0fb09721086e7f4045eefdcbd^sys_idNOT IN369d49f0fb09721086e7f4045eefdc20,729d49f0fb09721086e7f4045eefdc22,f69d49f0fb09721086e7f4045eefdc22,90ef8db4fb09721086e7f4045eefdcfb"/>
+    <sys_hub_action_instance_v2 action="DELETE">
+        <action_type display_value="Look Up Records">43400a1587003300663ca1bb36cb0b4b</action_type>
+        <action_type_parent display_value="Look Up Records">d1c56ec50b30030085c083eb37673a50</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>43400a1587003300663ca1bb36cb0b4b</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Tesouro dívida pública - Credores - Test">fa9d09f0fb09721086e7f4045eefdcbd</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-03 23:38:26</sys_created_on>
+        <sys_id>369d49f0fb09721086e7f4045eefdc20</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-03 23:48:22</sys_updated_on>
+        <ui_id>b1c3d1ce-831a-4bfb-b59b-fac37677e4f9</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/9VXXU/bMBT9K1GeqyghpTDeEAhpD4AGiBfGLCdxWmuOndlOP6j633cdx2loC5Su2+Ax19f3nnt8jus+zH2a+Sf+cd4PQxwdHh+FYRyH4WAQpzhKkniQJmHST/yez3FBIFPjhBH4HGNWmW+VoqJimiIpJuhXRZSmgiPM1YRISMuoKhme3TfZlybVuxET71uT6p261HREWSYJ908eHnt+iSU01LByMl9Z0rOSIIYTwqDincHjXRlwva1nebZ5fTbTwH0ibksLmRksYc8nU014RqBVjpkiPb/APMNayFkbkQRn15wtAyPKNVT0TfJU0ScofxyavJzAWCmxa+0namiz4XQkaEquS0OXjVigdlGwquBXdgBDOMkxkOwIh0iloB4pDWYDokGU347E5MY1vKC8Hq9ZZCLFrP3CWkuaVJoocxaEkQIKoQKXJeVDVEoxpvVmwFIEQwYfQc5ADRlRdMgDnBrgAVCEgwuIn9fheyypmeISytTHn1MGp40s6UpUsmZljFJWqXpBgqhsLX9RcwVyMyjt1M18yFIECSqVtNSnsGFMmlEWva3kfhguJZEKnlHTU3U0TzUpkKjPA3EyCUzu9wpKZWNQvvgB2jVQaGaD87mqEsNIIEkKOlos1o2xj5K7GeisO+G27GzcvImyxkrPYo2Vor1ZCeD+JzNpWX08L73lDjvwGxZJj14VweHyvJWQGlnmOh4xPweGiOm61rtLu2n2ghKWPbv0t4DrNl8b+XnJ7KUJGsnmpsfK7X/w6W//DylYAJQhyzfljPL6xxeA7kfJ4evX2ZcVHdTH33nfmBhW6bqMsaeF97T7vVufq9PvFiDdxltA5N1ZlBuAuxvXlW+kG+9NuvHB+6QLwnmYt+hb1jYQ7N5Y5uhc/pPJx6v5oK7Ohmjx2Er/bLee0Xt7HpieK96M32XOrrLsyvkLAtvzC+4Fs/X+prtHsLXph6xZ0YRmQ6KX3V1WJvQEs5+b1ht1tR6qx/vj12D/Ve8NoqXPwANIEgVH1X0ORvD8WL8eosCGd7sdvnJNhjV520J0Oy/x1LtpMW4E3lwRtO3RaLq/xxfZv/h5c8RvdI/j/1P8/dlVwo+/AUCmO9DBDwAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="DELETE" query="source_id=369d49f0fb09721086e7f4045eefdc20"/>
+    <sys_hub_action_instance_v2 action="DELETE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Tesouro dívida pública - Credores - Test">fa9d09f0fb09721086e7f4045eefdcbd</flow>
+        <generation_source/>
+        <order>5</order>
+        <parent_ui_id>cc765906-5769-430a-b4ae-373f078cb540</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-03 23:38:27</sys_created_on>
+        <sys_id>729d49f0fb09721086e7f4045eefdc22</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-04 01:54:29</sys_updated_on>
+        <ui_id>30bd6918-a95f-4a24-b688-772ee9e9bf9e</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1UTU/bQBD9K5bPSWTHIU1yqxoh9VCQKOJCYTXeHcNKa6+73g2kUX5S/0Cv/LHO2usQoKUIIVWVepzxfLz35nnPN7EU8SKeoEjSeTrlWZpl4yQZzyZpPs3ydCwyQEzjQVxBiVRpkGsjKF6Bcj6x2cxmBRbpeDrM5jAfTkDMhvlsAsPJO8ymOUIh5sXopO3bbqlTyKZWsD4LAyjDr6USBqt4cX4xiGswtMuiiRebR5/sukamIEdFjUvNXYmVjT4uacZLefTdJz2Rx8T8DopFmM6kT9InjydNBjHeWqwE0roCVIODuIRKgNVmHS+scZQwCOK4UutdxbWsbMe0hNtGfqP5k8TXFUjUeFBhF7KgUC+OlhyPayt11WUs5KpXTitXVkcdBa8tFuCU3dPWNTQPaw/Zg+gQFp+v9c1Jv+9QVi27gFZpDmoXgbVG5s5i48+BCltRSqhrWV2x2uiVbJsJSjm6UhSMCqVvaGcjr6oRcI97RALB6JDyyzZ9BkZ6Ep9oDDVvW/Lsq/N7OxoBMGs5t4RZeygqbbiRtX1Pg1cYYG4Hwcj5wXMG4PP7e+/NvDfzLWvosnNWa2NBMcsS5hhR185ougpRBVa7XEkOjBsU2jz182lXHom7774+qu9+tA3RMPrQtpCSr7X8qQcdHXWgX0r4QfNvBAimf5ALnj94M8/P/pLnA6J/zPR/snoyfvat27t06+5mz+YumPeLS5JMXDpGeDgtJii7VANKkOdxdV/41OuvH/RK/2NJ6y1GHYDBi5XoBxxKVKL5hTT9DxAWsFVYsHv43/DlT/6//W/59l/8BKQvfOHGCAAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="DELETE" query="source_id=729d49f0fb09721086e7f4045eefdc22"/>
+    <sys_hub_action_instance_v2 action="DELETE">
+        <action_type display_value="Create Record">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent display_value="Create Record">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Tesouro dívida pública - Credores - Test">fa9d09f0fb09721086e7f4045eefdcbd</flow>
+        <generation_source/>
+        <order>7</order>
+        <parent_ui_id>bbf158a1-4051-412a-803b-c34c3913e71b</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-03 23:38:27</sys_created_on>
+        <sys_id>f69d49f0fb09721086e7f4045eefdc22</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-04 01:54:29</sys_updated_on>
+        <ui_id>070c3028-da05-4dc4-afc6-b2410b50b51a</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/9VUW2/TMBT+K5WfoyppSrX2DTH1CTZpoL2MYZ3Ep62RYwdfemHaf+c4ccIYVJoQCPEWf+f2feeSuwcmBVuxRYH5q2WxqMuiLGd5PruYF9WirIqZKAFxzjKmoUHy9FAp5N0jY3tQIYJH7gSKJW+N9aC45zkP3NaKExpqg458hXStgtNtCrl583ZykH43uYwuXhodneqdVMKiZqu7+4y1YKmOR8tWD89M/tQiV1CholwfIqfJVc/ppXp+CD6jL1Z5jhkrIqE8Y3j0qEkhW21AOcxYA1qAN/bEVt4GAiyCuNbqNHrspPaUkEXfo5NfKftFHv02SNJq7G3jk6em9XC9M7LG6zY2q0c6YsloVGj0VS8iths3EJQf2k1IcJQP20g5kkiMNu935nAzFFxL3alLRmVqUOMLvLeyCp7GSfNAhQ0l4g20rdRb3lqzl10wcWmmW0WP6UaZAxV1cqun0E15Sh2C6Zrwyw6+BSujineUhoIfO/X8S4h1ex2JMe9Fk4OrrWz9a0q3x0TuMRsWWWC+PDv4ovo+6G533ZMl7jcWPgfnQcDHkOel+BTGFR4B0Gb8jhHa2AbUCO2joBqSz8+L/7fK/ObpYEPkPE56etmLuzgkWEtUwv2ircPtpAJ8nwqk+yn+1P3M8/wfXVDP8T87oCf/sjOndP8NmmJYWhUGAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="DELETE" query="source_id=f69d49f0fb09721086e7f4045eefdc22"/>
+    <sys_hub_action_instance_v2 action="DELETE">
+        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Tesouro dívida pública - Credores - Test">fa9d09f0fb09721086e7f4045eefdcbd</flow>
+        <generation_source/>
+        <order>3</order>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-03 23:48:22</sys_created_on>
+        <sys_id>90ef8db4fb09721086e7f4045eefdcfb</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-03 23:48:22</sys_updated_on>
+        <ui_id>88fef126-39a9-4ad8-b84a-47e36beafd9f</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/9VYzW7bOBB+FUJn2ytZtmTltkhgoEC3AdpsL9mAoEgqJkqTKkXlz8gj7QvstS+2Q/3Yju3Yju2i6ZHDmeE3M9+MSF3PPMG8M48lfpIlyXAU+34Y+n4UhZQEaRpGNPVTMvA6niJTDpqWpJLD8o7I0q0fcME4S3CujSUSW+zjElte6NJozMSdYATnZSoFJZgazrQBYyaKXJLHr42Pq1odsR//On2U//ivMkBddF6Z8AKM6ERIZrjyzq5vOl5ODACy3Hhns5Ut+5hzLEnKpfPt8KJPDnxn71hfGK/H7g5ol1jVrrVhDovf8fiD5Qpy4p1lRBa8402JYsRq8ziXGE7YpZILwUQoCx49p/xQiCdwP/KdXsYhLMrrvfkSNwmsxXSiBeWXuRVa1ZIaaL2pZTlVn+oAXOp5Rkpp29SDpCzAH88dZgeiQZR9mej7z+2BY6Gq8JpNqSmR8xWx1oi0hKK7WnDJp+AIT0meC3WLc6OhqM4YsEx7txIWvUzqezi0ELeqR6gD3oMUkd4Y5BeV+CsxwkXxF7jhjjOZkFBtXCfd8aXKyh2msiyqDUNUUfvynqtc4e+lQ1lH3cSH6xSBQkGNyO2fYHDHm1CeO207DLdSJFlQgmrFhDuzWOqJEhOl/ynBls1mfT9jPBqMuiHlrDsYJlE3DQjtpmGSRqOY9EkS9YTl015l/vy83h9H+zusdc6XY9s3LxuNNyWraaIXsqaJgpM10cD3f1EbWVO+vy7a1Rd1wDuaI2BbScAW9S7gm4DrzC11xzq/D2boWHDJXgz3PcC1xpeObCh9fA1vQ9DMnbEy5fu//ZR/l/QEQAzX+RZKClV9ZAHoaXg73EqNNFjhQVX+BWsrGSnoOnsJsho9HT5lq7q2/N0DZGv4BRChqxrlBuDtfG3dN9QNT0bdsP826gJxrmdz9POsbUhwe5dypWv1n5w+WdUHdi0ZBM83c+qfH3Zm8NYz++7Mld4M39Scy8yqdy5eIdiJb2qvNFvnZ3b3BEyb83DdrPhesFtuF6e3WkzbeyK/bdpv2DXvoSq8o299wdaHQbp06xMZnkKdRA5XUcMpUKHAxHCc6VIx3FxCl+6DULdMmMI2yusz5DO3pVFIQ8shO+Go0kZz7VNMlj2iaw0/ZKgNr8FQIAgPVeGheXhvS8Yr82hwwrveMfNoTISsUg+PiXypdtyY6sm6aSbtqNqW8u85sPYEFZwU1PETbRPfN062HVh/i5fpsVOHcpIO+iSKwyDw/cBnsT+K42AUpVlE4kG2aDSMC0VhLILnDIgB7nFLhLaqwfpoaabmgX9PwPiPcTVdO3vDbY0vtHKP1n5skcMLZUYt3t0RNeMi1VpyohbsHP6yefFefrCU4mo1N7Xo46ai/axveSn+VuJ7yT84Uoy43x8FjHZHcRB3BxmLugkjwy5J0mEcMk4H2eGf55v/AYIcmeSlFAAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="DELETE" query="source_id=90ef8db4fb09721086e7f4045eefdcfb"/>
+    <sys_hub_sub_flow_instance_v2 action="DELETE" query="flow=fa9d09f0fb09721086e7f4045eefdcbd"/>
+    <sys_hub_flow_logic_instance_v2 action="DELETE" query="flow=fa9d09f0fb09721086e7f4045eefdcbd^sys_idNOT INf69d49f0fb09721086e7f4045eefdc1e,769d49f0fb09721086e7f4045eefdc1f,be9d49f0fb09721086e7f4045eefdc1f"/>
+    <sys_hub_flow_logic_instance_v2 action="DELETE">
+        <attributes/>
+        <block display_value="">212b3741fbf1621086e7f4045eefdcdc</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Tesouro dívida pública - Credores - Test">fa9d09f0fb09721086e7f4045eefdcbd</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="For Each">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-03 23:38:26</sys_created_on>
+        <sys_id>f69d49f0fb09721086e7f4045eefdc1e</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-04 01:54:29</sys_updated_on>
+        <ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/51STW/bMAz9Lzonhj+ypM6twFCgh61AV/QyFAYl0YkwWdIkOaln+L+Pip106HEnm4/k43siR2b76PoYXux9COpg2P7n24opkzD6H5mBDtmeqYhdYCt2At2neBx5ISpZCFzfVQWsN7zla/6l5usWRLXb7na4aevsGYX1MkwTtUoVnIbh9f8ZxFFp6XER6cCTtoie7cdPqTg4bDRw1DRoYaB+JSksatnWRV6LqtxWZZ6Xd5uCbytelLIClFuqu3Y+LqY/vUFip9DfeOmTVJT5iuF7RCORBrWgA65YB0ZCtH5g++h7AjyCfDJ6uFUclYlEx1Lte1B/iLvI81TYIjkSOCdvYbM85AyLo1UCn1xU1sxIBK6XHmF135nvs/y0Amyh1/G6AkL6QHzokuakYpHU/jja8/N14IMyF39LUlsB+hZBjF7xPmJIa0CNHRE1HTinzKFx3p7UpZm0dNlBU5C12p5paDq3DEQSntETQfZA+NcL/ApeJRffiIaap4v75nef5s4+FsXNbJoKgvDKxXuiO+EibnpL9zozhfkwJAoVaOBLwh6vV54SAy1ZiX+hs/W/ktQPbPoLPlHA5y8DAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="DELETE">
+        <attributes/>
+        <block display_value="">612b3741fbf1621086e7f4045eefdcde</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Tesouro dívida pública - Credores - Test">fa9d09f0fb09721086e7f4045eefdcbd</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>4</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-03 23:38:26</sys_created_on>
+        <sys_id>769d49f0fb09721086e7f4045eefdc1f</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-04 01:54:29</sys_updated_on>
+        <ui_id>cc765906-5769-430a-b4ae-373f078cb540</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Uy27bMBD8FUFnW9DDdm3fjLYBCrQN0Bi+NIGwIlc2UYpUScqOa/jfu9QjCRoHbYMeexNnXzO7A51C3bi6cXatV9aKrQqXX+9GoVAeo+9TqKDCcBkyrbhwQqu8BUbhHmTjAxuQ2gQcg5XSwXtFec4A14GCYA0FSgiuhAJJFVzYWsJx89eFbCckN9hzq8EQA4cmXJ5+Cbljjbn0xdT/xhmhtlQuOL3KGMpkwRKWpbMsjeN0PkmKWVYkKc8AIaO8ofDtIDX42CKjF3fg5xFuh0nacE8riUch3jtUHGl0CdLiKKxAcXDaHB8Qg8CvlXwEdkI5ahf65HsrflDvdDr1iSWSRoZd8OGZ9xvtYLbTguF17Ql2iINC9jVMy6ZSnzsd/hZYQiPdcAtCGkv9sPakPYueUnmz04cvw0A6SCuwD0rN6D7DCxytoWgcWn8YlFhRo7yCuqbl5LXRe9EWE5cq2kp6RKXUBxrqfRcB88Qj2hFEV4S/a+ENGOFVfKI2VNzRLMAKlrcepXbOkIRzu5b8e+MJdQJ7KXm3DUqwzIjarWjOHnvW59Fzgz/x9uk0n5dYJulsnC1gMZ4An4+L+QTGkzeYzQqEki/KyDpwjT2fb5s4znj83Oqv7vMvnL+AaTlN4ull509ml5x/wfMv2z39jd39gf7Q7XEc/7f7U7sLm3e27bW1w1/t9jtv7W6C7XzDkQlLRNYe+zD89X3gSAYQ7Cl00Oabl/CInX8CxwquWz8GAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="DELETE">
+        <attributes/>
+        <block display_value="">f7ee3f85fbf1621086e7f4045eefdc51</block>
+        <comment/>
+        <connected_to>cc765906-5769-430a-b4ae-373f078cb540</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Tesouro dívida pública - Credores - Test">fa9d09f0fb09721086e7f4045eefdcbd</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>6</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-03 23:38:26</sys_created_on>
+        <sys_id>be9d49f0fb09721086e7f4045eefdc1f</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-04 01:54:29</sys_updated_on>
+        <ui_id>bbf158a1-4051-412a-803b-c34c3913e71b</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="DELETE" query="attached_to=fa9d09f0fb09721086e7f4045eefdcbd"/>
+    <sys_hub_flow_variable action="DELETE" query="model=fa9d09f0fb09721086e7f4045eefdcbd"/>
+    <sys_documentation action="DELETE">
+        <element>record</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_fa9d09f0fb09721086e7f4045eefdcbd</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-03 23:38:26</sys_created_on>
+        <sys_id>fe9d09f0fb09721086e7f4045eefdcc3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-03 23:38:26</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="DELETE" query="name=var__m_sys_hub_flow_input_fa9d09f0fb09721086e7f4045eefdcbd"/>
+    <sys_choice action="DELETE" query="name=var__m_sys_hub_flow_output_fa9d09f0fb09721086e7f4045eefdcbd"/>
+    <sys_flow_trigger_plan action="DELETE" query="plan_id=fa9d09f0fb09721086e7f4045eefdcbd"/>
+    <sys_flow_subflow_plan action="DELETE" query="plan_id=fa9d09f0fb09721086e7f4045eefdcbd"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</application>
+        <file_path/>
+        <instance_id>e34bb3801b9d82dc65324089bd4bcbee</instance_id>
+        <instance_name>sefazmtdev</instance_name>
+        <name>sys_hub_flow_fa9d09f0fb09721086e7f4045eefdcbd</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_hub_flow"&gt;&lt;sys_hub_flow action="INSERT_OR_UPDATE"&gt;&lt;access&gt;public&lt;/access&gt;&lt;acls/&gt;&lt;active&gt;false&lt;/active&gt;&lt;annotation/&gt;&lt;attributes&gt;browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=703186000,viewActivatedIn=naturalLanguage&lt;/attributes&gt;&lt;authored_on_release_version&gt;27000&lt;/authored_on_release_version&gt;&lt;callable_by_client_api&gt;false&lt;/callable_by_client_api&gt;&lt;category/&gt;&lt;compiler_build&gt;glide-yokohama-12-18-2024__patch4-05-14-2025_06-04-2025_1836.zip&lt;/compiler_build&gt;&lt;copied_from&gt;4c553341fb71621086e7f4045eefdc07&lt;/copied_from&gt;&lt;copied_from_name&gt;RCL with Deductions&lt;/copied_from_name&gt;&lt;description/&gt;&lt;display_name_after_preview/&gt;&lt;flow_priority&gt;MEDIUM&lt;/flow_priority&gt;&lt;generation_source/&gt;&lt;internal_name&gt;tesouro_dvida_pblica__credores&lt;/internal_name&gt;&lt;label_cache&gt;[{"name":"88fef126-39a9-4ad8-b84a-47e36beafd9f.Record","label":"3 - Look Up Record➛Tesouro dívida pública - Credores Record","reference":"x_sded9_portal_t_0_u_tesouro_divida_publica_credor","reference_display":"Tesouro dívida pública - Credores Record","type":"reference","base_type":"reference","usedInstances":{"30bd6918-a95f-4a24-b688-772ee9e9bf9e":["record"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"88fef126-39a9-4ad8-b84a-47e36beafd9f.status","label":"3 - Look Up Record➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Error","value":"1","order":0.0},{"label":"Success","value":"0","order":1.0}],"usedInstances":{"cc765906-5769-430a-b4ae-373f078cb540":["condition"]},"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"subflow.record","label":"Input➛Record","reference":"x_sded9_portal_t_0_registro_de_cargas_tesouro","reference_display":"Treasury Cargo Registration","type":"reference","base_type":"reference","usedInstances":{"b1c3d1ce-831a-4bfb-b59b-fac37677e4f9":["conditions"],"0a53884c-6d3f-4926-b143-7aebb7b97d97":["conditions"],"39268173-2ed3-4659-805a-84b15f1045a3":["parent_sys_id"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"f4b7b973-3190-4871-8403-baaef11efe7b","uiTypeLabel":"Reference"}},{"name":"b1c3d1ce-831a-4bfb-b59b-fac37677e4f9.Records","label":"1 - Look Up Records➛Multi Row Question Answer Records","reference":"sc_multi_row_question_answer","reference_display":"Multi Row Question Answer Records","type":"records","base_type":"records","usedInstances":{"20fde648-3ced-4596-b1ac-b39b687a2a96":["items"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.value","label":"2 - For Each➛Multi Row Question Answer Record➛Value","reference":"","reference_display":"Value","type":"string","base_type":"string","parent_table_name":"sc_multi_row_question_answer","column_name":"value","usedInstances":{"88fef126-39a9-4ad8-b84a-47e36beafd9f":["conditions"]}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.row_index","label":"2 - For Each➛Multi Row Question Answer Record➛Row index","reference":"","reference_display":"Row index","type":"long","base_type":"long","parent_table_name":"sc_multi_row_question_answer","column_name":"row_index","usedInstances":{"0a53884c-6d3f-4926-b143-7aebb7b97d97":["conditions"],"39268173-2ed3-4659-805a-84b15f1045a3":["multirow_record"]}}]&lt;/label_cache&gt;&lt;latest_snapshot/&gt;&lt;master_snapshot/&gt;&lt;master_snapshot_digest/&gt;&lt;name&gt;Tesouro dívida pública - Credores - Test&lt;/name&gt;&lt;natlang/&gt;&lt;outputs/&gt;&lt;pre_compiled&gt;false&lt;/pre_compiled&gt;&lt;remote_trigger_id/&gt;&lt;run_as&gt;system&lt;/run_as&gt;&lt;run_with_roles/&gt;&lt;sc_callable&gt;false&lt;/sc_callable&gt;&lt;show_draft_actions&gt;false&lt;/show_draft_actions&gt;&lt;show_triggered_flows&gt;false&lt;/show_triggered_flows&gt;&lt;status&gt;draft&lt;/status&gt;&lt;substatus/&gt;&lt;sys_class_name&gt;sys_hub_flow&lt;/sys_class_name&gt;&lt;sys_created_by&gt;allex.sousa@artycs.com.br&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-11-03 23:38:26&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;fa9d09f0fb09721086e7f4045eefdcbd&lt;/sys_id&gt;&lt;sys_mod_count&gt;3&lt;/sys_mod_count&gt;&lt;sys_name&gt;Tesouro dívida pública - Credores - Test&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0"&gt;724414a2fb192a1086e7f4045eefdcf8&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Portal Tesouro"&gt;724414a2fb192a1086e7f4045eefdcf8&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_hub_flow_fa9d09f0fb09721086e7f4045eefdcbd&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;allex.sousa@artycs.com.br&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-11-04 01:54:29&lt;/sys_updated_on&gt;&lt;type&gt;subflow&lt;/type&gt;&lt;updation_source/&gt;&lt;version&gt;2&lt;/version&gt;&lt;/sys_hub_flow&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=fa9d09f0fb09721086e7f4045eefdcbd"/&gt;&lt;sys_variable_value action="delete_multiple" query="document_key=fa9d09f0fb09721086e7f4045eefdcbd"/&gt;&lt;sys_hub_flow_stage action="delete_multiple" query="flow=fa9d09f0fb09721086e7f4045eefdcbd"/&gt;&lt;sys_flow_cat_variable_model action="delete_multiple" query="id=fa9d09f0fb09721086e7f4045eefdcbd^sys_idNOT INb29d09f0fb09721086e7f4045eefdcbe"/&gt;&lt;sys_flow_cat_variable_model action="INSERT_OR_UPDATE"&gt;&lt;id&gt;fa9d09f0fb09721086e7f4045eefdcbd&lt;/id&gt;&lt;name&gt;Tesouro dívida pública - Credores&lt;/name&gt;&lt;sys_created_by&gt;allex.sousa@artycs.com.br&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-11-03 23:38:26&lt;/sys_created_on&gt;&lt;sys_id&gt;b29d09f0fb09721086e7f4045eefdcbe&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_scope/&gt;&lt;sys_updated_by&gt;allex.sousa@artycs.com.br&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-11-03 23:38:26&lt;/sys_updated_on&gt;&lt;/sys_flow_cat_variable_model&gt;&lt;sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=b29d09f0fb09721086e7f4045eefdcbe"/&gt;&lt;sys_hub_flow_input action="delete_multiple" query="model=fa9d09f0fb09721086e7f4045eefdcbd^sys_idNOT INfa9d09f0fb09721086e7f4045eefdcc1"/&gt;&lt;sys_hub_flow_input action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;array&gt;false&lt;/array&gt;&lt;array_denormalized&gt;false&lt;/array_denormalized&gt;&lt;attributes&gt;element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference,uiUniqueId=f4b7b973-3190-4871-8403-baaef11efe7b&lt;/attributes&gt;&lt;audit&gt;false&lt;/audit&gt;&lt;calculation&gt;&lt;![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]&gt;&lt;/calculation&gt;&lt;choice/&gt;&lt;choice_field/&gt;&lt;choice_table&gt;x_sded9_portal_t_0_registro_de_cargas_tesouro&lt;/choice_table&gt;&lt;column_label/&gt;&lt;comments/&gt;&lt;create_roles/&gt;&lt;default_value/&gt;&lt;defaultsort/&gt;&lt;delete_roles/&gt;&lt;dependent/&gt;&lt;dependent_on_field/&gt;&lt;display&gt;false&lt;/display&gt;&lt;dynamic_creation&gt;false&lt;/dynamic_creation&gt;&lt;dynamic_creation_script/&gt;&lt;dynamic_default_value/&gt;&lt;dynamic_ref_qual/&gt;&lt;element&gt;record&lt;/element&gt;&lt;element_reference&gt;false&lt;/element_reference&gt;&lt;foreign_database/&gt;&lt;formula/&gt;&lt;function_definition/&gt;&lt;function_field&gt;false&lt;/function_field&gt;&lt;help/&gt;&lt;hint/&gt;&lt;internal_type display_value="Reference"&gt;reference&lt;/internal_type&gt;&lt;label&gt;Record&lt;/label&gt;&lt;mandatory&gt;true&lt;/mandatory&gt;&lt;max_length&gt;32&lt;/max_length&gt;&lt;model display_value="Tesouro dívida pública - Credores - Test"&gt;fa9d09f0fb09721086e7f4045eefdcbd&lt;/model&gt;&lt;model_id&gt;fa9d09f0fb09721086e7f4045eefdcbd&lt;/model_id&gt;&lt;model_table&gt;sys_hub_flow&lt;/model_table&gt;&lt;name&gt;var__m_sys_hub_flow_input_fa9d09f0fb09721086e7f4045eefdcbd&lt;/name&gt;&lt;next_element/&gt;&lt;order&gt;1&lt;/order&gt;&lt;primary&gt;false&lt;/primary&gt;&lt;read_only&gt;false&lt;/read_only&gt;&lt;read_roles/&gt;&lt;reference display_value="" name="x_sded9_portal_t_0_registro_de_cargas_tesouro"&gt;x_sded9_portal_t_0_registro_de_cargas_tesouro&lt;/reference&gt;&lt;reference_cascade_rule/&gt;&lt;reference_floats&gt;false&lt;/reference_floats&gt;&lt;reference_key/&gt;&lt;reference_qual/&gt;&lt;reference_qual_condition/&gt;&lt;reference_type/&gt;&lt;sizeclass/&gt;&lt;spell_check&gt;false&lt;/spell_check&gt;&lt;staged&gt;false&lt;/staged&gt;&lt;sys_class_name&gt;sys_hub_flow_input&lt;/sys_class_name&gt;&lt;sys_created_by&gt;allex.sousa@artycs.com.br&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-11-03 23:38:26&lt;/sys_created_on&gt;&lt;sys_id&gt;fa9d09f0fb09721086e7f4045eefdcc1&lt;/sys_id&gt;&lt;sys_mod_count&gt;1&lt;/sys_mod_count&gt;&lt;sys_name/&gt;&lt;sys_package/&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Portal Tesouro"&gt;724414a2fb192a1086e7f4045eefdcf8&lt;/sys_scope&gt;&lt;sys_update_name/&gt;&lt;sys_updated_by&gt;allex.sousa@artycs.com.br&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-11-03 23:38:26&lt;/sys_updated_on&gt;&lt;table_reference&gt;false&lt;/table_reference&gt;&lt;text_index&gt;false&lt;/text_index&gt;&lt;unique&gt;false&lt;/unique&gt;&lt;use_dependent_field&gt;false&lt;/use_dependent_field&gt;&lt;use_dynamic_default&gt;false&lt;/use_dynamic_default&gt;&lt;use_reference_qualifier&gt;simple&lt;/use_reference_qualifier&gt;&lt;virtual&gt;false&lt;/virtual&gt;&lt;virtual_type&gt;script&lt;/virtual_type&gt;&lt;widget/&gt;&lt;write_roles/&gt;&lt;xml_view&gt;false&lt;/xml_view&gt;&lt;/sys_hub_flow_input&gt;&lt;sys_hub_action_input_action_instance action="delete_multiple" query="action_input=fa9d09f0fb09721086e7f4045eefdcc1"/&gt;&lt;sys_hub_flow_output action="delete_multiple" query="model=fa9d09f0fb09721086e7f4045eefdcbd"/&gt;&lt;sys_hub_alias_mapping action="delete_multiple" query="source_id=fa9d09f0fb09721086e7f4045eefdcbd"/&gt;&lt;sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=fa9d09f0fb09721086e7f4045eefdcbd"/&gt;&lt;sys_hub_action_instance_v2 action="delete_multiple" query="flow=fa9d09f0fb09721086e7f4045eefdcbd^sys_idNOT IN369d49f0fb09721086e7f4045eefdc20,729d49f0fb09721086e7f4045eefdc22,f69d49f0fb09721086e7f4045eefdc22,90ef8db4fb09721086e7f4045eefdcfb"/&gt;&lt;sys_hub_action_instance_v2 action="INSERT_OR_UPDATE"&gt;&lt;action_type display_value="Look Up Records"&gt;43400a1587003300663ca1bb36cb0b4b&lt;/action_type&gt;&lt;action_type_parent display_value="Look Up Records"&gt;d1c56ec50b30030085c083eb37673a50&lt;/action_type_parent&gt;&lt;attributes/&gt;&lt;comment/&gt;&lt;compiled_snapshot&gt;43400a1587003300663ca1bb36cb0b4b&lt;/compiled_snapshot&gt;&lt;display_text/&gt;&lt;flow display_value="Tesouro dívida pública - Credores - Test"&gt;fa9d09f0fb09721086e7f4045eefdcbd&lt;/flow&gt;&lt;generation_source/&gt;&lt;order&gt;1&lt;/order&gt;&lt;parent_ui_id/&gt;&lt;sys_class_name&gt;sys_hub_action_instance_v2&lt;/sys_class_name&gt;&lt;sys_created_by&gt;allex.sousa@artycs.com.br&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-11-03 23:38:26&lt;/sys_created_on&gt;&lt;sys_id&gt;369d49f0fb09721086e7f4045eefdc20&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_scope display_value="Portal Tesouro"&gt;724414a2fb192a1086e7f4045eefdcf8&lt;/sys_scope&gt;&lt;sys_updated_by&gt;allex.sousa@artycs.com.br&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-11-03 23:48:22&lt;/sys_updated_on&gt;&lt;ui_id&gt;b1c3d1ce-831a-4bfb-b59b-fac37677e4f9&lt;/ui_id&gt;&lt;updation_source/&gt;&lt;values&gt;H4sIAAAAAAAA/9VXXU/bMBT9K1GeqyghpTDeEAhpD4AGiBfGLCdxWmuOndlOP6j633cdx2loC5Su2+Ax19f3nnt8jus+zH2a+Sf+cd4PQxwdHh+FYRyH4WAQpzhKkniQJmHST/yez3FBIFPjhBH4HGNWmW+VoqJimiIpJuhXRZSmgiPM1YRISMuoKhme3TfZlybVuxET71uT6p261HREWSYJ908eHnt+iSU01LByMl9Z0rOSIIYTwqDincHjXRlwva1nebZ5fTbTwH0ibksLmRksYc8nU014RqBVjpkiPb/APMNayFkbkQRn15wtAyPKNVT0TfJU0ScofxyavJzAWCmxa+0namiz4XQkaEquS0OXjVigdlGwquBXdgBDOMkxkOwIh0iloB4pDWYDokGU347E5MY1vKC8Hq9ZZCLFrP3CWkuaVJoocxaEkQIKoQKXJeVDVEoxpvVmwFIEQwYfQc5ADRlRdMgDnBrgAVCEgwuIn9fheyypmeISytTHn1MGp40s6UpUsmZljFJWqXpBgqhsLX9RcwVyMyjt1M18yFIECSqVtNSnsGFMmlEWva3kfhguJZEKnlHTU3U0TzUpkKjPA3EyCUzu9wpKZWNQvvgB2jVQaGaD87mqEsNIIEkKOlos1o2xj5K7GeisO+G27GzcvImyxkrPYo2Vor1ZCeD+JzNpWX08L73lDjvwGxZJj14VweHyvJWQGlnmOh4xPweGiOm61rtLu2n2ghKWPbv0t4DrNl8b+XnJ7KUJGsnmpsfK7X/w6W//DylYAJQhyzfljPL6xxeA7kfJ4evX2ZcVHdTH33nfmBhW6bqMsaeF97T7vVufq9PvFiDdxltA5N1ZlBuAuxvXlW+kG+9NuvHB+6QLwnmYt+hb1jYQ7N5Y5uhc/pPJx6v5oK7Ohmjx2Er/bLee0Xt7HpieK96M32XOrrLsyvkLAtvzC+4Fs/X+prtHsLXph6xZ0YRmQ6KX3V1WJvQEs5+b1ht1tR6qx/vj12D/Ve8NoqXPwANIEgVH1X0ORvD8WL8eosCGd7sdvnJNhjV520J0Oy/x1LtpMW4E3lwRtO3RaLq/xxfZv/h5c8RvdI/j/1P8/dlVwo+/AUCmO9DBDwAA&lt;/values&gt;&lt;/sys_hub_action_instance_v2&gt;&lt;sys_hub_alias_mapping action="delete_multiple" query="source_id=369d49f0fb09721086e7f4045eefdc20"/&gt;&lt;sys_hub_action_instance_v2 action="INSERT_OR_UPDATE"&gt;&lt;action_type display_value="Update Record"&gt;f9d01dd2c31332002841b63b12d3aea1&lt;/action_type&gt;&lt;action_type_parent display_value="Update Record"&gt;baf174c8c3c232002841b63b12d3aee4&lt;/action_type_parent&gt;&lt;attributes/&gt;&lt;comment/&gt;&lt;compiled_snapshot&gt;f9d01dd2c31332002841b63b12d3aea1&lt;/compiled_snapshot&gt;&lt;display_text/&gt;&lt;flow display_value="Tesouro dívida pública - Credores - Test"&gt;fa9d09f0fb09721086e7f4045eefdcbd&lt;/flow&gt;&lt;generation_source/&gt;&lt;order&gt;5&lt;/order&gt;&lt;parent_ui_id&gt;cc765906-5769-430a-b4ae-373f078cb540&lt;/parent_ui_id&gt;&lt;sys_class_name&gt;sys_hub_action_instance_v2&lt;/sys_class_name&gt;&lt;sys_created_by&gt;allex.sousa@artycs.com.br&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-11-03 23:38:27&lt;/sys_created_on&gt;&lt;sys_id&gt;729d49f0fb09721086e7f4045eefdc22&lt;/sys_id&gt;&lt;sys_mod_count&gt;3&lt;/sys_mod_count&gt;&lt;sys_scope display_value="Portal Tesouro"&gt;724414a2fb192a1086e7f4045eefdcf8&lt;/sys_scope&gt;&lt;sys_updated_by&gt;allex.sousa@artycs.com.br&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-11-04 01:54:29&lt;/sys_updated_on&gt;&lt;ui_id&gt;30bd6918-a95f-4a24-b688-772ee9e9bf9e&lt;/ui_id&gt;&lt;updation_source/&gt;&lt;values&gt;H4sIAAAAAAAA/+1UTU/bQBD9K5bPSWTHIU1yqxoh9VCQKOJCYTXeHcNKa6+73g2kUX5S/0Cv/LHO2usQoKUIIVWVepzxfLz35nnPN7EU8SKeoEjSeTrlWZpl4yQZzyZpPs3ydCwyQEzjQVxBiVRpkGsjKF6Bcj6x2cxmBRbpeDrM5jAfTkDMhvlsAsPJO8ymOUIh5sXopO3bbqlTyKZWsD4LAyjDr6USBqt4cX4xiGswtMuiiRebR5/sukamIEdFjUvNXYmVjT4uacZLefTdJz2Rx8T8DopFmM6kT9InjydNBjHeWqwE0roCVIODuIRKgNVmHS+scZQwCOK4UutdxbWsbMe0hNtGfqP5k8TXFUjUeFBhF7KgUC+OlhyPayt11WUs5KpXTitXVkcdBa8tFuCU3dPWNTQPaw/Zg+gQFp+v9c1Jv+9QVi27gFZpDmoXgbVG5s5i48+BCltRSqhrWV2x2uiVbJsJSjm6UhSMCqVvaGcjr6oRcI97RALB6JDyyzZ9BkZ6Ep9oDDVvW/Lsq/N7OxoBMGs5t4RZeygqbbiRtX1Pg1cYYG4Hwcj5wXMG4PP7e+/NvDfzLWvosnNWa2NBMcsS5hhR185ougpRBVa7XEkOjBsU2jz182lXHom7774+qu9+tA3RMPrQtpCSr7X8qQcdHXWgX0r4QfNvBAimf5ALnj94M8/P/pLnA6J/zPR/snoyfvat27t06+5mz+YumPeLS5JMXDpGeDgtJii7VANKkOdxdV/41OuvH/RK/2NJ6y1GHYDBi5XoBxxKVKL5hTT9DxAWsFVYsHv43/DlT/6//W/59l/8BKQvfOHGCAAA&lt;/values&gt;&lt;/sys_hub_action_instance_v2&gt;&lt;sys_hub_alias_mapping action="delete_multiple" query="source_id=729d49f0fb09721086e7f4045eefdc22"/&gt;&lt;sys_hub_action_instance_v2 action="INSERT_OR_UPDATE"&gt;&lt;action_type display_value="Create Record"&gt;2de05916c31332002841b63b12d3aee1&lt;/action_type&gt;&lt;action_type_parent display_value="Create Record"&gt;02f0b88cc3c632002841b63b12d3aeff&lt;/action_type_parent&gt;&lt;attributes/&gt;&lt;comment/&gt;&lt;compiled_snapshot&gt;2de05916c31332002841b63b12d3aee1&lt;/compiled_snapshot&gt;&lt;display_text/&gt;&lt;flow display_value="Tesouro dívida pública - Credores - Test"&gt;fa9d09f0fb09721086e7f4045eefdcbd&lt;/flow&gt;&lt;generation_source/&gt;&lt;order&gt;7&lt;/order&gt;&lt;parent_ui_id&gt;bbf158a1-4051-412a-803b-c34c3913e71b&lt;/parent_ui_id&gt;&lt;sys_class_name&gt;sys_hub_action_instance_v2&lt;/sys_class_name&gt;&lt;sys_created_by&gt;allex.sousa@artycs.com.br&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-11-03 23:38:27&lt;/sys_created_on&gt;&lt;sys_id&gt;f69d49f0fb09721086e7f4045eefdc22&lt;/sys_id&gt;&lt;sys_mod_count&gt;3&lt;/sys_mod_count&gt;&lt;sys_scope display_value="Portal Tesouro"&gt;724414a2fb192a1086e7f4045eefdcf8&lt;/sys_scope&gt;&lt;sys_updated_by&gt;allex.sousa@artycs.com.br&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-11-04 01:54:29&lt;/sys_updated_on&gt;&lt;ui_id&gt;070c3028-da05-4dc4-afc6-b2410b50b51a&lt;/ui_id&gt;&lt;updation_source/&gt;&lt;values&gt;H4sIAAAAAAAA/9VUW2/TMBT+K5WfoyppSrX2DTH1CTZpoL2MYZ3Ep62RYwdfemHaf+c4ccIYVJoQCPEWf+f2feeSuwcmBVuxRYH5q2WxqMuiLGd5PruYF9WirIqZKAFxzjKmoUHy9FAp5N0jY3tQIYJH7gSKJW+N9aC45zkP3NaKExpqg458hXStgtNtCrl583ZykH43uYwuXhodneqdVMKiZqu7+4y1YKmOR8tWD89M/tQiV1CholwfIqfJVc/ppXp+CD6jL1Z5jhkrIqE8Y3j0qEkhW21AOcxYA1qAN/bEVt4GAiyCuNbqNHrspPaUkEXfo5NfKftFHv02SNJq7G3jk6em9XC9M7LG6zY2q0c6YsloVGj0VS8iths3EJQf2k1IcJQP20g5kkiMNu935nAzFFxL3alLRmVqUOMLvLeyCp7GSfNAhQ0l4g20rdRb3lqzl10wcWmmW0WP6UaZAxV1cqun0E15Sh2C6Zrwyw6+BSujineUhoIfO/X8S4h1ex2JMe9Fk4OrrWz9a0q3x0TuMRsWWWC+PDv4ovo+6G533ZMl7jcWPgfnQcDHkOel+BTGFR4B0Gb8jhHa2AbUCO2joBqSz8+L/7fK/ObpYEPkPE56etmLuzgkWEtUwv2ircPtpAJ8nwqk+yn+1P3M8/wfXVDP8T87oCf/sjOndP8NmmJYWhUGAAA=&lt;/values&gt;&lt;/sys_hub_action_instance_v2&gt;&lt;sys_hub_alias_mapping action="delete_multiple" query="source_id=f69d49f0fb09721086e7f4045eefdc22"/&gt;&lt;sys_hub_action_instance_v2 action="INSERT_OR_UPDATE"&gt;&lt;action_type display_value="Look Up Record"&gt;9d09f99587003300663ca1bb36cb0ba3&lt;/action_type&gt;&lt;action_type_parent display_value="Look Up Record"&gt;b93f42810b30030085c083eb37673a63&lt;/action_type_parent&gt;&lt;attributes/&gt;&lt;comment/&gt;&lt;compiled_snapshot&gt;9d09f99587003300663ca1bb36cb0ba3&lt;/compiled_snapshot&gt;&lt;display_text/&gt;&lt;flow display_value="Tesouro dívida pública - Credores - Test"&gt;fa9d09f0fb09721086e7f4045eefdcbd&lt;/flow&gt;&lt;generation_source/&gt;&lt;order&gt;3&lt;/order&gt;&lt;parent_ui_id&gt;20fde648-3ced-4596-b1ac-b39b687a2a96&lt;/parent_ui_id&gt;&lt;sys_class_name&gt;sys_hub_action_instance_v2&lt;/sys_class_name&gt;&lt;sys_created_by&gt;allex.sousa@artycs.com.br&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-11-03 23:48:22&lt;/sys_created_on&gt;&lt;sys_id&gt;90ef8db4fb09721086e7f4045eefdcfb&lt;/sys_id&gt;&lt;sys_mod_count&gt;1&lt;/sys_mod_count&gt;&lt;sys_scope display_value="Portal Tesouro"&gt;724414a2fb192a1086e7f4045eefdcf8&lt;/sys_scope&gt;&lt;sys_updated_by&gt;allex.sousa@artycs.com.br&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-11-03 23:48:22&lt;/sys_updated_on&gt;&lt;ui_id&gt;88fef126-39a9-4ad8-b84a-47e36beafd9f&lt;/ui_id&gt;&lt;updation_source/&gt;&lt;values&gt;H4sIAAAAAAAA/9VYzW7bOBB+FUJn2ytZtmTltkhgoEC3AdpsL9mAoEgqJkqTKkXlz8gj7QvstS+2Q/3Yju3Yju2i6ZHDmeE3M9+MSF3PPMG8M48lfpIlyXAU+34Y+n4UhZQEaRpGNPVTMvA6niJTDpqWpJLD8o7I0q0fcME4S3CujSUSW+zjElte6NJozMSdYATnZSoFJZgazrQBYyaKXJLHr42Pq1odsR//On2U//ivMkBddF6Z8AKM6ERIZrjyzq5vOl5ODACy3Hhns5Ut+5hzLEnKpfPt8KJPDnxn71hfGK/H7g5ol1jVrrVhDovf8fiD5Qpy4p1lRBa8402JYsRq8ziXGE7YpZILwUQoCx49p/xQiCdwP/KdXsYhLMrrvfkSNwmsxXSiBeWXuRVa1ZIaaL2pZTlVn+oAXOp5Rkpp29SDpCzAH88dZgeiQZR9mej7z+2BY6Gq8JpNqSmR8xWx1oi0hKK7WnDJp+AIT0meC3WLc6OhqM4YsEx7txIWvUzqezi0ELeqR6gD3oMUkd4Y5BeV+CsxwkXxF7jhjjOZkFBtXCfd8aXKyh2msiyqDUNUUfvynqtc4e+lQ1lH3cSH6xSBQkGNyO2fYHDHm1CeO207DLdSJFlQgmrFhDuzWOqJEhOl/ynBls1mfT9jPBqMuiHlrDsYJlE3DQjtpmGSRqOY9EkS9YTl015l/vy83h9H+zusdc6XY9s3LxuNNyWraaIXsqaJgpM10cD3f1EbWVO+vy7a1Rd1wDuaI2BbScAW9S7gm4DrzC11xzq/D2boWHDJXgz3PcC1xpeObCh9fA1vQ9DMnbEy5fu//ZR/l/QEQAzX+RZKClV9ZAHoaXg73EqNNFjhQVX+BWsrGSnoOnsJsho9HT5lq7q2/N0DZGv4BRChqxrlBuDtfG3dN9QNT0bdsP826gJxrmdz9POsbUhwe5dypWv1n5w+WdUHdi0ZBM83c+qfH3Zm8NYz++7Mld4M39Scy8yqdy5eIdiJb2qvNFvnZ3b3BEyb83DdrPhesFtuF6e3WkzbeyK/bdpv2DXvoSq8o299wdaHQbp06xMZnkKdRA5XUcMpUKHAxHCc6VIx3FxCl+6DULdMmMI2yusz5DO3pVFIQ8shO+Go0kZz7VNMlj2iaw0/ZKgNr8FQIAgPVeGheXhvS8Yr82hwwrveMfNoTISsUg+PiXypdtyY6sm6aSbtqNqW8u85sPYEFZwU1PETbRPfN062HVh/i5fpsVOHcpIO+iSKwyDw/cBnsT+K42AUpVlE4kG2aDSMC0VhLILnDIgB7nFLhLaqwfpoaabmgX9PwPiPcTVdO3vDbY0vtHKP1n5skcMLZUYt3t0RNeMi1VpyohbsHP6yefFefrCU4mo1N7Xo46ai/axveSn+VuJ7yT84Uoy43x8FjHZHcRB3BxmLugkjwy5J0mEcMk4H2eGf55v/AYIcmeSlFAAA&lt;/values&gt;&lt;/sys_hub_action_instance_v2&gt;&lt;sys_hub_alias_mapping action="delete_multiple" query="source_id=90ef8db4fb09721086e7f4045eefdcfb"/&gt;&lt;sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=fa9d09f0fb09721086e7f4045eefdcbd"/&gt;&lt;sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=fa9d09f0fb09721086e7f4045eefdcbd^sys_idNOT INf69d49f0fb09721086e7f4045eefdc1e,769d49f0fb09721086e7f4045eefdc1f,be9d49f0fb09721086e7f4045eefdc1f"/&gt;&lt;sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE"&gt;&lt;attributes/&gt;&lt;block display_value=""&gt;212b3741fbf1621086e7f4045eefdcdc&lt;/block&gt;&lt;comment/&gt;&lt;connected_to/&gt;&lt;decision_table/&gt;&lt;display_text/&gt;&lt;flow display_value="Tesouro dívida pública - Credores - Test"&gt;fa9d09f0fb09721086e7f4045eefdcbd&lt;/flow&gt;&lt;flow_variables_assigned/&gt;&lt;generation_source/&gt;&lt;logic_definition display_value="For Each"&gt;098e1dc5c3e232002841b63b12d3ae33&lt;/logic_definition&gt;&lt;order&gt;2&lt;/order&gt;&lt;outputs_assigned/&gt;&lt;parent_ui_id/&gt;&lt;sys_class_name&gt;sys_hub_flow_logic_instance_v2&lt;/sys_class_name&gt;&lt;sys_created_by&gt;allex.sousa@artycs.com.br&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-11-03 23:38:26&lt;/sys_created_on&gt;&lt;sys_id&gt;f69d49f0fb09721086e7f4045eefdc1e&lt;/sys_id&gt;&lt;sys_mod_count&gt;4&lt;/sys_mod_count&gt;&lt;sys_scope display_value="Portal Tesouro"&gt;724414a2fb192a1086e7f4045eefdcf8&lt;/sys_scope&gt;&lt;sys_updated_by&gt;allex.sousa@artycs.com.br&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-11-04 01:54:29&lt;/sys_updated_on&gt;&lt;ui_id&gt;20fde648-3ced-4596-b1ac-b39b687a2a96&lt;/ui_id&gt;&lt;updation_source/&gt;&lt;values&gt;H4sIAAAAAAAA/51STW/bMAz9Lzonhj+ypM6twFCgh61AV/QyFAYl0YkwWdIkOaln+L+Pip106HEnm4/k43siR2b76PoYXux9COpg2P7n24opkzD6H5mBDtmeqYhdYCt2At2neBx5ISpZCFzfVQWsN7zla/6l5usWRLXb7na4aevsGYX1MkwTtUoVnIbh9f8ZxFFp6XER6cCTtoie7cdPqTg4bDRw1DRoYaB+JSksatnWRV6LqtxWZZ6Xd5uCbytelLIClFuqu3Y+LqY/vUFip9DfeOmTVJT5iuF7RCORBrWgA65YB0ZCtH5g++h7AjyCfDJ6uFUclYlEx1Lte1B/iLvI81TYIjkSOCdvYbM85AyLo1UCn1xU1sxIBK6XHmF135nvs/y0Amyh1/G6AkL6QHzokuakYpHU/jja8/N14IMyF39LUlsB+hZBjF7xPmJIa0CNHRE1HTinzKFx3p7UpZm0dNlBU5C12p5paDq3DEQSntETQfZA+NcL/ApeJRffiIaap4v75nef5s4+FsXNbJoKgvDKxXuiO+EibnpL9zozhfkwJAoVaOBLwh6vV54SAy1ZiX+hs/W/ktQPbPoLPlHA5y8DAAA=&lt;/values&gt;&lt;workflow_reference/&gt;&lt;/sys_hub_flow_logic_instance_v2&gt;&lt;sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE"&gt;&lt;attributes/&gt;&lt;block display_value=""&gt;612b3741fbf1621086e7f4045eefdcde&lt;/block&gt;&lt;comment/&gt;&lt;connected_to/&gt;&lt;decision_table/&gt;&lt;display_text/&gt;&lt;flow display_value="Tesouro dívida pública - Credores - Test"&gt;fa9d09f0fb09721086e7f4045eefdcbd&lt;/flow&gt;&lt;flow_variables_assigned/&gt;&lt;generation_source/&gt;&lt;logic_definition display_value="If"&gt;af4e1945c3e232002841b63b12d3ae3e&lt;/logic_definition&gt;&lt;order&gt;4&lt;/order&gt;&lt;outputs_assigned/&gt;&lt;parent_ui_id&gt;20fde648-3ced-4596-b1ac-b39b687a2a96&lt;/parent_ui_id&gt;&lt;sys_class_name&gt;sys_hub_flow_logic_instance_v2&lt;/sys_class_name&gt;&lt;sys_created_by&gt;allex.sousa@artycs.com.br&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-11-03 23:38:26&lt;/sys_created_on&gt;&lt;sys_id&gt;769d49f0fb09721086e7f4045eefdc1f&lt;/sys_id&gt;&lt;sys_mod_count&gt;5&lt;/sys_mod_count&gt;&lt;sys_scope display_value="Portal Tesouro"&gt;724414a2fb192a1086e7f4045eefdcf8&lt;/sys_scope&gt;&lt;sys_updated_by&gt;allex.sousa@artycs.com.br&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-11-04 01:54:29&lt;/sys_updated_on&gt;&lt;ui_id&gt;cc765906-5769-430a-b4ae-373f078cb540&lt;/ui_id&gt;&lt;updation_source/&gt;&lt;values&gt;H4sIAAAAAAAA/+1Uy27bMBD8FUFnW9DDdm3fjLYBCrQN0Bi+NIGwIlc2UYpUScqOa/jfu9QjCRoHbYMeexNnXzO7A51C3bi6cXatV9aKrQqXX+9GoVAeo+9TqKDCcBkyrbhwQqu8BUbhHmTjAxuQ2gQcg5XSwXtFec4A14GCYA0FSgiuhAJJFVzYWsJx89eFbCckN9hzq8EQA4cmXJ5+Cbljjbn0xdT/xhmhtlQuOL3KGMpkwRKWpbMsjeN0PkmKWVYkKc8AIaO8ofDtIDX42CKjF3fg5xFuh0nacE8riUch3jtUHGl0CdLiKKxAcXDaHB8Qg8CvlXwEdkI5ahf65HsrflDvdDr1iSWSRoZd8OGZ9xvtYLbTguF17Ql2iINC9jVMy6ZSnzsd/hZYQiPdcAtCGkv9sPakPYueUnmz04cvw0A6SCuwD0rN6D7DCxytoWgcWn8YlFhRo7yCuqbl5LXRe9EWE5cq2kp6RKXUBxrqfRcB88Qj2hFEV4S/a+ENGOFVfKI2VNzRLMAKlrcepXbOkIRzu5b8e+MJdQJ7KXm3DUqwzIjarWjOHnvW59Fzgz/x9uk0n5dYJulsnC1gMZ4An4+L+QTGkzeYzQqEki/KyDpwjT2fb5s4znj83Oqv7vMvnL+AaTlN4ull509ml5x/wfMv2z39jd39gf7Q7XEc/7f7U7sLm3e27bW1w1/t9jtv7W6C7XzDkQlLRNYe+zD89X3gSAYQ7Cl00Oabl/CInX8CxwquWz8GAAA=&lt;/values&gt;&lt;workflow_reference/&gt;&lt;/sys_hub_flow_logic_instance_v2&gt;&lt;sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE"&gt;&lt;attributes/&gt;&lt;block display_value=""&gt;f7ee3f85fbf1621086e7f4045eefdc51&lt;/block&gt;&lt;comment/&gt;&lt;connected_to&gt;cc765906-5769-430a-b4ae-373f078cb540&lt;/connected_to&gt;&lt;decision_table/&gt;&lt;display_text/&gt;&lt;flow display_value="Tesouro dívida pública - Credores - Test"&gt;fa9d09f0fb09721086e7f4045eefdcbd&lt;/flow&gt;&lt;flow_variables_assigned/&gt;&lt;generation_source/&gt;&lt;logic_definition display_value="Else"&gt;1f781bf3c32232002841b63b12d3aee6&lt;/logic_definition&gt;&lt;order&gt;6&lt;/order&gt;&lt;outputs_assigned/&gt;&lt;parent_ui_id&gt;20fde648-3ced-4596-b1ac-b39b687a2a96&lt;/parent_ui_id&gt;&lt;sys_class_name&gt;sys_hub_flow_logic_instance_v2&lt;/sys_class_name&gt;&lt;sys_created_by&gt;allex.sousa@artycs.com.br&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-11-03 23:38:26&lt;/sys_created_on&gt;&lt;sys_id&gt;be9d49f0fb09721086e7f4045eefdc1f&lt;/sys_id&gt;&lt;sys_mod_count&gt;5&lt;/sys_mod_count&gt;&lt;sys_scope display_value="Portal Tesouro"&gt;724414a2fb192a1086e7f4045eefdcf8&lt;/sys_scope&gt;&lt;sys_updated_by&gt;allex.sousa@artycs.com.br&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-11-04 01:54:29&lt;/sys_updated_on&gt;&lt;ui_id&gt;bbf158a1-4051-412a-803b-c34c3913e71b&lt;/ui_id&gt;&lt;updation_source/&gt;&lt;values&gt;H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=&lt;/values&gt;&lt;workflow_reference/&gt;&lt;/sys_hub_flow_logic_instance_v2&gt;&lt;sys_hub_pill_compound action="delete_multiple" query="attached_to=fa9d09f0fb09721086e7f4045eefdcbd"/&gt;&lt;sys_hub_flow_variable action="delete_multiple" query="model=fa9d09f0fb09721086e7f4045eefdcbd"/&gt;&lt;sys_documentation action="INSERT_OR_UPDATE"&gt;&lt;element&gt;record&lt;/element&gt;&lt;help/&gt;&lt;hint/&gt;&lt;label&gt;Record&lt;/label&gt;&lt;language&gt;en&lt;/language&gt;&lt;name&gt;var__m_sys_hub_flow_input_fa9d09f0fb09721086e7f4045eefdcbd&lt;/name&gt;&lt;plural/&gt;&lt;sys_class_name&gt;sys_documentation&lt;/sys_class_name&gt;&lt;sys_created_by&gt;allex.sousa@artycs.com.br&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-11-03 23:38:26&lt;/sys_created_on&gt;&lt;sys_id&gt;fe9d09f0fb09721086e7f4045eefdcc3&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name/&gt;&lt;sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0"&gt;724414a2fb192a1086e7f4045eefdcf8&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Portal Tesouro"&gt;724414a2fb192a1086e7f4045eefdcf8&lt;/sys_scope&gt;&lt;sys_update_name/&gt;&lt;sys_updated_by&gt;allex.sousa@artycs.com.br&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-11-03 23:38:26&lt;/sys_updated_on&gt;&lt;url/&gt;&lt;url_target/&gt;&lt;/sys_documentation&gt;&lt;sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_fa9d09f0fb09721086e7f4045eefdcbd"/&gt;&lt;sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_fa9d09f0fb09721086e7f4045eefdcbd"/&gt;&lt;sys_flow_trigger_plan action="delete_multiple" query="plan_id=fa9d09f0fb09721086e7f4045eefdcbd"/&gt;&lt;sys_flow_subflow_plan action="delete_multiple" query="plan_id=fa9d09f0fb09721086e7f4045eefdcbd"/&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-207979583</payload_hash>
+        <record_name>Tesouro dívida pública - Credores - Test</record_name>
+        <reverted_from/>
+        <source>ac38315afb2c7a1086e7f4045eefdc67</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-04 01:54:29</sys_created_on>
+        <sys_id>37bc2130fbc9721086e7f4045eefdcdd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19a4c92a3210000001</sys_recorded_at>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-04 01:54:29</sys_updated_on>
+        <type>Flow</type>
+        <update_guid>b7bc21301cc97210c95a806bfe2118dc</update_guid>
+        <update_guid_history>b7bc21301cc97210c95a806bfe2118dc:-207979583,54efcdb4aa09721065059a16e6e2e505:536273718,879d49f065097210e5943582b87fa728:712499434,fe9d09f09409721003da96fd2c71babf:-376086498</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-04 02:11:03</sys_created_on>
+        <sys_db_object display_value="" name="sys_hub_flow">sys_hub_flow</sys_db_object>
+        <sys_id>42d3f4f1e4c142dd83971e6781418f59</sys_id>
+        <sys_metadata>fa9d09f0fb09721086e7f4045eefdcbd</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Tesouro dívida pública - Credores - Test</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_scope_delete display_value="">06b5f462fd3a460d80eabc3a7195aca1</sys_scope_delete>
+        <sys_update_name>sys_hub_flow_fa9d09f0fb09721086e7f4045eefdcbd</sys_update_name>
+        <sys_update_version display_value="sys_hub_flow_fa9d09f0fb09721086e7f4045eefdcbd">37bc2130fbc9721086e7f4045eefdcdd</sys_update_version>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-04 02:11:03</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

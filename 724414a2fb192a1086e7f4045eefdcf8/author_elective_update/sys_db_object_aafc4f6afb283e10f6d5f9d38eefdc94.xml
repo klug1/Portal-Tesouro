@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_db_object">
+    <sys_db_object action="DELETE">
+        <access/>
+        <actions_access>false</actions_access>
+        <alter_access>false</alter_access>
+        <caller_access/>
+        <client_scripts_access>false</client_scripts_access>
+        <configuration_access>false</configuration_access>
+        <create_access>false</create_access>
+        <create_access_controls>false</create_access_controls>
+        <delete_access>false</delete_access>
+        <filter_extension/>
+        <is_df_table>false</is_df_table>
+        <is_extendable>false</is_extendable>
+        <label>u_imp_tmpl_x_sded9_portal_t_0_u_tesouro_divida_publica_credor</label>
+        <live_feed_enabled>false</live_feed_enabled>
+        <name>x_sded9_portal_t_0_u_imp_tmpl_x_sded9_portal_t_0_u_tesouro_divida_publica_credor</name>
+        <number_ref/>
+        <provider_class/>
+        <read_access>true</read_access>
+        <scriptable_table>false</scriptable_table>
+        <super_class display_value="Import Set Row" name="sys_import_set_row">93304c501b1102101e3f6570f54bcbc4</super_class>
+        <sys_class_name>sys_db_object</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-10-15 22:52:54</sys_created_on>
+        <sys_id>aafc4f6afb283e10f6d5f9d38eefdc94</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Portal T 0 U Imp Tmpl X Sded9 Portal T 0 U Tesouro Divida Publica Credor</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sys_db_object_aafc4f6afb283e10f6d5f9d38eefdc94</sys_update_name>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-10-15 22:52:54</sys_updated_on>
+        <update_access>false</update_access>
+        <user_role/>
+        <ws_access>true</ws_access>
+    </sys_db_object>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</application>
+        <file_path/>
+        <instance_id>e34bb3801b9d82dc65324089bd4bcbee</instance_id>
+        <instance_name>sefazmtdev</instance_name>
+        <name>sys_db_object_aafc4f6afb283e10f6d5f9d38eefdc94</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_db_object"><sys_db_object action="INSERT_OR_UPDATE"><access/><actions_access>false</actions_access><alter_access>false</alter_access><caller_access/><client_scripts_access>false</client_scripts_access><configuration_access>false</configuration_access><create_access>false</create_access><create_access_controls>false</create_access_controls><delete_access>false</delete_access><filter_extension/><is_df_table>false</is_df_table><is_extendable>false</is_extendable><label>u_imp_tmpl_x_sded9_portal_t_0_u_tesouro_divida_publica_credor</label><live_feed_enabled>false</live_feed_enabled><name>x_sded9_portal_t_0_u_imp_tmpl_x_sded9_portal_t_0_u_tesouro_divida_publica_credor</name><number_ref/><provider_class/><read_access>true</read_access><scriptable_table>false</scriptable_table><super_class display_value="Import Set Row" name="sys_import_set_row">93304c501b1102101e3f6570f54bcbc4</super_class><sys_class_name>sys_db_object</sys_class_name><sys_created_by>allex.sousa@artycs.com.br</sys_created_by><sys_created_on>2025-10-15 22:52:54</sys_created_on><sys_id>aafc4f6afb283e10f6d5f9d38eefdc94</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Portal T 0 U Imp Tmpl X Sded9 Portal T 0 U Tesouro Divida Publica Credor</sys_name><sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package><sys_policy/><sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope><sys_update_name>sys_db_object_aafc4f6afb283e10f6d5f9d38eefdc94</sys_update_name><sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by><sys_updated_on>2025-10-15 22:52:54</sys_updated_on><update_access>false</update_access><user_role/><ws_access>true</ws_access></sys_db_object></record_update>]]></payload>
+        <payload_hash>1712049194</payload_hash>
+        <record_name>u_imp_tmpl_x_sded9_portal_t_0_u_tesouro_divida_publica_credor</record_name>
+        <reverted_from/>
+        <source>ec844835fbb7e61086e7f4045eefdc00</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-10-15 22:52:55</sys_created_on>
+        <sys_id>a6fc4f6afb283e10f6d5f9d38eefdcd0</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_recorded_at>199ea1392cf0000001</sys_recorded_at>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-10-15 23:12:24</sys_updated_on>
+        <type>Table</type>
+        <update_guid>2efc4f6aa8283e1021d72a67c75629cf</update_guid>
+        <update_guid_history>2efc4f6aa8283e1021d72a67c75629cf:1712049194</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>allex.sousa@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-12-11 19:28:32</sys_created_on>
+        <sys_db_object display_value="" name="sys_db_object">sys_db_object</sys_db_object>
+        <sys_id>14ff6bc4f17f45d187c9e7599be69f99</sys_id>
+        <sys_metadata>aafc4f6afb283e10f6d5f9d38eefdc94</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Portal T 0 U Imp Tmpl X Sded9 Portal T 0 U Tesouro Divida Publica Credor</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_scope_delete display_value="">06b5f462fd3a460d80eabc3a7195aca1</sys_scope_delete>
+        <sys_update_name>sys_db_object_aafc4f6afb283e10f6d5f9d38eefdc94</sys_update_name>
+        <sys_update_version display_value="sys_db_object_aafc4f6afb283e10f6d5f9d38eefdc94">a6fc4f6afb283e10f6d5f9d38eefdcd0</sys_update_version>
+        <sys_updated_by>allex.sousa@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-12-11 19:28:32</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

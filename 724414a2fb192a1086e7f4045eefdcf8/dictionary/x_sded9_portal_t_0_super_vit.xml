@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="94d32f3dfb957e10f6d5f9d38eefdcde" label="Superávit" max_length="40" name="x_sded9_portal_t_0_super_vit" type="collection">
+        <element label="Legislative Surplus" max_length="20" name="superavit_legislativo" type="decimal"/>
+        <element label="Public Prosecutor’s Office Surplus" max_length="20" name="superavit_ministerio_publico" type="decimal"/>
+        <element label="Year" max_length="40" name="u_ano" type="integer"/>
+        <element label="Executive Surplus" max_length="20" name="superavit_executivo" type="decimal"/>
+        <element label="Judiciary Surplus" max_length="20" name="superavit_judiciario" type="decimal"/>
+        <element label="Audit Court Surplus" max_length="20" name="superavit_tribunal_de_contas" type="decimal"/>
+        <element label="Public Defender’s Office Surplus" max_length="20" name="superavit_defensoria" type="decimal"/>
+        <element label="Total Surplus" max_length="20" name="superavit_total" type="decimal"/>
+    </element>
+</database>

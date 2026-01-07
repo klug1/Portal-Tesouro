@@ -27,7 +27,7 @@
         <formula/>
         <function_definition/>
         <function_field>false</function_field>
-        <internal_type display_value="Cadeia de caracteres">string</internal_type>
+        <internal_type display_value="String">string</internal_type>
         <mandatory>false</mandatory>
         <max_length>40</max_length>
         <name>u_imp_tmpl_x_sded9_portal_t_0_u_despesa_bruta_e_liquida</name>
@@ -47,7 +47,6 @@
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>sued.barreto@vaexpert.com.br</sys_created_by>
         <sys_created_on>2025-10-07 14:46:38</sys_created_on>
-        <sys_id>65f01084fba4721086e7f4045eefdc35</sys_id>
         <sys_name>Mês</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>

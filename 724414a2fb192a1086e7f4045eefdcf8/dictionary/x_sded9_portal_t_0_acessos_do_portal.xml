@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="402dcac1fb05f210f6d5f9d38eefdc8b" label="Acessos do Portal" max_length="40" name="x_sded9_portal_t_0_acessos_do_portal" type="collection">
+        <element label="Usuário" max_length="32" name="u_usuario" reference="sys_user" type="reference"/>
+        <element label="Pagina/URL" max_length="100" name="u_pagina_url" type="string"/>
+        <element label="Anonimo ID" max_length="100" name="u_anonimo_id" type="string"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="IP" max_length="40" name="u_ip" type="string"/>
+        <element label="Hora do Acesso" max_length="40" name="u_hora_do_acesso" type="glide_date_time"/>
+        <index name="index">
+            <element name="u_usuario"/>
+        </index>
+    </element>
+</database>

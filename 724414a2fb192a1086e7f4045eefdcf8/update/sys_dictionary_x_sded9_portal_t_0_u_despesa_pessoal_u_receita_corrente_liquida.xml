@@ -13,7 +13,7 @@
         <choice/>
         <choice_field/>
         <choice_table/>
-        <column_label>Ingresos corrientes netos, SEL: 7406A FIBO DE MEDIDAS</column_label>
+        <column_label>Receita corrente líquida</column_label>
         <comments/>
         <create_roles/>
         <default_value/>
@@ -52,14 +52,13 @@
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-07 14:39:31</sys_created_on>
-        <sys_id>2a0490f2fb5d6a1086e7f4045eefdc3a</sys_id>
-        <sys_name>Ingresos corrientes netos, SEL: 7406A FIBO DE MEDIDAS</sys_name>
+        <sys_name>Receita corrente líquida</sys_name>
         <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
         <sys_policy/>
         <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
         <sys_update_name>sys_dictionary_x_sded9_portal_t_0_u_despesa_pessoal_u_receita_corrente_liquida</sys_update_name>
-        <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
-        <sys_updated_on>2025-05-20 14:04:22</sys_updated_on>
+        <sys_updated_by>jacqueline.silva@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-10-30 12:47:02</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>

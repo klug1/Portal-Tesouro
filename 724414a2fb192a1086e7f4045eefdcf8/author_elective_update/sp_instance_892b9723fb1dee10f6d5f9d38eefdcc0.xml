@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="DELETE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>1</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">631984effbd96e1086e7f4045eefdc00</sp_column>
+        <sp_widget display_value="Acesso Rapido Sefaz">ca07442ffbd96e1086e7f4045eefdc7b</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-05-10 13:04:39</sys_created_on>
+        <sys_id>892b9723fb1dee10f6d5f9d38eefdcc0</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_instance_892b9723fb1dee10f6d5f9d38eefdcc0</sys_update_name>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-10 13:50:58</sys_updated_on>
+        <title/>
+        <url/>
+        <widget_parameters/>
+    </sp_instance>
+    <sys_translated_text action="DELETE" query="documentkey=892b9723fb1dee10f6d5f9d38eefdcc0"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</application>
+        <file_path/>
+        <instance_id>e34bb3801b9d82dc65324089bd4bcbee</instance_id>
+        <instance_name>sefazmtdev</instance_name>
+        <name>sp_instance_892b9723fb1dee10f6d5f9d38eefdcc0</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance"><sp_instance action="INSERT_OR_UPDATE"><active>true</active><class_name/><color>default</color><css/><glyph/><id/><order>1</order><roles/><short_description/><size>md</size><sp_column display_value="1">631984effbd96e1086e7f4045eefdc00</sp_column><sp_widget display_value="Acesso Rapido Sefaz">ca07442ffbd96e1086e7f4045eefdc7b</sp_widget><sys_class_name>sp_instance</sys_class_name><sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by><sys_created_on>2025-05-10 13:04:39</sys_created_on><sys_id>892b9723fb1dee10f6d5f9d38eefdcc0</sys_id><sys_mod_count>2</sys_mod_count><sys_name/><sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package><sys_policy/><sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope><sys_update_name>sp_instance_892b9723fb1dee10f6d5f9d38eefdcc0</sys_update_name><sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by><sys_updated_on>2025-05-10 13:50:58</sys_updated_on><title/><url/><widget_parameters/></sp_instance><sys_translated_text action="delete_multiple" query="documentkey=892b9723fb1dee10f6d5f9d38eefdcc0"/></record_update>]]></payload>
+        <payload_hash>-158559157</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>35de2536fb1daa10f6d5f9d38eefdcc5</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-05-10 13:50:58</sys_created_on>
+        <sys_id>1bb567affb1dee10f6d5f9d38eefdc66</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>196ba769eef0000001</sys_recorded_at>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-10 13:50:58</sys_updated_on>
+        <type>Instance</type>
+        <update_guid>57b567af481dee1026638bed532ec666</update_guid>
+        <update_guid_history>57b567af481dee1026638bed532ec666:-158559157,68b5ab2f8a1dee106d9b62f8d2ddd3f5:-1060837954,852bd3639a1dee108126418e68668325:-158559157</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">f31e7c48fb783650f6d5f9d38eefdc45</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>patrick.almeida@vaexpert.com.br</sys_created_by>
+        <sys_created_on>2025-10-20 04:19:39</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance">sp_instance</sys_db_object>
+        <sys_id>0600630e96214b22818a4318c9817641</sys_id>
+        <sys_metadata>892b9723fb1dee10f6d5f9d38eefdcc0</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_scope_delete display_value="">06b5f462fd3a460d80eabc3a7195aca1</sys_scope_delete>
+        <sys_update_name>sp_instance_892b9723fb1dee10f6d5f9d38eefdcc0</sys_update_name>
+        <sys_update_version display_value="sp_instance_892b9723fb1dee10f6d5f9d38eefdcc0">1bb567affb1dee10f6d5f9d38eefdc66</sys_update_version>
+        <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
+        <sys_updated_on>2025-10-20 04:19:39</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="c40a9484fbd57210f6d5f9d38eefdca6" label="Capacidade de Pagamento" max_length="40" name="x_sded9_portal_t_0_capacidade_de_pagamento" type="collection">
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Poupança Corrente" max_length="40" name="u_poupanca_corrente" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Nota CAPAG" max_length="40" name="u_nota_capag" type="string">
+            <choice>
+                <element inactive_on_update="false" label="D" sequence="4" value="d"/>
+                <element inactive_on_update="false" label="C" sequence="3" value="c"/>
+                <element inactive_on_update="false" label="B" sequence="2" value="b"/>
+                <element inactive_on_update="false" label="A" sequence="1" value="a"/>
+                <element inactive_on_update="false" label="A+" sequence="0" value="a_mais"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Liquidez Relativa" max_length="40" name="u_liquidez_relativa" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Endividamento" max_length="40" name="u_endividamento" type="string"/>
+        <element label="Ano" max_length="40" name="u_ano" type="integer"/>
+    </element>
+</database>

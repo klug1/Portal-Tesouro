@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="e71d97b1fb957e10f6d5f9d38eefdc18" label="Ranking Centro de Lideranças Públicas" max_length="40" name="x_sded9_portal_t_0_ranking_centro_de_lideran_as_p_blicas" type="collection">
+        <element label="Primary Result" max_length="20" name="resultado_primario" type="decimal"/>
+        <element label="Fiscal Solvency" max_length="20" name="solvencia_fiscal" type="decimal"/>
+        <element label="Current Savings" max_length="20" name="poupanca_corrente" type="decimal"/>
+        <element label="Liquidity Index" max_length="20" name="indice_de_liquidez" type="decimal"/>
+        <element label="Personnel Expenditure" max_length="20" name="gasto_com_pessoal" type="decimal"/>
+        <element label="Year" max_length="40" name="u_ano" type="integer"/>
+        <element label="Fiscal Dependence" max_length="20" name="dependencia_fiscal" type="decimal"/>
+        <element label="Overall CLP Ranking" max_length="20" name="ranking_geral_clp" type="decimal"/>
+        <element label="Budget Planning Success" max_length="20" name="sucesso_do_planejamento_orcamentario" type="decimal"/>
+        <element label="Investment Rate" max_length="20" name="taxa_de_investimento" type="decimal"/>
+        <element label="Golden Rule" max_length="20" name="regra_de_ouro" type="decimal"/>
+        <element choice="1" label="State" max_length="40" name="estado" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Ceará" sequence="5" value="ceara"/>
+                <element inactive_on_update="false" label="Rio Grande do Norte" sequence="19" value="rio_grande_do_norte"/>
+                <element inactive_on_update="false" label="Paraná" sequence="15" value="parana"/>
+                <element inactive_on_update="false" label="Roraima" sequence="22" value="roraima"/>
+                <element inactive_on_update="false" label="Acre" sequence="0" value="acre"/>
+                <element inactive_on_update="false" label="Pará" sequence="13" value="para"/>
+                <element inactive_on_update="false" label="Goiás" sequence="8" value="goias"/>
+                <element inactive_on_update="false" label="Piauí" sequence="17" value="piaui"/>
+                <element inactive_on_update="false" label="Paraíba" sequence="14" value="paraiba"/>
+                <element inactive_on_update="false" label="Distrito Federal" sequence="6" value="distrito_federal"/>
+                <element inactive_on_update="false" label="Maranhão" sequence="9" value="maranhao"/>
+                <element inactive_on_update="false" label="Pernambuco" sequence="16" value="pernambuco"/>
+                <element inactive_on_update="false" label="Rio de Janeiro" sequence="18" value="rio_de_janeiro"/>
+                <element inactive_on_update="false" label="Amapá" sequence="2" value="amapa"/>
+                <element inactive_on_update="false" label="Espírito Santo" sequence="7" value="espirito_santo"/>
+                <element inactive_on_update="false" label="Santa Catarina" sequence="23" value="santa_catarina"/>
+                <element inactive_on_update="false" label="Mato Grosso do Sul" sequence="11" value="mato_grosso_do_sul"/>
+                <element inactive_on_update="false" label="Alagoas" sequence="1" value="alagoas"/>
+                <element inactive_on_update="false" label="Bahia" sequence="4" value="bahia"/>
+                <element inactive_on_update="false" label="Rondônia" sequence="21" value="rondonia"/>
+                <element inactive_on_update="false" label="Tocantins" sequence="26" value="tocantins"/>
+                <element inactive_on_update="false" label="Minas Gerais" sequence="12" value="minas_gerais"/>
+                <element inactive_on_update="false" label="Mato Grosso" sequence="10" value="mato_grosso"/>
+                <element inactive_on_update="false" label="Rio Grande do Sul" sequence="20" value="rio_grande_do_sul"/>
+                <element inactive_on_update="false" label="Amazonas" sequence="3" value="amazonas"/>
+                <element inactive_on_update="false" label="São Paulo" sequence="24" value="sao_paulo"/>
+                <element inactive_on_update="false" label="Sergipe" sequence="25" value="sergipe"/>
+            </choice>
+        </element>
+    </element>
+</database>

@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function ($timeout) {
+  var c = this;
+
+
+function drawGauge(data) {
+  var canvas = document.getElementById('gaugeCanvas');
+  if (!canvas) return;
+
+  var ctx = canvas.getContext('2d');
+  var width = canvas.width;
+  var height = canvas.height;
+
+  ctx.clearRect(0, 0, width, height);
+
+  var centerX = width / 2;
+  var centerY = height * 0.75; // Antes estava 0.9 — subimos um pouco
+  var radius = 100;
+
+  function percentToAngle(p) {
+    return Math.PI * (1 + p / 100);
+  }
+
+  function drawArc(startPercent, endPercent, color) {
+    ctx.beginPath();
+    ctx.arc(
+      centerX, centerY, radius,
+      percentToAngle(startPercent),
+      percentToAngle(endPercent),
+      false
+    );
+    ctx.lineWidth = 30;
+    ctx.strokeStyle = color;
+    ctx.stroke();
+  }
+
+  drawArc(0, data.limiteAlerta, '#62bf46');         // verde
+  drawArc(data.limiteAlerta, data.limitePrudencial, '#f7e821'); // amarelo
+  drawArc(data.limitePrudencial, data.limiteMaximo, '#ff4513'); // vermelho
+
+  // Ponteiro - mais curto e centralizado
+  var ponteiroAngle = percentToAngle(data.comprometimento);
+  ctx.beginPath();
+  ctx.moveTo(centerX, centerY);
+  ctx.lineTo(
+    centerX + radius * 0.7 * Math.cos(ponteiroAngle),
+    centerY + radius * 0.7 * Math.sin(ponteiroAngle)
+  );
+  ctx.lineWidth = 8;
+  ctx.strokeStyle = '#555';
+  ctx.stroke();
+
+  // Valor central
+  ctx.font = "bold 22px Arial";
+  ctx.fillStyle = "#000";
+  ctx.textAlign = "center";
+  ctx.fillText(data.comprometimento + "%", centerX, centerY - 20);
+
+  // Texto da legenda
+  ctx.font = "14px Arial";
+  ctx.fillText("Comprometimento RCL com Pessoal", centerX, centerY - 40);
+
+  // Rótulos dos limites com bom espaçamento
+  ctx.font = "12px Arial";
+  ctx.fillText("Limite de Alerta", centerX - radius + 10, centerY + 20);
+  ctx.fillText(data.limiteAlerta + "%", centerX - radius + 10, centerY + 35);
+
+  ctx.fillText("Limite Prudencial", centerX, centerY - radius - 10);
+  ctx.fillText(data.limitePrudencial + "%", centerX, centerY - radius + 5);
+
+  ctx.fillText("Limite Máximo", centerX + radius - 10, centerY + 20);
+  ctx.fillText(data.limiteMaximo + "%", centerX + radius - 10, centerY + 35);
+}
+
+
+
+  
+
+
+
+
+  $timeout(function () {
+    if (c.data && !c.data.error) {
+      drawGauge(c.data);
+    }
+  }, 0);
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.report-widget {
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  background-color: #fff;
+  margin-top: 24px;
+  overflow: hidden;
+  min-height: 400px;
+  max-height: 600px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-heading {
+  background-color: #f6f8fa;
+  padding: 12px 16px;
+  border-bottom: 1px solid #e1e4e8;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.panel-title {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.panel-body {
+  padding: 16px;
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.report-summary {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.report-icon {
+  font-size: 32px;
+  color: #4a90e2;
+  margin-right: 12px;
+}
+
+.report-value {
+  font-size: 28px;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.report-label {
+  font-size: 14px;
+  color: #7f8c8d;
+}
+
+.chart-container {
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 250px;
+}
+
+canvas {
+  width: 100% !important;
+  height: auto !important;
+  min-height: 200px;
+  max-height: 300px;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  margin-top: 12px;
+  font-weight: bold;
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>widget_limite_com_despesas_de_pessoal</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Widget Limite com despesas de pessoal</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    var anoAtual = new GlideDateTime().getYearUTC();
+
+    var gr = new GlideRecord('x_sded9_portal_t_0_u_despesa_pessoal');
+    gr.addQuery('u_ano', 2023);
+    gr.orderByDesc('sys_created_on'); // Caso tenha mais de uma linha para o mesmo ano, pegar a mais recente
+    gr.query();
+
+    if (gr.next()) {
+        data.comprometimento = parseFloat(gr.u_comprometimento_rcl.toString());
+        data.limiteAlerta = parseFloat(gr.u_limite_de_alerta.toString());
+        data.limitePrudencial = parseFloat(gr.u_limite_prudencial.toString());
+        data.limiteMaximo = parseFloat(gr.u_limite_maximo.toString());
+        data.ano = gr.u_ano.toString();
+        // Pode incluir mais campos conforme necessidade
+    } else {
+        data.error = "Nenhum dado encontrado para o ano " + anoAtual;
+    }
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>estevao.gabriel@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-20 12:47:34</sys_created_on>
+        <sys_id>d027befefbe1e610f6d5f9d38eefdc03</sys_id>
+        <sys_mod_count>19</sys_mod_count>
+        <sys_name>Widget Limite com despesas de pessoal</sys_name>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sp_widget_d027befefbe1e610f6d5f9d38eefdc03</sys_update_name>
+        <sys_updated_by>estevao.gabriel@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-20 17:25:20</sys_updated_on>
+        <template><![CDATA[<div class="report-widget panel">
+  <div class="panel-heading">
+    <h2 class="panel-title">
+      <i class="fa fa-tachometer m-r"></i> 
+      {{::c.options.title || 'Limites com Despesas de Pessoal'}}
+    </h2>
+  </div>
+
+  <div class="panel-body">
+    <div class="report-summary">
+      <span class="report-icon fa fa-bar-chart"></span>
+      <div>
+        <div class="report-value">{{c.data.comprometimento}}%</div>
+        <div class="report-label">Comprometimento RCL com Pessoal</div>
+      </div>
+    </div>
+
+    <div class="chart-container">
+      <canvas id="gaugeCanvas" width="400" height="200"></canvas>
+    </div>
+
+    <div ng-if="c.data.error" class="error-message">
+      {{c.data.error}}
+    </div>
+  </div>
+</div>
+]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>d027befefbe1e610f6d5f9d38eefdc03</id>
+        <sys_created_by>estevao.gabriel@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-05-20 12:47:34</sys_created_on>
+        <sys_id>1c27befefbe1e610f6d5f9d38eefdc05</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>estevao.gabriel@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-05-20 12:47:34</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

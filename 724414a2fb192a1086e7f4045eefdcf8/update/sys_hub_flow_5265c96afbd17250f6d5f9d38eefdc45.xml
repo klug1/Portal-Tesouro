@@ -1,0 +1,835 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=3954000,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>27000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from>4c553341fb71621086e7f4045eefdc07</copied_from>
+        <copied_from_name>RCL with Deductions</copied_from_name>
+        <description/>
+        <display_name_after_preview/>
+        <flow_priority>MEDIUM</flow_priority>
+        <generation_source/>
+        <internal_name>payment_capacity</internal_name>
+        <label_cache>[{"name":"ef01531f-c3f6-4cc8-b912-c59d5835cb03.ano","label":"5 - Get MRVS Values (Payment Capacity)➛Ano","reference_display":"Ano","type":"string","base_type":"string","usedInstances":{"c2424349-d2a6-4e08-bfe3-dac682cb979f":["u_ano"]},"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiType":"string","uiUniqueId":"44f85ead-13cb-492f-aa0f-0a41bfb9a310"}},{"name":"ef01531f-c3f6-4cc8-b912-c59d5835cb03.v_nota_capag","label":"5 - Get MRVS Values (Payment Capacity)➛Nota Capag","reference_display":"Nota Capag","type":"string","base_type":"string","usedInstances":{"61efcf1e-eb09-4b47-b4da-1838e05fe6b3":["u_nota_capag"],"c2424349-d2a6-4e08-bfe3-dac682cb979f":["u_nota_capag"]},"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiType":"string","uiUniqueId":"c22913c7-de07-4894-b8bd-58f41aaffae3"}},{"name":"ef01531f-c3f6-4cc8-b912-c59d5835cb03.v_liquidez_relativa","label":"5 - Get MRVS Values (Payment Capacity)➛Liquidez Relativa","reference_display":"Liquidez Relativa","type":"string","base_type":"string","usedInstances":{"61efcf1e-eb09-4b47-b4da-1838e05fe6b3":["u_liquidez_relativa"],"c2424349-d2a6-4e08-bfe3-dac682cb979f":["u_liquidez_relativa"]},"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiType":"string","uiUniqueId":"4732c6cd-0cbc-463f-8642-e5ce9136b32a"}},{"name":"ef01531f-c3f6-4cc8-b912-c59d5835cb03.v_poupanca_corrente","label":"5 - Get MRVS Values (Payment Capacity)➛Poupanca Corrente","reference_display":"Poupanca Corrente","type":"string","base_type":"string","usedInstances":{"61efcf1e-eb09-4b47-b4da-1838e05fe6b3":["u_poupanca_corrente"],"c2424349-d2a6-4e08-bfe3-dac682cb979f":["u_poupanca_corrente"]},"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiType":"string","uiUniqueId":"b74767f9-5b2d-4aa3-8611-45729cec2ab1"}},{"name":"ef01531f-c3f6-4cc8-b912-c59d5835cb03.v_endividamento","label":"5 - Get MRVS Values (Payment Capacity)➛Endividamento","reference_display":"Endividamento","type":"string","base_type":"string","usedInstances":{"61efcf1e-eb09-4b47-b4da-1838e05fe6b3":["u_endividamento"],"c2424349-d2a6-4e08-bfe3-dac682cb979f":["u_endividamento"]},"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiType":"string","uiUniqueId":"1f55e943-fe93-4041-afaf-e13ba795f120"}},{"name":"4b0cc98f-c62b-455e-82ae-3e4d75ac41d6.Record","label":"3 - Look Up Record➛Capacidade de Pagamento Record","reference":"x_sded9_portal_t_0_capacidade_de_pagamento","reference_display":"Capacidade de Pagamento","type":"reference","base_type":"reference","usedInstances":{"61efcf1e-eb09-4b47-b4da-1838e05fe6b3":["record"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"4b0cc98f-c62b-455e-82ae-3e4d75ac41d6.status","label":"3 - Look Up Record➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Error","value":"1","order":0.0},{"label":"Success","value":"0","order":1.0}],"usedInstances":{"cc765906-5769-430a-b4ae-373f078cb540":["condition"]},"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"subflow.record","label":"Input➛Record","reference":"x_sded9_portal_t_0_registro_de_cargas_tesouro","reference_display":"Treasury Cargo Registration","type":"reference","base_type":"reference","column_name":"","usedInstances":{"b1c3d1ce-831a-4bfb-b59b-fac37677e4f9":["conditions"],"0a53884c-6d3f-4926-b143-7aebb7b97d97":["conditions"],"39268173-2ed3-4659-805a-84b15f1045a3":["parent_sys_id"],"ef01531f-c3f6-4cc8-b912-c59d5835cb03":["parent_sys_id"]},"attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"f4b7b973-3190-4871-8403-baaef11efe7b","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"b1c3d1ce-831a-4bfb-b59b-fac37677e4f9.Records","label":"1 - Look Up Records➛Multi Row Question Answer Records","reference":"sc_multi_row_question_answer","reference_display":"Multi Row Question Answer","type":"records","base_type":"records","usedInstances":{"20fde648-3ced-4596-b1ac-b39b687a2a96":["items"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.value","label":"2 - For Each➛Multi Row Question Answer Record➛Value","reference":"","reference_display":"Value","type":"string","base_type":"string","parent_table_name":"sc_multi_row_question_answer","column_name":"value","usedInstances":{"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf":["conditions"],"4b0cc98f-c62b-455e-82ae-3e4d75ac41d6":["conditions"]}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.row_index","label":"2 - For Each➛Multi Row Question Answer Record➛Row index","reference":"","reference_display":"Row index","type":"long","base_type":"long","parent_table_name":"sc_multi_row_question_answer","column_name":"row_index","usedInstances":{"0a53884c-6d3f-4926-b143-7aebb7b97d97":["conditions"]}},{"name":"0a53884c-6d3f-4926-b143-7aebb7b97d97.Record.row_index","label":"4 - Look Up Record➛Multi Row Question Answer Record➛Row index","reference":"","reference_display":"Row index","type":"long","base_type":"long","parent_table_name":"sc_multi_row_question_answer","column_name":"row_index","usedInstances":{"39268173-2ed3-4659-805a-84b15f1045a3":["multirow_record"],"ef01531f-c3f6-4cc8-b912-c59d5835cb03":["multirow_record"]}},{"name":"0a53884c-6d3f-4926-b143-7aebb7b97d97.status","label":"4 - Look Up Record➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Error","value":"1","order":0.0},{"label":"Success","value":"0","order":1.0}],"usedInstances":{},"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"0a53884c-6d3f-4926-b143-7aebb7b97d97.Record","label":"4 - Look Up Record➛Multi Row Question Answer Record","reference":"sc_multi_row_question_answer","reference_display":"Multi Row Question Answer","type":"reference","base_type":"reference","usedInstances":{},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}}]</label_cache>
+        <master_snapshot>8484d162fb557250f6d5f9d38eefdc71</master_snapshot>
+        <master_snapshot_digest/>
+        <name>Payment Capacity</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id/>
+        <run_as>system</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>published</status>
+        <substatus/>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-21 19:47:42</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>5265c96afbd17250f6d5f9d38eefdc45</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Payment Capacity</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name>sys_hub_flow_5265c96afbd17250f6d5f9d38eefdc45</sys_update_name>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-21 20:53:38</sys_updated_on>
+        <type>subflow</type>
+        <updation_source/>
+        <version>2</version>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=5265c96afbd17250f6d5f9d38eefdc45"/>
+    <sys_variable_value action="delete_multiple" query="document_key=5265c96afbd17250f6d5f9d38eefdc45"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=5265c96afbd17250f6d5f9d38eefdc45"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=5265c96afbd17250f6d5f9d38eefdc45^sys_idNOT IN5e65c96afbd17250f6d5f9d38eefdc45"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>5265c96afbd17250f6d5f9d38eefdc45</id>
+        <name>Payment Capacity</name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-21 19:47:42</sys_created_on>
+        <sys_id>5e65c96afbd17250f6d5f9d38eefdc45</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-21 19:47:42</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=5e65c96afbd17250f6d5f9d38eefdc45"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=5265c96afbd17250f6d5f9d38eefdc45^sys_idNOT IN9e65c96afbd17250f6d5f9d38eefdc49"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference,uiUniqueId=f4b7b973-3190-4871-8403-baaef11efe7b</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table>x_sded9_portal_t_0_registro_de_cargas_tesouro</choice_table>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>record</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Payment Capacity">5265c96afbd17250f6d5f9d38eefdc45</model>
+        <model_id>5265c96afbd17250f6d5f9d38eefdc45</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_5265c96afbd17250f6d5f9d38eefdc45</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="x_sded9_portal_t_0_registro_de_cargas_tesouro">x_sded9_portal_t_0_registro_de_cargas_tesouro</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-21 19:47:42</sys_created_on>
+        <sys_id>9e65c96afbd17250f6d5f9d38eefdc49</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-21 19:47:42</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=9e65c96afbd17250f6d5f9d38eefdc49"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=5265c96afbd17250f6d5f9d38eefdc45"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=5265c96afbd17250f6d5f9d38eefdc45"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=5265c96afbd17250f6d5f9d38eefdc45"/>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=5265c96afbd17250f6d5f9d38eefdc45^sys_idNOT IN6e65c96afbd17250f6d5f9d38eefdc6d,6e65c96afbd17250f6d5f9d38eefdc6e,d4749162fb557250f6d5f9d38eefdc39,5c749162fb557250f6d5f9d38eefdc3b,98749162fb557250f6d5f9d38eefdc3c,18749162fb557250f6d5f9d38eefdc3a"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Records">43400a1587003300663ca1bb36cb0b4b</action_type>
+        <action_type_parent display_value="Look Up Records">d1c56ec50b30030085c083eb37673a50</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>43400a1587003300663ca1bb36cb0b4b</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Payment Capacity">5265c96afbd17250f6d5f9d38eefdc45</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-21 19:47:43</sys_created_on>
+        <sys_id>6e65c96afbd17250f6d5f9d38eefdc6d</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2025-11-21 21:06:24</sys_updated_on>
+        <ui_id>b1c3d1ce-831a-4bfb-b59b-fac37677e4f9</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VX2WobMRT9lWGejRnH2Zq3kBAoZKFJyUuaCo2ksUU10lTSeInxx5Q+lH5AvyA/1itpxh68pDY4kNAnM3eRzr33HEl+mMScxifxcbafJLhzcHyUJN1ukhwedgnupGn3kKRJup/GrVjinEGkxalg8DnAonTfhqC8FJYjrYboe8mM5UoiLM2QaQij3BQCj++r6CsXGt2qYfSpCo1O61DS54JqJuOTh8dWXGANG1rwnEwWXJsiFjhlAkI/u1+8XIIdF7NP5H3BdjnPEyy6Dg6lqcOStGI2skxSBiAyLAxrxTmWFFulxzOLZpjeSDE39Lm0sGLsgkeGP8G+x4mLyxiURVjwzT5R1bZgzs6xxXdWl8SWugolfcUJM6EhlGUYGnvWtIWAm8L1OKSEskO2EmUur0M74tkC9ZTAUhoAwQpXqENelZHd9dXwtkZ5waXvSeUUimAx+8LWap6W1uGZxEywHBZCOS4KLnuo0GrAfTJgyds9AR/tTACFKDO8J9uYOOBt6CtuX4D93JvvseauiitYxnMm4wIogsIIjSq1b+UAEVEa79DAxLBWPG3FZmzOBDZmXjm0HFjrcIc+VBWj0DSXQjQv7CksMWBVcdPWRqo5SOaUI0pS7lCYhnS4ZTlSfkJIsmHbxX4pYSk6AAGpryABB4XTYJxMTJm6HrU1I0DH6XRZX7tYcpc69D2odXjmmvD86/kPM2s6UylyyXbZXKF2VIrs7EyRUMh70iRs/vYkub3IQgv+oTRy9CLLDuZ8MkpbFHrZkJq7nFxrRsuSabq2o/4GoGrq3wBXJdZRofQ6qBX3M84EXXUbXTjHwm2093/eRm+S+QCIojA9LgWX/mkBQF9LEsnLB++HBZ55ejWebc6GDVnWA46wff4dPW0thw0AzV5kvFARZZFvCs84wXAt/FSrIdeXgqfQ4oVQGytBdHcmiO7ebgQxmRXdaOyKKdTvSzffOuMpZODFDKBlI6UzXSW6LfftbL/v3nRZ2N2tlN0kYfCcr+Xijh+ka7Taes3DoQ+p1X4oKBsNOe0xO9+9jqLKDrH4tspfcQ/Vw/LlvcLjdv9FOR925mIFzSDNDIyv+brtwGtq+XTptIN5u6NlAyx1O66ef4x47k+XW48JU2XWYa2OFlA/6/kpNc+WjzNrRfj9Hb403+xtW49tpR7r6b2Lf4e7k8TjX/G64fAnEQAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=6e65c96afbd17250f6d5f9d38eefdc6d"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Payment Capacity">5265c96afbd17250f6d5f9d38eefdc45</flow>
+        <generation_source/>
+        <order>4</order>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-21 19:47:43</sys_created_on>
+        <sys_id>6e65c96afbd17250f6d5f9d38eefdc6e</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2025-11-21 21:06:24</sys_updated_on>
+        <ui_id>0a53884c-6d3f-4926-b143-7aebb7b97d97</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VYzW7jNhB+FUFn25Us/+a2SBCgwG6CJuletltiRFIxUVrUklScrOGHKXoo+gB9grxYh6JkG7aT2KhTJOgp0HCG/Gb4fcNxvsxDwcKTkI2jcTYe90fDKEqSKBoMEgpxmiYDmkYp9MJWmMOUo6eFVHL8vANZum9DybSUVhCtZuRbyY0VKieQmxnX6MaEKSQ8fK69PznX4ErNgp9q1+BD40onQjLN8/Dky9dWWIDGAy2unMw3lvZFLCHlEl1v3F/YTsE+FMtPUq1528dVnOTBhV9QmjksUSvk95bnjCOIDKThrXAKOQOr9MPSojmwy1yuDBORW9wxdM73RnzHc0eR88s4pkW5X1t+krps3pydgYVrq0tqS1270okSlBtfEMYzwMKertu8w2XhauxDfNo+Wslyml/4coTLDZpbQktpEAQvXKIOeZ1Gdj1Rs6sG5bnIq5rUi1JRkMsvsFaLtLQOzzzkkk9xIzKFohD5LSm0uhNVMGKZdm4lfnQyiRRi3IjbvAPUAe9gXaFzjvazyvwZtHBZfMJtKs5kQiJFiL9Co0pdlfKOUFmaakEjE/1e4aIVmgdzKsGYVeZYcmStw+3rUGdMfNFcCNWisB9wizteJ7doNarpP8vB8YpyVOVMOBRmTTpIcXeUYL+UGM/mc1OmrgYdzSnSbbH41WnKFfm+8ehGGeOD3qidUM7avf540E5joO00GaeD0RC6MB50hOXTzjJ0sdiW4X948oGqfrmijapPXUkf/3z8m5sn6lzre8v2cX2HZqHWd3w0ffei6D0pHA9/ewI/XLK+BC/oNmbPsoyt+GSUtsTXck2424I6mOh7QGiIfonMzEEHhdJPAauZngku2a6X7NwtbLxk3f/nS/YmeY6AGPG3J3Ip8mosQaCvJYD+s+xL4w2eVfRaG/mcDQzdlgEEYB//Cr4fLIc9AC2nOVGogPGgKorIBAV8BP5QuyE3T0BFoc323xhrQSRHE0TSPY4g5suk1wq74xaa2dTdbxPx3UfAZgTSci0kXuwS3YHnxoef211sCzs5SNnrJPQrZ09y8cjD7BNabb1mc5hgaH0e8comM8FuuV2d3ngxZWcgf9u1XnOPNJdVpfcKg3H87I+zdG0wFpn/+Vjg/O6HT0NwOCWZKnNG6sl9RSV3k5nQxtbO2y3oiqNc3XNplLsLHqig0GLKhVaB5rfCWK0Of61fzqcp6TUP7h5/10KZ5XEmyJTm02CzUe2Z+yE9rHfE8fXYPewc5AQCBgG3UKz3B651NdrsamN7Xucz/Niz0+2LLn4VdP++H+5Sxs6+uCfmd/EPgON3Lsoh7XVhMEziOIriiA2j0XAYjwZpNoBhL1uplxCTU2y2uHMGQuL2pKFKc9/Rdnu68B3gsPazB6iGkW7/IKu4jB3HAdoLcd1jUqUkh3yjydzg+/HDefVULAnbf3ON5l38H6wUN5uV9qadtX6teaIUP+fiW8l/dOQa8ag7ihltj4bxsN3L2KA9ZtBvwzjtDxPGaS875ojw9R+dQQcbcxYAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=6e65c96afbd17250f6d5f9d38eefdc6e"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Payment Capacity">5265c96afbd17250f6d5f9d38eefdc45</flow>
+        <generation_source/>
+        <order>3</order>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-21 20:53:22</sys_created_on>
+        <sys_id>d4749162fb557250f6d5f9d38eefdc39</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2025-11-21 21:06:24</sys_updated_on>
+        <ui_id>4b0cc98f-c62b-455e-82ae-3e4d75ac41d6</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VY227jNhD9FUHPtitZtmznrUgQoMA2KTbpvmwXxIikbKK0qCWp3Ax/zKIPRT+gX5Af61AX27Adr4x1gAQFDASc4ZBzOWc4yueFL5h/5rNJMEknk+F4FARRFARxHFEIkySKaRIkMPA7fgZzjjstJJLj8g5k4dYPxDDOJiRX2oIklgSEQg5UMGCc4C+HKVpmVqEREyaX8Piptj1fbfTw99vGRjoTkmme+Wefv3T8HDRqLNf+2WJL1dZ7CQmXuPXW/YXdcOxjvlqSUlfJPqztJPeuKoXSzPkSdHz+YHmG8ftnKUjDO/4cMgZW6ceVRHNg15lcC2Yis3ii7zY/GPGE944Dty/lGBbllW61JHXSKnF6ARZurC6oLXS9lc6UoNxUCWE8hULa801ZteE6t0JllUkVdmWtZDHPrqp0+KsDmhqhpDCukLkL1Hleh5HezNT9x8bLS5GVOamVUlGQqxVYq0VSWOfPwueSuzKTOeS5yKYk1+pOlMboy7w3lbjopVLd46VGTLMeUOd4D/MKvUuUX5TiT6CFi+JXPAaN0SEhESKkKqFRhS5TeUeoLEyp0JCZ6ix/2fHNozmXYMw6ckw5+Vo4v6s81BGTKmnOhGqR25/xiDteB7fsNAwaHsTgZA05qjImnBdmg0YFgUz9UaAtWyz6Qcp4PBh3I8pZdzCcxN0kBNpNokkSj0fQh0ncE5bPe6X5crlLrR8+70gGfj/6hoHnLvznv5//5eaFnNRc3JF92DyhUdRcDE/GxUEQvCc24uVvj4zH06tKwXc4FrKDKGNrPBl8jUiVyw2S7dLkaKC3cKEB+jUiMwPt4cv4kmM10lPBJdv36lw6xdar0/9/vjpvEufoECNV9UQmRVaOEOjoaxFgeBB9SbiFsxJea/iXMjB0lwbggX3+x3s6mg4tHFpNXiJXbswrkyJSQQEfgb/UfpebJ6CE0Hb7b4Q1IaKTESLqn4YQi1XQG4ndU4VmjnT1bSyeKgvYtkBYbpiEy32kO/Le8Ph7+8tdYkdHMXsThJXm4kUsnnjwfIGrnddsDjM0re8jFbPJvWBTbte3N7uYsvcg/9ynr7FHmmKV4b3CEBse/JBKNoZYkZI51k7kOGtrThEehoDmJFVFxkg9ZW+Mt1jJVGhj6827LegjR7q659IoVwvuKS/XYs6FVp7mU2GsPv7DsEU8TUpvuHf3/E0LZVbXGS9Vms+97UbVMvZjetjghOPrqXvYJcgZeAw8bvF7faOoXOtytNnXxlqW8wA+Wna6tt6Fr+Ldj/fDfczY2xdb+vwuPtZP37koh2TQh3gUhWEQhAEbBePRKBzHSRrDaJCu2UuIySg2Wzw5BSHxeNJApal3uNuebsT86O7TwqcGkFfYYLy0hDI2HOdPK4frFpMoJTlkWz3mFp+Pny7Ll2KF1+Gb6zPv4l9WhbjdznQl2pvr1xonCvF7Jr4W/BcHrjEP+uOQ0e54FI66g5TF3QmDYRcmyXAUMU4H6SknhC//AZVAOfIqFgAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=d4749162fb557250f6d5f9d38eefdc39"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Payment Capacity">5265c96afbd17250f6d5f9d38eefdc45</flow>
+        <generation_source/>
+        <order>7</order>
+        <parent_ui_id>cc765906-5769-430a-b4ae-373f078cb540</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-21 20:53:22</sys_created_on>
+        <sys_id>5c749162fb557250f6d5f9d38eefdc3b</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2025-11-21 21:06:24</sys_updated_on>
+        <ui_id>61efcf1e-eb09-4b47-b4da-1838e05fe6b3</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1W227bMAz9lcDPieFrluRtSFBgQNcO7dCXthNoiU4FyJYry2nTIP8++pLLmq5rsL4UGxAgEMlDkcc8tK9XjhTOxIlQeP7YH/LQD8PA84JR5CfDMPEDEQKi7/SdHDKkSINcG0HnBaiqNqxWUeJxPh6lAz4MkkEUxzgYBYCDECPxKQYe+WLoXjS49ZqQQpaFguVVl4As/E4qYTB3Jte3facAQ3dZNM5k9cz11mIVJKgo9ALnsrRGv1C/XRb1WWheZZhbJjfG0w476zy9LzPyEKguyPf6Dj5azAVSKSmoEvtOBrkAq83SmVhTkcEgiPNcLbcRdzK3basZPJbyiW6OvDouReqNdzRsj6yjqDWnM7BwSZm5rcyWMS05li0rAlOolJ3u29qA88JKnbcQC4naoLWqsvysZcTZJth7IlVJRWBR91lX3raVXt7ph4tNkScybyjpWlSag9qewFojk8rW5awcVNhwnEFRyHzOCqMXsgFTKZk7V3RwU6Uf6M5SznMXeF23S6yCe0L2WWO+AiPrJr5SGgKv+065LKcKynLXCnHI7qu6kraxrgXWsNBQwJpJqMHcyMJ+pqsW2BW+7neCSOLXZoyPdwO1l3MnikdW0oCMWaGNBcUs8xiHArgUIGpiWQFzqCnRh3qYbgN79Pu2F3icTN7QwkYm3+t/+E1PnVAObKc7sMLeWevoZBK/m0xGH0kmXRsfXid/UocXvLqBcTdJjSDKPWVUjC6S1FU71TeV54VitcLU8+PQp3dImA4HEeejQTL2gwGPxyIehTFPvNBd/Ipdr39UpLCqgJwDo7VOdFs8MuMBvsmq5H1FXD8xQ7ogBuDIrAf4JmuuLTR7YH5kuh3wpRfof0r/ntLjVusb5n+zWqeQFbp8QRCbtYoZPUuLrBXIs9XaOXtXnXP7FfKOnyHeR9qw/8yHyO1PI/7Y/ZsLAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=5c749162fb557250f6d5f9d38eefdc3b"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Create Record">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent display_value="Create Record">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Payment Capacity">5265c96afbd17250f6d5f9d38eefdc45</flow>
+        <generation_source/>
+        <order>9</order>
+        <parent_ui_id>bbf158a1-4051-412a-803b-c34c3913e71b</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-21 20:53:22</sys_created_on>
+        <sys_id>98749162fb557250f6d5f9d38eefdc3c</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2025-11-21 21:06:24</sys_updated_on>
+        <ui_id>c2424349-d2a6-4e08-bfe3-dac682cb979f</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1V22obMRD9laDntdn12sb2W3HIU5uUpuQlTcSspLUFWknRSk4c43/vaHd9aS60hkIJFBaMZuYczUVzfLshkpMZGWciHU2zMcuzPB+k6WAyzIpxXmQDnoMQQ5IQDZXASA+FErQ5JGQFKkTjE6254FNqjfOgqKcpZWCBSQ5cUPwsLBChvUEQl7VVsL7psPN94Bl+X48C2VIq7oQms9u7hFhw6PHCkdnmhetPS1BQCIWh3+MvvFOTX9s3bZ8PYCXOLluHcTwmlCZEPHmhsQlkVoKqRUIq0By8cWsy8y6gwQngV1qt9xFLqT0Skhj7VMtnvHaSxrhSYGlMtL79kXaNa83lOXi4Rmbmg+tC2dJIJuq2KVyUEJSfH9vagCvrpdEtpCmzQxsVKn3ZtoTsCXZzQkuo4zBtrDNm3pVRXi/N47ddlhdSNy3pnMowUPsTeO9kEXzMZ0OEEnHUtAJrpV5Q68xKNmDMpeovFB76pTKPeGktF7oPLCbex7ZC/wLt5435BpyMVXxBGgRvE1Kv67mCuj7Ugk2kDyFm0lbW1UDbNkQIc9L6T3jBSnTpbpPdcnCRTt99WVlxeEjNPtRHixEoaPMjpGnONxtRptkoz8oey8txb8jYpFdMs0GPjaZ8NMlHrEjzPsZvt/eBYoISu9Euw0kMq1+xDZs1wYJmQJlxOCYvTmR8hW9YlXwIOKNn6nCdsHNwIusrfMOqjYdGPhYn0h2A2+1rnfk/in83ihOV/Pf7tlPyOVTW1G8s4E7FRYVvwAvaLuQLJe+cZzeds1Pz7G+p+TBNP5Ket4V9eDk/+ud+R9jvfgIxCaL89wgAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=98749162fb557250f6d5f9d38eefdc3c"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Get MRVS Values (Payment Capacity)">cb7295aefb157250f6d5f9d38eefdc1c</action_type>
+        <action_type_parent display_value="Get MRVS Values (Payment Capacity)">38dec5e6fb157250f6d5f9d38eefdc47</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>cb7295aefb157250f6d5f9d38eefdc1c</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Payment Capacity">5265c96afbd17250f6d5f9d38eefdc45</flow>
+        <generation_source/>
+        <order>5</order>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-21 20:53:22</sys_created_on>
+        <sys_id>18749162fb557250f6d5f9d38eefdc3a</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2025-11-21 21:06:24</sys_updated_on>
+        <ui_id>ef01531f-c3f6-4cc8-b912-c59d5835cb03</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/71V227aQBD9FbTP2DK+YMxblShSpLapIM1LFFmzN1hpfcl6nUAR/95ZbAikTdpIKI871zNn5mjvN0RxMiVBmoZZAkLSUZKGSSDHPJEZjyZCSM5GggxJCYXAyKLVVpnqOTeCVYaj4wl06zybTQBJNJnEzBvzSHpxFo49OoojLwVBaUqzlGepP9vl+a6EKrlYbbdYg6um1rC+O0MptlSaG1GS6f3DkNRgELcVhkw3r1z/O7gGKjSGzqrnwbVr8x4Zdl07R2ONKhf9+2tfYL43YqgDNBoSsbICSyISCboRQ1JAycFWZk2m1rRoMAL4TanXh4ilKi0WIy521ahf2G4SBIGLlAKHY6LzHp55T25nlpdgAZG0zLamD2XLSjHRdLRwIQHHuji2dQE3tVVV2aVYoHqfXem2KL93jJBDgf0u0dI2CELUblKHvR9EzpfV82yP8spt0BycumKgDy+wSB1trcOzIa26fcVyZ/mDZ6FFgR3zAuoaLXltqie164KgC3+h8eFLjfvjolGL0gfmJvRxA+Bfof1yZ74Do9y437AMJrt2P0v12Iprd0FRlNB4LMALWUq9OKVjb0JHoSfpJJMJZDyLGNkOSbNuLjQ0zQtRuKH8sXVjdrT1BOUdxy6FGVXbLwjqSfRcbId7xcr3DjfKXo4UJeCqYv9cneq1aamb3u+u929C/Lie/g1rr6cfO1yD+boZXF++DbdX1Mt1n4pqdmTvdRWeS1dReKqqVd5gzSyvK2NB5zYPUPgLhWdY4QXlDMwCmhyvtGpN9YYEZ33CgIvBxS5hcHtIOLM4P4r3E5Qs5wIMW14pod25lG1Bd5J6Q+HHWz8V+fHeP0fnKUtGUQpeEPDMi6M4wR8pZF6SjKhkUSIjmZ5R5w+/AST5X12bBwAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=18749162fb557250f6d5f9d38eefdc3a"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=5265c96afbd17250f6d5f9d38eefdc45"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=5265c96afbd17250f6d5f9d38eefdc45^sys_idNOT IN6a65c96afbd17250f6d5f9d38eefdc6c,2a65c96afbd17250f6d5f9d38eefdc6d,a265c96afbd17250f6d5f9d38eefdc6d"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">212b3741fbf1621086e7f4045eefdcdc</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Payment Capacity">5265c96afbd17250f6d5f9d38eefdc45</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="For Each">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-21 19:47:43</sys_created_on>
+        <sys_id>6a65c96afbd17250f6d5f9d38eefdc6c</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-21 20:53:36</sys_updated_on>
+        <ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/51STW/bMAz9Lzonhj+ypM6twFCgh61AV/QyFAYl0YkwWdIkOaln+L+Pip106HEnm4/k43siR2b76PoYXux9COpg2P7n24opkzD6H5mBDtmeqYhdYCt2At2neBx5ISpZCFzfVQWsN7zla/6l5usWRLXb7na4aevsGYX1MkwTtUoVnIbh9f8ZxFFp6XER6cCTtoie7cdPqTg4bDRw1DRoYaB+JSksatnWRV6LqtxWZZ6Xd5uCbytelLIClFuqu3Y+LqY/vUFip9DfeOmTVJT5iuF7RCORBrWgA65YB0ZCtH5g++h7AjyCfDJ6uFUclYlEx1Lte1B/iLvI81TYIjkSOCdvYbM85AyLo1UCn1xU1sxIBK6XHmF135nvs/y0Amyh1/G6AkL6QHzokuakYpHU/jja8/N14IMyF39LUlsB+hZBjF7xPmJIa0CNHRE1HTinzKFx3p7UpZm0dNlBU5C12p5paDq3DEQSntETQfZA+NcL/ApeJRffiIaap4v75nef5s4+FsXNbJoKgvDKxXuiO+EibnpL9zozhfkwJAoVaOBLwh6vV54SAy1ZiX+hs/W/ktQPbPoLPlHA5y8DAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">f7ee3f85fbf1621086e7f4045eefdc51</block>
+        <comment/>
+        <connected_to>cc765906-5769-430a-b4ae-373f078cb540</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Payment Capacity">5265c96afbd17250f6d5f9d38eefdc45</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>8</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-21 19:47:43</sys_created_on>
+        <sys_id>2a65c96afbd17250f6d5f9d38eefdc6d</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-21 20:53:36</sys_updated_on>
+        <ui_id>bbf158a1-4051-412a-803b-c34c3913e71b</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">612b3741fbf1621086e7f4045eefdcde</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Payment Capacity">5265c96afbd17250f6d5f9d38eefdc45</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>6</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-21 19:47:43</sys_created_on>
+        <sys_id>a265c96afbd17250f6d5f9d38eefdc6d</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-21 20:53:36</sys_updated_on>
+        <ui_id>cc765906-5769-430a-b4ae-373f078cb540</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Uy27bMBD8FUFnW9DDcm3fjLYBCrQN0Bi+NIGwIlc2UZpUScqOa/jfu9QjCRoHbYMeexNnXzO7A51C3bi6cXall9aKjQoXX+9GoVAeo+9TqGCH4SJkWnHhhFZFC4zCPcjGB9YgtQk4Bkulg/eK8pwBrgMFwQpKlBBcCQWSKriwtYTj+q8L2VZIbrDnVoMhBg5NuDj9EnLHGgvpi6n/jTNCbahccHpVMVTJnCUsS6dZGsfpbJKU06xMUp4BQkZ5Q+HbQWrwsUVGL+7AzyPcDpO04Z5WEo9CvHeoONLoCqTFUbgDxcFpc3xADAK/VvIR2ArlqF3ok++t+EG90zz3iRWSRoZd8OFZ9BvtYLbVguF17Ql2iINS9jVMy2anPnc6/C2wgka64RaENJb6Ye1JexY9pepmqw9fhoF0kFZgH5Sa0X2GFzhaQ9k4tP4wKHFHjYod1DUtp6iN3ou2mLjsoo2kR1RJfaCh3ncRME88oh1BdEX4uxZegxFexSdqQ8UdzRKsYEXrUWrnDEk4t2spvjeeUCewl1J026AEy4yo3ZLm7LFnfR49N/gTb59OkzJmbD6rxmyaluNJnuN4lgKOM5zwNzmwScKnkXXgGns+3zZxnPH4udVf3edfOH8OeZUncX7Z+ZPpJedf8PzLdk9/Y3d/oD90exzH/+3+1O7CFp1te23t8Fe7/c5bu5tgO99wZMISkZXHPgx/fR84kgEEewodtPnmJTxi55/cPuxXPwYAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=5265c96afbd17250f6d5f9d38eefdc45"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=5265c96afbd17250f6d5f9d38eefdc45"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>record</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_5265c96afbd17250f6d5f9d38eefdc45</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-21 19:47:42</sys_created_on>
+        <sys_id>e265c96afbd17250f6d5f9d38eefdc4d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-21 19:47:42</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_5265c96afbd17250f6d5f9d38eefdc45"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_5265c96afbd17250f6d5f9d38eefdc45"/>
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=703186000,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>27000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from>4c553341fb71621086e7f4045eefdc07</copied_from>
+        <copied_from_name/>
+        <description/>
+        <flow_priority>MEDIUM</flow_priority>
+        <internal_name>payment_capacity</internal_name>
+        <label_cache>[{"name":"ef01531f-c3f6-4cc8-b912-c59d5835cb03.ano","label":"5 - Get MRVS Values (Payment Capacity)➛Ano","reference_display":"Ano","type":"string","base_type":"string","usedInstances":{"c2424349-d2a6-4e08-bfe3-dac682cb979f":["u_ano"]},"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiType":"string","uiUniqueId":"44f85ead-13cb-492f-aa0f-0a41bfb9a310"}},{"name":"ef01531f-c3f6-4cc8-b912-c59d5835cb03.v_nota_capag","label":"5 - Get MRVS Values (Payment Capacity)➛Nota Capag","reference_display":"Nota Capag","type":"string","base_type":"string","usedInstances":{"61efcf1e-eb09-4b47-b4da-1838e05fe6b3":["u_nota_capag"],"c2424349-d2a6-4e08-bfe3-dac682cb979f":["u_nota_capag"]},"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiType":"string","uiUniqueId":"c22913c7-de07-4894-b8bd-58f41aaffae3"}},{"name":"ef01531f-c3f6-4cc8-b912-c59d5835cb03.v_liquidez_relativa","label":"5 - Get MRVS Values (Payment Capacity)➛Liquidez Relativa","reference_display":"Liquidez Relativa","type":"string","base_type":"string","usedInstances":{"61efcf1e-eb09-4b47-b4da-1838e05fe6b3":["u_liquidez_relativa"],"c2424349-d2a6-4e08-bfe3-dac682cb979f":["u_liquidez_relativa"]},"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiType":"string","uiUniqueId":"4732c6cd-0cbc-463f-8642-e5ce9136b32a"}},{"name":"ef01531f-c3f6-4cc8-b912-c59d5835cb03.v_poupanca_corrente","label":"5 - Get MRVS Values (Payment Capacity)➛Poupanca Corrente","reference_display":"Poupanca Corrente","type":"string","base_type":"string","usedInstances":{"61efcf1e-eb09-4b47-b4da-1838e05fe6b3":["u_poupanca_corrente"],"c2424349-d2a6-4e08-bfe3-dac682cb979f":["u_poupanca_corrente"]},"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiType":"string","uiUniqueId":"b74767f9-5b2d-4aa3-8611-45729cec2ab1"}},{"name":"ef01531f-c3f6-4cc8-b912-c59d5835cb03.v_endividamento","label":"5 - Get MRVS Values (Payment Capacity)➛Endividamento","reference_display":"Endividamento","type":"string","base_type":"string","usedInstances":{"61efcf1e-eb09-4b47-b4da-1838e05fe6b3":["u_endividamento"],"c2424349-d2a6-4e08-bfe3-dac682cb979f":["u_endividamento"]},"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiType":"string","uiUniqueId":"1f55e943-fe93-4041-afaf-e13ba795f120"}},{"name":"4b0cc98f-c62b-455e-82ae-3e4d75ac41d6.Record","label":"3 - Look Up Record➛Capacidade de Pagamento Record","reference":"x_sded9_portal_t_0_capacidade_de_pagamento","reference_display":"Capacidade de Pagamento","type":"reference","base_type":"reference","usedInstances":{"61efcf1e-eb09-4b47-b4da-1838e05fe6b3":["record"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"4b0cc98f-c62b-455e-82ae-3e4d75ac41d6.status","label":"3 - Look Up Record➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Error","value":"1","order":0.0},{"label":"Success","value":"0","order":1.0}],"usedInstances":{"cc765906-5769-430a-b4ae-373f078cb540":["condition"]},"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"subflow.record","label":"Input➛Record","reference":"x_sded9_portal_t_0_registro_de_cargas_tesouro","reference_display":"Treasury Cargo Registration","type":"reference","base_type":"reference","column_name":"","usedInstances":{"b1c3d1ce-831a-4bfb-b59b-fac37677e4f9":["conditions"],"0a53884c-6d3f-4926-b143-7aebb7b97d97":["conditions"],"39268173-2ed3-4659-805a-84b15f1045a3":["parent_sys_id"],"ef01531f-c3f6-4cc8-b912-c59d5835cb03":["parent_sys_id"]},"attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"f4b7b973-3190-4871-8403-baaef11efe7b","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"b1c3d1ce-831a-4bfb-b59b-fac37677e4f9.Records","label":"1 - Look Up Records➛Multi Row Question Answer Records","reference":"sc_multi_row_question_answer","reference_display":"Multi Row Question Answer","type":"records","base_type":"records","usedInstances":{"20fde648-3ced-4596-b1ac-b39b687a2a96":["items"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.value","label":"2 - For Each➛Multi Row Question Answer Record➛Value","reference":"","reference_display":"Value","type":"string","base_type":"string","parent_table_name":"sc_multi_row_question_answer","column_name":"value","usedInstances":{"f55fbb1c-5a9e-441e-ba14-6cf57444d9bf":["conditions"],"4b0cc98f-c62b-455e-82ae-3e4d75ac41d6":["conditions"]}},{"name":"20fde648-3ced-4596-b1ac-b39b687a2a96.item.row_index","label":"2 - For Each➛Multi Row Question Answer Record➛Row index","reference":"","reference_display":"Row index","type":"long","base_type":"long","parent_table_name":"sc_multi_row_question_answer","column_name":"row_index","usedInstances":{"0a53884c-6d3f-4926-b143-7aebb7b97d97":["conditions"]}},{"name":"0a53884c-6d3f-4926-b143-7aebb7b97d97.Record.row_index","label":"4 - Look Up Record➛Multi Row Question Answer Record➛Row index","reference":"","reference_display":"Row index","type":"long","base_type":"long","parent_table_name":"sc_multi_row_question_answer","column_name":"row_index","usedInstances":{"39268173-2ed3-4659-805a-84b15f1045a3":["multirow_record"],"ef01531f-c3f6-4cc8-b912-c59d5835cb03":["multirow_record"]}},{"name":"0a53884c-6d3f-4926-b143-7aebb7b97d97.status","label":"4 - Look Up Record➛Status","reference_display":"Status","type":"choice","base_type":"choice","choices":[{"label":"Error","value":"1","order":0.0},{"label":"Success","value":"0","order":1.0}],"usedInstances":{},"attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"0a53884c-6d3f-4926-b143-7aebb7b97d97.Record","label":"4 - Look Up Record➛Multi Row Question Answer Record","reference":"sc_multi_row_question_answer","reference_display":"Multi Row Question Answer","type":"reference","base_type":"reference","usedInstances":{},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}}]</label_cache>
+        <master>true</master>
+        <name>Payment Capacity</name>
+        <natlang/>
+        <outputs/>
+        <parent_flow display_value="Payment Capacity">5265c96afbd17250f6d5f9d38eefdc45</parent_flow>
+        <remote_trigger_id/>
+        <run_as>system</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-21 20:53:37</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>8484d162fb557250f6d5f9d38eefdc71</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-21 20:53:37</sys_updated_on>
+        <type>subflow</type>
+        <version>2</version>
+    </sys_hub_flow_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=8484d162fb557250f6d5f9d38eefdc71"/>
+    <sys_variable_value action="delete_multiple" query="document_key=8484d162fb557250f6d5f9d38eefdc71"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=8484d162fb557250f6d5f9d38eefdc71"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=8484d162fb557250f6d5f9d38eefdc71^sys_idNOT IN0484d162fb557250f6d5f9d38eefdc72"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>8484d162fb557250f6d5f9d38eefdc71</id>
+        <name>Payment Capacity</name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-21 20:53:37</sys_created_on>
+        <sys_id>0484d162fb557250f6d5f9d38eefdc72</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-21 20:53:37</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=0484d162fb557250f6d5f9d38eefdc72"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=8484d162fb557250f6d5f9d38eefdc71^sys_idNOT IN4084d162fb557250f6d5f9d38eefdc73"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference,uiUniqueId=f4b7b973-3190-4871-8403-baaef11efe7b</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table>x_sded9_portal_t_0_registro_de_cargas_tesouro</choice_table>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>record</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Payment Capacity">8484d162fb557250f6d5f9d38eefdc71</model>
+        <model_id>8484d162fb557250f6d5f9d38eefdc71</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_8484d162fb557250f6d5f9d38eefdc71</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="x_sded9_portal_t_0_registro_de_cargas_tesouro">x_sded9_portal_t_0_registro_de_cargas_tesouro</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-21 20:53:37</sys_created_on>
+        <sys_id>4084d162fb557250f6d5f9d38eefdc73</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-21 20:53:38</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=4084d162fb557250f6d5f9d38eefdc73"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=8484d162fb557250f6d5f9d38eefdc71"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=8484d162fb557250f6d5f9d38eefdc71"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=8484d162fb557250f6d5f9d38eefdc71"/>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=8484d162fb557250f6d5f9d38eefdc71^sys_idNOT INc084d162fb557250f6d5f9d38eefdca0,8484d162fb557250f6d5f9d38eefdca0,4884d162fb557250f6d5f9d38eefdca0,8c84d162fb557250f6d5f9d38eefdca0,4084d162fb557250f6d5f9d38eefdca1,0484d162fb557250f6d5f9d38eefdca1"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Records">43400a1587003300663ca1bb36cb0b4b</action_type>
+        <action_type_parent display_value="Look Up Records">d1c56ec50b30030085c083eb37673a50</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>43400a1587003300663ca1bb36cb0b4b</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Payment Capacity">8484d162fb557250f6d5f9d38eefdc71</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-21 20:53:38</sys_created_on>
+        <sys_id>c084d162fb557250f6d5f9d38eefdca0</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-21 20:53:38</sys_updated_on>
+        <ui_id>b1c3d1ce-831a-4bfb-b59b-fac37677e4f9</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VXXU/bMBT9K1GeqyihpTDeEAhpEh8aIF4YsxzHaa05cWY7/aDqf9917KRRG1grBQm0R997bZ97fI7jPK98lvhn/mk6CkMcHZ+ehOFwGIbj8ZDgKI6HYxKH8Sj2B36OMwqVGsecwnCGeWnGiqCs5JohKeboT0mVZiJHOFdzKqEsYargePnkqm9MqXcv5t4PV+qd16Vkyngiae6fPb8M/AJL2FBD5my1ldoXMccx5VD66CBvdaCXRTNEVc7GrtvTvFubEDIxUMKBTxea5gkFDCnmig78DOcJ1kIum4ikOLnL+SYwZbmGFX1TvFDsFfY9DU1dSqErQm2uGSLHmg2nl1jjBy1LokvpSslUMEKV5SOhKQZeL9oxW3BXGIrtFNu2nS14meW3lg6/WaA+JIiUCkDQwjRqkLs20oepmN/XKK9YXnHiklwQzJsR1lqyuNQGz8qnnGawEMpwUbB8ggopZqyaDFiyYMJhEKQcFJRQxSZ5gIkBHgCvOLiC+GUVfsKSmS5uYJlKMinjoBBkj1CJUlZUzhDhpaoSEoRo1/LXA18t1QXHSm06B8pBtAa35cF1jCxpZgqRrNDnsMSMuubWg71McxxuJEdEnjCDQrWcwzTNkKhOCOV0HpjanyUslczAP+IXOMBAYYkNrlaqjA1HgaQE5Lhe79qrjyX7tGHFQW3DizYJXcQ4Q+7ErrsWcIaMejMk9PGVLAmbfz5HHu4xS8E/jEZO3hXZ8UZPSkiNLJctp5lPk6FmseuYduow5e8Bqlb+ndGqFy/fwumEnzLKk64v0ZVJbH2Jjv7PL9GnlD0ASpA9PZZzllfPCgD6UX4I3790v23prJJX68VmYliRXTNgTwvv9WAn7AGndsID7O09WjwdEOsvQCWZ7du/DjoDDHszwPCoHwOsmjYbIjs4r1+S5jTr+ldTj7frQYKtCdG6y2AH7RkduufRetfAw4Mc3BabzVy+obmen5xvOHLwkVfAFKa6/ZD1L5qzZEL1Zve6KhF6jvnvrrxTHKoPqmrvA56vo3dtO442FgWnIEkVHF77/RrBg2n3DokCGz7sCtkDS03HDV549w2YToTuGgGn00l1Nu175HsTdSIf9fiE/LRf0vqwOj1Yn9mX+OvrzwgvfwGBSiNC/hAAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=c084d162fb557250f6d5f9d38eefdca0"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Payment Capacity">8484d162fb557250f6d5f9d38eefdc71</flow>
+        <generation_source/>
+        <order>3</order>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-21 20:53:38</sys_created_on>
+        <sys_id>8484d162fb557250f6d5f9d38eefdca0</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-21 20:53:38</sys_updated_on>
+        <ui_id>4b0cc98f-c62b-455e-82ae-3e4d75ac41d6</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VY32/iOBD+V6I8A5cQSEjfTq0qrbS3PW17+7K3sia2A9YZO5s4bSnif9/JTyKgQLRUanUSL7Zn7G9mvm/s8H1tC2Zf2Sx0wjgMp7PAcTzPcXzfo+BGkefTyIlgYg9sBUuOlgYiyXH4CDIvxs8kY5yFJNGpAUkMcQiFBKhgwDjBXwJz9FRGoxMTWSJh9a32vW4NLfz93TGkCyFZypV99f3HwE4gxRXDU/tqvbN0LnoJEZdo+lDD34nGrJJ2SMq1au5z1836Ui3olBVQnIHNnw1XGL59FYPM+MBegmJgdLpqZ1IO7E7J7cRCKIM72oXxcyZe8NyZU9jFHKOivFprh6TOWTUd34CBe5Pm1ORpbUoXWlCeVflgPIZcmuvuXGVwlxihVeVShV15a5kv1ZcqHXa7QVMinMmzoo5JEWiBvA4jvl/op68NyluhypzUi1JTkO0IjElFlJsCz9rmkhdVJktIEqHmJEn1oyidEctyNJc4GMVSP+GhmZirEdAC+AjzCqNbnL8pp79BKooo/sJt0BkBCYkMIVUJM52nZSofCZV5Vi6koLJqL3szsLNVdi0hy7aRY8rJz7zAXeWhjphUSStcaCoS8ydu8cjr4DaDRkDToxQMt5SjWjFRoMg6KsoJKP1vjr5svR47MeP+ZDb0KGfDyTT0h5ELdBh5YeTPAhhD6I+E4ctR6b7Z7Cvrt/frKcDT0TcCvO6GfygltRT35j4f2qCWonsxKU4c5yOJEQ9/f1rsr64qBSck5rKjJGNbPmV4F5Eqlx2N7aukN8/PgNDw/K5gphWtXkNV0zwWXLJDN85tsbBz44z/nzfOuyQ5AmKkqp5QUqjy+YBA34r906PUi9wdnpX02nK/nIOM7msALKOtl95KOANOo4R7PNt6qPAcgNj0+5Iyu72+mawF4F1MAN74MgJYt2G2iTyQ8+bFWFSzsX8p7GHXHinYcXA3hwTW60y375njzb6AvV4K7pKtWrl5hXMXflq+osjBW7aABbrW55FKv+RJsDk329MbK6bNE8j/Dq3XjCNNocrw3uCZ6h79Uoo6z1QRkyVWTiT4mk45RXJkBFJOYp0rRup3dOcBi5WMRZqZ2ni/0XzlqB9laRSmZRbcKq2t1rrnRXw6jiaVn2KrCaQ+LbMwEKsMxGoD6Rd2n6Y1ueDj9NJN6xaELKuBn0hJp5w8TXX6SuM6UcgjjDizq50Jyr0oqN9ve4ckcLD9ncD6Ib63L9+aKIdoMgY/8FzXcVyHBc4sCNyZH8U+BJN4q1FCMkWxm+LOMVIFtycNNZo6u/v9p262/frMGaAaBt5oVXxwjwNjFaiwvFaD6jTuup9EWksOaqehPCDyP27LG6Gl6/TdNZUP8edTLh52M11NHcz1Wz0bcvGPEj9z/qmg2Iw745nL6HAWuMFwEjN/GDKYDiGMpoHHOJ3El3wJ/PgFxFDEefMVAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=8484d162fb557250f6d5f9d38eefdca0"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Payment Capacity">8484d162fb557250f6d5f9d38eefdc71</flow>
+        <generation_source/>
+        <order>4</order>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-21 20:53:38</sys_created_on>
+        <sys_id>4884d162fb557250f6d5f9d38eefdca0</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-21 20:53:38</sys_updated_on>
+        <ui_id>0a53884c-6d3f-4926-b143-7aebb7b97d97</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VYUW/iOBD+K1GegUsIJNC3VSuklXa3ura3L3t7lhM7xTpjZ2OnlCL++41jBxBQIDp6anWPHo/tb8bfNxnnx9JnxL/yyTgY5+PxcJQEQRQFQRxHGQ7TNIqzNEjxwO/4As8oeGqccgrDJ8wrM1YZmlVcM1TKOfpVUaWZFAgLNacluBGmCo4X3533V+Pq3cm597tz9T41rtmUcVJS4V/9+NnxC1zCgRpmrpY7U+ci5jilHFwfHOSdCPSiWA9RPWdtX7aXed/shCyJgRJ0fPqsqSAUMOSYK9rxZ1gQrGW5WFtKismt4BvDlAkNO/rG+VmxFzh3FBi/nEJUGbVz6yFyWbPm/AZrfK/LKtNV6VyzqWQZVTYfhOYY8nq9bbMOt4VJsV1iw7arJa9m4ptNh7/eoLkksFQKQNDCBGqQuzDy+6mc3zUoJ0zUOXGTXGaYr0dY65KllTZ4lj7ldAYboRkuCiYeUVHKJ1YvBiyz3iOHQS/nwCBCFXsUPZwZ4D3IK+5NwH5Tm7/jkpkovsI2NWVyxoEhyF6hklVZp/IJZbxS9UQJRLR7+auOrxbqmmOlNpFDyoG0BrfNg4sY2aSZJVnJCv0JtniiLrhVpxHN8CgFxxvKZVIQZlCoLeUAw81RjPxZwXqyXKoqNTnolTQDuq1WfxlJmSQ/Nx79ICc0Hoy6UUZJdzAcx900xFk3jcZpPEpwH4/jHtN01lsvXa32VfgfntxS1Kcz2oj6ejulh9Ls5L1n+3JoAyfv8GLyHgTBRxI4HP7+9N1esTYFJ2QbkqMkIxs+KVlqZHO5pdt9PbXm+RkQGp7fGmZ66eI1VI7mOaOcHPqKTczEzles///8ir1LkgMgguztMcGZqFsSAPpW7B8epV4a7vCsptdWt2dsWGX7GsCelt5LayWcAadRwj2c7T1YPAcgNvW+psxurW+MTgDRxQQQ9S8jgOU6zHUiD+S86ULNbTb+L8Yf7/oDBbcWhKtDAmt1Ztj2zP5qX8BRKwVvk83O3LzCuQu3q68osvOWJWAKS915yOoXzRl5pHpzeuNFpJ5j/vehecc41FxUHd4btL7h0ddXutX6sty+Dwvo0G17qRC0nyiXlSDI9eYbIpmbzFmptHPeLzR3FPQjPAnC9PSUerW3t/Zu+SE+HUeTys+51wTiTlMeBOLVgXjrQNqF3aZoDS7YnF66aE0w4/VtwLOr2LpOWpayfKVwnbjII4w4s6qdCSq8KKh/X/YOSeBg+TuB9UO84S9fmjKK00Efx0kUhkEQBiQJRkkSjuI0j3EyyDcaRUiJDKop7JwDVWB71FCjuedgv/7Yktq20JyBqqHgjRTm1d1PtGdgwf16DazTwF1BSaXkFIudivIA34nfJg6/4+vw3VWVD/FHq2IPu5m2poO5fqu+oWJ/CParop8NxUY06I9CknVHSZh0BzmJu2OCh108TodJRGg2yC/ZCvz8B7qKcL88FgAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=4884d162fb557250f6d5f9d38eefdca0"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Get MRVS Values (Payment Capacity)">cb7295aefb157250f6d5f9d38eefdc1c</action_type>
+        <action_type_parent display_value="Get MRVS Values (Payment Capacity)">38dec5e6fb157250f6d5f9d38eefdc47</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>cb7295aefb157250f6d5f9d38eefdc1c</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Payment Capacity">8484d162fb557250f6d5f9d38eefdc71</flow>
+        <generation_source/>
+        <order>5</order>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-21 20:53:38</sys_created_on>
+        <sys_id>8c84d162fb557250f6d5f9d38eefdca0</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-21 20:53:38</sys_updated_on>
+        <ui_id>ef01531f-c3f6-4cc8-b912-c59d5835cb03</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/71V227aQBD9FbTPGBkbY8xblShSpLapIM1LFFmzN1hpfcnuOoEi/r2z2BBIm7SRUB53rmfOzNHeb4jiZErCNI2yBISkwySNklCOeSIzHk+EkJwNBemTEgqBkUWjnTLVc24EqwxHxxPoxns2mxCSeDIZsWDMYxmMsmgc0OEoDlIQlKY0S3mWDma7vIEvoUouVtst1uDK1hrWd2coxZZKcyNKMr1/6JMaDOJ2wpDp5pXrfwfXQIXG0Fn13Lv2bd4jw61r77DOqHLRvb92BeZ7I4Z6QMM+ESsnsCQikaCt6JMCSg6uMmsydaZBgxHAb0q9PkQsVemwGPGxK6t+YbtJGIY+UgocjonWe3jmHbmtWV6CA0TSMNeYLpQtK8WEbWnhQgKOdXFsawNuaqeqsk1xQPU+u9JNUX5vGSGHAvtdoqWxCELUflKPvRtEzpfV82yP8spv0BycumKgDy9wSB1tnMezIY26fcVya/mDZ6FFgR3zAuoaLXltqie164Kgi8FC42MgNe6PC6sW5QCYn3CAG4DBFdovd+Y7MMqP+w3LYLJv97NUj4249hcUxwkdjQUEEUtpMErpOJjQYRRIOslkAhnPYka2fWLX9kKDtS9E4Ybyx8aP2dLWEZS3HPsUZlTtviCoJ9Fxse3vFSvfO9w4ezlSlICviv1zdapX21A//aC93r8J8eN6+jesvZ5+7HD15mvbu758G26nqJfrPhXV7Mje6So6l67i6FRVq9xizSyvK+NA5y4PUfgLhWdY4QXlDMwCbI5XWjWmekOCt9jYNmbdu8Doqjdr82GnrLOr86OAP0HKci7AsOWVEtrfS9kUdKepNyR+vPZTlR8v/nOEnrJkGKcQhCHPglE8SvBLiliQJEMqWZzIWKZnFPrDbycLIbScBwAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=8c84d162fb557250f6d5f9d38eefdca0"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Payment Capacity">8484d162fb557250f6d5f9d38eefdc71</flow>
+        <generation_source/>
+        <order>7</order>
+        <parent_ui_id>cc765906-5769-430a-b4ae-373f078cb540</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-21 20:53:38</sys_created_on>
+        <sys_id>4084d162fb557250f6d5f9d38eefdca1</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-21 20:53:38</sys_updated_on>
+        <ui_id>61efcf1e-eb09-4b47-b4da-1838e05fe6b3</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1WTW/bMAz9K4HPSeDPLMltaFBgQNcO7dBL1wm0RKcCZNmV5bSpkf8++ivJmqJrsF6KDfBFJB9FPvPRvqkcKZy5E6JwvZk34YEXBL7r+tPQiydB7PkiAETPGToaUqRIgzwzgs4rUGVtqKowdjmfTZMRn/jxKIwiHE19wFGAofgUAQ89MRlfNrjNhpBCFrmC9XWXgCz8TiphUDvzm9uhk4OhuywaZ149c721WAUxKgq97Kt9Xr1d5/VZZLxMUVsme+NZh1x0nsGXBXkIVJfjuUMHHy1qgVRIAqrAoZOCFmAzs3bm1pRkMAjiQqv1NuJOats2msJjIZ/o5tCt4xKkznhHwvbIOoJac7IAC1eUmdvSbPnKJMei5URgAqWyJ/u2NuAitzLTLcRCrHp0pspUn7eMONsEe++jLKgIzOs+68rbtpKru+zhsi/yVOqGkq5FlXFQ2xNYa2Rc2rqcykGFDccp5LnUS5abbCUbMJWSjpeKDuNEZQ90ZyGXegy8rntMrML4lOyLxnwNRtZNfKU0BN4MnWJdnCgoil0rxCG7L+tK2sa6FljDQkMBayahBnMjc/uZrlphV/hm2Mkhjl6bMD7bDdRezp0kHllBAzJjeWYsKGaZyzjkwKUAURPLclhCTUl2qIaTbeCAnm97gceJ5A0t9CL53ozGyy11Ojmwne1jB+eto1NJ9G4qmX4klXRtfHiZ/Ekcrv/q+t2bpEYPxZ4wSkYXSeqqHeofpesGoqowcb0o8OgDEiSTUcj5dBTPPH/Eo5mIpkHEYzcYr37HbjY/SxJYmYPmwGirE90Wj8x4gG+yKnlfEtdPzKACYgCOzHqAb7LqzEKzBpZHptsBX/p6/qf07yk9brO+Yf77zXoqUYniBUH0axVTepcWWSuQZ6u1cw6uO+f2J+Qd/0Lcj7Rh/5n/kNtfftwkjpgLAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=4084d162fb557250f6d5f9d38eefdca1"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Create Record">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent display_value="Create Record">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Payment Capacity">8484d162fb557250f6d5f9d38eefdc71</flow>
+        <generation_source/>
+        <order>9</order>
+        <parent_ui_id>bbf158a1-4051-412a-803b-c34c3913e71b</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-21 20:53:38</sys_created_on>
+        <sys_id>0484d162fb557250f6d5f9d38eefdca1</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-21 20:53:38</sys_updated_on>
+        <ui_id>c2424349-d2a6-4e08-bfe3-dac682cb979f</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VTW/bMAz9K4XOTmDHSZDkNrToaWuHdeilawVaohMBiqTKcto0yH8fZTtp1g9sAQYMBQb4IpKP4iPF55sNU5LN2DjDdDTNxiLP8nyQpoPJMCvGeZENZA6IQ5YwA0ukyACFRt4cErYCXUfjI68kyil31gfQPPCUC3AglASJnD4Hc0KYYAkkVeU0rK877Ok+8IS+rweBYqG09GjY7OY2YQ48eQJ6Ntu8cP0pBQ0Fagr9Hjm8Qyms3Zu2z4fYk4vWYb2M9aQJw8eAhnrAZiXoChO2BCMhWL9ms+BrMngEeWn0eh+xUCZQQhZjHyv1RNdO0hhXIjET2Pr2R971rTWXZxDgijKLUPsuVCysEli1PZFYQq3D6aGtDbh0QVnTQhqaHdrqemku2pawfYLdmMhSV3GWLvKMlXc0yquFffi2q/JcmaYlnVNbAXp/ghC8KuoQ69kw1BgnzZfgnDJz7rxdqQZMtSz7c02HfqntA11aqbnpg4iF96mt0D8n+1ljvgavIosvlIbA24RV6+pUQ1U9c6Em8vs6VtIy6zjwtg0RIrxy4RNdsMKu3G2y2w2J6fTdh5UVzw+pWYfqYC9qDsb+qNM0l5sNlmk2yrOyJ/Jy3BsKMekV02zQE6OpHE3ykSjSvE/x2+1dzalARd1od+GoDKtfsU02Z2sHRgAX1tOYAh6Z8RW+yarVfU0zeuIeNVDn4Misr/BNVmMDNOoxPzLdM3C7fS0z/0fx70ZxpJD/ft92Qn6uUMvqjQXcqTgu6Q0E5O1CvlDyznly3Tk7Nc/+lpoP0/Qj6XlL7MPL+cGf+x1hv/0Jk2F5nPYIAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=0484d162fb557250f6d5f9d38eefdca1"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=8484d162fb557250f6d5f9d38eefdc71"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=8484d162fb557250f6d5f9d38eefdc71^sys_idNOT IN8084d162fb557250f6d5f9d38eefdc9f,8884d162fb557250f6d5f9d38eefdc9f,0084d162fb557250f6d5f9d38eefdca0"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">212b3741fbf1621086e7f4045eefdcdc</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Payment Capacity">8484d162fb557250f6d5f9d38eefdc71</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="For Each">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-21 20:53:38</sys_created_on>
+        <sys_id>8084d162fb557250f6d5f9d38eefdc9f</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-21 20:53:38</sys_updated_on>
+        <ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/51TXW+jMBD8L34miI9cUvJWtapU6e4qpVVfThVa7CWxzticbZJyiP9+60Bo1cd7gh3vzs4MZmCm823n3Yu5dU4eNNv9eouY1AGj94FpaJDtmPTYOBaxE6gu1MNQpTwXKcfVTZ7Cal3V1ar6VlSrGni+3Wy3uK6LeI/cWOHGkUaFdK2C/vX/GfhRKmFxFtmCJW0eLdsNX46koAVpIeoiTQqeZ5s8S5LsZp1Wm7xKM5EDig0RKqhQUevj7O6LWd+3obSThBn4Ps/sF5QeQUSWRAzfPWqBtL4G5TBiDWgB3tie7bztCLAI4kmrfuk4Su2JjoXedyf/0sY0SUJjjWSI43S4lOWc4wTX9+Dhmai57+zcyo9GcnRTFAJr6JS/+4xNDU+tl0ZPIx4qdZ02qmv0zykJthBcPxshnSMR2AajQfrso34+mvP+qvJB6kso86EyHNRSgfdWVp0PegaGChsiKhtoW6kPZWvNSV6GSUsTHxQVca3MmZaGKxoDD8JjyhXiB8LvL/ArWBlc/CAaGh4j5np3p8C5Dy8UYvmnC0omZ7OHcoohjHArW39LC044yx3fwq2fuJdMuXQk4SVgj9d/JRz0dIMk/wydjf0dxH9g4z8Uu0oRdQMAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">612b3741fbf1621086e7f4045eefdcde</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Payment Capacity">8484d162fb557250f6d5f9d38eefdc71</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>6</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-21 20:53:38</sys_created_on>
+        <sys_id>8884d162fb557250f6d5f9d38eefdc9f</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-21 20:53:38</sys_updated_on>
+        <ui_id>cc765906-5769-430a-b4ae-373f078cb540</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VXW/TMBT9K5Gf0ygfTVn3VnVMQhpMYlNfYIpubGe1cOxgO+1K1f/OdT7aig3BgEfe4uN7r8859lH2RLeuaZ291wtrxaMil58eQiKUx/B7TxTUnFwSqhUTTmhVdEBINiBbv7ECqU3AeLBQOnirsM4ZYDpQENxDySUE10KBxA4mbCNht3p1I10LyQwfuDVgkIHjhlzuf9gSDOdWMVTJnCY0S2dZGsfpxTQpZ1mZpCwDDhkOlH4+li5HUcFNh4Q/Vet2jcetM0I9DuubYcrdCGrDPKskDgl/clwxjnwqkJaHpAbFwGmzOyKGA7tV8gSshXI4jvjiJyu+4YFpnvvCiqNEyvvN47IYDO3h6gocIJWWutYMpXStBeW2N4fxClrpludYX3DbeKl9i4NSjt1atrX60DtCjgPG+0OktUiCN16ppz7oqO7WevtxZImX2LkybEpN8U7HFTj0rmyd57MnXPIaBxU1NA06WjRGb0TXjFzq6FHiIqqk3uKh/q1GQD3xCI2F6Brxqw5egRFexXscg809zRKsoEX3rnEc2sTJISR2Z5cSrD2JRHeLr62n2EsexBW9P76FGtG4BZ684YOOQ/g8JmcJ2e+nZUzp/KKa0FlaTqZ5zicXKfBJxqfsTQ50mrBZZB241h4On9s4zlj8PDB/POd1+ZlDXuVJnL+cn+nspfy8kJxXhib9RWj8jf1mZuI4/h+avw6NsEX/1Adt3eH/MDMPPiD9mUevqbBI7d5j78Y/kN/Y4eMS9BzaavPFizphh+/ioplgywYAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">f7ee3f85fbf1621086e7f4045eefdc51</block>
+        <comment/>
+        <connected_to>cc765906-5769-430a-b4ae-373f078cb540</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Payment Capacity">8484d162fb557250f6d5f9d38eefdc71</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>8</order>
+        <outputs_assigned/>
+        <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-21 20:53:38</sys_created_on>
+        <sys_id>0084d162fb557250f6d5f9d38eefdca0</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-21 20:53:38</sys_updated_on>
+        <ui_id>bbf158a1-4051-412a-803b-c34c3913e71b</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=8484d162fb557250f6d5f9d38eefdc71"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=8484d162fb557250f6d5f9d38eefdc71"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>record</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_8484d162fb557250f6d5f9d38eefdc71</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-21 20:53:38</sys_created_on>
+        <sys_id>cc84d162fb557250f6d5f9d38eefdc99</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Portal Tesouro" source="x_sded9_portal_t_0">724414a2fb192a1086e7f4045eefdcf8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Portal Tesouro">724414a2fb192a1086e7f4045eefdcf8</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-21 20:53:38</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_8484d162fb557250f6d5f9d38eefdc71"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_8484d162fb557250f6d5f9d38eefdc71"/>
+    <sys_hub_flow action="UPDATE">
+        <sys_id>5265c96afbd17250f6d5f9d38eefdc45</sys_id>
+        <latest_snapshot>8484d162fb557250f6d5f9d38eefdc71</latest_snapshot>
+        <compiler_build>glide-yokohama-12-18-2024__patch7-hotfix2a-09-24-2025_10-07-2025_2003.zip</compiler_build>
+    </sys_hub_flow>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=5265c96afbd17250f6d5f9d38eefdc45"/>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=5265c96afbd17250f6d5f9d38eefdc45^sys_idNOT IN1c84d162fb557250f6d5f9d38eefdcb1"/>
+    <sys_flow_subflow_plan action="INSERT_OR_UPDATE">
+        <plan>{"type":"PlanProxy","persistor":{"@class":".ChunkingPlanPersistor","table":"sys_flow_subflow_plan","id":"1c84d162fb557250f6d5f9d38eefdcb1","name":"plan","plan_signature":null}}</plan>
+        <plan_id display_value="Payment Capacity">5265c96afbd17250f6d5f9d38eefdc45</plan_id>
+        <snapshot>87671d66fb557250f6d5f9d38eefdc5e</snapshot>
+        <sys_created_by>javier.rodriguez@artycs.com.br</sys_created_by>
+        <sys_created_on>2025-11-21 20:53:38</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>1c84d162fb557250f6d5f9d38eefdcb1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>javier.rodriguez@artycs.com.br</sys_updated_by>
+        <sys_updated_on>2025-11-21 20:53:38</sys_updated_on>
+    </sys_flow_subflow_plan>
+</record_update>
