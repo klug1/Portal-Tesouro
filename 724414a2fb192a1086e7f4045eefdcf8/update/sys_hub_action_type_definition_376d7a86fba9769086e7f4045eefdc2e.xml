@@ -489,7 +489,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label/>
         <mandatory>true</mandatory>
         <max_length>8000</max_length>
@@ -573,7 +573,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Superavit Tribunal de contas</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -656,7 +656,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Superavit Judiciario</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -739,7 +739,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Superavit Ministerio Publico</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -822,7 +822,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Superavit Executivo</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -905,7 +905,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Superavit Defensoria</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -988,7 +988,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Ano</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1071,7 +1071,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Superavit Total</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1154,7 +1154,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Superavit Legislativo</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1423,7 +1423,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Reference">reference</internal_type>
+        <internal_type display_value="Referência">reference</internal_type>
         <label>Parent Sys ID</label>
         <mandatory>true</mandatory>
         <max_length>32</max_length>
@@ -1507,7 +1507,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Row Index</label>
         <mandatory>true</mandatory>
         <max_length>8000</max_length>
@@ -1681,7 +1681,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Superavit Defensoria</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1768,7 +1768,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Superavit Executivo</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1855,7 +1855,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Superavit Tribunal de contas</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1942,7 +1942,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Superavit Total</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -2029,7 +2029,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Superavit Judiciario</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -2139,7 +2139,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Status da ação</label>
         <mandatory>false</mandatory>
         <max_length>65000</max_length>
@@ -2226,7 +2226,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Superavit Legislativo</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -2313,7 +2313,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Ano</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -2400,7 +2400,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Superavit Ministerio Publico</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3205,7 +3205,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>row_index</label>
         <mandatory>true</mandatory>
         <max_length>8000</max_length>
@@ -3289,7 +3289,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Superavit Ministerio Publico</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3372,7 +3372,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Superavit Judiciario</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3455,7 +3455,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Superavit Defensoria</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3538,7 +3538,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Ano</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3621,7 +3621,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Superavit Tribunal de contas</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3704,7 +3704,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Superavit Legislativo</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3787,7 +3787,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Superavit Executivo</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3870,7 +3870,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Superavit Total</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -4139,7 +4139,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Reference">reference</internal_type>
+        <internal_type display_value="Referência">reference</internal_type>
         <label>Parent Sys ID</label>
         <mandatory>true</mandatory>
         <max_length>32</max_length>
@@ -4223,7 +4223,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Row Index</label>
         <mandatory>true</mandatory>
         <max_length>8000</max_length>
@@ -4310,7 +4310,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Superavit Tribunal de contas</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -4397,7 +4397,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Ano</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -4571,7 +4571,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Superavit Total</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -4658,7 +4658,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Superavit Defensoria</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -4745,7 +4745,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Status da ação</label>
         <mandatory>false</mandatory>
         <max_length>65000</max_length>
@@ -4832,7 +4832,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Superavit Judiciario</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -4919,7 +4919,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Superavit Executivo</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -5006,7 +5006,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Superavit Ministerio Publico</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -5093,7 +5093,7 @@ outputs.ano = fieldMapping['v_ano'];&#13;
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Superavit Legislativo</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>

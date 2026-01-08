@@ -446,7 +446,7 @@ outputs.valor = fieldMapping['v_valor'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label/>
         <mandatory>true</mandatory>
         <max_length>8000</max_length>
@@ -530,7 +530,7 @@ outputs.valor = fieldMapping['v_valor'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Tipo de Informação</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -613,7 +613,7 @@ outputs.valor = fieldMapping['v_valor'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Exercicio</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -696,7 +696,7 @@ outputs.valor = fieldMapping['v_valor'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Valor</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -779,7 +779,7 @@ outputs.valor = fieldMapping['v_valor'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Mes</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -956,7 +956,7 @@ outputs.valor = fieldMapping['v_valor'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Reference">reference</internal_type>
+        <internal_type display_value="Referência">reference</internal_type>
         <label>Parent Sys ID</label>
         <mandatory>true</mandatory>
         <max_length>32</max_length>
@@ -1040,7 +1040,7 @@ outputs.valor = fieldMapping['v_valor'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Row Index</label>
         <mandatory>true</mandatory>
         <max_length>8000</max_length>
@@ -1127,7 +1127,7 @@ outputs.valor = fieldMapping['v_valor'];&#13;
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Mês</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1237,7 +1237,7 @@ outputs.valor = fieldMapping['v_valor'];&#13;
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Status da ação</label>
         <mandatory>false</mandatory>
         <max_length>65000</max_length>
@@ -1324,7 +1324,7 @@ outputs.valor = fieldMapping['v_valor'];&#13;
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Valor</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1411,7 +1411,7 @@ outputs.valor = fieldMapping['v_valor'];&#13;
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Tipo de Informação</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1585,7 +1585,7 @@ outputs.valor = fieldMapping['v_valor'];&#13;
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Exercício</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -2208,7 +2208,7 @@ outputs.valor = fieldMapping['v_valor'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>row_index</label>
         <mandatory>true</mandatory>
         <max_length>8000</max_length>
@@ -2375,7 +2375,7 @@ outputs.valor = fieldMapping['v_valor'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Mes</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -2458,7 +2458,7 @@ outputs.valor = fieldMapping['v_valor'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Valor</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -2541,7 +2541,7 @@ outputs.valor = fieldMapping['v_valor'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Exercicio</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -2624,7 +2624,7 @@ outputs.valor = fieldMapping['v_valor'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Tipo de Informação</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -2801,7 +2801,7 @@ outputs.valor = fieldMapping['v_valor'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Row Index</label>
         <mandatory>true</mandatory>
         <max_length>8000</max_length>
@@ -2885,7 +2885,7 @@ outputs.valor = fieldMapping['v_valor'];&#13;
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Reference">reference</internal_type>
+        <internal_type display_value="Referência">reference</internal_type>
         <label>Parent Sys ID</label>
         <mandatory>true</mandatory>
         <max_length>32</max_length>
@@ -2972,7 +2972,7 @@ outputs.valor = fieldMapping['v_valor'];&#13;
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Tipo de Informação</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3146,7 +3146,7 @@ outputs.valor = fieldMapping['v_valor'];&#13;
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Status da ação</label>
         <mandatory>false</mandatory>
         <max_length>65000</max_length>
@@ -3233,7 +3233,7 @@ outputs.valor = fieldMapping['v_valor'];&#13;
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Mês</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3320,7 +3320,7 @@ outputs.valor = fieldMapping['v_valor'];&#13;
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Exercício</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3407,7 +3407,7 @@ outputs.valor = fieldMapping['v_valor'];&#13;
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Valor</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>

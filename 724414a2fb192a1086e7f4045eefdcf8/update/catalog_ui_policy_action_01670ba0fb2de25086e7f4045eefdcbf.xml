@@ -26,7 +26,7 @@
         <value/>
         <value_action>ignore</value_action>
         <variable>v_estoque_da_divida_publica_externa</variable>
-        <variable_set display_value="Public debt">e8b60b60fb2de25086e7f4045eefdc6b</variable_set>
+        <variable_set display_value="Dívida Pública">e8b60b60fb2de25086e7f4045eefdc6b</variable_set>
         <visible>ignore</visible>
     </catalog_ui_policy_action>
     <sys_translated_text action="delete_multiple" query="documentkey=01670ba0fb2de25086e7f4045eefdcbf"/>

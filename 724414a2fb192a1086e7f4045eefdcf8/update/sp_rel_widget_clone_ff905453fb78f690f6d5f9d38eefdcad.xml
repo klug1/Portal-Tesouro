@@ -3,7 +3,7 @@
         <child display_value="Knowlegde Homepage Search SATE">73905453fb78f690f6d5f9d38eefdcac</child>
         <cloned>2025-10-30 03:21:07</cloned>
         <last_validated>2025-10-30 03:21:07</last_validated>
-        <parent display_value="knowledge Homepage Search">04ec050ddb53220099f93691f0b8f538</parent>
+        <parent display_value="Pesquisa da Página Inicial de conhecimento">04ec050ddb53220099f93691f0b8f538</parent>
         <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;sp_widget&gt;&lt;category/&gt;&lt;client_script&gt;&lt;![CDATA[function($location, spAriaFocusManager, spUtil) {
 
 	var c = this;

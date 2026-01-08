@@ -3,7 +3,7 @@
         <child display_value="Copy of Captcha for RP">d46aa34afbf47290f6d5f9d38eefdcdb</child>
         <cloned>2025-10-26 22:00:07</cloned>
         <last_validated>2025-10-26 22:00:07</last_validated>
-        <parent display_value="Captcha for RP">d1b001d677525110230afd708e5a9979</parent>
+        <parent display_value="Captcha para RP">d1b001d677525110230afd708e5a9979</parent>
         <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;sp_widget&gt;&lt;category&gt;custom&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[function ($scope, $rootScope, $timeout, spUtil, $location) {
 	var c = this;
 	

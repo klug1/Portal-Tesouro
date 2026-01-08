@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="io_set_item">
     <io_set_item action="INSERT_OR_UPDATE">
         <order>100</order>
-        <sc_cat_item display_value="RCL with Deductions">00320834fb61265086e7f4045eefdcbd</sc_cat_item>
+        <sc_cat_item display_value="RCL com Deduções">00320834fb61265086e7f4045eefdcbd</sc_cat_item>
         <sys_class_name>io_set_item</sys_class_name>
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-14 12:51:53</sys_created_on>
@@ -14,6 +14,6 @@
         <sys_update_name>io_set_item_499ebf38fb25665086e7f4045eefdc30</sys_update_name>
         <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
         <sys_updated_on>2025-05-14 12:51:53</sys_updated_on>
-        <variable_set display_value="RCL with Deductions">348ebf38fb25665086e7f4045eefdc2a</variable_set>
+        <variable_set display_value="RCL com Deduções">348ebf38fb25665086e7f4045eefdc2a</variable_set>
     </io_set_item>
 </record_update>

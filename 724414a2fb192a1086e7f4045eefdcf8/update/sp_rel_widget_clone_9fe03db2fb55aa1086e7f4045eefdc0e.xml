@@ -3,7 +3,7 @@
         <child display_value="Header Menu Sefaz">1fe0b5b2fb55aa1086e7f4045eefdc41</child>
         <cloned>2025-05-07 21:25:09</cloned>
         <last_validated>2025-05-07 21:25:09</last_validated>
-        <parent display_value="Header Menu">5ef595c1cb12020000f8d856634c9c6e</parent>
+        <parent display_value="Menu do Cabeçalho">5ef595c1cb12020000f8d856634c9c6e</parent>
         <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;sp_widget&gt;&lt;category&gt;standard&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[function ($scope, spUtil, $rootScope, $timeout, spAriaUtil, spGtd, $window, i18n) {
 	var KEY_ENTER = 13;
 	$scope.collapse = function() {

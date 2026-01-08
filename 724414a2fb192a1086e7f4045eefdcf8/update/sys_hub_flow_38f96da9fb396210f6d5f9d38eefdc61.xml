@@ -102,7 +102,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Reference">reference</internal_type>
+        <internal_type display_value="Referência">reference</internal_type>
         <label>Record</label>
         <mandatory>true</mandatory>
         <max_length>32</max_length>
@@ -155,8 +155,8 @@
     <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=38f96da9fb396210f6d5f9d38eefdc61"/>
     <sys_hub_action_instance_v2 action="delete_multiple" query="flow=38f96da9fb396210f6d5f9d38eefdc61^sys_idNOT IN81f96da9fb396210f6d5f9d38eefdc84,cdf96da9fb396210f6d5f9d38eefdc84,81f96da9fb396210f6d5f9d38eefdc85,178fe9a1fb796210f6d5f9d38eefdcf3,45f96da9fb396210f6d5f9d38eefdc84,09f96da9fb396210f6d5f9d38eefdc84"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Look Up Records">43400a1587003300663ca1bb36cb0b4b</action_type>
-        <action_type_parent display_value="Look Up Records">d1c56ec50b30030085c083eb37673a50</action_type_parent>
+        <action_type display_value="Pesquisar registros">43400a1587003300663ca1bb36cb0b4b</action_type>
+        <action_type_parent display_value="Pesquisar registros">d1c56ec50b30030085c083eb37673a50</action_type_parent>
         <attributes/>
         <comment/>
         <compiled_snapshot>43400a1587003300663ca1bb36cb0b4b</compiled_snapshot>
@@ -179,8 +179,8 @@
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=81f96da9fb396210f6d5f9d38eefdc84"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
-        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <action_type display_value="Atualizar registro">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Atualizar registro">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
         <attributes/>
         <comment/>
         <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
@@ -203,8 +203,8 @@
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=cdf96da9fb396210f6d5f9d38eefdc84"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Create Record">2de05916c31332002841b63b12d3aee1</action_type>
-        <action_type_parent display_value="Create Record">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <action_type display_value="Criar registro">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent display_value="Criar registro">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
         <attributes/>
         <comment/>
         <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
@@ -251,8 +251,8 @@
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=178fe9a1fb796210f6d5f9d38eefdcf3"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
-        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <action_type display_value="Pesquisar registro">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Pesquisar registro">b93f42810b30030085c083eb37673a63</action_type_parent>
         <attributes/>
         <comment/>
         <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
@@ -275,8 +275,8 @@
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=45f96da9fb396210f6d5f9d38eefdc84"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
-        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <action_type display_value="Pesquisar registro">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Pesquisar registro">b93f42810b30030085c083eb37673a63</action_type_parent>
         <attributes/>
         <comment/>
         <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
@@ -310,7 +310,7 @@
         <flow display_value="RCL (Net Current Revenue) 2">38f96da9fb396210f6d5f9d38eefdc61</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <logic_definition display_value="Se">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
         <order>4</order>
         <outputs_assigned/>
         <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
@@ -337,7 +337,7 @@
         <flow display_value="RCL (Net Current Revenue) 2">38f96da9fb396210f6d5f9d38eefdc61</flow>
         <flow_variables_assigned>var_count1</flow_variables_assigned>
         <generation_source/>
-        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <logic_definition display_value="Definir variáveis de fluxo">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
         <order>7</order>
         <outputs_assigned/>
         <parent_ui_id>9293447b-4381-4d7b-bfa2-d1373275d096</parent_ui_id>
@@ -364,7 +364,7 @@
         <flow display_value="RCL (Net Current Revenue) 2">38f96da9fb396210f6d5f9d38eefdc61</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <logic_definition display_value="Se">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
         <order>8</order>
         <outputs_assigned/>
         <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
@@ -391,7 +391,7 @@
         <flow display_value="RCL (Net Current Revenue) 2">38f96da9fb396210f6d5f9d38eefdc61</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <logic_definition display_value="Outro">1f781bf3c32232002841b63b12d3aee6</logic_definition>
         <order>18</order>
         <outputs_assigned/>
         <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
@@ -418,7 +418,7 @@
         <flow display_value="RCL (Net Current Revenue) 2">38f96da9fb396210f6d5f9d38eefdc61</flow>
         <flow_variables_assigned>var_mes,var_ano</flow_variables_assigned>
         <generation_source/>
-        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <logic_definition display_value="Definir variáveis de fluxo">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
         <order>20</order>
         <outputs_assigned/>
         <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
@@ -445,7 +445,7 @@
         <flow display_value="RCL (Net Current Revenue) 2">38f96da9fb396210f6d5f9d38eefdc61</flow>
         <flow_variables_assigned>var_mes</flow_variables_assigned>
         <generation_source/>
-        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <logic_definition display_value="Definir variáveis de fluxo">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
         <order>11</order>
         <outputs_assigned/>
         <parent_ui_id>fefe5d28-2611-4ce7-9f3a-4b1127da7629</parent_ui_id>
@@ -472,7 +472,7 @@
         <flow display_value="RCL (Net Current Revenue) 2">38f96da9fb396210f6d5f9d38eefdc61</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <logic_definition display_value="Se">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
         <order>16</order>
         <outputs_assigned/>
         <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
@@ -499,7 +499,7 @@
         <flow display_value="RCL (Net Current Revenue) 2">38f96da9fb396210f6d5f9d38eefdc61</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="For Each">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
+        <logic_definition display_value="Para cada">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
         <order>3</order>
         <outputs_assigned/>
         <parent_ui_id/>
@@ -526,7 +526,7 @@
         <flow display_value="RCL (Net Current Revenue) 2">38f96da9fb396210f6d5f9d38eefdc61</flow>
         <flow_variables_assigned>var_count1</flow_variables_assigned>
         <generation_source/>
-        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <logic_definition display_value="Definir variáveis de fluxo">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
         <order>5</order>
         <outputs_assigned/>
         <parent_ui_id>b6f98993-2de4-48f4-9d42-7ad52358075f</parent_ui_id>
@@ -553,7 +553,7 @@
         <flow display_value="RCL (Net Current Revenue) 2">38f96da9fb396210f6d5f9d38eefdc61</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <logic_definition display_value="Outro">1f781bf3c32232002841b63b12d3aee6</logic_definition>
         <order>6</order>
         <outputs_assigned/>
         <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
@@ -580,7 +580,7 @@
         <flow display_value="RCL (Net Current Revenue) 2">38f96da9fb396210f6d5f9d38eefdc61</flow>
         <flow_variables_assigned>var_count1</flow_variables_assigned>
         <generation_source/>
-        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <logic_definition display_value="Definir variáveis de fluxo">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
         <order>2</order>
         <outputs_assigned/>
         <parent_ui_id/>
@@ -607,7 +607,7 @@
         <flow display_value="RCL (Net Current Revenue) 2">38f96da9fb396210f6d5f9d38eefdc61</flow>
         <flow_variables_assigned>var_ano</flow_variables_assigned>
         <generation_source/>
-        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <logic_definition display_value="Definir variáveis de fluxo">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
         <order>9</order>
         <outputs_assigned/>
         <parent_ui_id>cfdc988b-b11d-4942-b9bf-11cea3ddb70f</parent_ui_id>
@@ -634,7 +634,7 @@
         <flow display_value="RCL (Net Current Revenue) 2">38f96da9fb396210f6d5f9d38eefdc61</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
+        <logic_definition display_value="Senão">666e5545c3e232002841b63b12d3ae99</logic_definition>
         <order>10</order>
         <outputs_assigned/>
         <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
@@ -661,7 +661,7 @@
         <flow display_value="RCL (Net Current Revenue) 2">38f96da9fb396210f6d5f9d38eefdc61</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <logic_definition display_value="Se">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
         <order>12</order>
         <outputs_assigned/>
         <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
@@ -716,7 +716,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Integer">integer</internal_type>
+        <internal_type display_value="Número inteiro">integer</internal_type>
         <label>var_count</label>
         <mandatory>false</mandatory>
         <max_length>40</max_length>
@@ -799,7 +799,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>var_ano</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -882,7 +882,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>var_mes</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1050,7 +1050,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Reference">reference</internal_type>
+        <internal_type display_value="Referência">reference</internal_type>
         <label>Record</label>
         <mandatory>true</mandatory>
         <max_length>32</max_length>
@@ -1103,8 +1103,8 @@
     <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=abbf61e1fb796210f6d5f9d38eefdcbb"/>
     <sys_hub_action_instance_v2 action="delete_multiple" query="flow=abbf61e1fb796210f6d5f9d38eefdcbb^sys_idNOT INbbbfa1e1fb796210f6d5f9d38eefdc42,bfbfa1e1fb796210f6d5f9d38eefdc42,73bfa1e1fb796210f6d5f9d38eefdc43,77bfa1e1fb796210f6d5f9d38eefdc43,3bbfa1e1fb796210f6d5f9d38eefdc43,fbbfa1e1fb796210f6d5f9d38eefdc43"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Look Up Records">43400a1587003300663ca1bb36cb0b4b</action_type>
-        <action_type_parent display_value="Look Up Records">d1c56ec50b30030085c083eb37673a50</action_type_parent>
+        <action_type display_value="Pesquisar registros">43400a1587003300663ca1bb36cb0b4b</action_type>
+        <action_type_parent display_value="Pesquisar registros">d1c56ec50b30030085c083eb37673a50</action_type_parent>
         <attributes/>
         <comment/>
         <compiled_snapshot>43400a1587003300663ca1bb36cb0b4b</compiled_snapshot>
@@ -1127,8 +1127,8 @@
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=bbbfa1e1fb796210f6d5f9d38eefdc42"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
-        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <action_type display_value="Pesquisar registro">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Pesquisar registro">b93f42810b30030085c083eb37673a63</action_type_parent>
         <attributes/>
         <comment/>
         <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
@@ -1151,8 +1151,8 @@
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=bfbfa1e1fb796210f6d5f9d38eefdc42"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
-        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <action_type display_value="Pesquisar registro">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Pesquisar registro">b93f42810b30030085c083eb37673a63</action_type_parent>
         <attributes/>
         <comment/>
         <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
@@ -1199,8 +1199,8 @@
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=77bfa1e1fb796210f6d5f9d38eefdc43"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
-        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <action_type display_value="Atualizar registro">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Atualizar registro">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
         <attributes/>
         <comment/>
         <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
@@ -1223,8 +1223,8 @@
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=3bbfa1e1fb796210f6d5f9d38eefdc43"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Create Record">2de05916c31332002841b63b12d3aee1</action_type>
-        <action_type_parent display_value="Create Record">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <action_type display_value="Criar registro">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent display_value="Criar registro">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
         <attributes/>
         <comment/>
         <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
@@ -1258,7 +1258,7 @@
         <flow display_value="RCL (Net Current Revenue) 2">abbf61e1fb796210f6d5f9d38eefdcbb</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <logic_definition display_value="Se">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
         <order>4</order>
         <outputs_assigned/>
         <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
@@ -1285,7 +1285,7 @@
         <flow display_value="RCL (Net Current Revenue) 2">abbf61e1fb796210f6d5f9d38eefdcbb</flow>
         <flow_variables_assigned>var_count1</flow_variables_assigned>
         <generation_source/>
-        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <logic_definition display_value="Definir variáveis de fluxo">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
         <order>5</order>
         <outputs_assigned/>
         <parent_ui_id>b6f98993-2de4-48f4-9d42-7ad52358075f</parent_ui_id>
@@ -1312,7 +1312,7 @@
         <flow display_value="RCL (Net Current Revenue) 2">abbf61e1fb796210f6d5f9d38eefdcbb</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <logic_definition display_value="Outro">1f781bf3c32232002841b63b12d3aee6</logic_definition>
         <order>6</order>
         <outputs_assigned/>
         <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
@@ -1339,7 +1339,7 @@
         <flow display_value="RCL (Net Current Revenue) 2">abbf61e1fb796210f6d5f9d38eefdcbb</flow>
         <flow_variables_assigned>var_count1</flow_variables_assigned>
         <generation_source/>
-        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <logic_definition display_value="Definir variáveis de fluxo">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
         <order>2</order>
         <outputs_assigned/>
         <parent_ui_id/>
@@ -1366,7 +1366,7 @@
         <flow display_value="RCL (Net Current Revenue) 2">abbf61e1fb796210f6d5f9d38eefdcbb</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="For Each">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
+        <logic_definition display_value="Para cada">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
         <order>3</order>
         <outputs_assigned/>
         <parent_ui_id/>
@@ -1393,7 +1393,7 @@
         <flow display_value="RCL (Net Current Revenue) 2">abbf61e1fb796210f6d5f9d38eefdcbb</flow>
         <flow_variables_assigned>var_count1</flow_variables_assigned>
         <generation_source/>
-        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <logic_definition display_value="Definir variáveis de fluxo">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
         <order>7</order>
         <outputs_assigned/>
         <parent_ui_id>9293447b-4381-4d7b-bfa2-d1373275d096</parent_ui_id>
@@ -1420,7 +1420,7 @@
         <flow display_value="RCL (Net Current Revenue) 2">abbf61e1fb796210f6d5f9d38eefdcbb</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <logic_definition display_value="Se">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
         <order>8</order>
         <outputs_assigned/>
         <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
@@ -1447,7 +1447,7 @@
         <flow display_value="RCL (Net Current Revenue) 2">abbf61e1fb796210f6d5f9d38eefdcbb</flow>
         <flow_variables_assigned>var_ano</flow_variables_assigned>
         <generation_source/>
-        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <logic_definition display_value="Definir variáveis de fluxo">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
         <order>9</order>
         <outputs_assigned/>
         <parent_ui_id>cfdc988b-b11d-4942-b9bf-11cea3ddb70f</parent_ui_id>
@@ -1474,7 +1474,7 @@
         <flow display_value="RCL (Net Current Revenue) 2">abbf61e1fb796210f6d5f9d38eefdcbb</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
+        <logic_definition display_value="Senão">666e5545c3e232002841b63b12d3ae99</logic_definition>
         <order>10</order>
         <outputs_assigned/>
         <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
@@ -1501,7 +1501,7 @@
         <flow display_value="RCL (Net Current Revenue) 2">abbf61e1fb796210f6d5f9d38eefdcbb</flow>
         <flow_variables_assigned>var_mes</flow_variables_assigned>
         <generation_source/>
-        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <logic_definition display_value="Definir variáveis de fluxo">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
         <order>11</order>
         <outputs_assigned/>
         <parent_ui_id>fefe5d28-2611-4ce7-9f3a-4b1127da7629</parent_ui_id>
@@ -1528,7 +1528,7 @@
         <flow display_value="RCL (Net Current Revenue) 2">abbf61e1fb796210f6d5f9d38eefdcbb</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <logic_definition display_value="Se">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
         <order>12</order>
         <outputs_assigned/>
         <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
@@ -1555,7 +1555,7 @@
         <flow display_value="RCL (Net Current Revenue) 2">abbf61e1fb796210f6d5f9d38eefdcbb</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <logic_definition display_value="Se">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
         <order>16</order>
         <outputs_assigned/>
         <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
@@ -1582,7 +1582,7 @@
         <flow display_value="RCL (Net Current Revenue) 2">abbf61e1fb796210f6d5f9d38eefdcbb</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <logic_definition display_value="Outro">1f781bf3c32232002841b63b12d3aee6</logic_definition>
         <order>18</order>
         <outputs_assigned/>
         <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
@@ -1609,7 +1609,7 @@
         <flow display_value="RCL (Net Current Revenue) 2">abbf61e1fb796210f6d5f9d38eefdcbb</flow>
         <flow_variables_assigned>var_mes,var_ano</flow_variables_assigned>
         <generation_source/>
-        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <logic_definition display_value="Definir variáveis de fluxo">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
         <order>20</order>
         <outputs_assigned/>
         <parent_ui_id>3c031a62-dd97-42a9-ae1e-b0b41c896ded</parent_ui_id>
@@ -1664,7 +1664,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>var_ano</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1747,7 +1747,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>var_mes</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1830,7 +1830,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Integer">integer</internal_type>
+        <internal_type display_value="Número inteiro">integer</internal_type>
         <label>var_count</label>
         <mandatory>false</mandatory>
         <max_length>40</max_length>

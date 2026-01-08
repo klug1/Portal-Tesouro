@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="io_set_item">
     <io_set_item action="INSERT_OR_UPDATE">
         <order>100</order>
-        <sc_cat_item display_value="Personal Expenses">48a6a2a0fb69e25086e7f4045eefdc4a</sc_cat_item>
+        <sc_cat_item display_value="Despesa Pessoal">48a6a2a0fb69e25086e7f4045eefdc4a</sc_cat_item>
         <sys_class_name>io_set_item</sys_class_name>
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-13 12:15:31</sys_created_on>
@@ -14,6 +14,6 @@
         <sys_update_name>io_set_item_a2aca2a8fb69e25086e7f4045eefdc68</sys_update_name>
         <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
         <sys_updated_on>2025-05-13 12:15:31</sys_updated_on>
-        <variable_set display_value="Personal Expenses">d97c6a28fb69e25086e7f4045eefdcc9</variable_set>
+        <variable_set display_value="Despesa Pessoal">d97c6a28fb69e25086e7f4045eefdcc9</variable_set>
     </io_set_item>
 </record_update>

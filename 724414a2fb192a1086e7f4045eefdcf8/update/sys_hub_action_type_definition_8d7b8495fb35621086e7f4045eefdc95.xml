@@ -594,7 +594,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label/>
         <mandatory>true</mandatory>
         <max_length>8000</max_length>
@@ -784,7 +784,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Executivo Obj</label>
         <mandatory>false</mandatory>
         <max_length>65000</max_length>
@@ -867,7 +867,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Despesa Deduções</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -950,7 +950,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Porcentagem Comprometimento</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1033,7 +1033,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Despesa Inativo Pensionistas</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1116,7 +1116,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>RCL</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1199,7 +1199,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Interface Pensionistas</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1282,7 +1282,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Indenizações Judiciais</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1365,7 +1365,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Porcentagem Alerta</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1448,7 +1448,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Despesa Bruta</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1531,7 +1531,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Exercícios Anteriores</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1614,7 +1614,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Demissão Voluntária</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1697,7 +1697,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Despesa Terceirizados</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1780,7 +1780,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Porcentagem Limite Máximo</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1863,7 +1863,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Despesa Pessoal Ativo</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1946,7 +1946,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Ano</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -2029,7 +2029,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Porcentagem Limite Prudencial</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -2112,7 +2112,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Despesa Líquida</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -2979,7 +2979,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Reference">reference</internal_type>
+        <internal_type display_value="Referência">reference</internal_type>
         <label>Parent Sys ID</label>
         <mandatory>true</mandatory>
         <max_length>32</max_length>
@@ -3063,7 +3063,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Row Index</label>
         <mandatory>true</mandatory>
         <max_length>8000</max_length>
@@ -3150,7 +3150,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Porcentagem Comprometimento</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3237,7 +3237,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Ano</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3324,7 +3324,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Interface Pensionistas</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3411,7 +3411,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Despesa Terceirizados</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3498,7 +3498,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Despesa Bruta</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3585,7 +3585,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Porcentagem Limite Prudencial</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3672,7 +3672,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Porcentagem Alerta</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3782,7 +3782,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Executivo Obj</label>
         <mandatory>false</mandatory>
         <max_length>65000</max_length>
@@ -3869,7 +3869,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Demissão Voluntária</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3956,7 +3956,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Despesa Líquida</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -4043,7 +4043,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Despesa Deduções</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -4217,7 +4217,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Indenizações Judiciais</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -4304,7 +4304,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>RCL</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -4391,7 +4391,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Action Status</label>
         <mandatory>false</mandatory>
         <max_length>65000</max_length>
@@ -4478,7 +4478,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Despesa Pessoal Ativo</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -4565,7 +4565,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Exercícios Anteriores</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -4652,7 +4652,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Porcentagem Limite Máximo</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -4739,7 +4739,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Despesa Inativo Pensionistas</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -6361,7 +6361,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>row_index</label>
         <mandatory>true</mandatory>
         <max_length>8000</max_length>
@@ -6528,7 +6528,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Despesa Bruta</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -6611,7 +6611,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Porcentagem Limite Máximo</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -6694,7 +6694,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Porcentagem Limite Prudencial</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -6777,7 +6777,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Ano</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -6883,7 +6883,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Executivo Obj</label>
         <mandatory>false</mandatory>
         <max_length>65000</max_length>
@@ -6966,7 +6966,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Despesa Terceirizados</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -7049,7 +7049,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Despesa Pessoal Ativo</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -7132,7 +7132,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Despesa Líquida</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -7215,7 +7215,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Exercícios Anteriores</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -7298,7 +7298,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Demissão Voluntária</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -7381,7 +7381,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Porcentagem Alerta</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -7464,7 +7464,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Porcentagem Comprometimento</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -7547,7 +7547,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Indenizações Judiciais</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -7630,7 +7630,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Despesa Deduções</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -7713,7 +7713,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Despesa Inativo Pensionistas</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -7796,7 +7796,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>RCL</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -7879,7 +7879,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Interface Pensionistas</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -8746,7 +8746,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Reference">reference</internal_type>
+        <internal_type display_value="Referência">reference</internal_type>
         <label>Parent Sys ID</label>
         <mandatory>true</mandatory>
         <max_length>32</max_length>
@@ -8830,7 +8830,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Row Index</label>
         <mandatory>true</mandatory>
         <max_length>8000</max_length>
@@ -8917,7 +8917,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Despesa Terceirizados</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -9004,7 +9004,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Action Status</label>
         <mandatory>false</mandatory>
         <max_length>65000</max_length>
@@ -9114,7 +9114,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Executivo Obj</label>
         <mandatory>false</mandatory>
         <max_length>65000</max_length>
@@ -9201,7 +9201,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Porcentagem Limite Prudencial</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -9288,7 +9288,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Porcentagem Alerta</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -9375,7 +9375,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Ano</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -9462,7 +9462,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Despesa Pessoal Ativo</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -9549,7 +9549,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Despesa Inativo Pensionistas</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -9636,7 +9636,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Interface Pensionistas</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -9723,7 +9723,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Despesa Líquida</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -9810,7 +9810,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>RCL</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -9897,7 +9897,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Porcentagem Limite Máximo</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -9984,7 +9984,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Porcentagem Comprometimento</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -10071,7 +10071,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Indenizações Judiciais</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -10158,7 +10158,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Exercícios Anteriores</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -10245,7 +10245,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Despesa Deduções</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -10332,7 +10332,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Demissão Voluntária</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -10419,7 +10419,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Despesa Bruta</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>

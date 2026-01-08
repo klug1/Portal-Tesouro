@@ -3,7 +3,7 @@
         <child display_value="Typeahead Search Sefaz">15e7b5fafb55aa1086e7f4045eefdc86</child>
         <cloned>2025-05-07 21:55:36</cloned>
         <last_validated>2025-05-07 21:55:36</last_validated>
-        <parent display_value="Typeahead Search">fa20ec02cb31020000f8d856634c9ce9</parent>
+        <parent display_value="Pesquisa Autocompletável">fa20ec02cb31020000f8d856634c9ce9</parent>
         <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;sp_widget&gt;&lt;category&gt;standard&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[function ($http, $filter, $location,spAriaUtil, $window, $scope, $rootScope, spAriaFocusManager, snAnalytics, spAISearchResults) {
 	var c = this;
 

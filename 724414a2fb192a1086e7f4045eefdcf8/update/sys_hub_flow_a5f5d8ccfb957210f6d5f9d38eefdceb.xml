@@ -144,7 +144,7 @@
         <sys_scope/>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
         <sys_updated_on>2025-11-13 21:57:38</sys_updated_on>
-        <trigger_definition display_value="Weekly">cf352104c32222002841b63b12d3ae1f</trigger_definition>
+        <trigger_definition display_value="Semanalmente">cf352104c32222002841b63b12d3ae1f</trigger_definition>
         <trigger_inputs>H4sIAAAAAAAA/+1Ty27bMBD8FYNnVZBsJ3Z1KxAYyCENEBvpIQiEFbmyiVKkSlF21MD/3qVedWunQIsca+hg7i5nZ0ajp1emIEPFEnYDzcTkky+IX1nApHZoNahNUyI1BTSpydND1yxAC3DGNixxtsaA5dYUGyxKBY6mc1AVFY0VaFkSRwHbg6px3VS3grAIQENxjtoOUXVB/4WsCKx57EvrmhY2VOc7qYRFzZKn54CVYAnI+S2vv7Uc8U7fkOZJ8OvlFcTRnM+m9Iui6XIeZ9ezLJ6KGaCY0dzl2xepu0sunejHF4daoBi9OXPQIoh7rZpxYkdvoDOrgJdKfif8eeTnciSRHLveeEx7x7oy3xnJ8b500uiu4iBT/R1uVF3oz50O7zXmUCs3eE2VuiI8LD1lT6JnlK935vAwLFxJ3crrm8pwUOMJnLMyqx1W/s2gwoKA0gLKUuptWlqzl+1l4lKEW0WHMFfmQEsrudUhcE88JIcgXFH9pi0/gpVexR3B0OVjqz79Vvu9nY6ecdqJPo4xWklUffIqbmXpPtGC/ZDUY/DzI9hIcuUs/S3D1HW9vwz/2+nv8YbYxx8X0YcopmcSRUn7/HPgBxl+ISzmf0h6vDxJen/tV37uggen6t4n2y3U/3C/f7iffwBsnJ/t4wUAAA==</trigger_inputs>
         <trigger_outputs/>
         <trigger_type>weekly</trigger_type>
@@ -176,8 +176,8 @@
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=bb66dc00fbd57210f6d5f9d38eefdce6"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Delete Record">c3e09916c31332002841b63b12d3aedf</action_type>
-        <action_type_parent display_value="Delete Record">a8f274c8c3c232002841b63b12d3aee9</action_type_parent>
+        <action_type display_value="Excluir registro">c3e09916c31332002841b63b12d3aedf</action_type>
+        <action_type_parent display_value="Excluir registro">a8f274c8c3c232002841b63b12d3aee9</action_type_parent>
         <attributes/>
         <comment/>
         <compiled_snapshot>c3e09916c31332002841b63b12d3aedf</compiled_snapshot>
@@ -200,8 +200,8 @@
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=7f66dc00fbd57210f6d5f9d38eefdce6"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Look Up Records">43400a1587003300663ca1bb36cb0b4b</action_type>
-        <action_type_parent display_value="Look Up Records">d1c56ec50b30030085c083eb37673a50</action_type_parent>
+        <action_type display_value="Pesquisar registros">43400a1587003300663ca1bb36cb0b4b</action_type>
+        <action_type_parent display_value="Pesquisar registros">d1c56ec50b30030085c083eb37673a50</action_type_parent>
         <attributes/>
         <comment/>
         <compiled_snapshot>43400a1587003300663ca1bb36cb0b4b</compiled_snapshot>
@@ -235,7 +235,7 @@
         <flow display_value="Delete Records - Cache Portal Logados">a5f5d8ccfb957210f6d5f9d38eefdceb</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="For Each">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
+        <logic_definition display_value="Para cada">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
         <order>2</order>
         <outputs_assigned/>
         <parent_ui_id/>
@@ -334,7 +334,7 @@
         <sys_scope/>
         <sys_updated_by>patrick.almeida@vaexpert.com.br</sys_updated_by>
         <sys_updated_on>2025-11-13 21:57:39</sys_updated_on>
-        <trigger_definition display_value="Weekly">cf352104c32222002841b63b12d3ae1f</trigger_definition>
+        <trigger_definition display_value="Semanalmente">cf352104c32222002841b63b12d3ae1f</trigger_definition>
         <trigger_inputs>H4sIAAAAAAAA/+1Ty27bMBD8FYNnVZBsJ3Z1KxAYyCENEBvpIQiEFbmyiVKkSlF21MD/3qVedWunQIsca+hg7i5nZ0ajp1emIEPFEnYDzcTkky+IX1nApHZoNahNUyI1BTSpydND1yxAC3DGNixxtsaA5dYUGyxKBY6mc1AVFY0VaFkSRwHbg6px3VS3grAIQENxjtoOUXVB/4WsCKx57EvrmhY2VOc7qYRFzZKn54CVYAnI+S2vv7Uc8U7fkOZJ8OvlFcTRnM+m9Iui6XIeZ9ezLJ6KGaCY0dzl2xepu0sunejHF4daoBi9OXPQIoh7rZpxYkdvoDOrgJdKfif8eeTnciSRHLveeEx7x7oy3xnJ8b500uiu4iBT/R1uVF3oz50O7zXmUCs3eE2VuiI8LD1lT6JnlK935vAwLFxJ3crrm8pwUOMJnLMyqx1W/s2gwoKA0gLKUuptWlqzl+1l4lKEW0WHMFfmQEsrudUhcE88JIcgXFH9pi0/gpVexR3B0OVjqz79Vvu9nY6ecdqJPo4xWklUffIqbmXpPtGC/ZDUY/DzI9hIcuUs/S3D1HW9vwz/2+nv8YbYxx8X0YcopmcSRUn7/HPgBxl+ISzmf0h6vDxJen/tV37uggen6t4n2y3U/3C/f7iffwBsnJ/t4wUAAA==</trigger_inputs>
         <trigger_outputs/>
         <trigger_type>weekly</trigger_type>
@@ -342,8 +342,8 @@
     </sys_hub_trigger_instance_v2>
     <sys_hub_action_instance_v2 action="delete_multiple" query="flow=7b661040fbd57210f6d5f9d38eefdc19^sys_idNOT IN73661040fbd57210f6d5f9d38eefdc1f,37661040fbd57210f6d5f9d38eefdc1f,f7661040fbd57210f6d5f9d38eefdc1f"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Look Up Records">43400a1587003300663ca1bb36cb0b4b</action_type>
-        <action_type_parent display_value="Look Up Records">d1c56ec50b30030085c083eb37673a50</action_type_parent>
+        <action_type display_value="Pesquisar registros">43400a1587003300663ca1bb36cb0b4b</action_type>
+        <action_type_parent display_value="Pesquisar registros">d1c56ec50b30030085c083eb37673a50</action_type_parent>
         <attributes/>
         <comment/>
         <compiled_snapshot>43400a1587003300663ca1bb36cb0b4b</compiled_snapshot>
@@ -390,8 +390,8 @@
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=37661040fbd57210f6d5f9d38eefdc1f"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Delete Record">c3e09916c31332002841b63b12d3aedf</action_type>
-        <action_type_parent display_value="Delete Record">a8f274c8c3c232002841b63b12d3aee9</action_type_parent>
+        <action_type display_value="Excluir registro">c3e09916c31332002841b63b12d3aedf</action_type>
+        <action_type_parent display_value="Excluir registro">a8f274c8c3c232002841b63b12d3aee9</action_type_parent>
         <attributes/>
         <comment/>
         <compiled_snapshot>c3e09916c31332002841b63b12d3aedf</compiled_snapshot>
@@ -425,7 +425,7 @@
         <flow display_value="Delete Records - Cache Portal Logados">7b661040fbd57210f6d5f9d38eefdc19</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="For Each">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
+        <logic_definition display_value="Para cada">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
         <order>2</order>
         <outputs_assigned/>
         <parent_ui_id/>

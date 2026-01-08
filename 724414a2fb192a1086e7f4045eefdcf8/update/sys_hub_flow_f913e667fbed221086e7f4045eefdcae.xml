@@ -307,7 +307,7 @@
         <sys_scope/>
         <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
         <sys_updated_on>2025-05-26 14:45:36</sys_updated_on>
-        <trigger_definition display_value="Created">798916a0c31322002841b63b12d3ae7c</trigger_definition>
+        <trigger_definition display_value="Criado em">798916a0c31322002841b63b12d3ae7c</trigger_definition>
         <trigger_inputs>H4sIAAAAAAAA/9VY227jNhD9FUFPLeACuthxnLetk0UDbDeo420fFqlAiaQtlCZdilLiXeTfO9TNsi6OHStb5yWASYpz5vDMGTJfv5sM+YSZV+Yc+YyYAzPkikiO2HyzJjCs9LDH0UrPrRDHSAm5Ma+UjMnApFKs5mS1ZkjBYopYBINCYiLNK3tgJojF5H4T3WLYCb5Pt8n3NPNp+P3kRZjgibcWUiHmKc/yJFmEkZLCw8QLkFygyFMkErEU8B0OI4i4+TP/fC4JimK5MaawUBiz7FOkQsFhcbAMGZaEm1dfHwbmGknAoDS+77WpUIMMaIAmDrEC13Ydx7Kcy6HtX7i+7WAXEcuCDeuE1ZJSLbxtGSFPinBItiSrQSkkg+8425QrlnAiGX0r9BSF32D3S0uvowSwBySbK396OTvZcLAUYUDu1ikZ6UiGM5sULF7xzxl+zSuhKGaq4BVG4gj2I2sNWYPIEdH7pXicFQE/hjzNLp9kIkCs/IWUkqEfw9lpwmnIgHov40afZop+djO9m117f32YT3+7mXmzm/v57HY6v7k2n9O8vH9jvWOGMMfiZek8l2L4GBKmD5DHKx/QDMwokOFafQhUmBTSfB5s5T4VHIe5RGqSD4qpaFfyRfb7NG9ZnaoPKhEL5f9980dTz9ngcbq9uEAIE9ShW59WdFvNvAWaaiGhmt0+Becjh0h4aFn/k4hz53qthlcCE3a93c6EycUCVB3ydaw0W4+IK7Ar4SGMvQqPeilgeknUWW7PLypYxhw+8MrzaOo4pa3k7xO4IigGqrDgJt0S5umnfMtZzA0BBwd/jCCWQI0yCl+jtyu0yBml94SRQFVEQL9E1V+/h1EU8kUFdRk05aARswwHYjKKlLLY0YnBH/os4ibpSY3MWjEfXcm2TalPqGONdR3blutT2xpbI0Sxa1mBU6nkJphOlKomiTep6OPqOUrFyA6QXp3iHLxVrYaDZJTsarAgQUskt41pP9DsnqA5GlrN/tyj/K+UZTZ8vavOfan13PsRThB8gQ+1wQMdkDLxCNb7CvfzUfDPQoqY47od6T2NkBvbFcZPOX8/9+iEVMAtdy+A3RXn5IFb2gvhIr7pwf1cavsTMiQWmJ4LfuePJhM/QA6l44sxceya+21htGJ7F673gtqSNrl2OWCrcJI2vR3hfScAbPjg0QBPd8BcmK3+l829D6d7XBLuAVTpMe1lDcNbsBAey/lcv9XeCJ1s6/vUiqeXk2Bkj8fBGF4tUPF0SHxkD50Rmowv3MtRreIbUPbBVC3M/JC3TLSJUiAdbvAlmzqvx/lbyjYiSul2dHyX5nCPTb9BWZBKp9THYqSmIqTxWfBfbrfrjHsCDTB90PbVrg9BoQ/WeFsYvlDLxn0BQv8K4zuh9T2zg5Wze1LVRJLs5nryk4oML0cT6rZbDJ20WcwWTDfMs79eHFghSWettd0zDhV80lo3nReDV0i4JpPqjWHPlaYvUuzeSXHejhT35GtUUYud78jXgH1HLSy9V5zSx3RM4glaNe9rYcCEAUGMkBr5fxIJNvyNoZYEKGVwX4aAho5+qmtXu0gTSqngHwsku4E3uhkMG/kF6vwaVU0K/b6ACR6j0cjtuA9P6i/gNkAv4D37tnV0VSRtRba3dx23b33P1u5VkeyuIg7sS71m3d6cTsu6tT29lPXpjWff+70FxZm2lIf/AEqfxGRrHwAA</trigger_inputs>
         <trigger_outputs/>
         <trigger_type>record_create</trigger_type>
@@ -315,8 +315,8 @@
     </sys_hub_trigger_instance_v2>
     <sys_hub_action_instance_v2 action="delete_multiple" query="flow=f913e667fbed221086e7f4045eefdcae^sys_idNOT IN57ed430dfb3d221086e7f4045eefdcc1,bfab4ef0fbf1e61086e7f4045eefdc90,7ae33a38fbb5e61086e7f4045eefdcd8,03e33a38fbb5e61086e7f4045eefdcdf,8fe33a38fbb5e61086e7f4045eefdce0,26aa9b3cfb79e61086e7f4045eefdc8e"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
-        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <action_type display_value="Pesquisar registro">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Pesquisar registro">b93f42810b30030085c083eb37673a63</action_type_parent>
         <attributes/>
         <comment/>
         <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
@@ -339,8 +339,8 @@
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=57ed430dfb3d221086e7f4045eefdcc1"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
-        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <action_type display_value="Pesquisar registro">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Pesquisar registro">b93f42810b30030085c083eb37673a63</action_type_parent>
         <attributes/>
         <comment/>
         <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
@@ -363,8 +363,8 @@
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=bfab4ef0fbf1e61086e7f4045eefdc90"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Look Up Records">43400a1587003300663ca1bb36cb0b4b</action_type>
-        <action_type_parent display_value="Look Up Records">d1c56ec50b30030085c083eb37673a50</action_type_parent>
+        <action_type display_value="Pesquisar registros">43400a1587003300663ca1bb36cb0b4b</action_type>
+        <action_type_parent display_value="Pesquisar registros">d1c56ec50b30030085c083eb37673a50</action_type_parent>
         <attributes/>
         <comment/>
         <compiled_snapshot>43400a1587003300663ca1bb36cb0b4b</compiled_snapshot>
@@ -387,8 +387,8 @@
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=7ae33a38fbb5e61086e7f4045eefdcd8"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
-        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <action_type display_value="Atualizar registro">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Atualizar registro">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
         <attributes/>
         <comment/>
         <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
@@ -411,8 +411,8 @@
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=03e33a38fbb5e61086e7f4045eefdcdf"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Create Record">2de05916c31332002841b63b12d3aee1</action_type>
-        <action_type_parent display_value="Create Record">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <action_type display_value="Criar registro">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent display_value="Criar registro">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
         <attributes/>
         <comment/>
         <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
@@ -470,7 +470,7 @@
         <flow display_value="Populating tables from record producers (portal)">f913e667fbed221086e7f4045eefdcae</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <logic_definition display_value="Se">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
         <order>1</order>
         <outputs_assigned/>
         <parent_ui_id/>
@@ -497,7 +497,7 @@
         <flow display_value="Populating tables from record producers (portal)">f913e667fbed221086e7f4045eefdcae</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <logic_definition display_value="Se">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
         <order>7</order>
         <outputs_assigned/>
         <parent_ui_id>927e3b01-2924-421b-aa5a-52c0fdfaee8c</parent_ui_id>
@@ -524,7 +524,7 @@
         <flow display_value="Populating tables from record producers (portal)">f913e667fbed221086e7f4045eefdcae</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="For Each">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
+        <logic_definition display_value="Para cada">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
         <order>3</order>
         <outputs_assigned/>
         <parent_ui_id>d19b4dd3-0400-4c6c-8e74-c14e72be4efc</parent_ui_id>
@@ -551,7 +551,7 @@
         <flow display_value="Populating tables from record producers (portal)">f913e667fbed221086e7f4045eefdcae</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <logic_definition display_value="Outro">1f781bf3c32232002841b63b12d3aee6</logic_definition>
         <order>9</order>
         <outputs_assigned/>
         <parent_ui_id>927e3b01-2924-421b-aa5a-52c0fdfaee8c</parent_ui_id>
@@ -1006,7 +1006,7 @@
         <sys_scope/>
         <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
         <sys_updated_on>2025-05-27 14:17:22</sys_updated_on>
-        <trigger_definition display_value="Created">798916a0c31322002841b63b12d3ae7c</trigger_definition>
+        <trigger_definition display_value="Criado em">798916a0c31322002841b63b12d3ae7c</trigger_definition>
         <trigger_inputs>H4sIAAAAAAAA/9VY227jNhD9FUFPLeACuthxnLetk0UDbDeo420fFqlAiaQtlCZdilLiXeTfO9TNsi6OHStb5yWASYpz5vDMGTJfv5sM+YSZV+Yc+YyYAzPkikiO2HyzJjCs9LDH0UrPrRDHSAm5Ma+UjMnApFKs5mS1ZkjBYopYBINCYiLNK3tgJojF5H4T3WLYCb5Pt8n3NPNp+P3kRZjgibcWUiHmKc/yJFmEkZLCw8QLkFygyFMkErEU8B0OI4i4+TP/fC4JimK5MaawUBiz7FOkQsFhcbAMGZaEm1dfHwbmGknAoDS+77WpUIMMaIAmDrEC13Ydx7Kcy6HtX7i+7WAXEcuCDeuE1ZJSLbxtGSFPinBItiSrQSkkg+8425QrlnAiGX0r9BSF32D3S0uvowSwBySbK396OTvZcLAUYUDu1ikZ6UiGM5sULF7xzxl+zSuhKGaq4BVG4gj2I2sNWYPIEdH7pXicFQE/hjzNLp9kIkCs/IWUkqEfw9lpwmnIgHov40afZop+djO9m117f32YT3+7mXmzm/v57HY6v7k2n9O8vH9jvWOGMMfiZek8l2L4GBKmD5DHKx/QDMwokOFafQhUmBTSfB5s5T4VHIe5RGqSD4qpaFfyRfb7NG9ZnaoPKhEL5f9980dTz9ngcbq9uEAIE9ShW59WdFvNvAWaaiGhmt0+Becjh0h4aFn/k4hz53qthlcCE3a93c6EycUCVB3ydaw0W4+IK7Ar4SGMvQqPeilgeknUWW7PLypYxhw+8MrzaOo4pa3k7xO4IigGqrDgJt0S5umnfMtZzA0BBwd/jCCWQI0yCl+jtyu0yBml94SRQFVEQL9E1V+/h1EU8kUFdRk05aARswwHYjKKlLLY0YnBH/os4ibpSY3MWjEfXcm2TalPqGONdR3blutT2xpbI0Sxa1mBU6nkJphOlKomiTep6OPqOUrFyA6QXp3iHLxVrYaDZJTsarAgQUskt41pP9DsnqA5GlrN/tyj/K+UZTZ8vavOfan13PsRThB8gQ+1wQMdkDLxCNb7CvfzUfDPQoqY47od6T2NkBvbFcZPOX8/9+iEVMAtdy+A3RXn5IFb2gvhIr7pwf1cavsTMiQWmJ4LfuePJhM/QA6l44sxceya+21htGJ7F673gtqSNrl2OWCrcJI2vR3hfScAbPjg0QBPd8BcmK3+l829D6d7XBLuAVTpMe1lDcNbsBAey/lcv9XeCJ1s6/vUiqeXk2Bkj8fBGF4tUPF0SHxkD50Rmowv3MtRreIbUPbBVC3M/JC3TLSJUiAdbvAlmzqvx/lbyjYiSul2dHyX5nCPTb9BWZBKp9THYqSmIqTxWfBfbrfrjHsCDTB90PbVrg9BoQ/WeFsYvlDLxn0BQv8K4zuh9T2zg5Wze1LVRJLs5nryk4oML0cT6rZbDJ20WcwWTDfMs79eHFghSWettd0zDhV80lo3nReDV0i4JpPqjWHPlaYvUuzeSXHejhT35GtUUYud78jXgH1HLSy9V5zSx3RM4glaNe9rYcCEAUGMkBr5fxIJNvyNoZYEKGVwX4aAho5+qmtXu0gTSqngHwsku4E3uhkMG/kF6vwaVU0K/b6ACR6j0cjtuA9P6i/gNkAv4D37tnV0VSRtRba3dx23b33P1u5VkeyuIg7sS71m3d6cTsu6tT29lPXpjWff+70FxZm2lIf/AEqfxGRrHwAA</trigger_inputs>
         <trigger_outputs/>
         <trigger_type>record_create</trigger_type>
@@ -1014,8 +1014,8 @@
     </sys_hub_trigger_instance_v2>
     <sys_hub_action_instance_v2 action="delete_multiple" query="flow=9b991b37fb69a21086e7f4045eefdce2^sys_idNOT INffce8f4dfb3d221086e7f4045eefdce8,f7ce8f4dfb3d221086e7f4045eefdce9,3fce8f4dfb3d221086e7f4045eefdce9,ffce8f4dfb3d221086e7f4045eefdce9,b3ce8f4dfb3d221086e7f4045eefdcea,37ce8f4dfb3d221086e7f4045eefdce9"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Look Up Records">43400a1587003300663ca1bb36cb0b4b</action_type>
-        <action_type_parent display_value="Look Up Records">d1c56ec50b30030085c083eb37673a50</action_type_parent>
+        <action_type display_value="Pesquisar registros">43400a1587003300663ca1bb36cb0b4b</action_type>
+        <action_type_parent display_value="Pesquisar registros">d1c56ec50b30030085c083eb37673a50</action_type_parent>
         <attributes/>
         <comment/>
         <compiled_snapshot>43400a1587003300663ca1bb36cb0b4b</compiled_snapshot>
@@ -1038,8 +1038,8 @@
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=ffce8f4dfb3d221086e7f4045eefdce8"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
-        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <action_type display_value="Pesquisar registro">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Pesquisar registro">b93f42810b30030085c083eb37673a63</action_type_parent>
         <attributes/>
         <comment/>
         <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
@@ -1086,8 +1086,8 @@
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=3fce8f4dfb3d221086e7f4045eefdce9"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
-        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <action_type display_value="Atualizar registro">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Atualizar registro">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
         <attributes/>
         <comment/>
         <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
@@ -1110,8 +1110,8 @@
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=ffce8f4dfb3d221086e7f4045eefdce9"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Create Record">2de05916c31332002841b63b12d3aee1</action_type>
-        <action_type_parent display_value="Create Record">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <action_type display_value="Criar registro">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent display_value="Criar registro">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
         <attributes/>
         <comment/>
         <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
@@ -1134,8 +1134,8 @@
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=b3ce8f4dfb3d221086e7f4045eefdcea"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
-        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <action_type display_value="Pesquisar registro">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Pesquisar registro">b93f42810b30030085c083eb37673a63</action_type_parent>
         <attributes/>
         <comment/>
         <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
@@ -1169,7 +1169,7 @@
         <flow display_value="Populating tables from record producers (portal)">9b991b37fb69a21086e7f4045eefdce2</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <logic_definition display_value="Se">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
         <order>1</order>
         <outputs_assigned/>
         <parent_ui_id/>
@@ -1196,7 +1196,7 @@
         <flow display_value="Populating tables from record producers (portal)">9b991b37fb69a21086e7f4045eefdce2</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="For Each">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
+        <logic_definition display_value="Para cada">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
         <order>3</order>
         <outputs_assigned/>
         <parent_ui_id>d19b4dd3-0400-4c6c-8e74-c14e72be4efc</parent_ui_id>
@@ -1223,7 +1223,7 @@
         <flow display_value="Populating tables from record producers (portal)">9b991b37fb69a21086e7f4045eefdce2</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <logic_definition display_value="Outro">1f781bf3c32232002841b63b12d3aee6</logic_definition>
         <order>9</order>
         <outputs_assigned/>
         <parent_ui_id>927e3b01-2924-421b-aa5a-52c0fdfaee8c</parent_ui_id>
@@ -1250,7 +1250,7 @@
         <flow display_value="Populating tables from record producers (portal)">9b991b37fb69a21086e7f4045eefdce2</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <logic_definition display_value="Se">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
         <order>7</order>
         <outputs_assigned/>
         <parent_ui_id>927e3b01-2924-421b-aa5a-52c0fdfaee8c</parent_ui_id>

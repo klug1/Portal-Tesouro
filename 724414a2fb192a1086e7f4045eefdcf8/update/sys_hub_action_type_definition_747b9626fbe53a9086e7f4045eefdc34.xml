@@ -458,7 +458,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label/>
         <mandatory>true</mandatory>
         <max_length>8000</max_length>
@@ -625,7 +625,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>receita_corrente_liquida</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -708,7 +708,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>investimento_empenhado</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -791,7 +791,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>percentual_da_rcl_investimento_liquidado</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -874,7 +874,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>investimento_pago</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -957,7 +957,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>percentual_da_rcl_investimento_empenhado</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1040,7 +1040,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>investimento_liquidado</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1123,7 +1123,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Ano</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1206,7 +1206,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>percentual_da_rcl_investimento_pago</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1475,7 +1475,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Row Index</label>
         <mandatory>true</mandatory>
         <max_length>8000</max_length>
@@ -1559,7 +1559,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Reference">reference</internal_type>
+        <internal_type display_value="Referência">reference</internal_type>
         <label>Parent Sys ID</label>
         <mandatory>true</mandatory>
         <max_length>32</max_length>
@@ -1646,7 +1646,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>investimento_pago</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1733,7 +1733,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Ano</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1820,7 +1820,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>investimento_empenhado</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1907,7 +1907,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>receita_corrente_liquida</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -1994,7 +1994,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>percentual_da_rcl_investimento_pago</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -2081,7 +2081,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>percentual_da_rcl_investimento_liquidado</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -2168,7 +2168,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>investimento_liquidado</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -2278,7 +2278,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Status da ação</label>
         <mandatory>false</mandatory>
         <max_length>65000</max_length>
@@ -2452,7 +2452,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>percentual_da_rcl_investimento_empenhado</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3309,7 +3309,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>row_index</label>
         <mandatory>true</mandatory>
         <max_length>8000</max_length>
@@ -3393,7 +3393,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>investimento_liquidado</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3476,7 +3476,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>receita_corrente_liquida</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3559,7 +3559,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>percentual_da_rcl_investimento_liquidado</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3642,7 +3642,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>investimento_pago</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3725,7 +3725,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Ano</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3808,7 +3808,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>investimento_empenhado</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3891,7 +3891,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>percentual_da_rcl_investimento_empenhado</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -3974,7 +3974,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>percentual_da_rcl_investimento_pago</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -4243,7 +4243,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Row Index</label>
         <mandatory>true</mandatory>
         <max_length>8000</max_length>
@@ -4327,7 +4327,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Reference">reference</internal_type>
+        <internal_type display_value="Referência">reference</internal_type>
         <label>Parent Sys ID</label>
         <mandatory>true</mandatory>
         <max_length>32</max_length>
@@ -4414,7 +4414,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>percentual_da_rcl_investimento_pago</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -4501,7 +4501,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>investimento_pago</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -4588,7 +4588,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>percentual_da_rcl_investimento_liquidado</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -4675,7 +4675,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>investimento_liquidado</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -4762,7 +4762,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>percentual_da_rcl_investimento_empenhado</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -4849,7 +4849,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Status da ação</label>
         <mandatory>false</mandatory>
         <max_length>65000</max_length>
@@ -4936,7 +4936,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>Ano</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -5023,7 +5023,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>investimento_empenhado</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>
@@ -5110,7 +5110,7 @@
         <help/>
         <hint/>
         <internal_link/>
-        <internal_type display_value="String">string</internal_type>
+        <internal_type display_value="Cadeia de caracteres">string</internal_type>
         <label>receita_corrente_liquida</label>
         <mandatory>false</mandatory>
         <max_length>8000</max_length>

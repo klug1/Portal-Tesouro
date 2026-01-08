@@ -3,7 +3,7 @@
         <child display_value="Banner Sefaz">87b65209fb61a65086e7f4045eefdc26</child>
         <cloned>2025-05-14 23:56:40</cloned>
         <last_validated>2025-05-14 23:56:40</last_validated>
-        <parent display_value="Portal Banner Carousel">ad3a78ae43352110c27380a7fab8f284</parent>
+        <parent display_value="Carrossel de faixa do portal">ad3a78ae43352110c27380a7fab8f284</parent>
         <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;sp_widget&gt;&lt;category&gt;custom&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[api.controller=function($scope,snAnalytics) {
   /* widget controller */
   var c = this;

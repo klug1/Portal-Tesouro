@@ -115,7 +115,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Reference">reference</internal_type>
+        <internal_type display_value="Referência">reference</internal_type>
         <label>Record</label>
         <mandatory>true</mandatory>
         <max_length>32</max_length>
@@ -168,8 +168,8 @@
     <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=7e453bddfb3d2210f6d5f9d38eefdc19"/>
     <sys_hub_action_instance_v2 action="delete_multiple" query="flow=7e453bddfb3d2210f6d5f9d38eefdc19^sys_idNOT IN07453bddfb3d2210f6d5f9d38eefdcb7,cf453bddfb3d2210f6d5f9d38eefdcb7,c3453bddfb3d2210f6d5f9d38eefdcb8,fc0dff59fb7d2210f6d5f9d38eefdc58,4f453bddfb3d2210f6d5f9d38eefdcb8,43453bddfb3d2210f6d5f9d38eefdcb9"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Look Up Records">43400a1587003300663ca1bb36cb0b4b</action_type>
-        <action_type_parent display_value="Look Up Records">d1c56ec50b30030085c083eb37673a50</action_type_parent>
+        <action_type display_value="Pesquisar registros">43400a1587003300663ca1bb36cb0b4b</action_type>
+        <action_type_parent display_value="Pesquisar registros">d1c56ec50b30030085c083eb37673a50</action_type_parent>
         <attributes/>
         <comment/>
         <compiled_snapshot>43400a1587003300663ca1bb36cb0b4b</compiled_snapshot>
@@ -192,8 +192,8 @@
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=07453bddfb3d2210f6d5f9d38eefdcb7"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
-        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <action_type display_value="Pesquisar registro">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Pesquisar registro">b93f42810b30030085c083eb37673a63</action_type_parent>
         <attributes/>
         <comment/>
         <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
@@ -216,8 +216,8 @@
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=cf453bddfb3d2210f6d5f9d38eefdcb7"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
-        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <action_type display_value="Pesquisar registro">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Pesquisar registro">b93f42810b30030085c083eb37673a63</action_type_parent>
         <attributes/>
         <comment/>
         <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
@@ -264,8 +264,8 @@
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=fc0dff59fb7d2210f6d5f9d38eefdc58"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
-        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <action_type display_value="Atualizar registro">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Atualizar registro">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
         <attributes/>
         <comment/>
         <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
@@ -288,8 +288,8 @@
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=4f453bddfb3d2210f6d5f9d38eefdcb8"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Create Record">2de05916c31332002841b63b12d3aee1</action_type>
-        <action_type_parent display_value="Create Record">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <action_type display_value="Criar registro">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent display_value="Criar registro">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
         <attributes/>
         <comment/>
         <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
@@ -323,7 +323,7 @@
         <flow display_value="Economic Indicators">7e453bddfb3d2210f6d5f9d38eefdc19</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="For Each">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
+        <logic_definition display_value="Para cada">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
         <order>2</order>
         <outputs_assigned/>
         <parent_ui_id/>
@@ -350,7 +350,7 @@
         <flow display_value="Economic Indicators">7e453bddfb3d2210f6d5f9d38eefdc19</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <logic_definition display_value="Se">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
         <order>6</order>
         <outputs_assigned/>
         <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
@@ -377,7 +377,7 @@
         <flow display_value="Economic Indicators">7e453bddfb3d2210f6d5f9d38eefdc19</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <logic_definition display_value="Outro">1f781bf3c32232002841b63b12d3aee6</logic_definition>
         <order>8</order>
         <outputs_assigned/>
         <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
@@ -553,7 +553,7 @@
         <function_field>false</function_field>
         <help/>
         <hint/>
-        <internal_type display_value="Reference">reference</internal_type>
+        <internal_type display_value="Referência">reference</internal_type>
         <label>Record</label>
         <mandatory>true</mandatory>
         <max_length>32</max_length>
@@ -606,8 +606,8 @@
     <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=ae0d3399fb7d2210f6d5f9d38eefdc1c"/>
     <sys_hub_action_instance_v2 action="delete_multiple" query="flow=ae0d3399fb7d2210f6d5f9d38eefdc1c^sys_idNOT IN3a0d3399fb7d2210f6d5f9d38eefdc40,be0d3399fb7d2210f6d5f9d38eefdc3f,b20d3399fb7d2210f6d5f9d38eefdc40,760d3399fb7d2210f6d5f9d38eefdc40,3a0d3399fb7d2210f6d5f9d38eefdc3f,fa0d3399fb7d2210f6d5f9d38eefdc3f"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Create Record">2de05916c31332002841b63b12d3aee1</action_type>
-        <action_type_parent display_value="Create Record">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <action_type display_value="Criar registro">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent display_value="Criar registro">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
         <attributes/>
         <comment/>
         <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
@@ -630,8 +630,8 @@
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=3a0d3399fb7d2210f6d5f9d38eefdc40"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
-        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <action_type display_value="Pesquisar registro">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Pesquisar registro">b93f42810b30030085c083eb37673a63</action_type_parent>
         <attributes/>
         <comment/>
         <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
@@ -678,8 +678,8 @@
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=b20d3399fb7d2210f6d5f9d38eefdc40"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
-        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <action_type display_value="Atualizar registro">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Atualizar registro">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
         <attributes/>
         <comment/>
         <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
@@ -702,8 +702,8 @@
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=760d3399fb7d2210f6d5f9d38eefdc40"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Look Up Records">43400a1587003300663ca1bb36cb0b4b</action_type>
-        <action_type_parent display_value="Look Up Records">d1c56ec50b30030085c083eb37673a50</action_type_parent>
+        <action_type display_value="Pesquisar registros">43400a1587003300663ca1bb36cb0b4b</action_type>
+        <action_type_parent display_value="Pesquisar registros">d1c56ec50b30030085c083eb37673a50</action_type_parent>
         <attributes/>
         <comment/>
         <compiled_snapshot>43400a1587003300663ca1bb36cb0b4b</compiled_snapshot>
@@ -726,8 +726,8 @@
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=3a0d3399fb7d2210f6d5f9d38eefdc3f"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
-        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <action_type display_value="Pesquisar registro">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Pesquisar registro">b93f42810b30030085c083eb37673a63</action_type_parent>
         <attributes/>
         <comment/>
         <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
@@ -761,7 +761,7 @@
         <flow display_value="Economic Indicators">ae0d3399fb7d2210f6d5f9d38eefdc1c</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="For Each">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
+        <logic_definition display_value="Para cada">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
         <order>2</order>
         <outputs_assigned/>
         <parent_ui_id/>
@@ -788,7 +788,7 @@
         <flow display_value="Economic Indicators">ae0d3399fb7d2210f6d5f9d38eefdc1c</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <logic_definition display_value="Outro">1f781bf3c32232002841b63b12d3aee6</logic_definition>
         <order>8</order>
         <outputs_assigned/>
         <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>
@@ -815,7 +815,7 @@
         <flow display_value="Economic Indicators">ae0d3399fb7d2210f6d5f9d38eefdc1c</flow>
         <flow_variables_assigned/>
         <generation_source/>
-        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <logic_definition display_value="Se">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
         <order>6</order>
         <outputs_assigned/>
         <parent_ui_id>20fde648-3ced-4596-b1ac-b39b687a2a96</parent_ui_id>

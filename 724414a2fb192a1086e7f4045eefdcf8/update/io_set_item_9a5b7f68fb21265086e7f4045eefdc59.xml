@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="io_set_item">
     <io_set_item action="INSERT_OR_UPDATE">
         <order>100</order>
-        <sc_cat_item display_value="RREO (Summary Report of Budget Execution)">e0c8ff24fb21265086e7f4045eefdcda</sc_cat_item>
+        <sc_cat_item display_value="RREO (Relatório Resumido da Execução Orçamentária)">e0c8ff24fb21265086e7f4045eefdcda</sc_cat_item>
         <sys_class_name>io_set_item</sys_class_name>
         <sys_created_by>matheus.silva@artycs.com.br</sys_created_by>
         <sys_created_on>2025-05-13 17:59:18</sys_created_on>
@@ -14,6 +14,6 @@
         <sys_update_name>io_set_item_9a5b7f68fb21265086e7f4045eefdc59</sys_update_name>
         <sys_updated_by>matheus.silva@artycs.com.br</sys_updated_by>
         <sys_updated_on>2025-05-13 17:59:18</sys_updated_on>
-        <variable_set display_value="RREO (Summary Report of Budget Execution)">0e3b3768fb21265086e7f4045eefdc88</variable_set>
+        <variable_set display_value="RREO (Relatório Resumido da Execução Orçamentária)">0e3b3768fb21265086e7f4045eefdc88</variable_set>
     </io_set_item>
 </record_update>
